@@ -1,6 +1,6 @@
 {
   "id": "2944687f-9cf8-4134-a24c-e21fb70a8b1a",
-  "name": "N17Constraction",
+  "name": "GeneralExt",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -20,7 +20,7 @@
       "to": 99999
     }
   ],
-  "contextSensitiveHelpUrl": "https://N17Constraction.com/help/",
+  "contextSensitiveHelpUrl": "https://GeneralExt.com/help/",
   "showMyCode": true,
   "runtime": "6.0"
 }
