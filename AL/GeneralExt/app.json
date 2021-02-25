@@ -1,0 +1,26 @@
+{
+  "id": "2944687f-9cf8-4134-a24c-e21fb70a8b1a",
+  "name": "N17Constraction",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 99999
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://N17Constraction.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
