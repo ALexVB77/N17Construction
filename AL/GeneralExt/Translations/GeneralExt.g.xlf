@@ -18,10 +18,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Batch - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2596185427 - Control 3955500524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 2596185427 - Control 403631006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>GD - Posting Group Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control GUPostingGroupCode - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control GUPostingGrCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Control 2738103555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Operation GD Document Number</source>
