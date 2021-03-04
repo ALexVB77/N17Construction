@@ -63,6 +63,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text007</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1977683957 - Action 127879565 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1567633909">
+          <source>Transfer to GD</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries (Ext) - Action TransferToGD - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
