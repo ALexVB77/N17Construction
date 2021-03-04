@@ -19,19 +19,46 @@ report 50065 "Create Guarantee Deduction"
             {
                 group(Options)
                 {
-                    /*
-                    field(Name; SourceExpression)
+
+                    field(Template; Template)
                     {
                         ApplicationArea = All;
-
+                        Caption = 'Template Code';
+                        TableRelation = "Gen. Journal Template";
                     }
-                    */
+                    field(Batch; Batch)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Batch Code';
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            GenJnlBatch.SetRange("Journal Template Name", Template);
+                            if (page.RunModal(0, GenJnlBatch) = Action::LookupOK) then
+                                Batch := GenJnlBatch.Name;
+                        end;
+                    }
+                    field(GUPostingGroupCode; GUPostingGroupCode)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'GD - Posting Group Code';
+                        TableRelation = "Vendor Posting Group";
+                    }
+                    field(DocNo; DocNo)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Operation GD Document Number';
+                    }
+
                 }
             }
         }
         trigger OnOpenPage()
         begin
+            IF VLENo = 0 THEN
+                ERROR(Text005);
 
+            VLE.GET(VLENo);
+            DocNo := VLE."Document No." + '_GU';
         end;
 
 
@@ -58,6 +85,11 @@ report 50065 "Create Guarantee Deduction"
         VLENo: Integer;
         GUPostingGroupCode: Code[20];
         Vend: Record Vendor;
-
-
+        Text001: Label 'Posting group is not specified';
+        Text002: Label '%1/GD_execute job';
+        Text003: Label 'Template code is not specified';
+        Text004: Label 'Batch code is not specified';
+        Text005: Label 'Must be executed from Vendor Ledger Entries';
+        Text006: Label 'Created Gen. Journal Lines for GD. %1 %2, %3 %4.';
+        Text007: Label 'Document number for GD operation is not specified.';
 }

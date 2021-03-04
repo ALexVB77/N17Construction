@@ -8,6 +8,61 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 3379441404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Template Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Template - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 506096960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 3955500524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GD - Posting Group Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control GUPostingGroupCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 2738103555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation GD Document Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control DocNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting group is not specified</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1/GD_execute job</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Template code is not specified</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch code is not specified</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Must be executed from Vendor Ledger Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created Gen. Journal Lines for GD. %1 %2, %3 %4.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document number for GD operation is not specified.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text007</note>
+        </trans-unit>
       </group>
     </body>
   </file>

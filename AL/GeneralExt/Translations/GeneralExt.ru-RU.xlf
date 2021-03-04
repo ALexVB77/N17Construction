@@ -5,10 +5,77 @@
       <group id="body">
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
-          <source>Создать гарантийное удержание</source>
+          <target>Создать гарантийное удержание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 3379441404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Template Code</source>
+          <target>Шаблон журнала</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Template - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 506096960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch Code</source>
+          <target>Раздел журнала</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 3955500524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GD - Posting Group Code</source>
+          <target>ГУ - Код уч. группы</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control GUPostingGroupCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - Control 2738103555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation GD Document Number</source>
+          <target>Номер документа опер-ии ГУ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control DocNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting group is not specified</source>
+          <target>Не указана учетная группа ГУ.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1/GD_execute job</source>
+          <target>%1/ГУ_выполне работы</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Template code is not specified</source>
+          <target>Не указан Код шаблона</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch code is not specified</source>
+          <target>Не указан Код раздела</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Must be executed from Vendor Ledger Entries</source>
+          <target>Должен быть запущен из Книги операций поставщика</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created Gen. Journal Lines for GD. %1 %2, %3 %4.</source>
+          <target>Строки журнала по ГУ созданы. %1 %2, %3 %4</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 2596185427 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document number for GD operation is not specified.</source>
+          <target>Не указан номер документа операции ГУ.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text007</note>
+        </trans-unit>
+        
       </group>
     </body>
   </file>
