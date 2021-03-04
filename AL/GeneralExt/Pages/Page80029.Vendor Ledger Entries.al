@@ -9,6 +9,7 @@ pageextension 80029 "Vendor Ledger Entries (Ext)" extends "Vendor Ledger Entries
             {
                 ApplicationArea = All;
                 Caption = 'Transfer to GD';
+                Image = Aging;
 
                 trigger OnAction()
                 var
