@@ -19,7 +19,6 @@ report 50065 "Create Guarantee Deduction"
             {
                 group(Options)
                 {
-
                     field(Template; Template)
                     {
                         ApplicationArea = All;
