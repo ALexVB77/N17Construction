@@ -77,7 +77,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         }
         field(70025; "Paid With VAT Date Filter"; Date)
         {
-            Caption = 'Выплачено, с НДС Дата Фильтр';
+            Caption = 'Paid With VAT Date Filter';
             Description = '50085';
             FieldClass = FlowFilter;
         }

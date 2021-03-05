@@ -104,7 +104,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Paid With VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 1646412123 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
-          <source>Выплачено, с НДС Дата Фильтр</source>
+          <source>Paid With VAT Date Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Paid With VAT Date Filter - Property Caption</note>
         </trans-unit>
