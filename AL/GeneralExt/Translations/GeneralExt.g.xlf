@@ -3,6 +3,161 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="GeneralExt">
     <body>
       <group id="body">
+        <trans-unit id="Table 1535144756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Agreement Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1303377601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Global Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1337243520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Global Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreemnet Amount, with VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Vendor No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3412919364 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field External Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3454607982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3119688693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Vendor Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1108276017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement VAT Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field VAT Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3654690469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Amount without VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Amount Without VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 399424670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Building Turn All - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Cost Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1036975512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Project Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COST TYPE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Cost Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1077555671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Original Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 1577863327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ByOrder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field ByOrder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 426187663 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close Commitment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Close Commitment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3831140563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close Ordered</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Close Ordered - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 2092726926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Amount with VAT (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field AmountLCY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Currency Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - Field 3804931248 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payed by Agreement with VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Payed by Agreement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Необходимо определить объект строительства</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0001</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - NamedType 4156606849" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Для объекта строительства %1 не найдена статья %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0002</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
+          <source>У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50000</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>
