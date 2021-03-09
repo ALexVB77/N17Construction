@@ -20,7 +20,7 @@
       "to": 99999
     }
   ],
-  "contextSensitiveHelpUrl": "www",
+  "contextSensitiveHelpUrl": "https://BankStatement.com/help/",
   "showMyCode": true,
   "runtime": "6.0",
   "features": ["TranslationFile","GenerateCaptions"]
