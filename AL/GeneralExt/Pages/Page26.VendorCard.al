@@ -1,4 +1,4 @@
-pageextension 80026 MyExtension extends "Vendor Card"
+pageextension 80026 "Vendor Card (Ext)" extends "Vendor Card"
 {
     layout
     {
