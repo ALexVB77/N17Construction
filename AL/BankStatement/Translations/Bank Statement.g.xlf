@@ -18,6 +18,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BS - Field Check Description for Import - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3085805169 - Field 2431628344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1815808370">
+          <source>Payment Purpose</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Ledger Entry BS - Field Payment Purpose - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
