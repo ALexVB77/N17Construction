@@ -1,4 +1,4 @@
-tableextension 80270 "Bank Account BNV" extends "Bank Account"
+tableextension 99999 "Bank Account BS" extends "Bank Account"
 {
     fields
     {
@@ -12,10 +12,6 @@ tableextension 80270 "Bank Account BNV" extends "Bank Account"
         {
             DataClassification = CustomerContent;
 
-        }
-        field(50003; "Max Len. Pmt Purpose Text"; Integer)
-        {
-            DataClassification = CustomerContent;
         }
     }
 }

@@ -323,6 +323,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Vat Agent Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1850888649 - Field 2188116433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Max Len. Pmt Purpose Text</source>
+          <target>Макс. длина выгр. назначение платежа</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account (Ext) - Field Max Len. Pmt Purpose Text - Property Caption</note>
+        </trans-unit>
+        
       </group>
     </body>
   </file>
