@@ -5,6 +5,7 @@ tableextension 80270 "Bank Account (Ext)" extends "Bank Account"
         field(50003; "Max Len. Pmt Purpose Text"; Integer)
         {
             DataClassification = CustomerContent;
+
         }
     }
 }

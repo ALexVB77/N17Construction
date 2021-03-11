@@ -6,12 +6,10 @@ tableextension 99999 "Bank Account BS" extends "Bank Account"
         {
             DataClassification = CustomerContent;
             TableRelation = "No. Series";
-
         }
         field(50002; "Check Description for Import"; Boolean)
         {
             DataClassification = CustomerContent;
-
         }
     }
 }

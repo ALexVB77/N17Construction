@@ -3,6 +3,11 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="Bank Statement">
     <body>
       <group id="body">
+        <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>Client Bank</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Control ClientBank - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1965575538 - Field 3088995595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
           <source>Ingoing Order M-4 No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>
