@@ -7,6 +7,11 @@ pageextension 99999 "Bank Account Card BS" extends "Bank Account Card"
             group(ClientBank)
             {
                 Caption = 'Client Bank';
+                field("Use Client-Bank"; Rec."Use Client-Bank")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+
                 field("Check Description for Import"; Rec."Check Description for Import")
                 {
                     ApplicationArea = Basic, Suite;
