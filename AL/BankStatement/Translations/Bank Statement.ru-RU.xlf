@@ -9,6 +9,90 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Control ClientBank - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 928545387 - Field 686652245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2452438108">
+          <source>Bank Code</source>
+          <target>Код банка</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Data Exch. BS - Field Bank Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 901183281 - Field 3954516435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2577957938">
+          <source>Use Value From Header</source>
+          <target>Использовать значение из заголовка</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Data Exch. Field Mapping BS - Field Use Value From Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 4111173870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>KBK</source>
+          <target>КБК</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field KBK - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 4099807418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>OKATO</source>
+          <target>ОКАТО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field OKATO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 3013265101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>Payment Reason Code</source>
+          <target>Код основания платежа</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Payment Reason Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 983824464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>Reason Document No.</source>
+          <target>Номер документа-основания</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Reason Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 174911049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>Reason Document Date</source>
+          <target>Дата документа-основания</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Reason Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 1088522705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>Tax Payment Type</source>
+          <target>Тип налогового платежа</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Tax Payment Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 2630778660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>Tax Period</source>
+          <target>Налоговый период</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Tax Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 3565599906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>Taxpayer Status</source>
+          <target>Статус налогоплательщика</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Taxpayer Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 856324326 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>UIN</source>
+          <target>УИН</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field UIN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3038441666 - Field 1388358662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1420580905">
+          <source>Custom Transformation Type</source>
+          <target>Пользовательский тип преобразования</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transformation Rule BS - Field Custom Transformation Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3038441666 - Field 3372615628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1420580905">
+          <source>Min. Length</source>
+          <target>Минимальная длина</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transformation Rule BS - Field Min. Length - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3038441666 - Field 1106072834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1420580905">
+          <source>Max. Length</source>
+          <target>Максимальная длина</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transformation Rule BS - Field Max. Length - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2531280511 - Field 3088995595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
           <source>Ingoing Order M-4 No. Series</source>
           <target>Приходный ордер М-4 серия номеров</target>
@@ -21,11 +105,95 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BNV - Field Check Description for Import - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1965575538 - Field 3740771146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Pay Document Prefix</source>
+          <target>Префикс номера платежного документа</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BS - Field CheckDocPrefix - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3085805169 - Field 2431628344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1815808370">
           <source>Payment Purpose</source>
           <target>Цель платежа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Ledger Entry BS - Field Payment Purpose - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1272220613 - EnumValue 18652612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue  - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1272220613 - EnumValue 720832483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Prefix</source>
+          <target>Добавить префикс</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue AddPrefix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1272220613 - EnumValue 614895178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Del Prefix</source>
+          <target>Удалить префикс</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue AddSuffix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1272220613 - EnumValue 3612920174 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check Length</source>
+          <target>Проверить длину</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue CheckLength - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 18652612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue  - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 2372426283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>01-taxpayer (charges payer)</source>
+          <target>01-налогоплательщик (плательщик сборов)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 01 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 4285516134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>02-tax agent</source>
+          <target>02-налоговый агент</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 02 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 3647819517 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>03-collector of taxes and charges</source>
+          <target>03-сборщик налогов и сборов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 03 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 459336432 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>04-tax authority</source>
+          <target>04-налоговый орган</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 04 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 4116607111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>05-service of officers of justice of Department of Justice of Russian Federation</source>
+          <target>05-Федеральная служба судебных приставов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 05 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 1734729666 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>06-participant of foreign-economic activity</source>
+          <target>06-участник внешнеэкономической деятельности</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 06 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 1097033049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>07-tax authority</source>
+          <target>07-таможенный орган</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 07 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 2203517260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>08-payer of other mandatory payments</source>
+          <target>08-плательщик иных обязательных платежей</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue 08 - Property Caption</note>
         </trans-unit>
       </group>
     </body>

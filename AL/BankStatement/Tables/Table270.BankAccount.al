@@ -11,5 +11,10 @@ tableextension 99999 "Bank Account BS" extends "Bank Account"
         {
             DataClassification = CustomerContent;
         }
+        field(50031; CheckDocPrefix; Code[7])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Pay Document Prefix';
+        }
     }
 }
