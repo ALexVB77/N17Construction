@@ -36,10 +36,7 @@ codeunit 99998 "Isolated Storage Management BS"
     var
         sRes: Text;
     begin
-        ClearLastError();
-
         storage.Set(format(_key), value, sres);
-
         exit(sRes);
     end;
 
@@ -48,12 +45,11 @@ codeunit 99998 "Isolated Storage Management BS"
         bRes: Boolean;
         ErrorInISM: Label 'Error caught in isolated storage: %1';
     begin
-
         if (GetLastErrorText <> '') then begin
             clearAll();
-            if (not hideError) then begin
-                Error(ErrorInISM, GetLastErrorText);
-            end;
+            //if (not hideError) then begin
+            //    Error(ErrorInISM, GetLastErrorText);
+            //end;
         end;
 
         val := '';
@@ -67,6 +63,12 @@ codeunit 99998 "Isolated Storage Management BS"
     procedure setHideError(p: boolean)
     begin
         hideError := p;
+    end;
+
+    procedure init()
+    begin
+        ClearLastError();
+        clearAll();
     end;
 
     var

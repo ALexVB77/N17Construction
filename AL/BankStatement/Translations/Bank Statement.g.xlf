@@ -28,6 +28,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method setHideError</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 117289339" size-unit="char" translate="yes" xml:space="preserve">
+          <source>init</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method init</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3230913882 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
           <note from="Developer" annotates="general" priority="2"></note>

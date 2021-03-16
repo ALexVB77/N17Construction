@@ -32,6 +32,7 @@ pageextension 99999 "Bank Account Card BS" extends "Bank Account Card"
                     ism: Codeunit "Isolated Storage Management BS";
 
                 begin
+                    ism.init();
                     ism.setString('with_err', 'with error');
                     error('error set!!!');
                 end;
@@ -43,6 +44,7 @@ pageextension 99999 "Bank Account Card BS" extends "Bank Account Card"
                 var
                     ism: Codeunit "Isolated Storage Management BS";
                 begin
+                    ism.init();
                     ism.setString('without_err', 'without error');
                 end;
             }
