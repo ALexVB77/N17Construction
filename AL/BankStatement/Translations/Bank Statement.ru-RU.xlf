@@ -3,6 +3,12 @@
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Bank Statement">
     <body>
       <group id="body">
+      <trans-unit id="Codeunit 3230913882 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error caught in isolated storage: %1</source>
+          <target>Ошибка, пойманная в Isolated Storage Management: %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method getValue - NamedType ErrorInISM</note>
+        </trans-unit>
       <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
           <source>Client Bank</source>
           <target>Клиент-Банк</target>

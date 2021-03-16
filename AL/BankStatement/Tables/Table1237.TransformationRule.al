@@ -23,4 +23,12 @@ tableextension 99994 "Transformation Rule BS" extends "Transformation Rule"
             Caption = 'Max. Length';
         }
     }
+
+    procedure setBankAccount(p: code[20])
+    var
+        ism: Codeunit "Isolated Storage Management BS";
+    begin
+        ism.setString('T1237.BankAccountCode', p);
+    end;
+
 }

@@ -23,5 +23,6 @@
   "contextSensitiveHelpUrl": "https://BankStatement.com/help/",
   "showMyCode": true,
   "runtime": "6.0",
-  "features": ["TranslationFile","GenerateCaptions"]
+  "features": ["TranslationFile","GenerateCaptions"],
+  "target": "OnPrem"
 }

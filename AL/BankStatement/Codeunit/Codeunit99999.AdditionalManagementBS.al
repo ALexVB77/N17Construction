@@ -13,7 +13,7 @@ codeunit 99999 "Additional Management BS"
     local procedure OnTransformation(TransformationCode: Code[20]; InputText: Text; var OutputText: Text);
     var
         transformationRule: Record "Transformation Rule";
-
+        ism: Codeunit "Isolated Storage Management BS";
     begin
         transformationRule.get(TransformationCode);
         IF (transformationRule."Custom Transformation Type" <> transformationRule."Custom Transformation Type"::" ") THEN BEGIN

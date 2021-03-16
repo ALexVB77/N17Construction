@@ -3,10 +3,55 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="Bank Statement">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 3230913882 - Method 1997126755" size-unit="char" translate="yes" xml:space="preserve">
+          <source>setString</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method setString</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 1828824977" size-unit="char" translate="yes" xml:space="preserve">
+          <source>getString</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method getString</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 4072037636" size-unit="char" translate="yes" xml:space="preserve">
+          <source>delValue</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method delValue</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 1258200911" size-unit="char" translate="yes" xml:space="preserve">
+          <source>clearAll</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method clearAll</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 841387310" size-unit="char" translate="yes" xml:space="preserve">
+          <source>setHideError</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method setHideError</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error caught in isolated storage: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method getValue - NamedType ErrorInISM</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
           <source>Client Bank</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Control ClientBank - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3638170462 - Action 3891781367 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>set ism with error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Action SetISM - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3638170462 - Action 4268401881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>set ism without error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Action SetISM2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3638170462 - Action 2904452843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+          <source>get ism</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Action GetISM - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 928545387 - Field 686652245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2452438108">
           <source>Bank Code</source>
