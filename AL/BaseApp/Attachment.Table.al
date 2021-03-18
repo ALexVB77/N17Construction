@@ -1,4 +1,4 @@
-table 5062 Attachment
+﻿table 5062 Attachment
 {
     Caption = 'Attachment';
 
@@ -151,8 +151,12 @@ table 5062 Attachment
                 Error(Text002);
         end;
 
-        if ClientTypeManagement.GetCurrentClientType in [CLIENTTYPE::Web, CLIENTTYPE::Tablet, CLIENTTYPE::Phone] then
+        if ClientTypeManagement.GetCurrentClientType in [CLIENTTYPE::Web, CLIENTTYPE::Tablet, CLIENTTYPE::Phone, CLIENTTYPE::Desktop] then
             ProcessWebAttachment(Caption + '.' + "File Extension")
+#if not CLEAN17
+        // Code being removed as the procedure ConstFilename will always throw an error and is being removed.
+        // This will cause DeleteFile to always throw an error that the file is in use.
+        // OpenWordAttachment is also being removed as it uses DotNet that cannot run on non-Windows client type.
         else begin
             FileName := ConstFilename;
             if not DeleteFile(FileName) then
@@ -171,6 +175,7 @@ table 5062 Attachment
                         DeleteFile(FileName);
             end;
         end;
+#endif
     end;
 
     [Scope('OnPrem')]
@@ -207,6 +212,19 @@ table 5062 Attachment
             if not WordManagement.CanRunWordApp then
                 ProcessWebAttachment(WordCaption + '.' + "File Extension")
             else
+#if CLEAN17
+                if not WordManagement.IsWordDocumentExtension("File Extension") then begin
+                    ExportAttachmentToClientFile(FileName);
+                    HyperLink(FileName);
+                    if not "Read Only" then begin
+                        if Confirm(Text004, true) then
+                            ImportAttachmentFromClientFile(FileName, IsTemporary, false);
+                        DeleteFile(FileName);
+                    end else
+                        if Confirm(Text016, true) then
+                            DeleteFile(FileName);
+                end;
+#else
                 if WordManagement.IsWordDocumentExtension("File Extension") then begin
                     OnRunAttachmentOnBeforeWordManagementRunMergedDocument(Rec, Handler);
                     WordManagement.RunMergedDocument(SegLine, Rec, WordCaption, IsTemporary, IsVisible, Handler);
@@ -222,6 +240,8 @@ table 5062 Attachment
                         if Confirm(Text016, true) then
                             DeleteFile(FileName);
                 end;
+#endif
+
         WordManagement.Deactivate(5062);
     end;
 
@@ -250,7 +270,9 @@ table 5062 Attachment
 
         Path := FileMgt.Magicpath;
         if ExportToFile = '' then begin
+#if not CLEAN17
             ExportToFile := FileMgt.GetFileName(FileMgt.ClientTempFileName("File Extension"));
+#endif
             Path := '';
         end;
 
@@ -318,10 +340,16 @@ table 5062 Attachment
     end;
 
     [Scope('OnPrem')]
-    procedure ExportAttachmentToServerFile(var ExportToFile: Text): Boolean
+    procedure ExportAttachmentToServerFile(var ExportToFile: Text) Result: Boolean
     var
         TempBlob: Codeunit "Temp Blob";
+        IsHandled: Boolean;
     begin
+        IsHandled := false;
+        OnBeforeExportAttachmentToServerFile(Rec, ExportToFile, Result, IsHandled);
+        if IsHandled then
+            exit(Result);
+
         // This function assumes that CALCFIELDS on the attachment field has been called before
         RMSetup.Get();
         if RMSetup."Attachment Storage Type" = RMSetup."Attachment Storage Type"::"Disk File" then
@@ -352,11 +380,17 @@ table 5062 Attachment
     end;
 
     [Scope('OnPrem')]
-    procedure ImportAttachmentFromServerFile(ImportFromFile: Text; IsTemporary: Boolean; Overwrite: Boolean): Boolean
+    procedure ImportAttachmentFromServerFile(ImportFromFile: Text; IsTemporary: Boolean; Overwrite: Boolean) Result: Boolean
     var
         TempBlob: Codeunit "Temp Blob";
         FileExt: Text[250];
+        IsHandled: Boolean;
     begin
+        IsHandled := false;
+        OnBeforeImportAttachmentFromServerFile(Rec, ImportFromFile, Result, IsHandled);
+        if IsHandled then
+            exit(Result);
+
         if IsTemporary then begin
             ImportTemporaryAttachmentFromServerFile(ImportFromFile);
             exit(true);
@@ -484,6 +518,7 @@ table 5062 Attachment
         if FileName = '' then
             exit(false);
 
+#if not CLEAN17
         if not FileMgt.ClientFileExists(FileName) then
             exit(true);
 
@@ -492,13 +527,19 @@ table 5062 Attachment
             I := I + 1;
         until FileMgt.DeleteClientFile(FileName) or (I = 25);
         exit(not FileMgt.ClientFileExists(FileName));
+#else
+        exit(true);
+#endif
     end;
 
+#if not CLEAN17
     [Scope('OnPrem')]
+    [Obsolete('The local file system is not accessible, the procedure FileMgt.ClientTempFileName will always throw an error. This procedure will be removed.', '17.3')]
     procedure ConstFilename() FileName: Text
     begin
         FileName := FileMgt.ClientTempFileName("File Extension");
     end;
+#endif
 
     procedure ConstDiskFileName() DiskFileName: Text
     begin
@@ -757,6 +798,16 @@ table 5062 Attachment
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeRunAttachment(var SegLine: Record "Segment Line"; WordCaption: Text[260]; IsTemporary: Boolean; IsVisible: Boolean; Handler: Boolean; var iSHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeExportAttachmentToServerFile(var Attachment: Record Attachment; ExportToFile: Text; var Result: Boolean; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeImportAttachmentFromServerFile(var Attachment: Record Attachment; ImportFromFile: Text; var Result: Boolean; var IsHandled: Boolean)
     begin
     end;
 

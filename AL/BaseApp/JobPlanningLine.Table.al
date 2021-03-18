@@ -1480,6 +1480,7 @@
         CalcFields("Reserved Quantity", "Reserved Qty. (Base)");
         RemainingQty := "Remaining Qty." - Abs("Reserved Quantity");
         RemainingQtyBase := "Remaining Qty. (Base)" - Abs("Reserved Qty. (Base)");
+        OnAfterGetRemainingQty(Rec, RemainingQty, RemainingQtyBase);
     end;
 
     procedure GetReservationQty(var QtyReserved: Decimal; var QtyReservedBase: Decimal; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal): Decimal
@@ -1701,6 +1702,7 @@
 
     local procedure RecalculateAmounts(JobExchCalculation: Option "Fixed FCY","Fixed LCY"; xAmount: Decimal; var Amount: Decimal; var AmountLCY: Decimal)
     begin
+        OnBeforeRecalculateAmounts(Rec, xRec);
         if (xRec."Currency Factor" <> "Currency Factor") and
            (Amount = xAmount) and (JobExchCalculation = JobExchCalculation::"Fixed LCY")
         then
@@ -2249,6 +2251,11 @@
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnAfterGetRemainingQty(JobPlanningLine: Record "Job Planning Line"; var RemainingQty: Decimal; var RemainingQtyBase: Decimal)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnAfterFilterLinesWithItemToPlan(var JobPlanningLine: Record "Job Planning Line"; var Item: Record Item);
     begin
     end;
@@ -2321,6 +2328,11 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeHandleCostFactor(var JobPlanningLine: Record "Job Planning Line"; var xJobPlanningLine: Record "Job Planning Line"; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeRecalculateAmounts(var JobPlanningLine: Record "Job Planning Line"; var xJobPlanningLine: Record "Job Planning Line")
     begin
     end;
 

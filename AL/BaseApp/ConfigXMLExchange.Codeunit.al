@@ -754,6 +754,14 @@ codeunit 8614 "Config. XML Exchange"
         exit(false);
     end;
 
+    [TryFunction]
+    local procedure TryOpenTable(TableId: Integer)
+    var
+        RecordRef: RecordRef;
+    begin
+        RecordRef.Open(TableId);
+    end;
+
     local procedure FillPackageMetadataFromXML(var PackageCode: Code[20]; TableID: Integer; var TableNode: DotNet XmlNode)
     var
         ConfigPackage: Record "Config. Package";
@@ -773,7 +781,7 @@ codeunit 8614 "Config. XML Exchange"
             if PackageCode = '' then
                 Error(MissingInExcelFileErr, ConfigPackageTable.FieldCaption("Package Code"));
         end;
-        if (TableID > 0) and (not ConfigPackageTable.Get(PackageCode, TableID)) then begin
+        if (TableID > 0) and (not ConfigPackageTable.Get(PackageCode, TableID)) and TryOpenTable(TableID) then begin
             if not ExcelMode then begin
                 ConfigPackageTable.Init();
                 ConfigPackageTable."Package Code" := PackageCode;
@@ -1076,14 +1084,23 @@ codeunit 8614 "Config. XML Exchange"
     procedure GetElementName(NameIn: Text[250]): Text[250]
     var
         XMLDOMManagement: Codeunit "XML DOM Management";
+        PercentCharPos: Integer;
+        SubString1: Text;
+        SubString2: Text;
     begin
         OnBeforeGetElementName(NameIn);
 
         if not XMLDOMManagement.IsValidXMLNameStartCharacter(NameIn[1]) then
             NameIn := '_' + NameIn;
+        PercentCharPos := STRPOS(NameIn, '%');
+        IF PercentCharPos > 0 THEN BEGIN
+            SubString1 := COPYSTR(NameIn, 1, PercentCharPos - 1);
+            SubString2 := COPYSTR(NameIn, PercentCharPos + 1, MAXSTRLEN(NameIn));
+            NameIn := SubString1 + '_pct' + SubString2;
+        END;
         NameIn := CopyStr(XMLDOMManagement.ReplaceXMLInvalidCharacters(NameIn, ' '), 1, MaxStrLen(NameIn));
         NameIn := DelChr(NameIn, '=', '?''`');
-        NameIn := ConvertStr(NameIn, '<>,./\+&()%:', '            ');
+        NameIn := ConvertStr(NameIn, '<>,./\+&():', '           ');
         NameIn := ConvertStr(NameIn, '-', '_');
         NameIn := DelChr(NameIn, '=', ' ');
         exit(NameIn);

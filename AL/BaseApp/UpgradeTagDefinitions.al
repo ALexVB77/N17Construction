@@ -1,4 +1,4 @@
-codeunit 9998 "Upgrade Tag Definitions"
+﻿codeunit 9998 "Upgrade Tag Definitions"
 {
 
     trigger OnRun()
@@ -16,6 +16,7 @@ codeunit 9998 "Upgrade Tag Definitions"
         PerCompanyUpgradeTags.Add(GetNewSalesOrderEntityBufferUpgradeTag());
         PerCompanyUpgradeTags.Add(GetNewSalesQuoteEntityBufferUpgradeTag());
         PerCompanyUpgradeTags.Add(GetNewSalesCrMemoEntityBufferUpgradeTag());
+        PerCompanyUpgradeTags.Add(GetNewSalesShipmentLineUpgradeTag());
         PerCompanyUpgradeTags.Add(GetCleanupDataExchUpgradeTag());
         PerCompanyUpgradeTags.Add(GetDefaultDimensionAPIUpgradeTag());
         PerCompanyUpgradeTags.Add(GetBalAccountNoOnJournalAPIUpgradeTag());
@@ -53,6 +54,7 @@ codeunit 9998 "Upgrade Tag Definitions"
         PerCompanyUpgradeTags.Add(GetNewItemTemplatesUpgradeTag());
         PerCompanyUpgradeTags.Add(PurchRcptLineOverReceiptCodeUpgradeTag());
         PerCompanyUpgradeTags.Add(GetIntegrationTableMappingUpgradeTag());
+        PerCompanyUpgradeTags.Add(GetIntegrationFieldMappingForContactsUpgradeTag());
         PerCompanyUpgradeTags.Add(WorkflowStepArgumentUpgradeTag());
         PerCompanyUpgradeTags.Add(GetGenJnlLineArchiveUpgradeTag());
         PerCompanyUpgradeTags.Add(GetMoveAzureADAppSetupSecretToIsolatedStorageTag());
@@ -64,6 +66,10 @@ codeunit 9998 "Upgrade Tag Definitions"
         PerCompanyUpgradeTags.Add(GetFixAPIPurchaseInvoicesCreatedFromOrders());
         PerCompanyUpgradeTags.Add(GetDeleteSalesOrdersOrphanedRecords());
         PerCompanyUpgradeTags.Add(GetIntrastatJnlLinePartnerIDUpgradeTag());
+        PerCompanyUpgradeTags.Add(GetNewPurchRcptLineUpgradeTag());
+        PerCompanyUpgradeTags.Add(GetDimensionSetEntryUpgradeTag());
+        PerCompanyUpgradeTags.Add(GetRemoveOldWorkflowTableRelationshipRecordsTag());
+        PerCompanyUpgradeTags.Add(GetUserTaskDescriptionToUTF8UpgradeTag());
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Upgrade Tag", 'OnGetPerDatabaseUpgradeTags', '', false, false)]
@@ -168,6 +174,12 @@ codeunit 9998 "Upgrade Tag Definitions"
     procedure GetNewSalesCrMemoEntityBufferUpgradeTag(): Code[250]
     begin
         exit('MS-317081-SalesCrMemoAddingMultipleAddresses-20190731');
+    end;
+
+    [Obsolete('Function will be removed', '18.0')]
+    procedure GetNewSalesShipmentLineUpgradeTag(): Code[250]
+    begin
+        exit('MS-383010-SalesShipmentLineDocumentId-20201210');
     end;
 
     [Obsolete('Function will be removed', '16.0')]
@@ -469,10 +481,22 @@ codeunit 9998 "Upgrade Tag Definitions"
         exit('MS-360362-PurchRcptLineOverReceiptCode-20200612');
     end;
 
+    [Obsolete('Function will be removed', '18.0')]
+    procedure GetNewPurchRcptLineUpgradeTag(): Code[250]
+    begin
+        exit('MS-383010-PurchRcptLineDocumentId-20201210');
+    end;
+
     [Obsolete('Function will be removed', '17.0')]
     procedure GetIntegrationTableMappingUpgradeTag(): Code[250];
     begin
         exit('MS-368854-IntegrationTableMapping-20200818');
+    end;
+
+    [Obsolete('Function will be removed', '18.0')]
+    procedure GetIntegrationFieldMappingForContactsUpgradeTag(): Code[250];
+    begin
+        exit('MS-387286-IntegrationFieldMappingForContacts-20210125');
     end;
 
     [Obsolete('Function will be removed', '17.0')]
@@ -547,6 +571,22 @@ codeunit 9998 "Upgrade Tag Definitions"
     procedure GetDeleteSalesOrdersOrphanedRecords(): Code[250];
     begin
         exit('MS-377433-DeleteSalesOrdersOrphanedRecords-20201102');
+    end;
+
+    procedure GetDimensionSetEntryUpgradeTag(): Code[250]
+    begin
+        exit('MS-352854-ShortcutDimensionsInGLEntry-20201204');
+    end;
+
+    [Scope('OnPrem')]
+    procedure GetRemoveOldWorkflowTableRelationshipRecordsTag(): Code[250]
+    begin
+        exit('MS-384473-RemoveOldWorkflowTableRelationshipRecords-20201222');
+    end;
+    
+    procedure GetUserTaskDescriptionToUTF8UpgradeTag(): Code[250]
+    begin
+        exit('MS-385481-UserTaskDescriptionToUTF8-20210112');
     end;
 }
 

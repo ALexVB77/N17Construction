@@ -80,7 +80,7 @@
                 CalculateUserDefined(DeferralHeader, DeferralLine, DeferralTemplate);
         end;
 
-        OnAfterCreateDeferralSchedule(DeferralHeader, DeferralLine, DeferralTemplate);
+        OnAfterCreateDeferralSchedule(DeferralHeader, DeferralLine, DeferralTemplate, CalcMethod);
     end;
 
     procedure CalcDeferralNoOfPeriods(CalcMethod: Enum "Deferral Calculation Method"; NoOfPeriods: Integer; StartDate: Date): Integer
@@ -179,17 +179,29 @@
             DeferralLine."Posting Date" := PostDate;
             DeferralLine.Description := CreateRecurringDescription(PostDate, DeferralTemplate."Period Description");
 
-            if GenJnlCheckLine.DateNotAllowed(PostDate) then
-                Error(InvalidPostingDateErr, PostDate);
+            CheckPostingDate(DeferralHeader, DeferralLine);
 
             PerDiffSum := PerDiffSum + Round(AmountToDefer / DeferralHeader."No. of Periods", AmountRoundingPrecision);
 
             DeferralLine.Amount := AmountToDefer;
-
+            OnCalculateStraightlineOnBeforeDeferralLineInsert(DeferralLine, DeferralHeader);
             DeferralLine.Insert();
         end;
 
         OnAfterCalculateStraightline(DeferralHeader, DeferralLine, DeferralTemplate);
+    end;
+
+    local procedure CheckPostingDate(DeferralHeader: Record "Deferral Header"; DeferralLine: Record "Deferral Line")
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeCheckPostingDate(DeferralHeader, DeferralLine, IsHandled);
+        if IsHandled then
+            exit;
+
+        if GenJnlCheckLine.DateNotAllowed(DeferralLine."Posting Date") then
+            Error(InvalidPostingDateErr, DeferralLine."Posting Date");
     end;
 
     local procedure CalculateEqualPerPeriod(DeferralHeader: Record "Deferral Header"; var DeferralLine: Record "Deferral Line"; DeferralTemplate: Record "Deferral Template")
@@ -218,6 +230,7 @@
                 AmountToDefer := (DeferralHeader."Amount to Defer" - RunningDeferralTotal);
 
             DeferralLine.Amount := AmountToDefer;
+            OnCalculateEqualPerPeriodOnBeforeDeferralLineInsert(DeferralHeader, DeferralLine);
             DeferralLine.Insert();
         end;
 
@@ -320,8 +333,7 @@
             DeferralLine."Posting Date" := PostDate;
             DeferralLine.Description := CreateRecurringDescription(PostDate, DeferralTemplate."Period Description");
 
-            if GenJnlCheckLine.DateNotAllowed(PostDate) then
-                Error(InvalidPostingDateErr, PostDate);
+            CheckPostingDate(DeferralHeader, DeferralLine);
 
             DeferralLine.Amount := AmountToDefer;
 
@@ -344,8 +356,7 @@
             DeferralLine."Posting Date" := PostDate;
             DeferralLine.Description := CreateRecurringDescription(PostDate, DeferralTemplate."Period Description");
 
-            if GenJnlCheckLine.DateNotAllowed(PostDate) then
-                Error(InvalidPostingDateErr, PostDate);
+            CheckPostingDate(DeferralHeader, DeferralLine);
 
             // For User-Defined, user must enter in deferral amounts
             DeferralLine.Insert();
@@ -423,6 +434,7 @@
         DeferralHeader."Schedule Description" := DeferralDescription;
         DeferralHeader."Deferral Code" := DeferralCode;
         DeferralHeader."Currency Code" := CurrencyCode;
+        OnSetDeferralRecordsOnBeforeDeferralHeaderModify(DeferralHeader);
         DeferralHeader.Modify();
         // Remove old lines as they will be recalculated/recreated
         RemoveDeferralLines(DeferralDocType, GenJnlTemplateName, GenJnlBatchName, DocumentType, DocumentNo, LineNo);
@@ -432,6 +444,7 @@
     var
         DeferralHeader: Record "Deferral Header";
         DeferralTemplate: Record "Deferral Template";
+        OldDeferralPostingDate: Date;
     begin
         if DeferralCode = '' then
             // If the user cleared the deferral code, we should remove the saved schedule...
@@ -443,6 +456,12 @@
             if LineNo <> 0 then
                 if DeferralTemplate.Get(DeferralCode) then begin
                     ValidateDeferralTemplate(DeferralTemplate);
+
+                    OldDeferralPostingDate := GetDeferralStartDate(DeferralDocType, DocumentType, DocumentNo, LineNo, DeferralCode, PostingDate);
+                    if AdjustStartDate and (OldDeferralPostingDate <> PostingDate) then begin
+                        AdjustStartDate := false;
+                        PostingDate := OldDeferralPostingDate;
+                    end;
 
                     CreateDeferralSchedule(DeferralCode, DeferralDocType,
                       GenJnlTemplateName, GenJnlBatchName, DocumentType, DocumentNo, LineNo, Amount,
@@ -890,7 +909,7 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterCreateDeferralSchedule(DeferralHeader: Record "Deferral Header"; var DeferralLine: Record "Deferral Line"; DeferralTemplate: Record "Deferral Template")
+    local procedure OnAfterCreateDeferralSchedule(DeferralHeader: Record "Deferral Header"; var DeferralLine: Record "Deferral Line"; DeferralTemplate: Record "Deferral Template"; CalcMethod: Enum "Deferral Calculation Method")
     begin
     end;
 
@@ -945,12 +964,32 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeCalcDeferralNoOfPeriods(CalcMethod: Enum "Deferral Calculation Method"; NoOfPeriods: Integer; StartDate: Date; var IsHandled: Boolean)
+    local procedure OnBeforeCalcDeferralNoOfPeriods(CalcMethod: Enum "Deferral Calculation Method"; var NoOfPeriods: Integer; StartDate: Date; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCheckPostingDate(DeferralHeader: Record "Deferral Header"; var DeferralLine: record "Deferral Line"; var IsHandled: Boolean)
     begin
     end;
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeGetDeferralDescription(GenJnlBatchName: Code[10]; DocumentNo: Code[20]; Description: Text[100]; var Result: Text[100]; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnCalculateEqualPerPeriodOnBeforeDeferralLineInsert(DeferralHeader: Record "Deferral Header"; var DeferralLine: record "Deferral Line")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnCalculateStraightlineOnBeforeDeferralLineInsert(var DeferralLine: Record "Deferral Line"; DeferralHeader: Record "Deferral Header")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnSetDeferralRecordsOnBeforeDeferralHeaderModify(var DeferralHeader: Record "Deferral Header")
     begin
     end;
 }

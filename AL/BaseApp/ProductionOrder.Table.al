@@ -703,8 +703,14 @@
     end;
 
     procedure TestNoSeries()
+    var
+        IsHandled: Boolean;
     begin
         MfgSetup.Get();
+        IsHandled := false;
+        OnBeforeTestNoSeries(Rec, MfgSetup, IsHandled);
+        if IsHandled then
+            exit;
 
         case Status of
             Status::Simulated:
@@ -732,9 +738,14 @@
         end;
     end;
 
-    procedure GetNoSeriesCode(): Code[20]
+    procedure GetNoSeriesCode() NoSeriesCode: Code[20]
+    var
+        IsHandled: Boolean;
     begin
         MfgSetup.Get();
+        OnBeforeGetNoSeriesCode(Rec, MfgSetup, NoSeriesCode, IsHandled);
+        if IsHandled then
+            exit(NoSeriesCode);
 
         case Status of
             Status::Simulated:
@@ -1037,20 +1048,34 @@
 
     local procedure GetDefaultBin()
     var
+        Item: Record Item;
         WMSManagement: Codeunit "WMS Management";
+        VersionManagement: Codeunit VersionManagement;
     begin
         "Bin Code" := '';
         if "Source Type" <> "Source Type"::Item then
             exit;
 
-        if "Location Code" <> '' then begin
-            GetLocation("Location Code");
-            if Location."Bin Mandatory" and not Location."Directed Put-away and Pick" then begin
-                "Bin Code" := Location."From-Production Bin Code";
-                if ("Bin Code" = '') and ("Source No." <> '') then
-                    WMSManagement.GetDefaultBin("Source No.", '', "Location Code", "Bin Code");
-            end;
-        end;
+        if "Location Code" = '' then
+            exit;
+
+        GetLocation("Location Code");
+        if not Location."Bin Mandatory" or Location."Directed Put-away and Pick" then
+            exit;
+
+        // 1st priority - output bin from work/machine center
+        if Item.Get("Source No.") and (Item."Routing No." <> '') then
+            "Bin Code" :=
+              WMSManagement.GetLastOperationFromBinCode(
+                Item."Routing No.", VersionManagement.GetRtngVersion(Item."Routing No.", "Due Date", true), "Location Code", false, 0);
+
+        // 2nd priority - default output bin at location
+        if "Bin Code" = '' then
+            "Bin Code" := Location."From-Production Bin Code";
+
+        // 3rd priority - default bin at location
+        if ("Bin Code" = '') and ("Source No." <> '') then
+            WMSManagement.GetDefaultBin("Source No.", '', "Location Code", "Bin Code");
     end;
 
     local procedure GetLocation(LocationCode: Code[10])
@@ -1315,6 +1340,11 @@
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnBeforeGetNoSeriesCode(var ProductionOrder: Record "Production Order"; MfgSetup: Record "Manufacturing Setup"; var NoSeriesCode: Code[20]; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnBeforeDeleteFnshdProdOrderRelations(var ProdOrder: Record "Production Order")
     begin
     end;
@@ -1376,6 +1406,11 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeRunCreatePickFromWhseSource(var ProductionOrder: Record "Production Order"; AssignedUserID: Code[50]; SortingMethod: Option; PrintDocument: Boolean; DoNotFillQtyToHandle: Boolean; SetBreakBulkFilter: Boolean; HideValidationDialog: Boolean; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeTestNoSeries(ProductionOrder: Record "Production Order"; MfgSetup: Record "Manufacturing Setup"; var IsHandled: Boolean)
     begin
     end;
 }

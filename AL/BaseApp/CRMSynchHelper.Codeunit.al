@@ -13,23 +13,26 @@ codeunit 5342 "CRM Synch. Helper"
         TempCRMUomschedule: Record "CRM Uomschedule" temporary;
         CRMProductName: Codeunit "CRM Product Name";
         CRMBaseCurrencyNotFoundInNAVErr: Label 'The currency with the ISO code ''%1'' cannot be found. Therefore, the exchange rate between ''%2'' and ''%3'' cannot be calculated.', Comment = '%1,%2,%3=the ISO code of a currency (example: DKK);';
-        DynamicsCRMTransactionCurrencyRecordNotFoundErr: Label 'Cannot find the currency with the value ''%1'' in Common Data Service.', Comment = '%1=the currency code';
-        DynamicsCRMUoMNotFoundInGroupErr: Label 'Cannot find any unit of measure inside the unit group ''%1'' in %2.', Comment = '%1=Unit Group Name, %2 = CDS service name';
-        DynamicsCRMUoMFoundMultipleInGroupErr: Label 'Multiple units of measure were found in the unit group ''%1'' in %2.', Comment = '%1=Unit Group Name, %2 = CDS service name';
+        DynamicsCRMTransactionCurrencyRecordNotFoundErr: Label 'Cannot find the currency with the value ''%1'' in Dataverse.', Comment = '%1=the currency code';
+        DynamicsCRMUoMNotFoundInGroupErr: Label 'Cannot find any units of measure inside the unit group ''%1'' in %2.', Comment = '%1=Unit Group Name, %2 = Dataverse service name';
+        DynamicsCRMUoMFoundMultipleInGroupErr: Label 'Multiple units of measure were found in the unit group ''%1'' in %2.', Comment = '%1=Unit Group Name, %2 = Dataverse service name';
         IncorrectCRMUoMNameErr: Label 'The unit of measure in the unit group ''%1'' has an incorrect name: expected name ''%2'', found name ''%3''.', Comment = '%1=Unit Group name (ex: NAV PIECE), %2=Expected name (ex: PIECE), %3=Actual name (ex: BOX)';
         IncorrectCRMUoMQuantityErr: Label 'The quantity on the unit of measure ''%1'' should be 1.', Comment = '%1=unit of measure name (ex: PIECE).';
-        DynamicsCRMUomscheduleNotFoundErr: Label 'Cannot find the unit group ''%1'' in %2.', Comment = '%1 = unit group name, %2 = CDS service name';
+        DynamicsCRMUomscheduleNotFoundErr: Label 'Cannot find the unit group ''%1'' in %2.', Comment = '%1 = unit group name, %2 = Dataverse service name';
         IncorrectCRMUoMStatusErr: Label 'The unit of measure ''%1'' is not the base unit of measure of the unit group ''%2''.', Comment = '%1=value of the unit of measure, %2=value of the unit group';
         InvalidDestinationRecordNoErr: Label 'Invalid destination record number.';
         NavTxt: Label 'NAV', Locked = true;
         RecordMustBeCoupledErr: Label '%1 %2 must be coupled to a %3 record.', Comment = '%1 = table caption, %2 = primary key value, %3 = CRM Table caption';
         RecordNotFoundErr: Label '%1 could not be found in %2.', Comment = '%1=value;%2=table name in which the value was searched';
-        CanOnlyUseSystemUserOwnerTypeErr: Label 'Only %1 Owner of Type SystemUser can be mapped to Salespeople.', Comment = 'CDS entity owner property can be of type team or systemuser. Only the type systemuser is supported. %1 = CDS service name';
+        CanOnlyUseSystemUserOwnerTypeErr: Label 'You can only map %1 owners of the SystemUser type to salespeople.', Comment = 'Dataverse entity owner property can be of type team or systemuser. Only the type systemuser is supported. %1 = Dataverse service name';
         DefaultNAVPriceListNameTxt: Label '%1 Default Price List', Comment = '%1 - product name';
         BaseCurrencyIsNullErr: Label 'The base currency is not defined. Disable and enable CRM connection to initialize setup properly.';
         CurrencyPriceListNameTxt: Label 'Price List in %1', Comment = '%1 - currency code';
         UnableToFindPageForRecordErr: Label 'Unable to find a page for record %1.', Comment = '%1 ID of the record';
         MappingMustBeSetForGUIDFieldErr: Label 'Table %1 must be mapped to table %2 to transfer value between fields %3  and %4.', Comment = '%1 and %2 are table IDs, %3 and %4 are field captions.';
+        CategoryTok: Label 'AL Dataverse Integration', Locked = true;
+        SetContactParentCompanyTxt: Label 'Setting contact parent company.', Locked = true;
+        SetContactParentCompanySuccessfulTxt: Label 'Set contact parent company successfuly. Company No.: %1', Locked = true, Comment = '%1 = parent company no.';
 
     procedure ClearCache()
     begin
@@ -217,39 +220,41 @@ codeunit 5342 "CRM Synch. Helper"
             Error(RecordMustBeCoupledErr, Currency.TableCaption(), CurrencyCode, CRMTransactioncurrency.TableCaption());
     end;
 
-    local procedure FindContactByAccountId(var Contact: Record Contact; AccountId: Guid): Boolean
+    local procedure FindContactByAccountId(var Contact: Record Contact; AccountId: Guid; var OutOfMapFilter: Boolean): Boolean
     var
         IsVendorsSyncEnabled: Boolean;
+        CustomerOutOfMapFilter: Boolean;
+        VendorOutOfMapFilter: Boolean;
     begin
-        if FindCustomersContactByAccountId(Contact, AccountId) then
+        if FindCustomersContactByAccountId(Contact, AccountId, CustomerOutOfMapFilter) then
             exit(true);
 
         OnGetVendorSyncEnabled(IsVendorsSyncEnabled);
         if IsVendorsSyncEnabled then
-            if FindVendorsContactByAccountId(Contact, AccountId) then
+            if FindVendorsContactByAccountId(Contact, AccountId, VendorOutOfMapFilter) then
                 exit(true);
 
+        OutOfMapFilter := CustomerOutOfMapFilter or VendorOutOfMapFilter;
         exit(false);
     end;
 
-    local procedure FindCustomersContactByAccountId(var Contact: Record Contact; AccountId: Guid): Boolean
+    local procedure FindCustomersContactByAccountId(var Contact: Record Contact; AccountId: Guid; var OutOfMapFilter: Boolean): Boolean
     var
         ContactBusinessRelation: Record "Contact Business Relation";
         CRMIntegrationRecord: Record "CRM Integration Record";
         Customer: Record Customer;
         CustomerRecordID: RecordID;
-        OutOfMapFilter: Boolean;
     begin
         if IsNullGuid(AccountId) then
             exit(false);
 
-        if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, DATABASE::Customer, CustomerRecordID) then
-            if SynchRecordIfMappingExists(DATABASE::"CRM Account", AccountId, OutOfMapFilter) then begin
-                if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, DATABASE::Customer, CustomerRecordID) then
+        if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, Database::Customer, CustomerRecordID) then
+            if SynchRecordIfMappingExists(Database::Customer, Database::"CRM Account", AccountId, OutOfMapFilter) then begin
+                if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, Database::Customer, CustomerRecordID) then
                     exit(false);
             end else
                 if OutOfMapFilter then
-                    exit(true);
+                    exit(false);
 
         if Customer.Get(CustomerRecordID) then begin
             ContactBusinessRelation.SetCurrentKey("Link to Table", "No.");
@@ -258,26 +263,27 @@ codeunit 5342 "CRM Synch. Helper"
             if ContactBusinessRelation.FindFirst() then
                 exit(Contact.Get(ContactBusinessRelation."Contact No."));
         end;
+
+        exit(false);
     end;
 
-    local procedure FindVendorsContactByAccountId(var Contact: Record Contact; AccountId: Guid): Boolean
+    local procedure FindVendorsContactByAccountId(var Contact: Record Contact; AccountId: Guid; var OutOfMapFilter: Boolean): Boolean
     var
         ContactBusinessRelation: Record "Contact Business Relation";
         CRMIntegrationRecord: Record "CRM Integration Record";
         Vendor: Record Vendor;
         VendorRecordID: RecordID;
-        OutOfMapFilter: Boolean;
     begin
         if IsNullGuid(AccountId) then
             exit(false);
 
-        if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, DATABASE::Vendor, VendorRecordID) then
-            if SynchRecordIfMappingExists(DATABASE::"CRM Account", AccountId, OutOfMapFilter) then begin
-                if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, DATABASE::Vendor, VendorRecordID) then
+        if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, Database::Vendor, VendorRecordID) then
+            if SynchRecordIfMappingExists(Database::Vendor, Database::"CRM Account", AccountId, OutOfMapFilter) then begin
+                if not CRMIntegrationRecord.FindRecordIDFromID(AccountId, Database::Vendor, VendorRecordID) then
                     exit(false);
             end else
                 if OutOfMapFilter then
-                    exit(true);
+                    exit(false);
 
         if Vendor.Get(VendorRecordID) then begin
             ContactBusinessRelation.SetCurrentKey("Link to Table", "No.");
@@ -286,6 +292,8 @@ codeunit 5342 "CRM Synch. Helper"
             if ContactBusinessRelation.FindFirst() then
                 exit(Contact.Get(ContactBusinessRelation."Contact No."));
         end;
+
+        exit(false);
     end;
 
     procedure FindNAVLocalCurrencyInCRM(var CRMTransactioncurrency: Record "CRM Transactioncurrency"): Guid
@@ -478,18 +486,53 @@ codeunit 5342 "CRM Synch. Helper"
         CompanyContact: Record Contact;
         DestinationFieldRef: FieldRef;
         Result: Boolean;
+        OutOfMapFilter: Boolean;
     begin
+        Session.LogMessage('0000ECD', SetContactParentCompanyTxt, Verbosity::Normal, DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, 'Category', CategoryTok);
         if DestinationContactRecordRef.Number() <> DATABASE::Contact then
             Error(InvalidDestinationRecordNoErr);
 
-        Result := FindContactByAccountId(CompanyContact, AccountID);
+        Result := FindContactByAccountId(CompanyContact, AccountID, OutOfMapFilter);
         DestinationFieldRef := DestinationContactRecordRef.Field(CompanyContact.FieldNo("Company No."));
         DestinationFieldRef.Value := CompanyContact."No.";
         DestinationFieldRef := DestinationContactRecordRef.Field(CompanyContact.FieldNo("Company Name"));
         DestinationFieldRef.Value := CompanyContact.Name;
-        exit(Result);
+        Session.LogMessage('0000ECI', StrSubstNo(SetContactParentCompanySuccessfulTxt, CompanyContact."No."), Verbosity::Normal, DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, 'Category', CategoryTok);
+        exit(Result or OutOfMapFilter);
     end;
 
+    [Scope('Cloud')]
+    procedure SynchRecordIfMappingExists(TableNo: Integer; IntegrationTableNo: Integer; PrimaryKey: Variant): Boolean
+    var
+        OutOfMapFilter: Boolean;
+    begin
+        exit(SynchRecordIfMappingExists(TableNo, IntegrationTableNo, PrimaryKey, OutOfMapFilter));
+    end;
+
+    [Scope('Cloud')]
+    procedure SynchRecordIfMappingExists(TableNo: Integer; IntegrationTableNo: Integer; PrimaryKey: Variant; var OutOfMapFilter: Boolean): Boolean
+    var
+        IntegrationTableMapping: Record "Integration Table Mapping";
+        IntegrationSynchJob: Record "Integration Synch. Job";
+        CRMIntegrationTableSynch: Codeunit "CRM Integration Table Synch.";
+        NewJobEntryId: Guid;
+    begin
+        if IntegrationTableMapping.FindMapping(TableNo, IntegrationTableNo) then begin
+            NewJobEntryId := CRMIntegrationTableSynch.SynchRecord(IntegrationTableMapping, PrimaryKey, true, false);
+            OutOfMapFilter := CRMIntegrationTableSynch.GetOutOfMapFilter();
+        end;
+
+        if IsNullGuid(NewJobEntryId) then
+            exit(false);
+        if IntegrationSynchJob.Get(NewJobEntryId) then
+            exit(
+              (IntegrationSynchJob.Inserted > 0) or
+              (IntegrationSynchJob.Modified > 0) or
+              (IntegrationSynchJob.Unchanged > 0));
+    end;
+
+#if not CLEAN18
+    [Obsolete('Use another implementation of SynchRecordIfMappingExists', '18.0')]
     procedure SynchRecordIfMappingExists(TableNo: Integer; PrimaryKey: Variant; var OutOfMapFilter: Boolean): Boolean
     var
         IntegrationTableMapping: Record "Integration Table Mapping";
@@ -510,6 +553,7 @@ codeunit 5342 "CRM Synch. Helper"
               (IntegrationSynchJob.Modified > 0) or
               (IntegrationSynchJob.Unchanged > 0));
     end;
+#endif
 
     procedure UpdateCRMCurrencyIdIfChanged(CurrencyCode: Text; var DestinationCurrencyIDFieldRef: FieldRef): Boolean
     begin
@@ -850,11 +894,8 @@ codeunit 5342 "CRM Synch. Helper"
         DestinationFieldRef: FieldRef;
         CRMSystemUserID: Guid;
         CurrentOptionValue: Integer;
-        OutOfMapFilter: Boolean;
     begin
-        IntegrationTableMapping.SetRange("Table ID", DATABASE::"Salesperson/Purchaser");
-        IntegrationTableMapping.SetRange("Integration Table ID", DATABASE::"CRM Systemuser");
-        if IntegrationTableMapping.IsEmpty() then
+        if not IntegrationTableMapping.FindMapping(Database::"Salesperson/Purchaser", Database::"CRM Systemuser") then
             exit(false); // There are no mapping for salepeople to SystemUsers
 
         SourceFieldRef := SourceRecordRef.Field(SourceOwnerTypeFieldNo);
@@ -871,10 +912,10 @@ codeunit 5342 "CRM Synch. Helper"
 
         DestinationFieldRef := DestinationRecordRef.Field(DestinationSalesPersonCodeFieldNo);
 
-        if not CRMIntegrationRecord.FindRecordIDFromID(CRMSystemUserID, DATABASE::"Salesperson/Purchaser", SalesPersonRecordID) then begin
-            if not SynchRecordIfMappingExists(DATABASE::"CRM Systemuser", CRMSystemUserID, OutOfMapFilter) then
+        if not CRMIntegrationRecord.FindRecordIDFromID(CRMSystemUserID, Database::"Salesperson/Purchaser", SalesPersonRecordID) then begin
+            if not SynchRecordIfMappingExists(Database::"Salesperson/Purchaser", Database::"CRM Systemuser", CRMSystemUserID) then
                 exit(false);
-            if not CRMIntegrationRecord.FindRecordIDFromID(CRMSystemUserID, DATABASE::"Salesperson/Purchaser", SalesPersonRecordID) then
+            if not CRMIntegrationRecord.FindRecordIDFromID(CRMSystemUserID, Database::"Salesperson/Purchaser", SalesPersonRecordID) then
                 exit(false);
         end;
 
@@ -1207,6 +1248,7 @@ codeunit 5342 "CRM Synch. Helper"
         DestinationRecRef := DestinationFieldRef.Record();
         IntegrationTableMapping.SetRange("Table ID", SourceRecRef.Number());
         IntegrationTableMapping.SetRange("Integration Table ID", DestinationRecRef.Number());
+        IntegrationTableMapping.SetRange("Delete After Synchronization", false);
         exit(IntegrationTableMapping.FindFirst());
     end;
 

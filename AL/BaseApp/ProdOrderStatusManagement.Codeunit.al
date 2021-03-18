@@ -67,13 +67,7 @@
             ErrorIfUnableToClearWIP(ProdOrder);
             TransProdOrder(ProdOrder);
 
-            InvtSetup.Get();
-            if InvtSetup."Automatic Cost Adjustment" <>
-               InvtSetup."Automatic Cost Adjustment"::Never
-            then begin
-                InvtAdjmt.SetProperties(true, InvtSetup."Automatic Cost Posting");
-                InvtAdjmt.MakeMultiLevelAdjmt;
-            end;
+            MakeMultiLevelAdjmt(ProdOrder);
 
             WhseProdRelease.FinishedDelete(ProdOrder);
             WhseOutputProdRelease.FinishedDelete(ProdOrder);
@@ -87,6 +81,24 @@
         Commit();
 
         Clear(InvtAdjmt);
+    end;
+
+    local procedure MakeMultiLevelAdjmt(ProdOrder: Record "Production Order")
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeMakeMultiLevelAdjmt(ProdOrder, IsHandled);
+        if IsHandled then
+            exit;
+
+        InvtSetup.Get();
+        if InvtSetup."Automatic Cost Adjustment" <>
+           InvtSetup."Automatic Cost Adjustment"::Never
+        then begin
+            InvtAdjmt.SetProperties(true, InvtSetup."Automatic Cost Posting");
+            InvtAdjmt.MakeMultiLevelAdjmt;
+        end;
     end;
 
     local procedure TransProdOrder(var FromProdOrder: Record "Production Order")
@@ -124,6 +136,7 @@
             ToProdOrder."Starting Date" := "Starting Date";
             ToProdOrder."Ending Time" := "Ending Time";
             ToProdOrder."Ending Date" := "Ending Date";
+            ToProdOrder.UpdateDatetime();
             ToProdOrder."Due Date" := "Due Date";
             ToProdOrder."Shortcut Dimension 1 Code" := "Shortcut Dimension 1 Code";
             ToProdOrder."Shortcut Dimension 2 Code" := "Shortcut Dimension 2 Code";
@@ -463,7 +476,6 @@
         ProdOrderLine: Record "Prod. Order Line";
         ProdOrderRtngLine: Record "Prod. Order Routing Line";
         ProdOrderComp: Record "Prod. Order Component";
-        ItemJnlPostLine: Codeunit "Item Jnl.-Post Line";
         ItemTrackingMgt: Codeunit "Item Tracking Management";
         Window: Dialog;
         QtyToPost: Decimal;
@@ -535,15 +547,14 @@
                         QtyToPost := GetNeededQty(0, false);
 
                     OnAfterCalculateQtyToPost(ProdOrderComp, QtyToPost);
-                    QtyToPost := UOMMgt.RoundToItemRndPrecision(QtyToPost, Item."Rounding Precision");
+                    RoundQtyToPost(ProdOrderComp, Item, QtyToPost);
 
                     if QtyToPost <> 0 then begin
                         InitItemJnlLineFromProdOrderComp(ItemJnlLine, ProdOrder, ProdOrderLine, ProdOrderComp, PostingDate, QtyToPost);
                         ItemJnlLine."Gen. Prod. Posting Group" := Item."Gen. Prod. Posting Group";
                         if Item."Item Tracking Code" <> '' then
                             ItemTrackingMgt.CopyItemTracking(RowID1, ItemJnlLine.RowID1, false);
-                        OnBeforePostFlushItemJnlLine(ItemJnlLine);
-                        ItemJnlPostLine.Run(ItemJnlLine);
+                        PostFlushItemJnlLine(ItemJnlLine);
                     end;
                 until Next = 0;
                 Window.Close;
@@ -551,11 +562,22 @@
         end;
     end;
 
+    local procedure RoundQtyToPost(ProdOrderComp: Record "Prod. Order Component"; Item: Record Item; var QtyToPost: Decimal)
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeRoundQtyToPost(ProdOrderComp, QtyToPost, IsHandled);
+        if IsHandled then
+            exit;
+
+        QtyToPost := UOMMgt.RoundToItemRndPrecision(QtyToPost, Item."Rounding Precision");
+    end;
+
     local procedure FlushProdOrderProcessProdOrderRtngLine(ProdOrder: Record "Production Order"; ProdOrderLine: Record "Prod. Order Line"; var ProdOrderRtngLine: Record "Prod. Order Routing Line"; PostingDate: Date)
     var
         ItemJnlLine: Record "Item Journal Line";
         CostCalcMgt: Codeunit "Cost Calculation Management";
-        ItemJnlPostLine: Codeunit "Item Jnl.-Post Line";
         IsLastOperation: Boolean;
         ActualOutputAndScrapQty: Decimal;
         ActualOutputAndScrapQtyBase: Decimal;
@@ -607,8 +629,7 @@
                     OnAfterUpdateGlobalDim(ItemJnlLine, ProdOrderRtngLine, ProdOrderLine);
                     if IsLastOperation then
                         ReserveProdOrderLine.TransferPOLineToItemJnlLine(ProdOrderLine, ItemJnlLine, ItemJnlLine."Output Quantity (Base)");
-                    OnBeforePostFlushItemJnlLine(ItemJnlLine);
-                    ItemJnlPostLine.RunWithCheck(ItemJnlLine);
+                    PostFlushItemJnlLine(ItemJnlLine);
                 end;
 
                 if (ProdOrderRtngLine."Flushing Method" = ProdOrderRtngLine."Flushing Method"::Backward) and IsLastOperation then begin
@@ -618,6 +639,19 @@
                 end;
             until ProdOrderRtngLine.Next() = 0;
         end;
+    end;
+
+    local procedure PostFlushItemJnlLine(var ItemJnlLine: Record "Item Journal Line")
+    var
+        ItemJnlPostLine: Codeunit "Item Jnl.-Post Line";
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforePostFlushItemJnlLine(ItemJnlLine, IsHandled);
+        if IsHandled then
+            exit;
+
+        ItemJnlPostLine.RunWithCheck(ItemJnlLine);
     end;
 
     local procedure InitItemJnlLineFromProdOrderLine(var ItemJnlLine: Record "Item Journal Line"; ProdOrder: Record "Production Order"; ProdOrderLine: Record "Prod. Order Line"; ProdOrderRoutingLine: Record "Prod. Order Routing Line"; PostingDate: Date)
@@ -1030,7 +1064,17 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforePostFlushItemJnlLine(var ItemJournalLine: Record "Item Journal Line")
+    local procedure OnBeforeMakeMultiLevelAdjmt(var ProductionOrder: Record "Production Order"; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforePostFlushItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeRoundQtyToPost(ProdOrderComponent: Record "Prod. Order Component"; var QtyToPost: Decimal; var IsHandled: Boolean)
     begin
     end;
 
@@ -1070,7 +1114,7 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnCopyFromProdOrderComp(var ToProdOrderComp: Record "Prod. Order Component"; FromProdOrderComp: Record "Prod. Order Component")
+    local procedure OnCopyFromProdOrderComp(var ToProdOrderComp: Record "Prod. Order Component"; var FromProdOrderComp: Record "Prod. Order Component")
     begin
     end;
 

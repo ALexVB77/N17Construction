@@ -1,4 +1,4 @@
-codeunit 104000 "Upgrade - BaseApp"
+﻿codeunit 104000 "Upgrade - BaseApp"
 {
     Subtype = Upgrade;
 
@@ -42,6 +42,7 @@ codeunit 104000 "Upgrade - BaseApp"
         UpgradeSearchEmail();
         UpgradeEmailLogging();
         UpgradeIntegrationTableMapping();
+        UpgradeIntegrationFieldMappingForContacts();
         UpgradeWorkflowStepArgumentEventFilters();
 
         UpgradeAPIs();
@@ -49,7 +50,24 @@ codeunit 104000 "Upgrade - BaseApp"
         UpgradePurchaseRcptLineOverReceiptCode();
         UpgradeGenJnlLineArchive();
         UpgradePostCodeServiceKey();
-	UpgradeIntrastatJnlLine();
+	    UpgradeIntrastatJnlLine();
+        UpgradeDimensionSetEntry();
+        UpgradeUserTaskDescriptionToUTF8();
+
+        UpdateWorkflowTableRelations();
+    end;
+
+    local procedure UpdateWorkflowTableRelations()
+    var
+        WorkflowWebhookEvents: Codeunit "Workflow Webhook Events";
+        UpgradeTag: Codeunit "Upgrade Tag";
+        UpgradeTagDefinitions: Codeunit "Upgrade Tag Definitions";
+    begin
+        if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetRemoveOldWorkflowTableRelationshipRecordsTag()) then
+            exit;
+
+        // SetTag is in the method
+        WorkflowWebhookEvents.CleanupOldIntegrationIdsTableRelation();
     end;
 
     local procedure SetReviewRequiredOnBankPmtApplRules()
@@ -293,11 +311,13 @@ codeunit 104000 "Upgrade - BaseApp"
         UpgradeSalesCrMemoEntityBuffer;
         UpgradeSalesOrderShipmentMethod;
         UpgradeSalesCrMemoShipmentMethod;
+        UpgradeSalesShipmentLineDocumentId();
         UpdateItemVariants();
         UpgradeDefaultDimensions();
         UpgradeDimensionValues();
         UpgradeGLAccountAPIType();
         UpgradeInvoicesCreatedFromOrders();
+        UpgradePurchRcptLineDocumentId();
     end;
 
     local procedure CreateTimeSheetDetailsIds()
@@ -314,6 +334,30 @@ codeunit 104000 "Upgrade - BaseApp"
         UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetTimeRegistrationUpgradeTag());
     end;
 
+    local procedure UpgradeSalesShipmentLineDocumentId()
+    var
+        SalesShipmentHeader: Record "Sales Shipment Header";
+        SalesShipmentLine: Record "Sales Shipment Line";
+        UpgradeTagDefinitions: Codeunit "Upgrade Tag Definitions";
+        UpgradeTag: Codeunit "Upgrade Tag";
+        EnvironmentInformation: codeunit "Environment Information";
+    begin
+        if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetNewSalesShipmentLineUpgradeTag()) then
+            exit;
+
+        if EnvironmentInformation.IsSaaS() then
+            if SalesShipmentLine.Count() > GetSafeRecordCountForSaaSUpgrade() then
+                exit;
+
+        SalesShipmentHeader.SetLoadFields(SalesShipmentHeader."No.", SalesShipmentHeader.SystemId);
+        if SalesShipmentHeader.FindSet() then
+            repeat
+                SalesShipmentLine.SetRange("Document No.", SalesShipmentHeader."No.");
+                SalesShipmentLine.ModifyAll("Document Id", SalesShipmentHeader.SystemId);
+            until SalesShipmentHeader.Next() = 0;
+
+        UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetNewSalesShipmentLineUpgradeTag());
+    end;
 
     local procedure UpgradeSalesInvoiceEntityAggregate()
     var
@@ -1211,6 +1255,46 @@ codeunit 104000 "Upgrade - BaseApp"
         UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetIntegrationTableMappingUpgradeTag());
     end;
 
+    local procedure UpgradeIntegrationFieldMappingForContacts()
+    var
+        IntegrationTableMapping: Record "Integration Table Mapping";
+        IntegrationFieldMapping: Record "Integration Field Mapping";
+        TempContact: Record Contact temporary;
+        UpgradeTag: Codeunit "Upgrade Tag";
+        UpgradeTagDefinitions: Codeunit "Upgrade Tag Definitions";
+    begin
+        if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetIntegrationFieldMappingForContactsUpgradeTag()) then
+            exit;
+
+        IntegrationTableMapping.SetRange(Name, GetContactIntegrationTableMappingName());
+        IntegrationTableMapping.SetRange("Table ID", Database::Contact);
+        IntegrationTableMapping.SetRange("Integration Table ID", Database::"CRM Contact");
+        if IntegrationTableMapping.FindFirst() then begin
+            IntegrationFieldMapping.SetRange("Integration Table Mapping Name", IntegrationTableMapping.Name);
+            IntegrationFieldMapping.SetRange("Field No.", TempContact.FieldNo(Type));
+            IntegrationFieldMapping.SetRange("Integration Table Field No.", 0);
+            IntegrationFieldMapping.SetRange(Direction, IntegrationFieldMapping.Direction::FromIntegrationTable);
+            IntegrationFieldMapping.SetRange("Transformation Direction", IntegrationFieldMapping."Transformation Direction"::FromIntegrationTable);
+            IntegrationFieldMapping.SetFilter("Constant Value", '<>%1', GetContactTypeFieldMappingConstantValue());
+            if IntegrationFieldMapping.FindFirst() then begin
+                IntegrationFieldMapping."Constant Value" := CopyStr(GetContactTypeFieldMappingConstantValue(), 1, MaxStrLen(IntegrationFieldMapping."Constant Value"));
+                IntegrationFieldMapping.Modify();
+            end;
+        end;
+
+        UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetIntegrationFieldMappingForContactsUpgradeTag());
+    end;
+
+    local procedure GetContactIntegrationTableMappingName(): Text
+    begin
+        exit('CONTACT');
+    end;
+
+    local procedure GetContactTypeFieldMappingConstantValue(): Text
+    begin
+        exit('Person');
+    end;
+
     local procedure UpgradeWorkflowStepArgumentEventFilters()
     var
         WorkflowStepArgument: Record "Workflow Step Argument";
@@ -1221,13 +1305,13 @@ codeunit 104000 "Upgrade - BaseApp"
         if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.WorkflowStepArgumentUpgradeTag()) then
             exit;
 
-        ChangeEncodingToUTF8(Database::"Workflow Step Argument", WorkflowStepArgument.FieldNo("Event Conditions"));
-        ChangeEncodingToUTF8(Database::"Workflow Step Argument Archive", WorkflowStepArgumentArchive.FieldNo("Event Conditions"));
+        ChangeEncodingToUTF8(Database::"Workflow Step Argument", WorkflowStepArgument.FieldNo("Event Conditions"), TextEncoding::MSDos);
+        ChangeEncodingToUTF8(Database::"Workflow Step Argument Archive", WorkflowStepArgumentArchive.FieldNo("Event Conditions"), TextEncoding::MSDos);
 
         UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.WorkflowStepArgumentUpgradeTag());
     end;
 
-    local procedure ChangeEncodingToUTF8(TableNo: Integer; FieldNo: Integer)
+    local procedure ChangeEncodingToUTF8(TableNo: Integer; FieldNo: Integer; FromEncoding: TextEncoding)
     var
         InTempBlob, OutTempBlob : Codeunit "Temp Blob";
         RecordRef: RecordRef;
@@ -1245,8 +1329,8 @@ codeunit 104000 "Upgrade - BaseApp"
                 InTempBlob.FromRecordRef(RecordRef, FieldNo);
 
                 if InTempBlob.HasValue() then begin
-                    // Read the value using the default encoding
-                    InTempBlob.CreateInStream(InStr);
+                    // Read the value using the given encoding
+                    InTempBlob.CreateInStream(InStr, FromEncoding);
                     InStr.Read(Value);
 
                     // Write the value in UTF8
@@ -1513,6 +1597,33 @@ codeunit 104000 "Upgrade - BaseApp"
         UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetGenJnlLineArchiveUpgradeTag());
     end;
 
+    local procedure UpgradePurchRcptLineDocumentId()
+    var
+        PurchRcptHeader: Record "Purch. Rcpt. Header";
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        UpgradeTagDefinitions: Codeunit "Upgrade Tag Definitions";
+        UpgradeTag: Codeunit "Upgrade Tag";
+        EnvironmentInformation: codeunit "Environment Information";
+    begin
+        if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetNewPurchRcptLineUpgradeTag()) then
+            exit;
+
+        if EnvironmentInformation.IsSaaS() then
+            if PurchRcptLine.Count() > GetSafeRecordCountForSaaSUpgrade() then
+                exit;
+
+        PurchRcptHeader.SetLoadFields(PurchRcptHeader."No.", PurchRcptHeader.SystemId);
+        if PurchRcptHeader.FindSet() then
+            repeat
+                PurchRcptLine.SetRange("Document No.", PurchRcptHeader."No.");
+                PurchRcptLine.ModifyAll("Document Id", PurchRcptHeader.SystemId);
+            until PurchRcptHeader.Next() = 0;
+
+        UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetNewPurchRcptLineUpgradeTag());
+    end;
+
+        
+
     local procedure UpgradePostCodeServiceKey()
     var
         PostCodeServiceConfig: Record "Postcode Service Config";
@@ -1546,19 +1657,77 @@ codeunit 104000 "Upgrade - BaseApp"
         UpgradeTagDefinitions: Codeunit "Upgrade Tag Definitions";
         UpgradeTag: Codeunit "Upgrade Tag";
     begin
-      if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetIntrastatJnlLinePartnerIDUpgradeTag) THEN
-        exit;
+        if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetIntrastatJnlLinePartnerIDUpgradeTag) THEN
+            exit;
 
-      IntrastatJnlLine.SetRange(Type,IntrastatJnlLine.Type::Shipment);
-      if IntrastatJnlLine.FindSet() then
-        repeat
-          IntrastatJnlLine."Country/Region of Origin Code" := IntrastatJnlLine.GetCountryOfOriginCode();
-          IntrastatJnlLine."Partner VAT ID" := IntrastatJnlLine.GetPartnerID();
-          IntrastatJnlLine.Modify();
-        until IntrastatJnlLine.Next() = 0;
+        IntrastatJnlLine.SetRange(Type, IntrastatJnlLine.Type::Shipment);
+        if IntrastatJnlLine.FindSet() then
+            repeat
+                IntrastatJnlLine."Country/Region of Origin Code" := IntrastatJnlLine.GetCountryOfOriginCode();
+                IntrastatJnlLine."Partner VAT ID" := IntrastatJnlLine.GetPartnerID();
+                IntrastatJnlLine.Modify();
+            until IntrastatJnlLine.Next() = 0;
 
-      UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetIntrastatJnlLinePartnerIDUpgradeTag);
+        UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetIntrastatJnlLinePartnerIDUpgradeTag);
     end;
 
+    local procedure UpgradeDimensionSetEntry()
+    var
+        GeneralLedgerSetup: Record "General Ledger Setup";
+        DimensionSetEntry: Record "Dimension Set Entry";
+        UpgradeTagDefinitions: Codeunit "Upgrade Tag Definitions";
+        UpgradeTag: Codeunit "Upgrade Tag";
+    begin
+        if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetDimensionSetEntryUpgradeTag()) THEN
+            exit;
+
+        if GeneralLedgerSetup.Get() then begin
+            if GeneralLedgerSetup."Shortcut Dimension 3 Code" <> '' then begin
+                DimensionSetEntry.SetRange("Dimension Code", GeneralLedgerSetup."Shortcut Dimension 3 Code");
+                DimensionSetEntry.ModifyAll("Global Dimension No.", 3);
+            end;
+            if GeneralLedgerSetup."Shortcut Dimension 4 Code" <> '' then begin
+                DimensionSetEntry.SetRange("Dimension Code", GeneralLedgerSetup."Shortcut Dimension 4 Code");
+                DimensionSetEntry.ModifyAll("Global Dimension No.", 4);
+            end;
+            if GeneralLedgerSetup."Shortcut Dimension 5 Code" <> '' then begin
+                DimensionSetEntry.SetRange("Dimension Code", GeneralLedgerSetup."Shortcut Dimension 5 Code");
+                DimensionSetEntry.ModifyAll("Global Dimension No.", 5);
+            end;
+            if GeneralLedgerSetup."Shortcut Dimension 6 Code" <> '' then begin
+                DimensionSetEntry.SetRange("Dimension Code", GeneralLedgerSetup."Shortcut Dimension 6 Code");
+                DimensionSetEntry.ModifyAll("Global Dimension No.", 6);
+            end;
+            if GeneralLedgerSetup."Shortcut Dimension 7 Code" <> '' then begin
+                DimensionSetEntry.SetRange("Dimension Code", GeneralLedgerSetup."Shortcut Dimension 7 Code");
+                DimensionSetEntry.ModifyAll("Global Dimension No.", 7);
+            end;
+            if GeneralLedgerSetup."Shortcut Dimension 8 Code" <> '' then begin
+                DimensionSetEntry.SetRange("Dimension Code", GeneralLedgerSetup."Shortcut Dimension 8 Code");
+                DimensionSetEntry.ModifyAll("Global Dimension No.", 8);
+            end;
+        end;
+
+        UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetDimensionSetEntryUpgradeTag());
+    end;
+
+    local procedure UpgradeUserTaskDescriptionToUTF8()
+    var
+        UserTask: Record "User Task";
+        UpgradeTagDefinitions: Codeunit "Upgrade Tag Definitions";
+        UpgradeTag: Codeunit "Upgrade Tag";
+    begin
+        if UpgradeTag.HasUpgradeTag(UpgradeTagDefinitions.GetUserTaskDescriptionToUTF8UpgradeTag()) THEN
+            exit;
+
+        ChangeEncodingToUTF8(Database::"User Task", UserTask.FieldNo(Description), TextEncoding::Windows);
+
+        UpgradeTag.SetUpgradeTag(UpgradeTagDefinitions.GetUserTaskDescriptionToUTF8UpgradeTag());
+    end;
+
+    local procedure GetSafeRecordCountForSaaSUpgrade(): Integer
+    begin
+        exit(300000);
+    end;
 }
 

@@ -1,3 +1,5 @@
+#ServerInstance
+$serverInstance = "BC170"
 #Path
 $rootDirPath = "C:\Users\alpopov\AL\N17Construction"
 
@@ -30,7 +32,7 @@ $quietExecution = Import-Module ".\Modules\AppAdminTool.psm1"
 cd $homeDir
 
 try {
-    RepublishExtension -ServerInstanceName "BonavaDev" -ApplicationName "GeneralExt" -ApplicationPath ".\Default publisher_GeneralExt_1.0.0.0.app"
+    RepublishExtension -ServerInstanceName $serverInstance -ApplicationName "GeneralExt" -ApplicationPath ".\Default publisher_GeneralExt_1.0.0.0.app"
     Write-Output "General Extension has been republished successfully."
 } catch {
     Exit

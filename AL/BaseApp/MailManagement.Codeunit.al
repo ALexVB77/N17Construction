@@ -1,4 +1,4 @@
-codeunit 9520 "Mail Management"
+﻿codeunit 9520 "Mail Management"
 {
     EventSubscriberInstance = Manual;
 
@@ -81,6 +81,7 @@ codeunit 9520 "Mail Management"
         RecipientStringToList(TempEmailItem."Send BCC", BccList);
 
         Message.Create(ToList, TempEmailItem.Subject, TempEmailItem.GetBodyText(), true, CcList, BccList);
+        OnSendViaEmailModuleOnAfterCreateMessage(Message, TempEmailItem);
 
         TempEmailItem.GetAttachments(Attachments, AttachmentNames);
         for Index := 1 to Attachments.Count() do begin
@@ -90,6 +91,7 @@ codeunit 9520 "Mail Management"
         end;
 
         Session.LogMessage('0000CTW', StrSubstNo(EmailScenarioMsg, Format(CurrentEmailScenario)), Verbosity::Normal, DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, 'Category', EmailManagementCategoryTxt, 'EmailMessageID', Message.GetId());
+        OnSendViaEmailModuleOnAfterAddAttachments(Message, TempEmailItem);
 
         ClearLastError();
         Cancelled := false;
@@ -139,7 +141,7 @@ codeunit 9520 "Mail Management"
 
         if SMTPMail.CreateMessage(TempEmailItem."From Name", TempEmailItem."From Address", SendToList, TempEmailItem.Subject, TempEmailItem.GetBodyText(), HtmlFormated) then begin
             OnSendViaSMTPOnBeforeSMTPMailAddAttachment(TempEmailItem, SMTPMail);
-            
+
             TempEmailItem.GetAttachments(Attachments, AttachmentNames);
             for Index := 1 to Attachments.Count() do begin
                 Attachments.Get(Index, Attachment);
@@ -316,6 +318,7 @@ codeunit 9520 "Mail Management"
         ParmEmailItem.GetAttachments(Attachments, AttachmentNames);
         TempEmailItem := ParmEmailItem;
         TempEmailItem.SetAttachments(Attachments, AttachmentNames);
+        OnSendOnBeforeQualifyFromAddress(TempEmailItem, EmailScenario);
         QualifyFromAddress(EmailScenario);
         CurrentEmailScenario := EmailScenario;
         MailSent := false;
@@ -442,7 +445,7 @@ codeunit 9520 "Mail Management"
         if IsBackground() then
             exit;
 
-        if not GuiAllowed or (OfficeMgt.IsAvailable() and not OfficeMgt.IsPopOut()) then
+        if not TempEmailItem.HasAttachments() or not GuiAllowed or (OfficeMgt.IsAvailable() and not OfficeMgt.IsPopOut()) then
             Error(CannotSendMailThenDownloadErr);
 
         if not Confirm(StrSubstNo('%1\\%2', CannotSendMailThenDownloadErr, CannotSendMailThenDownloadQst)) then
@@ -462,11 +465,15 @@ codeunit 9520 "Mail Management"
 
     procedure DownloadPdfAttachment(var TempEmailItem: Record "Email Item" temporary)
     var
+        DataCompression: Codeunit "Data Compression";
         Attachments: Codeunit "Temp Blob List";
         Attachment: Codeunit "Temp Blob";
+        AttachmentArchiveTempBlob: Codeunit "Temp Blob";
         AttachmentNames: List of [Text];
-        AttachemntName: Text;
+        AttachmentName: Text;
         AttachmentStream: Instream;
+        AttachmentOutStream: Outstream;
+        AttachmentNumber: Integer;
         IsHandled: Boolean;
     begin
         IsHandled := false;
@@ -475,11 +482,25 @@ codeunit 9520 "Mail Management"
             exit;
 
         TempEmailItem.GetAttachments(Attachments, AttachmentNames);
-        if Attachments.Count() > 0 then begin
-            AttachemntName := AttachmentNames.Get(1);
+        if Attachments.Count() = 1 then begin
+            AttachmentName := AttachmentNames.Get(1);
             Attachments.Get(1, Attachment);
             Attachment.CreateInStream(AttachmentStream);
-            DownloadFromStream(AttachmentStream, SaveFileDialogTitleMsg, '', SaveFileDialogFilterMsg, AttachemntName);
+            DownloadFromStream(AttachmentStream, SaveFileDialogTitleMsg, '', SaveFileDialogFilterMsg, AttachmentName);
+        end else begin
+            DataCompression.CreateZipArchive();
+            for AttachmentNumber := 1 to Attachments.Count() do begin
+                AttachmentName := AttachmentNames.Get(AttachmentNumber);
+                Attachments.Get(AttachmentNumber, Attachment);
+                Attachment.CreateInStream(AttachmentStream);
+                DataCompression.AddEntry(AttachmentStream, AttachmentName);
+            end;
+            AttachmentName := 'Attachments.zip';
+            AttachmentArchiveTempBlob.CreateOutStream(AttachmentOutStream);
+            DataCompression.SaveZipArchive(AttachmentOutStream);
+            DataCompression.CloseZipArchive();
+            AttachmentArchiveTempBlob.CreateInStream(AttachmentStream);
+            DownloadFromStream(AttachmentStream, SaveFileDialogTitleMsg, '', SaveFileDialogFilterMsg, AttachmentName);
         end;
     end;
 
@@ -716,7 +737,7 @@ codeunit 9520 "Mail Management"
     begin
     end;
 
-    #pragma warning disable AA0228
+#pragma warning disable AA0228
     [IntegrationEvent(false, false)]
     local procedure OnBeforeSendMailOnWinClient(var TempEmailItem: Record "Email Item" temporary)
     begin
@@ -726,7 +747,7 @@ codeunit 9520 "Mail Management"
     local procedure OnAfterDeleteTempAttachments(var EmailItem: Record "Email Item")
     begin
     end;
-    #pragma warning restore AA0228
+#pragma warning restore AA0228
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterGetSenderEmailAddress(var EmailItem: Record "Email Item")
@@ -735,6 +756,21 @@ codeunit 9520 "Mail Management"
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterSendMailOrDownload(var TempEmailItem: Record "Email Item" temporary; var MailSent: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnSendOnBeforeQualifyFromAddress(var TempEmailItem: Record "Email Item" temporary; EmailScenario: Enum "Email Scenario")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnSendViaEmailModuleOnAfterAddAttachments(var Message: Codeunit "Email Message"; var TempEmailItem: Record "Email Item" temporary)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnSendViaEmailModuleOnAfterCreateMessage(var Message: Codeunit "Email Message"; var TempEmailItem: Record "Email Item" temporary)
     begin
     end;
 

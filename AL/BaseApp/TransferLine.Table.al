@@ -451,6 +451,7 @@
                 ReserveTransferLine.VerifyChange(Rec, xRec);
                 WhseValidateSourceLine.TransLineVerifyChange(Rec, xRec);
 
+                OnValidateVariantCodeOnBeforeCheckEmptyVariantCode(Rec, xRec, CurrFieldNo);
                 if "Variant Code" = '' then
                     exit;
 
@@ -1308,7 +1309,8 @@
     begin
         Reset;
         SetRange("Item No.", OldNo);
-        ModifyAll("Item No.", NewNo, true);
+        if not Rec.IsEmpty() then
+            ModifyAll("Item No.", NewNo, true);
     end;
 
     procedure CheckWarehouse(Location: Record Location; Receive: Boolean)
@@ -1868,6 +1870,11 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnValidateTransferToCodeOnBeforeVerifyChange(var TransferLine: Record "Transfer Line")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnValidateVariantCodeOnBeforeCheckEmptyVariantCode(var TransferLine: Record "Transfer Line"; xTransferLine: Record "Transfer Line"; CurrentFieldNo: Integer)
     begin
     end;
 }

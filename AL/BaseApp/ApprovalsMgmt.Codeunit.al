@@ -662,7 +662,13 @@
         SequenceNo: Integer;
         MaxCount: Integer;
         i: Integer;
+        IsHandled: Boolean;
     begin
+        IsHandled := false;
+        OnBeforeCreateApprovalRequestForApproverChain(WorkflowStepArgument, ApprovalEntryArgument, SufficientApproverOnly, IsHandled);
+        if IsHandled then
+            exit;
+
         ApproverId := UserId;
 
         with ApprovalEntry do begin
@@ -1827,7 +1833,7 @@
         PAGE.RunModal(PAGE::"Approval Entries", ApprovalEntry);
     end;
 
-    procedure CanCancelApprovalForRecord(RecID: RecordID): Boolean
+    procedure CanCancelApprovalForRecord(RecID: RecordID) Result: Boolean
     var
         ApprovalEntry: Record "Approval Entry";
         UserSetup: Record "User Setup";
@@ -1842,7 +1848,8 @@
 
         if not UserSetup."Approval Administrator" then
             ApprovalEntry.SetRange("Sender ID", UserId);
-        exit(ApprovalEntry.FindFirst);
+        Result := ApprovalEntry.FindFirst();
+        OnAfterCanCancelApprovalForRecord(RecID, Result);
     end;
 
     local procedure FindUserSetupBySalesPurchCode(var UserSetup: Record "User Setup"; ApprovalEntryArgument: Record "Approval Entry")
@@ -1907,6 +1914,11 @@
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnAfterCanCancelApprovalForRecord(RecID: RecordID; var Result: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnAfterCheckSalesApprovalPossible(var SalesHeader: Record "Sales Header")
     begin
     end;
@@ -1948,6 +1960,11 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeApprovalEntryInsert(var ApprovalEntry: Record "Approval Entry"; ApprovalEntryArgument: Record "Approval Entry")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreateApprovalRequestForApproverChain(WorkflowStepArgument: Record "Workflow Step Argument"; ApprovalEntryArgument: Record "Approval Entry"; SufficientApproverOnly: Boolean; var IsHandled: Boolean)
     begin
     end;
 

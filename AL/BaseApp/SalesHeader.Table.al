@@ -339,6 +339,7 @@
             var
                 ShipToAddr: Record "Ship-to Address";
                 IsHandled: Boolean;
+                CopyShipToAddress: Boolean;
             begin
                 IsHandled := false;
                 OnBeforeValidateShipToCode(Rec, xRec, Cust, ShipToAddr, IsHandled);
@@ -358,7 +359,9 @@
                     SalesLine.Reset();
                 end;
 
-                if not IsCreditDocType then
+                CopyShipToAddress := not IsCreditDocType;
+                OnValidateShipToCodeOnBeforeCopyShipToAddress(Rec, xRec, CopyShipToAddress);
+                if CopyShipToAddress then
                     if "Ship-to Code" <> '' then begin
                         if xRec."Ship-to Code" <> '' then begin
                             GetCust("Sell-to Customer No.");
@@ -455,6 +458,7 @@
             trigger OnValidate()
             var
                 IsHandled: Boolean;
+                NeedUpdateCurrencyFactor: Boolean;
             begin
                 TestField("Posting Date");
                 TestNoSeriesDate(
@@ -480,9 +484,11 @@
                 then
                     PriceMessageIfSalesLinesExist(FieldCaption("Posting Date"));
 
-                if "Currency Code" <> '' then begin
+                NeedUpdateCurrencyFactor := "Currency Code" <> '';
+                OnValidatePostingDateOnBeforeCheckNeedUpdateCurrencyFactor(Rec, Confirmed, NeedUpdateCurrencyFactor);
+                if NeedUpdateCurrencyFactor then begin
                     UpdateCurrencyFactor;
-                    if "Currency Factor" <> xRec."Currency Factor" then
+                    if ("Currency Factor" <> xRec."Currency Factor") and not CalledFromWhseDoc then
                         ConfirmCurrencyFactorUpdate();
                 end;
 
@@ -1809,6 +1815,11 @@
                 PaymentTerms: Record "Payment Terms";
                 IsHandled: Boolean;
             begin
+                IsHandled := false;
+                OnBeforeValidatePrepmtPaymentTermsCode(Rec, xRec, FieldNo("Prepmt. Payment Terms Code"), CurrFieldNo, UpdateDocumentDate, IsHandled);
+                if IsHandled then
+                    exit;
+
                 if ("Prepmt. Payment Terms Code" <> '') and ("Document Date" <> 0D) then begin
                     PaymentTerms.Get("Prepmt. Payment Terms Code");
                     if IsCreditDocType and not PaymentTerms."Calc. Pmt. Disc. on Cr. Memos" then begin
@@ -3280,11 +3291,11 @@
         ModifyBillToCustomerAddressNotificationDescriptionTxt: Label 'Warn if the bill-to address on sales documents is different from the customer''s existing address.';
         DuplicatedCaptionsNotAllowedErr: Label 'Field captions must not be duplicated when using this method. Use UpdateSalesLinesByFieldNo instead.';
         PhoneNoCannotContainLettersErr: Label 'You cannot enter letters in this field.';
-        MissingExchangeRatesQst: Label 'There are no exchange rates for currency %1 and date %2. Do you want to add them now? Otherwise, the last change you made will be reverted.', Comment = '%1 - currency code, %2 - posting date';
         SplitMessageTxt: Label '%1\%2', Comment = 'Some message text 1.\Some message text 2.';
         ConfirmEmptyEmailQst: Label 'Contact %1 has no email address specified. The value in the Email field on the sales order, %2, will be deleted. Do you want to continue?', Comment = '%1 - Contact No., %2 - Email';
         FullSalesTypesTxt: Label 'Sales Quote,Sales Order,Sales Invoice,Sales Credit Memo,Sales Blanket Order,Sales Return Order';
         RecreateSalesLinesCancelErr: Label 'You must delete the existing sales lines before you can change %1.', Comment = '%1 - Field Name, Sample: You must delete the existing sales lines before you can change Currency Code.';
+        CalledFromWhseDoc: Boolean;
 
     protected var
         HideValidationDialog: Boolean;
@@ -3850,7 +3861,6 @@
     procedure UpdateCurrencyFactor()
     var
         UpdateCurrencyExchangeRates: Codeunit "Update Currency Exchange Rates";
-        ConfirmManagement: Codeunit "Confirm Management";
         Updated: Boolean;
     begin
         OnBeforeUpdateCurrencyFactor(Rec, Updated);
@@ -3867,16 +3877,8 @@
                 "Currency Factor" := CurrExchRate.ExchangeRate(CurrencyDate, "Currency Code");
                 if "Currency Code" <> xRec."Currency Code" then
                     RecreateSalesLines(FieldCaption("Currency Code"));
-            end else begin
-                if ConfirmManagement.GetResponseOrDefault(
-                     StrSubstNo(MissingExchangeRatesQst, "Currency Code", CurrencyDate), true)
-                then begin
-                    Commit();
-                    UpdateCurrencyExchangeRates.OpenExchangeRatesPage("Currency Code");
-                    UpdateCurrencyFactor;
-                end else
-                    RevertCurrencyCodeAndPostingDate;
-            end;
+            end else
+                UpdateCurrencyExchangeRates.ShowMissingExchangeRatesNotification("Currency Code");
         end else begin
             "Currency Factor" := 0;
             if "Currency Code" <> xRec."Currency Code" then
@@ -5763,6 +5765,7 @@
             if SalesLine.Type <> SalesLine.Type::" " then begin
                 SalesLine.Validate("Unit of Measure Code", TempSalesLine."Unit of Measure Code");
                 SalesLine.Validate("Variant Code", TempSalesLine."Variant Code");
+                OnCreateSalesLineOnBeforeValidateQuantity(SalesLine, TempSalesLine);
                 if TempSalesLine.Quantity <> 0 then begin
                     SalesLine.Validate(Quantity, TempSalesLine.Quantity);
                     SalesLine.Validate("Qty. to Assemble to Order", TempSalesLine."Qty. to Assemble to Order");
@@ -6092,7 +6095,7 @@
         OnAfterCopySellToCustomerAddressFieldsFromCustomer(Rec, SellToCustomer, CurrFieldNo, SkipBillToContact);
     end;
 
-    local procedure CopyShipToCustomerAddressFieldsFromCust(var SellToCustomer: Record Customer)
+    procedure CopyShipToCustomerAddressFieldsFromCust(var SellToCustomer: Record Customer)
     var
         SellToCustTemplate: Record "Customer Template";
         IsHandled: Boolean;
@@ -6227,7 +6230,8 @@
         if "Document Type" = "Document Type"::Order then
             "Prepayment %" := BillToCustomer."Prepayment %";
         "Tax Area Code" := BillToCustomer."Tax Area Code";
-        "Tax Liable" := BillToCustomer."Tax Liable";
+        if ("Ship-to Code" = '') or ("Sell-to Customer No." <> BillToCustomer."No.") then
+            "Tax Liable" := BillToCustomer."Tax Liable";
 
         OnAfterSetFieldsBilltoCustomer(Rec, BillToCustomer);
     end;
@@ -6668,7 +6672,7 @@
         IsHandled: Boolean;
     begin
         IsHandled := false;
-        OnBeforeShowModifyAddressNotification(IsHandled);
+        OnBeforeShowModifyAddressNotification(IsHandled, Rec, CustomerNumber);
         if IsHandled then
             exit;
 
@@ -6825,7 +6829,6 @@
 
     local procedure SetSalespersonCode(SalesPersonCodeToCheck: Code[20]; var SalesPersonCodeToAssign: Code[20])
     var
-        UserSetupSalespersonCode: Code[20];
         IsHandled: Boolean;
     begin
         IsHandled := false;
@@ -6833,17 +6836,15 @@
         if IsHandled then
             exit;
 
-        UserSetupSalespersonCode := GetUserSetupSalespersonCode;
-        if SalesPersonCodeToCheck <> '' then begin
-            if Salesperson.Get(SalesPersonCodeToCheck) then
-                if Salesperson.VerifySalesPersonPurchaserPrivacyBlocked(Salesperson) then begin
-                    if UserSetupSalespersonCode = '' then
-                        SalesPersonCodeToAssign := ''
-                end else
-                    SalesPersonCodeToAssign := SalesPersonCodeToCheck;
+        if SalesPersonCodeToCheck = '' then
+            SalesPersonCodeToCheck := GetUserSetupSalespersonCode();
+        if Salesperson.Get(SalesPersonCodeToCheck) then begin
+            if Salesperson.VerifySalesPersonPurchaserPrivacyBlocked(Salesperson) then
+                SalesPersonCodeToAssign := ''
+            else
+                SalesPersonCodeToAssign := SalesPersonCodeToCheck;
         end else
-            if UserSetupSalespersonCode = '' then
-                SalesPersonCodeToAssign := '';
+            SalesPersonCodeToAssign := '';
     end;
 
     procedure ValidateSalesPersonOnSalesHeader(SalesHeader2: Record "Sales Header"; IsTransaction: Boolean; IsPostAction: Boolean)
@@ -6858,16 +6859,16 @@
                 end;
     end;
 
-    local procedure RevertCurrencyCodeAndPostingDate()
-    begin
-        "Currency Code" := xRec."Currency Code";
-        "Posting Date" := xRec."Posting Date";
-    end;
-
-    procedure ShouldSearchForCustomerByName(CustomerNo: Code[20]): Boolean
+    procedure ShouldSearchForCustomerByName(CustomerNo: Code[20]) Result: Boolean
     var
         Customer: Record Customer;
+        IsHandled: Boolean;
     begin
+        IsHandled := false;
+        OnBeforeShouldSearchForCustomerByName(CustomerNo, Result, IsHandled);
+        if IsHandled then
+            exit(Result);
+
         if CustomerNo = '' then
             exit(true);
 
@@ -7062,6 +7063,11 @@
     procedure GetStatusCheckSuspended(): Boolean
     begin
         exit(StatusCheckSuspended);
+    end;
+
+    procedure SetCalledFromWhseDoc(NewCalledFromWhseDoc: Boolean)
+    begin
+        CalledFromWhseDoc := NewCalledFromWhseDoc;
     end;
 
     [IntegrationEvent(false, false)]
@@ -7500,6 +7506,11 @@
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnBeforeShouldSearchForCustomerByName(CustomerNo: Code[20]; var Result: Boolean; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnBeforeUpdateCurrencyFactor(var SalesHeader: Record "Sales Header"; var Updated: Boolean)
     begin
     end;
@@ -7666,6 +7677,11 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnCreateSalesLineOnAfterAssignType(var SalesLine: Record "Sales Line"; var TempSalesLine: Record "Sales Line" temporary)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnCreateSalesLineOnBeforeValidateQuantity(var SalesLine: Record "Sales Line"; var TempSalesLine: Record "Sales Line" temporary)
     begin
     end;
 
@@ -7890,6 +7906,11 @@
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnValidatePostingDateOnBeforeCheckNeedUpdateCurrencyFactor(var SalesHeader: Record "Sales Header"; var IsConfirmed: Boolean; var NeedUpdateCurrencyFactor: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnValidatePaymentTermsCodeOnBeforeCalculatePrepaymentDueDate(var SalesHeader: Record "Sales Header"; xSalesHeader: Record "Sales Header"; CurrentFieldNo: Integer; var IsHandled: Boolean)
     begin
     end;
@@ -7935,7 +7956,7 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeShowModifyAddressNotification(var IsHandled: Boolean)
+    local procedure OnBeforeShowModifyAddressNotification(var IsHandled: Boolean; SalesHeader: Record "Sales Header"; CustomerNumber: Code[20])
     begin
     end;
 
@@ -8010,17 +8031,7 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeSetBillToCustomerNo(var SalesHeader: Record "Sales Header"; var Cust: Record Customer; var IsHandled: Boolean)
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
     local procedure OnValidateBillToCustomerNoOnBeforeCheckBlockedCustOnDocs(var SalesHeader: Record "Sales Header"; var Cust: Record Customer; var IsHandled: Boolean)
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterRecreateSalesLines(var SalesHeader: Record "Sales Header"; ChangedFieldName: Text[100])
     begin
     end;
 
@@ -8030,17 +8041,7 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterSetSellToCustomerFromFilter(var SalesHeader: Record "Sales Header")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
     local procedure OnValidateBillToCustomerNoOnBeforeRecallModifyAddressNotification(var SalesHeader: Record "Sales Header")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeCalcInvDiscForHeader(var SalesHeader: Record "Sales Header")
     begin
     end;
 
@@ -8050,12 +8051,12 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnValidateSellToCustomerNoOnBeforeRecallModifyAddressNotification(var SalesHeader: Record "Sales Header")
+    local procedure OnValidateShipToCodeOnBeforeValidateTaxLiable(var SalesHeader: Record "Sales Header"; var xSalesHeader: Record "Sales Header")
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnValidateShipToCodeOnBeforeValidateTaxLiable(var SalesHeader: Record "Sales Header"; var xSalesHeader: Record "Sales Header")
+    local procedure OnValidateShipToCodeOnBeforeCopyShipToAddress(var SalesHeader: Record "Sales Header"; var xSalesHeader: Record "Sales Header"; var CopyShipToAddress: Boolean)
     begin
     end;
 
@@ -8075,7 +8076,37 @@
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnBeforeSetBillToCustomerNo(var SalesHeader: Record "Sales Header"; var Cust: Record Customer; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnBeforeValidateShippingAgentServiceCode(var SalesHeader: Record "Sales Header"; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeValidatePrepmtPaymentTermsCode(var SalesHeader: Record "Sales Header"; var xSalesHeader: Record "Sales Header"; CalledByFieldNo: Integer; CallingFieldNo: Integer; UpdateDocumentDate: Boolean; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterRecreateSalesLines(var SalesHeader: Record "Sales Header"; ChangedFieldName: Text[100])
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterSetSellToCustomerFromFilter(var SalesHeader: Record "Sales Header")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCalcInvDiscForHeader(var SalesHeader: Record "Sales Header")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnValidateSellToCustomerNoOnBeforeRecallModifyAddressNotification(var SalesHeader: Record "Sales Header")
     begin
     end;
 }
