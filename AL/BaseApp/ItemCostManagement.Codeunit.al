@@ -1,4 +1,4 @@
-codeunit 5804 ItemCostManagement
+﻿codeunit 5804 ItemCostManagement
 {
     Permissions = TableData Item = rm,
                   TableData "Stockkeeping Unit" = rm,
@@ -22,9 +22,8 @@ codeunit 5804 ItemCostManagement
     procedure UpdateUnitCost(var Item: Record Item; LocationCode: Code[10]; VariantCode: Code[10]; LastDirectCost: Decimal; NewStdCost: Decimal; UpdateSKU: Boolean; FilterSKU: Boolean; RecalcStdCost: Boolean; CalledByFieldNo: Integer)
     var
         CheckItem: Record Item;
-        AverageCost: Decimal;
-        AverageCostACY: Decimal;
         UnitCostUpdated: Boolean;
+        RunOnModifyTrigger: Boolean;
         IsHandled: Boolean;
     begin
         OnBeforeUpdateUnitCost(
@@ -39,38 +38,25 @@ codeunit 5804 ItemCostManagement
             if "Costing Method" = "Costing Method"::Standard then
                 "Unit Cost" := "Standard Cost"
             else
-                if CalledFromAdjustment then begin
-                    CostCalcMgt.GetRndgSetup(GLSetup, Currency, RndgSetupRead);
-                    if CalculateAverageCost(Item, AverageCost, AverageCostACY) then begin
-                        if AverageCost <> 0 then
-                            "Unit Cost" := Round(AverageCost, GLSetup."Unit-Amount Rounding Precision");
-                    end else begin
-                        CalcLastAdjEntryAvgCost(Item, AverageCost, AverageCostACY);
-                        if AverageCost <> 0 then
-                            "Unit Cost" := Round(AverageCost, GLSetup."Unit-Amount Rounding Precision");
-                    end;
-                end else
-                    if ("Unit Cost" = 0) or ((InvoicedQty > 0) and (LastDirectCost <> 0)) then begin
-                        CalcFields("Net Invoiced Qty.");
-                        IsHandled := false;
-                        OnUpdateUnitCostOnBeforeNetInvoiceQtyCheck(Item, IsHandled);
-                        if ("Net Invoiced Qty." > 0) and ("Net Invoiced Qty." <= InvoicedQty) and not IsHandled then
-                            "Unit Cost" := LastDirectCost;
-                    end;
+                if CalledFromAdjustment then
+                    CalcUnitCostFromAverageCost(Item)
+                else
+                    UpdateUnitCostFromLastDirectCost(Item, LastDirectCost);
 
             if RecalcStdCost then
                 RecalcStdCostItem(Item);
 
-            if LastDirectCost <> 0 then
-                "Last Direct Cost" := LastDirectCost;
+            CheckUpdateLastDirectCost(Item, LastDirectCost);
 
             IsHandled := false;
             OnUpdateUnitCostOnBeforeValidatePriceProfitCalculation(Item, IsHandled);
             if not IsHandled then
                 Validate("Price/Profit Calculation");
 
+            RunOnModifyTrigger := CalledByFieldNo <> 0;
+            OnUpdateUnitCostOnAfterCalcRunOnModifyTrigger(Item, RunOnModifyTrigger);
             if CheckItem.Get("No.") then
-                if CalledByFieldNo <> 0 then
+                if RunOnModifyTrigger then
                     Modify(true)
                 else
                     Modify;
@@ -81,6 +67,62 @@ codeunit 5804 ItemCostManagement
         end;
 
         OnAfterUpdateUnitCost(Item, CalledByFieldNo);
+    end;
+
+    local procedure CalcUnitCostFromAverageCost(var Item: Record Item)
+    var
+        AverageCost: Decimal;
+        AverageCostACY: Decimal;
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeCalcUnitCostFromAverageCost(Item, CostCalcMgt, GLSetup, IsHandled);
+        if IsHandled then
+            exit;
+
+        with Item do begin
+            CostCalcMgt.GetRndgSetup(GLSetup, Currency, RndgSetupRead);
+            if CalculateAverageCost(Item, AverageCost, AverageCostACY) then begin
+                if AverageCost <> 0 then
+                    "Unit Cost" := Round(AverageCost, GLSetup."Unit-Amount Rounding Precision");
+            end else begin
+                CalcLastAdjEntryAvgCost(Item, AverageCost, AverageCostACY);
+                if AverageCost <> 0 then
+                    "Unit Cost" := Round(AverageCost, GLSetup."Unit-Amount Rounding Precision");
+            end;
+        end;
+    end;
+
+    local procedure UpdateUnitCostFromLastDirectCost(var Item: Record Item; LastDirectCost: Decimal)
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeUpdateUnitCostFromLastDirectCost(Item, LastDirectCost, InvoicedQty, IsHandled);
+        if IsHandled then
+            exit;
+
+        with Item do
+            if ("Unit Cost" = 0) or ((InvoicedQty > 0) and (LastDirectCost <> 0)) then begin
+                CalcFields("Net Invoiced Qty.");
+                IsHandled := false;
+                OnUpdateUnitCostOnBeforeNetInvoiceQtyCheck(Item, IsHandled);
+                if ("Net Invoiced Qty." > 0) and ("Net Invoiced Qty." <= InvoicedQty) and not IsHandled then
+                    "Unit Cost" := LastDirectCost;
+            end;
+    end;
+
+    local procedure CheckUpdateLastDirectCost(var Item: Record Item; LastDirectCost: Decimal)
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeCheckUpdateLastDirectCost(Item, LastDirectCost, IsHandled);
+        if IsHandled then
+            exit;
+
+        if LastDirectCost <> 0 then
+            Item."Last Direct Cost" := LastDirectCost;
     end;
 
     procedure UpdateStdCostShares(FromItem: Record Item)
@@ -556,6 +598,16 @@ codeunit 5804 ItemCostManagement
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnBeforeCalcUnitCostFromAverageCost(var Item: Record Item; var CostCalcMgt: Codeunit "Cost Calculation Management"; GLSetup: Record "General Ledger Setup"; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCheckUpdateLastDirectCost(var Item: Record Item; LastDirectCost: Decimal; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnBeforeUpdateUnitCost(var Item: Record Item; LocationCode: Code[10]; VariantCode: Code[10]; LastDirectCost: Decimal; NewStdCost: Decimal; UpdateSKU: Boolean; FilterSKU: Boolean; RecalcStdCost: Boolean; CalledByFieldNo: Integer; var UnitCostUpdated: Boolean; var CalledFromAdjustment: Boolean)
     begin
     end;
@@ -566,7 +618,17 @@ codeunit 5804 ItemCostManagement
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnBeforeUpdateUnitCostFromLastDirectCost(var Item: Record Item; LastDirectCost: Decimal; InvoicedQty: Decimal; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnCalcLastAdjEntryAvgCostOnAfterCalcAverageCost(ItemLedgEntry: Record "Item Ledger Entry"; ValueEntry: Record "Value Entry"; var Item: Record Item; var AverageCost: Decimal; var AverageCostACY: Decimal)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnUpdateUnitCostOnAfterCalcRunOnModifyTrigger(Item: Record Item; var RunOnModifyTrigger: Boolean)
     begin
     end;
 

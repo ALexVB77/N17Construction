@@ -26,17 +26,17 @@ codeunit 5348 "CRM Quote to Sales Quote"
         UnableToFindCrmOrderTelemetryErr: Label 'Unable to find Dynamics 365 Sales order that corresponds to this quote.', Locked = true;
         UpdatedQuoteNoOnExistingOrderTelemetryTxt: Label 'Updated Quote No. on the existing order that corresponds to this quote.', Locked = true;
         CannotCreateSalesQuoteInNAVTxt: Label 'The sales quote cannot be created.';
-        CannotFindCRMAccountForQuoteErr: Label 'The %2 account for %2 sales quote %1 does not exist.', Comment = '%1=CDS Sales Order Name, %2 - CDS service name';
+        CannotFindCRMAccountForQuoteErr: Label 'The %2 account for %2 sales quote %1 does not exist.', Comment = '%1=Dataverse Sales Order Name, %2 - Dataverse service name';
         ItemDoesNotExistErr: Label '%1 The item %2 does not exist.', Comment = '%1= the text: "The sales order cannot be created.", %2=product name';
-        NoCustomerErr: Label '%1 There is no potential customer defined on the %3 sales quote %2.', Comment = '%1= the text: "The sales quote cannot be created.", %2=sales order title, %3 - CDS service name';
-        NotCoupledCustomerErr: Label '%1 There is no customer coupled to %3 account %2.', Comment = '%1= the text: "The sales quote cannot be created.", %2=account name, %3 - CDS service name';
-        NotCoupledCRMProductErr: Label '%1 The %3 product %2 is not coupled to an item.', Comment = '%1= the text: "The sales quote cannot be created.", %2=product name, %3 - CDS service name';
-        NotCoupledCRMResourceErr: Label '%1 The %3 resource %2 is not coupled to a resource.', Comment = '%1= the text: "The sales quote cannot be created.", %2=resource name, %3 - CDS service name';
+        NoCustomerErr: Label '%1 There is no potential customer defined on the %3 sales quote %2.', Comment = '%1= the text: "The sales quote cannot be created.", %2=sales order title, %3 - Dataverse service name';
+        NotCoupledCustomerErr: Label '%1 There is no customer coupled to %3 account %2.', Comment = '%1= the text: "The sales quote cannot be created.", %2=account name, %3 - Dataverse service name';
+        NotCoupledCRMProductErr: Label '%1 The %3 product %2 is not coupled to an item.', Comment = '%1= the text: "The sales quote cannot be created.", %2=product name, %3 - Dataverse service name';
+        NotCoupledCRMResourceErr: Label '%1 The %3 resource %2 is not coupled to a resource.', Comment = '%1= the text: "The sales quote cannot be created.", %2=resource name, %3 - Dataverse service name';
         ResourceDoesNotExistErr: Label '%1 The resource %2 does not exist.', Comment = '%1= the text: "The sales quote cannot be created.", %2=product name';
         UnexpectedProductTypeErr: Label '%1 Unexpected value of product type code for product %2. The supported values are: sales inventory, services.', Comment = '%1= the text: "The sales quote cannot be created.", %2=product name';
         CRMProductName: Codeunit "CRM Product Name";
         LastSalesLineNo: Integer;
-        MissingWriteInProductNoErr: Label '%1 %2 %3 contains a write-in product. You must choose the default write-in product in Sales & Receivables Setup window.', Comment = '%1 - CDS service name,%2 - document type (order or quote), %3 - document number';
+        MissingWriteInProductNoErr: Label '%1 %2 %3 contains a write-in product. You must choose the default write-in product in Sales & Receivables Setup window.', Comment = '%1 - Dataverse service name,%2 - document type (order or quote), %3 - document number';
         MisingWriteInProductTelemetryMsg: Label 'The user is missing a default write-in product when creating a sales quote from a %1 quote.', Locked = true;
         CrmTelemetryCategoryTok: Label 'AL CRM Integration', Locked = true;
         SuccessfullyCoupledSalesQuoteTelemetryMsg: Label 'The user successfully coupled a sales quote to a %1 quote.', Locked = true;
@@ -219,6 +219,8 @@ codeunit 5348 "CRM Quote to Sales Quote"
     begin
         // If any of the products on the lines are not found in NAV, err
         CRMQuotedetail.SetRange(QuoteId, CRMQuote.QuoteId); // Get all sales quote lines
+        CRMQuotedetail.SetCurrentKey(SequenceNumber);
+        CRMQuotedetail.Ascending(true);
 
         if CRMQuotedetail.FindSet then begin
             repeat
@@ -484,15 +486,16 @@ codeunit 5348 "CRM Quote to Sales Quote"
             end;
 
         // in case of inventory item - write the item name in the main line and create extended lines with the extended description
-        CreateExtendedDescriptionQuoteLines(SalesHeader, ExtendedDescription);
+        CreateExtendedDescriptionQuoteLines(SalesHeader, ExtendedDescription, SalesLine."Line No.");
 
         // in case of line descriptions with multple lines, add all lines of the line descirption
         while not LineDescriptionInStream.EOS() do begin
             LineDescriptionInStream.ReadText(ExtendedDescription);
-            CreateExtendedDescriptionQuoteLines(SalesHeader, ExtendedDescription);
+            CreateExtendedDescriptionQuoteLines(SalesHeader, ExtendedDescription, SalesLine."Line No.");
         end;
     end;
 
+    [Obsolete('Replaced with the overload containing QuoteLineNo', '18.0')]
     procedure CreateExtendedDescriptionQuoteLines(SalesHeader: Record "Sales Header"; FullDescription: Text)
     var
         SalesLine: Record "Sales Line";
@@ -501,6 +504,20 @@ codeunit 5348 "CRM Quote to Sales Quote"
             InitNewSalesLine(SalesHeader, SalesLine);
 
             SalesLine.Validate(Description, CopyStr(FullDescription, 1, MaxStrLen(SalesLine.Description)));
+            SalesLine.Insert();
+            FullDescription := CopyStr(FullDescription, MaxStrLen(SalesLine.Description) + 1);
+        end;
+    end;
+
+    procedure CreateExtendedDescriptionQuoteLines(SalesHeader: Record "Sales Header"; FullDescription: Text; QuoteLineNo: Integer)
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        while StrLen(FullDescription) > 0 do begin
+            InitNewSalesLine(SalesHeader, SalesLine);
+
+            SalesLine.Validate(Description, CopyStr(FullDescription, 1, MaxStrLen(SalesLine.Description)));
+            SalesLine."Attached to Line No." := QuoteLineNo;
             SalesLine.Insert();
             FullDescription := CopyStr(FullDescription, MaxStrLen(SalesLine.Description) + 1);
         end;

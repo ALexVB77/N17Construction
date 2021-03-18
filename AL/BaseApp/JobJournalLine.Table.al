@@ -58,8 +58,7 @@
 
             trigger OnValidate()
             begin
-                if not IsTemporary() then
-                    TestField("Posting Date");
+                CheckPostingDateNotEmpty();
                 Validate("Document Date", "Posting Date");
                 if "Currency Code" <> '' then begin
                     UpdateCurrencyFactor();
@@ -1106,6 +1105,19 @@
             Resource.TestField("Use Time Sheet", false);
     end;
 
+    local procedure CheckPostingDateNotEmpty()
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeCheckPostingDateNotEmpty(Rec, IsHandled);
+        if IsHandled then
+            exit;
+
+        if not IsTemporary() then
+            TestField("Posting Date");
+    end;
+
     local procedure CopyFromItem()
     begin
         GetItem;
@@ -1549,7 +1561,7 @@
         IsHandled: Boolean;
     begin
         IsHandled := false;
-        OnBeforeValidateChargeable(Rec, IsHandled);
+        OnBeforeValidateChargeable(Rec, IsHandled, xRec);
         if IsHandled then
             exit;
 
@@ -1636,7 +1648,7 @@
         IsHandled: Boolean;
     begin
         IsHandled := false;
-        OnBeforeFindPriceAndDiscount(JobJnlLine, CalledByFieldNo, IsHandled);
+        OnBeforeFindPriceAndDiscount(Rec, CalledByFieldNo, IsHandled);
         if IsHandled then
             exit;
 
@@ -1974,6 +1986,11 @@
     begin
     end;
 
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCheckPostingDateNotEmpty(var JobJournalLine: Record "Job Journal Line"; var LineIsEmpty: Boolean)
+    begin
+    end;
+
     [IntegrationEvent(true, false)]
     local procedure OnBeforeFindPriceAndDiscount(var JobJournalLine: Record "Job Journal Line"; CalledByFieldNo: Integer; var IsHandled: Boolean)
     begin
@@ -2040,7 +2057,7 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeValidateChargeable(var JobJournalLine: Record "Job Journal Line"; var IsHandled: Boolean)
+    local procedure OnBeforeValidateChargeable(var JobJournalLine: Record "Job Journal Line"; var IsHandled: Boolean; xJobJournalLine: Record "Job Journal Line")
     begin
     end;
 

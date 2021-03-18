@@ -356,7 +356,7 @@
                 until Next = 0;
         end;
 
-        OnAfterCalcBestUnitPrice(SalesPrice);
+        OnAfterCalcBestUnitPrice(SalesPrice, BestSalesPrice);
 
         // No price found in agreement
         if not BestSalesPriceFound then begin
@@ -1417,6 +1417,8 @@
             if JobResPrice."Apply Job Discount" then
                 "Line Discount %" := JobResPrice."Line Discount %";
         end;
+
+        OnAfterCopyJobResPriceToJobJnlLine(JobJnlLine);
     end;
 
     local procedure CopyJobGLAccPriceToJobJnlLine(var JobJnlLine: Record "Job Journal Line"; JobGLAccPrice: Record "Job G/L Account Price")
@@ -1628,7 +1630,7 @@
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterCalcBestUnitPrice(var SalesPrice: Record "Sales Price")
+    local procedure OnAfterCalcBestUnitPrice(var SalesPrice: Record "Sales Price"; var BestSalesPrice: Record "Sales Price")
     begin
     end;
 
@@ -1639,6 +1641,11 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterCalcLineAmount(SalesPrice: Record "Sales Price"; var LineAmount: Decimal)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterCopyJobResPriceToJobJnlLine(var JobJnlLine: Record "Job Journal Line")
     begin
     end;
 

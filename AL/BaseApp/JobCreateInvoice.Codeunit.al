@@ -172,6 +172,7 @@
                     JobPlanningLineInvoice.Insert();
 
                     JobPlanningLine.UpdateQtyToTransfer;
+                    OnCreateSalesInvoiceLinesOnBeforeJobPlanningLineModify(JobPlanningLine);
                     JobPlanningLine.Modify();
                 end;
             until JobPlanningLine.Next = 0;
@@ -239,6 +240,7 @@
             NoOfInvoices := NoOfInvoices + 1;
             SalesHeader2."Document Type" := SalesHeader2."Document Type"::Invoice;
             CreateSalesHeader(Job, PostingDate, JobPlanningLine);
+            OnCreateSalesInvoiceJobTaskOnBeforeTempJobPlanningLineFind(JobTask, SalesHeader, InvoicePerTask);
             if TempJobPlanningLine.Find('-') then
                 repeat
                     Job.Get(TempJobPlanningLine."Job No.");
@@ -411,7 +413,7 @@
             SalesLine.Validate("Unit of Measure Code", JobPlanningLine."Unit of Measure Code");
             SalesLine.Validate(Quantity, Factor * JobPlanningLine."Qty. to Transfer to Invoice");
             if JobPlanningLine."Bin Code" <> '' then
-                SalesLine.Validate("Bin Code", JobPlanningLine."Bin Code");
+                SalesLine."Bin Code" := JobPlanningLine."Bin Code";
             if JobInvCurrency then begin
                 Currency.Get(SalesLine."Currency Code");
                 SalesLine.Validate("Unit Price",
@@ -747,6 +749,7 @@
 
     local procedure UpdateSalesHeader(var SalesHeader: Record "Sales Header"; Job: Record Job)
     var
+        FormatAddress: Codeunit "Format Address";
         IsHandled: Boolean;
     begin
         IsHandled := false;
@@ -761,6 +764,7 @@
         SalesHeader."Bill-to Address 2" := Job."Bill-to Address 2";
         SalesHeader."Bill-to City" := Job."Bill-to City";
         SalesHeader."Bill-to Post Code" := Job."Bill-to Post Code";
+        SalesHeader."Bill-to Country/Region Code" := Job."Bill-to Country/Region Code";
 
         SalesHeader."Sell-to Contact No." := Job."Bill-to Contact No.";
         SalesHeader."Sell-to Contact" := Job."Bill-to Contact";
@@ -769,6 +773,7 @@
         SalesHeader."Sell-to Address 2" := Job."Bill-to Address 2";
         SalesHeader."Sell-to City" := Job."Bill-to City";
         SalesHeader."Sell-to Post Code" := Job."Bill-to Post Code";
+        SalesHeader."Sell-to Country/Region Code" := Job."Bill-to Country/Region Code";
 
         if SalesHeader."Ship-to Code" = '' then begin
             SalesHeader."Ship-to Contact" := Job."Bill-to Contact";
@@ -777,8 +782,15 @@
             SalesHeader."Ship-to Address 2" := Job."Bill-to Address 2";
             SalesHeader."Ship-to City" := Job."Bill-to City";
             SalesHeader."Ship-to Post Code" := Job."Bill-to Post Code";
+            SalesHeader."Ship-to Country/Region Code" := Job."Bill-to Country/Region Code";
+            if FormatAddress.UseCounty(SalesHeader."Bill-to Country/Region Code") then
+                SalesHeader."Ship-to County" := Job."Bill-to County";
         end;
 
+        if FormatAddress.UseCounty(SalesHeader."Bill-to Country/Region Code") then begin
+            SalesHeader."Bill-to County" := Job."Bill-to County";
+            SalesHeader."Sell-to County" := Job."Bill-to County";
+        end;
     end;
 
     local procedure TestSalesHeader(var SalesHeader: Record "Sales Header"; var Job: Record Job; JobPlanningLine: Record "Job Planning Line")
@@ -998,6 +1010,11 @@
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnCreateSalesInvoiceLinesOnBeforeJobPlanningLineModify(var JobPlanningLine: Record "Job Planning Line")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnCreateSalesInvoiceLinesOnBeforeCreateSalesLine(var JobPlanningLine: Record "Job Planning Line"; SalesHeader: Record "Sales Header"; SalesHeader2: Record "Sales Header"; NewInvoice: Boolean; var NoOfSalesLinesCreated: Integer)
     begin
     end;
@@ -1014,6 +1031,11 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnCreateSalesInvoiceJobTaskOnAfterLinesCreated(var SalesHeader: Record "Sales Header"; var Job: Record Job)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnCreateSalesInvoiceJobTaskOnBeforeTempJobPlanningLineFind(var JobTask: Record "Job Task"; var SalesHeader: Record "Sales Header"; InvoicePerTask: Boolean)
     begin
     end;
 

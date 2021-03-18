@@ -18,6 +18,10 @@ table 121 "Purch. Rcpt. Line"
         {
             Caption = 'Document No.';
             TableRelation = "Purch. Rcpt. Header";
+            trigger OnValidate()
+            begin
+                UpdateDocumentId();
+            end;
         }
         field(4; "Line No."; Integer)
         {
@@ -636,6 +640,14 @@ table 121 "Purch. Rcpt. Line"
             Caption = 'Return Reason Code';
             TableRelation = "Return Reason";
         }
+        field(8000; "Document Id"; Guid)
+        {
+            Caption = 'Document Id';
+            trigger OnValidate()
+            begin
+                UpdateDocumentNo();
+            end;
+        }
         field(8509; "Over-Receipt Quantity"; Decimal)
         {
             Caption = 'Over-Receipt Quantity';
@@ -715,6 +727,9 @@ table 121 "Purch. Rcpt. Line"
         key(Key6; "Buy-from Vendor No.")
         {
         }
+        key(Key7; "Document Id")
+        {
+        }
     }
 
     fieldgroups
@@ -730,6 +745,11 @@ table 121 "Purch. Rcpt. Line"
         PurchDocLineComments.SetRange("Document Line No.", "Line No.");
         if not PurchDocLineComments.IsEmpty then
             PurchDocLineComments.DeleteAll();
+    end;
+
+    trigger OnInsert()
+    begin
+        UpdateDocumentId();
     end;
 
     var
@@ -1150,6 +1170,41 @@ table 121 "Purch. Rcpt. Line"
     begin
         "Over-Receipt Code 2" := PurchLine."Over-Receipt Code";
         ClearPurchaseLineOverReceiptCode(PurchLine);
+    end;
+
+    local procedure UpdateDocumentId()
+    var
+        ParentPurchRcptHeader: Record "Purch. Rcpt. Header";
+    begin
+        if "Document No." = '' then begin
+            Clear("Document Id");
+            exit;
+        end;
+
+        if not ParentPurchRcptHeader.Get("Document No.") then
+            exit;
+
+        "Document Id" := ParentPurchRcptHeader.SystemId;
+    end;
+
+    local procedure UpdateDocumentNo()
+    var
+        ParentPurchRcptHeader: Record "Purch. Rcpt. Header";
+    begin
+        if IsNullGuid(Rec."Document Id") then begin
+            Clear(Rec."Document No.");
+            exit;
+        end;
+
+        if not ParentPurchRcptHeader.GetBySystemId(Rec."Document Id") then
+            exit;
+
+        "Document No." := ParentPurchRcptHeader."No.";
+    end;
+
+    procedure UpdateReferencedIds()
+    begin
+        UpdateDocumentId();
     end;
 
     [Obsolete('Required to avoid overflow error on transferfields, will be removed together with the "Over-Receipt Code" field.', '17.0')]

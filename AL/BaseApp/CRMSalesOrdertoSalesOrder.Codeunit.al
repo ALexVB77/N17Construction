@@ -11,22 +11,22 @@ codeunit 5343 "CRM Sales Order to Sales Order"
 
     var
         CannotCreateSalesOrderInNAVTxt: Label 'The sales order cannot be created.';
-        NoCRMAccountForOrderErr: Label 'Sales order %1 is created for %2 %3, which doesn''t correspond to an account in %4.', Comment = '%1=CDS Sales Order Name, %2 - customer id type, %3 customer id, %4 - CDS service name';
+        NoCRMAccountForOrderErr: Label 'Sales order %1 is created for %2 %3, which doesn''t correspond to an account in %4.', Comment = '%1=Dataverse Sales Order Name, %2 - customer id type, %3 customer id, %4 - Dataverse service name';
         ItemDoesNotExistErr: Label '%1 The item %2 does not exist.', Comment = '%1= the text: "The sales order cannot be created.", %2=product name';
-        NoCustomerErr: Label '%1 There is no potential customer defined on the %3 sales order %2.', Comment = '%1= the text: "The sales order cannot be created.", %2=sales order title, %3 - CDS service name';
+        NoCustomerErr: Label '%1 There is no potential customer defined on the %3 sales order %2.', Comment = '%1= the text: "The sales order cannot be created.", %2=sales order title, %3 - Dataverse service name';
         CRMSynchHelper: Codeunit "CRM Synch. Helper";
         CRMProductName: Codeunit "CRM Product Name";
         LastSalesLineNo: Integer;
-        NotCoupledCustomerErr: Label '%1 There is no customer coupled to %3 account %2.', Comment = '%1= the text: "The sales order cannot be created.", %2=account name, %3 - CDS service name';
-        NotCoupledCRMProductErr: Label '%1 The %3 product %2 is not coupled to an item.', Comment = '%1= the text: "The sales order cannot be created.", %2=product name, %3 - CDS service name';
-        NotCoupledCRMResourceErr: Label '%1 The %3 resource %2 is not coupled to a resource.', Comment = '%1= the text: "The sales order cannot be created.", %2=resource name, %3 - CDS service name';
-        NotCoupledCRMSalesOrderErr: Label 'The %2 sales order %1 is not coupled.', Comment = '%1=sales order number, %2 - CDS service name';
-        NotCoupledSalesHeaderErr: Label 'The sales order %1 is not coupled to %2.', Comment = '%1=sales order number, %2 - CDS service name';
-        OverwriteCRMDiscountQst: Label 'There is a discount on the %2 sales order, which will be overwritten by %1 settings. You will have the possibility to update the discounts directly on the sales order, after it is created. Do you want to continue?', Comment = '%1 - product name, %2 - CDS service name';
+        NotCoupledCustomerErr: Label '%1 There is no customer coupled to %3 account %2.', Comment = '%1= the text: "The sales order cannot be created.", %2=account name, %3 - Dataverse service name';
+        NotCoupledCRMProductErr: Label '%1 The %3 product %2 is not coupled to an item.', Comment = '%1= the text: "The sales order cannot be created.", %2=product name, %3 - Dataverse service name';
+        NotCoupledCRMResourceErr: Label '%1 The %3 resource %2 is not coupled to a resource.', Comment = '%1= the text: "The sales order cannot be created.", %2=resource name, %3 - Dataverse service name';
+        NotCoupledCRMSalesOrderErr: Label 'The %2 sales order %1 is not coupled.', Comment = '%1=sales order number, %2 - Dataverse service name';
+        NotCoupledSalesHeaderErr: Label 'The sales order %1 is not coupled to %2.', Comment = '%1=sales order number, %2 - Dataverse service name';
+        OverwriteCRMDiscountQst: Label 'There is a discount on the %2 sales order, which will be overwritten by %1 settings. You will have the possibility to update the discounts directly on the sales order, after it is created. Do you want to continue?', Comment = '%1 - product name, %2 - Dataverse service name';
         ResourceDoesNotExistErr: Label '%1 The resource %2 does not exist.', Comment = '%1= the text: "The sales order cannot be created.", %2=product name';
         UnexpectedProductTypeErr: Label '%1 Unexpected value of product type code for product %2. The supported values are: sales inventory, services.', Comment = '%1= the text: "The sales order cannot be created.", %2=product name';
-        ZombieCouplingErr: Label 'Although the coupling from %2 exists, the sales order had been manually deleted. If needed, please use the menu to create it again in %1.', Comment = '%1 - product name, %2 - CDS service name';
-        MissingWriteInProductNoErr: Label '%1 %2 %3 contains a write-in product. You must choose the default write-in product in Sales & Receivables Setup window.', Comment = '%1 - CDS service name,%2 - document type (order or quote), %3 - document number';
+        ZombieCouplingErr: Label 'Although the coupling from %2 exists, the sales order had been manually deleted. If needed, please use the menu to create it again in %1.', Comment = '%1 - product name, %2 - Dataverse service name';
+        MissingWriteInProductNoErr: Label '%1 %2 %3 contains a write-in product. You must choose the default write-in product in Sales & Receivables Setup window.', Comment = '%1 - Dataverse service name,%2 - document type (order or quote), %3 - document number';
         MisingWriteInProductTelemetryMsg: Label 'The user is missing a default write-in product when creating a sales order from a %1 order.', Locked = true;
         CrmTelemetryCategoryTok: Label 'AL CRM Integration', Locked = true;
         SuccessfullyCoupledSalesOrderTelemetryMsg: Label 'Successfully coupled sales order %2 to %1 order %3.', Locked = true;
@@ -188,13 +188,16 @@ codeunit 5343 "CRM Sales Order to Sales Order"
                     ExtendedDescription := '';
             end;
 
+        if ExtendedDescription = SalesLine.Description then
+            exit;
+
         // in case of inventory item - write the item name in the main line and create extended lines with the extended description
-        CreateExtendedDescriptionOrderLines(SalesHeader, ExtendedDescription);
+        CreateExtendedDescriptionOrderLines(SalesHeader, ExtendedDescription, SalesLine."Line No.");
 
         // in case of line descriptions with multple lines, add all lines of the line descirption
         while not LineDescriptionInStream.EOS() do begin
             LineDescriptionInStream.ReadText(ExtendedDescription);
-            CreateExtendedDescriptionOrderLines(SalesHeader, ExtendedDescription);
+            CreateExtendedDescriptionOrderLines(SalesHeader, ExtendedDescription, SalesLine."Line No.");
         end;
     end;
 
@@ -416,6 +419,8 @@ codeunit 5343 "CRM Sales Order to Sales Order"
 
         // If any of the products on the lines are not found in NAV, err
         CRMSalesorderdetail.SetRange(SalesOrderId, CRMSalesorder.SalesOrderId); // Get all sales order lines
+        CRMSalesorderdetail.SetCurrentKey(SequenceNumber);
+        CRMSalesorderdetail.Ascending(true);
 
         if CRMSalesorderdetail.FindSet then begin
             repeat
@@ -435,6 +440,7 @@ codeunit 5343 "CRM Sales Order to Sales Order"
         SalesLine.InsertFreightLine(CRMSalesorder.FreightAmount);
     end;
 
+    [Obsolete('Replaced with the overload containing SalesLineNo', '18.0')]
     procedure CreateExtendedDescriptionOrderLines(SalesHeader: Record "Sales Header"; FullDescription: Text)
     var
         SalesLine: Record "Sales Line";
@@ -443,6 +449,20 @@ codeunit 5343 "CRM Sales Order to Sales Order"
             InitNewSalesLine(SalesHeader, SalesLine);
 
             SalesLine.Validate(Description, CopyStr(FullDescription, 1, MaxStrLen(SalesLine.Description)));
+            SalesLine.Insert();
+            FullDescription := CopyStr(FullDescription, MaxStrLen(SalesLine.Description) + 1);
+        end;
+    end;
+
+    procedure CreateExtendedDescriptionOrderLines(SalesHeader: Record "Sales Header"; FullDescription: Text; SalesLineNo: Integer)
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        while StrLen(FullDescription) > 0 do begin
+            InitNewSalesLine(SalesHeader, SalesLine);
+
+            SalesLine.Validate(Description, CopyStr(FullDescription, 1, MaxStrLen(SalesLine.Description)));
+            SalesLine."Attached to Line No." := SalesLineNo;
             SalesLine.Insert();
             FullDescription := CopyStr(FullDescription, MaxStrLen(SalesLine.Description) + 1);
         end;
@@ -558,6 +578,10 @@ codeunit 5343 "CRM Sales Order to Sales Order"
     local procedure InitializeSalesOrderLine(CRMSalesorderdetail: Record "CRM Salesorderdetail"; SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line")
     var
         CRMProduct: Record "CRM Product";
+        Item: Record Item;
+        VATPostingSetup: Record "VAT Posting Setup";
+        GeneralLedgerSetup: Record "General Ledger Setup";
+        UnitPrice: Decimal;
     begin
         InitNewSalesLine(SalesHeader, SalesLine);
 
@@ -579,12 +603,21 @@ codeunit 5343 "CRM Sales Order to Sales Order"
         SetLineDescription(SalesHeader, SalesLine, CRMSalesorderdetail);
 
         SalesLine.Validate(Quantity, CRMSalesorderdetail.Quantity);
-        SalesLine.Validate("Unit Price", CRMSalesorderdetail.PricePerUnit);
-        SalesLine.Validate(Amount, CRMSalesorderdetail.BaseAmount);
+        UnitPrice := CRMSalesorderdetail.PricePerUnit;
+        GeneralLedgerSetup.Get();
+        if CRMProduct.ProductTypeCode = CRMProduct.ProductTypeCode::SalesInventory then
+            if Item.GET(SalesLine."No.") then
+                if (Item."Price Includes VAT") AND (Item."VAT Bus. Posting Gr. (Price)" <> '') then
+                    if SalesLine."VAT Bus. Posting Group" = Item."VAT Bus. Posting Gr. (Price)" then
+                        if VATPostingSetup.GET(SalesLine."VAT Bus. Posting Group", SalesLine."VAT Prod. Posting Group") then
+                            UnitPrice :=
+                                ROUND(CRMSalesorderdetail.PricePerUnit / (1 + VATPostingSetup."VAT %" / 100), GeneralLedgerSetup."Unit-Amount Rounding Precision");
+        SalesLine.VALIDATE("Unit Price", UnitPrice);
+
         SalesLine.Validate(
-          "Line Discount Amount",
-          CRMSalesorderdetail.Quantity * CRMSalesorderdetail.VolumeDiscountAmount +
-          CRMSalesorderdetail.ManualDiscountAmount);
+            "Line Discount Amount",
+            CRMSalesorderdetail.Quantity * CRMSalesorderdetail.VolumeDiscountAmount +
+            CRMSalesorderdetail.ManualDiscountAmount);
     end;
 
     local procedure InitializeSalesOrderLineFromItem(CRMProduct: Record "CRM Product"; var SalesLine: Record "Sales Line")

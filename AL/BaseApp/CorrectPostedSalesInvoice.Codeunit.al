@@ -1,4 +1,4 @@
-codeunit 1303 "Correct Posted Sales Invoice"
+﻿codeunit 1303 "Correct Posted Sales Invoice"
 {
     Permissions = TableData "Sales Invoice Header" = rm,
                   TableData "Sales Cr.Memo Header" = rm;
@@ -135,10 +135,12 @@ codeunit 1303 "Correct Posted Sales Invoice"
         end;
 
         CopyDocMgt.CopySalesDocForInvoiceCancelling(SalesInvoiceHeader."No.", SalesHeader);
+        OnAfterCreateCopyDocument(SalesHeader, SalesInvoiceHeader);
     end;
 
     procedure CreateCreditMemoCopyDocument(var SalesInvoiceHeader: Record "Sales Invoice Header"; var SalesHeader: Record "Sales Header"): Boolean
     begin
+        OnBeforeCreateCreditMemoCopyDocument(SalesInvoiceHeader);
         TestNoFixedAssetInSalesInvoice(SalesInvoiceHeader);
         TestNotSalesPrepaymentlInvoice(SalesInvoiceHeader);
         if not SalesInvoiceHeader.IsFullyOpen then begin
@@ -278,7 +280,13 @@ codeunit 1303 "Correct Posted Sales Invoice"
     var
         SalesCrMemoHeader: Record "Sales Cr.Memo Header";
         CancelledDocument: Record "Cancelled Document";
+        IsHandled: Boolean;
     begin
+        IsHandled := false;
+        OnBeforeSetTrackInfoForCancellation(SalesInvoiceHeader, IsHandled);
+        if IsHandled then
+            exit;
+
         SalesCrMemoHeader.SetRange("Applies-to Doc. No.", SalesInvoiceHeader."No.");
         if SalesCrMemoHeader.FindLast then
             CancelledDocument.InsertSalesInvToCrMemoCancelledDocument(SalesInvoiceHeader."No.", SalesCrMemoHeader."No.");
@@ -832,6 +840,11 @@ codeunit 1303 "Correct Posted Sales Invoice"
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnAfterCreateCopyDocument(var SalesHeader: Record "Sales Header"; var SalesInvoiceHeader: Record "Sales Invoice Header")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnAfterTestCorrectInvoiceIsAllowed(var SalesInvoiceHeader: Record "Sales Invoice Header"; Cancelling: Boolean)
     begin
     end;
@@ -857,6 +870,11 @@ codeunit 1303 "Correct Posted Sales Invoice"
     end;
 
     [IntegrationEvent(false, false)]
+    local procedure OnBeforeCreateCreditMemoCopyDocument(var SalesInvoiceHeader: Record "Sales Invoice Header")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
     local procedure OnBeforeSalesHeaderInsert(var SalesHeader: Record "Sales Header"; var SalesInvoiceHeader: Record "Sales Invoice Header"; CancellingOnly: Boolean)
     begin
     end;
@@ -864,6 +882,11 @@ codeunit 1303 "Correct Posted Sales Invoice"
     [Obsolete('The event has been replaced with OnBeforeSalesHeaderInsert to fix a typo', '15.1')]
     [IntegrationEvent(false, false)]
     local procedure OnBeforeSelesHeaderInsert(var SalesHeader: Record "Sales Header"; var SalesInvoiceHeader: Record "Sales Invoice Header"; CancellingOnly: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeSetTrackInfoForCancellation(var SalesInvoiceHeader: Record "Sales Invoice Header"; var IsHandled: Boolean)
     begin
     end;
 

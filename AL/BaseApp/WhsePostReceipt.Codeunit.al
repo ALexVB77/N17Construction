@@ -199,6 +199,7 @@
                             PurchRelease.Reopen(PurchHeader);
                             PurchRelease.SetSkipCheckReleaseRestrictions;
                             PurchHeader.SetHideValidationDialog(true);
+                            PurchHeader.SetCalledFromWhseDoc(true);
                             PurchHeader.Validate("Posting Date", WhseRcptHeader."Posting Date");
                             PurchRelease.Run(PurchHeader);
                             ModifyHeader := true;
@@ -219,6 +220,7 @@
                             SalesRelease.Reopen(SalesHeader);
                             SalesRelease.SetSkipCheckReleaseRestrictions;
                             SalesHeader.SetHideValidationDialog(true);
+                            SalesHeader.SetCalledFromWhseDoc(true);
                             SalesHeader.Validate("Posting Date", WhseRcptHeader."Posting Date");
                             SalesRelease.Run(SalesHeader);
                             ModifyHeader := true;
@@ -581,6 +583,7 @@
     var
         WhseComment: Record "Warehouse Comment Line";
         WhseComment2: Record "Warehouse Comment Line";
+        RecordLinkManagement: Codeunit "Record Link Management";
     begin
         ReceivingNo := ReceivingNo2;
         PostingDate := PostingDate2;
@@ -601,6 +604,7 @@
             PostedWhseRcptHeader."Document Status" := PostedWhseRcptHeader."Document Status"::"Completely Put Away";
         OnBeforePostedWhseRcptHeaderInsert(PostedWhseRcptHeader, WhseRcptHeader);
         PostedWhseRcptHeader.Insert();
+        RecordLinkManagement.CopyLinks(WhseRcptHeader, PostedWhseRcptHeader);
         OnAfterPostedWhseRcptHeaderInsert(PostedWhseRcptHeader, WhseRcptHeader);
 
         WhseComment.SetRange("Table Name", WhseComment."Table Name"::"Whse. Receipt");

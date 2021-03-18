@@ -628,7 +628,9 @@ codeunit 7322 "Create Inventory Pick/Movement"
 
     procedure RunCreatePickOrMoveLine(NewWhseActivLine: Record "Warehouse Activity Line"; var RemQtyToPickBase: Decimal; OutstandingQtyBase: Decimal; ReservationExists: Boolean)
     begin
+        OnBeforeRunCreatePickOrMoveLine(WhseActivHeader, WhseRequest);
         CreatePickOrMoveLine(NewWhseActivLine, RemQtyToPickBase, OutstandingQtyBase, ReservationExists);
+        OnAfterRunCreatePickOrMoveLine(WhseActivHeader, WhseRequest);
     end;
 
     local procedure CreatePickOrMoveLine(NewWhseActivLine: Record "Warehouse Activity Line"; var RemQtyToPickBase: Decimal; OutstandingQtyBase: Decimal; ReservationExists: Boolean)
@@ -715,7 +717,9 @@ codeunit 7322 "Create Inventory Pick/Movement"
                                 // find Take qty. for other bins
                                 if ITQtyToPickBase > 0 then
                                     InsertPickOrMoveBinWhseActLine(NewWhseActivLine, '', false, ITQtyToPickBase, WhseItemTrackingSetup);
-                                if (ITQtyToPickBase = 0) and IsInvtMovement and not IsBlankInvtMovement then
+                                if (ITQtyToPickBase = 0) and IsInvtMovement and not IsBlankInvtMovement and
+                                   not TempHandlingSpecification.Correction
+                                then
                                     SynchronizeWhseItemTracking(TempHandlingSpecification);
                             end else
                                 if ITQtyToPickBase > 0 then
@@ -1228,6 +1232,7 @@ codeunit 7322 "Create Inventory Pick/Movement"
             "Variant Code" := WhseActivLine."Variant Code";
             CopyTrackingFromEntrySummary(EntrySummary);
             "Expiration Date" := EntrySummary."Expiration Date";
+            Correction := true;
             OnInsertTempHandlingSpecOnBeforeValidateQtyBase(TempHandlingSpecification, EntrySummary);
             Validate("Quantity (Base)", -QuantityBase);
             Insert;
@@ -1817,6 +1822,16 @@ codeunit 7322 "Create Inventory Pick/Movement"
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeWhseItemTrackingLineInsert(var WhseItemTrackingLine: Record "Whse. Item Tracking Line"; TrackingSpecification: Record "Tracking Specification")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterRunCreatePickOrMoveLine(var WhseActivHeader: Record "Warehouse Activity Header"; var WhseRequest: Record "Warehouse Request")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeRunCreatePickOrMoveLine(var WhseActivHeader: Record "Warehouse Activity Header"; var WhseRequest: Record "Warehouse Request")
     begin
     end;
 

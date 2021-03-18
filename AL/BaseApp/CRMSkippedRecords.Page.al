@@ -213,7 +213,7 @@ page 5333 "CRM Skipped Records"
                 Promoted = true;
                 PromotedCategory = Category4;
                 PromotedIsBig = true;
-                ToolTip = 'View the status of jobs for uncoupling records, for example, in integrations with Dynamics 365 Sales or Common Data Service. The jobs were run either from the job queue, or manually, in Business Central.';
+                ToolTip = 'View the status of jobs for uncoupling records, for example, in integrations with Dynamics 365 Sales or Dataverse. The jobs were run either from the job queue, or manually, in Business Central.';
 
                 trigger OnAction()
                 var
@@ -302,10 +302,18 @@ page 5333 "CRM Skipped Records"
                 ToolTip = 'Reload the error list.';
 
                 trigger OnAction()
+                var
+                    CurrView: Text;
+                    TableIdFilter: Text;
                 begin
                     if TooManyErrorsNotification.Recall() then;
                     SetOutside := False;
-                    LoadData();
+
+                    CurrView := Rec.GetView();
+                    TableIdFilter := Rec.GetFilter("Table ID");
+
+                    LoadData(TableIdFilter);
+                    Rec.SetView(CurrView);
                     CurrPage.Update();
                 end;
             }
@@ -321,7 +329,7 @@ page 5333 "CRM Skipped Records"
 
     trigger OnOpenPage()
     begin
-        LoadData();
+        LoadData('');
     end;
 
     var
@@ -335,22 +343,24 @@ page 5333 "CRM Skipped Records"
         DoBothOfRecordsExist: Boolean;
         SetOutside: Boolean;
         TooManyErrorsNotificationTxt: Label 'Only 100 coupled record synchronization errors are loaded. When you have resolved them, choose the Load More Errors action to load more.';
-        CategoryTok: Label 'AL Common Data Service Integration', Locked = true;
+        CategoryTok: Label 'AL Dataverse Integration', Locked = true;
         UserRetriedAllTxt: Label 'User invoked the Retry All function to set the Skipped flag to false on all records.', Locked = true;
 
-    local procedure LoadData();
+    local procedure LoadData(TableIdFilter: Text);
     begin
         Reset;
         CRMIntegrationEnabled := CRMIntegrationManagement.IsCRMIntegrationEnabled;
         CDSIntegrationEnabled := CRMIntegrationManagement.IsCDSIntegrationEnabled();
         if not SetOutside and (CRMIntegrationEnabled or CDSIntegrationEnabled) then
-            CollectSkippedCRMIntegrationRecords;
+            CollectSkippedCRMIntegrationRecords(TableIdFilter);
     end;
 
-    local procedure CollectSkippedCRMIntegrationRecords()
+    local procedure CollectSkippedCRMIntegrationRecords(TableIdFilter: Text)
     var
         CRMIntegrationRecord: Record "CRM Integration Record";
     begin
+        if TableIdFilter <> '' then
+            CRMIntegrationRecord.SetFilter("Table ID", TableIdFilter);
         CRMIntegrationRecord.SetRange(Skipped, true);
         SetRecords(CRMIntegrationRecord);
     end;

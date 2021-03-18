@@ -1,4 +1,4 @@
-page 5530 "Item Availability by Event"
+﻿page 5530 "Item Availability by Event"
 {
     Caption = 'Item Availability by Event';
     DataCaptionExpression = PageCaption;
@@ -60,6 +60,7 @@ page 5530 "Item Availability by Event"
                             if VariantFilter <> '' then
                                 Item.SetFilter("Variant Filter", VariantFilter);
                             InitAndCalculatePeriodEntries;
+                            CurrPage.Update(false);
                         end;
                     end;
                 }
@@ -91,6 +92,7 @@ page 5530 "Item Availability by Event"
                             if LocationFilter <> '' then
                                 Item.SetFilter("Location Filter", LocationFilter);
                             InitAndCalculatePeriodEntries;
+                            CurrPage.Update(false);
                         end;
                     end;
                 }
@@ -580,6 +582,7 @@ page 5530 "Item Availability by Event"
     begin
         Item.Copy(NewItem);
         UpdateItemRequestFields(Item);
+        OnAfterSetItem(Item);
     end;
 
     procedure SetForecastName(NewForcastName: Code[10])
@@ -607,11 +610,17 @@ page 5530 "Item Availability by Event"
                 Item.SetFilter("Variant Filter", VariantFilter);
             OnValidateItemNoOnBeforeInitAndCalculatePeriodEntries(Item);
             InitAndCalculatePeriodEntries;
+            CurrPage.Update(false);
         end;
     end;
 
     [IntegrationEvent(false, false)]
     local procedure OnValidateItemNoOnBeforeInitAndCalculatePeriodEntries(var Item: Record Item)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterSetItem(var Item: Record Item)
     begin
     end;
 }

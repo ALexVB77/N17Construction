@@ -103,6 +103,8 @@ page 5335 "Integration Table Mapping List"
                         Commit();
                         if FilterPageBuilder.RunModal then begin
                             IntegrationTableFilter := FilterPageBuilder.GetView(IntegrationTableCaptionValue, false);
+                            Session.LogMessage('0000EG5', StrSubstNo(UserEditedIntegrationTableFilterTxt, Name), Verbosity::Normal, DataClassification::SystemMetadata, TelemetryScope::ExtensionPublisher, 'Category', TelemetryCategoryTok);
+                            SuggestToIncludeEntitiesWithNullCompany(IntegrationTableFilter);
                             SetIntegrationTableFilter(IntegrationTableFilter);
                         end;
                     end;
@@ -170,7 +172,7 @@ page 5335 "Integration Table Mapping List"
                 ApplicationArea = Suite;
                 Caption = 'Use Default Synchronization Setup';
                 Image = ResetStatus;
-                ToolTip = 'Resets the integration table mappings and synchronization jobs to the default values for a connection with Common Data Service. All current mappings are deleted.', Comment = 'Common Data Service is the name of a Microsoft Service and should not be translated.';
+                ToolTip = 'Resets the integration table mappings and synchronization jobs to the default values for a connection with Dataverse. All current mappings are deleted.', Comment = 'Dataverse is the name of a Microsoft Service and should not be translated.';
 
                 trigger OnAction()
                 var
@@ -386,6 +388,8 @@ page 5335 "Integration Table Mapping List"
         RemoveCouplingsScheduledMsg: Label 'Uncoupling is scheduled for %2 mappings. %3\Details are available on the %1 page.', Comment = '%1 - caption from page 5344, %2 - scheduled job count, %3 - additional foreground job message';
         RemoveCouplingsForegroundMsg: Label '%1 mappings are uncoupled.', Comment = '%1 - foreground uncoupling count';
         NoRecSelectedErr: Label 'You must choose at least one integration table mapping.';
+        UserEditedIntegrationTableFilterTxt: Label 'The user edited the Integration Table Filter on %1 mapping.', Locked = true;
+        TelemetryCategoryTok: Label 'AL Dataverse Integration', Locked = true;
         HasRecords: Boolean;
         CRMIntegrationEnabled: Boolean;
         CDSIntegrationEnabled: Boolean;
