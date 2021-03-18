@@ -1,4 +1,6 @@
-﻿#Path
+﻿#ServerInstance
+$serverInstance = "BC170"
+#Path
 $rootDirPath = "C:\Users\alpopov\AL\N17Construction"
 
 $quietExecution = $null
@@ -30,7 +32,7 @@ $quietExecution = Import-Module ".\Modules\AppAdminTool.psm1"
 cd $homeDir
 
 try {
-    RepublishBaseApp -ServerInstanceName "BonavaDev" -ApplicationName "Base Application" -ApplicationPath ".\Microsoft_Base Application_17.2.19367.19735.app"
+    RepublishBaseApp -ServerInstanceName $serverInstance -ApplicationName "Base Application" -ApplicationPath ".\Microsoft_Base Application_17.4.21491.21531.app"
     Write-Output "Base Application has been republished successfully."
 } catch {
     Exit
