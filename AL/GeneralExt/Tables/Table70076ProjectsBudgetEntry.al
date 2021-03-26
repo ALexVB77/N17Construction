@@ -143,7 +143,7 @@ table 70076 "Projects Budget Entry"
             // begin
             //     IF ("Agreement No." <> '') AND ("Without VAT" <> 0) THEN EXIT;
 
-            //     gvBuildingTurn.RESET;
+            //     gvBuildingTurn.RESET;            
             //     IF "Project Code" <> '' THEN
             //         gvBuildingTurn.SETRANGE("Building project Code", "Project Code");
 

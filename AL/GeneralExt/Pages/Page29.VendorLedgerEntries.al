@@ -25,7 +25,6 @@ pageextension 80029 "Vendor Ledger Entries (Ext)" extends "Vendor Ledger Entries
                     //NC 27087 HR 230518 end
                 end;
             }
-
         }
     }
 
