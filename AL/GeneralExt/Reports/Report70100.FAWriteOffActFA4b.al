@@ -5,142 +5,132 @@ report 70100 "FA Write-off Act FA-4b"
 
     dataset
     {
-        dataitem("Document Print Buffer"; "Document Print Buffer")
+        dataitem("FA Document Header"; "FA Document Header")
         {
-            DataItemTableView = sorting("User ID");
-
-            dataitem("FA Document Header"; "FA Document Header")
+            DataItemTableView = sorting("Document Type", "No.") where("Document Type" = const("Writeoff"));
+            dataitem("FA Document Line"; "FA Document Line")
             {
-                DataItemTableView = sorting("Document Type", "No.") where("Document Type" = const("Writeoff"));
-                dataitem("FA Document Line"; "FA Document Line")
+                DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
+                DataItemLinkReference = "FA Document Header";
+                DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
+                dataitem("ItemFA Precious Metal Unposted"; "Item/FA Precious Metal")
                 {
-                    DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
-                    DataItemLinkReference = "FA Document Header";
-                    DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
-                    dataitem("ItemFA Precious Metal Unposted"; "Item/FA Precious Metal")
-                    {
-                        DataItemTableView = sorting("Item Type", "No.", "Precious Metals Code") where("Item Type" = const("FA"));
-                        DataItemLinkReference = "FA Document Line";
-                        DataItemLink = "No." = field("FA No.");
-                        CalcFields = Name;
-                    }
-                    dataitem("Item Document Line"; "Item Document Line")
-                    {
-                        DataItemTableView = sorting("Document Type", "Document No.", "Line No.") where("Document Type" = const("Receipt"));
-                        DataItemLinkReference = "FA Document Line";
-                        DataItemLink = "Document No." = field("Item Receipt No.");
-                        trigger OnPreDataItem()
-                        begin
-                            SetSheet(2);
-                        end;
-
-                        trigger OnAfterGetRecord()
-                        begin
-                            SetConclusionLine("Item Document Line");
-                        end;
-                    }
+                    DataItemTableView = sorting("Item Type", "No.", "Precious Metals Code") where("Item Type" = const("FA"));
+                    DataItemLinkReference = "FA Document Line";
+                    DataItemLink = "No." = field("FA No.");
+                    CalcFields = Name;
+                }
+                dataitem("Item Document Line"; "Item Document Line")
+                {
+                    DataItemTableView = sorting("Document Type", "Document No.", "Line No.") where("Document Type" = const("Receipt"));
+                    DataItemLinkReference = "FA Document Line";
+                    DataItemLink = "Document No." = field("Item Receipt No.");
                     trigger OnPreDataItem()
                     begin
-                        TotalAmount := 0;
-                        ConcTotalAmount := 0;
-                        LineNo := 0;
+                        SetSheet(2);
                     end;
 
                     trigger OnAfterGetRecord()
                     begin
-                        SetLine("FA Document Line");
-                    end;
-
-                    trigger OnPostDataItem()
-                    begin
-                        SetFooter();
+                        SetConclusionLine("Item Document Line");
                     end;
                 }
                 trigger OnPreDataItem()
                 begin
-                    if "Document Print Buffer"."Table ID" <> Database::"FA Document Header" then
-                        CurrReport.Break();
+                    TotalAmount := 0;
+                    ConcTotalAmount := 0;
+                    LineNo := 0;
                 end;
 
                 trigger OnAfterGetRecord()
                 begin
-                    SetHeader("FA Location Code", "FA Employee No.", "FA Posting Date", "Posting Date", "No.");
-                    SetConclusionHeader("FA Document Header");
-
-                    ItemLedgEntry.Reset();
-                    ItemLedgEntry.SetCurrentKey("Document No.", "Posting Date");
-                    ItemLedgEntry.SetRange("Document No.", "No.");
-                end;
-            }
-            dataitem("Posted FA Doc. Header"; "Posted FA Doc. Header")
-            {
-                DataItemTableView = sorting("Document Type", "No.");
-                dataitem("Posted FA Doc. Line"; "Posted FA Doc. Line")
-                {
-                    DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
-                    DataItemLinkReference = "Posted FA Doc. Header";
-                    DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
-                    dataitem("ItemFA Precious Metal Posted"; "Item/FA Precious Metal")
-                    {
-                        DataItemTableView = sorting("Item Type", "No.", "Precious Metals Code") where("Item Type" = const("FA"));
-                        DataItemLinkReference = "Posted FA Doc. Line";
-                        DataItemLink = "No." = field("FA No.");
-                    }
-                    dataitem("Item Receipt Line"; "Item Receipt Line")
-                    {
-                        DataItemTableView = sorting("Document No.", "Line No.");
-                        DataItemLinkReference = "Posted FA Doc. Line";
-                        DataItemLink = "Document No." = field("Item Receipt No.");
-                        trigger OnPreDataItem()
-                        begin
-                            SetSheet(2);
-                        end;
-
-                        trigger OnAfterGetRecord()
-                        begin
-                            SetConclusionLine("Item Receipt Line");
-                        end;
-                    }
-                    trigger OnPreDataItem()
-                    begin
-                        TotalAmount := 0;
-                        ConcTotalAmount := 0;
-                        LineNo := 0;
-                    end;
-
-                    trigger OnAfterGetRecord()
-                    begin
-                        SetLine("Posted FA Doc. Line");
-                    end;
-
-                    trigger OnPostDataItem()
-                    begin
-                        SetFooter();
-                    end;
-                }
-                trigger OnPreDataItem()
-                begin
-                    if "Document Print Buffer"."Table ID" <> Database::"Posted FA Doc. Header" then
-                        CurrReport.Break();
+                    SetLine("FA Document Line");
                 end;
 
-                trigger OnAfterGetRecord()
+                trigger OnPostDataItem()
                 begin
-                    SetHeader("FA Location Code", "FA Employee No.", "FA Posting Date", "Posting Date", "No.");
-                    SetConclusionHeader("Posted FA Doc. Header");
-
-                    ItemLedgEntry.Reset();
-                    ItemLedgEntry.SetCurrentKey("Document No.", "Posting Date");
-                    ItemLedgEntry.SetRange("Document No.", "No.");
+                    SetFooter();
                 end;
             }
             trigger OnPreDataItem()
             begin
-                SetRange("User ID", UserId());
+                if "FA Document Header".GetFilters = '' then
+                    CurrReport.Break();
+            end;
+
+            trigger OnAfterGetRecord()
+            begin
+                SetHeader("FA Location Code", "FA Employee No.", "FA Posting Date", "Posting Date", "No.");
+                SetConclusionHeader("FA Document Header");
+
+                ItemLedgEntry.Reset();
+                ItemLedgEntry.SetCurrentKey("Document No.", "Posting Date");
+                ItemLedgEntry.SetRange("Document No.", "No.");
+            end;
+        }
+        dataitem("Posted FA Doc. Header"; "Posted FA Doc. Header")
+        {
+            DataItemTableView = sorting("Document Type", "No.");
+            dataitem("Posted FA Doc. Line"; "Posted FA Doc. Line")
+            {
+                DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
+                DataItemLinkReference = "Posted FA Doc. Header";
+                DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
+                dataitem("ItemFA Precious Metal Posted"; "Item/FA Precious Metal")
+                {
+                    DataItemTableView = sorting("Item Type", "No.", "Precious Metals Code") where("Item Type" = const("FA"));
+                    DataItemLinkReference = "Posted FA Doc. Line";
+                    DataItemLink = "No." = field("FA No.");
+                }
+                dataitem("Item Receipt Line"; "Item Receipt Line")
+                {
+                    DataItemTableView = sorting("Document No.", "Line No.");
+                    DataItemLinkReference = "Posted FA Doc. Line";
+                    DataItemLink = "Document No." = field("Item Receipt No.");
+                    trigger OnPreDataItem()
+                    begin
+                        SetSheet(2);
+                    end;
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        SetConclusionLine("Item Receipt Line");
+                    end;
+                }
+                trigger OnPreDataItem()
+                begin
+                    TotalAmount := 0;
+                    ConcTotalAmount := 0;
+                    LineNo := 0;
+                end;
+
+                trigger OnAfterGetRecord()
+                begin
+                    SetLine("Posted FA Doc. Line");
+                end;
+
+                trigger OnPostDataItem()
+                begin
+                    SetFooter();
+                end;
+            }
+            trigger OnPreDataItem()
+            begin
+                if "Posted FA Doc. Header".GetFilters() = '' then
+                    CurrReport.Break();
+            end;
+
+            trigger OnAfterGetRecord()
+            begin
+                SetHeader("FA Location Code", "FA Employee No.", "FA Posting Date", "Posting Date", "No.");
+                SetConclusionHeader("Posted FA Doc. Header");
+
+                ItemLedgEntry.Reset();
+                ItemLedgEntry.SetCurrentKey("Document No.", "Posting Date");
+                ItemLedgEntry.SetRange("Document No.", "No.");
             end;
         }
     }
-
     requestpage
     {
         layout

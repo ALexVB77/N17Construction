@@ -257,6 +257,42 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text007</note>
         </trans-unit>
+        <trans-unit id="Report 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Write-off Act FA-4b</source>
+          <target>Акт списания ОС-4б</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Write-off Act FA-4b - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1670819662 - Control 3554329002 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depreciation Group Code</source>
+          <target>Группа амортизации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Write-off Act FA-4b - Control Depreciation Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2474643347 - Action 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1360508371">
+          <source>FA Write-off Act FA-4b</source>
+          <target>Акт списания ОС-4б</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Writeoff Act Subform (Ext) - Action FA Write-off Act FA-4b - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 759612072 - Action 2670408323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2820948104">
+          <source>Import Template New</source>
+          <target>Импортировать шаблон</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates (Ext) - Action Import Template New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 759612072 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 759612072">
+          <source>Do you want to replace the existing definition for template %1?</source>
+          <target>Заменить существующее определение для шаблона %1?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates (Ext) - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 759612072 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 759612072">
+          <source>Import</source>
+          <target>Импортировать</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates (Ext) - NamedType Text002</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1977683957 - Action 127879565 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1567633909">
           <source>Transfer to GD</source>
           <target>Перенести на счет ГУ</target>
