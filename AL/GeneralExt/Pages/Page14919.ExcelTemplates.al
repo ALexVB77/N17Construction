@@ -1,12 +1,7 @@
 pageextension 94919 "Excel Templates (Ext)" extends "Excel Templates"
 {
-
     actions
     {
-        modify("Import Template")
-        {
-            Visible = false;
-        }
         addafter("Import Template")
         {
             action("Import Template New")
@@ -46,7 +41,6 @@ pageextension 94919 "Excel Templates (Ext)" extends "Excel Templates"
             }
         }
     }
-
     var
         Text001: Label 'Do you want to replace the existing definition for template %1?';
         Text002: Label 'Import';

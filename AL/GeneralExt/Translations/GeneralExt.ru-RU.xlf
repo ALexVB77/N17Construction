@@ -277,7 +277,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 759612072 - Action 2670408323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2820948104">
           <source>Import Template New</source>
-          <target>Импортировать шаблон</target>
+          <target>Импортировать шаблон (New)</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates (Ext) - Action Import Template New - Property Caption</note>
         </trans-unit>
