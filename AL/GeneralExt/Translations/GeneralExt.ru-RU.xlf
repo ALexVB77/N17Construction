@@ -275,6 +275,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Writeoff Act Subform (Ext) - Action FA Write-off Act FA-4b - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 119182345 - Action 2378163730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2625649796">
+          <source>FA Posted Writeoff Act FA-4b</source>
+          <target>Учтенный акт списания ОС-4б</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Writeoff Act Sub Ext - Action FA Posted Writeoff Act FA-4b - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 759612072 - Action 2670408323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2820948104">
           <source>Import Template New</source>
           <target>Импортировать шаблон (New)</target>

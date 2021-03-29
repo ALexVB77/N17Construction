@@ -22,12 +22,13 @@ pageextension 92471 "FA Writeoff Act Subform (Ext)" extends "FA Writeoff Act Sub
             }
         }
     }
-
     local procedure SetFilters(var FADocHeader: Record "FA Document Header"; var FADocLine: Record "FA Document Line")
     begin
-        FADocHeader.Get("Document Type", "Document No.");
+        FADocHeader.Get(Rec."Document Type", Rec."Document No.");
         FADocHeader.SetRecFilter;
-        FADocLine := Rec;
-        FADocLine.SetRecFilter;
+        FADocLine.Reset;
+        FADocLine.SetRange("Document Type", FADocHeader."Document Type");
+        FADocLine.SetRange("Document No.", FADocHeader."No.");
+        if FADocLine.FindFirst() then;
     end;
 }
