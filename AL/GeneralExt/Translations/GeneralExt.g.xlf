@@ -3,6 +3,391 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="GeneralExt">
     <body>
       <group id="body">
+        <trans-unit id="Table 286357085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Building project</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 2502444022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Dev. Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 329847988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Project Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 332160570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Contrator</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field General Contractor No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 3622841874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Contrator Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field General Contractor Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 3763787654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Contrator Contact No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Gen. Contractor Contact No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 743499860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Contrator Adress</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field General Contractor Adres - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 779023285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Contrator Agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Gen. Contractor Agreement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 430251985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Development/Production</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Development/Production - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 286357085 - Field 430251985 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Development,Production</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Development/Production - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Construction Queue</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3221779637 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3221779637 - Field 1209826354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Building project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3221779637 - Field 2241511052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Turn Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3221779637 - Field 3007069574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sort</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Sort - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3221779637 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot delete queue. There are project data exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 3861211528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Development Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3861211528 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3861211528 - Field 329847988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Project Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2960147102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2960147102 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2960147102 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2960147102 - Field 3814176124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>In terms of queuing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field By Building turn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2960147102 - Field 3495718276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Repeat Interval</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field Repeat Interval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Structure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 781257514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 3 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 2711388939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 4 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 405681708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 5 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 4126842061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 6 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 2765633070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 7 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 785667711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 8 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 8 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Projects Structure Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 801000303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Task Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Structure Post Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 801000303 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting,Heading,Total,Begin-Total,End-Total</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Structure Post Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3814176124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>In terms of queuing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field By Building turn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 237762718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3765219587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 609917894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 2718558341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 3 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 848371648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 4 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3453214591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 5 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 2220525762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 6 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 2448130049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 7 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3073228588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Dimension 8 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 8 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - Field 3495718276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Repeat Interval</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Repeat Interval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The dimension value %1 has not been set up for dimension %2.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 3 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 4 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 5 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 6 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 7 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,5,,Budget Dimension 8 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text008</note>
+        </trans-unit>
+        <trans-unit id="Table 2164933506 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You can not delete a row, exist project data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text009</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Projects Line Dimension</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 863923670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Project No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 1036975512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Task No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Project Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Dimension Value Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 2610375332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Version No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Project Version No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 3693001931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Detailed Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Detailed Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix Budget","Current Budget",Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Type - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Budget Entry</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -13,6 +398,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Analysis Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Analysis Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Version Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 149522872 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Entry Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 149522872 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OwnWorks,Subcontract,Materials,Income</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Entry Type - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -22,6 +442,11 @@
           <source>Description 2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Description 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency</source>
@@ -43,10 +468,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Transaction Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parent Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Parent Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Turn Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Project Turn Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Incl. VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Without VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1815700606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Including VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Including VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 908668199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Temp Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Temp Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fact</source>
@@ -84,9 +529,154 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Payment Doc. No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3121970132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма с НДС, руб.</source>
+          <source>Without VAT (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Without VAT (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Projects Budget Entry Link</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Analysis Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Analysis Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Version Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 880799788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Main Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Main Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Curency</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Curency - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Create User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Create Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parent Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Parent Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Turn Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Project Turn Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Fixed Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Without VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Without VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 2805329373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Build Turn</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Build Turn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 584900853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Work Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 1463032602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agrrement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Agrrement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - Field 2170793887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserv</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Reserv - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create a periodic entries for\%1 ?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify the ending date of the project!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 4285604025 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update related entries?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Agreement Details</source>
@@ -242,6 +832,236 @@
           <source>Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Projects Cost Control Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Analysis Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Analysis Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Version Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Turn Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Project Turn Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 908668199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Temp Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Temp Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Cost Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Curency - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Create User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Create Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parent Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Parent Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contragent No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1463032602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agrrement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Agrrement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Without VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Without VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 249393910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contragent Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field External Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1897831671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contragent Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1897831671 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor,Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Shortcut Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Cost Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3906294107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field New Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 825293260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserve</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Reserve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 399424670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Building Turn All</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Building Turn All - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 2545923953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Doc No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Doc No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Close Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3589430442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (new)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3677192552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT (new)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount Including VAT 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3418027727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount (new)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field VAT Amount 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Reversed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3862385658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Storno</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Project Storno - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create a periodic entries for\%1 ?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify the ending date of the project!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update related entries?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Code value can not be empty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>While posting, there is a line created with the number %1, which already exists in the system! Contact the Technical Support department.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text005</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
@@ -407,6 +1227,11 @@
           <source>RAS Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 476953720 - Field 1386837218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
+          <source>Cost Type Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
         </trans-unit>
       </group>
     </body>
