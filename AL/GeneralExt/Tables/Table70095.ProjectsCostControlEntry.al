@@ -2,9 +2,8 @@ table 70095 "Projects Cost Control Entry"
 {
     Caption = 'Projects Cost Control Entry';
     DataClassification = CustomerContent;
-    //DrillDownPageID = 70213;
-    //LookupPageID = 70213;
-
+    DrillDownPageID = 70213;
+    LookupPageID = 70213;
     fields
     {
         field(1; "Project Code"; Code[20])
@@ -47,21 +46,21 @@ table 70095 "Projects Cost Control Entry"
         {
             Caption = 'Cost Type';
 
-            trigger OnLookup();
-            var
-                GLSetup: Record "General Ledger Setup";
-                DimensionValue: Record "Dimension Value";
-            begin
-                GLSetup.Get;
-                DimensionValue.SetRange("Dimension Code", GLSetup."Cost Type Dimension Code");
-                if DimensionValue.FindFirst then begin
-                    if DimensionValue.Get(GLSetup."Cost Type Dimension Code", "Cost Type") then;
+            // trigger OnLookup();
+            // var
+            //     GLSetup: Record "General Ledger Setup";
+            //     DimensionValue: Record "Dimension Value";
+            // begin
+            //     GLSetup.Get;
+            //     DimensionValue.SetRange("Dimension Code", GLSetup."Cost Type Dimension Code");
+            //     if DimensionValue.FindFirst then begin
+            //         if DimensionValue.Get(GLSetup."Cost Type Dimension Code", "Cost Type") then;
 
-                    if Page.RunModal(Page::"Dimension Value List", DimensionValue) = Action::LookupOK then begin
-                        "Cost Type" := DimensionValue.Code;
-                    end;
-                end;
-            end;
+            //         if Page.RunModal(Page::"Dimension Value List", DimensionValue) = Action::LookupOK then begin
+            //             "Cost Type" := DimensionValue.Code;
+            //         end;
+            //     end;
+            // end;
         }
         // field(10; "Entry Type"; Option)
         // {
@@ -75,11 +74,11 @@ table 70095 "Projects Cost Control Entry"
             Caption = 'Description';
             NotBlank = true;
         }
-        // field(30; "Description 2"; Text[250])
-        // {
-        //     Caption = 'Decription 2';
-        //     NotBlank = true;
-        // }
+        field(30; "Description 2"; Text[250])
+        {
+            Caption = 'Decription 2';
+            NotBlank = true;
+        }
         field(40; Amount; Decimal)
         {
             Caption = 'Amount';
@@ -292,33 +291,33 @@ table 70095 "Projects Cost Control Entry"
                 ValidateDimension2;
             end;
         }
-        // field(340; "Building Turn"; Code[20])
-        // {
-        //     Caption = 'Stage';
-        //     TableRelation = "Building turn";
+        field(340; "Building Turn"; Code[20])
+        {
+            Caption = 'Stage';
+            TableRelation = "Building turn";
 
-        //     trigger OnLookup();
-        //     begin
-        //         gvBuildingTurn.SetRange("Building project Code", "Project Code");
-        //         if gvBuildingTurn.FindFirst then begin
-        //             if Page.RunModal(Page::"Dev Building turn", gvBuildingTurn) = ACTION::LookupOK then begin
-        //                  "Building Turn" := gvBuildingTurn.Code;
-        //                  Validate("Shortcut Dimension 1 Code", gvBuildingTurn."Turn Dimension Code");
-        //                  "Project Turn Code" := "Building Turn";
-        //             end;
-        //         end;
-        //     end;
+            // trigger OnLookup();
+            // begin
+            //     gvBuildingTurn.SetRange("Building project Code", "Project Code");
+            //     if gvBuildingTurn.FindFirst then begin
+            //         if Page.RunModal(Page::"Dev Building turn", gvBuildingTurn) = ACTION::LookupOK then begin
+            //              "Building Turn" := gvBuildingTurn.Code;
+            //              Validate("Shortcut Dimension 1 Code", gvBuildingTurn."Turn Dimension Code");
+            //              "Project Turn Code" := "Building Turn";
+            //         end;
+            //     end;
+            // end;
 
-        //     trigger OnValidate();
-        //     begin
-        //         gvBuildingTurn.SetRange("Building project Code", "Project Code");
-        //         gvBuildingTurn.SetRange(Code, "Building Turn");
-        //         if gvBuildingTurn.FindFirst then begin
-        //             Validate("Shortcut Dimension 1 Code", gvBuildingTurn."Turn Dimension Code");
-        //             "Project Turn Code" := "Building Turn";
-        //         end;
-        //     end;
-        // }
+            trigger OnValidate();
+            begin
+                gvBuildingTurn.SetRange("Building project Code", "Project Code");
+                gvBuildingTurn.SetRange(Code, "Building Turn");
+                if gvBuildingTurn.FindFirst then begin
+                    Validate("Shortcut Dimension 1 Code", gvBuildingTurn."Turn Dimension Code");
+                    "Project Turn Code" := "Building Turn";
+                end;
+            end;
+        }
         field(350; "Cost Code"; Code[20])
         {
             Caption = 'Budget Item';
@@ -359,6 +358,7 @@ table 70095 "Projects Cost Control Entry"
             trigger OnValidate();
             var
                 ProjectsLineDimension: Record "Projects Line Dimension";
+                CodeMonkeyTranslation: Codeunit "Code Monkey Translation";
             begin
                 grProjectsStructureLines1.SetRange("Project Code", "Project Code");
                 grProjectsStructureLines1.SetRange(Version, "Version Code");
@@ -369,7 +369,7 @@ table 70095 "Projects Cost Control Entry"
                     ProjectsLineDimension.SetRange("Project Version No.", "Version Code");
                     ProjectsLineDimension.SetRange("Project Line No.", grProjectsStructureLines1."Line No.");
                     ProjectsLineDimension.SetRange("Detailed Line No.", 0);
-                    ProjectsLineDimension.SetRange("Dimension Code", 'CC');
+                    ProjectsLineDimension.SetRange("Dimension Code", CodeMonkeyTranslation.ConstOther('CC'));
                     if ProjectsLineDimension.FindFirst then
                         Validate("Shortcut Dimension 2 Code", ProjectsLineDimension."Dimension Value Code");
                     "New Lines" := grProjectsStructureLines1."Line No.";
@@ -419,11 +419,11 @@ table 70095 "Projects Cost Control Entry"
         {
             Caption = 'Doc No.';
         }
-        // field(420; "Doc Type"; Option)
-        // {
-        //     Caption = 'Option';
-        //     OptionMembers = Pre,Post;
-        // }
+        field(420; "Doc Type"; Option)
+        {
+            Caption = 'Doc Type';
+            OptionMembers = Pre,Post;
+        }
         field(430; "Close Date"; Date)
         {
             Caption = 'Close Date';
@@ -444,27 +444,27 @@ table 70095 "Projects Cost Control Entry"
             BlankZero = true;
             Caption = 'VAT Amount (new)';
         }
-        // field(50030; "VAT %"; Decimal)
-        // {
-        //     Caption = 'VAT %';
-        // }
+        field(50030; "VAT %"; Decimal)
+        {
+            Caption = 'VAT %';
+        }
         // field(50040; "Imported Form File"; Boolean)
         // {
         //     Caption = 'Imported Form File';
         //     Editable = false;
         // }
-        // field(60090; "Original Company"; Code[2])
-        // {
-        //     Caption = 'Original Company';
-        // }
-        // field(70000; "Original Date"; Date)
-        // {
-        //     Caption = 'Original Date';
-        // }
-        // field(70010; ID; Integer)
-        // {
-        //     Caption = 'ID';
-        // }
+        field(60090; "Original Company"; Code[2])
+        {
+            Caption = 'Original Company';
+        }
+        field(70000; "Original Date"; Date)
+        {
+            Caption = 'Original Date';
+        }
+        field(70010; ID; Integer)
+        {
+            Caption = 'ID';
+        }
         // field(70020; "IFRS Account No."; Text[250])
         // {
         //     CalcFormula = Lookup("Budget Correction Journal"."G/L Account Totaling" where(ID = field(ID), "Project Code" = field("Project Code")));
@@ -474,10 +474,10 @@ table 70095 "Projects Cost Control Entry"
         // field(70030; "Frc Version Code"; Code[20])
         // {
         // }
-        // field(70040; "Original Ammount"; Decimal)
-        // {
-        //     Caption = 'Оригинальная Сумма';
-        // }
+        field(70040; "Original Ammount"; Decimal)
+        {
+            Caption = 'Original Ammount';
+        }
         field(70050; Reversed; Boolean)
         {
             Caption = 'Reversed';
@@ -490,15 +490,15 @@ table 70095 "Projects Cost Control Entry"
         // {
         //     Caption = 'User Created';
         // }
-        // field(70080; Changed; Boolean)
-        // {
-        //     Caption = 'Changed';
-        //     FieldClass = Normal;
-        // }
-        // field(70090; "Company Name"; Text[60])
-        // {
-        //     Caption = 'Company Name';
-        // }
+        field(70080; Changed; Boolean)
+        {
+            Caption = 'Changed';
+            FieldClass = Normal;
+        }
+        field(70090; "Company Name"; Text[60])
+        {
+            Caption = 'Company Name';
+        }
         // field(70100; "Allocation Line No."; Integer)
         // {
         //     Caption = 'Allocation Line No.';
@@ -529,30 +529,30 @@ table 70095 "Projects Cost Control Entry"
         // {
         //     Caption = '';
         // }
-        // field(70170; "Estimate Line No."; Integer)
-        // {
-        //     Caption = 'Estimate Line No.';
-        // }
-        // field(70180; "Estimate Quantity"; Decimal)
-        // {
-        //     Caption = 'Estimate Quantity';
-        // }
-        // field(70190; "Estimate Unit Price"; Decimal)
-        // {
-        //     Caption = 'Estimate Unit Price';
-        // }
-        // field(70200; "Estimate Unit of Measure"; Text[10])
-        // {
-        //     Caption = 'Estimate Unit of Measure';
-        // }
-        // field(70210; "Estimate Line ID"; Integer)
-        // {
-        //     Caption = 'Estimate Line ID';
-        // }
-        // field(70220; "Estimate Subproject Code"; Text[10])
-        // {
-        //     Caption = 'Estimate Subproject Code';
-        // }
+        field(70170; "Estimate Line No."; Integer)
+        {
+            Caption = 'Estimate Line No.';
+        }
+        field(70180; "Estimate Quantity"; Decimal)
+        {
+            Caption = 'Estimate Quantity';
+        }
+        field(70190; "Estimate Unit Price"; Decimal)
+        {
+            Caption = 'Estimate Unit Price';
+        }
+        field(70200; "Estimate Unit of Measure"; Text[10])
+        {
+            Caption = 'Estimate Unit of Measure';
+        }
+        field(70210; "Estimate Line ID"; Integer)
+        {
+            Caption = 'Estimate Line ID';
+        }
+        field(70220; "Estimate Subproject Code"; Text[10])
+        {
+            Caption = 'Estimate Subproject Code';
+        }
         field(70230; "Project Storno"; Boolean)
         {
             Caption = 'Project Storno';
@@ -708,15 +708,10 @@ table 70095 "Projects Cost Control Entry"
         StructurePostTypeIsTotal: Boolean;
         gvCreateRepeat: Boolean;
         Text001: Label 'Create a periodic entries for\%1 ?';
-        //RUS='Создать периодические проводки для\%1?';
         Text002: Label 'You must specify the ending date of the project!';
-        //RUS='Необходимо задать дату окончания проекта!';
         Text003: Label 'Update related entries?';
-        //RUS='Обновить связанные проводки?';
         Text004: Label 'Cost Code value can not be empty';
-        //RUS='Значение Cost Code не должно быть пусто';
         Text005: Label 'While posting, there is a line created with the number %1, which already exists in the system! Contact the Technical Support department.';
-    //При учете создается строка с номером %1, который уже существует в системе! Обратитесь в отдел Технической поддержки!
 
     procedure GetNextEntryNo(): Integer;
     var

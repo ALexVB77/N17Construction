@@ -888,6 +888,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Decription 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Description 2 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2622754722 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -983,6 +988,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Building Turn - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2622754722 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Item</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1008,6 +1018,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Doc No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1343762524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Doc Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Doc Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1343762524 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pre,Post</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Doc Type - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 2622754722 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1028,10 +1048,75 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field VAT Amount 2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 1246077090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field VAT % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 112760607 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Original Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 2132826204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Ammount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Original Ammount - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2622754722 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reversed</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Reversed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3720531126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Changed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Changed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Company Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 6568521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estimate Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3387933079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estimate Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3386851551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estimate Unit Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Unit Price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 3174615267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estimate Unit of Measure</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Unit of Measure - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 4017363903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estimate Line ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Line ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 902316334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estimate Subproject Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Subproject Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2622754722 - Field 3862385658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Storno</source>
@@ -1062,6 +1147,26 @@
           <source>While posting, there is a line created with the number %1, which already exists in the system! Contact the Technical Support department.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 848050111 - Method 3304731564" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ConstOther</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstOther</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 848050111 - Method 4088365915" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ConstOther</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstOther</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 848050111 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown text constant - "%1".</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Projects CC Entry Constr 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
@@ -1122,6 +1227,11 @@
           <source>Document number for GD operation is not specified.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Report 1306421762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Find Error 70095</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Write-off Act FA-4b</source>
@@ -1227,11 +1337,6 @@
           <source>RAS Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 476953720 - Field 1386837218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
-          <source>Cost Type Dimension Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
         </trans-unit>
       </group>
     </body>

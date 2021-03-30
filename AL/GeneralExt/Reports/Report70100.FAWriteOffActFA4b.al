@@ -523,5 +523,4 @@ report 70100 "FA Write-off Act FA-4b"
         DocSignMgt.GetPostedDocSign(PostedDocSign, DATABASE::"Posted FA Doc. Header",
             "Posted FA Doc. Header"."Document Type", "Posted FA Doc. Header"."No.", EmpType, false);
     end;
-
 }

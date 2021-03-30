@@ -684,17 +684,17 @@ table 70073 "Projects Structure Lines"
         ProjectDim.SetRange("Project Line No.", "Line No.");
         ProjectDim.SetRange("Dimension Code", DimCode);
         if ProjectDim.Find('-') then
-            ProjectDim.DELETE;
+            ProjectDim.Delete;
 
         if DimValueCode <> '' then begin
-            ProjectDim.RESET;
-            ProjectDim.INIT;
+            ProjectDim.Reset;
+            ProjectDim.Init;
             ProjectDim."Project No." := "Project Code";
             ProjectDim."Project Version No." := Version;
             ProjectDim."Project Line No." := "Line No.";
             ProjectDim."Dimension Code" := DimCode;
             ProjectDim."Dimension Value Code" := DimValueCode;
-            ProjectDim.INSERT;
+            ProjectDim.Insert;
         end;
     end;
 }

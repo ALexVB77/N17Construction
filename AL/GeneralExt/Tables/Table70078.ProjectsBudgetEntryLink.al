@@ -200,17 +200,18 @@ table 70078 "Projects Budget Entry Link"
 
     trigger OnInsert();
     var
+        CodeMonkeyTranslation: Codeunit "Code Monkey Translation";
         VATRate: Decimal;
     begin
-        "Create User" := USERID;
-        "Create Date" := TODAY;
-        "Create Time" := TIME;
+        "Create User" := UserId;
+        "Create Date" := Today;
+        "Create Time" := Time;
         grProjectsBudgetEntry.SetRange("Project Code", "Project Code");
         grProjectsBudgetEntry.SetRange("Analysis Type", "Analysis Type");
         grProjectsBudgetEntry.SetRange("Version Code", "Version Code");
         grProjectsBudgetEntry.SetRange("Entry No.", "Main Entry No.");
 
-        if WORKDATE >= 20190101D then
+        if WorkDate() >= CodeMonkeyTranslation.ConstOther(20190101D) then
             VATRate := 1.2
         else
             VATRate := 1.18;
@@ -251,11 +252,9 @@ table 70078 "Projects Budget Entry Link"
         grProjectsBudgetEntry: Record "Projects Budget Entry";
         gvCreateRepeat: Boolean;
         Text001: Label 'Create a periodic entries for\%1 ?';
-        //, RUS = 'Создать периодические проводки для\%1?';
         Text002: Label 'You must specify the ending date of the project!';
-        //, RUS = 'Необходимо задать дату окончания проекта!';
         Text003: Label 'Update related entries?';
-    //, RUS = 'Обновить связанные проводки?';
+
     local procedure GetNextEntryNo(): Integer;
     var
         GLBudgetEntry: Record "Projects Budget Entry";
