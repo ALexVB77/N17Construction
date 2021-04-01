@@ -1168,6 +1168,351 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 4290211394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Comparative Sheet INV-18</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventorization Reason</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control Reason - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 3369789712 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order,Resolution,Direction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control Reason - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 3117834186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control DocumentNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 3117834186 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control DocumentNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 1594611733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control DocumentDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 1594611733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the creation date of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control DocumentDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 2571230917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control BeginDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 2571230917 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the beginning of the period for which entries are adjusted. This field is usually left blank, but you can enter a date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control BeginDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 845401037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control EndDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 845401037 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date to which the report or batch job processes information.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control EndDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 3290657719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Creation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control CreatDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 3290657719 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the creation date of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control CreatDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 2382639914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status as of Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control UntilDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 2382639914 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the beginning of the period for which entries are adjusted. This field is usually left blank, but you can enter a date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control UntilDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 814422763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Member 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control Member1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - Control 2727512614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Member 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control Member2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4290211394 - NamedType 1181901636" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commission Members</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - NamedType Text19021143</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Phys. Inventory INV-1a</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3928095591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commission</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Commission - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 1718256000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commission 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Commission1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 1718256000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the employees who serves on the commission.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Commission1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2355952617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commission 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Commission2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2355952617 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the employees who serves on the commission.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Commission2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2993649234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commission 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Commission3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2993649234 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the employees who serves on the commission.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Commission3 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 316362275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsible Person</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Responsible Person - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2986148564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ResponsiblePerson 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control ResponsiblePerson1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3623845181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ResponsiblePerson 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control ResponsiblePerson2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3117834186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control DocumentNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3117834186 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control DocumentNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 1594611733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control DocumentDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 1594611733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the creation date of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control DocumentDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3605153064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control StartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3605153064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the beginning of the period for which entries are adjusted. This field is usually left blank, but you can enter a date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control StartDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 845401037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control EndDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 845401037 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date to which the report or batch job processes information.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control EndDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 81282293 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chairman</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Chairman - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 81282293 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the chairman from the employee list as a signatory.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control Chairman - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3575596480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supervisor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control CheckedBy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 3575596480 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the supervisor as a signatory.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control CheckedBy - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2987774897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control FALocationCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3825325427 - Control 2987774897 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the fixed asset location code.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control FALocationCode - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory for Deferrals INV-11</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 2738103555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control DocNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 2738103555 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control DocNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 3820200120 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control DocDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 3820200120 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the creation date of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control DocDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 39415292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control LocationCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 39415292 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the location where the items are located.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control LocationCode - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 2521288255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control InvStartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 4180868214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control InvEndDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 4180868214 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date to which the report or batch job processes information.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control InvEndDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 81282293 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chairman</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Chairman - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 3928095591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commission</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Commission - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 988542606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comission 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Commission[1] - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 2071995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comission 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Commission[2] - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 3682688972 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comission 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Commission[3] - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 307361441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Materially Responsible Person</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Materially Responsible Person - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 2563955890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MatRespPerson 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[1] - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 3693786399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MatRespPerson 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[2] - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 963134960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MatRespPerson 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[3] - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - Control 3575596480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Checked By</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control CheckedBy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - NamedType 3007712677" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory Ending Date should be later than Inventory Starting Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - NamedType InvtEndDateErr</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - NamedType 848096590" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - NamedType InventoryTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 1856612108 - NamedType 1677182198" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory period should be specified.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - NamedType InvtPeriodNotSpecifiedErr</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1233,6 +1578,56 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Turnover (Excel)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - Control 3605153064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control StartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - Control 2180969705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control EndtDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - Control 353938562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Asset No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control FANo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - Control 3900857812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Deprication Book Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control FADeprBookCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - Control 2725616345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control GlobDim1Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - Control 2332177641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hide Disposal FA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control HideDisposal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify Strat Date and End Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Assets Turnover</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 3387537526 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period: from %1 to %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - NamedType Text002</note>
+        </trans-unit>
         <trans-unit id="Report 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Write-off Act FA-4b</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1277,6 +1672,11 @@
           <source>Specifies a RAS posting group of the fixed asset.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2849422936 - Action 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 949348664">
+          <source>FA Turnover (Excel)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Action FA Turnover (Excel) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Agreement Amount</source>
@@ -1337,6 +1737,11 @@
           <source>RAS Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 520650564 - Field 2399978131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3400326196">
+          <source>FA Turnover Template Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension FA Setup (Ext) - Field FA Turnover Template Code - Property Caption</note>
         </trans-unit>
       </group>
     </body>
