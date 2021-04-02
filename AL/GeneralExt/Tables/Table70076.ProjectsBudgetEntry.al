@@ -1,6 +1,7 @@
 table 70076 "Projects Budget Entry"
 {
-    DataClassification = ToBeClassified;
+    Caption = 'Projects Budget Entry';
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -8,6 +9,31 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Entry No.';
             Editable = false;
+        }
+        field(2; "Project Code"; Code[20])
+        {
+            Caption = 'Project Code';
+            TableRelation = "Building project";
+        }
+        field(3; "Analysis Type"; Option)
+        {
+            Caption = 'Analysis Type';
+            OptionCaption = 'Investment Calculation,Detailed Planning,Estimate Calculation';
+            OptionMembers = "Investment Calculation","Detailed Planning","Estimate Calculation";
+        }
+        field(4; "Version Code"; Code[20])
+        {
+            Caption = 'Version Code';
+        }
+        field(5; "Line No."; Integer)
+        {
+            Caption = 'Line No.';
+        }
+        field(6; "Entry Type"; Option)
+        {
+            Caption = 'Entry Type';
+            OptionCaption = 'OwnWorks,Subcontract,Materials,Income';
+            OptionMembers = OwnWorks,Subcontract,Materials,Income;
         }
         field(7; Description; Text[250])
         {
@@ -17,6 +43,10 @@ table 70076 "Projects Budget Entry"
         field(8; "Description 2"; Text[250])
         {
             Caption = 'Description 2';
+        }
+        field(9; "Amount"; Decimal)
+        {
+            Caption = 'Amount';
         }
         field(10; Curency; Code[20])
         {
@@ -66,6 +96,15 @@ table 70076 "Projects Budget Entry"
             InitValue = 'OUT PURCH';
             // TableRelation = "Cash Flow Transaction Type";
         }
+        field(23; "Parent Entry"; Integer)
+        {
+            Caption = 'Parent Entry';
+        }
+        field(24; "Project Turn Code"; Code[20])
+        {
+            Caption = 'Project Turn Code';
+            //TableRelation = "Building turn";
+        }
         field(34; "Without VAT"; Decimal)
         {
             Caption = 'Amount Incl. VAT';
@@ -83,6 +122,15 @@ table 70076 "Projects Budget Entry"
                 // "Without VAT (LCY)":="Without VAT"
                 // // NCS-026 AP 110314 <<
             end;
+        }
+        field(35; "Including VAT"; Boolean)
+        {
+            Caption = 'Including VAT';
+            Editable = false;
+        }
+        field(41; "Temp Line No."; Integer)
+        {
+            Caption = 'Temp Line No.';
         }
         field(44; Close; Boolean)
         {
@@ -278,15 +326,7 @@ table 70076 "Projects Budget Entry"
         }
         field(71; "Without VAT (LCY)"; Decimal)
         {
-            Caption = 'Сумма с НДС, руб.';
-            Description = 'SWC026';
-
-            trigger OnValidate()
-            begin
-                // // SWC962 DD 05.12.16 >>
-                // CheckCF("Contragent No.","Agreement No.","Without VAT (LCY)"-xRec."Without VAT (LCY)");
-                // // SWC962 DD 05.12.16 <<
-            end;
+            Caption = 'Without VAT (LCY)';
         }
     }
 
@@ -297,28 +337,12 @@ table 70076 "Projects Budget Entry"
             Clustered = true;
         }
     }
-
     var
-        myInt: Integer;
+        gvCreateRepeat: Boolean;
 
-    trigger OnInsert()
+    procedure SetCreateRepeat(lvCreateRepeat: Boolean)
     begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
+        gvCreateRepeat := lvCreateRepeat;
     end;
 
 }
