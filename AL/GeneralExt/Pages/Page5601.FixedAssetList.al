@@ -11,4 +11,19 @@ pageextension 85601 "Fixed Asset List (Ext)" extends "Fixed Asset List"
             }
         }
     }
+    actions
+    {
+        addlast(reporting)
+        {
+            action("FA Turnover (Excel)")
+            {
+                ApplicationArea = FixedAssets;
+                Caption = 'FA Turnover (Excel)';
+                Image = "Report";
+                Promoted = true;
+                PromotedCategory = "Report";
+                RunObject = Report "FA Turnover (Excel)";
+            }
+        }
+    }
 }
