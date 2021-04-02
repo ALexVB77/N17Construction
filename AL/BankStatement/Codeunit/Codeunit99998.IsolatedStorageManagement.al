@@ -1,4 +1,11 @@
 codeunit 99998 "Isolated Storage Management BS"
+
+/*
+  Ахтунг: 
+    Так как это single instance, то error'ы в процессе работы не сбрасывают установленные здесь переменные.
+    Поэтому перед заходом в транзакцию желательно вызывать функцию init, находящуюся в этом cu.
+*/
+
 {
     SingleInstance = true;
 
@@ -60,10 +67,10 @@ codeunit 99998 "Isolated Storage Management BS"
         exit(bRes);
     end;
 
-    procedure setHideError(p: boolean)
-    begin
-        hideError := p;
-    end;
+    //procedure setHideError(p: boolean)
+    //begin
+    //    hideError := p;
+    //end;
 
     procedure init()
     begin
@@ -73,7 +80,7 @@ codeunit 99998 "Isolated Storage Management BS"
 
     var
         storage: Dictionary of [Text, Text];
-        hideError: Boolean;
+    //hideError: Boolean;
 }
 
 

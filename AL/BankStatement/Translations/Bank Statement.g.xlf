@@ -23,11 +23,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method clearAll</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3230913882 - Method 841387310" size-unit="char" translate="yes" xml:space="preserve">
-          <source>setHideError</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method setHideError</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3230913882 - Method 117289339" size-unit="char" translate="yes" xml:space="preserve">
           <source>init</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -38,25 +33,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method getValue - NamedType ErrorInISM</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 4179483220 - NamedType 3100313355" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text length "%1" must be in range %2..%3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnTransformation - NamedType TextLenghtError</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
           <source>Client Bank</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Control ClientBank - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3638170462 - Action 3891781367 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
-          <source>set ism with error</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Action SetISM - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3638170462 - Action 4268401881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
-          <source>set ism without error</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Action SetISM2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3638170462 - Action 2904452843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
-          <source>get ism</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Action GetISM - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 928545387 - Field 686652245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2452438108">
           <source>Bank Code</source>
@@ -147,6 +132,36 @@
           <source>Payment Purpose</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Ledger Entry BS - Field Payment Purpose - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 2193737767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Posted Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Posted Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 2615201930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Unposted Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Unposted Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 1204434081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Statement begin saldo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Statement Begin Saldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 1304281479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Total income amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Total Income Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 1711369992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Total outcome amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Total Outcome Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 3614229417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Statement end saldo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Statement End Saldo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1272220613 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>

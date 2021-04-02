@@ -1578,56 +1578,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FA Turnover (Excel)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - Control 3605153064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Start Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control StartDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - Control 2180969705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>End Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control EndtDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - Control 353938562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fixed Asset No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control FANo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - Control 3900857812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FA Deprication Book Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control FADeprBookCode - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - Control 2725616345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Global Dimension 1 Filter</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control GlobDim1Filter - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - Control 2332177641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Hide Disposal FA</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - Control HideDisposal - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You must specify Strat Date and End Date.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - NamedType ErrText001</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fixed Assets Turnover</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - NamedType Text001</note>
-        </trans-unit>
-        <trans-unit id="Report 3387537526 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Period: from %1 to %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report FA Turnover (Excel) - NamedType Text002</note>
-        </trans-unit>
         <trans-unit id="Report 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Write-off Act FA-4b</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1672,11 +1622,6 @@
           <source>Specifies a RAS posting group of the fixed asset.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2849422936 - Action 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 949348664">
-          <source>FA Turnover (Excel)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Action FA Turnover (Excel) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Agreement Amount</source>
@@ -1737,11 +1682,6 @@
           <source>RAS Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 520650564 - Field 2399978131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3400326196">
-          <source>FA Turnover Template Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension FA Setup (Ext) - Field FA Turnover Template Code - Property Caption</note>
         </trans-unit>
       </group>
     </body>
