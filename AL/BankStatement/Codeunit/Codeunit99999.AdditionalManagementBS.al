@@ -83,14 +83,13 @@ codeunit 99999 "Additional Management BS"
         END ELSE BEGIN
             GenJournalLine.VALIDATE(Amount, ABS(GenJournalLine.Amount));
         END;
-        /*
+
         GenJournalLine."Export Status" := GenJournalLine."Export Status"::"Bank Statement Found";
-        GenJournalLine."Statement No." := BankAccReconLine."Statement No.";
-        GenJournalLine."Statement Line No." := BankAccReconLine."Statement Line No.";
-        
-        */
+        GenJournalLine."Statement No." := BankAccReconciliationLine."Statement No.";
+        GenJournalLine."Statement Line No." := BankAccReconciliationLine."Statement Line No.";
 
-
+        BankAccReconciliationLine."Line Status" := BankAccReconciliationLine."Line Status"::"Transferred to Gen. Journal";
+        BankAccReconciliationLine.Modify();
     end;
 
 
