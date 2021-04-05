@@ -1608,9 +1608,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control InvEndDate - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Report 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-=======
         <trans-unit id="Report 1856612108 - Control 2521288255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Starting Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1662,7 +1659,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates (Ext) - Action Import Template New - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2474643347 - Action 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1360508371">
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <source>FA Write-off Act FA-4b</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Writeoff Act Subform (Ext) - Action FA Write-off Act FA-4b - Property Caption</note>
@@ -1702,14 +1698,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-=======
         <trans-unit id="TableExtension 1982677864 - Field 3632164407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Vat Agent Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Vat Agent Posting Group - Property Caption</note>
         </trans-unit>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
         <trans-unit id="TableExtension 594576918 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Agreement Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1750,14 +1743,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Project Dimension Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-=======
         <trans-unit id="TableExtension 594576918 - Field 1108276017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>VAT Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field VAT Amount - Property Caption</note>
         </trans-unit>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
       </group>
     </body>
   </file>
