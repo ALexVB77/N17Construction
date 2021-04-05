@@ -1,0 +1,22 @@
+{
+  "id": "3d1b3713-dcc8-4a7a-9c5a-048cc8f0b381",
+  "name": "ExcelBufferModExt",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "17.0.0.0",
+  "contextSensitiveHelpUrl": "https://ExcelBufferModExt.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0",
+  "features": ["TranslationFile","GenerateCaptions"],
+  "target": "OnPrem"
+}

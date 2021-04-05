@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
-=======
-﻿<?xml version="1.0" encoding="UTF-8"?>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="GeneralExt">
     <body>
@@ -25,39 +21,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Dev. Ending Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 286357085 - Field 329847988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Global Dimension 1 Code</source>
-          <target>Аналитика проекта Код</target>
-=======
         <trans-unit id="Table 286357085 - Field 430251985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Development/Production</source>
           <target>Development/Production</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Development/Production - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 286357085 - Field 332160570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Contrator</source>
-          <target>Ген. Подрядчик Но.</target>
-=======
         <trans-unit id="Table 286357085 - Field 430251985 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Development,Production</source>
           <target> ,Development,Production</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Development/Production - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 286357085 - Field 3622841874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Contrator Name</source>
-          <target>Ген. Подрядчик Название</target>
-=======
         <trans-unit id="Table 286357085 - Field 779023285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General Contrator Agreement</source>
           <target>Ген. Подрядчик Договор</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Gen. Contractor Agreement - Property Caption</note>
         </trans-unit>
@@ -73,39 +51,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field General Contractor Adres - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 286357085 - Field 779023285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Contrator Agreement</source>
-          <target>Ген. Подрядчик Договор</target>
-=======
         <trans-unit id="Table 286357085 - Field 3622841874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General Contrator Name</source>
           <target>Ген. Подрядчик Название</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field General Contractor Name - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 286357085 - Field 430251985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Development/Production</source>
-          <target>Development/Production</target>
-=======
         <trans-unit id="Table 286357085 - Field 332160570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General Contrator</source>
           <target>Ген. Подрядчик Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field General Contractor No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 286357085 - Field 430251985 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Development,Production</source>
-          <target> ,Development,Production</target>
-=======
         <trans-unit id="Table 286357085 - Field 329847988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Dimension 1 Code</source>
           <target>Аналитика проекта Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Project Dimension Code - Property Caption</note>
         </trans-unit>
@@ -115,15 +75,9 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 3221779637 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Code</source>
-          <target>Код</target>
-=======
         <trans-unit id="Table 3221779637 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>You cannot delete queue. There are project data exist.</source>
           <target>Существуют проектные данные\Нельзя удилить очередь.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - NamedType Text001</note>
         </trans-unit>
@@ -133,15 +87,9 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Building project Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 3221779637 - Field 2241511052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Global Dimension 1 Code</source>
-          <target>Аналитика очереди Код</target>
-=======
         <trans-unit id="Table 3221779637 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <target>Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Code - Property Caption</note>
         </trans-unit>
@@ -151,15 +99,9 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Sort - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 3221779637 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You cannot delete queue. There are project data exist.</source>
-          <target>Существуют проектные данные\Нельзя удилить очередь.</target>
-=======
         <trans-unit id="Table 3221779637 - Field 2241511052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Dimension 1 Code</source>
           <target>Аналитика очереди Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Turn Dimension Code - Property Caption</note>
         </trans-unit>
@@ -205,52 +147,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field Description - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2960147102 - Field 3814176124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>In terms of queuing</source>
-          <target>В разрезе очередей</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field By Building turn - Property Caption</note>
-        </trans-unit>
-=======
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
         <trans-unit id="Table 2960147102 - Field 3495718276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Repeat Interval</source>
           <target>Период повторения</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field Repeat Interval - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Structure</source>
-          <target>Сруктуры проектов</target>
-=======
         <trans-unit id="Table 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Budget Entry</source>
           <target>Projects Budget Entry</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Code</source>
-          <target>Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <target>Сумма</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Amount - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analysis type</source>
-=======
         <trans-unit id="Table 2332267737 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis Type</source>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <target>Тип Анализа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Analysis Type - Property Caption</note>
@@ -261,1261 +177,627 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Analysis Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <target>Ярлык Измерение 1 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stage</source>
           <target>Проект</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Building Turn - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 2 Code</source>
-          <target>Ярлык Измерение 2 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fact</source>
           <target>Fact</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Close - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 781257514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 3 Code</source>
-          <target>Ярлык Измерение 3 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Item</source>
           <target>Статья бюджета</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Cost Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 2711388939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 4 Code</source>
-          <target>Ярлык Измерение 4 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency</source>
           <target>Валюта</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Curency - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 405681708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 5 Code</source>
-          <target>Ярлык Измерение 5 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 2324056710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency Factor</source>
           <target>Курс валюты</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Currency Factor - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 4126842061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 6 Code</source>
-          <target>Ярлык Измерение 6 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
           <target>Дата</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 2765633070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 7 Code</source>
-          <target>Ярлык Измерение 7 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 114215241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date (Plan)</source>
           <target>Дата (План)</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Date Plan - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1929626373 - Field 785667711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 8 Code</source>
-          <target>Ярлык Измерение 8 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Description - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Projects Structure Lines</source>
-          <target>Projects Structure Lines</target>
-=======
         <trans-unit id="Table 2332267737 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description 2</source>
           <target>Описание 2</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Description 2 - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Code</source>
-          <target>Код проекта</target>
-=======
         <trans-unit id="Table 2332267737 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
           <target>Entry No.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Entry No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <target>Строка Но.</target>
-=======
         <trans-unit id="Table 2332267737 - Field 149522872 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry Type</source>
           <target>Тип</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Entry Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Code</source>
-          <target>Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 149522872 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>OwnWorks,Subcontract,Materials,Income</source>
           <target>Собственные работы,Субподряд,Материалы,Поступления\Расходы</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Entry Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <target>Описание</target>
-=======
         <trans-unit id="Table 2332267737 - Field 1815700606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Including VAT</source>
           <target>НДС включен</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Including VAT - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 801000303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Job Task Type</source>
-          <target>Тип Учета</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Line No.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Line No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 801000303 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting,Heading,Total,Begin-Total,End-Total</source>
-          <target>Учетный,Заголовок,Сумма,От-сумма,До-сумма</target>
-=======
         <trans-unit id="Table 2332267737 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parent Entry</source>
           <target>Parent Entry</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Parent Entry - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 3814176124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>In terms of queuing</source>
-          <target>В разрезе очередей</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3139420653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay Request No.</source>
           <target>Pay Request No.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Payment Doc. No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 237762718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Version</source>
-          <target>Версия</target>
-=======
         <trans-unit id="Table 2332267737 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Project Code</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Project Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 3765219587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 1 Code</source>
-          <target>Проект Измерение 1 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Turn Code</source>
           <target>Project Turn Code</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Project Turn Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 609917894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 2 Code</source>
-          <target>Проект  Измерение 2 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <target>Ярлык Измерение 1 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Shortcut Dimension 1 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 2718558341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 3 Code</source>
-          <target>Проект Измерение 3 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
           <target>Ярлык Измерение 2 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 848371648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 4 Code</source>
-          <target>Проект Измерение 4 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 908668199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Temp Line No.</source>
           <target>Temp Line No.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Temp Line No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 3453214591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 5 Code</source>
-          <target>Проект Измерение 5 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3773776616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Type</source>
           <target>Тип Операции</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Transaction Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 2220525762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 6 Code</source>
-          <target>Проект Измерение 6 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version Code</source>
           <target>Version Code</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Version Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 2448130049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 7 Code</source>
-          <target>Проект Измерение 7 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Incl. VAT</source>
           <target>Сумма с НДС</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Without VAT - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 3073228588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Dimension 8 Code</source>
-          <target>Проект Измерение 8 Код</target>
-=======
         <trans-unit id="Table 2332267737 - Field 3121970132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Without VAT (LCY)</source>
           <target>Сумма с НДС, руб.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Without VAT (LCY) - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analysis type</source>
-          <target>Тип Анализа</target>
-=======
         <trans-unit id="Table 4285604025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Budget Entry Link</source>
           <target>Projects Budget Entry Link</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
-          <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
-=======
         <trans-unit id="Table 4285604025 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create a periodic entries for\%1 ?</source>
           <target>Создать периодические проводки для\%1?</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - NamedType Text001</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ending Date</source>
-          <target>Дата Окончания</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Ending Date - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2164933506 - Field 3495718276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Repeat Interval</source>
-          <target>Период повторения</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Repeat Interval - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2164933506 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The dimension value %1 has not been set up for dimension %2.</source>
-          <target>Значение измерения %1 не настроено для измерения %2.</target>
-=======
         <trans-unit id="Table 4285604025 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify the ending date of the project!</source>
           <target>Необходимо задать дату окончания проекта!</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - NamedType Text002</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 1 Code</source>
-          <target>1,5,,Проект Измерение 1 Код</target>
-=======
         <trans-unit id="Table 4285604025 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>Update related entries?</source>
           <target>Обновить связанные проводки?</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - NamedType Text003</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 2 Code</source>
-          <target>1,5,,Проект Измерение 2 Код</target>
-=======
         <trans-unit id="Table 4285604025 - Field 1463032602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agrrement No.</source>
           <target>Договор Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Agrrement No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 3 Code</source>
-          <target>1,5,,Проект Измерение 3 Код</target>
-=======
         <trans-unit id="Table 4285604025 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <target>Сумма</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Amount - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 4 Code</source>
-          <target>1,5,,Проект Измерение 4 Код</target>
-=======
         <trans-unit id="Table 4285604025 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount (LCY)</source>
           <target>Сумма (РУБ)</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Amount (LCY) - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 5 Code</source>
-          <target>1,5,,Проект Измерение 5 Код</target>
-=======
         <trans-unit id="Table 4285604025 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis type</source>
           <target>Тип Анализа</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Analysis Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 6 Code</source>
-          <target>1,5,,Проект Измерение 6 Код</target>
-=======
         <trans-unit id="Table 4285604025 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
           <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Analysis Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 7 Code</source>
-          <target>1,5,,Проект Измерение 7 Код</target>
-=======
         <trans-unit id="Table 4285604025 - Field 2805329373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build Turn</source>
           <target>Build Turn</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Build Turn - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
-          <source>1,5,,Budget Dimension 8 Code</source>
-          <target>1,5,,Проект Измерение 8 Код</target>
-=======
         <trans-unit id="Table 4285604025 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close</source>
           <target>Close</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Close - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2164933506 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You can not delete a row, exist project data</source>
-          <target>Уже созданы операции бюджета на эту строку!</target>
-=======
         <trans-unit id="Table 4285604025 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Date</source>
           <target>Дата создания</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Create Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Projects Line Dimension</source>
-          <target>Projects Line Dimension</target>
-=======
         <trans-unit id="Table 4285604025 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Time</source>
           <target>Время создания</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Create Time - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 863923670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Job No.</source>
-          <target>Проект Но.</target>
-=======
         <trans-unit id="Table 4285604025 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create User</source>
           <target>Создал</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Create User - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 1036975512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Job Task No.</source>
-          <target>Проект Строка Но.</target>
-=======
         <trans-unit id="Table 4285604025 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Curency</source>
           <target>Валюта</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Curency - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension Code</source>
-          <target>Код Измерения</target>
-=======
         <trans-unit id="Table 4285604025 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
           <target>Дата</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 2277534386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension Value Code</source>
-          <target>Код Значения Измерения</target>
-=======
         <trans-unit id="Table 4285604025 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
           <target>Операция Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Entry No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 2610375332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Version No.</source>
-          <target>Проект Версия Но.</target>
-=======
         <trans-unit id="Table 4285604025 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed Version</source>
           <target>Fixed Version</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Fixed Version - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 3693001931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Detailed Line No.</source>
-          <target>Дально Строка Но.</target>
-=======
         <trans-unit id="Table 4285604025 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Строка Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Line No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analysis type</source>
-          <target>Тип Анализа</target>
-=======
         <trans-unit id="Table 4285604025 - Field 880799788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Main Entry No.</source>
           <target>Основная Операция Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Main Entry No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2623869636 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fix Budget","Current Budget",Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast</source>
-          <target>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast</target>
-=======
         <trans-unit id="Table 4285604025 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New</source>
           <target>New</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field New - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Projects Budget Entry</source>
-          <target>Projects Budget Entry</target>
-=======
         <trans-unit id="Table 4285604025 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parent Entry</source>
           <target>Родительская Операция</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Parent Entry - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry No.</source>
-          <target>Entry No.</target>
-=======
         <trans-unit id="Table 4285604025 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Проект Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Project Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Code</source>
-          <target>Project Code</target>
-=======
         <trans-unit id="Table 4285604025 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Turn Code</source>
           <target>Project Turn Code</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Project Turn Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analysis Type</source>
-          <target>Тип Анализа</target>
-=======
         <trans-unit id="Table 4285604025 - Field 2170793887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reserv</source>
           <target>Reserv</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Reserv - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
-          <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
-=======
         <trans-unit id="Table 4285604025 - Field 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT</source>
           <target>НДС</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4285604025 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version Code</source>
-<<<<<<< HEAD
-          <target>Version Code</target>
-=======
           <target>Код версии</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Version Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <target>Line No.</target>
-=======
         <trans-unit id="Table 4285604025 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Without VAT</source>
           <target>Без НДС</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Without VAT - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 149522872 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry Type</source>
-          <target>Тип</target>
-=======
         <trans-unit id="Table 4285604025 - Field 584900853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Work Version</source>
           <target>Рабочая версия</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Work Version - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 149522872 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>OwnWorks,Subcontract,Materials,Income</source>
-          <target>Собственные работы,Субподряд,Материалы,Поступления\Расходы</target>
-=======
         <trans-unit id="Table 2622754722 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Cost Control Entry</source>
           <target>Projects Cost Control Entry</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <target>Описание</target>
-=======
         <trans-unit id="Table 2622754722 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create a periodic entries for\%1 ?</source>
           <target>Создать периодические проводки для\%1?</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text001</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description 2</source>
-          <target>Описание 2</target>
-=======
         <trans-unit id="Table 2622754722 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify the ending date of the project!</source>
           <target>Необходимо задать дату окончания проекта!</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text002</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount</source>
-          <target>Сумма</target>
-=======
         <trans-unit id="Table 2622754722 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>Update related entries?</source>
           <target>Обновить связанные проводки?</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text003</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Currency</source>
-          <target>Валюта</target>
-=======
         <trans-unit id="Table 2622754722 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cost Code value can not be empty</source>
           <target>Значение Cost Code не должно быть пусто</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text004</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 2324056710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Currency Factor</source>
-          <target>Курс валюты</target>
-=======
         <trans-unit id="Table 2622754722 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
           <source>While posting, there is a line created with the number %1, which already exists in the system! Contact the Technical Support department.</source>
           <target>При учете создается строка с номером %1, который уже существует в системе! Обратитесь в отдел Технической поддержки!</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text005</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Date</source>
-          <target>Дата</target>
-=======
         <trans-unit id="Table 2622754722 - Field 1463032602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agrrement No.</source>
           <target>Договор Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Agrrement No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3773776616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Transaction Type</source>
-          <target>Тип Операции</target>
-=======
         <trans-unit id="Table 2622754722 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <target>Сумма</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Parent Entry</source>
-          <target>Parent Entry</target>
-=======
         <trans-unit id="Table 2622754722 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount (LCY)</source>
           <target>Сумма (РУБ)</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount (LCY) - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Turn Code</source>
-          <target>Project Turn Code</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3589430442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount (new)</source>
           <target>Сумма (new)</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount 2 - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Incl. VAT</source>
-          <target>Сумма с НДС</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3677192552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Including VAT (new)</source>
           <target>Сумма Вкл. НДС (new)</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Amount Including VAT 2 - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 1815700606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Including VAT</source>
-          <target>НДС включен</target>
-=======
         <trans-unit id="Table 2622754722 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis Type</source>
           <target>Тип Анализа</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Analysis Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 908668199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Temp Line No.</source>
-          <target>Temp Line No.</target>
-=======
         <trans-unit id="Table 2622754722 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS</source>
           <target>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Analysis Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fact</source>
-          <target>Fact</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stage</source>
           <target>Проект</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Building Turn - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <target>Ярлык Измерение 1 Код</target>
-=======
         <trans-unit id="Table 2622754722 - Field 399424670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Building Turn All</source>
           <target>Проект</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Building Turn All - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 2 Code</source>
-          <target>Ярлык Измерение 2 Код</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3720531126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Changed</source>
           <target>Изменена</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Changed - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stage</source>
-          <target>Проект</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close Date</source>
           <target>Дата закрытия</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Close Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Item</source>
-          <target>Статья бюджета</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <target>Code</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 114215241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Date (Plan)</source>
-          <target>Дата (План)</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company Name</source>
           <target>Фирма Источник</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Company Name - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3139420653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Pay Request No.</source>
-          <target>Pay Request No.</target>
-=======
         <trans-unit id="Table 2622754722 - Field 249393910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contragent Name</source>
           <target>Название</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent Name - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2332267737 - Field 3121970132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Without VAT (LCY)</source>
-          <target>Сумма с НДС, руб.</target>
-=======
         <trans-unit id="Table 2622754722 - Field 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contragent No.</source>
           <target>Контрагент Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Projects Budget Entry Link</source>
-          <target>Projects Budget Entry Link</target>
-=======
         <trans-unit id="Table 2622754722 - Field 1897831671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contragent Type</source>
           <target>Контрагент Тип</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry No.</source>
-          <target>Операция Но.</target>
-=======
         <trans-unit id="Table 2622754722 - Field 1897831671 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor,Customer</source>
           <target>Поставщик,Клиент</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Contragent Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Code</source>
-          <target>Проект Код</target>
-=======
         <trans-unit id="Table 2622754722 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Item</source>
           <target>Статья</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Cost Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analysis type</source>
-          <target>Тип Анализа</target>
-=======
         <trans-unit id="Table 2622754722 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cost Type</source>
           <target>Cost Type</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Cost Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
-          <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
-=======
         <trans-unit id="Table 2622754722 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Date</source>
           <target>Дата создания</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Create Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Version Code</source>
-          <target>Код версии</target>
-=======
         <trans-unit id="Table 2622754722 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Time</source>
           <target>Время создания</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Create Time - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <target>Строка Но.</target>
-=======
         <trans-unit id="Table 2622754722 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create User</source>
           <target>Создал</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Create User - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 880799788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Main Entry No.</source>
-          <target>Основная Операция Но.</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency</source>
           <target>Валюта</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Curency - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount</source>
-          <target>Сумма</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
           <target>Дата</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Curency</source>
-          <target>Валюта</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Description - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount (LCY)</source>
-          <target>Сумма (РУБ)</target>
-=======
         <trans-unit id="Table 2622754722 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Decription 2</source>
           <target>Описание 2</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Description 2 - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Date</source>
-          <target>Дата</target>
-=======
         <trans-unit id="Table 2622754722 - Field 2545923953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Doc No.</source>
           <target>Документ Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Doc No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create User</source>
-          <target>Создал</target>
-=======
         <trans-unit id="Table 2622754722 - Field 1343762524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Doc Type</source>
           <target>Doc Type</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Doc Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Date</source>
-          <target>Дата создания</target>
-=======
         <trans-unit id="Table 2622754722 - Field 1343762524 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pre,Post</source>
           <target>Pre,Post</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Doc Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Time</source>
-          <target>Время создания</target>
-=======
         <trans-unit id="Table 2622754722 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
           <target>Операция Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Entry No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Parent Entry</source>
-          <target>Родительская Операция</target>
-=======
         <trans-unit id="Table 2622754722 - Field 4017363903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Estimate Line ID</source>
           <target>ID строки сметы</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Line ID - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Turn Code</source>
-          <target>Project Turn Code</target>
-=======
         <trans-unit id="Table 2622754722 - Field 6568521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Estimate Line No.</source>
           <target>Номер Строки Сметы</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Line No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New</source>
-          <target>New</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3387933079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Estimate Quantity</source>
           <target>Количество</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Quantity - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fixed Version</source>
-          <target>Fixed Version</target>
-=======
         <trans-unit id="Table 2622754722 - Field 902316334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Estimate Subproject Code</source>
           <target>Код подпроекта</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Subproject Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT</source>
-          <target>НДС</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3174615267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Estimate Unit of Measure</source>
           <target>Ед. Измерения</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Unit of Measure - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Without VAT</source>
-          <target>Без НДС</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3386851551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Estimate Unit Price</source>
           <target>Цена</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Unit Price - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 2805329373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Build Turn</source>
-          <target>Build Turn</target>
-=======
         <trans-unit id="Table 2622754722 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Agreement No.</source>
           <target>Внешний Договор Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field External Agreement No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Close</source>
-          <target>Close</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ID</source>
           <target>ID</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field ID - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 584900853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Work Version</source>
-          <target>Рабочая версия</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Строка Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Line No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 1463032602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agrrement No.</source>
-          <target>Договор Но.</target>
-=======
         <trans-unit id="Table 2622754722 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New</source>
           <target>New</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field New - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - Field 2170793887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reserv</source>
-          <target>Reserv</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3906294107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New Lines</source>
           <target>New Lines</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field New Lines - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create a periodic entries for\%1 ?</source>
-          <target>Создать периодические проводки для\%1?</target>
-=======
         <trans-unit id="Table 2622754722 - Field 2132826204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Ammount</source>
           <target>Оригинальная Сумма</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Original Ammount - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You must specify the ending date of the project!</source>
-          <target>Необходимо задать дату окончания проекта!</target>
-=======
         <trans-unit id="Table 2622754722 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Company</source>
           <target>Original Company</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Original Company - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4285604025 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update related entries?</source>
-          <target>Обновить связанные проводки?</target>
-=======
         <trans-unit id="Table 2622754722 - Field 112760607 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Date</source>
           <target>Оригинальная Дата</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Original Date - Property Caption</note>
         </trans-unit>
@@ -1675,704 +957,348 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1535144756 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Необходимо определить объект строительства</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-=======
         <trans-unit id="Table 1929626373 - Field 781257514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 3 Code</source>
           <target>Ярлык Измерение 3 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 3 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1535144756 - NamedType 4156606849" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Для объекта строительства %1 не найдена статья %2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-=======
         <trans-unit id="Table 1929626373 - Field 2711388939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 4 Code</source>
           <target>Ярлык Измерение 4 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 4 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1535144756 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-=======
         <trans-unit id="Table 1929626373 - Field 405681708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 5 Code</source>
           <target>Ярлык Измерение 5 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 5 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 1535144756 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-=======
         <trans-unit id="Table 1929626373 - Field 4126842061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 6 Code</source>
           <target>Ярлык Измерение 6 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 6 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Projects Cost Control Entry</source>
-          <target>Projects Cost Control Entry</target>
-=======
         <trans-unit id="Table 1929626373 - Field 2765633070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 7 Code</source>
           <target>Ярлык Измерение 7 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 7 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Code</source>
-          <target>Проект Код</target>
-=======
         <trans-unit id="Table 1929626373 - Field 785667711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 8 Code</source>
           <target>Ярлык Измерение 8 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Shortcut Dimension 8 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analysis Type</source>
-=======
         <trans-unit id="Table 1929626373 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis type</source>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <target>Тип Анализа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS</source>
-          <target>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS</target>
-=======
         <trans-unit id="Table 1929626373 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
           <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Version Code</source>
-          <target>Код Версии</target>
-=======
         <trans-unit id="Table 2164933506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Structure Lines</source>
           <target>Projects Structure Lines</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <target>Строка Но.</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
           <source>The dimension value %1 has not been set up for dimension %2.</source>
           <target>Значение измерения %1 не настроено для измерения %2.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text000</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry No.</source>
-          <target>Операция Но.</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 1 Code</source>
           <target>1,5,,Проект Измерение 1 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text001</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Turn Code</source>
-          <target>Project Turn Code</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 2 Code</source>
           <target>1,5,,Проект Измерение 2 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text002</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 908668199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Temp Line No.</source>
-          <target>Temp Line No.</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 3 Code</source>
           <target>1,5,,Проект Измерение 3 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text003</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cost Type</source>
-          <target>Cost Type</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 4 Code</source>
           <target>1,5,,Проект Измерение 4 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text004</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <target>Описание</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 5 Code</source>
           <target>1,5,,Проект Измерение 5 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text005</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Decription 2</source>
-          <target>Описание 2</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 6 Code</source>
           <target>1,5,,Проект Измерение 6 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text006</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount</source>
-          <target>Сумма</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 7 Code</source>
           <target>1,5,,Проект Измерение 7 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text007</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Currency</source>
-          <target>Валюта</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
           <source>1,5,,Budget Dimension 8 Code</source>
           <target>1,5,,Проект Измерение 8 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text008</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount (LCY)</source>
-          <target>Сумма (РУБ)</target>
-=======
         <trans-unit id="Table 2164933506 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
           <source>You can not delete a row, exist project data</source>
           <target>Уже созданы операции бюджета на эту строку!</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - NamedType Text009</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Date</source>
-          <target>Дата</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3814176124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>In terms of queuing</source>
           <target>В разрезе очередей</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field By Building turn - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create User</source>
-          <target>Создал</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <target>Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Date</source>
-          <target>Дата создания</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Description - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Time</source>
-          <target>Время создания</target>
-=======
         <trans-unit id="Table 2164933506 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ending Date</source>
           <target>Дата Окончания</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Ending Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Parent Entry</source>
-          <target>Parent Entry</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Строка Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Line No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New</source>
-          <target>New</target>
-=======
         <trans-unit id="Table 2164933506 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Код проекта</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Code</source>
-          <target>Code</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3765219587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 1 Code</source>
           <target>Проект Измерение 1 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 1 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Contragent No.</source>
-          <target>Контрагент Но.</target>
-=======
         <trans-unit id="Table 2164933506 - Field 609917894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 2 Code</source>
           <target>Проект  Измерение 2 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 2 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1463032602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agrrement No.</source>
-          <target>Договор Но.</target>
-=======
         <trans-unit id="Table 2164933506 - Field 2718558341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 3 Code</source>
           <target>Проект Измерение 3 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 3 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Without VAT</source>
-          <target>Сумма</target>
-=======
         <trans-unit id="Table 2164933506 - Field 848371648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 4 Code</source>
           <target>Проект Измерение 4 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 4 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 249393910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Contragent Name</source>
-          <target>Название</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3453214591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 5 Code</source>
           <target>Проект Измерение 5 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 5 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>External Agreement No.</source>
-          <target>Внешний Договор Но.</target>
-=======
         <trans-unit id="Table 2164933506 - Field 2220525762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 6 Code</source>
           <target>Проект Измерение 6 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 6 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1897831671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Contragent Type</source>
-          <target>Контрагент Тип</target>
-=======
         <trans-unit id="Table 2164933506 - Field 2448130049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 7 Code</source>
           <target>Проект Измерение 7 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 7 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1897831671 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Vendor,Customer</source>
-          <target>Поставщик,Клиент</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3073228588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Dimension 8 Code</source>
           <target>Проект Измерение 8 Код</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Project Dimension 8 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <target>Ярлык Измерение 1 Код</target>
-=======
         <trans-unit id="Table 2164933506 - Field 3495718276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Repeat Interval</source>
           <target>Период повторения</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Repeat Interval - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 2 Code</source>
-          <target>Ярлык Измерение 2 Код</target>
-=======
         <trans-unit id="Table 2164933506 - Field 801000303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Job Task Type</source>
           <target>Тип Учета</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Structure Post Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stage</source>
-          <target>Проект</target>
-=======
         <trans-unit id="Table 2164933506 - Field 801000303 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting,Heading,Total,Begin-Total,End-Total</source>
           <target>Учетный,Заголовок,Сумма,От-сумма,До-сумма</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Structure Post Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Item</source>
-          <target>Статья</target>
-=======
         <trans-unit id="Table 2164933506 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis type</source>
           <target>Тип Анализа</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3906294107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New Lines</source>
-          <target>New Lines</target>
-=======
         <trans-unit id="Table 2164933506 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
           <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Type - Property OptionCaption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 825293260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reserve</source>
-          <target>Резерв</target>
-=======
         <trans-unit id="Table 2164933506 - Field 237762718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version</source>
           <target>Версия</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure Lines - Field Version - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 399424670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Building Turn All</source>
-          <target>Проект</target>
-=======
         <trans-unit id="Table 1535144756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Agreement Details</source>
           <target>Vendor Agreement Details</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 2545923953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Doc No.</source>
-          <target>Документ Но.</target>
-=======
         <trans-unit id="Table 1535144756 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
           <source>Необходимо определить объект строительства</source>
           <target></target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0001</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1343762524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Doc Type</source>
-          <target>Doc Type</target>
-=======
         <trans-unit id="Table 1535144756 - NamedType 4156606849" size-unit="char" translate="yes" xml:space="preserve">
           <source>Для объекта строительства %1 не найдена статья %2</source>
           <target></target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0002</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1343762524 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Pre,Post</source>
-          <target>Pre,Post</target>
-=======
         <trans-unit id="Table 1535144756 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!</source>
           <target></target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50000</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Close Date</source>
-          <target>Дата закрытия</target>
-=======
         <trans-unit id="Table 1535144756 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
           <source>Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</source>
           <target></target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3589430442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount (new)</source>
-          <target>Сумма (new)</target>
-=======
         <trans-unit id="Table 1535144756 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement Amount</source>
           <target>Сумма договора</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement Amount - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3677192552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Including VAT (new)</source>
-          <target>Сумма Вкл. НДС (new)</target>
-=======
         <trans-unit id="Table 1535144756 - Field 3454607982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement Date</source>
           <target>Дата договора</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement Date - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3418027727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount (new)</source>
-          <target>Сумма НДС (new)</target>
-=======
         <trans-unit id="Table 1535144756 - Field 3412919364 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement Description - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 1246077090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT %</source>
-          <target>НДС (%)</target>
-=======
         <trans-unit id="Table 1535144756 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement No.</source>
           <target>Договор Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Agreement No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Original Company</source>
-          <target>Original Company</target>
-=======
         <trans-unit id="Table 1535144756 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreemnet Amount, with VAT</source>
           <target>Сумма договора, с НДС</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Amount - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 112760607 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Original Date</source>
-          <target>Оригинальная Дата</target>
-=======
         <trans-unit id="Table 1535144756 - Field 3654690469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement Amount without VAT</source>
           <target>Сумма договора без НДС</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Amount Without VAT - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ID</source>
-          <target>ID</target>
-=======
         <trans-unit id="Table 1535144756 - Field 2092726926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement Amount with VAT (LCY)</source>
           <target>Сумма договора с НДС (руб)</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field AmountLCY - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 2132826204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Original Ammount</source>
-          <target>Оригинальная Сумма</target>
-=======
         <trans-unit id="Table 1535144756 - Field 399424670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stage</source>
           <target>Объект строительства</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Building Turn All - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reversed</source>
-          <target>Сторнировано</target>
-=======
         <trans-unit id="Table 1535144756 - Field 1577863327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ByOrder</source>
           <target>ByOrder</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field ByOrder - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3720531126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Changed</source>
-          <target>Изменена</target>
-=======
         <trans-unit id="Table 1535144756 - Field 426187663 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close Commitment</source>
           <target>Close Commitment</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Close Commitment - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Company Name</source>
-          <target>Фирма Источник</target>
-=======
         <trans-unit id="Table 1535144756 - Field 3831140563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close Ordered</source>
           <target>Close Ordered</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Close Ordered - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 6568521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Estimate Line No.</source>
-          <target>Номер Строки Сметы</target>
-=======
         <trans-unit id="Table 1535144756 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Item</source>
           <target>Статья бюджета</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Cost Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3387933079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Estimate Quantity</source>
-          <target>Количество</target>
-=======
         <trans-unit id="Table 1535144756 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>COST TYPE</source>
           <target>COST TYPE</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Cost Type - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3386851551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Estimate Unit Price</source>
-          <target>Цена</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Estimate Unit Price - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2622754722 - Field 3174615267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Estimate Unit of Measure</source>
-          <target>Ед. Измерения</target>
-=======
         <trans-unit id="Table 1535144756 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency Code</source>
           <target>Код валюты</target>
@@ -2382,91 +1308,48 @@
         <trans-unit id="Table 1535144756 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Description - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 4017363903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Estimate Line ID</source>
-          <target>ID строки сметы</target>
-=======
         <trans-unit id="Table 1535144756 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Agreement No.</source>
           <target>Номер внешнего договора</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field External Agreement No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 902316334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Estimate Subproject Code</source>
-          <target>Код подпроекта</target>
-=======
         <trans-unit id="Table 1535144756 - Field 1303377601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Dimension 1 Code</source>
           <target>Код глобального измерения 1</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Global Dimension 1 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - Field 3862385658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Storno</source>
-          <target>Проект Сторно</target>
-=======
         <trans-unit id="Table 1535144756 - Field 1337243520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Dimension 2 Code</source>
           <target>Код глобального измерения 2</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Global Dimension 2 Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create a periodic entries for\%1 ?</source>
-          <target>Создать периодические проводки для\%1?</target>
-=======
         <trans-unit id="Table 1535144756 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Строка Но.</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Line No. - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You must specify the ending date of the project!</source>
-          <target>Необходимо задать дату окончания проекта!</target>
-=======
         <trans-unit id="Table 1535144756 - Field 1077555671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Amount</source>
           <target>Original Amount</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Original Amount - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update related entries?</source>
-          <target>Обновить связанные проводки?</target>
-=======
         <trans-unit id="Table 1535144756 - Field 3804931248 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payed by Agreement with VAT</source>
           <target>Выплачено по договору с НДС</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Payed by Agreement - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 2622754722 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cost Code value can not be empty</source>
-          <target>Значение Cost Code не должно быть пусто</target>
-=======
         <trans-unit id="Table 1535144756 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Project Code</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Project Code - Property Caption</note>
         </trans-unit>
@@ -2514,18 +1397,7 @@
         </trans-unit>
         <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects CC Entry Constr 2</source>
-<<<<<<< HEAD
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 4290211394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FA Comparative Sheet INV-18</source>
-          <target>ОС - сличительная ведомость ИНВ-18</target>
-=======
           <target></target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
         </trans-unit>
@@ -3003,23 +1875,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Commission - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Report 1306421762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Find Error 70095</source>
-          <target>Find Error 70095</target>
-=======
         <trans-unit id="Report 1856612108 - Control 988542606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comission 1</source>
           <target>Комиссия 1</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control Commission[1] - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Report 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FA Write-off Act FA-4b</source>
-          <target>Акт списания ОС-4б</target>
-=======
         <trans-unit id="Report 1856612108 - Control 2071995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comission 2</source>
           <target>Комиссия 2</target>
@@ -3083,7 +1944,6 @@
         <trans-unit id="Report 1856612108 - Control 39415292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Code</source>
           <target>Код склада</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control LocationCode - Property Caption</note>
         </trans-unit>
@@ -3135,11 +1995,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Writeoff Act Subform (Ext) - Action FA Write-off Act FA-4b - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="TableExtension 594576918 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
-          <source>Agreement Amount</source>
-          <target>Сумма договора</target>
-=======
         <trans-unit id="PageExtension 2849422936 - Action 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 949348664">
           <source>FA Turnover (Excel)</source>
           <target>Ведомость по ОС (Excel)</target>
@@ -3149,7 +2004,6 @@
         <trans-unit id="PageExtension 2849422936 - Control 3180694377 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 949348664">
           <source>Specifies a RAS posting group of the fixed asset.</source>
           <target>Определяет учетную группу РСБУ для ОС</target>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
         </trans-unit>
@@ -3237,15 +2091,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Project Dimension Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-=======
         <trans-unit id="TableExtension 594576918 - Field 1108276017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>VAT Amount</source>
           <target>Сумма НДС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field VAT Amount - Property Caption</note>
         </trans-unit>
->>>>>>> 7c6d7e3056aed72e80b26c6b82b89527040fdaa8
       </group>
     </body>
   </file>
