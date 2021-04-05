@@ -123,6 +123,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Bold - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 155017853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Border Style</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Border Style - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3804232973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bottom Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Bottom Border - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2369549467 - Field 3621679514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cell Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -147,6 +157,11 @@
           <source>Comment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2662329045 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Diagonal Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Diagonal Border - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2369549467 - Field 279485533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Double Underline</source>
@@ -183,15 +198,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Italic - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3628285873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Left Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Left Border - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2369549467 - Field 1459568092 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>NumberFormat</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field NumberFormat - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2322370584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Right Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Right Border - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2369549467 - Field 2782707039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Row No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Row No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 1017032337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Top Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Top Border - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2369549467 - Field 2944017714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Underline</source>

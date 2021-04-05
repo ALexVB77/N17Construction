@@ -1323,6 +1323,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report FA Comparative Sh. INV-18 New - Control UntilDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1055346703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Inventory Card FA-6</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Inventory Card FA-6 (Ext) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1055346703 - NamedType 1305219970" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transfer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Inventory Card FA-6 (Ext) - NamedType TransferOperationTypeTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 1055346703 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Inventory Card FA-6 (Ext) - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1055346703 - Control 593578948 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the creation date of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Inventory Card FA-6 (Ext) - Control CreateDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1055346703 - Control 593578948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Inventory Card FA-6 (Ext) - Control CreateDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1055346703 - Control 2813777582 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the depreciation book to be included in the report or batch job.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Inventory Card FA-6 (Ext) - Control ForBook - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1055346703 - Control 2813777582 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depreciation Book</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Inventory Card FA-6 (Ext) - Control ForBook - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3825325427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Phys. Inventory INV-1a</source>
           <note from="Developer" annotates="general" priority="2"></note>

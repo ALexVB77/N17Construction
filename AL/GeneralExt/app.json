@@ -10,7 +10,14 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {
+      "id": "3d1b3713-dcc8-4a7a-9c5a-048cc8f0b381",
+      "name": "ExcelBufferModExt",
+      "publisher": "Default publisher",
+      "version": "1.0.0.0"
+    }
+  ],
   "screenshots": [],
   "platform": "17.0.0.0",
   "application": "17.0.0.0",

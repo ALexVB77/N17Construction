@@ -220,7 +220,7 @@ report 50105 "FA Turnover (Excel)"
         GLSetup: Record "General Ledger Setup";
         FASetup: Record "FA Setup";
         FALedgEntry: Record "FA Ledger Entry";
-        ExcelBufferTmp: Record "Excel Buffer" temporary;
+        ExcelBufferTmp: Record "Excel Buffer Mod" temporary;
         ExcelReportBuilderManager: Codeunit "Excel Report Builder Manager";
         StdRepMgt: Codeunit "Local Report Management";
         TotalAmountsList: Dictionary of [Integer, Decimal];
@@ -264,11 +264,11 @@ report 50105 "FA Turnover (Excel)"
     begin
         RowNo := 1;
         ColumnNo := 2;
-        EnterCell(RowNo, ColumnNo, StdRepMgt.GetCompanyName, false, ExcelBufferTmp."Cell Type"::Text);
+        EnterCell(RowNo, ColumnNo, StdRepMgt.GetCompanyName, false, ExcelBufferTmp."Cell Type"::Text, false);
         RowNo += 1;
-        EnterCell(RowNo, ColumnNo, Text001, true, ExcelBufferTmp."Cell Type"::Text);
+        EnterCell(RowNo, ColumnNo, Text001, true, ExcelBufferTmp."Cell Type"::Text, false);
         RowNo += 1;
-        EnterCell(RowNo, ColumnNo, StrSubstNo(Text002, Format(StartDate), Format(EndDate)), true, ExcelBufferTmp."Cell Type"::Text);
+        EnterCell(RowNo, ColumnNo, StrSubstNo(Text002, Format(StartDate), Format(EndDate)), true, ExcelBufferTmp."Cell Type"::Text, false);
         RowNo := 9;
     end;
 
@@ -297,15 +297,15 @@ report 50105 "FA Turnover (Excel)"
     var
         i: Integer;
     begin
-        EnterCell(RowNo, 2, GetListValue(LineList, 2), false, ExcelBufferTmp."Cell Type"::Text);
-        EnterCell(RowNo, 3, GetListValue(LineList, 3), false, ExcelBufferTmp."Cell Type"::Text);
-        EnterCell(RowNo, 4, GetListValue(LineList, 4), false, ExcelBufferTmp."Cell Type"::Number);
-        EnterCell(RowNo, 5, GetListValue(LineList, 5), false, ExcelBufferTmp."Cell Type"::Text);
-        EnterCell(RowNo, 6, GetListValue(LineList, 6), false, ExcelBufferTmp."Cell Type"::Text);
-        EnterCell(RowNo, 7, GetListValue(LineList, 7), false, ExcelBufferTmp."Cell Type"::Date);
-        EnterCell(RowNo, 8, GetListValue(LineList, 8), false, ExcelBufferTmp."Cell Type"::Text);
+        EnterCell(RowNo, 2, GetListValue(LineList, 2), false, ExcelBufferTmp."Cell Type"::Text, true);
+        EnterCell(RowNo, 3, GetListValue(LineList, 3), false, ExcelBufferTmp."Cell Type"::Text, true);
+        EnterCell(RowNo, 4, GetListValue(LineList, 4), false, ExcelBufferTmp."Cell Type"::Number, true);
+        EnterCell(RowNo, 5, GetListValue(LineList, 5), false, ExcelBufferTmp."Cell Type"::Text, true);
+        EnterCell(RowNo, 6, GetListValue(LineList, 6), false, ExcelBufferTmp."Cell Type"::Text, true);
+        EnterCell(RowNo, 7, GetListValue(LineList, 7), false, ExcelBufferTmp."Cell Type"::Date, true);
+        EnterCell(RowNo, 8, GetListValue(LineList, 8), false, ExcelBufferTmp."Cell Type"::Text, true);
         for i := 9 to 17 do
-            EnterCell(RowNo, i, GetListValue(LineList, i), false, ExcelBufferTmp."Cell Type"::Number);
+            EnterCell(RowNo, i, GetListValue(LineList, i), false, ExcelBufferTmp."Cell Type"::Number, true);
         RowNo += 1;
     end;
 
@@ -325,21 +325,20 @@ report 50105 "FA Turnover (Excel)"
 
     local procedure FillFooter2(LineList: Dictionary of [Integer, Decimal])
     var
-        ExcelMgt: Codeunit "Excel Management";
         i: Integer;
     begin
-        EnterCell(RowNo, 2, Text003, true, ExcelBufferTmp."Cell Type"::Text);
+        EnterCell(RowNo, 2, Text003, true, ExcelBufferTmp."Cell Type"::Text, true);
         for i := 3 to 8 do
-            EnterCell(RowNo, i, '', true, ExcelBufferTmp."Cell Type"::Text); // To fill underline
+            EnterCell(RowNo, i, '', true, ExcelBufferTmp."Cell Type"::Text, true);
         for i := 9 to 17 do
-            EnterCell(RowNo, i, GetListValue(LineList, i), true, ExcelBufferTmp."Cell Type"::Number);
+            EnterCell(RowNo, i, GetListValue(LineList, i), true, ExcelBufferTmp."Cell Type"::Number, true);
 
         ExcelBufferTmp.WriteSheet(Text001, CompanyName, UserId);
         ExcelBufferTmp.CloseBook;
         ExcelBufferTmp.OpenExcel;
     end;
 
-    local procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text; Bold: Boolean; CellType: Integer)
+    local procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text; Bold: Boolean; CellType: Integer; IsBorder: Boolean)
     begin
         ExcelBufferTmp.Init();
         ExcelBufferTmp.Validate("Row No.", RowNo);
@@ -348,7 +347,8 @@ report 50105 "FA Turnover (Excel)"
         ExcelBufferTmp.Formula := '';
         ExcelBufferTmp.Bold := Bold;
         ExcelBufferTmp."Cell Type" := CellType;
-        ExcelBufferTmp."Underline" := true;
+        if IsBorder then
+            ExcelBufferTmp.SetBorder(true, true, true, true, false, "Border Style"::Thin);
         ExcelBufferTmp.Insert();
     end;
 
