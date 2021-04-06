@@ -102,5 +102,8 @@ codeunit 99999 "Additional Management BS"
         BankAccountLedgerEntry."Payment Purpose" := GenJournalLine."Payment Purpose";
     end;
     // cu 12 <<
+
+
+
     // Event Subscribers <<
 }

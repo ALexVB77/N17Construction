@@ -38,6 +38,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method getValue - NamedType ErrorInISM</note>
         </trans-unit>
+        <trans-unit id="XmlPort 4143417745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Exch. Import - CSV BS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4143417745 - NamedType 3157578160" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The imported file contains unexpected formatting. One or more lines may be missing in the file.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - NamedType LastLineIsHeaderErr</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4143417745 - NamedType 552864931" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The imported file contains unexpected formatting. One or more headers are incorrect.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - NamedType WrongHeaderErr</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
           <source>Client Bank</source>
           <note from="Developer" annotates="general" priority="2"></note>
