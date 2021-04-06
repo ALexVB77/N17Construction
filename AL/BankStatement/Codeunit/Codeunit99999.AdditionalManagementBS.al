@@ -103,7 +103,16 @@ codeunit 99999 "Additional Management BS"
     end;
     // cu 12 <<
 
+    // cu 1201 >>
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Process Data Exch.", 'OnAfterDataExchFieldFiltersSet', '', false, false)]
+    local procedure OnAfterDataExchFieldFiltersSet(var DataExchFieldMapping: record "Data Exch. Field Mapping"; var DataExchField: Record "Data Exch. Field");
+    begin
+        IF (DataExchFieldMapping."Use Value From Header") THEN BEGIN
+            DataExchField.SETRANGE("Line No.", 0);
+        END
+    end;
 
+    // cu 1201 <<
 
     // Event Subscribers <<
 }
