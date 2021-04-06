@@ -127,6 +127,37 @@ table 99993 "Excel Buffer Mod"
             Caption = 'Font Size';
             DataClassification = SystemMetadata;
         }
+        field(50000; "Border Style"; Enum "Border Style")
+        {
+            Caption = 'Border Style';
+            DataClassification = SystemMetadata;
+        }
+        field(50010; "Left Border"; Boolean)
+        {
+            Caption = 'Left Border';
+            DataClassification = SystemMetadata;
+        }
+        field(50020; "Right Border"; Boolean)
+        {
+            Caption = 'Right Border';
+            DataClassification = SystemMetadata;
+        }
+
+        field(50030; "Top Border"; Boolean)
+        {
+            Caption = 'Top Border';
+            DataClassification = SystemMetadata;
+        }
+        field(50040; "Bottom Border"; Boolean)
+        {
+            Caption = 'Bottom Border';
+            DataClassification = SystemMetadata;
+        }
+        field(50050; "Diagonal Border"; Boolean)
+        {
+            Caption = 'Diagonal Border';
+            DataClassification = SystemMetadata;
+        }
     }
 
     keys
@@ -521,7 +552,7 @@ table 99993 "Excel Buffer Mod"
         CellTextValue: Text;
     begin
         with ExcelBuffer do begin
-            GetCellDecorator(Bold, Italic, Underline, "Double Underline", Decorator);
+            GetCellDecorator(Bold, Italic, Underline, "Double Underline", IsBorder(), Decorator);
 
             CellTextValue := "Cell Value as Text";
             OnWriteCellValueOnBeforeSetCellValue(Rec, CellTextValue);
@@ -550,7 +581,7 @@ table 99993 "Excel Buffer Mod"
         Decorator: DotNet CellDecorator;
     begin
         with ExcelBuffer do begin
-            GetCellDecorator(Bold, Italic, Underline, "Double Underline", Decorator);
+            GetCellDecorator(Bold, Italic, Underline, "Double Underline", IsBorder(), Decorator);
 
             XlWrkShtWriter.SetCellFormula("Row No.", xlColID, GetFormula, NumberFormat, Decorator);
         end;
@@ -614,6 +645,67 @@ table 99993 "Excel Buffer Mod"
             else
                 Decorator := XlWrkShtWriter.DefaultCellDecorator;
         end;
+    end;
+
+    local procedure GetCellDecorator(IsBold: Boolean; IsItalic: Boolean; IsUnderlined: Boolean; IsDoubleUnderlined: Boolean; IsBorder: Boolean; var Decorator: DotNet CellDecorator)
+    var
+        CellFormatManager: Dotnet CellFormatManager;
+        BorderStyleValues: DotNet BorderStyleValues;
+    begin
+        GetCellDecorator(IsBold, IsItalic, IsUnderlined, IsDoubleUnderlined, Decorator);
+        If IsBorder then begin
+            GetBorderStyle(BorderStyleValues);
+            Decorator.Border := CellFormatManager.CreateBorder("Left Border", "Right Border", "Top Border", "Bottom Border", "Diagonal Border", BorderStyleValues);
+        end;
+    end;
+
+    local procedure IsBorder(): Boolean
+    begin
+        exit("Left Border" or "Right Border" or "Top Border" or "Bottom Border" or "Diagonal Border");
+    end;
+
+    local procedure GetBorderStyle(var BorderStyleValues: DotNet BorderStyleValues)
+    begin
+        case "Border Style" of
+            "Border Style"::None:
+                BorderStyleValues := BorderStyleValues.None;
+            "Border Style"::Thin:
+                BorderStyleValues := BorderStyleValues.Thin;
+            "Border Style"::Medium:
+                BorderStyleValues := BorderStyleValues.Medium;
+            "Border Style"::Dashed:
+                BorderStyleValues := BorderStyleValues.Dashed;
+            "Border Style"::Dotted:
+                BorderStyleValues := BorderStyleValues.Dotted;
+            "Border Style"::Thick:
+                BorderStyleValues := BorderStyleValues.Thick;
+            "Border Style"::Double:
+                BorderStyleValues := BorderStyleValues.Double;
+            "Border Style"::Hair:
+                BorderStyleValues := BorderStyleValues.Hair;
+            "Border Style"::MediumDashed:
+                BorderStyleValues := BorderStyleValues.MediumDashed;
+            "Border Style"::DashDot:
+                BorderStyleValues := BorderStyleValues.DashDot;
+            "Border Style"::MediumDashDot:
+                BorderStyleValues := BorderStyleValues.MediumDashDot;
+            "Border Style"::DashDotDot:
+                BorderStyleValues := BorderStyleValues.DashDotDot;
+            "Border Style"::MediumDashDotDot:
+                BorderStyleValues := BorderStyleValues.MediumDashDotDot;
+            "Border Style"::SlantDashDot:
+                BorderStyleValues := BorderStyleValues.SlantDashDot;
+        end
+    end;
+
+    procedure SetBorder(IsLeft: Boolean; IsRight: Boolean; IsTop: Boolean; IsBottom: Boolean; IsDiagonal: Boolean; BorderStyle: Enum "Border Style")
+    begin
+        "Left Border" := IsLeft;
+        "Right Border" := IsRight;
+        "Top Border" := IsTop;
+        "Bottom Border" := IsBottom;
+        "Diagonal Border" := IsDiagonal;
+        "Border Style" := BorderStyle;
     end;
 
     procedure SetColumnWidth(ColName: Text[10]; NewColWidth: Decimal)
