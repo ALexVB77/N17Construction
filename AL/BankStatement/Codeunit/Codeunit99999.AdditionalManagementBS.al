@@ -112,6 +112,18 @@ codeunit 99999 "Additional Management BS"
         END
     end;
 
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Process Data Exch.", 'OnBeforeTransformText', '', false, false)]
+    local procedure OnBeforeTransformText(var RecRefTemplate: RecordRef);
+    var
+        ism: Codeunit "Isolated Storage Management BS";
+        fldRef: FieldRef;
+    begin
+        IF (RecRefTemplate.NUMBER = DATABASE::"Bank Acc. Reconciliation Line") THEN BEGIN
+            fldRef := RecRefTemplate.FIELD(1);
+            ism.setString('T1237.BankAccountCode', FORMAT(fldRef.VALUE));
+        END;
+    end;
     // cu 1201 <<
 
     // Event Subscribers <<

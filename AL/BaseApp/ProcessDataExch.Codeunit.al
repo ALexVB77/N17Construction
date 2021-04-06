@@ -326,6 +326,7 @@ codeunit 1201 "Process Data Exch."
     begin
     end;
 
+    [IntegrationEvent(false, false)]
     local procedure OnBeforeTransformText(var RecRefTemplate: RecordRef)
     begin
     end;
