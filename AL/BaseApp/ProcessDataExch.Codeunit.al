@@ -63,6 +63,7 @@ codeunit 1201 "Process Data Exch."
                 repeat
                     DataExchField.SetRange("Line No.", CurrLineNo);
                     DataExchField.SetRange("Column No.", DataExchFieldMapping."Column No.");
+                    OnAfterDataExchFieldFiltersSet(DataExchFieldMapping, DataExchField);
                     if DataExchField.FindSet then
                         repeat
                             SetField(RecRef, DataExchFieldMapping, DataExchField, TempFieldIdsToNegate)
@@ -317,6 +318,11 @@ codeunit 1201 "Process Data Exch."
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterProcessColumnMapping(var DataExch: Record "Data Exch.")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterDataExchFieldFiltersSet(var DataExchFieldMapping: record "Data Exch. Field Mapping"; var DataExchField: Record "Data Exch. Field")
     begin
     end;
 }
