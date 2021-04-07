@@ -284,7 +284,7 @@ codeunit 99999 "Additional Management BS"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Exp. Pre-Mapping Gen. Jnl.", 'OnCustPreparePaymentExportDataJnl', '', false, false)]
-    local procedure OnCustPreparePaymentExportDataJnl(var GenJnlLine: Record "Gen. Journal Line"; DataExchEntryNo: integer; LineNo: integer; isHandled: boolean)
+    local procedure OnCustPreparePaymentExportDataJnl(var GenJnlLine: Record "Gen. Journal Line"; DataExchEntryNo: integer; LineNo: integer; var isHandled: boolean)
     var
         bankAccount: Record "Bank Account";
         companyInfo: Record "Company Information";
@@ -297,6 +297,7 @@ codeunit 99999 "Additional Management BS"
         paymentMethod: Record "Payment Method";
     begin
         IF GenJnlLine."Account Type" = GenJnlLine."Account Type"::Customer THEN BEGIN
+            isHandled := true;
             GeneralLedgerSetup.GET;
             GenJnlLine.TESTFIELD("Account Type", GenJnlLine."Account Type"::Customer);
             Customer.GET(GenJnlLine."Account No.");
