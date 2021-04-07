@@ -9,6 +9,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnAfterImportBankStatement - NamedType Text008</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 4159195328 - NamedType 1090077784" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exported lines must be filtered by one bank account</source>
+          <target>Выгружаемые строки должны быть отфильтрованы по одному коду банка</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnExportPaymentFileOnBeforeRunExport - NamedType locText001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1238839933 - Method 4179483220 - NamedType 3100313355" size-unit="char" translate="yes" xml:space="preserve">
           <source>Text length "%1" must be in range %2..%3</source>
           <target>Длина строки "%1" должна быть в диапазоне от %2 до %3</target>
