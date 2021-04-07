@@ -3,6 +3,12 @@
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Bank Statement">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 1238839933 - Method 3003655837 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are several payment orders with %1 %2 dated %3.</source>
+          <target>Есть несколько платежных поручений с %1 %2 с датой %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnAfterImportBankStatement - NamedType Text008</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1238839933 - Method 4179483220 - NamedType 3100313355" size-unit="char" translate="yes" xml:space="preserve">
           <source>Text length "%1" must be in range %2..%3</source>
           <target>Длина строки "%1" должна быть в диапазоне от %2 до %3</target>
@@ -48,21 +54,18 @@
         <trans-unit id="XmlPort 4143417745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Data Exch. Import - CSV BS</source>
           <target>Импорт обмена данными - CSV</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - Property Caption</note>
         </trans-unit>
         <trans-unit id="XmlPort 4143417745 - NamedType 3157578160" size-unit="char" translate="yes" xml:space="preserve">
           <source>The imported file contains unexpected formatting. One or more lines may be missing in the file.</source>
           <target>Импортированный файл содержит непредвиденное форматирование. В файле может отсутствовать одна и более строк.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - NamedType LastLineIsHeaderErr</note>
         </trans-unit>
         <trans-unit id="XmlPort 4143417745 - NamedType 552864931" size-unit="char" translate="yes" xml:space="preserve">
           <source>The imported file contains unexpected formatting. One or more headers are incorrect.</source>
           <target>Импортированный файл содержит непредвиденное форматирование. Один или несколько заголовков неверны.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - NamedType WrongHeaderErr</note>
         </trans-unit>
@@ -111,7 +114,6 @@
         <trans-unit id="TableExtension 768434673 - Field 3614229417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
           <source>Statement end saldo</source>
           <target>Конечный остаток</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Statement End Saldo - Property Caption</note>
         </trans-unit>
@@ -150,6 +152,13 @@
           <target>Использовать значение из заголовка</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Data Exch. Field Mapping BS - Field Use Value From Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4006342976 - Field 1531222856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Payer KPP</source>
+          <target>КПП плательщика</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line BS - Field Payer KPP - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4072823385 - Field 4111173870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
           <source>KBK</source>

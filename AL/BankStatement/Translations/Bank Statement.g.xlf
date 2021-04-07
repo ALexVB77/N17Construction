@@ -3,6 +3,11 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="Bank Statement">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 1238839933 - Method 3003655837 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are several payment orders with %1 %2 dated %3.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnAfterImportBankStatement - NamedType Text008</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1238839933 - Method 4179483220 - NamedType 3100313355" size-unit="char" translate="yes" xml:space="preserve">
           <source>Text length "%1" must be in range %2..%3</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -122,6 +127,11 @@
           <source>Use Value From Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Data Exch. Field Mapping BS - Field Use Value From Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4006342976 - Field 1531222856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Payer KPP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line BS - Field Payer KPP - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4072823385 - Field 4111173870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
           <source>KBK</source>
