@@ -126,5 +126,29 @@ codeunit 99999 "Additional Management BS"
     end;
     // cu 1201 <<
 
+    // cu 1210 >>
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Payment Export Mgt", 'OnBeforeInsertDataExch', '', false, false)]
+    local procedure OnBeforeInsertDataExch(var DataExch: Record "Data Exch."; BankAccountCode: Code[20]);
+    begin
+        DataExch."Bank Code" := BankAccountCode
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Payment Export Mgt", 'OnProcessColumnMappingOnTransformText', '', false, false)]
+    local procedure OnProcessColumnMappingOnTransformText(RecRef: RecordRef; var DataExchFieldMapping: Record "Data Exch. Field Mapping"; var ValueAsString: Text[250]);
+    var
+        transformationRule: Record "Transformation Rule";
+        fldRef: FieldRef;
+    begin
+        IF (transformationRule.GET(DataExchFieldMapping."Transformation Rule")) THEN BEGIN
+            IF (RecRef.NUMBER = DATABASE::"Payment Export Data") THEN BEGIN
+                fldRef := RecRef.FIELD(30);
+                transformationRule.setBankAccount(FORMAT(fldRef.VALUE));
+            END;
+            ValueAsString := transformationRule.TransformText(ValueAsString);
+        END;
+    end;
+
+    // cu 1210 <<
+
     // Event Subscribers <<
 }

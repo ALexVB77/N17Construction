@@ -28,7 +28,7 @@ codeunit 1201 "Process Data Exch."
 
         DataExchMapping.Get(DataExch."Data Exch. Def Code", DataExchLineDef.Code, RecRefTemplate.Number);
 
-        OnBeforeDataExchFieldMappingSetFilters(DataExchFieldMapping, DataExch);
+        OnBeforeDataExchFieldMappingSetFilters(DataExchFieldMapping, DataExch); 
 
         DataExchFieldMapping.SetRange("Data Exch. Def Code", DataExch."Data Exch. Def Code");
         DataExchFieldMapping.SetRange("Data Exch. Line Def Code", DataExchLineDef.Code);
@@ -63,7 +63,7 @@ codeunit 1201 "Process Data Exch."
                 repeat
                     DataExchField.SetRange("Line No.", CurrLineNo);
                     DataExchField.SetRange("Column No.", DataExchFieldMapping."Column No.");
-                    OnAfterDataExchFieldFiltersSet(DataExchFieldMapping, DataExchField);
+                    OnAfterDataExchFieldFiltersSet(DataExchFieldMapping, DataExchField);// NC 50110 GG
                     if DataExchField.FindSet then
                         repeat
                             SetField(RecRef, DataExchFieldMapping, DataExchField, TempFieldIdsToNegate)
@@ -118,7 +118,7 @@ codeunit 1201 "Process Data Exch."
           DataExchField."Column No.");
 
         FieldRef := RecRef.Field(DataExchFieldMapping."Field ID");
-        OnBeforeTransformText(RecRef);
+        OnBeforeTransformText(RecRef);// NC 50110 GG
         TransformedValue := DelChr(DataExchField.GetValue, '>'); // We shoud use the trim transformation rule instead of this
         if TransformationRule.Get(DataExchFieldMapping."Transformation Rule") then
             TransformedValue := TransformationRule.TransformText(DataExchField.Value);
@@ -324,11 +324,13 @@ codeunit 1201 "Process Data Exch."
     [IntegrationEvent(false, false)]
     local procedure OnAfterDataExchFieldFiltersSet(var DataExchFieldMapping: record "Data Exch. Field Mapping"; var DataExchField: Record "Data Exch. Field")
     begin
+        // NC 50110 GG
     end;
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeTransformText(var RecRefTemplate: RecordRef)
     begin
+        // NC 50110 GG
     end;
 }
 
