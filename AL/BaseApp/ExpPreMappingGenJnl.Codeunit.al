@@ -102,7 +102,7 @@ codeunit 1273 "Exp. Pre-Mapping Gen. Jnl."
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnCustPreparePaymentExportDataJnl(var GenJnlLine: Record "Gen. Journal Line", DataExchEntryNo: integer, LineNo:integer, isHandled:boolean);
+    local procedure OnCustPreparePaymentExportDataJnl(var GenJnlLine: Record "Gen. Journal Line"; DataExchEntryNo: integer; LineNo: integer; isHandled: boolean);
     begin
         // NC 50110 GG 
     end;
