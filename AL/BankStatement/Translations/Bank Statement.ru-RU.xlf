@@ -156,7 +156,6 @@
         <trans-unit id="TableExtension 4006342976 - Field 1531222856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Payer KPP</source>
           <target>КПП плательщика</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line BS - Field Payer KPP - Property Caption</note>
         </trans-unit>

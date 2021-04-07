@@ -14,6 +14,21 @@ codeunit 99999 "Additional Management BS"
             end;
         end;
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnExportPaymentFileOnBeforeRunExport', '', false, false)]
+    local procedure OnExportPaymentFileOnBeforeRunExport(var GenJournalLine: Record "Gen. Journal Line")
+    var
+        gjl: record "Gen. Journal Line";
+        locText001: label 'Exported lines must be filtered by one bank account';
+    begin
+        gjl.RESET();
+        gjl.COPYFILTERS(GenJournalLine);
+        gjl.FILTERGROUP(2);
+        gjl.SETFILTER("Bal. Account No.", '<>%1', GenJournalLine."Bal. Account No.");
+        gjl.FILTERGROUP(0);
+        IF (NOT gjl.ISEMPTY()) THEN ERROR(locText001);
+    end;
+
     // t 81 <<
 
     // t 1237 >>
