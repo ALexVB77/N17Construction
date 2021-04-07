@@ -296,100 +296,102 @@ codeunit 99999 "Additional Management BS"
         bankExportImportSetup: Record "Bank Export/Import Setup";
         paymentMethod: Record "Payment Method";
     begin
-        GeneralLedgerSetup.GET;
-        GenJnlLine.TESTFIELD("Account Type", GenJnlLine."Account Type"::Customer);
-        Customer.GET(GenJnlLine."Account No.");
+        IF GenJnlLine."Account Type" = GenJnlLine."Account Type"::Customer THEN BEGIN
+            GeneralLedgerSetup.GET;
+            GenJnlLine.TESTFIELD("Account Type", GenJnlLine."Account Type"::Customer);
+            Customer.GET(GenJnlLine."Account No.");
 
-        WITH PaymentExportData DO BEGIN
-            BankAccount.GET(GenJnlLine."Bal. Account No.");
-            BankAccount.GetBankExportImportSetup(BankExportImportSetup);
-            SetPreserveNonLatinCharacters(BankExportImportSetup."Preserve Non-Latin Characters");
+            WITH PaymentExportData DO BEGIN
+                BankAccount.GET(GenJnlLine."Bal. Account No.");
+                BankAccount.GetBankExportImportSetup(BankExportImportSetup);
+                SetPreserveNonLatinCharacters(BankExportImportSetup."Preserve Non-Latin Characters");
 
-            INIT;
-            "Data Exch Entry No." := DataExchEntryNo;
-            "Sender Bank Account Code" := GenJnlLine."Bal. Account No.";
-            BankAccount.GET("Sender Bank Account Code");
-            "Sender Bank Account No." := COPYSTR(BankAccount.GetBankAccountNo, 1, MAXSTRLEN("Sender Bank Account No."));
+                INIT;
+                "Data Exch Entry No." := DataExchEntryNo;
+                "Sender Bank Account Code" := GenJnlLine."Bal. Account No.";
+                BankAccount.GET("Sender Bank Account Code");
+                "Sender Bank Account No." := COPYSTR(BankAccount.GetBankAccountNo, 1, MAXSTRLEN("Sender Bank Account No."));
 
-            "Sender Bank Name" := BankAccount.Name;
-            "Sender Bank BIC" := BankAccount."Bank BIC";
-            "Sender Bank City" := BankAccount.City;
-
-
-            CompanyInfo.GET;
-            "Sender VAT Reg. No." := CompanyInfo."VAT Registration No.";
-
-            "Sender KPP" := GenJnlLine."Payer KPP";
-
-            "Sender Transit No." := BankAccount."Bank Corresp. Account No.";
+                "Sender Bank Name" := BankAccount.Name;
+                "Sender Bank BIC" := BankAccount."Bank BIC";
+                "Sender Bank City" := BankAccount.City;
 
 
-            IF CustomerBankAccount.GET(GenJnlLine."Account No.", GenJnlLine."Beneficiary Bank Code") THEN BEGIN
-                IF BankAccount."Country/Region Code" = CustomerBankAccount."Country/Region Code" THEN BEGIN
-                    Amount := GenJnlLine."Amount (LCY)";
-                    "Currency Code" := GeneralLedgerSetup."LCY Code";
-                END ELSE BEGIN
-                    Amount := GenJnlLine.Amount;
-                    "Currency Code" := GeneralLedgerSetup.GetCurrencyCode(GenJnlLine."Currency Code");
-                END;
+                CompanyInfo.GET;
+                "Sender VAT Reg. No." := CompanyInfo."VAT Registration No.";
 
-                "Recipient Bank Acc. No." :=
-                  COPYSTR(CustomerBankAccount.GetBankAccountNo, 1, MAXSTRLEN("Recipient Bank Acc. No."));
-                "Recipient Reg. No." := CustomerBankAccount."Bank Branch No.";
-                "Recipient Acc. No." := CustomerBankAccount."Bank Account No.";
-                "Recipient Bank Country/Region" := CustomerBankAccount."Country/Region Code";
-                "Recipient Bank Name" := CustomerBankAccount.Name;
-                "Recipient Bank Address" := CustomerBankAccount.Address;
-                "Recipient Bank City" := CustomerBankAccount."Post Code" + CustomerBankAccount.City;
+                "Sender KPP" := GenJnlLine."Payer KPP";
 
-                "Recipient Bank BIC" := CustomerBankAccount.BIC;
-                "Recipient VAT Reg. No." := Customer."VAT Registration No.";
-                "Recipient Transit No." := CustomerBankAccount."Bank Corresp. Account No.";
-                "Recipient KPP" := Customer."KPP Code";
+                "Sender Transit No." := BankAccount."Bank Corresp. Account No.";
 
-            END ELSE
-                IF GenJnlLine."Creditor No." <> '' THEN BEGIN
-                    Amount := GenJnlLine."Amount (LCY)";
-                    "Currency Code" := GeneralLedgerSetup."LCY Code";
-                END;
 
-            "Payment Method" := GenJnlLine."Payment Method";
-            "Payment Variant" := GenJnlLine."Payment Type";
-            "Payment Subsequence" := GenJnlLine."Payment Subsequence";
-            "Payment Purpose" := GenJnlLine."Payment Purpose";
-            "Payment Code" := GenJnlLine."Payment Code";
-            "Creation Date" := TODAY;
-            "Creation Time" := FORMAT(TIME);
-            "Starting Date" := GenJnlLine."Posting Date";
-            "Ending Date" := GenJnlLine."Posting Date";
+                IF CustomerBankAccount.GET(GenJnlLine."Account No.", GenJnlLine."Beneficiary Bank Code") THEN BEGIN
+                    IF BankAccount."Country/Region Code" = CustomerBankAccount."Country/Region Code" THEN BEGIN
+                        Amount := GenJnlLine."Amount (LCY)";
+                        "Currency Code" := GeneralLedgerSetup."LCY Code";
+                    END ELSE BEGIN
+                        Amount := GenJnlLine.Amount;
+                        "Currency Code" := GeneralLedgerSetup.GetCurrencyCode(GenJnlLine."Currency Code");
+                    END;
 
-            KBK := GenJnlLine.KBK;
-            OKATO := GenJnlLine.OKATO;
-            "Payment Reason Code" := GenJnlLine."Payment Reason Code";
-            "Reason Document No." := GenJnlLine."Reason Document No.";
-            "Reason Document Date" := GenJnlLine."Reason Document Date";
-            "Tax Payment Type" := GenJnlLine."Tax Payment Type";
-            "Tax Period" := GenJnlLine."Tax Period";
-            "Taxpayer Status" := Enum::"Taxpayer Status Enum BS".FromInteger(tps.Ordinals.Get(tps.Names.IndexOf(format(GenJnlLine."Taxpayer Status"))));
+                    "Recipient Bank Acc. No." :=
+                      COPYSTR(CustomerBankAccount.GetBankAccountNo, 1, MAXSTRLEN("Recipient Bank Acc. No."));
+                    "Recipient Reg. No." := CustomerBankAccount."Bank Branch No.";
+                    "Recipient Acc. No." := CustomerBankAccount."Bank Account No.";
+                    "Recipient Bank Country/Region" := CustomerBankAccount."Country/Region Code";
+                    "Recipient Bank Name" := CustomerBankAccount.Name;
+                    "Recipient Bank Address" := CustomerBankAccount.Address;
+                    "Recipient Bank City" := CustomerBankAccount."Post Code" + CustomerBankAccount.City;
 
-            "Recipient Name" := Customer.Name;
-            "Recipient Address" := Customer.Address;
-            "Recipient City" := Customer."Post Code" + ' ' + Customer.City;
-            "Transfer Date" := GenJnlLine."Posting Date";
-            "Message to Recipient 1" := GenJnlLine."Message to Recipient";
+                    "Recipient Bank BIC" := CustomerBankAccount.BIC;
+                    "Recipient VAT Reg. No." := Customer."VAT Registration No.";
+                    "Recipient Transit No." := CustomerBankAccount."Bank Corresp. Account No.";
+                    "Recipient KPP" := Customer."KPP Code";
 
-            "Document No." := GenJnlLine."Document No.";
-            "Applies-to Ext. Doc. No." := GenJnlLine."Applies-to Ext. Doc. No.";
-            "Short Advice" := GenJnlLine."Applies-to Ext. Doc. No.";
-            "Line No." := LineNo;
-            "Payment Reference" := GenJnlLine."Payment Reference";
-            IF PaymentMethod.GET(GenJnlLine."Payment Method Code") THEN
-                "Data Exch. Line Def Code" := PaymentMethod."Pmt. Export Line Definition";
-            "Recipient Creditor No." := GenJnlLine."Creditor No.";
-            INSERT(TRUE);
+                END ELSE
+                    IF GenJnlLine."Creditor No." <> '' THEN BEGIN
+                        Amount := GenJnlLine."Amount (LCY)";
+                        "Currency Code" := GeneralLedgerSetup."LCY Code";
+                    END;
+
+                "Payment Method" := GenJnlLine."Payment Method";
+                "Payment Variant" := GenJnlLine."Payment Type";
+                "Payment Subsequence" := GenJnlLine."Payment Subsequence";
+                "Payment Purpose" := GenJnlLine."Payment Purpose";
+                "Payment Code" := GenJnlLine."Payment Code";
+                "Creation Date" := TODAY;
+                "Creation Time" := FORMAT(TIME);
+                "Starting Date" := GenJnlLine."Posting Date";
+                "Ending Date" := GenJnlLine."Posting Date";
+
+                KBK := GenJnlLine.KBK;
+                OKATO := GenJnlLine.OKATO;
+                "Payment Reason Code" := GenJnlLine."Payment Reason Code";
+                "Reason Document No." := GenJnlLine."Reason Document No.";
+                "Reason Document Date" := GenJnlLine."Reason Document Date";
+                "Tax Payment Type" := GenJnlLine."Tax Payment Type";
+                "Tax Period" := GenJnlLine."Tax Period";
+                "Taxpayer Status" := Enum::"Taxpayer Status Enum BS".FromInteger(tps.Ordinals.Get(tps.Names.IndexOf(format(GenJnlLine."Taxpayer Status"))));
+
+                "Recipient Name" := Customer.Name;
+                "Recipient Address" := Customer.Address;
+                "Recipient City" := Customer."Post Code" + ' ' + Customer.City;
+                "Transfer Date" := GenJnlLine."Posting Date";
+                "Message to Recipient 1" := GenJnlLine."Message to Recipient";
+
+                "Document No." := GenJnlLine."Document No.";
+                "Applies-to Ext. Doc. No." := GenJnlLine."Applies-to Ext. Doc. No.";
+                "Short Advice" := GenJnlLine."Applies-to Ext. Doc. No.";
+                "Line No." := LineNo;
+                "Payment Reference" := GenJnlLine."Payment Reference";
+                IF PaymentMethod.GET(GenJnlLine."Payment Method Code") THEN
+                    "Data Exch. Line Def Code" := PaymentMethod."Pmt. Export Line Definition";
+                "Recipient Creditor No." := GenJnlLine."Creditor No.";
+                INSERT(TRUE);
+            end;
         end;
-
+    end;
     // cu 1273 <<
 
-        // Event Subscribers <<
+    // Event Subscribers <<
 }
