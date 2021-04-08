@@ -29,6 +29,7 @@ codeunit 1210 "Payment Export Mgt"
         with DataExch do begin
             Init;
             "Data Exch. Def Code" := BankExportImportSetup."Data Exch. Def. Code";
+            OnBeforeInsertDataExch(DataExch, BankAccountCode);// NC 50110 GG
             Insert(true);
         end;
     end;
@@ -86,6 +87,7 @@ codeunit 1210 "Payment Export Mgt"
                 CheckOptional(DataExchFieldMapping.Optional, FieldRef);
                 CastToDestinationType(ValueAsDestType, FieldRef.Value, DataExchColumnDef, DataExchFieldMapping.Multiplier);
                 ValueAsString := FormatToText(ValueAsDestType, DataExchDef, DataExchColumnDef);
+                OnProcessColumnMappingOnTransformText(RecRef, DataExchFieldMapping, ValueAsString);// NC 50110 GG
                 if DataExchColumnDef."Text Padding Required" and (DataExchColumnDef."Pad Character" <> '') then
                     ValueAsString :=
                         StringConversionManagement.GetPaddedString(
@@ -284,6 +286,18 @@ codeunit 1210 "Payment Export Mgt"
     [IntegrationEvent(false, false)]
     local procedure OnProcessColumnMappingOnBeforeCheckLength(var ValueAsString: Text[250]; DataExchFieldMapping: Record "Data Exch. Field Mapping"; DataExchColumnDef: Record "Data Exch. Column Def")
     begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeInsertDataExch(var DataExch: Record "Data Exch."; BankAccountCode: Code[20])
+    begin
+        // NC 50110 GG
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnProcessColumnMappingOnTransformText(RecRef: RecordRef; var DataExchFieldMapping: Record "Data Exch. Field Mapping"; var ValueAsString: Text[250])
+    begin
+        // NC 50110 GG
     end;
 }
 

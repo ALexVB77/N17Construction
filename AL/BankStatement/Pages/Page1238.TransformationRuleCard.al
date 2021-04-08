@@ -9,7 +9,7 @@ pageextension 99995 "Transformation Rule Card BS" extends "Transformation Rule C
                 ShowCaption = false;
                 field("Custom Transformation Type"; Rec."Custom Transformation Type")
                 {
-                    ApplicationArea = Basic, Suite;
+                    ApplicationArea = All;
                     trigger OnValidate()
                     begin
                         Rec.TestField("Transformation Type", Rec."Transformation Type"::Custom);
@@ -17,7 +17,7 @@ pageextension 99995 "Transformation Rule Card BS" extends "Transformation Rule C
                 }
                 field("Min. Length"; rec."Min. Length")
                 {
-                    ApplicationArea = basic, suite;
+                    ApplicationArea = All;
                     trigger OnValidate()
                     begin
                         rec.TestField("Custom Transformation Type", rec."Custom Transformation Type"::CheckLength);
@@ -25,7 +25,7 @@ pageextension 99995 "Transformation Rule Card BS" extends "Transformation Rule C
                 }
                 field("Max. Length"; REc."Max. Length")
                 {
-                    ApplicationArea = basic, suite;
+                    ApplicationArea = All;
                     trigger OnValidate()
                     begin
                         rec.TestField("Custom Transformation Type", rec."Custom Transformation Type"::CheckLength);

@@ -6,7 +6,7 @@ pageextension 99996 "Transformation Rules BS" extends "Transformation Rules"
         {
             field("Custom Transformation Type"; Rec."Custom Transformation Type")
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
             }
         }
 
