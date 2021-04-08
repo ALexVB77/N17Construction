@@ -410,4 +410,101 @@ codeunit 99999 "Additional Management BS"
     // cu 1273 <<
 
     // Event Subscribers <<
+
+    // functions >>
+
+    // cu 50113 >>
+    procedure manualAssignPaymentJournalLine(var r: record "Bank Acc. Reconciliation Line")
+    var
+        paymentJournal: page "Payment Journal";
+        gjl: record "Gen. Journal Line";
+        setLink: Boolean;
+        genJnlBatch: Record "Gen. Journal Batch";
+        AssignToGJL: label 'Do you want to assign bank acc. reconciliation line to gen. journal line %1 %2 %3?';
+        AlreadyAssigned: label 'Gen. journal line allready assigned to bank acc. reconciliation line %1 %2. Do you want to reassign it?';
+        WrongStatus: label 'Line status must be %1 or %2';
+    begin
+        with r do begin
+            IF (NOT (R."Line Status" IN [R."Line Status"::"Contractor Confirmed", R."Line Status"::Imported])) THEN ERROR(WrongStatus, R."Line Status"::"Contractor Confirmed", R."Line Status"::Imported);
+            //Rec.TESTFIELD("Line Status",Rec."Line Status"::"Contractor Confirmed");
+
+            gjl.RESET();
+
+            genJnlBatch.RESET();
+            genJnlBatch.SETRANGE("Bal. Account Type", genJnlBatch."Bal. Account Type"::"Bank Account");
+            genJnlBatch.SETRANGE("Bal. Account No.", R."Bank Account No.");
+            genJnlBatch.SETFILTER("Payment Method Code", '<>''''');
+            IF (genJnlBatch.FINDFIRST()) THEN BEGIN
+                gjl.FILTERGROUP(2);
+                gjl.SETRANGE("Journal Template Name", genJnlBatch."Journal Template Name");
+                gjl.FILTERGROUP(0);
+                //gjl.SETRANGE("Journal Batch Name",genJnlBatch.Name);
+            END;
+
+            gjl.SETRANGE("Document No.", R."Document No.");
+            gjl.SETRANGE("Posting Date", R."Transaction Date");
+            gjl.SETRANGE("Bal. Account No.", R."Bank Account No.");
+            gjl.SETRANGE(Amount, R."Statement Amount");
+            IF (gjl.FINDSET()) THEN BEGIN
+                paymentJournal.SETRECORD(gjl);
+            END;
+            paymentJournal.SETTABLEVIEW(gjl);
+            IF (paymentJournal.RUNMODAL() = ACTION::OK) THEN BEGIN
+                paymentJournal.GETRECORD(gjl);
+                IF (gjl.Amount = R."Statement Amount") THEN BEGIN
+                    setLink := FALSE;
+                    IF (CONFIRM(AssignToGJL, FALSE, gjl."Journal Template Name", gjl."Journal Batch Name", gjl."Line No.")) THEN BEGIN
+                        setLink := TRUE;
+                        IF (gjl."Statement No." <> '') THEN BEGIN
+                            setLink := CONFIRM(AlreadyAssigned, FALSE, gjl."Statement No.", gjl."Statement Line No.");
+                        END;
+                        IF (setLink) THEN BEGIN
+                            gjl."Statement No." := R."Statement No.";
+                            gjl."Statement Line No." := R."Statement Line No.";
+                            gjl."Export Status" := gjl."Export Status"::"Bank Statement Found";
+                            gjl.MODIFY;
+                            R."Line Status" := R."Line Status"::"Payment Order Found";
+                            IF (R."Entity No." <> gjl."Account No.") THEN BEGIN
+                                CASE (gjl."Account Type") OF
+                                    gjl."Account Type"::Customer:
+                                        R."Entity Type" := R."Entity Type"::Customer;
+                                    gjl."Account Type"::"G/L Account":
+                                        R."Entity Type" := R."Entity Type"::"G/L Account";
+                                    gjl."Account Type"::Vendor:
+                                        R."Entity Type" := R."Entity Type"::Vendor;
+                                END;
+                                R."Entity No." := gjl."Account No.";
+                            END;
+                            R.MODIFY();
+                        END;
+                    END;
+                END;
+            END;
+
+        end;
+    end;
+    // cu 50113 <<
+
+
+    // cu 50118 >>
+    procedure copyReconLine(ReconciliationLineParam: Record "Bank Acc. Reconciliation Line")
+    var
+        reconciliationLine: record "Bank Acc. Reconciliation Line";
+        newLineNo: integer;
+    begin
+        ReconciliationLine.SETRANGE("Bank Account No.", ReconciliationLineParam."Bank Account No.");
+        ReconciliationLine.SETRANGE("Statement No.", ReconciliationLineParam."Statement No.");
+        IF ReconciliationLine.FINDLAST() THEN BEGIN
+            NewLineNo := ReconciliationLine."Statement Line No." + 10000;
+            ReconciliationLine.INIT();
+            ReconciliationLine.TRANSFERFIELDS(ReconciliationLineParam);
+            ReconciliationLine."Statement Line No." := NewLineNo;
+            ReconciliationLine.Difference := ReconciliationLine."Statement Amount";
+            ReconciliationLine."Applied Amount" := 0;
+            ReconciliationLine."Applied Entries" := 0;
+            ReconciliationLine.INSERT(TRUE);
+        end;
+    end;
+    // cu 50188 <<
+    // functions <<
 }
