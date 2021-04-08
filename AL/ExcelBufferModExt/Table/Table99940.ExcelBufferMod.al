@@ -1,4 +1,4 @@
-table 99993 "Excel Buffer Mod"
+table 99940 "Excel Buffer Mod"
 {
     Caption = 'Excel Buffer';
     ReplicateData = false;
