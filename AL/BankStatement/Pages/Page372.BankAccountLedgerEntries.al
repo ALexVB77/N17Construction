@@ -6,7 +6,7 @@ pageextension 99998 "Bank Account Ledger Entries BS" extends "Bank Account Ledge
         {
             field("Payment Purpose"; Rec."Payment Purpose")
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
             }
 
         }

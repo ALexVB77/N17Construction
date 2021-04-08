@@ -98,10 +98,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Unposted Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 1204434081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Statement begin saldo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Statement Begin Saldo - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 768434673 - Field 3614229417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
           <source>Statement end saldo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Statement End Saldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 1304281479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Total income amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Total Income Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 1711369992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Total outcome amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Total Outcome Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1965575538 - Field 2075143490 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
           <source>Check Description for Import</source>

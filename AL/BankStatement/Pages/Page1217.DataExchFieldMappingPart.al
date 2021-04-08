@@ -6,7 +6,7 @@ pageextension 99997 "Data Exch Field Map. Part BS" extends "Data Exch Field Mapp
         {
             field("Use Value From Header"; Rec."Use Value From Header")
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
             }
         }
     }
