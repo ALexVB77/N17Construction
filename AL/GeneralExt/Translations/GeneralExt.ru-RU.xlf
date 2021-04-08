@@ -2001,6 +2001,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Action FA Turnover (Excel) - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2849422936 - Action 2950380947 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 949348664">
+          <source>View the registration of fixed assets and operations, including the movement of fixed assets within the organization.</source>
+          <target>Просмотр регистрации ОС и операций, в том числе перемещения основных средств в пределах организации.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Action FA Inventory Card FA-6 New - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2849422936 - Action 2950380947 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 949348664">
+          <source>FA Inventory Card FA-6</source>
+          <target>Инв. карточка учета объекта ОС-6</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Action FA Inventory Card FA-6 New - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2849422936 - Control 3180694377 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 949348664">
           <source>Specifies a RAS posting group of the fixed asset.</source>
           <target>Определяет учетную группу РСБУ для ОС</target>

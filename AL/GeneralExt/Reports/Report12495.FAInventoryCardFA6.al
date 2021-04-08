@@ -81,8 +81,10 @@ report 92495 "FA Inventory Card FA-6 (Ext)"
                         FADepreciationBook.CalcFields("Acquisition Cost", Depreciation);
                         FillFirstPageBody(
                           TempFALedgerEntry."Document No." + ', ' + Format(TempFALedgerEntry."Posting Date"),
-                          TempFALedgerEntry.Description, TempFALedgerEntry."FA Location Code",
-                          FADepreciationBook."Acquisition Cost" + FADepreciationBook.Depreciation, TempFALedgerEntry."Employee No.");
+                          //TempFALedgerEntry.Description, TempFALedgerEntry."FA Location Code",
+                          //FADepreciationBook."Acquisition Cost" + FADepreciationBook.Depreciation, TempFALedgerEntry."Employee No.");
+                          format(TempFALedgerEntry."FA Posting Type"), TempFALedgerEntry."FA Location Code",
+                          TempFALedgerEntry.Amount, TempFALedgerEntry."Employee No.");
                     end;
 
                     trigger OnPostDataItem()
@@ -222,6 +224,8 @@ report 92495 "FA Inventory Card FA-6 (Ext)"
                 PostedFADocLine.SetRange("Document Type", PostedFADocLine."Document Type"::Release);
                 PostedFADocLine.SetRange("FA No.", "Fixed Asset"."No.");
                 if PostedFADocLine.FindFirst then;
+
+                GetVendorName();
             end;
         }
     }
@@ -303,6 +307,7 @@ report 92495 "FA Inventory Card FA-6 (Ext)"
         ForBook: Code[10];
         FactYears: Text[30];
         FileName: Text;
+        VendorName: Text;
         InitialAcquisitionCost: Decimal;
         TransferOperationTypeTxt: Label 'Transfer';
 
@@ -322,7 +327,7 @@ report 92495 "FA Inventory Card FA-6 (Ext)"
         FALocation: Record "FA Location";
     begin
         ExcelReportBuilderMgr.AddSection('FIRSTPAGEHEADER');
-        ExcelReportBuilderMgr.AddDataToSection('CompanyName', StdRepMgt.GetCompanyName);
+        ExcelReportBuilderMgr.AddDataToSection('CompanyName', StdRepMgt.GetCompanyName());
         ExcelReportBuilderMgr.AddDataToSection('DocumentNum', "Fixed Asset"."No.");
         ExcelReportBuilderMgr.AddDataToSection('DocumentDate', Format(CreateDate));
         ExcelReportBuilderMgr.AddDataToSection('AssetName', "Fixed Asset".Description + "Fixed Asset"."Description 2");
@@ -336,19 +341,19 @@ report 92495 "FA Inventory Card FA-6 (Ext)"
         ExcelReportBuilderMgr.AddDataToSection('DisposalDate', Format("Fixed Asset"."Vehicle Writeoff Date"));
         ExcelReportBuilderMgr.AddDataToSection('Account', FAPostingGroup."Acquisition Cost Account");
         if FALocation.Get("Fixed Asset"."FA Location Code") then begin
-            ExcelReportBuilderMgr.AddDataToSection('AssetLocation', FALocation.Name);
-            ExcelReportBuilderMgr.AddDataToSection('DepartmentName', FALocation.Name);
+            ExcelReportBuilderMgr.AddDataToSection('AssetLocation', GetCompanyName());
+            //ExcelReportBuilderMgr.AddDataToSection('DepartmentName', FALocation.Name);
         end;
-        ExcelReportBuilderMgr.AddDataToSection('AssetMade', "Fixed Asset".Manufacturer);
-        if "Fixed Asset"."Accrued Depr. Amount" <> 0 then begin
-            ExcelReportBuilderMgr.AddDataToSection('d1_1', Format("Fixed Asset"."Manufacturing Year"));
-            ExcelReportBuilderMgr.AddDataToSection('d1_3', Format(PostedFADocLine."Document Type"));
-            ExcelReportBuilderMgr.AddDataToSection('d1_4', PostedFADocLine."Document No.");
-            ExcelReportBuilderMgr.AddDataToSection('d1_5', Format(PostedFADocLine."Posting Date"));
-            ExcelReportBuilderMgr.AddDataToSection('d1_6', FactYears);
-            ExcelReportBuilderMgr.AddDataToSection('d1_7', StdRepMgt.FormatReportValue(Abs("FA Depreciation Book".Depreciation), 2));
-            ExcelReportBuilderMgr.AddDataToSection('d1_8', StdRepMgt.FormatReportValue(Abs("FA Depreciation Book"."Depreciated Cost"), 2));
-        end;
+        ExcelReportBuilderMgr.AddDataToSection('AssetMade', VendorName);
+        //if "Fixed Asset"."Accrued Depr. Amount" <> 0 then begin
+        ExcelReportBuilderMgr.AddDataToSection('d1_1', Format("Fixed Asset"."Manufacturing Year"));
+        ExcelReportBuilderMgr.AddDataToSection('d1_3', Format(PostedFADocLine."Document Type"));
+        ExcelReportBuilderMgr.AddDataToSection('d1_4', PostedFADocLine."Document No.");
+        ExcelReportBuilderMgr.AddDataToSection('d1_5', Format(PostedFADocLine."Posting Date"));
+        ExcelReportBuilderMgr.AddDataToSection('d1_6', FactYears);
+        ExcelReportBuilderMgr.AddDataToSection('d1_7', StdRepMgt.FormatReportValue(Abs("FA Depreciation Book".Depreciation), 2));
+        ExcelReportBuilderMgr.AddDataToSection('d1_8', StdRepMgt.FormatReportValue(Abs("FA Depreciation Book"."Depreciated Cost"), 2));
+        //end;
         ExcelReportBuilderMgr.AddDataToSection('d1_9', StdRepMgt.FormatReportValue(InitialAcquisitionCost, 2));
         ExcelReportBuilderMgr.AddDataToSection('d1_10', Format("FA Depreciation Book"."No. of Depreciation Years"));
     end;
@@ -361,6 +366,37 @@ report 92495 "FA Inventory Card FA-6 (Ext)"
         ExcelReportBuilderMgr.AddDataToSection('b1_3', FALocation);
         ExcelReportBuilderMgr.AddDataToSection('b1_4', StdRepMgt.FormatReportValue(BookValue, 2));
         ExcelReportBuilderMgr.AddDataToSection('b1_5', StdRepMgt.GetEmpName(ResponsiblePerson));
+    end;
+
+    local procedure GetCompanyName(): Text
+    begin
+        CompanyInf.Get();
+        exit(strsubstno('%1, %2, %3%4', CompanyInf."Post Code", CompanyInf.City, CompanyInf.Address, CompanyInf."Address 2"));
+    end;
+
+    local procedure GetVendorName()
+    var
+        Vendor: Record "Vendor";
+        VLedgerEntry: Record "Vendor Ledger Entry";
+        FALedgerEntry: Record "FA Ledger Entry";
+    begin
+        VendorName := '';
+        Clear(Vendor);
+        FALedgerEntry.Reset;
+        FALedgerEntry.SetCurrentKey("FA No.");
+        FALedgerEntry.SetRange("FA No.", "Fixed Asset"."No.");
+        FALedgerEntry.SetRange("Depreciation Book Code", FASetup."Default Depr. Book");
+        FALedgerEntry.SetRange("Document Type", FALedgerEntry."Document Type"::Invoice);
+        if FALedgerEntry.FindFirst() then begin
+            VLedgerEntry.Reset();
+            VLedgerEntry.SetCurrentKey("Document No.");
+            VLedgerEntry.SetRange("Document No.", FALedgerEntry."Document No.");
+            VLedgerEntry.SetRange("Posting Date", FALedgerEntry."Posting Date");
+            if VLedgerEntry.FindFirst then begin
+                Vendor.Get(VLedgerEntry."Vendor No.");
+                VendorName := StrSubstNo('%1%2, %3', Vendor.Name, Vendor."Name 2", Vendor."VAT Registration No.");
+            end;
+        end;
     end;
 }
 
