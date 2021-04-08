@@ -1,4 +1,4 @@
-enum 99993 "Border Style"
+enum 99940 "Border Style"
 {
     Extensible = true;
 
