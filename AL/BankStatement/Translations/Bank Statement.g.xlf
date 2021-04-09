@@ -8,10 +8,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method manualAssignPaymentJournalLine</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 2608931640" size-unit="char" translate="yes" xml:space="preserve">
+          <source>clearAssignPaymentJournalLine</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method clearAssignPaymentJournalLine</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1238839933 - Method 2917405684" size-unit="char" translate="yes" xml:space="preserve">
           <source>copyReconLine</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method copyReconLine</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 3087177095 - NamedType 2041610153" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line status must be %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method clearAssignPaymentJournalLine - NamedType WrongStatus</note>
         </trans-unit>
         <trans-unit id="Codeunit 1238839933 - Method 73345106 - NamedType 2112226773" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to assign bank acc. reconciliation line to gen. journal line %1 %2 %3?</source>
@@ -98,6 +108,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Acc. Reconcil. Lines BS - Action Assign Payment Journal - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 198097148 - Action 2232832211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3093572853">
+          <source>Clear Payment Journal Assignment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Acc. Reconcil. Lines BS - Action Clear Payment Journal Assignment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 768434673 - Action 2079994637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3012722930">
+          <source>Copy line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Acc. Reconciliation BS - Action CopyLine - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
           <source>Client Bank</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -133,6 +153,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Unposted Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Date filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Date Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 768434673 - Field 1204434081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
           <source>Statement begin saldo</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -142,6 +167,11 @@
           <source>Statement end saldo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Statement End Saldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 2910954211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Total bank account amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Total Bank Account Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 768434673 - Field 1304281479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
           <source>Total income amount</source>

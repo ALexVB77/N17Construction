@@ -10,37 +10,55 @@ pageextension 99992 "Bank Acc. Reconciliation BS" extends "Bank Acc. Reconciliat
         {
             Visible = false;
         }
+        modify(ApplyBankLedgerEntries)
+        {
+            Visible = false;
+        }
         addafter(General)
         {
             group(Control1)
             {
                 ShowCaption = false;
-                field("Statement Begin Saldo"; "Statement Begin Saldo")
+                field("Statement Begin Saldo"; rec."Statement Begin Saldo")
                 {
                     ApplicationArea = all;
                 }
-                field("Total Income Amount"; "Total Income Amount")
+                field("Total Income Amount"; rec."Total Income Amount")
                 {
                     ApplicationArea = all;
                 }
-                field("Total Outcome Amount"; "Total Outcome Amount")
+                field("Total Outcome Amount"; rec."Total Outcome Amount")
                 {
                     ApplicationArea = all;
                 }
-                field("Statement End Saldo"; "Statement End Saldo")
+                field("Statement End Saldo"; rec."Statement End Saldo")
                 {
                     ApplicationArea = all;
                 }
-                //field(Tot)
+                field("Total Bank Account Amount"; rec."Total Bank Account Amount")
+                {
+                    ApplicationArea = all;
+                }
             }
         }
     }
 
     actions
     {
-        // Add changes to page actions here
+        addbefore(SuggestLines)
+        {
+            action(CopyLine)
+            {
+                Caption = 'Copy line';
+                Image = CopyDocument;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Category4;
+                trigger OnAction()
+                begin
+                    CurrPage.StmtLine.Page.CopyReconLine();
+                end;
+            }
+        }
     }
-
-    var
-        myInt: Integer;
 }

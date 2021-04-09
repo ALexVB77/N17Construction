@@ -88,7 +88,17 @@ pageextension 99993 "Bank Acc. Reconcil. Lines BS" extends "Bank Acc. Reconcilia
                     adtmgt.manualAssignPaymentJournalLine(rec);
                 end;
             }
-
+            action("Clear Payment Journal Assignment")
+            {
+                ApplicationArea = all;
+                Image = CancelAllLines;
+                trigger OnAction()
+                var
+                    adtMgt: codeunit "Additional Management BS";
+                begin
+                    adtMgt.clearAssignPaymentJournalLine(Rec);
+                end;
+            }
         }
     }
 

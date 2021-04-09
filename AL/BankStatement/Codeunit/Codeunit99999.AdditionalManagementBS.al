@@ -483,6 +483,31 @@ codeunit 99999 "Additional Management BS"
 
         end;
     end;
+
+    procedure clearAssignPaymentJournalLine(var r: record "Bank Acc. Reconciliation Line")
+    var
+        gjl: record "Gen. Journal Line";
+        WrongStatus: label 'Line status must be %1';
+    begin
+        with r do begin
+            IF (not ("Line Status" in ["Line Status"::"Payment Order Found"])) THEN ERROR(WrongStatus, "Line Status"::"Payment Order Found");
+            gjl.RESET();
+            gjl.SetRange("Bal. Account No.", "Bank Account No.");
+            gjl.setrange("Statement No.", "Statement No.");
+            gjl.setrange("Statement Line No.", "Statement Line No.");
+            if (gjl.Findlast()) then begin
+                gjl."Export Status" := gjl."Export Status"::Exported;
+                gjl."Statement No." := '';
+                gjl."Statement Line No." := 0;
+                gjl.modify();
+
+                "Line Status" := "Line Status"::"Contractor Confirmed";
+                MODIFY;
+
+            end;
+        end;
+    end;
+
     // cu 50113 <<
 
 
@@ -505,6 +530,8 @@ codeunit 99999 "Additional Management BS"
             ReconciliationLine.INSERT(TRUE);
         end;
     end;
+
+
     // cu 50188 <<
     // functions <<
 }
