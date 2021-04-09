@@ -3,6 +3,20 @@ tableextension 99992 "Bank Acc. Reconciliation BS" extends "Bank Acc. Reconcilia
 {
     fields
     {
+        field(61009; "Date Filter"; Date)
+        {
+            Caption = 'Date filter';
+            FieldClass = FlowFilter;
+        }
+        field(61013; "Total Bank Account Amount"; Decimal)
+        {
+            Caption = 'Total bank account amount';
+            Editable = false;
+            BlankZero = true;
+            FieldClass = FlowField;
+            CalcFormula = sum("Bank Account Ledger Entry".Amount WHERE("Bank Account No." = FIELD("Bank Account No."),
+                                                                                                 "Posting date" = Field("Date Filter")));
+        }
 
         field(61120; "Statement Begin Saldo"; Decimal)
         {
