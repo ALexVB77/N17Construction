@@ -1488,6 +1488,96 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report FA Phys. Inventory INV-1a New - Control StartDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 316338758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Release Act FA-1a</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2316282295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the address of the organization that is releasing the fixed asset.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderAddress - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2316282295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sender Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderAddress - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2067507919 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the bank information of the organization that is releasing the fixed asset.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderBank - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2067507919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sender Bank Information</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderBank - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 3119211401 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the organizational unit.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderDepartment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 3119211401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sender Org. Unit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderDepartment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 3983082272 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the full name of the director who is releasing the fixed asset.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderDirectorName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 3983082272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sender Director Full Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderDirectorName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2673507350 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the title of the director who is releasing the fixed asset.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderDirectorPosition - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2673507350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sender Director Title</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderDirectorPosition - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2646275136 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the organization that is releasing the fixed asset.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 2646275136 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sender Organization</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SenderName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 1338270687 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies any shared owners of the related property.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SupplementalInformation1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 1338270687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Owners of shared property</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SupplementalInformation1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 3251360538 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the currency code for the transaction.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SupplementalInformation2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 316338758 - Control 3251360538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Foreign currency</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SupplementalInformation2 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Turnover (Excel)</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1693,6 +1783,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates (Ext) - Action Import Template New - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1136260966 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2290515734">
+          <source>Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Release Act Subform (Ext) - Action Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1136260966 - Action 476680525 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2290515734">
+          <source>Prepare to print the FA Release Act FA-1 document. A report request window for the document opens where you can specify what to include on the print-out.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Release Act Subform (Ext) - Action FA Release Act FA-1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1136260966 - Action 476680525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2290515734">
+          <source>FA Release Act FA-1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Release Act Subform (Ext) - Action FA Release Act FA-1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1136260966 - Action 316338758 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2290515734">
+          <source>Prepare to print the FA Release Act FA-1a document. A report request window for the document opens where you can specify what to include on the print-out.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Release Act Subform (Ext) - Action FA Release Act FA-1a - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1136260966 - Action 316338758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2290515734">
+          <source>FA Release Act FA-1a</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension FA Release Act Subform (Ext) - Action FA Release Act FA-1a - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2474643347 - Action 1670819662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1360508371">
           <source>FA Write-off Act FA-4b</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1737,6 +1852,11 @@
           <source>FA Turnover Template Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension FA Setup (Ext) - Field FA Turnover Template Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 520650564 - Field 2805899089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3400326196">
+          <source>FA-1a Template Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension FA Setup (Ext) - Field FA-1a Template Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 560172858 - Field 3180694377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 372951706">
           <source>RAS Posting Group</source>
