@@ -13,7 +13,7 @@ report 70101 "FA Release Act FA-1a"
             {
                 DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
                 DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
-                RequestFilterFields = "Line No.";
+                RequestFilterFields = "Document No.", "Line No.";
                 dataitem("FA Depreciation Book"; "FA Depreciation Book")
                 {
                     CalcFields = "Initial Acquisition Cost", Depreciation, "Acquisition Cost";
@@ -22,7 +22,7 @@ report 70101 "FA Release Act FA-1a"
 
                     trigger OnPreDataItem()
                     begin
-                        SetBodySectionSheet;
+                        SetSheet(2);
                         FillDataPageHeader;
                     end;
 
@@ -56,7 +56,7 @@ report 70101 "FA Release Act FA-1a"
                     trigger OnPreDataItem()
                     begin
                         FillCharPageHeader();
-                        if IsHideOutput then
+                        if IsHideOutput(false) then
                             CurrReport.Break();
                     end;
 
@@ -74,10 +74,10 @@ report 70101 "FA Release Act FA-1a"
                     trigger OnPreDataItem()
                     begin
                         FillCharPageFooter();
-                        if IsHideOutput then
+                        if IsHideOutput(false) then
                             CurrReport.Break();
 
-                        ExcelReportBuilderManager.SetSheet('Sheet3');
+                        SetSheet(3);
                         FillReportFooter(
                           Conclusion[1], Conclusion[2], Conclusion[3], Conclusion[4], Appendix[1], Appendix[2],
                           Chairman."Employee Job Title", Chairman."Employee Name",
@@ -146,6 +146,12 @@ report 70101 "FA Release Act FA-1a"
 
             }
 
+            trigger OnPreDataItem()
+            begin
+                if ("FA Document Header".GetFilters() = '') or ("FA Document Header".count = 0) then
+                    CurrReport.Break();
+            end;
+
             trigger OnAfterGetRecord()
             begin
                 FASetup.Get();
@@ -157,12 +163,178 @@ report 70101 "FA Release Act FA-1a"
                 FA1Helper.CheckSignature(Member2, DATABASE::"FA Document Header", "Document Type", "No.", Member2."Employee Type"::Member2);
                 DocumentNo := "No.";
 
-                ExcelReportBuilderManager.SetSheet('Sheet1');
+                SetSheet(1);
             end;
 
             trigger OnPostDataItem()
             begin
-                ExcelReportBuilderManager.SetSheet('Sheet1');
+                SetSheet(1);
+            end;
+        }
+        dataitem("Posted FA Doc. Header"; "Posted FA Doc. Header")
+        {
+            DataItemTableView = sorting("Document Type", "No.") where("Document Type" = const(Release));
+            RequestFilterFields = "No.";
+            dataitem("Posted FA Doc. Line"; "Posted FA Doc. Line")
+            {
+                DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
+                DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
+                RequestFilterFields = "Document No.", "Line No.";
+                dataitem("FA Depreciation Book 2"; "FA Depreciation Book")
+                {
+                    CalcFields = "Initial Acquisition Cost", Depreciation, "Acquisition Cost";
+                    DataItemLink = "FA No." = field("FA No."), "Depreciation Book Code" = field("Depreciation Book Code");
+                    DataItemTableView = sorting("FA No.", "Depreciation Book Code");
+
+                    trigger OnPreDataItem()
+                    begin
+                        SetSheet(2);
+                        FillDataPageHeader;
+                    end;
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        ActualUse := FA1Helper.CalcActualUse("FA Document Header"."Posting Date", FA."Initial Release Date");
+
+                        if NoOfDeprMonths = 0 then
+                            NoOfDeprMonths := "No. of Depreciation Months";
+                        if "No. of Depreciation Months" = 0 then
+                            "No. of Depreciation Months" := "No. of Depreciation Years" * 12;
+
+                        FillDataLine(
+                          Format(InitialReleaseDate), Format("Last Maintenance Date"), Format(FA."Last Renovation Date"), ActualUse,
+                          Depreciation, "Book Value", "Acquisition Cost", Format("Initial Acquisition Cost"),
+                          Format("No. of Depreciation Months"), Format("Depreciation Method"),
+                          Format(FA1Helper.CalcDepreciationRate("FA Depreciation Book")));
+                    end;
+
+                    trigger OnPostDataItem()
+                    begin
+                        CalcFields("Initial Acquisition Cost", "Acquisition Cost", Depreciation);
+                    end;
+
+                }
+                dataitem("Item/FA Precious Metal 2"; "Item/FA Precious Metal")
+                {
+                    DataItemLink = "No." = field("FA No.");
+                    DataItemTableView = sorting("Item Type");
+
+                    trigger OnPreDataItem()
+                    begin
+                        FillCharPageHeader();
+                        if IsHideOutput(true) then
+                            CurrReport.Break();
+                    end;
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        FillCharLine(Name, "Nomenclature No.", "Unit of Measure Code", Format(Quantity), Format(Mass));
+                    end;
+
+                }
+                dataitem("Integer 2"; "Integer")
+                {
+                    DataItemTableView = sorting(Number) where(Number = const(1));
+                    MaxIteration = 1;
+
+                    trigger OnPreDataItem()
+                    begin
+                        FillCharPageFooter();
+                        if IsHideOutput(true) then
+                            CurrReport.Break();
+
+                        SetSheet(3);
+                        FillReportFooter(
+                          Conclusion[1], Conclusion[2], Conclusion[3], Conclusion[4], Appendix[1], Appendix[2],
+                          Chairman."Employee Job Title", Chairman."Employee Name",
+                          Member1."Employee Job Title", Member1."Employee Name",
+                          Member2."Employee Job Title", Member2."Employee Name",
+                          ReceivedBy."Employee Job Title", ReceivedBy."Employee Name",
+                          StoredBy."Employee Job Title", StoredBy."Employee Name");
+                    end;
+                }
+                trigger OnPreDataItem()
+                begin
+                    IsHeaderPrinted := false;
+                end;
+
+                trigger OnAfterGetRecord()
+                var
+                    OrgInfoArray: array[9] of Text;
+                begin
+                    FA.Get("FA No.");
+                    Testfield("Depreciation Book Code");
+                    Testfield("FA Posting Group");
+
+                    if FASetup."FA Location Mandatory" then
+                        Testfield("FA Location Code");
+
+                    if "FA Location Code" <> '' then
+                        FALocation.Get("FA Location Code");
+
+                    if FA."Initial Release Date" <> 0D then
+                        InitialReleaseDate := FA."Initial Release Date"
+                    else
+                        InitialReleaseDate := "FA Document Header"."Posting Date";
+
+                    FADepreciationBook.Get("FA No.", "New Depreciation Book Code");
+                    NoOfDeprMonths := FADepreciationBook."No. of Depreciation Months";
+                    FAPostingGroup.Get(FADepreciationBook."FA Posting Group");
+
+                    GetFAComments(Characteristics, FAComment.Type::Characteristics);
+                    GetFAComments(ExtraWork, FAComment.Type::"Extra Work");
+                    GetFAComments(Conclusion, FAComment.Type::Conclusion);
+                    GetFAComments(Appendix, FAComment.Type::Appendix);
+                    GetFAComments(Result, FAComment.Type::Result);
+                    GetFAComments(Reason, FAComment.Type::Reason);
+
+                    if not IsHeaderPrinted then begin
+                        OrgInfoArray[1] := SenderDirectorPosition;
+                        OrgInfoArray[2] := SenderDirectorName;
+                        OrgInfoArray[3] := DirectorPosition;
+                        OrgInfoArray[4] := ReceivedBy."Employee Org. Unit";
+                        OrgInfoArray[5] := SenderName;
+                        OrgInfoArray[6] := SenderAddress;
+                        OrgInfoArray[7] := SenderBank;
+                        OrgInfoArray[8] := SenderDepartment;
+                        OrgInfoArray[9] := Reason[1];
+
+                        FillHeader(
+                          OrgInfoArray, "Posted FA Doc. Header"."Reason Document No.", Format("Posted FA Doc. Header"."Reason Document Date"),
+                          DocumentNo, Format("Posted FA Doc. Header"."Posting Date"), Format("Posted FA Doc. Header"."FA Posting Date"),
+                          Format(FADepreciationBook."Disposal Date"), FAPostingGroup."Acquisition Cost Account", FA."Depreciation Code",
+                          FA."Depreciation Group", FA."Inventory Number", FA."Factory No.",
+                          StrSubstNo('%1 %2 %3', FA."No.", FA.Description, FA."Description 2"),
+                          FALocation.Name, FA.Manufacturer, SupplementalInformation1, SupplementalInformation2);
+                        IsHeaderPrinted := true;
+                    end;
+                end;
+
+            }
+
+            trigger OnPreDataItem()
+            begin
+                if ("Posted FA Doc. Header".GetFilters() = '') or ("Posted FA Doc. Header".Count = 0) then
+                    CurrReport.Break();
+            end;
+
+            trigger OnAfterGetRecord()
+            begin
+                FASetup.Get();
+
+                FA1Helper.CheckSignature(StoredBy, DATABASE::"Posted FA Doc. Header", "Document Type", "No.", StoredBy."Employee Type"::StoredBy);
+                FA1Helper.CheckSignature(ReceivedBy, DATABASE::"Posted FA Doc. Header", "Document Type", "No.", ReceivedBy."Employee Type"::ReceivedBy);
+                FA1Helper.CheckSignature(Chairman, DATABASE::"Posted FA Doc. Header", "Document Type", "No.", Chairman."Employee Type"::Chairman);
+                FA1Helper.CheckSignature(Member1, DATABASE::"Posted FA Doc. Header", "Document Type", "No.", Member1."Employee Type"::Member1);
+                FA1Helper.CheckSignature(Member2, DATABASE::"Posted FA Doc. Header", "Document Type", "No.", Member2."Employee Type"::Member2);
+                DocumentNo := "No.";
+
+                SetSheet(1);
+            end;
+
+            trigger OnPostDataItem()
+            begin
+                SetSheet(1);
             end;
         }
     }
@@ -241,17 +413,17 @@ report 70101 "FA Release Act FA-1a"
         FASetup.Get();
     end;
 
+    trigger OnPreReport()
+    begin
+        InitReportTemplate();
+    end;
+
     trigger OnPostReport()
     begin
         if FileName = '' then
             ExcelReportBuilderManager.ExportData
         else
             ExcelReportBuilderManager.ExportDataToClientFile(FileName);
-    end;
-
-    trigger OnPreReport()
-    begin
-        InitReportTemplate();
     end;
 
     var
@@ -298,11 +470,15 @@ report 70101 "FA Release Act FA-1a"
         FileName := NewFileName;
     end;
 
-    local procedure IsHideOutput(): Boolean
+    local procedure IsHideOutput(IsPosted: Boolean): Boolean
     begin
+        If not IsPosted then
+            exit(
+                ("FA Document Header"."Document Type" = "FA Document Header"."Document Type"::Movement) or
+                ("FA Document Header"."Document Type" = 3));
         exit(
-          ("FA Document Header"."Document Type" = "FA Document Header"."Document Type"::Movement) or
-          ("FA Document Header"."Document Type" = 3));
+            ("Posted FA Doc. Header"."Document Type" = "Posted FA Doc. Header"."Document Type"::Movement) or
+            ("Posted FA Doc. Header"."Document Type" = 3));
     end;
 
     local procedure InitReportTemplate()
@@ -310,6 +486,22 @@ report 70101 "FA Release Act FA-1a"
         FASetup.Get();
         FASetup.Testfield("FA-1a Template Code");
         ExcelReportBuilderManager.InitTemplate(FASetup."FA-1a Template Code");
+    end;
+
+    local procedure SetSheet(SheetNo: Integer)
+        SheetName: Text;
+    begin
+        Case SheetNo of
+            1:
+                SheetName := 'Sheet1';
+            2:
+                SheetName := 'Sheet2';
+            3:
+                SheetName := 'Sheet3';
+            else
+                Error('');
+        End;
+        ExcelReportBuilderManager.SetSheet(SheetName);
     end;
 
     local procedure FillHeader(OrgInfoArray: array[9] of Text; ReasonDocNo: Text; ReasonDocDate: Text; DocNo: Text; DocDate: Text; DepreciationStartingDate: Text; DisposalDate: Text; AcqCostAccount: Text; DepreciationCode: Text; DepreciationGroup: Text; InventoryNumber: Text; FactoryNo: Text; FADescription: Text; FALocationName: Text; FAManufacturer: Text; SuppInfo1: Text; SuppInfo2: Text)
@@ -347,11 +539,6 @@ report 70101 "FA Release Act FA-1a"
         ExcelReportBuilderManager.AddDataToSection('Make', FAManufacturer);
         ExcelReportBuilderManager.AddDataToSection('SupplementalInfo1', SuppInfo1);
         ExcelReportBuilderManager.AddDataToSection('SupplementalInfo2', SuppInfo2);
-    end;
-
-    local procedure SetBodySectionSheet()
-    begin
-        ExcelReportBuilderManager.SetSheet('Sheet2');
     end;
 
     local procedure FillDataPageHeader()

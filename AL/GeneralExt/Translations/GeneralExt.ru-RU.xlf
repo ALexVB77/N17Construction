@@ -2157,6 +2157,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3985706558 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
+          <source>Print</source>
+          <target>Печать</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3985706558 - Action 2241163350 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
+          <source>Prepare to print the FA Posted Release Act FA-1 document. A report request window for the document opens where you can specify what to include on the print-out.</source>
+          <target>Подготовка документа Учт. акт приема-передачи ОС-1 к печати. Открывается окно запроса отчета для документа, где вы можете указать, какая информация должна выводиться на печать.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action FA Posted Release Act FA-1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3985706558 - Action 2241163350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
+          <source>FA Posted Release Act FA-1</source>
+          <target>Учт. акт приема-передачи ОС-1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action FA Posted Release Act FA-1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3985706558 - Action 316338758 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
+          <source>Prepare to print the FA Posted Release Act FA-1A document. A report request window for the document opens where you can specify what to include on the print-out.</source>
+          <target>Подготовка документа Учт. акт приема-передачи ОС-1А к печати. Открывается окно запроса отчета для документа, где вы можете указать, какая информация должна выводиться на печать.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action FA Release Act FA-1a - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3985706558 - Action 316338758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
+          <source>FA Posted Release Act FA-1A</source>
+          <target>Учт. акт приема-передачи ОС-1А</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action FA Release Act FA-1a - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 119182345 - Action 2378163730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2625649796">
           <source>FA Posted Writeoff Act FA-4b</source>
           <target>Учтенный акт списания ОС-4б</target>
