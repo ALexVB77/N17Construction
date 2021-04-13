@@ -460,7 +460,7 @@
     begin
         // NC PPS 51140 <<
         //OnBeforeSetReportLayout(RecordVariant, ReportUsage.AsInteger());
-        OnBeforeSetReportLayout(RecordVariant, ReportUsage.AsInteger(), DocumentPrintBuffer);
+        OnBeforeSetReportLayoutCustom(RecordVariant, ReportUsage.AsInteger(), DocumentPrintBuffer);
         // NC PPS 51140 >>
 
         RecRef.GetTable(RecordVariant);
@@ -1952,8 +1952,9 @@
     local procedure OnSaveReportAsHTMLOnBeforeSetTempLayoutSelected(RecordVariant: Variant; ReportUsage: Enum "Report Selection Usage"; var ReportID: Integer; var LayoutCode: Code[20])
     begin
     end;
+
     [IntegrationEvent(TRUE, false)]
-    local procedure OnBeforeSetReportLayout(RecordVariant: Variant; ReportUsage: Integer; var DocumentPrintBuffer: Record "Document Print Buffer")
+    local procedure OnBeforeSetReportLayoutCustom(RecordVariant: Variant; ReportUsage: Integer; var DocumentPrintBuffer: Record "Document Print Buffer")
     begin
     end;
 }
