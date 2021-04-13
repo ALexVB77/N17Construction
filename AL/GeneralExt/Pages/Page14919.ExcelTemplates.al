@@ -18,7 +18,7 @@ pageextension 94919 "Excel Templates (Ext)" extends "Excel Templates"
                     TemplateExists: Boolean;
                 begin
                     TemplateExists := BLOB.HasValue;
-                    Filename := FileMgt.OpenFileDialog(Text002, '', FileMgt.GetToFilterText('', '*.xlsx'));
+                    Filename := FileMgt.UploadFile(Text002, '');
                     if Filename = '' then
                         exit;
                     FileMgt.ValidateFileExtension(Filename, '.xlsx');

@@ -36,7 +36,12 @@ codeunit 1273 "Exp. Pre-Mapping Gen. Jnl."
         PaymentMethod: Record "Payment Method";
         BankAccount: Record "Bank Account";
         BankExportImportSetup: Record "Bank Export/Import Setup";
+        isHandled: Boolean;
     begin
+        // NC 50110 GG >>
+        OnCustPreparePaymentExportDataJnl(GenJnlLine, DataExchEntryNo, LineNo, isHandled);
+        if (isHandled) then exit;
+        // NC 50110 GG <<
         GeneralLedgerSetup.Get();
         GenJnlLine.TestField("Account Type", GenJnlLine."Account Type"::Vendor);
         Vendor.Get(GenJnlLine."Account No.");
@@ -94,6 +99,12 @@ codeunit 1273 "Exp. Pre-Mapping Gen. Jnl."
     [IntegrationEvent(false, false)]
     local procedure OnBeforeInsertPaymentExoprtData(var PaymentExportData: Record "Payment Export Data"; GenJournalLine: Record "Gen. Journal Line"; GeneralLedgerSetup: Record "General Ledger Setup")
     begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnCustPreparePaymentExportDataJnl(var GenJnlLine: Record "Gen. Journal Line"; DataExchEntryNo: integer; LineNo: integer; var isHandled: boolean);
+    begin
+        // NC 50110 GG 
     end;
 }
 

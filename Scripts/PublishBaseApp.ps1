@@ -1,7 +1,7 @@
 ﻿#ServerInstance
-$serverInstance = "BC170"
+$serverInstance = "BonavaDev"
 #Path
-$rootDirPath = "C:\Users\alpopov\AL\N17Construction"
+$rootDirPath = "C:\Users\ggarin\Documents\Bonava\N17Construction"
 
 $quietExecution = $null
 

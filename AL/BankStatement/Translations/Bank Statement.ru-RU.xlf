@@ -1,19 +1,247 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Bank Statement">
     <body>
       <group id="body">
-      <trans-unit id="Codeunit 3230913882 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1238839933 - Method 2793022625" size-unit="char" translate="yes" xml:space="preserve">
+          <source>manualAssignPaymentJournalLine</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method manualAssignPaymentJournalLine</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 2608931640" size-unit="char" translate="yes" xml:space="preserve">
+          <source>clearAssignPaymentJournalLine</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method clearAssignPaymentJournalLine</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 2917405684" size-unit="char" translate="yes" xml:space="preserve">
+          <source>copyReconLine</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method copyReconLine</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 3087177095 - NamedType 2041610153" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line status must be %1</source>
+          <target>Статус строки должен быть %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method clearAssignPaymentJournalLine - NamedType WrongStatus</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 73345106 - NamedType 2112226773" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to assign bank acc. reconciliation line to gen. journal line %1 %2 %3?</source>
+          <target>Вы действительно хотите привязать строку банковской выписки к строке журнала платежей %1 %2 %3?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method manualAssignPaymentJournalLine - NamedType AssignToGJL</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 73345106 - NamedType 1864656002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. journal line allready assigned to bank acc. reconciliation line %1 %2. Do you want to reassign it?</source>
+          <target>Строка журнала платежей уже привязана к строке выписки %1 %2. Перепривязать?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method manualAssignPaymentJournalLine - NamedType AlreadyAssigned</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 73345106 - NamedType 2041610153" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line status must be %1 or %2</source>
+          <target>Статус строки должен быть или %1 или %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method manualAssignPaymentJournalLine - NamedType WrongStatus</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 3003655837 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are several payment orders with %1 %2 dated %3.</source>
+          <target>Есть несколько платежных поручений с %1 %2 с датой %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnAfterImportBankStatement - NamedType Text008</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 4159195328 - NamedType 1090077784" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exported lines must be filtered by one bank account</source>
+          <target>Выгружаемые строки должны быть отфильтрованы по одному коду банка</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnExportPaymentFileOnBeforeRunExport - NamedType locText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1238839933 - Method 4179483220 - NamedType 3100313355" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text length "%1" must be in range %2..%3</source>
+          <target>Длина строки "%1" должна быть в диапазоне от %2 до %3</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Additional Management BS - Method OnTransformation - NamedType TextLenghtError</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 1997126755" size-unit="char" translate="yes" xml:space="preserve">
+          <source>setString</source>
+          <target>setString</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method setString</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 1828824977" size-unit="char" translate="yes" xml:space="preserve">
+          <source>getString</source>
+          <target>getString</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method getString</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 4072037636" size-unit="char" translate="yes" xml:space="preserve">
+          <source>delValue</source>
+          <target>delValue</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method delValue</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 1258200911" size-unit="char" translate="yes" xml:space="preserve">
+          <source>clearAll</source>
+          <target>clearAll</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method clearAll</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 117289339" size-unit="char" translate="yes" xml:space="preserve">
+          <source>init</source>
+          <target>init</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method init</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3230913882 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
           <target>Ошибка, пойманная в Isolated Storage Management: %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management BS - Method getValue - NamedType ErrorInISM</note>
         </trans-unit>
-      <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
+        <trans-unit id="XmlPort 4143417745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Exch. Import - CSV BS</source>
+          <target>Импорт обмена данными - CSV</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4143417745 - NamedType 3157578160" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The imported file contains unexpected formatting. One or more lines may be missing in the file.</source>
+          <target>Импортированный файл содержит непредвиденное форматирование. В файле может отсутствовать одна и более строк.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - NamedType LastLineIsHeaderErr</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4143417745 - NamedType 552864931" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The imported file contains unexpected formatting. One or more headers are incorrect.</source>
+          <target>Импортированный файл содержит непредвиденное форматирование. Один или несколько заголовков неверны.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Data Exch. Import - CSV BS - NamedType WrongHeaderErr</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 198097148 - Method 3196798162 - NamedType 1212808569" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 198097148">
+          <source>Do you want to create copy of current line?</source>
+          <target>Создать копию текущей строки выписки?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Acc. Reconcil. Lines BS - Method CopyReconLine - NamedType label001</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 198097148 - Action 3488463478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3093572853">
+          <source>Assign Payment Journal</source>
+          <target>Привязать к строке журнала платежей</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Acc. Reconcil. Lines BS - Action Assign Payment Journal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 198097148 - Action 2232832211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3093572853">
+          <source>Clear Payment Journal Assignment</source>
+          <target>Удалить ссылку на платежное поручение</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Acc. Reconcil. Lines BS - Action Clear Payment Journal Assignment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 768434673 - Action 2079994637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3012722930">
+          <source>Copy line</source>
+          <target>Скопировать строку</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Acc. Reconciliation BS - Action CopyLine - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3638170462 - Control 2398805889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2292249509">
           <source>Client Bank</source>
           <target>Клиент-Банк</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Control ClientBank - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 2193737767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Posted Amount</source>
+          <target>Учтенная сумма</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Posted Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 1204434081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Statement begin saldo</source>
+          <target>Начальный остаток</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Statement Begin Saldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 3614229417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Statement end saldo</source>
+          <target>Конечный остаток</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Statement End Saldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 1304281479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Total income amount</source>
+          <target>Приход оборот</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Total Income Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 1711369992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Total outcome amount</source>
+          <target>Расход оборот</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Total Outcome Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3146835237 - Field 2615201930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
+          <source>Unposted Amount</source>
+          <target>Неучтенная сумма</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Unposted Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Date filter</source>
+          <target>Дата фильтр</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Date Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 1204434081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Statement begin saldo</source>
+          <target>Начальный остаток</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Statement Begin Saldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 3614229417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Statement end saldo</source>
+          <target>Конечный остаток</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Statement End Saldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 2910954211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Total bank account amount</source>
+          <target>Итого банк счет сальдо</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Total Bank Account Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 1304281479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Total income amount</source>
+          <target>Приход оборот</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Total Income Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 768434673 - Field 1711369992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3012722930">
+          <source>Total outcome amount</source>
+          <target>Расход оборот</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconciliation BS - Field Total Outcome Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1965575538 - Field 2075143490 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Check Description for Import</source>
+          <target>Проверять описание при импорте выписки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BS - Field Check Description for Import - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1965575538 - Field 3740771146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Pay Document Prefix</source>
+          <target>Префикс номера платежного документа</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BS - Field CheckDocPrefix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1965575538 - Field 3088995595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Ingoing Order M-4 No. Series</source>
+          <target>Приходный ордер М-4 серия номеров</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BS - Field Ingoing Order M-4 No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3085805169 - Field 2431628344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1815808370">
+          <source>Payment Purpose</source>
+          <target>Цель платежа</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Ledger Entry BS - Field Payment Purpose - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 928545387 - Field 686652245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2452438108">
           <source>Bank Code</source>
@@ -26,6 +254,18 @@
           <target>Использовать значение из заголовка</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Data Exch. Field Mapping BS - Field Use Value From Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 903917202 - Field 3855271124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3690479385">
+          <source>Payment method code</source>
+          <target>Код метода оплаты</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Batch BS - Field Payment Method Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4006342976 - Field 1531222856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Payer KPP</source>
+          <target>КПП плательщика</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line BS - Field Payer KPP - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4072823385 - Field 4111173870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
           <source>KBK</source>
@@ -45,17 +285,17 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Payment Reason Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4072823385 - Field 983824464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
-          <source>Reason Document No.</source>
-          <target>Номер документа-основания</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Reason Document No. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 4072823385 - Field 174911049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
           <source>Reason Document Date</source>
           <target>Дата документа-основания</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Reason Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4072823385 - Field 983824464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
+          <source>Reason Document No.</source>
+          <target>Номер документа-основания</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Export Data BS - Field Reason Document No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4072823385 - Field 1088522705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 658627162">
           <source>Tax Payment Type</source>
@@ -87,47 +327,23 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transformation Rule BS - Field Custom Transformation Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3038441666 - Field 3372615628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1420580905">
-          <source>Min. Length</source>
-          <target>Минимальная длина</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transformation Rule BS - Field Min. Length - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 3038441666 - Field 1106072834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1420580905">
           <source>Max. Length</source>
           <target>Максимальная длина</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transformation Rule BS - Field Max. Length - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2531280511 - Field 3088995595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
-          <source>Ingoing Order M-4 No. Series</source>
-          <target>Приходный ордер М-4 серия номеров</target>
+        <trans-unit id="TableExtension 3038441666 - Field 3372615628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1420580905">
+          <source>Min. Length</source>
+          <target>Минимальная длина</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BNV - Field Ingoing Order M-4 No. Series - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transformation Rule BS - Field Min. Length - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2531280511 - Field 2075143490 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
-          <source>Check Description for Import</source>
-          <target>Проверять описание при импорте выписки</target>
+        <trans-unit id="Enum 1272220613 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target> </target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BNV - Field Check Description for Import - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1965575538 - Field 3740771146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
-          <source>Pay Document Prefix</source>
-          <target>Префикс номера платежного документа</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account BS - Field CheckDocPrefix - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3085805169 - Field 2431628344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1815808370">
-          <source>Payment Purpose</source>
-          <target>Цель платежа</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Ledger Entry BS - Field Payment Purpose - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Enum 1272220613 - EnumValue 18652612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <target></target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue  - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue   - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1272220613 - EnumValue 720832483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Add Prefix</source>
@@ -135,23 +351,23 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue AddPrefix - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1272220613 - EnumValue 614895178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Del Prefix</source>
-          <target>Удалить префикс</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue AddSuffix - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Enum 1272220613 - EnumValue 3612920174 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Check Length</source>
           <target>Проверить длину</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue CheckLength - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 2177058360 - EnumValue 18652612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <target></target>
+        <trans-unit id="Enum 1272220613 - EnumValue 3278477791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Del Prefix</source>
+          <target>Удалить префикс</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue  - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Custom Transformation Type BS - EnumValue DelPrefix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2177058360 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target> </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Taxpayer Status Enum BS - EnumValue   - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2177058360 - EnumValue 2372426283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>01-taxpayer (charges payer)</source>

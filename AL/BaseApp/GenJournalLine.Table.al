@@ -6065,7 +6065,7 @@
             Error(NothingToExportErr);
         SetRange("Journal Template Name", "Journal Template Name");
         SetRange("Journal Batch Name", "Journal Batch Name");
-        TestField("Check Printed", false);
+        TestField("Check Printed", /*false*/true); // NC 50110 GG
 
         CheckDocNoOnLines;
         if IsExportedToPaymentFile then

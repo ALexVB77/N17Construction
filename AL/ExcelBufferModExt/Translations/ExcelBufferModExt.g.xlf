@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="ExcelBufferModExt">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 2369549467 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Buffer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3220568324" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cell %1 not found.</source>
+          <note from="Developer" annotates="general" priority="2">%1 - cell name</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType CellNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3860721549" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType PageTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 2376181702" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Saving the following document: %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType SavingDocumentMsg</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must enter a file name.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must enter an Excel worksheet name.</source>
+          <note from="Developer" annotates="general" priority="2">{Locked="Excel"}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The file %1 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Excel worksheet %1 does not exist.</source>
+          <note from="Developer" annotates="general" priority="2">{Locked="Excel"}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creating Excel worksheet...\\</source>
+          <note from="Developer" annotates="general" priority="2">{Locked="Excel"}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reading Excel worksheet...\\</source>
+          <note from="Developer" annotates="general" priority="2">{Locked="Excel"}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 2301836569" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;B</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text013</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 4214926420" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;D</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text014</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3577229803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;P</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text015</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 1195352358" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text016</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 557655741" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUMIF</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text017</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 857534312" size-unit="char" translate="yes" xml:space="preserve">
+          <source>#N/A</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text018</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 2578368842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text021</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 1302975608" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Information</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text023</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3699446230" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xls*)|*.xls*|All Files (*.*)|*.*</source>
+          <note from="Developer" annotates="general" priority="2">{Split=r'\|\*\..{1,4}\|?'}{Locked="Excel"}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text034</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3061749613" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The operation was canceled.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text035</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 1786356379" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Could not create the Excel workbook.</source>
+          <note from="Developer" annotates="general" priority="2">{Locked="Excel"}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text037</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 342054122" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global variable %1 is not included for test.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text038</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - NamedType 3999324801" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cell type has not been set.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - NamedType Text039</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 442768151 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bold</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Bold - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 155017853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Border Style</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Border Style - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3804232973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bottom Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Bottom Border - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3621679514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cell Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Cell Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3621679514 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number,Text,Date,Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Cell Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3006532294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cell Value as Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Cell Value as Text - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 1389794395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Column No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Column No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2662329045 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Diagonal Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Diagonal Border - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 279485533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Double Underline</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Double Underline - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 312187370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Font Size</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Font Size - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3304877602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Formula</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Formula - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2048868088 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Formula2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Formula2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 1411171471 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Formula3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Formula3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 1580080494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Formula4</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Formula4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 4279250454 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Italic</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Italic - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 3628285873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Left Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Left Border - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 1459568092 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NumberFormat</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field NumberFormat - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2322370584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Right Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Right Border - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2782707039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Row No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Row No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 1017032337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Top Border</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Top Border - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2944017714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Underline</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field Underline - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 2765019851 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>xlColID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field xlColID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2369549467 - Field 1373872309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>xlRowID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field xlRowID - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
