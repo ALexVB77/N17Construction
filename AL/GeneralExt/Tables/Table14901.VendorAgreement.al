@@ -2,6 +2,12 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
 {
     fields
     {
+        field(50000; "Vat Agent Posting Group"; code[20])
+        {
+            Caption = 'Vat Agent Posting Group';
+            TableRelation = "Vendor Posting Group";
+            Description = '50067';
+        }
         field(70001; "Agreement Amount"; Decimal)
         {
             Caption = 'Agreement Amount';
