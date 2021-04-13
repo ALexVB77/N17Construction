@@ -403,7 +403,13 @@ codeunit 12471 "FA Document-Post"
     local procedure PostFAReleaseMovement(DocType: Option)
     var
         FADocHeader: Record "FA Document Header";
+        IsHandled: Boolean;
     begin
+        // NC PPS 51136 <<
+        OnBeforePostFAReleaseMovement(DocType, FADocLine, FADeprBook, FADeprBook2, FAReclassJnlLine, FAJnlSetup, GenJnlLine, TaxRegisterSetup, FA, FAJnlLine, PostedFADocHeader, FAReclassCheckLine, FAReclassTransferLine, DimMgt, GenJnlPostLine, FAJnlPostLine, IsHandled);
+        if IsHandled then
+            exit;
+        // NC PPS 51136 >>
         if (DocType = FADocHeader."Document Type"::Release) or
            (FADocLine."FA No." <> FADocLine."New FA No.") or
            (FADocLine."Depreciation Book Code" <> FADocLine."New Depreciation Book Code") // reclassification
@@ -498,6 +504,10 @@ codeunit 12471 "FA Document-Post"
         end;
         FA."Status Document No." := PostedFADocHeader."No.";
         FA.Modify();
+    end;
+    [IntegrationEvent(true, false)]
+    local procedure OnBeforePostFAReleaseMovement(DocType: Option; var FADocLine: Record "FA Document Line"; var FADeprBook: Record "FA Depreciation Book"; var FADeprBook2: Record "FA Depreciation Book"; var FAReclassJnlLine: Record "FA Reclass. Journal Line"; var FAJnlSetup: Record "FA Journal Setup"; var GenJnlLine: Record "Gen. Journal Line"; var TaxRegisterSetup: Record "Tax Register Setup"; var FA: Record "Fixed Asset"; var FAJnlLine: Record "FA Journal Line"; var PostedFADocHeader: Record "Posted FA Doc. Header"; var FAReclassCheckLine: Codeunit "FA Reclass. Check Line"; var FAReclassTransferLine: Codeunit "FA Reclass. Transfer Line"; var DimMgt: Codeunit DimensionManagement; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; var FAJnlPostLine: Codeunit "FA Jnl.-Post Line"; var IsHandled: Boolean)
+    begin
     end;
 }
 
