@@ -458,10 +458,10 @@
         AccountNoFilter: Text;
         IsHandled: Boolean;
     begin
-        // NC PPS 51140 <<
+        // NC PP 51140 <<
         //OnBeforeSetReportLayout(RecordVariant, ReportUsage.AsInteger());
         OnBeforeSetReportLayoutCustom(RecordVariant, ReportUsage.AsInteger(), DocumentPrintBuffer);
-        // NC PPS 51140 >>
+        // NC PP 51140 >>
 
         RecRef.GetTable(RecordVariant);
         GetUniqueAccountNos(TempNameValueBuffer, RecRef, AccountNoFieldNo);
