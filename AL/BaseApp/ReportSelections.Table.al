@@ -458,7 +458,10 @@
         AccountNoFilter: Text;
         IsHandled: Boolean;
     begin
-        OnBeforeSetReportLayout(RecordVariant, ReportUsage.AsInteger());
+        // NC PPS 51140 <<
+        //OnBeforeSetReportLayout(RecordVariant, ReportUsage.AsInteger());
+        OnBeforeSetReportLayout(RecordVariant, ReportUsage.AsInteger(), DocumentPrintBuffer);
+        // NC PPS 51140 >>
 
         RecRef.GetTable(RecordVariant);
         GetUniqueAccountNos(TempNameValueBuffer, RecRef, AccountNoFieldNo);
@@ -1947,6 +1950,10 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnSaveReportAsHTMLOnBeforeSetTempLayoutSelected(RecordVariant: Variant; ReportUsage: Enum "Report Selection Usage"; var ReportID: Integer; var LayoutCode: Code[20])
+    begin
+    end;
+    [IntegrationEvent(TRUE, false)]
+    local procedure OnBeforeSetReportLayout(RecordVariant: Variant; ReportUsage: Integer; var DocumentPrintBuffer: Record "Document Print Buffer")
     begin
     end;
 }
