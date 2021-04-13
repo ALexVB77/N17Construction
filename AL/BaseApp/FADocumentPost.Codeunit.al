@@ -405,11 +405,11 @@ codeunit 12471 "FA Document-Post"
         FADocHeader: Record "FA Document Header";
         IsHandled: Boolean;
     begin
-        // NC PPS 51136 <<
+        // NC PP 51136 <<
         OnBeforePostFAReleaseMovement(DocType, FADocLine, FADeprBook, FADeprBook2, FAReclassJnlLine, FAJnlSetup, GenJnlLine, TaxRegisterSetup, FA, FAJnlLine, PostedFADocHeader, FAReclassCheckLine, FAReclassTransferLine, DimMgt, GenJnlPostLine, FAJnlPostLine, ReclassDone, PreviewMode, IsHandled);
         if IsHandled then
             exit;
-        // NC PPS 51136 >>
+        // NC PP 51136 >>
         if (DocType = FADocHeader."Document Type"::Release) or
           (FADocLine."FA No." <> FADocLine."New FA No.") or
           (FADocLine."Depreciation Book Code" <> FADocLine."New Depreciation Book Code") // reclassification
