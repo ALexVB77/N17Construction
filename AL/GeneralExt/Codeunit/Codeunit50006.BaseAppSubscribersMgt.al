@@ -3,7 +3,8 @@ codeunit 50006 "Base App. Subscribers Mgt."
     [EventSubscriber(ObjectType::Table, DATABASE::"Report Selections", 'OnBeforeSetReportLayoutCustom', '', true, true)]
     local procedure SetDocumentPrintBufferUserFilter(RecordVariant: Variant; ReportUsage: Integer; var DocumentPrintBuffer: Record "Document Print Buffer")
     begin
-
+        DocumentPrintBuffer.SetRange("User ID", UserId());
+        if DocumentPrintBuffer.FindFirst() then;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"FA Document-Post", 'OnBeforePostFAReleaseMovement', '', false, false)]
@@ -131,5 +132,35 @@ codeunit 50006 "Base App. Subscribers Mgt."
         GlobalDimCode1 := '';
         GlobalDimCode2 := '';
         DimSetID := DimMgt.GetDefaultDimID(TableID, No, SourceCode, GlobalDimCode1, GlobalDimCode2, 0, 0);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, COdeunit::"FA Insert Ledger Entry", 'OnBeforeCheckFADocNo', '', true, true)]
+    local procedure CheckFADocNo(FALedgEntry: Record "FA Ledger Entry"; var IsHandled: Boolean)
+    var
+        FA: Record "Fixed Asset";
+        OldFALedgEntry: Record "FA Ledger Entry";
+        FALedgEntry2: Record "FA Ledger Entry";
+        DepreciationCalc: Codeunit "Depreciation Calculation";
+        ErrText001: Label '%1 = %2 already exists for %5 (%3 = %4).';
+    begin
+        if FA.Get(FALedgEntry."FA No.") then;
+        OldFALedgEntry.SetCurrentKey("FA No.", "Depreciation Book Code", "FA Posting Category", "FA Posting Type", "Document No.");
+        OldFALedgEntry.SetRange("FA No.", FALedgEntry."FA No.");
+        OldFALedgEntry.SetRange("Depreciation Book Code", FALedgEntry."Depreciation Book Code");
+        OldFALedgEntry.SetRange("FA Posting Category", FALedgEntry."FA Posting Category");
+        OldFALedgEntry.SetRange("FA Posting Type", FALedgEntry."FA Posting Type");
+        OldFALedgEntry.SetRange("Document No.", FALedgEntry."Document No.");
+        OldFALedgEntry.SetRange("Entry No.", 0, FALedgEntry2.GetLastEntryNo());
+        OldFALedgEntry.SetRange("FA Posting Group", FALedgEntry."FA Posting Group");
+        if OldFALedgEntry.FindFirst then
+            Error(
+              ErrText001,
+              OldFALedgEntry.FieldCaption("Document No."),
+              OldFALedgEntry."Document No.",
+              OldFALedgEntry.FieldCaption("FA Posting Type"),
+              OldFALedgEntry."FA Posting Type",
+              DepreciationCalc.FAName(FA, FALedgEntry."Depreciation Book Code"));
+
+        IsHandled := true;
     end;
 }

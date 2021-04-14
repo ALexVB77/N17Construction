@@ -1377,6 +1377,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Vendor No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 = %2 already exists for %5 (%3 = %4).</source>
+          <target>%1 = %2 для %5 (%3 = %4) уже существует.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method CheckFADocNo - NamedType ErrText001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 848050111 - Method 3304731564" size-unit="char" translate="yes" xml:space="preserve">
           <source>ConstOther</source>
           <target>ConstOther</target>
@@ -1394,6 +1400,78 @@
           <target>Неизвестная текстовая константа - "%1".</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - Method 2815313400" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAReclassLine</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - Method FAReclassLine</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>is a %1 and %2 is not a %1.</source>
+          <target>равно %1 и %2 не равно %1.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>is not different than %1.</source>
+          <target>не отличается от %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 is disposed.</source>
+          <target>%1 списано.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%2 = 0 for %1.</source>
+          <target>%2 = 0 для %1.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%2 is greater than %3 for %1.</source>
+          <target>%2 больше %3 для %1.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>It was not possible to find a %1 in %2.</source>
+          <target>Не удалось найти %1 в %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 must be %2 or %3 for %4.</source>
+          <target>%1 должно быть %2 или %3 для %4.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 must be %2 for %3.</source>
+          <target>%1 должно быть %2 для %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>must not be used together with %1 in %2 %3.</source>
+          <target>не должно использоваться вместе с %1 в %2 %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text008</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 cannot be calculated for %2.</source>
+          <target>%1 нельзя рассчитать для %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text009</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4047442064 - NamedType 2137401166" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nothing to reclassify.</source>
+          <target>Нечего реклассифицировать.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text12400</note>
         </trans-unit>
         <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects CC Entry Constr 2</source>
