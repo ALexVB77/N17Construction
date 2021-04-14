@@ -6490,6 +6490,8 @@
                     GLEntry."Bal. Account No." := VendPostingGr."Prepayment Account";
                     InsertGLEntry(GenJnlLine, GLEntry, true);
 
+                    OnUpdateVendorPostingGroup(VendPostingGr, DtldCVLedgEntryBuf, UseAddCurrAmount, GLEntry); //NC 50067 PA
+
                     VendPostingGr.TestField("Prepayment Account");
                     InitGLEntry(GenJnlLine, GLEntry,
                       VendPostingGr."Prepayment Account",
@@ -7651,6 +7653,9 @@
             GenJnlLine."Gen. Posting Type" := GenJnlLine."Gen. Posting Type"::Purchase;
             GenJnlLine."VAT Bus. Posting Group" := VATPostingSetup."VAT Bus. Posting Group";
             GenJnlLine."VAT Prod. Posting Group" := VATPostingSetup."VAT Prod. Posting Group";
+
+            OnUpdatePostingGroupInGenJnlLine(GenJnlLine, Vend, VendAgrmt); //NC 50067 PA
+
             GenJnlLine."Currency Code" := '';
             VATAgentVATPmtAmount :=
               Round(
@@ -9367,6 +9372,16 @@
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeCalcPmtTolerancePossible(GenJnlLine: Record "Gen. Journal Line"; PmtDiscountDate: Date; var PmtDiscToleranceDate: Date; var MaxPaymentTolerance: Decimal; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(true, false)]
+    local procedure OnUpdateVendorPostingGroup(var VendPostingGr: Record "Vendor Posting Group"; var DtldCVLedgEntryBuf: Record "Detailed CV Ledg. Entry Buffer"; var UseAddCurrAmount: Boolean; var GLEntry: Record "G/L Entry")
+    begin
+    end;
+
+    [IntegrationEvent(true, false)]
+    local procedure OnUpdatePostingGroupInGenJnlLine(var GenJnlLine: Record "Gen. Journal Line"; var Vend: Record "Vendor"; var VendAgrmt: Record "Vendor Agreement")
     begin
     end;
 }
