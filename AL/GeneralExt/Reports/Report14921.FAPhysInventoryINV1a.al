@@ -55,6 +55,7 @@ report 94921 "FA Phys. Inventory INV-1a New"
                     if "Document Print Buffer"."Table ID" <> DATABASE::"FA Journal Line" then
                         CurrReport.Break();
 
+                    ExcelReportBuilderMgr.SetSheet('Sheet1');
                     FillGeneralInfo;
 
                     ExcelReportBuilderMgr.SetSheet('Sheet2');
