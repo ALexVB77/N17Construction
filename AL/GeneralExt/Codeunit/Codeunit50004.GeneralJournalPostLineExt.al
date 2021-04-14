@@ -10,7 +10,8 @@ codeunit 50004 "Cen. Jnl. -Post Line (Ext)"
                                                var VendPostingGr: Record "Vendor Posting Group";
                                                var DtldCVLedgEntryBuf: Record "Detailed CV Ledg. Entry Buffer";
                                                var UseAddCurrAmount: Boolean;
-                                               var GLEntry: Record "G/L Entry")
+                                               var GLEntry: Record "G/L Entry";
+                                               var GenJnlLine: Record "Gen. Journal Line")
     var
         OldVendPostingGroup: Record "Vendor Posting Group";
         Vend: Record "Vendor";
@@ -36,13 +37,13 @@ codeunit 50004 "Cen. Jnl. -Post Line (Ext)"
                                          LCYCurrency."Amount Rounding Precision", LCYCurrency.VATRoundingDirection());
             VATAgentACYAmount := Round(DtldCVLedgEntryBuf."Additional-Currency Amount" * VATPostingSetup."VAT %" / 100,
                                        LCYCurrency."Amount Rounding Precision", LCYCurrency.VATRoundingDirection);
-            //InitGLEntry(OldVendPostingGroup."Payables Account", -VATAgentVATPmtAmount, -VATAgentACYAmount, UseAddCurrAmount, true);
+            sender.InitGLEntry(GenJnlLine, GLEntry, OldVendPostingGroup."Payables Account", -VATAgentVATPmtAmount, -VATAgentACYAmount, UseAddCurrAmount, true);
             GLEntry."Bal. Account Type" := GLEntry."Bal. Account Type"::"G/L Account";
             GLEntry."Bal. Account No." := VendPostingGr."Prepayment Account";
-            //InitGLEntry(VendPostingGr."Prepayment Account", VATAgentVATPmtAmount, VATAgentACYAmount, UseAddCurrAmount, true);
+            sender.InitGLEntry(GenJnlLine, GLEntry, VendPostingGr."Prepayment Account", VATAgentVATPmtAmount, VATAgentACYAmount, UseAddCurrAmount, true);
             GLEntry."Bal. Account Type" := GLEntry."Bal. Account Type"::"G/L Account";
             GLEntry."Bal. Account No." := OldVendPostingGroup."Payables Account";
-            //InsertGLEntry(true);
+            sender.InsertGLEntry(GenJnlLine, GLEntry, true);
         end;
         VendPostingGr := OldVendPostingGroup;
     end;
