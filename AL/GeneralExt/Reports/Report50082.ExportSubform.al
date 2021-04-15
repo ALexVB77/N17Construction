@@ -14,7 +14,7 @@ report 50082 ExportSubform
                 SetRange("Agreement No.", CopyStr(DocumentNo, 1, 20));
                 CurStartRow := 0;
                 TemplateRowStart := 6;
-                //FileName := ExcelTemplate.OpenTemplate(3, Report::Exp)
+                //FileName := ExcelTemplate.OpenTemplate()
             end;
         }
     }
