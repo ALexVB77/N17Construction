@@ -1293,6 +1293,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Template - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExportSubform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 4290211394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Comparative Sheet INV-18</source>
           <note from="Developer" annotates="general" priority="2"></note>
