@@ -2343,6 +2343,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3235211674 - Field 516867376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1311705274">
+          <source>New FA Posting Group</source>
+          <target>Новая учетная группа ОС</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Posted FA Doc. Line (Ext) - Field New FA Posting Group - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1982677864 - Field 3632164407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Vat Agent Posting Group</source>
           <target>Налоговый Агент Учетная Группа</target>
