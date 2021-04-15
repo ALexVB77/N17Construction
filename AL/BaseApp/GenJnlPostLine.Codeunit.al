@@ -6490,7 +6490,7 @@
                     GLEntry."Bal. Account No." := VendPostingGr."Prepayment Account";
                     InsertGLEntry(GenJnlLine, GLEntry, true);
 
-                    OnUpdateVendorPostingGroup(VendPostingGr, DtldCVLedgEntryBuf, UseAddCurrAmount, GLEntry); //NC 50067 PA
+                    OnUpdateVendorPostingGroup(GenJnlLine, VendPostingGr, DtldCVLedgEntryBuf, UseAddCurrAmount, GLEntry); //NC 50067 PA
 
                     VendPostingGr.TestField("Prepayment Account");
                     InitGLEntry(GenJnlLine, GLEntry,
@@ -9376,7 +9376,7 @@
     end;
 
     [IntegrationEvent(true, false)]
-    local procedure OnUpdateVendorPostingGroup(var VendPostingGr: Record "Vendor Posting Group"; var DtldCVLedgEntryBuf: Record "Detailed CV Ledg. Entry Buffer"; var UseAddCurrAmount: Boolean; var GLEntry: Record "G/L Entry")
+    local procedure OnUpdateVendorPostingGroup(var GenJnlLine: Record "Gen. Journal Line"; var VendPostingGr: Record "Vendor Posting Group"; var DtldCVLedgEntryBuf: Record "Detailed CV Ledg. Entry Buffer"; var UseAddCurrAmount: Boolean; var GLEntry: Record "G/L Entry")
     begin
     end;
 
