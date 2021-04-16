@@ -11,14 +11,14 @@ report 50082 ExportSubform
         {
             trigger OnPreDataItem()
             var
-                SalesReceivablesSetup: Record "Sales & Receivables Setup";
+                PurchasesPayablesSetup: Record "Purchases & Payables Setup";
             begin
                 SetRange("Agreement No.", CopyStr(DocumentNo, 1, 20));
                 CurStartRow := 0;
                 TemplateRowStart := 6;
 
-                SalesReceivablesSetup.Get(''); //?
-                FileName := ExcelTemplate.OpenTemplate(SalesReceivablesSetup."Vendor Agreement Template");
+                PurchasesPayablesSetup.Get(''); //?
+                FileName := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Vendor Agreement Template Code");
                 ExcelBuffer.OpenBook(FileName, 'Sheet Name'); //?
 
                 RowNo := 5;
