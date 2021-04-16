@@ -2,6 +2,7 @@ pageextension 80459 "Sales & Receivabl. Setup (Ext)" extends "Sales & Receivable
 {
     layout
     {
+        /*
         addafter("Sales Shipment M-15 Templ.Code")
         {
             field("Vendor Agreement Template"; Rec."Vendor Agreement Template")
@@ -9,5 +10,6 @@ pageextension 80459 "Sales & Receivabl. Setup (Ext)" extends "Sales & Receivable
                 ApplicationArea = All;
             }
         }
+        */
     }
 }
