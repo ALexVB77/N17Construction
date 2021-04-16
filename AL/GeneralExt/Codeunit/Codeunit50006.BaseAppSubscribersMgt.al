@@ -174,7 +174,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
                 begin
                     RecRef.Open(DATABASE::"Vendor Agreement");
                     VendAgreement.Reset();
-                    VendAgreement.SetRange("Vendor No.", DocumentAttachment."PK Key 2");
+                    // VendAgreement.SetRange("Vendor No.", DocumentAttachment."PK Key 2");
                     VendAgreement.SetRange("No.", DocumentAttachment."No.");
                     if VendAgreement.FindFirst() then
                         RecRef.GetTable(VendAgreement);
@@ -196,7 +196,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
                     PKNo := FieldRef.Value;
                     FieldRef := RecRef.Field(2);
                     RecNo := FieldRef.Value;
-                    DocumentAttachment.SetRange("PK Key 2", PKNo);
+                    // DocumentAttachment.SetRange("PK Key 2", PKNo);
                     DocumentAttachment.SetRange("No.", RecNo);
                 end;
         end;
