@@ -163,4 +163,42 @@ codeunit 50006 "Base App. Subscribers Mgt."
 
         IsHandled := true;
     end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
+    local procedure OnBeforeDrillDownDocAttFackBox(DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
+    var
+        VendAgreement: Record "Vendor Agreement";
+    begin
+        case DocumentAttachment."Table ID" of
+            DATABASE::"Vendor Agreement":
+                begin
+                    RecRef.Open(DATABASE::"Vendor Agreement");
+                    VendAgreement.Reset();
+                    VendAgreement.SetRange("Vendor No.", DocumentAttachment."PK Key 2");
+                    VendAgreement.SetRange("No.", DocumentAttachment."No.");
+                    if VendAgreement.FindFirst() then
+                        RecRef.GetTable(VendAgreement);
+                end;
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Document Attachment Details", 'OnAfterOpenForRecRef', '', true, true)]
+    local procedure OnAfterOpenForRecRefDocAttDet(var DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef; var FlowFieldsEditable: Boolean)
+    var
+        FieldRef: FieldRef;
+        RecNo: Code[20];
+        PKNo: Code[20];
+    begin
+        case RecRef.Number of
+            DATABASE::"Vendor Agreement":
+                begin
+                    FieldRef := RecRef.Field(1);
+                    PKNo := FieldRef.Value;
+                    FieldRef := RecRef.Field(2);
+                    RecNo := FieldRef.Value;
+                    DocumentAttachment.SetRange("PK Key 2", PKNo);
+                    DocumentAttachment.SetRange("No.", RecNo);
+                end;
+        end;
+    end;
 }

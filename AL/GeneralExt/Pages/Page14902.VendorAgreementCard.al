@@ -9,6 +9,16 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 ApplicationArea = Basic, Suite;
             }
         }
+        addbefore(Control1905767507)
+        {
+            part("Attached Documents"; "Document Attachment Factbox")
+            {
+                ApplicationArea = All;
+                Caption = 'Attachments';
+                SubPageLink = "Table ID" = CONST(14901),
+                              "No." = FIELD("No.");
+            }
+        }
     }
     actions
     {

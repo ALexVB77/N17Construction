@@ -6,5 +6,9 @@ tableextension 81173 "Document Attachment (Ext)" extends "Document Attachment"
         {
             Caption = 'Attachment Link';
         }
+        field(50001; "PK Key 2"; Code[20])
+        {
+            Caption = 'Primary Key 2';
+        }
     }
 }
