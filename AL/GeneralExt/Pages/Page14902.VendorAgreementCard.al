@@ -16,7 +16,8 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 ApplicationArea = All;
                 Caption = 'Attachments';
                 SubPageLink = "Table ID" = CONST(14901),
-                              "No." = FIELD("No.");
+                              "No." = FIELD("No."),
+                              "PK Key 2" = FIELD("Vendor No.");
             }
         }
     }
