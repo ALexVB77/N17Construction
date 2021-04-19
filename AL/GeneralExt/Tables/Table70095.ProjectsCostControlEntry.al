@@ -12,12 +12,9 @@ table 70095 "Projects Cost Control Entry"
             DataClassification = CustomerContent;
             TableRelation = "Building project";
         }
-        field(2; "Analysis Type"; Option)
+        field(2; "Analysis Type"; Enum "Analysis Type")
         {
             Caption = 'Analysis Type';
-            DataClassification = CustomerContent;
-            OptionCaption = 'Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS';
-            OptionMembers = "Fix Budget","Current Budget",Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,"Actuals IFRS";
         }
         field(3; "Version Code"; Code[20])
         {
@@ -176,7 +173,7 @@ table 70095 "Projects Cost Control Entry"
                 end;
             end;
         }
-        field(200; "Agrrement No."; Code[20])
+        field(200; "Agreement No."; Code[20])
         {
             Caption = 'Agrrement No.';
             TableRelation = if ("Contragent Type" = const(Vendor)) "Vendor Agreement"."No." WHERE("Vendor No." = field("Contragent No."), Active = const(true)) else
@@ -189,12 +186,12 @@ table 70095 "Projects Cost Control Entry"
             begin
                 if "Contragent Type" = "Contragent Type"::Vendor then begin
                     VendAgr.Reset;
-                    if VendAgr.Get(Rec."Contragent No.", "Agrrement No.") then
+                    if VendAgr.Get(Rec."Contragent No.", "Agreement No.") then
                         "External Agreement No." := VendAgr."External Agreement No.";
                 end;
                 if "Contragent Type" = "Contragent Type"::Customer then begin
                     CustAgr.Reset;
-                    if CustAgr.Get(Rec."Contragent No.", "Agrrement No.") then
+                    if CustAgr.Get(Rec."Contragent No.", "Agreement No.") then
                         "External Agreement No." := CustAgr."External Agreement No.";
                 end;
             end;
@@ -239,7 +236,7 @@ table 70095 "Projects Cost Control Entry"
             begin
                 if Rec."Contragent Type" <> xRec."Contragent Type" then begin
                     Rec.Validate("Contragent No.", '');
-                    Rec.Validate("Agrrement No.", '');
+                    Rec.Validate("Agreement No.", '');
                 end;
             end;
         }
@@ -599,19 +596,19 @@ table 70095 "Projects Cost Control Entry"
         //key(Key13; ID) { }
         //key(Key14; "Create Date") { }
         //key(Key15; "Analysis Type", "Close Commitment") { }
-        key(Key16; "Analysis Type", "Contragent No.", "Agrrement No.", "Project Turn Code", "Line No.", "Cost Type")
+        key(Key16; "Analysis Type", "Contragent No.", "Agreement No.", "Project Turn Code", "Line No.", "Cost Type")
         {
             SumIndexFields = "Without VAT", "Amount Including VAT 2", "VAT Amount 2";
         }
-        key(Key17; "Analysis Type", "Contragent No.", "Agrrement No.", "Line No.", "Cost Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code")
+        key(Key17; "Analysis Type", "Contragent No.", "Agreement No.", "Line No.", "Cost Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code")
         {
             SumIndexFields = "Without VAT", "Amount Including VAT 2", "VAT Amount 2";
         }
-        key(Key18; "Project Code", "Line No.", "Agrrement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type")
+        key(Key18; "Project Code", "Line No.", "Agreement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type")
         {
             SumIndexFields = "Without VAT", "Amount Including VAT 2", "VAT Amount 2";
         }
-        key(Key19; "Project Code", "Line No.", "Agrrement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type", Reversed, "Project Storno")
+        key(Key19; "Project Code", "Line No.", "Agreement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type", Reversed, "Project Storno")
         {
             SumIndexFields = "Without VAT", "Amount Including VAT 2", "VAT Amount 2";
         }

@@ -24,7 +24,7 @@ report 50094 "Find Error 70095"
                 ProjectsCostCtrlEntry2.SetRange("Create Date", ProjectsCostCtrlEntry."Create Date");
                 ProjectsCostCtrlEntry2.SetRange("Project Turn Code", ProjectsCostCtrlEntry."Project Turn Code");
                 ProjectsCostCtrlEntry2.SetRange("Contragent No.", ProjectsCostCtrlEntry."Contragent No.");
-                ProjectsCostCtrlEntry2.SetRange("Agrrement No.", ProjectsCostCtrlEntry."Agrrement No.");
+                ProjectsCostCtrlEntry2.SetRange("Agreement No.", ProjectsCostCtrlEntry."Agreement No.");
                 ProjectsCostCtrlEntry2.SetRange("Without VAT", ProjectsCostCtrlEntry."Without VAT");
                 ProjectsCostCtrlEntry2.SetRange("Shortcut Dimension 1 Code", ProjectsCostCtrlEntry."Shortcut Dimension 1 Code");
                 ProjectsCostCtrlEntry2.SetRange("Shortcut Dimension 2 Code", ProjectsCostCtrlEntry."Shortcut Dimension 2 Code");

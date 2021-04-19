@@ -361,4 +361,48 @@ table 70094 "Vendor Agreement Details"
 
     end;
 
+    procedure CalcGActuals(SortInit: Boolean; ProjectCode: Code[50]; LineNo: Integer; AgrNo: Code[50]; Dim1: Code[50]; Dim2: Code[50]; CostType: Code[50]; AnType: Boolean) ReturnValue: Decimal
+    var
+        SumAmount: Decimal;
+        gActuals: Decimal;
+        ProjectsCostControlEntry: Record "Projects Cost Control Entry";
+    begin
+        SumAmount := 0;
+        gActuals := 0;
+
+        if not SortInit then
+            InitCostControlEntrySort(SortInit);
+
+        ProjectsCostControlEntry.SetCurrentKey("Project Code", "Line No.", "Agreement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+        ProjectsCostControlEntry.SetRange("Project Code", ProjectCode);
+        ProjectsCostControlEntry.SetRange("Line No.", LineNo);
+        ProjectsCostControlEntry.SetRange("Agreement No.", AgrNo);
+
+        if AnType then begin
+            ProjectsCostControlEntry."Analysis Type" := ProjectsCostControlEntry."Analysis Type"::Actuals;
+            ProjectsCostControlEntry.SetCurrentKey("Analysis Type", ProjectsCostControlEntry."Analysis Type");
+        end;
+
+        ProjectsCostControlEntry.SetRange("Shortcut Dimension 1 Code", Dim1);
+        ProjectsCostControlEntry.SetRange("Shortcut Dimension 1 Code", Dim2);
+        ProjectsCostControlEntry.SetRange("Cost Type", CostType);
+
+        if not ProjectsCostControlEntry.IsEmpty then begin
+            ProjectsCostControlEntry.FindSet();
+            repeat
+                gActuals += ProjectsCostControlEntry."Amount Including VAT 2";
+            until ProjectsCostControlEntry.Next() = 0;
+        end;
+        exit(gActuals);
+    end;
+
+    local procedure InitCostControlEntrySort(SortInit: Boolean)
+    var
+        ProjectsCostControlEntry: Record "Projects Cost Control Entry";
+    begin
+        SortInit := true;
+        ProjectsCostControlEntry.Reset();
+        ProjectsCostControlEntry.SetCurrentKey("Project Code", "Line No.", "Agreement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+    end;
+
 }

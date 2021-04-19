@@ -66,7 +66,7 @@ page 70213 "Projects CC Entry Constr 2"
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Agrrement No."; Rec."Agrrement No.")
+                field("Agrrement No."; Rec."Agreement No.")
                 {
                     ApplicationArea = Basic, Suite;
                 }

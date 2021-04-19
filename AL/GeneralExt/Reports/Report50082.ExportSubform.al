@@ -43,13 +43,13 @@ report 50082 ExportSubform
 
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 6, Format("Cost Type"), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 7, Format(Description), false, false, false);
-                //ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 8, Format((VendAgrDetForm.CalcGActuals("Project Code",                       //?
-                //                                                                                 "Project Line No.",
-                //                                                                                 "Agreement No.",
-                //                                                                                 "Global Dimension 1 Code",
-                //                                                                                 "Global Dimension 2 Code",
-                //                                                                                 "Cost Type", true),
-                //                                                     0, '<Precision,2:2><Standard Format,1>')), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 8, Format(VendAgrDetails.CalcGActuals(false,
+                                                                                                "Project Code",
+                                                                                                "Project Line No.",
+                                                                                                "Agreement No.",
+                                                                                                "Global Dimension 1 Code",
+                                                                                                "Global Dimension 2 Code",
+                                                                                                "Cost Type", true)), false, false, false);
             end;
         }
     }
@@ -63,6 +63,6 @@ report 50082 ExportSubform
         ExcelBuffer: Record "Excel Buffer Mod";
         RowNo: Integer;
         VendorNo: Code[100];
-        Text001: Label 'Breakdown by letter';
-    //VendAgrDetForm: Page "Vendor Agreement Details"; //?
+        Text001: Label 'Разбивка по литерам';
+        VendAgrDetails: Record "Vendor Agreement Details";
 }

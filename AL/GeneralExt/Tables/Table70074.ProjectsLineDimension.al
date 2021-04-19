@@ -41,11 +41,9 @@ table 70074 "Projects Line Dimension"
         {
             Caption = 'Detailed Line No.';
         }
-        field(20; Type; Option)
+        field(20; Type; Enum "Analysis Type")
         {
-            Caption = 'Analysis type';
-            OptionCaption = 'Fix Budget","Current Budget",Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast';
-            OptionMembers = "Fix Budget","Current Budget",Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast;
+            Caption = 'Analysis Type';
         }
         // field(60088; "Original Company"; Code[2])
         // {
