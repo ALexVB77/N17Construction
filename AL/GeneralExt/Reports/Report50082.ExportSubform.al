@@ -17,12 +17,12 @@ report 50082 ExportSubform
                 CurStartRow := 0;
                 TemplateRowStart := 6;
 
-                PurchasesPayablesSetup.Get(''); //?
+                PurchasesPayablesSetup.Get('');
                 FileName := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Vendor Agreement Template Code");
-                ExcelBuffer.OpenBook(FileName, 'Sheet Name'); //?
+                ExcelBuffer.OpenBook(FileName, Text001);
 
                 RowNo := 5;
-                ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, 'Разбивка по литерам', true, false, false); //?
+                ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, Text001, true, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, 2, 3, VendorNo, true, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, 3, 3, DocumentNo, true, false, false);
             end;
@@ -63,5 +63,6 @@ report 50082 ExportSubform
         ExcelBuffer: Record "Excel Buffer Mod";
         RowNo: Integer;
         VendorNo: Code[100];
+        Text001: Label 'Breakdown by letter';
     //VendAgrDetForm: Page "Vendor Agreement Details"; //?
 }
