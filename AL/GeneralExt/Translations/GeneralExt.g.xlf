@@ -1978,6 +1978,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Posted FA Doc. Line (Ext) - Field New FA Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 688859859 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
+          <source>Cost Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Line (Ext) - Field Cost Type - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3636443165 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
           <source>Cost Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
