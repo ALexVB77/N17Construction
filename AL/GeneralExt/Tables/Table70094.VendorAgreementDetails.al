@@ -403,17 +403,32 @@ table 70094 "Vendor Agreement Details"
         ProjectsCostControlEntry.SetCurrentKey("Project Code", "Line No.", "Agreement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
     end;
 
-    procedure CalcPostedInvoice2(VendorNo: Code[20]; AgrNo: Code[20])
+    procedure CalcPostedInvoice2(VendorNo: Code[20]; AgrNo: Code[20]; GlobDim1: Code[20]; GlobDim2: Code[20]; CostType: Code[20]) ReturnValue: Decimal
     var
         PurchInvHeader: Record "Purch. Inv. Header";
         PurchInvLine: Record "Purch. Inv. Line";
+        PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
+        PurchCrMemoLine: Record "Purch. Cr. Memo Line";
     begin
         PurchInvHeader.SetRange("Pay-to Vendor No.", VendorNo);
         PurchInvHeader.SetRange("Agreement No.", AgrNo);
         if PurchInvHeader.FindSet() then begin
             repeat
-            //PurchInvLine.SetCurrentKey("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+                PurchInvLine.SetCurrentKey("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+                PurchInvLine.SetRange("Document No.", PurchInvLine."No.");
+                PurchInvLine.SetRange("Shortcut Dimension 1 Code", GlobDim1);
+                PurchInvLine.SetRange("Shortcut Dimension 2 Code", GlobDim2);
+                PurchInvLine.SetRange("Cost Type", CostType);
+                PurchInvLine.CalcSums(Amount);
             until PurchInvHeader.Next() = 0;
+        end;
+
+        PurchCrMemoHdr.SetRange("Pay-to Vendor No.", VendorNo);
+        PurchCrMemoHdr.SetRange("Agreement No.", AgrNo);
+        if PurchCrMemoHdr.FindSet() then begin
+            repeat
+            //PurchCrMemoLine.SetCurrentKey("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+            until PurchCrMemoHdr.Next() = 0;
         end;
     end;
 }
