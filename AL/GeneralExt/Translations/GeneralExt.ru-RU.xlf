@@ -2421,6 +2421,108 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Vat Agent Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS</source>
+          <target>Fix Budget,Current Budget,Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast,ApprForecast,AllocForecast,AllocActuals,PrevApprForecast,Estimate,Actuals IFRS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Analysis Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2623869636 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix Budget","Current Budget",Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast</source>
+          <target>Fix Budget","Current Budget",Actuals,Commitet,Forecast,Adv,CashFlow,PrevForecast</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Line Dimension - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 3333280010 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Разбивка по литерам</source>
+          <target>Разбивка по литерам</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 3980010935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actuals</source>
+          <target>Actuals</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Actuals - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 1984816525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actuals IFRS</source>
+          <target>Actuals IFRS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Actuals IFRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 912371493 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adv</source>
+          <target>Adv</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Adv - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 2671941156 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AllocActuals</source>
+          <target>AllocActuals</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue AllocActuals - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 3300237906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AllocForecast</source>
+          <target>AllocForecast</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue AllocForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 3525489684 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ApprForecast</source>
+          <target>ApprForecast</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue ApprForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 2488242589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CashFlow</source>
+          <target>CashFlow</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue CashFlow - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 2990409172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commitet</source>
+          <target>Commitet</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Commitet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 3113040224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Current Budget</source>
+          <target>Current Budget</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Current Budget - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 2389676546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estimate</source>
+          <target>Estimate</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Estimate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 387005358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix Budget</source>
+          <target>Fix Budget</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Fix Budget - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 3452445781 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast</source>
+          <target>Forecast</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Forecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 189518547 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrevApprForecast</source>
+          <target>PrevApprForecast</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevApprForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 273371814 - EnumValue 3888270262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrevForecast</source>
+          <target>PrevForecast</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevForecast - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
