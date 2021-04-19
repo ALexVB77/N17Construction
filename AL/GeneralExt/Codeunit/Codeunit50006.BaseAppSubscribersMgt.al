@@ -201,4 +201,20 @@ codeunit 50006 "Base App. Subscribers Mgt."
                 end;
         end;
     end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Document Attachment Details", 'OnInsertRecordEvent', '', true, true)]
+    local procedure OnInsertRecordDocAttDetails(VAR Rec: Record "Document Attachment"; BelowxRec: Boolean; VAR xRec: Record "Document Attachment"; VAR AllowInsert: Boolean)
+    var
+        CurrFltGr: Integer;
+    begin
+        if Rec."Attachment Link" <> '' then begin
+            if Rec.GetFilter("PK Key 2") <> '' then
+                Rec."PK Key 2" := Rec.GetFilter("PK Key 2");
+            if IsNullGuid(rec."Attached By") then
+                rec."Attached By" := UserSecurityId();
+            rec.Insert(false);
+            AllowInsert := false;
+        end;
+    end;
+
 }
