@@ -409,13 +409,14 @@ table 70094 "Vendor Agreement Details"
         PurchInvLine: Record "Purch. Inv. Line";
         PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
         PurchCrMemoLine: Record "Purch. Cr. Memo Line";
+        PostedInvoiceAmount: Decimal;
     begin
         PurchInvHeader.SetRange("Pay-to Vendor No.", VendorNo);
         PurchInvHeader.SetRange("Agreement No.", AgrNo);
         if PurchInvHeader.FindSet() then begin
             repeat
                 PurchInvLine.SetCurrentKey("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
-                PurchInvLine.SetRange("Document No.", PurchInvLine."No.");
+                PurchInvLine.SetRange("Document No.", PurchInvHeader."No.");
                 PurchInvLine.SetRange("Shortcut Dimension 1 Code", GlobDim1);
                 PurchInvLine.SetRange("Shortcut Dimension 2 Code", GlobDim2);
                 PurchInvLine.SetRange("Cost Type", CostType);
@@ -427,8 +428,15 @@ table 70094 "Vendor Agreement Details"
         PurchCrMemoHdr.SetRange("Agreement No.", AgrNo);
         if PurchCrMemoHdr.FindSet() then begin
             repeat
-            //PurchCrMemoLine.SetCurrentKey("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+                PurchCrMemoLine.SetCurrentKey("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+                PurchCrMemoLine.SetRange("Document No.", PurchCrMemoHdr."No.");
+                PurchCrMemoLine.SetRange("Shortcut Dimension 1 Code", GlobDim1);
+                PurchCrMemoLine.SetRange("Shortcut Dimension 2 Code", GlobDim2);
+                PurchCrMemoLine.SetRange("Cost Type", CostType);
+                PurchCrMemoLine.CalcSums(Amount);
+                PostedInvoiceAmount += PurchCrMemoLine.Amount;
             until PurchCrMemoHdr.Next() = 0;
         end;
+        exit(PostedInvoiceAmount);
     end;
 }

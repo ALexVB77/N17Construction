@@ -52,7 +52,11 @@ report 50082 ExportSubform
                                                                                                 "Cost Type", true), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
 
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 9, DelChr(Format(Amount, 0, '<Precision,2:2><Standard Format,1>')), false, false, false);
-                //ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 10, Format());
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 10, Format(VendAgrDetails.CalcPostedInvoice2("Vendor No.",
+                                                                                                       "Agreement No.",
+                                                                                                       "Global Dimension 1 Code",
+                                                                                                       "Global Dimension 2 Code",
+                                                                                                       "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
             end;
         }
     }
