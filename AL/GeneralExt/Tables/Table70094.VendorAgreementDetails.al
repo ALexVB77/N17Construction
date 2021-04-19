@@ -363,11 +363,9 @@ table 70094 "Vendor Agreement Details"
 
     procedure CalcGActuals(SortInit: Boolean; ProjectCode: Code[50]; LineNo: Integer; AgrNo: Code[50]; Dim1: Code[50]; Dim2: Code[50]; CostType: Code[50]; AnType: Boolean) ReturnValue: Decimal
     var
-        SumAmount: Decimal;
         gActuals: Decimal;
         ProjectsCostControlEntry: Record "Projects Cost Control Entry";
     begin
-        SumAmount := 0;
         gActuals := 0;
 
         if not SortInit then
@@ -405,4 +403,17 @@ table 70094 "Vendor Agreement Details"
         ProjectsCostControlEntry.SetCurrentKey("Project Code", "Line No.", "Agreement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
     end;
 
+    procedure CalcPostedInvoice2(VendorNo: Code[20]; AgrNo: Code[20])
+    var
+        PurchInvHeader: Record "Purch. Inv. Header";
+        PurchInvLine: Record "Purch. Inv. Line";
+    begin
+        PurchInvHeader.SetRange("Pay-to Vendor No.", VendorNo);
+        PurchInvHeader.SetRange("Agreement No.", AgrNo);
+        if PurchInvHeader.FindSet() then begin
+            repeat
+            //PurchInvLine.SetCurrentKey("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+            until PurchInvHeader.Next() = 0;
+        end;
+    end;
 }
