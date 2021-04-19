@@ -207,9 +207,9 @@ codeunit 50006 "Base App. Subscribers Mgt."
     var
         CurrFltGr: Integer;
     begin
+        if Rec.GetFilter("PK Key 2") <> '' then
+            Rec."PK Key 2" := Rec.GetFilter("PK Key 2");
         if Rec."Attachment Link" <> '' then begin
-            if Rec.GetFilter("PK Key 2") <> '' then
-                Rec."PK Key 2" := Rec.GetFilter("PK Key 2");
             if IsNullGuid(rec."Attached By") then
                 rec."Attached By" := UserSecurityId();
             rec.Insert(false);
