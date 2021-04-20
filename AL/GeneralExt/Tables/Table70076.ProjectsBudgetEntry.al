@@ -313,6 +313,10 @@ table 70076 "Projects Budget Entry"
             //     END;
             // end;
         }
+        field(51; "Work Version"; Boolean)
+        {
+            Caption = 'Work Version';
+        }
         field(60; "Date Plan"; Date)
         {
             Caption = 'Date (Plan)';
