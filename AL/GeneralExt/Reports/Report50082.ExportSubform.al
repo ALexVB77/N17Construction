@@ -19,7 +19,6 @@ report 50082 ExportSubform
 
                 PurchasesPayablesSetup.Get('');
                 FileName := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Vendor Agreement Template Code");
-                ExcelBuffer.OpenBook(FileName, Text001);
 
                 RowNo := 5;
                 ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, Text001, true, false, false);
@@ -34,8 +33,8 @@ report 50082 ExportSubform
                 Sleep(1);
                 RowNo += 1;
                 CurRow := CurStartRow + RowNo;
-                //ExcelBuffer.InsertString(CurRow);
-                ExcelBuffer.NewRow();
+                //ExcelBuffer.InsertString(CurRow); //?
+
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 1, Format("Building Turn All"), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 2, Format("Project Code"), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 3, Format("Cost Code"), false, false, false);
@@ -68,8 +67,9 @@ report 50082 ExportSubform
 
             trigger OnPostDataItem()
             begin
-                //ExcelBuffer.DeleteString(RowNo-1);
-                ExcelBuffer.DeleteAll();
+                ExcelBuffer.UpdateBook(FileName, Text001);
+                ExcelBuffer.WriteSheet('', CompanyName, UserId);
+                //ExcelBuffer.DeleteString(RowNo-1); //?
             end;
         }
 
@@ -80,9 +80,9 @@ report 50082 ExportSubform
                 RowNo := 5;
                 SetRange("Agreement No.", CopyStr(DocumentNo, 1, 20));
 
-                //ExcellBuffer.SaveCellsToExcel();
+                ExcelBuffer.CloseBook();
                 ExcelBuffer.DeleteAll();
-                //ExcellBuffer.ChangeActiveSheet(Text002);
+
                 ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, Text002, true, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, 2, 3, VendorNo, true, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, 3, 3, DocumentNo, true, false, false);
@@ -94,8 +94,7 @@ report 50082 ExportSubform
             begin
                 RowNo += 1;
                 CurRow := CurStartRow + RowNo;
-                //ExcelBuffer.InsertString(CurRow);
-                ExcelBuffer.NewRow();
+                //ExcelBuffer.InsertString(CurRow);         //?
 
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 1, Format("Entry No."), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 2, Format(Date), false, false, false);
@@ -115,9 +114,11 @@ report 50082 ExportSubform
 
             trigger OnPostDataItem()
             begin
-                //ExcelBuffer.DeleteString(RowNo-1);
-                //ExcelBuffer.SaveCellsToExcel;
-                //ExcelBuffer.GiveUserControl;
+                //ExcelBuffer.DeleteString(RowNo-1);  //?
+                ExcelBuffer.UpdateBook(FileName, Text002);
+                ExcelBuffer.WriteSheet('', CompanyName, UserId);
+                ExcelBuffer.CloseBook();
+                ExcelBuffer.DownloadAndOpenExcel();
             end;
         }
     }
