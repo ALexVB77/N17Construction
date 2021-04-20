@@ -439,4 +439,21 @@ table 70094 "Vendor Agreement Details"
         end;
         exit(PostedInvoiceAmount);
     end;
+
+    procedure GetCommited(pAgreement: Code[20]; pCP: Code[20]; pCC: Code[20]) ReturnValue: Decimal
+    var
+        lrProjectsBudgetEntry: Record "Projects Budget Entry";
+        Amount: Decimal;
+    begin
+        lrProjectsBudgetEntry.SetCurrentKey("Work Version", "Agreement No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
+        lrProjectsBudgetEntry.SetRange("Work Version", true);
+        lrProjectsBudgetEntry.SetRange("Agreement No.", pAgreement);
+        if pCP <> '' then
+            lrProjectsBudgetEntry.SetRange("Shortcut Dimension 1 Code", pCP);
+        if pCC <> '' then
+            lrProjectsBudgetEntry.SetRange("Shortcut Dimension 2 Code", pCC);
+        lrProjectsBudgetEntry.CalcSums("Without VAT");
+        Amount += lrProjectsBudgetEntry."Without VAT";
+        exit(Amount);
+    end;
 }

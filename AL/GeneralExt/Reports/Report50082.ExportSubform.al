@@ -58,7 +58,12 @@ report 50082 ExportSubform
                                                                                                        "Global Dimension 1 Code",
                                                                                                        "Global Dimension 2 Code",
                                                                                                        "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
-
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 11, Format(VendAgrDetails.GetCommited("Agreement No.",
+                                                                                                "Global Dimension 1 Code",
+                                                                                                "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 12, Format(Amount - VendAgrDetails.GetCommited("Agreement No.",
+                                                                                                         "Global Dimension 1 Code",
+                                                                                                         "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
             end;
 
             trigger OnPostDataItem()

@@ -105,6 +105,18 @@ table 70076 "Projects Budget Entry"
             Caption = 'Project Turn Code';
             //TableRelation = "Building turn";
         }
+        field(31; "Contragent No."; Code[20])
+        {
+            Caption = 'Contragent No.';
+            TableRelation = if ("Contragent Type" = const(Vendor)) Vendor else
+            if ("Contragent Type" = const(Customer)) Customer;
+        }
+        field(32; "Agreement No."; Code[20])
+        {
+            Caption = 'Agreement No.';
+            TableRelation = if ("Contragent Type" = const(Vendor)) "Vendor Agreement"."No." where("Vendor No." = field("Contragent No."), Active = const(true)) else
+            if ("Contragent Type" = const(Customer)) "Customer Agreement"."No." where("Customer No." = field("Contragent No."));
+        }
         field(34; "Without VAT"; Decimal)
         {
             Caption = 'Amount Incl. VAT';
@@ -127,6 +139,12 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Including VAT';
             Editable = false;
+        }
+        field(40; "Contragent Type"; Option)
+        {
+            Caption = 'Contragent Type';
+            OptionMembers = "Vendor","Customer";
+            OptionCaption = 'Vendor,Customer';
         }
         field(41; "Temp Line No."; Integer)
         {
