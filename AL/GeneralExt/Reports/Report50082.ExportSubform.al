@@ -35,6 +35,7 @@ report 50082 ExportSubform
                 RowNo += 1;
                 CurRow := CurStartRow + RowNo;
                 //ExcelBuffer.InsertString(CurRow);
+                ExcelBuffer.NewRow();
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 1, Format("Building Turn All"), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 2, Format("Project Code"), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 3, Format("Cost Code"), false, false, false);
@@ -57,6 +58,13 @@ report 50082 ExportSubform
                                                                                                        "Global Dimension 1 Code",
                                                                                                        "Global Dimension 2 Code",
                                                                                                        "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
+
+            end;
+
+            trigger OnPostDataItem()
+            begin
+                //ExcelBuffer.DeleteString(RowNo-1);
+                ExcelBuffer.DeleteAll();
             end;
         }
     }
@@ -72,4 +80,10 @@ report 50082 ExportSubform
         VendorNo: Code[100];
         Text001: Label 'Разбивка по литерам';
         VendAgrDetails: Record "Vendor Agreement Details";
+
+    procedure SetDocNo(DocNo: Code[10]; VendNo: Code[10])
+    begin
+        DocumentNo := DocNo;
+        VendorNo := VendNo;
+    end;
 }
