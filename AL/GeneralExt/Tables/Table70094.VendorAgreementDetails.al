@@ -361,9 +361,8 @@ table 70094 "Vendor Agreement Details"
 
     end;
 
-    procedure CalcGActuals(SortInit: Boolean; ProjectCode: Code[50]; LineNo: Integer; AgrNo: Code[50]; Dim1: Code[50]; Dim2: Code[50]; CostType: Code[50]; AnType: Boolean) ReturnValue: Decimal
+    procedure CalcGActuals(SortInit: Boolean; ProjectCode: Code[50]; LineNo: Integer; AgrNo: Code[50]; Dim1: Code[50]; Dim2: Code[50]; CostType: Code[50]; AnType: Boolean) gActuals: Decimal
     var
-        gActuals: Decimal;
         ProjectsCostControlEntry: Record "Projects Cost Control Entry";
     begin
         gActuals := 0;
@@ -391,7 +390,6 @@ table 70094 "Vendor Agreement Details"
                 gActuals += ProjectsCostControlEntry."Amount Including VAT 2";
             until ProjectsCostControlEntry.Next() = 0;
         end;
-        exit(gActuals);
     end;
 
     local procedure InitCostControlEntrySort(SortInit: Boolean)
@@ -403,13 +401,12 @@ table 70094 "Vendor Agreement Details"
         ProjectsCostControlEntry.SetCurrentKey("Project Code", "Line No.", "Agreement No.", "Analysis Type", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
     end;
 
-    procedure CalcPostedInvoice2(VendorNo: Code[20]; AgrNo: Code[20]; GlobDim1: Code[20]; GlobDim2: Code[20]; CostType: Code[20]) ReturnValue: Decimal
+    procedure CalcPostedInvoice2(VendorNo: Code[20]; AgrNo: Code[20]; GlobDim1: Code[20]; GlobDim2: Code[20]; CostType: Code[20]) PostedInvoiceAmount: Decimal
     var
         PurchInvHeader: Record "Purch. Inv. Header";
         PurchInvLine: Record "Purch. Inv. Line";
         PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
         PurchCrMemoLine: Record "Purch. Cr. Memo Line";
-        PostedInvoiceAmount: Decimal;
     begin
         PurchInvHeader.SetRange("Pay-to Vendor No.", VendorNo);
         PurchInvHeader.SetRange("Agreement No.", AgrNo);
@@ -437,13 +434,11 @@ table 70094 "Vendor Agreement Details"
                 PostedInvoiceAmount += PurchCrMemoLine.Amount;
             until PurchCrMemoHdr.Next() = 0;
         end;
-        exit(PostedInvoiceAmount);
     end;
 
     procedure GetCommited(pAgreement: Code[20]; pCP: Code[20]; pCC: Code[20]) ReturnValue: Decimal
     var
         lrProjectsBudgetEntry: Record "Projects Budget Entry";
-        Amount: Decimal;
     begin
         lrProjectsBudgetEntry.SetCurrentKey("Work Version", "Agreement No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
         lrProjectsBudgetEntry.SetRange("Work Version", true);
@@ -453,7 +448,6 @@ table 70094 "Vendor Agreement Details"
         if pCC <> '' then
             lrProjectsBudgetEntry.SetRange("Shortcut Dimension 2 Code", pCC);
         lrProjectsBudgetEntry.CalcSums("Without VAT");
-        Amount += lrProjectsBudgetEntry."Without VAT";
-        exit(Amount);
+        ReturnValue += lrProjectsBudgetEntry."Without VAT";
     end;
 }

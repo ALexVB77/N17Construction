@@ -367,13 +367,43 @@ table 70076 "Projects Budget Entry"
         gvCreateRepeat := lvCreateRepeat;
     end;
 
-    procedure GetInvoiceNo() ReturnValue: Code[20]
+    procedure GetInvoiceNo() InvoiceNo: Code[20]
     var
         PurchaseLine: Record "Purchase Line";
         PurchaseHeader: Record "Purchase Header";
     begin
         if Close then begin
-            //PurchaseLine.SetCurrentKey()
+            PurchaseLine.SetCurrentKey("Forecast Entry");
+            PurchaseLine.SetRange("Forecast Entry", "Entry No.");
+            if PurchaseLine.FindFirst() then begin
+                PurchaseHeader.SetRange("Document Type", PurchaseLine."Document Type");
+                PurchaseHeader.SetRange("No.", PurchaseLine."Document No.");
+                if PurchaseHeader.FindFirst() then begin
+                    InvoiceNo := PurchaseHeader."No.";
+                end;
+            end;
+        end;
+        if InvoiceNo = '' then begin
+            CalcFields("Payment Doc. No.");
+            InvoiceNo := "Payment Doc. No.";
+        end;
+    end;
+
+    procedure GetInvoiceDate() InvoiceDate: Date
+    var
+        PurchaseLine: Record "Purchase Line";
+        PurchaseHeader: Record "Purchase Header";
+    begin
+        if Close then begin
+            PurchaseLine.SetCurrentKey("Forecast Entry");
+            PurchaseLine.SetRange("Forecast Entry", "Entry No.");
+            if PurchaseLine.FindFirst() then begin
+                PurchaseHeader.SetRange("Document Type", PurchaseLine."Document Type");
+                PurchaseHeader.SetRange("No.", PurchaseLine."Document No.");
+                if PurchaseHeader.FindFirst() then begin
+                    InvoiceDate := PurchaseHeader."Paid Date Fact";
+                end;
+            end;
         end;
     end;
 }

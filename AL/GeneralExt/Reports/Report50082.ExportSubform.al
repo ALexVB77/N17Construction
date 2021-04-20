@@ -108,7 +108,16 @@ report 50082 ExportSubform
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 9, Format(Curency), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 10, Format(Description), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 11, Format("Description 2"), false, false, false);
-                //ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 12, Format(GetInvoiceNo), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 12, Format(GetInvoiceNo), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 13, Format(GetInvoiceDate), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 14, Format("Payment Doc. No."), false, false, false);
+            end;
+
+            trigger OnPostDataItem()
+            begin
+                //ExcelBuffer.DeleteString(RowNo-1);
+                //ExcelBuffer.SaveCellsToExcel;
+                //ExcelBuffer.GiveUserControl;
             end;
         }
     }
