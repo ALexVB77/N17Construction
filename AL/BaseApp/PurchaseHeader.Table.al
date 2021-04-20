@@ -1305,7 +1305,7 @@
                     "Buy-from Vendor Name" := Vend.Name;
                     "Buy-from Vendor Name 2" := Vend."Name 2";
                     CopyPayToVendorAddressFieldsFromVendor(Vend);
-                    
+
                     OnValidateOrderAddressCodeOnAfterCopyBuyFromVendorAddressFieldsFromVendor(Rec);
 
                     if IsCreditDocType() then begin
@@ -2647,6 +2647,15 @@
         {
             Caption = 'Corrected Document Date';
         }
+        // NC 51373 AB >>
+        field(70001; "Status App"; option)
+        {
+            Caption = 'Status App';
+            OptionCaption = ' ,Reception,Controller,Checker,Approve,Payment,Request';
+            OptionMembers = " ",Reception,Controller,Checker,Approve,Payment,Request;
+            Description = 'NC 51373 AB';
+        }
+        // NC 51373 AB <<
     }
 
     keys
@@ -2679,6 +2688,14 @@
         key(Key9; "Assigned User ID")
         {
         }
+        // NC 51373 AB >>
+        key(Key10; "Buy-from Vendor No.", "Agreement No.", "Status App")
+        {
+        }
+        key(Key11; "Status App")
+        {
+        }
+        // NC 51373 AB <<
     }
 
     fieldgroups

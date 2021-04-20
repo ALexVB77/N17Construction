@@ -1,0 +1,1087 @@
+page 70262 "Purchase List Act"
+{
+    Editable = true;
+    InsertAllowed = false;
+    DeleteAllowed = false;
+    ModifyAllowed = false;
+    SourceTable = "Purchase Header";
+    SourceTableView = SORTING("Document Type", "No.") WHERE("Act Type" = FILTER(<> ' '), "Status App" = FILTER(<> Payment), "Problem Type" = FILTER(<> "Act error"));
+    DataCaptionFields = "Document Type";
+    PageType = Worksheet;
+    Caption = 'Payment Orders List';
+
+    layout
+    {
+        area(content)
+        {
+            group(Unbound1237120002)
+            {
+                field(Selection; Filter2)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Selection';
+                    OptionCaption = 'All documents,Documents in processing,Ready-to-pay documents,Paid documents,Problem documents';
+                    trigger OnValidate()
+                    begin
+
+                        FieldOnAfterValidate; //navnav;
+                    end;
+
+
+                }
+
+                field("Sorting"; SortType)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Sorting';
+                    OptionCaption = 'Document No.,Postng Date,Buy-from Vendor Name,Status App,Process User';
+                    trigger OnValidate()
+                    begin
+                        SetSortType;
+                        CurrPage.UPDATECONTROLS;
+                    end;
+
+
+                }
+
+                field(cFilter1; Filter1)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Scope';
+                    OptionCaption = 'My documents,All documents,My Approved';
+                    trigger OnValidate()
+                    begin
+
+                        cFilter1OnAfterValidate; //navnav;
+                    end;
+
+
+                }
+
+                field(FilterActType; FilterActType)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Тип документа';
+                    OptionCaption = 'Все,Акт,КС-2,Акт (Production),КС-2 (Production)';
+                    trigger OnValidate()
+                    begin
+
+                        FieldOnAfterValidate; //navnav;
+                    end;
+
+
+                }
+
+
+
+            }
+            repeater(Repeater1237120003)
+            {
+                field("Problem Document"; "Problem Document")
+                {
+                    Editable = false;
+                    ShowCaption = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("No."; "No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Act Type"; "Act Type")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field(Approver; Approver)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Счет покупки"; InvoiceNo)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'Счет покупки';
+                    trigger OnDrillDown()
+                    var
+                        PurchaseHeader: record "Purchase Header";
+                        PurchInvHeader: record "Purch. Inv. Header";
+                    begin
+                        /*
+                        //SWC004 AKA 050914
+                        PurchaseHeader.RESET;
+                        PurchaseHeader.SETFILTER("Document Type",'%1', PurchaseHeader."Document Type"::Invoice);
+                        PurchaseHeader.SETRANGE("No.", InvoiceNo);
+                        PAGE.RUNMODAL(53, PurchaseHeader);
+                        */
+                        //NC 22512 > DP
+                        IF PurchaseHeader.GET(PurchaseHeader."Document Type"::Order, InvoiceNo) THEN BEGIN
+                            PurchaseHeader.RESET;
+                            PurchaseHeader.SETRANGE("Document Type", PurchaseHeader."Document Type"::Order);
+                            PurchaseHeader.SETRANGE("No.", InvoiceNo);
+                            PAGE.RUNMODAL(50, PurchaseHeader)
+                        END ELSE
+                            //NC 22512 < DP
+                            //SWC004 AKA 040914
+                            IF PurchaseHeader.GET(PurchaseHeader."Document Type"::Invoice, InvoiceNo) THEN BEGIN
+                                PurchaseHeader.RESET;
+                                PurchaseHeader.SETFILTER("Document Type", '%1', PurchaseHeader."Document Type"::Invoice);
+                                PurchaseHeader.SETRANGE("No.", InvoiceNo);
+                                PAGE.RUNMODAL(51, PurchaseHeader)
+                            END ELSE BEGIN
+                                IF PurchInvHeader.GET(InvoiceNo) THEN BEGIN
+                                    PurchInvHeader.RESET;
+                                    PurchInvHeader.SETRANGE("No.", InvoiceNo);
+                                    PAGE.RUNMODAL(138, PurchInvHeader);
+                                END;
+                            END;
+                        //SWC004 AKA 040914 <<
+                    end;
+
+
+                }
+
+                field("Buy-from Vendor No."; "Buy-from Vendor No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Vendor Invoice No."; "Vendor Invoice No.")
+                {
+                    Visible = true;
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Buy-from Vendor Name"; "Buy-from Vendor Name")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'Buy-from Vendor Name';
+
+                }
+
+                field("Buy-from Post Code"; "Buy-from Post Code")
+                {
+                    Visible = false;
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Buy-from Country/Region Code"; "Buy-from Country/Region Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Buy-from Contact"; "Buy-from Contact")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Pay-to Vendor No."; "Pay-to Vendor No.")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Pay-to Name"; "Pay-to Name")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Pay-to Post Code"; "Pay-to Post Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Pay-to Country/Region Code"; "Pay-to Country/Region Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Pay-to Contact"; "Pay-to Contact")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Ship-to Code"; "Ship-to Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Ship-to Name"; "Ship-to Name")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Ship-to Post Code"; "Ship-to Post Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Ship-to Country/Region Code"; "Ship-to Country/Region Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Ship-to Contact"; "Ship-to Contact")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Posting Date"; "Posting Date")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Purchaser Code"; "Purchaser Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Currency Code"; "Currency Code")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Document Date"; "Document Date")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Order Date"; "Order Date")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Paid Date Fact"; "Paid Date Fact")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Invoice Amount Incl. VAT"; "Invoice Amount Incl. VAT")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("c1"; gcERPC.GetDocumentsAmount3(Rec))
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Статус утверждения"; StatusAppAct)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'Статус утверждения';
+                    OptionCaption = ' ,Контролер,Сметчик,Проверка,Утверждение,Подписание,Бухгалтерия';
+
+                }
+
+                field("Date Status App"; "Date Status App")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Process User"; "Process User")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Agreement No."; "Agreement No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                {
+                    Visible = true;
+                    Editable = false;
+                    ApplicationArea = All;
+                    trigger OnLookup()
+                    begin
+                        DimMgt.LookupDimValueCodeNoUpdate(1);
+                    end;
+
+
+                }
+
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                {
+                    Visible = true;
+                    Editable = false;
+                    ApplicationArea = All;
+                    trigger OnLookup()
+                    begin
+                        DimMgt.LookupDimValueCodeNoUpdate(2);
+                    end;
+
+
+                }
+
+                field("Exists Comment"; "Exists Comment")
+                {
+                    Editable = false;
+                    ShowCaption = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Exists Attachment"; "Exists Attachment")
+                {
+                    Editable = false;
+                    ShowCaption = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Передано в Бухгалтерию"; ReceiveAcc)
+                {
+                    Editable = false;
+                    ShowCaption = false;
+                    ApplicationArea = All;
+                    Caption = 'Передано в Бухгалтерию';
+
+                }
+
+                field("Sum of payments"; "Sum of payments")
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+
+                }
+
+                field(LocationDocument; LocationDocument)
+                {
+                    Editable = false;
+                    ShowCaption = false;
+                    ApplicationArea = All;
+                    Caption = 'LocationDocument';
+
+                }
+
+
+
+            }
+        }
+    }
+
+
+    actions
+    {
+        area(navigation)
+        {
+            group(Line)
+            {
+                action(Card)
+                {
+                    ShortCutKey = 'Shift+F5';
+                    Caption = 'Card';
+                    trigger OnAction()
+                    begin
+                        //<<++NCC BF 4.0.0
+                        grPH.SETRANGE("Document Type", "Document Type");
+                        grPH.SETRANGE("No.", "No.");
+                        IF grPH.FIND('-') THEN BEGIN
+                            PAGE.RUNMODAL(PAGE::"Purchase Order Act", grPH);
+                            CurrPage.UPDATE;
+                        END;
+                    end;
+
+
+                }
+
+                action(New)
+                {
+                    ShortCutKey = F3;
+                    Caption = 'New';
+                    trigger OnAction()
+                    begin
+                        FuncNewRec();
+                    end;
+
+
+                }
+
+                action(Attachments)
+                {
+                    Caption = 'Attachments';
+                    trigger OnAction()
+                    begin
+                        //<<++NCC BF 4.0.0
+                        grAttachment.SETCURRENTKEY("Document Type", "Document No.", "Document Line");
+                        grAttachment.SETRANGE("Document Type", grAttachment."Document Type"::Purchase);
+                        grAttachment.SETRANGE("Document No.", "No.");
+                        grAttachment.SETRANGE("Document Line", 0);
+                        IF grAttachment.FIND('-') THEN;
+                        CLEAR(gfAttachment);
+                        gfAttachment.SetParam(0, "No.", 0);
+                        gfAttachment.SETTABLEVIEW(grAttachment);
+                        gfAttachment.RUNMODAL;
+                        //>>++NCC BF 4.0.0
+                    end;
+
+
+                }
+
+                action(Comments)
+                {
+                    RunObject = page "Purch. Comment Sheet";
+                    Caption = 'Comments';
+                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.),Document Line No.=CONST(0);
+
+                }   
+
+
+            }
+            group(Print)
+            {
+                action("Export Payments")
+                {
+                    Visible = No;
+                    RunObject = report "Export Payments";
+                                    Caption = 'Export Payments';
+
+                }   
+
+                action("Сопроводительный лист")
+                {
+                    Caption = 'Сопроводительный лист';
+                    trigger OnAction()
+                    var 
+                        CoverSheet: report "Cover Sheet";
+                    begin
+                        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
+                        IF StatusAppAct >= StatusAppAct::Signing THEN
+                        BEGIN
+                          CLEAR(CoverSheet);
+                          CoverSheet.SetParameters("Document Type", "No.", "Act Type");
+                          CoverSheet.RUNMODAL();
+                        END;
+                    end;
+
+
+                }   
+
+
+            }
+            group("Command Buttons")
+            {
+                action(Утвердить)
+                {
+                    Name = ApproveButton;
+                    Caption = 'Утвердить';
+                    trigger OnAction()
+                    begin
+                        //SWC380 AKA 200115
+                        // SWC1023 DD 28.03.17 >>
+                        CheckEmptyLines();
+                        // SWC1023 DD 28.03.17 <<
+                        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
+                        
+                        IF StatusAppAct = StatusAppAct::Approve THEN
+                        BEGIN
+                          ApprovalEntry.SETRANGE("Table ID",38);
+                          ApprovalEntry.SETRANGE("Document Type",ApprovalEntry."Document Type"::Order);
+                          ApprovalEntry.SETRANGE("Document No.","No.");
+                          ApprovalEntry.SETRANGE("Approver ID",USERID);
+                          //ApprovalEntry.SETRANGE("Approver ID", 'FIRUSKPT');
+                          ApprovalEntry.SETRANGE(Status,ApprovalEntry.Status::Open);
+                        
+                          IF ApprovalEntry.FIND('-') THEN
+                          BEGIN
+                            ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
+                            IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
+                              IF PurchaseHeader.GET(ApprovalEntry."Document Type",ApprovalEntry."Document No.") THEN BEGIN
+                                ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
+                                IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
+                                BEGIN                                                                     //SWC380 AKA 190115
+                                  PurchaseHeader."Process User":=gcERPC.GetCurrentAppr(PurchaseHeader);
+                                  PurchaseHeader."Date Status App":=TODAY;
+                                  PurchaseHeader.MODIFY;
+                                END;                                                                      //SWC380 AKA 190115
+                              END;
+                            END;
+                          END
+                          // SWC1013 DD 27.03.17 >>
+                          ELSE
+                            ERROR('Утверждающий %1 не указан в таблице утверждения!',USERID);
+                          // SWC1013 DD 27.03.17 <<
+                        END
+                        ELSE
+                        BEGIN
+                          //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC630 AKA 150915
+                          IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC630 AKA 150915
+                            gcERPC.ChangeActStatus(Rec);
+                          //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC630 AKA 150915
+                          IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC630 AKA 150915
+                            gcERPC.ChangeKC2Status(Rec);
+                          // SWC1023 DD 28.03.17 >>
+                          //CurrForm.CLOSE;
+                          // SWC1023 DD 28.03.17 <<
+                        END;
+                    end;
+
+
+                }   
+
+                action(Отклонить)
+                {
+                    Name = DelayButton;
+                    Caption = 'Отклонить';
+                    trigger OnAction()
+                    begin
+                        //SWC380 AKA 200115
+                        //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC631 AKA 220915
+                        IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC631 AKA 220915
+                          gcERPC.ChangeActStatusDown(Rec);
+                        //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC631 AKA 220915
+                        IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC631 AKA 220915
+                          gcERPC.ChangeKC2StatusDown(Rec);
+                    end;
+
+
+                }   
+
+
+            }
+            group(F&unctions)
+            {
+                action("Архивировать проблемный документ")
+                {
+                    Caption = 'Архивировать проблемный документ';
+                    trigger OnAction()
+                    var 
+                        ReasonTXT: text[80];
+                        lrPCL: record "Purch. Comment Line";
+                        lvLastLine: integer;
+                        Txt: text[1024];
+                        PH: record "Purchase Header";
+                    begin
+                        IF NOT CONFIRM(Text50001, TRUE) THEN
+                          EXIT;
+                        
+                        CurrPage.SETSELECTIONFILTER(PH);
+                        WITH PH DO
+                        IF FINDSET THEN
+                        REPEAT
+                        //SWC380 AKA 160115
+                        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
+                        // SWC990 DD 15.02.17 >>
+                        //IF (StatusAppAct = StatusAppAct::Сontroller) OR (StatusAppAct = StatusAppAct::Accountant) THEN BEGIN
+                        IF StatusAppAct IN [StatusAppAct::Сontroller,StatusAppAct::Approve,StatusAppAct::Signing,StatusAppAct::Accountant] THEN BEGIN
+                        // SWC990 DD 15.02.17 <<
+                        
+                          //DeleteRelatedInvoiceDoc(PH);
+                          PH.DeleteRelatedInvoiceDoc();
+                          gcERPC.DeleteBCPreBooking(PH); //Удаление бюджета
+                          "Problem Document" := TRUE;
+                          "Problem Type" := "Problem Type"::"Act error";
+                          MODIFY();
+                        END ELSE
+                        // SWC990 DD 15.02.17 >>
+                        //  ERROR('Отправить документ в архив можно на стадии Контролер или Бухгалтерия!');
+                          ERROR('Отправить документ в архив можно на стадии Контролер, Утверждение, Подписание или Бухгалтерия!');
+                        // SWC990 DD 15.02.17 <<
+                        UNTIL NEXT = 0;
+                    end;
+
+
+                }   
+
+
+            }
+        }
+    }
+
+
+    trigger OnActivateForm()
+    begin
+        CurrPage.UPDATE;
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
+        InvoiceNo := PurchHeaderAdd.GetInvoiceNo("Document Type", "No."); //SWC004 AKA 050914
+        ReceiveAcc := PurchHeaderAdd.GetReceiveAccount("Document Type", "No."); //SWC380 AKA 260215
+        
+        //NC 22512 > DP
+        LocationDocument:= PurchHeaderAdd.GetLocationDocument("Document Type", "No.");
+        //NC 22512 < DP
+    end;
+
+    trigger OnHyperlink()
+    begin
+        MESSAGE(FORMAT(URL));
+    end;
+
+    trigger OnOpenPage()
+    begin
+        grUserSetup.GET(USERID);
+        // SWC968 DD 19.12.16 >>
+        IF grUserSetup."Show All Acts KC-2" AND (Filter1 = 0) THEN
+          Filter1 := 1;
+        // SWC968 DD 19.12.16 <<
+        
+        FILTERGROUP:=0;
+        //SETRANGE("IW Documents",TRUE); //SWC318 AKA 281014;
+        /*IF grUserSetup."Status App"<>grUserSetup."Status App"::Reception THEN;
+        BEGIN;
+          //SETFILTER("Status App",'<=%1|%2',grUserSetup."Status App",grUserSetup."Status App"::Request);
+          SETFILTER("Payment Doc Type",'<>%1',"Payment Doc Type"::invoice);
+        END;
+        ELSE;
+        BEGIN;
+          SETFILTER("Payment Doc Type",'<>%1',"Payment Doc Type"::"Payment Request");
+        END;*/;
+        //SETRANGE("Process User",USERID);
+        FILTERGROUP:=2;
+        
+        //--;
+        SetSortType;
+        SetRecFilters;
+        
+        IF grUserSetup."Status App Act" = grUserSetup."Status App Act"::Checker THEN;
+         CurrPage.cFilter1.ENABLED:=FALSE;
+        
+        IF grUserSetup."Administrator IW" THEN;
+          CurrPage.cFilter1.ENABLED:=TRUE;
+        //--;
+        
+        //SWC380 AKA 200115 >>;
+        US.GET(USERID);
+        CurrPage.ApproveButton.VISIBLE := FALSE;
+        CurrPage.DelayButton.VISIBLE := FALSE;
+        // SWC1075 DD 28.07.17 >>;
+        IF NOT MyApproved THEN;
+        // SWC1075 DD 28.07.17 <<;
+        IF US."Status App Act" = US."Status App Act"::Approve THEN;
+        BEGIN;
+          CurrPage.ApproveButton.VISIBLE := TRUE;
+          CurrPage.DelayButton.VISIBLE := TRUE;
+        END;
+        //SWC380 AKA 200115 <<;
+        
+        FieldOnFormat; //navnav;
+        
+        FieldOnFormat; //navnav;
+        
+        BuyfromVendorNameOnFormat; //navnav;
+        
+        FieldOnFormat; //navnav;
+        
+        FieldOnFormat; //navnav;
+        
+        c1OnFormat; //navnav;
+        
+        FieldOnFormat; //navnav;
+        
+        FieldOnFormat; //navnav;
+        
+        FieldOnFormat; //navnav;
+    end;
+
+    var 
+        //DimMgt: codeunit DimensionManagement;
+        grPurchHeader: record "Purchase Header";
+        //gcduERPCF: codeunit "ERPC Funtions";
+        grUserSetup: record "User Setup";
+        pCheckDocDate: boolean;
+        active: boolean;
+        grUS: record "User Setup";
+        grUS1: record "User Setup";
+        ShowOther: boolean;
+        grPH: record "Purchase Header";
+        grAttachment: record "Attachment WF";
+        //gfAttachment: page "Attacments List";
+        grPurchPay: record "Purchases & Payables Setup";
+        //grPaymentRequest: report "Payment Request";
+        SortType: option 'docno,postdate,vendor,userproc';
+        Filter1: option 'mydoc,all,approved';
+        Filter2: option 'all,inproc,ready,pay,problem';
+        r: text[30];
+        i: integer;
+        //gcERPC: codeunit "ERPC Funtions";
+        PurchHeaderAdd: record "Purchase Header Additional";
+        StatusAppAct: option ' ,сontroller,estimator,checker,approve,signing,accountant';
+        FilterActType: option 'all,act,kc-2,act (production),kc-2 (production)';
+        Window: dialog;
+        ActTypeOption: option 'акт,кс-2,акт (production),кс-2 (production)';
+        InvoiceNo: code[20];
+        US: record "User Setup";
+        ApprovalEntry: record "Approval Entry";
+        //ApprovalMgt: codeunit "Approvals Management";
+        PurchaseHeader: record "Purchase Header";
+        ApproverCheck: boolean;
+        ReceiveAcc: boolean;
+        MyApproved: boolean;
+        Text50000: Label '"Данные по бюджетам будут удалены. Добавить документ в архив проблемных документов? "';
+        Text50001: Label '"Добавить документ в архив проблемных документов? "';
+        LocationDocument: boolean;
+        Text50002: Label 'Отсутствует настройка Кладовщик склад для текущего пользователя. Обратитесь к администратору.';
+        Text50003: Label 'Складской документ,Акт/КС-2 на услугу';
+        Text50004: Label 'Выберите тип создаваемого документа';
+        Text50005: Label 'Требуется выбрать тип документа';
+ 
+
+    procedure SetSortType()
+    begin
+        //--
+        CASE SortType OF
+         SortType::DocNo:
+          // SWC1075 DD 28.07.17 >>
+          //SETCURRENTKEY("No.");
+          SETCURRENTKEY("Document Type","No.");
+          // SWC1075 DD 28.07.17 <<
+         SortType::PostDate:
+          SETCURRENTKEY("Posting Date");
+         SortType::Vendor:
+          SETCURRENTKEY("Buy-from Vendor Name");
+         SortType::UserProc:
+          SETCURRENTKEY("Process User");
+        END;
+    end;
+     
+    procedure SetRecFilters()
+    var 
+        AE: record "Approval Entry";
+        PH: record "Purchase Header";
+    begin
+        //--
+        FILTERGROUP(0);
+        
+        SETRANGE("Process User");
+        SETRANGE("Status App");
+        SETRANGE("Problem Document");
+        SETRANGE(Paid);
+        // SWC1075 DD 28.07.17 >>
+        MARKEDONLY(FALSE);
+        CLEARMARKS;
+        // SWC1075 DD 28.07.17 <<
+        
+        CASE Filter2 OF
+         Filter2::InProc:
+          SETFILTER("Status App",'<>%1',"Status App"::Payment);
+         Filter2::Ready:
+         BEGIN
+          SETRANGE("Status App","Status App"::Payment);
+          SETRANGE(Paid,FALSE);
+         END;
+         Filter2::Pay:
+          SETRANGE(Paid,TRUE);
+         Filter2::Problem:
+          SETRANGE("Problem Document",TRUE);
+        END;
+        
+        CASE Filter1 OF
+         Filter1::MyDoc:
+          SETRANGE("Process User",USERID);
+         // SWC1075 DD 28.07.17 >>
+         Filter1::Approved: BEGIN
+           PH := Rec;
+           AE.SETCURRENTKEY("Approver ID",Status);
+           AE.SETRANGE("Approver ID",USERID);
+           AE.SETRANGE(Status,AE.Status::Approved);
+           IF AE.FINDSET THEN
+           REPEAT
+             IF GET(AE."Document Type",AE."Document No.") THEN
+               MARK(TRUE);
+           UNTIL AE.NEXT = 0;
+           Rec := PH;
+           MARKEDONLY(TRUE);
+         END;
+         // SWC1075 DD 28.07.17 <<
+        END;
+        
+        CASE FilterActType OF
+         FilterActType::Act:
+          SETRANGE("Act Type","Act Type"::Act);
+         FilterActType::"KC-2":
+          SETRANGE("Act Type","Act Type"::"KC-2");
+         FilterActType::All:                                        //SWC004 AKA 080714
+          //SWC672 AKA 061015 >>
+          //SETRANGE("Act Type","Act Type"::Act,"Act Type"::"KC-2");  //SWC004 AKA 080714
+          SETFILTER("Act Type",'%1|%2|%3|%4',"Act Type"::Act,"Act Type"::"KC-2","Act Type"::"Act (Production)",
+            "Act Type"::"KC-2 (Production)");
+          //SWC672 AKA 061015 <<
+          //SWC630 AKA 150915 >>
+          FilterActType::"Act (Production)":
+           SETRANGE("Act Type","Act Type"::"Act (Production)");
+          FilterActType::"KC-2 (Production)":
+           SETRANGE("Act Type","Act Type"::"KC-2 (Production)");
+          //SWC630 AKA 150915 <<
+        END;
+        
+        FILTERGROUP(2);
+    end;
+     
+    procedure UpdateForm()
+    begin
+        CurrPage.UPDATE;
+    end;
+     
+    procedure CheckEmptyLines()
+    var 
+        PurchLineLoc: record "Purchase Line";
+    begin
+        //SWC380 AKA 290115
+        PurchLineLoc.SETRANGE("Document Type", "Document Type");
+        PurchLineLoc.SETRANGE("Document No.", "No.");
+        IF PurchLineLoc.FINDSET THEN
+        REPEAT
+          PurchLineLoc.TESTFIELD(Type);
+          PurchLineLoc.TESTFIELD("No.");
+          PurchLineLoc.TESTFIELD("Full Description");
+          PurchLineLoc.TESTFIELD(Quantity);
+        UNTIL PurchLineLoc.NEXT = 0;
+    end;
+     
+    procedure SetFilter1(_Filter1: integer)
+    begin
+        // SWC1075 DD 28.07.17 >>
+        Filter1 := _Filter1;
+        MyApproved := TRUE;
+        // SWC1075 DD 28.07.17 <<
+    end;
+     
+    procedure DeleteRelatedInvoiceDoc(PH: record "Purchase Header")
+    var 
+        PurchHeader: record "Purchase Header";
+        PurchCommentLine: record "Purch. Comment Line";
+        DimMgt: codeunit DimensionManagement;
+        DocSignMgt: codeunit "Doc. Signature Management";
+        PurchLine: record "Purchase Line";
+    begin
+        PurchHeaderAdd.GET("Document Type", PH."No.");
+        IF PurchHeaderAdd."Invoice No." <> '' THEN
+        BEGIN
+          IF PurchHeader.GET("Document Type"::Invoice, PurchHeaderAdd."Invoice No.") THEN
+          BEGIN
+            DimMgt.DeleteDocDim(DATABASE::"Purchase Header", PurchHeader."Document Type", PurchHeader."No.", 0);
+            DocSignMgt.DeleteDocSign(DATABASE::"Purchase Header", PurchHeader."Document Type", PurchHeader."No.");
+            PurchCommentLine.SETRANGE("Document Type", PurchHeader."Document Type");
+            PurchCommentLine.SETRANGE("No.", PurchHeader."No.");
+            PurchCommentLine.DELETEALL;
+        
+            PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+            PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+            IF PurchLine.FINDSET THEN
+            REPEAT
+              DimMgt.DeleteDocDim(DATABASE::"Purchase Line", PurchLine."Document Type",  PurchLine."Document No.",  PurchLine."Line No.");
+              PurchCommentLine.SETRANGE("Document Type", PurchLine."Document Type");
+              PurchCommentLine.SETRANGE("No.", PurchLine."Document No.");
+              PurchCommentLine.SETRANGE("Document Line No.", PurchLine."Line No.");
+              IF NOT PurchCommentLine.ISEMPTY THEN
+                PurchCommentLine.DELETEALL;
+              PurchLine.DELETE();
+            UNTIL PurchLine.NEXT = 0;
+            PurchHeader.DELETE();
+        
+            PurchHeaderAdd."Invoice No." := '';
+            PurchHeaderAdd.MODIFY();
+          END;
+        END;
+    end;
+     
+    procedure FuncNewRec()
+    var 
+        StorekeeperLocation: record "Storekeeper Location";
+        LocationDocument: boolean;
+        Text50000: Label 'У вас нет прав на создание документа. Данные права имеет контролер.';
+        Location: record Location;
+        LocationCode: text[30];
+        Selected: integer;
+    begin
+        grUS.GET(USERID);
+        //IF grUS."Status App Act" = grUS."Status App Act"::Сontroller THEN
+        IF (grUS."Status App Act" = grUS."Status App Act"::Сontroller) OR   //SWC380 AKA 200115
+           (grUS."Status App Act" = grUS."Status App Act"::Estimator) THEN  //SWC380 AKA 200115
+          BEGIN
+            grPurchHeader.RESET;
+            grPurchHeader.INIT;
+            grPurchHeader."No.":='';
+            grPurchHeader."Document Type":=grPurchHeader."Document Type"::Order;
+            //grPurchHeader."IW Documents":=TRUE;         //SWC318 AKA 271014
+            //grPurchHeader."Pre-booking Accept" := TRUE; //SWC318 AKA 271014
+            grPurchHeader."Pre-booking Document" := TRUE; //SWC318 AKA 281114
+        
+            //SWC004 AKA 080714 >>
+            IF FilterActType = FilterActType::All THEN
+            BEGIN
+              Window.OPEN('Выбор типа документа' + '######1#\' + 'После выбора нажмите кнопку Enter!', ActTypeOption);
+              Window.INPUT(1, ActTypeOption);
+              Window.CLOSE;
+            END;
+            //SWC380 AKA 210115 >>
+            //SWC630 AKA 150915 >>
+            //IF (ActTypeOption = ActTypeOption::Акт) AND (grUS."Status App Act" = grUS."Status App Act"::Estimator) THEN
+            IF ((ActTypeOption = ActTypeOption::Акт) OR (ActTypeOption = ActTypeOption::"Акт (Production)")) AND
+              (grUS."Status App Act" = grUS."Status App Act"::Estimator) THEN
+            //SWC630 AKA 150915 <<
+              ERROR('Сметчик не может создать документ с типом Аct!');
+            //SWC380 AKA 210115 <<
+            IF (FilterActType = FilterActType::Act)  THEN
+              grPurchHeader."Act Type" := grPurchHeader."Act Type"::Act;
+            IF (FilterActType = FilterActType::"KC-2") THEN
+              grPurchHeader."Act Type" := grPurchHeader."Act Type"::"KC-2";
+            //SWC630 AKA 150915 >>
+            IF (FilterActType = FilterActType::"Act (Production)")  THEN
+              grPurchHeader."Act Type" := grPurchHeader."Act Type"::"Act (Production)";
+            IF (FilterActType = FilterActType::"KC-2 (Production)") THEN
+              grPurchHeader."Act Type" := grPurchHeader."Act Type"::"KC-2 (Production)";
+            //SWC630 AKA 150915 <<
+            IF (FilterActType = FilterActType::All)  THEN
+            BEGIN
+              IF ActTypeOption = ActTypeOption::Акт THEN
+                grPurchHeader."Act Type" := grPurchHeader."Act Type"::Act;
+              IF ActTypeOption = ActTypeOption::"КС-2" THEN
+                grPurchHeader."Act Type" := grPurchHeader."Act Type"::"KC-2";
+              //SWC630 AKA 150915 >>
+              IF ActTypeOption = ActTypeOption::"Акт (Production)" THEN
+                grPurchHeader."Act Type" := grPurchHeader."Act Type"::"Act (Production)";
+              IF ActTypeOption = ActTypeOption::"КС-2 (Production)" THEN
+                grPurchHeader."Act Type" := grPurchHeader."Act Type"::"KC-2 (Production)";
+              //SWC630 AKA 150915 <<
+            END;
+            //SWC004 AKA 080714 <<
+            grPurchHeader.INSERT(TRUE);
+            grPurchHeader.VALIDATE("Buy-from Vendor No.",gcduERPCF.GetBaseVendor);
+        
+            //NC 39823 > DP
+            IF gcERPC.IsStorekeeper THEN
+            BEGIN
+              Selected:=DIALOG.STRMENU(Text50003, 1, Text50004);
+              CASE Selected OF
+               1:BEGIN
+                //NC 22512 > DP
+                PurchHeaderAdd.AddStorekeeper(grPurchHeader."Document Type",grPurchHeader."No.");
+                IF PurchHeaderAdd.GetLocationDocument(grPurchHeader."Document Type",grPurchHeader."No.") THEN BEGIN
+                  LocationCode:=StorekeeperLocation.GetDefaultLocation('');
+                  IF LocationCode='' THEN ERROR(Text50002);
+                  Location.GET(LocationCode);
+                  Location.TESTFIELD("Bin Mandatory",FALSE);
+                  grPurchHeader.VALIDATE("Location Code",StorekeeperLocation.GetDefaultLocation(''));
+                  LocationDocument:=TRUE
+                END;
+        
+                //NC 22512 < DP
+               END;
+               2:;
+               ELSE ERROR(Text50005);
+              END;
+            END;
+            //NC 39823 < DP
+        
+            PurchHeaderAdd.AddStatusAppAct(grPurchHeader."Document Type", grPurchHeader."No.", grUS."Status App Act"::Сontroller);
+            grPurchHeader."Process User":=USERID;
+            grPurchHeader."Payment Doc Type":=grPurchHeader."Payment Doc Type"::"Payment Request";
+            grPurchHeader."Date Status App":=TODAY;
+            grPurchHeader.Controller := grUS."User ID";
+            //SWC630 AKA 150915 >>
+            //IF grPurchHeader."Act Type" = grPurchHeader."Act Type"::"KC-2" THEN
+            IF (grPurchHeader."Act Type" = grPurchHeader."Act Type"::"KC-2") OR
+              (grPurchHeader."Act Type" = grPurchHeader."Act Type"::"KC-2 (Production)") THEN
+            //SWC630 AKA 150915 <<
+            BEGIN
+              grUS1.SETFILTER("Status App Act", '%1', grUS1."Status App Act"::Estimator);
+              grUS1.SETRANGE("Estimator by Default", TRUE);
+              IF grUS1.FINDFIRST THEN
+                PurchHeaderAdd.AddEstimator(grPurchHeader."Document Type", grPurchHeader."No.", grUS1."User ID");
+            END;
+        
+            grPurchHeader.MODIFY(TRUE);
+        
+            COMMIT;
+            PAGE.RUNMODAL(PAGE::"Purchase Order Act",grPurchHeader);
+          END ELSE
+            MESSAGE(Text50000);
+    end;
+     
+    local procedure FieldOnFormat()
+    begin
+        IF pCheckDocDate THEN CurrPage."Process User".UPDATEFORECOLOR(255);
+    end;
+     
+    local procedure BuyfromVendorNameOnFormat()
+    begin
+        IF pCheckDocDate THEN CurrPage."Buy-from Vendor Name".UPDATEFORECOLOR(255);
+    end;
+     
+    local procedure c1OnFormat()
+    begin
+                IF "Invoice Amount Incl. VAT"<>gcERPC.GetDocumentsAmount3(Rec) THEN CurrPage.c1.UPDATEFORECOLOR:=255;
+    end;
+     
+    local procedure FieldOnAfterValidate()
+    begin
+        SetRecFilters;
+        CurrPage.UPDATE;
+    end;
+     
+    local procedure cFilter1OnAfterValidate()
+    begin
+        SetRecFilters;
+        CurrPage.UPDATE;
+    end;
+     
+
+}
