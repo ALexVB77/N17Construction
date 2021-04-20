@@ -367,4 +367,13 @@ table 70076 "Projects Budget Entry"
         gvCreateRepeat := lvCreateRepeat;
     end;
 
+    procedure GetInvoiceNo() ReturnValue: Code[20]
+    var
+        PurchaseLine: Record "Purchase Line";
+        PurchaseHeader: Record "Purchase Header";
+    begin
+        if Close then begin
+            //PurchaseLine.SetCurrentKey()
+        end;
+    end;
 }
