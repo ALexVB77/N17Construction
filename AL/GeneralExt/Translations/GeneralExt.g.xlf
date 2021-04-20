@@ -133,6 +133,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Agreement No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -157,6 +162,21 @@
           <source>Fact</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contragent No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Contragent No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1897831671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contragent Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Contragent Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1897831671 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor,Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Contragent Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Item</source>
@@ -272,6 +292,11 @@
           <source>Without VAT (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Without VAT (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 584900853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Work Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4285604025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Budget Entry Link</source>

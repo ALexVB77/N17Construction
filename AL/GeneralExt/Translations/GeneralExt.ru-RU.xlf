@@ -2535,6 +2535,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Line (Ext) - Field Cost Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement No.</source>
+          <target>Договор Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contragent No.</source>
+          <target>Контрагент Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Contragent No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1897831671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contragent Type</source>
+          <target>Тип</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Contragent Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1897831671 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor,Customer</source>
+          <target>Поставщик,Клиент</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Contragent Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 584900853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work Version</source>
+          <target>Рабочая версия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Work Version - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
