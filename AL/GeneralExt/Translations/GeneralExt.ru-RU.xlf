@@ -2607,6 +2607,24 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 (Production) - Property Caption</note>
         </trans-unit>        
+        <trans-unit id="Report 3333280010 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>График платежей</source>
+          <target>График платежей</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 4139459292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Paid Date Fact</source>
+          <target>Дата оплаты (Факт)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Paid Date Fact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 2296741137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Forecast Entry</source>
+          <target>Строка Cash Flow</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Forecast Entry - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>

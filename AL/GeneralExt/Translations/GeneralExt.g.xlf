@@ -1318,6 +1318,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text001</note>
         </trans-unit>
+        <trans-unit id="Report 3333280010 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>График платежей</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text002</note>
+        </trans-unit>
         <trans-unit id="Report 4290211394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Comparative Sheet INV-18</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2017,6 +2022,15 @@
           <source>Act Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Act Type - Property Caption</note>
+        <trans-unit id="TableExtension 279653624 - Field 4139459292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Paid Date Fact</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Paid Date Fact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 2296741137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Forecast Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Forecast Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3907382913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Vendor Agreement Template Code</source>
