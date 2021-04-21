@@ -19,7 +19,6 @@ report 50082 ExportSubform
 
                 PurchasesPayablesSetup.Get('');
                 FileName := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Vendor Agreement Template Code");
-                ExcelBuffer.OpenBook(FileName, Text001);
 
                 RowNo := 5;
                 ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, Text001, true, false, false);
@@ -34,8 +33,8 @@ report 50082 ExportSubform
                 Sleep(1);
                 RowNo += 1;
                 CurRow := CurStartRow + RowNo;
-                //ExcelBuffer.InsertString(CurRow);
-                ExcelBuffer.NewRow();
+                //ExcelBuffer.InsertString(CurRow); //?
+
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 1, Format("Building Turn All"), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 2, Format("Project Code"), false, false, false);
                 ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 3, Format("Cost Code"), false, false, false);
@@ -68,8 +67,58 @@ report 50082 ExportSubform
 
             trigger OnPostDataItem()
             begin
-                //ExcelBuffer.DeleteString(RowNo-1);
+                ExcelBuffer.UpdateBook(FileName, Text001);
+                ExcelBuffer.WriteSheet('', CompanyName, UserId);
+                //ExcelBuffer.DeleteString(RowNo-1); //?
+            end;
+        }
+
+        dataitem(ProjectsBudgetEntry; "Projects Budget Entry")
+        {
+            trigger OnPreDataItem()
+            begin
+                RowNo := 5;
+                SetRange("Agreement No.", CopyStr(DocumentNo, 1, 20));
+
+                ExcelBuffer.CloseBook();
                 ExcelBuffer.DeleteAll();
+
+                ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, Text002, true, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, 2, 3, VendorNo, true, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, 3, 3, DocumentNo, true, false, false);
+            end;
+
+            trigger OnAfterGetRecord()
+            var
+                CurRow: Integer;
+            begin
+                RowNo += 1;
+                CurRow := CurStartRow + RowNo;
+                //ExcelBuffer.InsertString(CurRow);         //?
+
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 1, Format("Entry No."), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 2, Format(Date), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 3, Format("Date Plan"), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 4, Format("Building Turn"), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 5, Format("Cost Code"), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 6, Format("Transaction Type"), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 7, Format("Without VAT", 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 8, Format("Without VAT (LCY)", 0, '<Precision,2:2><Standard Format,0>'), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 9, Format(Curency), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 10, Format(Description), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 11, Format("Description 2"), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 12, Format(GetInvoiceNo), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 13, Format(GetInvoiceDate), false, false, false);
+                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 14, Format("Payment Doc. No."), false, false, false);
+            end;
+
+            trigger OnPostDataItem()
+            begin
+                //ExcelBuffer.DeleteString(RowNo-1);  //?
+                ExcelBuffer.UpdateBook(FileName, Text002);
+                ExcelBuffer.WriteSheet('', CompanyName, UserId);
+                ExcelBuffer.CloseBook();
+                ExcelBuffer.DownloadAndOpenExcel();
             end;
         }
     }
@@ -84,6 +133,7 @@ report 50082 ExportSubform
         RowNo: Integer;
         VendorNo: Code[100];
         Text001: Label 'Разбивка по литерам';
+        Text002: Label 'График платежей';
         VendAgrDetails: Record "Vendor Agreement Details";
 
     procedure SetDocNo(DocNo: Code[10]; VendNo: Code[10])
