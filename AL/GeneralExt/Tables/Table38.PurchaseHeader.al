@@ -7,6 +7,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Paid Date Fact';
             Description = '50086';
         }
+        field(70020; "Problem Type"; enum "Purchase Problem Type")
+        {
+            Caption = 'Problem Type';
+            Description = 'NC 51373 AB';
+        }
         field(70045; "Act Type"; enum "Purchase Act Type")
         {
             Caption = 'Act Type';
