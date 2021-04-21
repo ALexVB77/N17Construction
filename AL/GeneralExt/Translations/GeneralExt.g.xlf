@@ -1988,6 +1988,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment (Ext) - Field PK Key 2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2071349393 - Field 745542804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 351637841">
+          <source>Sheet Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Excel Template (Ext) - Field Sheet Name - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 520650564 - Field 2399978131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3400326196">
           <source>FA Turnover Template Code</source>
           <note from="Developer" annotates="general" priority="2"></note>

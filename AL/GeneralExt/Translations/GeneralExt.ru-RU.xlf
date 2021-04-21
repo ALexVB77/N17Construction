@@ -2669,7 +2669,13 @@
           <source>REstimator</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue REstimator - Property Caption</note>
-        </trans-unit>        
+        </trans-unit>
+        <trans-unit id="TableExtension 2071349393 - Field 745542804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 351637841">
+          <source>Sheet Name</source>
+          <target>Имя листа</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Excel Template (Ext) - Field Sheet Name - Property Caption</note>
+        </trans-unit>       
       </group>
     </body>
   </file>

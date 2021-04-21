@@ -1,5 +1,32 @@
 pageextension 94919 "Excel Templates (Ext)" extends "Excel Templates"
 {
+    layout
+    {
+        addafter("File Name")
+        {
+            field("Sheet Name"; Rec."Sheet Name")
+            {
+                ApplicationArea = All;
+
+                trigger OnAssistEdit()
+                var
+                    ExcelBuffer: Record "Excel Buffer Mod";
+                    TempBlob: Codeunit "Temp Blob";
+                    FileMgt: Codeunit "File Management";
+                    FileName: Text[250];
+                begin
+                    if Rec.BLOB.HasValue then begin
+                        TempBlob.FromRecord(Rec, Rec.FieldNo(BLOB));
+                        FileName := FileMgt.ServerTempFileName('xlsx');
+                        FileMgt.BLOBExportToServerFile(TempBlob, FileName);
+                        if Editable = true then
+                            Rec."Sheet Name" := ExcelBuffer.SelectSheetsName(FileName);
+                    end;
+                end;
+            }
+        }
+    }
+
     actions
     {
         addafter("Import Template")
@@ -41,6 +68,7 @@ pageextension 94919 "Excel Templates (Ext)" extends "Excel Templates"
             }
         }
     }
+
     var
         Text001: Label 'Do you want to replace the existing definition for template %1?';
         Text002: Label 'Import';
