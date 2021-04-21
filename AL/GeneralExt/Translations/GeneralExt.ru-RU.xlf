@@ -2565,6 +2565,48 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Work Version - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 445905442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Act Type</source>
+          <target>Акт тип</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Act Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 115980535 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 115980535 - EnumValue 745310178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Act</source>
+          <target>Акт</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Act - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 115980535 - EnumValue 3192528168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Act (Production)</source>
+          <target>Акт (Production)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Act (Production) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 115980535 - EnumValue 2473906886 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Advance</source>
+          <target>Авансовый отчет</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Advance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 115980535 - EnumValue 117962025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KC-2</source>
+          <target>КС-2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 115980535 - EnumValue 3722448631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KC-2 (Production)</source>
+          <target>КС-2 (Production)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 (Production) - Property Caption</note>
+        </trans-unit>        
       </group>
     </body>
   </file>
