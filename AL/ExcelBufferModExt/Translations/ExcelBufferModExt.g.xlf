@@ -238,11 +238,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Excel Buffer Mod - Field xlRowID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2442308234 - Field 745542804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 351637841">
-          <source>Sheet Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Excel Template () - Field Sheet Name - Property Caption</note>
-        </trans-unit>
       </group>
     </body>
   </file>
