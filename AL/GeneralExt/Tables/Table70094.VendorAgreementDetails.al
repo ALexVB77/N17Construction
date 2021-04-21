@@ -450,4 +450,276 @@ table 70094 "Vendor Agreement Details"
         lrProjectsBudgetEntry.CalcSums("Without VAT");
         ReturnValue += lrProjectsBudgetEntry."Without VAT";
     end;
+
+    procedure GetPlaneAmount(Lookup: Boolean) Amt: Decimal
+    var
+        PL: Record "Purchase Line";
+        PH: Record "Purchase Header";
+        // PHA: Record "70141";
+        PLt: Record "Purchase Line" temporary;
+        // gcduERPC: Codeunit "70000";
+        Buff: Record "Inventory Buffer" temporary;
+    begin
+        // SWC1000 DD 12.02.17 >>
+        // PL.SETCURRENTKEY("Buy-from Vendor No.","Agreement No.");
+        // PL.SETRANGE("Buy-from Vendor No.","Vendor No.");
+        // PL.SETRANGE("Agreement No.","Agreement No.");
+        // PL.SETRANGE("Shortcut Dimension 1 Code","Global Dimension 1 Code");
+        // PL.SETRANGE("Shortcut Dimension 2 Code","Global Dimension 2 Code");
+        // PL.SETRANGE("Cost Type","Cost Type");
+        // //PL.SETFILTER("Status App",'%1|%2|%3',PL."Status App"::Checker,PL."Status App"::Approve,PL."Status App"::Payment);
+        // PL.SETRANGE(Paid,FALSE);
+        // PL.SETRANGE(Pay,FALSE);
+        // PL.SETRANGE(IW,FALSE);
+        // IF PL.FINDSET THEN
+        // REPEAT
+        //   IF PHA.GetStatusAppAct(PL."Document Type", PL."Document No.") IN [PHA."Status App Act"::Checker,
+        //   //PHA."Status App Act"::Accountant,
+        //     PHA."Status App Act"::Approve,PHA."Status App Act"::Signing] THEN
+        //   IF PH.GET(PL."Document Type",PL."Document No.") AND NOT PH."Problem Document" THEN BEGIN
+        //     IF Lookup THEN BEGIN
+        //       PLt := PL;
+        //       PLt.INSERT;
+        //     END ELSE
+        //       //IF PL."Amount Including VAT" = 0 THEN
+        //       //  Amt += PL."Outstanding Amount (LCY)"+PL."VAT Difference"
+        //       //ELSE
+        //       //  Amt += PL."Amount Including VAT"+PL."VAT Difference";
+
+        //       //IF NOT Buff.GET(PL."Shortcut Dimension 1 Code",PL."Shortcut Dimension 2 Code") THEN BEGIN
+        //       //  Buff."Item No." := PL."Shortcut Dimension 1 Code";
+        //       //  Buff."Variant Code" := PL."Shortcut Dimension 2 Code";
+        //       //  Buff.INSERT;
+        //         Amt+=gcduERPC.GetLinesDocumentsAmount(PL);
+        //       //END;
+        //   END;
+        // UNTIL PL.NEXT = 0;
+
+        // IF Lookup THEN
+        //   Page.RUNMODAL(0,PLt);
+        // // SWC1000 DD 12.02.17 <<
+    end;
+
+
+    procedure GetRemainAmt(): Decimal
+    var
+        VAD: Record "Vendor Agreement Details";
+    begin
+        // SWC1000 DD 12.02.17 >>
+        VAD.SETCURRENTKEY("Agreement No.", "Vendor No.", "Global Dimension 1 Code");
+        VAD.SETRANGE("Vendor No.", "Vendor No.");
+        VAD.SETRANGE("Agreement No.", "Agreement No.");
+        VAD.SETRANGE("Global Dimension 1 Code", "Global Dimension 1 Code");
+        VAD.SETRANGE("Global Dimension 2 Code", "Global Dimension 2 Code");
+        VAD.SETRANGE("Cost Type", "Cost Type");
+        IF VAD.ISEMPTY THEN
+            VAD.SETRANGE("Cost Type");
+        VAD.CALCSUMS(AmountLCY);
+        EXIT(VAD.AmountLCY - CalcInvoice(TRUE) - CalcPostedInvoice(TRUE) - GetPlaneAmount(FALSE));
+        // SWC1000 DD 12.02.17 <<
+    end;
+
+
+    procedure CalcPostedInvoice(WithVAT: Boolean) Ret: Decimal
+    var
+        PIH: Record "Purch. Inv. Header";
+        PIL: Record "Purch. Inv. Line";
+        PIHC: Record "Purch. Cr. Memo Hdr.";
+        PILC: Record "Purch. Cr. Memo Line";
+    begin
+        PIH.SETRANGE("Pay-to Vendor No.", "Vendor No.");
+        PIH.SETRANGE("Agreement No.", "Agreement No.");
+        IF PIH.FINDSET THEN BEGIN
+            REPEAT
+                PIL.SETCURRENTKEY("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+                PIL.SETRANGE("Document No.", PIH."No.");
+                PIL.SETRANGE("Shortcut Dimension 1 Code", "Global Dimension 1 Code");
+                PIL.SETRANGE("Shortcut Dimension 2 Code", "Global Dimension 2 Code");
+                PIL.SETRANGE("Cost Type", "Cost Type");
+                // SWC1000 DD 21.02.17 >>
+                IF WithVAT THEN BEGIN
+                    PIL.CALCSUMS("Amount Including VAT");
+                    Ret += PIL."Amount Including VAT";
+                END ELSE BEGIN
+                    // SWC1000 DD 21.02.17 <<
+                    PIL.CALCSUMS(Amount);
+                    Ret += PIL.Amount;
+                END;
+            UNTIL PIH.NEXT = 0;
+        END;
+
+        PIHC.SETRANGE("Pay-to Vendor No.", "Vendor No.");
+        PIHC.SETRANGE("Agreement No.", "Agreement No.");
+        IF PIHC.FINDSET THEN BEGIN
+            REPEAT
+                PILC.SETCURRENTKEY("Document No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Cost Type");
+                PILC.SETRANGE("Document No.", PIHC."No.");
+                PILC.SETRANGE("Shortcut Dimension 1 Code", "Global Dimension 1 Code");
+                PILC.SETRANGE("Shortcut Dimension 2 Code", "Global Dimension 2 Code");
+                PILC.SETRANGE("Cost Type", "Cost Type");
+                // SWC1000 DD 21.02.17 >>
+                IF WithVAT THEN BEGIN
+                    PILC.CALCSUMS("Amount Including VAT");
+                    Ret -= PILC."Amount Including VAT";
+                END ELSE BEGIN
+                    // SWC1000 DD 21.02.17 <<
+                    PILC.CALCSUMS(Amount);
+                    Ret -= PILC.Amount;
+                END;
+            UNTIL PIHC.NEXT = 0;
+        END;
+    end;
+
+
+    procedure CalcInvoice(WithVAT: Boolean) Ret: Decimal
+    var
+        PH: Record "Purchase Header";
+        PL: Record "Purchase Line";
+    // gcduERPC: Codeunit "70000";
+    begin
+        // SWC DD 25.05.17 >>
+        // PH.SETRANGE("Document Type",PH."Document Type"::Invoice);
+        // PH.SETRANGE("Pay-to Vendor No.","Vendor No.");
+        // PH.SETRANGE("Agreement No.","Agreement No.");
+        // IF PH.FINDSET THEN
+        // BEGIN
+        //   REPEAT
+        //     PL.SETCURRENTKEY("Document No.","Shortcut Dimension 1 Code","Shortcut Dimension 2 Code","Cost Type");
+        //     PL.SETRANGE("Document No.",PH."No.");
+        //     PL.SETRANGE("Document Type",PH."Document Type");
+        //     PL.SETRANGE("Shortcut Dimension 1 Code","Global Dimension 1 Code");
+        //     PL.SETRANGE("Shortcut Dimension 2 Code","Global Dimension 2 Code");
+        //     PL.SETRANGE("Cost Type","Cost Type");
+        //     IF WithVAT THEN BEGIN
+        //       IF PL.FINDSET THEN
+        //       REPEAT
+        //         Ret+=gcduERPC.GetLinesDocumentsAmount(PL);
+        //       UNTIL PL.NEXT = 0;
+        //     END ELSE BEGIN
+        //       PL.CALCSUMS(Amount);
+        //       Ret+=PL.Amount;
+        //     END;
+        //   UNTIL PH.NEXT=0;
+        // END;
+        // SWC DD 25.05.17 <<
+    end;
+
+
+    procedure ShowPostedInvoice()
+    var
+        PIH: Record "Purch. Inv. Header";
+        PIL: Record "Purch. Inv. Line";
+        PIHC: Record "Purch. Cr. Memo Hdr.";
+        PILC: Record "Purch. Cr. Memo Line";
+    // InvoiceDetail: Record "70132" temporary;
+    begin
+        // PIH.SETRANGE("Pay-to Vendor No.","Vendor No.");
+        // PIH.SETRANGE("Agreement No.","Agreement No.");
+        // IF PIH.FINDSET THEN
+        // BEGIN
+        //   REPEAT
+        //     PIL.SETRANGE("Document No.",PIH."No.");
+        //     PIL.SETRANGE("Shortcut Dimension 1 Code","Global Dimension 1 Code");
+        //     PIL.SETRANGE("Shortcut Dimension 2 Code","Global Dimension 2 Code");
+        //     PIL.SETRANGE("Cost Type","Cost Type");
+        //     IF PIL.FINDSET THEN
+        //     BEGIN
+        //       REPEAT
+        //         InvoiceDetail."Document Type":=0;
+        //         InvoiceDetail."Document No.":=PIL."Document No.";
+        //         InvoiceDetail."Line No.":=PIL."Line No.";
+        //         InvoiceDetail.Description:=PIL.Description;
+        //         InvoiceDetail.Amount:=PIL.Amount;
+        //         // SWC1000 DD 21.02.17 >>
+        //         InvoiceDetail."Amount with VAT" := PIL."Amount Including VAT";
+        //         // SWC1000 DD 21.02.17 <<
+
+        //         //NC 33707 HR beg
+        //         InvoiceDetail."Document Date" := PIH."Document Date";
+        //         //NC 33707 HR end
+        //         InvoiceDetail.INSERT;
+        //       UNTIL PIL.NEXT=0;
+        //     END;
+        //   UNTIL PIH.NEXT=0;
+        // END;
+
+        // PIHC.SETRANGE("Pay-to Vendor No.","Vendor No.");
+        // PIHC.SETRANGE("Agreement No.","Agreement No.");
+        // IF PIHC.FINDSET THEN
+        // BEGIN
+        //   REPEAT
+        //     PILC.SETRANGE("Document No.",PIHC."No.");
+        //     PILC.SETRANGE("Shortcut Dimension 1 Code","Global Dimension 1 Code");
+        //     PILC.SETRANGE("Shortcut Dimension 2 Code","Global Dimension 2 Code");
+        //     PILC.SETRANGE("Cost Type","Cost Type");
+        //     IF PILC.FINDSET THEN
+        //     BEGIN
+        //       REPEAT
+        //         InvoiceDetail."Document Type":=1;
+        //         InvoiceDetail."Document No.":=PILC."Document No.";
+        //         InvoiceDetail."Line No.":=PILC."Line No.";
+        //         InvoiceDetail.Description:=PILC.Description;
+        //         InvoiceDetail.Amount:=-PILC.Amount;
+        //         // SWC1000 DD 21.02.17 >>
+        //         InvoiceDetail."Amount with VAT" := -PILC."Amount Including VAT";
+        //         // SWC1000 DD 21.02.17 <<
+
+        //         //NC 33707 HR beg
+        //         InvoiceDetail."Document Date" := PIHC."Document Date";
+        //         //NC 33707 HR end
+
+        //         InvoiceDetail.INSERT;
+        //       UNTIL PILC.NEXT=0;
+        //     END;
+        //   UNTIL PIHC.NEXT=0;
+        // END;
+        // Page.RUN(70243,InvoiceDetail);
+    end;
+
+
+    procedure GetRemainAmt2(): Decimal
+    var
+        VAD: Record "Vendor Agreement Details";
+    begin
+        // SWC1000 DD 12.02.17 >>
+        VAD.SETCURRENTKEY("Agreement No.", "Vendor No.", "Global Dimension 1 Code");
+        VAD.SETRANGE("Vendor No.", "Vendor No.");
+        VAD.SETRANGE("Agreement No.", "Agreement No.");
+        VAD.SETRANGE("Global Dimension 1 Code", "Global Dimension 1 Code");
+        VAD.SETRANGE("Global Dimension 2 Code", "Global Dimension 2 Code");
+        VAD.SETRANGE("Cost Type", "Cost Type");
+        VAD.CALCSUMS(AmountLCY);
+        MESSAGE('%1 = Сумма 70094: %2, Счета: %3, Учт. Счета: %4, На Утверждении: %5',
+        VAD.AmountLCY - CalcInvoice(TRUE) - CalcPostedInvoice(TRUE) - GetPlaneAmount(FALSE),
+        VAD.AmountLCY, -CalcInvoice(TRUE), -CalcPostedInvoice(TRUE), -GetPlaneAmount(FALSE));
+        // SWC1000 DD 12.02.17 <<
+    end;
+
+    procedure ShowInvoice()
+    var
+        PH: Record "Purchase Header";
+        PL: Record "Purchase Line";
+    // gcduERPC: Codeunit "70000";
+    begin
+        // SWC DD 03.11.17 >>
+        // PH.SETRANGE("Document Type",PH."Document Type"::Invoice);
+        // PH.SETRANGE("Pay-to Vendor No.","Vendor No.");
+        // PH.SETRANGE("Agreement No.","Agreement No.");
+        // IF PH.FINDSET THEN
+        // BEGIN
+        //   REPEAT
+        //     PL.SETCURRENTKEY("Document No.","Shortcut Dimension 1 Code","Shortcut Dimension 2 Code","Cost Type");
+        //     PL.SETRANGE("Document No.",PH."No.");
+        //     PL.SETRANGE("Document Type",PH."Document Type");
+        //     PL.SETRANGE("Shortcut Dimension 1 Code","Global Dimension 1 Code");
+        //     PL.SETRANGE("Shortcut Dimension 2 Code","Global Dimension 2 Code");
+        //     PL.SETRANGE("Cost Type","Cost Type");
+        //     IF PL.FINDSET THEN
+        //       PH.MARK(TRUE);
+        //   UNTIL PH.NEXT=0;
+        // END;
+        // PH.MARKEDONLY(TRUE);
+        // Page.RUNMODAL(0,PH);
+        // SWC DD 03.11.17 <<
+    end;
 }
