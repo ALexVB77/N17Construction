@@ -43,10 +43,7 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                     Page.RunModal(Page::"Change Log Entries", ChangeLogEntry);
                 end;
             }
-        }
 
-        addlast("A&greement")
-        {
             action(ExportToExcel)
             {
                 ApplicationArea = All;
