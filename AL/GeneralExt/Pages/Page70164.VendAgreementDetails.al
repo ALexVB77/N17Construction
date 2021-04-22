@@ -271,10 +271,49 @@ page 70164 "Vendor Agreement Details"
             action(ActionName)
             {
                 ApplicationArea = All;
-
-                trigger OnAction();
+                Caption = 'Остальные комбинации Actuals';
+                trigger OnAction()
+                var
+                    ProjectsCostControlEntry: record "Projects Cost Control Entry";
+                    VendorAgreementDetailsLoc: record "Vendor Agreement Details";
+                    ProjCostControlEntryBuf: record "Proj. Cost Control Entry Buf.";
+                    PCCEForm: page "Proj. Cost Control Entry Buf.";
+                    Window: dialog;
                 begin
+                    //SWC076 AKA 220414 >>
+                    ProjCostControlEntryBuf.RESET;
+                    ProjCostControlEntryBuf.DELETEALL;
 
+                    VendorAgreementDetailsLoc.SETCURRENTKEY("Vendor No.", "Agreement No.", "Line No.");
+                    VendorAgreementDetailsLoc.SETRANGE("Vendor No.", "Vendor No.");
+                    VendorAgreementDetailsLoc.SETRANGE("Agreement No.", "Agreement No.");
+
+                    ProjectsCostControlEntry.SETCURRENTKEY("Analysis Type", "Contragent No.", "Agreement No.", "Project Turn Code", "Line No.",
+                      "Cost Type");
+                    ProjectsCostControlEntry.SETRANGE("Contragent No.", "Vendor No.");
+                    ProjectsCostControlEntry.SETRANGE("Agreement No.", "Agreement No.");
+                    ProjectsCostControlEntry.SETRANGE("Analysis Type", ProjectsCostControlEntry."Analysis Type"::Actuals);
+                    IF ProjectsCostControlEntry.FINDSET THEN
+                        REPEAT
+                            ProjCostControlEntryBuf.INIT;
+                            ProjCostControlEntryBuf.TRANSFERFIELDS(ProjectsCostControlEntry);
+                            ProjCostControlEntryBuf.INSERT();
+                        UNTIL ProjectsCostControlEntry.NEXT = 0;
+
+                    IF VendorAgreementDetailsLoc.FINDSET THEN
+                        REPEAT
+                            ProjCostControlEntryBuf.SETRANGE("Project Code", VendorAgreementDetailsLoc."Project Code");
+                            ProjCostControlEntryBuf.SETRANGE("Line No.", VendorAgreementDetailsLoc."Project Line No.");
+                            ProjCostControlEntryBuf.SETRANGE("Agreement No.", VendorAgreementDetailsLoc."Agreement No.");
+                            ProjCostControlEntryBuf.SETRANGE("Analysis Type", ProjCostControlEntryBuf."Analysis Type"::Actuals);
+                            ProjCostControlEntryBuf.SETRANGE("Shortcut Dimension 1 Code", VendorAgreementDetailsLoc."Global Dimension 1 Code");
+                            ProjCostControlEntryBuf.SETRANGE("Shortcut Dimension 2 Code", VendorAgreementDetailsLoc."Global Dimension 2 Code");
+                            ProjCostControlEntryBuf.SETRANGE("Cost Type", VendorAgreementDetailsLoc."Cost Type");
+                            ProjCostControlEntryBuf.DELETEALL;
+                        UNTIL VendorAgreementDetailsLoc.NEXT = 0;
+
+                    PCCEForm.RUN();
+                    //SWC076 AKA 220414 <<
                 end;
             }
         }
