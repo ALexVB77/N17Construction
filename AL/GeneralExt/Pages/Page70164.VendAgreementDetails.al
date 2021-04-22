@@ -6,6 +6,7 @@ page 70164 "Vendor Agreement Details"
     SourceTable = "Vendor Agreement Details";
     AutoSplitKey = true;
     DelayedInsert = true;
+    UsageCategory = Lists;
 
 
     layout

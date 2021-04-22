@@ -15,15 +15,14 @@ report 50082 ExportSubform
             begin
                 SetRange("Agreement No.", CopyStr(DocumentNo, 1, 20));
                 CurStartRow := 0;
-                TemplateRowStart := 6;
 
-                PurchasesPayablesSetup.Get('');
+                PurchasesPayablesSetup.Get();
                 FileName := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Vendor Agreement Template Code");
 
                 RowNo := 5;
-                ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, Text001, true, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, 2, 3, VendorNo, true, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, 3, 3, DocumentNo, true, false, false);
+                EnterCell(1, 1, ExcelTemplate."Sheet Name", true, ExcelBufferTmp."Cell Type"::Text, false);
+                EnterCell(2, 3, VendorNo, true, ExcelBufferTmp."Cell Type"::Text, false);
+                EnterCell(3, 3, DocumentNo, true, ExcelBufferTmp."Cell Type"::Text, false);
             end;
 
             trigger OnAfterGetRecord()
@@ -32,44 +31,39 @@ report 50082 ExportSubform
             begin
                 Sleep(1);
                 RowNo += 1;
-                CurRow := CurStartRow + RowNo;
-                //ExcelBuffer.InsertString(CurRow); //?
 
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 1, Format("Building Turn All"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 2, Format("Project Code"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 3, Format("Cost Code"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 4, Format("Global Dimension 1 Code"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 5, Format("Global Dimension 2 Code"), false, false, false);
-
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 6, Format("Cost Type"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 7, Format(Description), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 8, Format(VendAgrDetails.CalcGActuals(false,
-                                                                                                "Project Code",
-                                                                                                "Project Line No.",
-                                                                                                "Agreement No.",
-                                                                                                "Global Dimension 1 Code",
-                                                                                                "Global Dimension 2 Code",
-                                                                                                "Cost Type", true), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
-
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 9, DelChr(Format(Amount, 0, '<Precision,2:2><Standard Format,1>')), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 10, Format(VendAgrDetails.CalcPostedInvoice2("Vendor No.",
-                                                                                                       "Agreement No.",
-                                                                                                       "Global Dimension 1 Code",
-                                                                                                       "Global Dimension 2 Code",
-                                                                                                       "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 11, Format(VendAgrDetails.GetCommited("Agreement No.",
-                                                                                                "Global Dimension 1 Code",
-                                                                                                "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 12, Format(Amount - VendAgrDetails.GetCommited("Agreement No.",
-                                                                                                         "Global Dimension 1 Code",
-                                                                                                         "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
+                EnterCell(RowNo, 1, Format("Building Turn All"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 2, Format("Project Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 3, Format("Cost Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 4, Format("Global Dimension 1 Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 5, Format("Global Dimension 2 Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 6, Format("Cost Type"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 7, Format(Description), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 8, Format(VendAgrDetails.CalcGActuals(false,
+                                                                       "Project Code",
+                                                                       "Project Line No.",
+                                                                       "Agreement No.",
+                                                                       "Global Dimension 1 Code",
+                                                                       "Global Dimension 2 Code",
+                                                                       "Cost Type", true), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 9, DelChr(Format(Amount, 0, '<Precision,2:2><Standard Format,1>')), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 10, Format(VendAgrDetails.CalcPostedInvoice2("Vendor No.",
+                                                                              "Agreement No.",
+                                                                              "Global Dimension 1 Code",
+                                                                              "Global Dimension 2 Code",
+                                                                              "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 11, Format(VendAgrDetails.GetCommited("Agreement No.",
+                                                                       "Global Dimension 1 Code",
+                                                                       "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 12, Format(Amount - VendAgrDetails.GetCommited("Agreement No.",
+                                                                                "Global Dimension 1 Code",
+                                                                                "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
             end;
 
             trigger OnPostDataItem()
             begin
-                ExcelBuffer.UpdateBook(FileName, Text001);
-                ExcelBuffer.WriteSheet('', CompanyName, UserId);
-                //ExcelBuffer.DeleteString(RowNo-1); //?
+                ExcelBufferTmp.UpdateBook(FileName, Text001);
+                ExcelBufferTmp.WriteSheet('', CompanyName, UserId);
             end;
         }
 
@@ -80,12 +74,12 @@ report 50082 ExportSubform
                 RowNo := 5;
                 SetRange("Agreement No.", CopyStr(DocumentNo, 1, 20));
 
-                ExcelBuffer.CloseBook();
-                ExcelBuffer.DeleteAll();
+                ExcelBufferTmp.CloseBook();
+                ExcelBufferTmp.DeleteAll();
 
-                ExcelBuffer.EnterCell(ExcelBuffer, 1, 1, Text002, true, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, 2, 3, VendorNo, true, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, 3, 3, DocumentNo, true, false, false);
+                EnterCell(1, 1, Text002, true, ExcelBufferTmp."Cell Type"::Text, false);
+                EnterCell(2, 3, VendorNo, true, ExcelBufferTmp."Cell Type"::Text, false);
+                EnterCell(3, 3, DocumentNo, true, ExcelBufferTmp."Cell Type"::Text, false);
             end;
 
             trigger OnAfterGetRecord()
@@ -93,32 +87,29 @@ report 50082 ExportSubform
                 CurRow: Integer;
             begin
                 RowNo += 1;
-                CurRow := CurStartRow + RowNo;
-                //ExcelBuffer.InsertString(CurRow);         //?
 
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 1, Format("Entry No."), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 2, Format(Date), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 3, Format("Date Plan"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 4, Format("Building Turn"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 5, Format("Cost Code"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 6, Format("Transaction Type"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 7, Format("Without VAT", 0, '<Precision,2:2><Standard Format,1>'), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 8, Format("Without VAT (LCY)", 0, '<Precision,2:2><Standard Format,0>'), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 9, Format(Curency), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 10, Format(Description), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 11, Format("Description 2"), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 12, Format(GetInvoiceNo), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 13, Format(GetInvoiceDate), false, false, false);
-                ExcelBuffer.EnterCell(ExcelBuffer, RowNo, 14, Format("Payment Doc. No."), false, false, false);
+                EnterCell(RowNo, 1, Format("Entry No."), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 2, Format(Date), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 3, Format("Date Plan"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 4, Format("Building Turn"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 5, Format("Cost Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 6, Format("Transaction Type"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 7, Format("Without VAT", 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 8, Format("Without VAT (LCY)", 0, '<Precision,2:2><Standard Format,0>'), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 9, Format(Curency), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 10, Format(Description), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 11, Format("Description 2"), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 12, Format(GetInvoiceNo), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 12, Format(GetInvoiceDate), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 14, Format("Payment Doc. No."), true, ExcelBufferTmp."Cell Type"::Text, true);
             end;
 
             trigger OnPostDataItem()
             begin
-                //ExcelBuffer.DeleteString(RowNo-1);  //?
-                ExcelBuffer.UpdateBook(FileName, Text002);
-                ExcelBuffer.WriteSheet('', CompanyName, UserId);
-                ExcelBuffer.CloseBook();
-                ExcelBuffer.DownloadAndOpenExcel();
+                ExcelBufferTmp.UpdateBook(FileName, Text002);
+                ExcelBufferTmp.WriteSheet('', CompanyName, UserId);
+                ExcelBufferTmp.CloseBook();
+                ExcelBufferTmp.DownloadAndOpenExcel();
             end;
         }
     }
@@ -126,19 +117,33 @@ report 50082 ExportSubform
     var
         DocumentNo: Code[100];
         CurStartRow: Integer;
-        TemplateRowStart: Integer;
         FileName: Text[1024];
         ExcelTemplate: Record "Excel Template";
-        ExcelBuffer: Record "Excel Buffer Mod";
+        ExcelBufferTmp: Record "Excel Buffer Mod" temporary;
         RowNo: Integer;
         VendorNo: Code[100];
         Text001: Label 'Разбивка по литерам';
         Text002: Label 'График платежей';
         VendAgrDetails: Record "Vendor Agreement Details";
+        ExcelReportBuilder: Codeunit "Excel Report Builder Manager";
 
     procedure SetDocNo(DocNo: Code[10]; VendNo: Code[10])
     begin
         DocumentNo := DocNo;
         VendorNo := VendNo;
+    end;
+
+    local procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text; Bold: Boolean; CellType: Integer; IsBorder: Boolean)
+    begin
+        ExcelBufferTmp.Init();
+        ExcelBufferTmp.Validate("Row No.", RowNo);
+        ExcelBufferTmp.Validate("Column No.", ColumnNo);
+        ExcelBufferTmp."Cell Value as Text" := CellValue;
+        ExcelBufferTmp.Formula := '';
+        ExcelBufferTmp.Bold := Bold;
+        ExcelBufferTmp."Cell Type" := CellType;
+        if IsBorder then
+            ExcelBufferTmp.SetBorder(true, true, true, true, false, "Border Style"::Thin);
+        ExcelBufferTmp.Insert();
     end;
 }
