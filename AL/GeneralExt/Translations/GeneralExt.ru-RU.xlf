@@ -2675,7 +2675,13 @@
           <target>Имя листа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Excel Template (Ext) - Field Sheet Name - Property Caption</note>
-        </trans-unit>       
+        </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Action 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Export to Excel</source>
+          <target>Выгрузка в Excel</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Action ExportToExcel - Property Caption</note>
+        </trans-unit>     
       </group>
     </body>
   </file>

@@ -1248,6 +1248,61 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1535144756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Agreement Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Превышена Сумма Остатка!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - NamedType TEXT001</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3226324891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actual Costs Project (VAT)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Actual Costs Project (VAT) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3791597239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>На Утверждении</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control На Утверждении - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 2494311699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Неучтенные Счета с НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Неучтенные Счета с НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 1008919314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Сумма договора без НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма договора без НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3829992049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Сумма Договора, с НДС (руб)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма Договора, с НДС (руб) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3859676945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Сумма Остатка</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма Остатка - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 1857461107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Учтенные Счета с НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Учтенные Счета с НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 179953497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Учтенные Счета, без НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Учтенные Счета, без НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActionName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Action ActionName - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1962,6 +2017,11 @@
           <source>Change Log</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Action ChangeLog - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Action 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Export to Excel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Action ExportToExcel - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 1658766258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Attachments</source>
