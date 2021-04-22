@@ -1248,6 +1248,61 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1535144756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Agreement Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Превышена Сумма Остатка!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - NamedType TEXT001</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3226324891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actual Costs Project (VAT)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Actual Costs Project (VAT) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3791597239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>На Утверждении</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control На Утверждении - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 2494311699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Неучтенные Счета с НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Неучтенные Счета с НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 1008919314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Сумма договора без НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма договора без НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3829992049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Сумма Договора, с НДС (руб)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма Договора, с НДС (руб) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3859676945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Сумма Остатка</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма Остатка - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 1857461107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Учтенные Счета с НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Учтенные Счета с НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 179953497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Учтенные Счета, без НДС</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Учтенные Счета, без НДС - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActionName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Action ActionName - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1963,6 +2018,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Action ChangeLog - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Action 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Export to Excel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Action ExportToExcel - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 1658766258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1987,6 +2047,11 @@
           <source>Primary Key 2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment (Ext) - Field PK Key 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2071349393 - Field 745542804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 351637841">
+          <source>Sheet Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Excel Template (Ext) - Field Sheet Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 520650564 - Field 2399978131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3400326196">
           <source>FA Turnover Template Code</source>
@@ -2027,6 +2092,11 @@
           <source>Paid Date Fact</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Paid Date Fact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 710925405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Problem Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Problem Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 363487199 - Field 2296741137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Forecast Entry</source>
@@ -2192,6 +2262,46 @@
           <source>KC-2 (Production)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 (Production) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 924206498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Act error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue Act error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 1740822100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AgrMiss</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue AgrMiss - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 2680530352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mistake</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue Mistake - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 2532091249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RApprover</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue RApprover - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 3146045053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RChecker</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue RChecker - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 1140054050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RController</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue RController - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2097997636 - EnumValue 3095818392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>REstimator</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue REstimator - Property Caption</note>
         </trans-unit>
       </group>
     </body>

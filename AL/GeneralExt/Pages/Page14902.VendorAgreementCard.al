@@ -44,5 +44,24 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 end;
             }
         }
+
+        addlast("A&greement")
+        {
+            action(ExportToExcel)
+            {
+                ApplicationArea = All;
+                Caption = 'Export to Excel';
+                Image = Excel;
+
+                trigger OnAction()
+                var
+                    ExportSubform: Report ExportSubform;
+                begin
+                    Clear(ExportSubform);
+                    ExportSubform.SetDocNo(Rec."No.", Rec."Vendor No.");
+                    ExportSubform.RunModal();
+                end;
+            }
+        }
     }
 }
