@@ -69,6 +69,26 @@ pageextension 99993 "Bank Acc. Reconcil. Lines BS" extends "Bank Acc. Reconcilia
             field("Unposted Amount"; rec."Unposted Amount")
             {
                 ApplicationArea = All;
+                trigger OnDrillDown()
+                var
+                    gjl: Record "Gen. Journal Line";
+                    payJnl: Page "Payment Journal";
+                begin
+
+                    gjl.RESET();
+                    gjl.SETRANGE("Account Type", "Entity Type");
+                    gjl.SETRANGE("Account No.", "Entity No.");
+                    gjl.SETRANGE("Document No.", "Document No.");
+                    gjl.SETRANGE("Posting Date", "Transaction Date");
+                    IF (gjl.FINDSET()) THEN BEGIN
+                        gjl.SETRANGE("Journal Template Name", gjl."Journal Template Name");
+                        gjl.SETRANGE("Journal Batch Name", gjl."Journal Batch Name");
+                        gjl.FINDSET();
+                        payJnl.SETTABLEVIEW(gjl);
+                        payJnl.SETRECORD(gjl);
+                        payJnl.RUNMODAL();
+                    END;
+                end;
             }
         }
     }

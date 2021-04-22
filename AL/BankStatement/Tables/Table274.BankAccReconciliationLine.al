@@ -26,11 +26,13 @@ tableextension 99993 "Bank Acc. Reconcil. Line BS" extends "Bank Acc. Reconcilia
                                                                "Account No." = FIELD("Entity No."),
                                                                "Document No." = FIELD("Document No."),
                                                                "Posting Date" = FIELD("Transaction Date")));
+            /*
             trigger OnLookup()
             var
                 gjl: Record "Gen. Journal Line";
                 payJnl: Page "Payment Journal";
             begin
+                message('click');
                 gjl.RESET();
                 gjl.SETRANGE("Account Type", "Entity Type");
                 gjl.SETRANGE("Account No.", "Entity No.");
@@ -45,6 +47,7 @@ tableextension 99993 "Bank Acc. Reconcil. Line BS" extends "Bank Acc. Reconcilia
                     payJnl.RUNMODAL();
                 END;
             end;
+            */
         }
         field(61120; "Statement Begin Saldo"; Decimal)
         {
