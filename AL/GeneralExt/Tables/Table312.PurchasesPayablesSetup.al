@@ -7,5 +7,10 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Caption = 'Vendor Agreement Template Code';
             TableRelation = "Excel Template";
         }
+        field(70002; "Payment Delay Period"; DateFormula)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Payment Delay Period';
+        }
     }
 }

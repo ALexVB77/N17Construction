@@ -350,6 +350,13 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Without VAT (LCY)';
         }
+        field(70001; "Problem Pmt. Document"; Boolean)
+        {
+            Description = 'NC 51373 AB';
+            Editable = false;
+            Caption = 'Problem Pmt. Document';
+
+        }
     }
 
     keys
