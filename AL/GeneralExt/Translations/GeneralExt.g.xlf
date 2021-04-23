@@ -2653,36 +2653,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Attachment (Ext) - Field Document Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3146835237 - Field 2193737767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
-          <source>Posted Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Posted Amount - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3146835237 - Field 1204434081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
-          <source>Statement begin saldo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Statement Begin Saldo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3146835237 - Field 3614229417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
-          <source>Statement end saldo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Statement End Saldo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3146835237 - Field 1304281479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
-          <source>Total income amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Total Income Amount - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3146835237 - Field 1711369992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
-          <source>Total outcome amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Total Outcome Amount - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3146835237 - Field 2615201930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
-          <source>Unposted Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Acc. Reconcil. Line BS - Field Unposted Amount - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 1850888649 - Field 2188116433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
           <source>Max Len. Pmt Purpose Text</source>
           <note from="Developer" annotates="general" priority="2"></note>
