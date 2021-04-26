@@ -7,7 +7,7 @@ page 70262 "Purchase List Act"
     DeleteAllowed = false;
     ModifyAllowed = false;
     SourceTable = "Purchase Header";
-    SourceTableView = SORTING("Document Type", "No.") WHERE("Act Type" = FILTER(<> ' '), "Status App" = FILTER(<> Payment), "Problem Type" = FILTER(<> "Act error"));
+    SourceTableView = SORTING("Document Type", "No.") WHERE("Act Type" = FILTER(<> ' '), "Status App NEW" = FILTER(<> Payment), "Problem Type" = FILTER(<> "Act error"));
     DataCaptionFields = "Document Type";
     PageType = Worksheet;
     Caption = 'Payment Orders List';
@@ -357,7 +357,7 @@ page 70262 "Purchase List Act"
         //--
         FILTERGROUP(0);
         SETRANGE("Process User");
-        SETRANGE("Status App");
+        SETRANGE("Status App NEW");
         SETRANGE("Problem Document");
 
         SETRANGE(Paid);
@@ -369,10 +369,10 @@ page 70262 "Purchase List Act"
 
         CASE Filter2 OF
             Filter2::InProc:
-                SETFILTER("Status App", '<>%1', "Status App"::Payment);
+                SETFILTER("Status App NEW", '<>%1', "Status App NEW"::Payment);
             Filter2::Ready:
                 BEGIN
-                    SETRANGE("Status App", "Status App"::Payment);
+                    SETRANGE("Status App NEW", "Status App NEW"::Payment);
                     SETRANGE(Paid, FALSE);
                 END;
             Filter2::Pay:
