@@ -65,6 +65,7 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                     ExportSubform: Report ExportSubform;
                 begin
                     Clear(ExportSubform);
+                    ExportSubform.UseRequestPage(false);
                     ExportSubform.SetDocNo(Rec."No.", Rec."Vendor No.");
                     ExportSubform.RunModal();
                 end;
