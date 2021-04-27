@@ -2,15 +2,6 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
 {
     fields
     {
-        // NC 51373 AB >>
-        field(69999; "Status App NEW"; option)
-        {
-            Caption = 'Status App';
-            OptionCaption = ' ,Reception,Controller,Checker,Approve,Payment,Request';
-            OptionMembers = " ",Reception,Controller,Checker,Approve,Payment,Request;
-            Description = 'NC 51373 AB';
-        }
-        // NC 51373 AB <<      
         field(70002; "Process User"; Code[20])
         {
             TableRelation = "User Setup";
