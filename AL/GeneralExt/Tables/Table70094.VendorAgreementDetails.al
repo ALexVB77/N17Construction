@@ -262,11 +262,11 @@ table 70094 "Vendor Agreement Details"
         }
         field(70050; "Payed by Agreement"; Decimal)
         {
-            // CalcFormula = Sum("Projects Budget Entry"."Without VAT" WHERE (Agreement No.=FIELD(Agreement No.),
-            //                                                                Project Code=FIELD(Project Code),
-            //                                                                Shortcut Dimension 1 Code=FIELD(Global Dimension 1 Code),
-            //                                                                Shortcut Dimension 2 Code=FIELD(Global Dimension 2 Code),
-            //                                                                Close=CONST(Yes)));
+            CalcFormula = sum("Projects Budget Entry"."Without VAT" where("Agreement No." = field("Agreement No."),
+                                                                           "Project Code" = field("Project Code"),
+                                                                           "Shortcut Dimension 1 Code" = field("Global Dimension 1 Code"),
+                                                                           "Shortcut Dimension 2 Code" = field("Global Dimension 2 Code"),
+                                                                           Close = const(true)));
             Caption = 'Payed by Agreement with VAT';
             Editable = false;
             FieldClass = FlowField;
