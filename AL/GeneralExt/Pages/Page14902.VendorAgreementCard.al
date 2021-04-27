@@ -20,6 +20,16 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                               "PK Key 2" = FIELD("Vendor No.");
             }
         }
+        addafter("VAT Agent")
+        {
+            part(BreakdownByLetter; "Vendor Agreement Details")
+            {
+                Caption = 'Breakdown by Letter';
+                ApplicationArea = Basic, Suite;
+                SubPageLink = "Agreement No." = field("No."), "Vendor No." = field("Vendor No.");
+                UpdatePropagation = Both;
+            }
+        }
     }
     actions
     {
