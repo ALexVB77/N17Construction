@@ -3663,91 +3663,91 @@
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 745310178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Act</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Акт</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Act - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 1856607068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActLine</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Акт Строки</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue ActLine - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 1033287111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AddAgr</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Доп. Соглашение</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue AddAgr - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 2552814993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CustAgreement</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Клиент Договор</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue CustAgreement - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 2052919060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>DevObj</source>
-          <target>[NAB: REVIEW]</target>
+          <target>ДевОбъект</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue DevObj - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 562573519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ItemShipment</source>
-          <target>[NAB: REVIEW]</target>
+          <target>АктСписания</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue ItemShipment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 2123958759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Объект</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Object - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 1758511039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PostItemShipment</source>
-          <target>[NAB: REVIEW]</target>
+          <target>УчтАктСписания</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue PostItemShipment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 395510365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Покупка</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Purchase - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 1188294431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PurchInv</source>
-          <target>[NAB: REVIEW]</target>
+          <target>СчетПокупки</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue PurchInv - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 1011034948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ToDo</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Задачи</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue ToDo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 1589005705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VendAgreement</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Поставщик Договор</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue VendAgreement - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 21484713 - EnumValue 1936001480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Поставщик</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Vendor - Property Caption</note>
