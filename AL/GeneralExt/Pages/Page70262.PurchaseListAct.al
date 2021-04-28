@@ -379,7 +379,7 @@ page 70262 "Purchase List Act"
         Text50000: Label 'Budget data will be deleted. Add a document to the archive of problem documents?';
         Text50001: Label 'Add a document to the archive of problem documents?';
         Text50002: Label 'There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.';
-        Text50003: Label 'Warehouse document, Act/KS-2 for the service';
+        Text50003: Label 'Warehouse document,Act/KS-2 for the service';
         Text50004: Label 'Select the type of document to create.';
         Text50005: Label 'It is required to select the type of document.';
 
