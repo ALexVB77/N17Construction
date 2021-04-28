@@ -175,7 +175,7 @@ table 70095 "Projects Cost Control Entry"
         }
         field(200; "Agreement No."; Code[20])
         {
-            Caption = 'Agrrement No.';
+            Caption = 'Agreement No.';
             TableRelation = if ("Contragent Type" = const(Vendor)) "Vendor Agreement"."No." WHERE("Vendor No." = field("Contragent No."), Active = const(true)) else
             if ("Contragent Type" = const(Customer)) "Customer Agreement"."No." where("Customer No." = field("Contragent No."));
 

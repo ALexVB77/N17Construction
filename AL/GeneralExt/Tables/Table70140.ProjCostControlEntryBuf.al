@@ -35,27 +35,24 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(6; "Entry Type"; Option)
         {
-            Caption = 'Тип';
-            OptionCaption = 'Собственные работы,Субподряд,Материалы,Поступления\Расходы';
+            Caption = 'Entry Type';
+            OptionCaption = 'Own Works,Subcontract,Materials,Income';
             OptionMembers = OwnWorks,Subcontract,Materials,Income;
-
         }
 
         field(7; Description; Text[250])
         {
-            Caption = 'Описание';
-
+            Caption = 'Description';
         }
 
         field(8; "Description 2"; Text[250])
         {
-            Caption = 'Описание 2';
-
+            Caption = 'Description 2';
         }
 
         field(9; Amount; Decimal)
         {
-            Caption = 'Сумма';
+            Caption = 'Amount';
             trigger OnValidate()
             begin
                 IF Curency = '' THEN BEGIN
@@ -73,43 +70,39 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(10; Curency; Code[20])
         {
-            Caption = 'Валюта';
-
+            Caption = 'Curency';
         }
 
         field(11; "Currency Factor"; Decimal)
         {
-            Caption = 'Курс валюты';
-
+            Caption = 'Currency Factor';
         }
 
         field(12; "Amount (LCY)"; Decimal)
         {
-            Caption = 'Сумма (РУБ)';
-
+            Caption = 'Amount (LCY)';
         }
 
         field(13; Date; Date)
         {
-            Caption = 'Дата';
-
+            Caption = 'Date';
         }
 
         field(20; "Create User"; Code[20])
         {
-            Caption = 'Создал';
+            Caption = 'Create User';
 
         }
 
         field(21; "Create Date"; Date)
         {
-            Caption = 'Дата создания';
+            Caption = 'Create Date';
 
         }
 
         field(22; "Create Time"; Time)
         {
-            Caption = 'Время создания';
+            Caption = 'Create Time';
 
         }
 
@@ -149,14 +142,13 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(28; "Budget On Date"; Date)
         {
+            Caption = 'Budget On Date';
             FieldClass = FlowFilter;
-
         }
 
         field(29; Code; Code[20])
         {
-            Caption = 'Код';
-
+            Caption = 'Code';
         }
 
         field(30; Linked; Boolean)
@@ -170,15 +162,14 @@ table 70140 "Proj. Cost Control Entry Buf."
             TableRelation = IF ("Contragent Type" = CONST(Vendor)) Vendor ELSE
             IF ("Contragent Type" = CONST(Customer)) Customer;
             ;
-            Caption = 'Контрагент Но.';
-
+            Caption = 'Contragent No.';
         }
 
         field(32; "Agreement No."; Code[20])
         {
             TableRelation = IF ("Contragent Type" = CONST(Vendor)) "Vendor Agreement"."No." WHERE("Vendor No." = FIELD("Contragent No."), Active = CONST(true)) ELSE
             IF ("Contragent Type" = CONST(Customer)) "Customer Agreement"."No." WHERE("Customer No." = FIELD("Contragent No."));
-            Caption = 'Договор Но.';
+            Caption = 'Agreement No.';
 
         }
 
@@ -186,32 +177,27 @@ table 70140 "Proj. Cost Control Entry Buf."
         {
             FieldClass = FlowField;
             CalcFormula = Sum("Projects Budget Entry Link".VAT WHERE("Main Entry No." = FIELD("Entry No."), "Project Code" = FIELD("Project Code"), "Analysis Type" = FIELD("Analysis Type"), "Version Code" = FIELD("Version Code"), "Line No." = FIELD("Line No."), "Date" = FIELD("Date"), "Fixed Version" = FIELD("Fixed Version Filter"), "Create Date" = FIELD("Budget On Date"), "Project Turn Code" = FIELD("Project Turn Code")));
-            Caption = 'НДС';
-
+            Caption = 'VAT';
         }
 
         field(34; "Without VAT"; Decimal)
         {
-            Caption = 'Сумма';
-
+            Caption = 'Without VAT';
         }
 
         field(35; "Including VAT"; Boolean)
         {
-            Caption = 'НДС включен';
-
+            Caption = 'Including VAT';
         }
 
         field(36; "Contragent Name"; Text[250])
         {
-            Caption = 'Название';
-
+            Caption = 'Contragent Name';
         }
 
         field(37; "External Agreement No."; Text[30])
         {
-            Caption = 'Внешний Договор Но.';
-
+            Caption = 'External Agreement No.';
         }
 
         field(38; "Linked Entry No."; Integer)
@@ -226,8 +212,8 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(40; "Contragent Type"; Option)
         {
-            Caption = 'Тип';
-            OptionCaption = 'Поставщик,Клиент';
+            Caption = 'Contragent Type';
+            OptionCaption = 'Vendor,Customer';
             OptionMembers = Vendor,Customer;
             trigger OnValidate()
             begin
@@ -258,7 +244,7 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(44; Close; Boolean)
         {
-            Caption = 'Факт';
+            Caption = 'Close';
             trigger OnValidate()
             begin
                 lrProjectsBudgetEntryLink.SETRANGE("Main Entry No.", "Entry No.");
@@ -416,13 +402,12 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(51; "Work Version"; Boolean)
         {
-            Caption = 'Рабочая версия';
-
+            Caption = 'Work Version';
         }
 
         field(52; Reserve; Boolean)
         {
-            Caption = 'Резерв';
+            Caption = 'Reserve';
             trigger OnValidate()
             begin
                 lrProjectsBudgetEntryLink.SETRANGE("Main Entry No.", "Entry No.");
@@ -436,8 +421,6 @@ table 70140 "Proj. Cost Control Entry Buf."
                     UNTIL lrProjectsBudgetEntryLink.NEXT = 0;
                 END;
             end;
-
-
         }
 
         field(53; "Building Turn All"; Code[20])
@@ -449,7 +432,7 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(54; "Cost Type"; Code[20])
         {
-            Caption = 'COST TYPE';
+            Caption = 'Cost Type';
             trigger OnLookup()
             begin
                 // GLS.GET;
@@ -470,21 +453,19 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(55; "Doc No."; Code[20])
         {
-            Caption = 'Документ Но.';
-
+            Caption = 'Doc No.';
         }
 
         field(56; "Doc Type"; Option)
         {
-            Caption = 'Option';
+            Caption = 'Doc Type';
             OptionMembers = Pre,Post;
 
         }
 
         field(57; "Close Date"; Date)
         {
-            Caption = 'Дата закрытия';
-
+            Caption = 'Close Date';
         }
 
         field(60088; "Original Company"; Code[2])
@@ -495,8 +476,7 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(70018; "Original Date"; Date)
         {
-            Caption = 'Оригинальная Дата';
-
+            Caption = 'Original Date';
         }
 
         field(70019; ID; Integer)
@@ -508,8 +488,7 @@ table 70140 "Proj. Cost Control Entry Buf."
         {
             FieldClass = FlowField;
             // CalcFormula = Lookup("Budget Correction Journal"."G/L Account Totaling" WHERE (ID=FIELD(ID),"Project Code"=FIELD("Project Code")));;
-            Caption = 'Счет IFRS';
-
+            Caption = 'IFRS Account No.';
         }
 
         field(70021; "Frc Version Code"; Code[20])
@@ -519,8 +498,7 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(70022; "Original Ammount"; Decimal)
         {
-            Caption = 'Оригинальная Сумма';
-
+            Caption = 'Original Ammount';
         }
 
         field(70023; Reversed; Boolean)
@@ -531,13 +509,12 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(70024; "Reversed ID"; Integer)
         {
-            Caption = 'Сторнировано ID';
-
+            Caption = 'Reversed ID';
         }
 
         field(70025; "User Created"; Boolean)
         {
-
+            Caption = 'User Created';
         }
 
         field(70026; Changed; Boolean)
@@ -549,8 +526,7 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(70027; "Company Name"; Text[60])
         {
-            Caption = 'Фирма Источник';
-
+            Caption = 'Company Name';
         }
 
         field(70028; "Allocation Line No."; Integer)
@@ -570,20 +546,19 @@ table 70140 "Proj. Cost Control Entry Buf."
 
         field(70031; "Reversed Without Entry"; Boolean)
         {
-            Caption = 'Reversed';
-
+            Caption = 'Reversed Without Entry';
         }
 
         field(70032; "INIT CP"; Code[20])
         {
-
+            Caption = 'INIT CP';
         }
 
         field(70033; ByOrder; Boolean)
         {
+            Caption = 'By Order';
             FieldClass = FlowField;
             // CalcFormula = Lookup("Vendor Agreement".WithOut WHERE ("Vendor No."=FIELD("Contragent No."),"No."=FIELD("Agrrement No.")));
-
         }
 
         field(70034; "Close Commitment"; Boolean)

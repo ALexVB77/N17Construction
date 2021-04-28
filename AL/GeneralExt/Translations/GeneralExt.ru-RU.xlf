@@ -23,13 +23,13 @@
         </trans-unit>
         <trans-unit id="Table 286357085 - Field 430251985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Development/Production</source>
-          <target>Development/Production</target>
+          <target>Разработка/Производство</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Development/Production - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 286357085 - Field 430251985 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Development,Production</source>
-          <target> ,Development,Production</target>
+          <target> ,Разработка,Производство</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Project - Field Development/Production - Property OptionCaption</note>
         </trans-unit>
@@ -95,7 +95,7 @@
         </trans-unit>
         <trans-unit id="Table 3221779637 - Field 3007069574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sort</source>
-          <target>Sort</target>
+          <target>Вид</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Sort - Property Caption</note>
         </trans-unit>
@@ -125,550 +125,463 @@
         </trans-unit>
         <trans-unit id="Table 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Проект. Операции контроля стоимости Буф.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create a periodic entries for\%1 ?</source>
-          <target>[NAB: SUGGESTION]Создать периодические проводки для\%1?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Создать периодические проводки для\%1?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - NamedType TEXT0001</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - NamedType 4156606849" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify the ending date of the project!</source>
-          <target>[NAB: SUGGESTION]Необходимо задать дату окончания проекта!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Необходимо задать дату окончания проекта!</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - NamedType TEXT0002</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - NamedType 499336170" size-unit="char" translate="yes" xml:space="preserve">
           <source>Update related entries?</source>
-          <target>[NAB: SUGGESTION]Обновить связанные проводки?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Обновить связанные проводки?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - NamedType TEXT0003</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - NamedType 1137032787" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cost Code value can not be empty</source>
-          <target>[NAB: SUGGESTION]Значение Cost Code не должно быть пусто</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Значение Cost Code не должно быть пусто</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - NamedType TEXT0004</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Договор Но.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Agreement No.</source>
+          <target>Договор Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 4192609587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocation Line No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Аллокация Строка Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Allocation Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Amount</source>
+          <target>Сумма</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма (РУБ)</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Amount (LCY)</source>
+          <target>Сумма (РУБ)</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Amount (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis type</source>
-          <target>[NAB: SUGGESTION]Тип Анализа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Тип Анализа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Analysis Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1777138012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget On Date</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Бюджет на дату</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Budget On Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stage</source>
-          <target>[NAB: SUGGESTION]Проект</target>
-          <target>[NAB: SUGGESTION]Объект строительства</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Стадия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Building Turn - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 399424670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stage</source>
-          <target>[NAB: SUGGESTION]Проект</target>
-          <target>[NAB: SUGGESTION]Объект строительства</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Стадия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Building Turn All - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1577863327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ByOrder</source>
-          <target>[NAB: SUGGESTION]ByOrder</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <source>By Order</source>
+          <target>По порядку</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field ByOrder - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3720531126 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Changed</source>
-          <target>[NAB: SUGGESTION]Изменена</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Изменена</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Changed - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Факт</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Close</source>
+          <target>Факт</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Close - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 426187663 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close Commitment</source>
-          <target>[NAB: SUGGESTION]Close Commitment</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Закрытое обязательство</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Close Commitment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Дата закрытия</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Close Date</source>
+          <target>Дата закрытия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Close Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Код</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Code</source>
+          <target>Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Фирма Источник</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Company Name</source>
+          <target>Фирма Источник</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Company Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 249393910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Название</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Contragent Name</source>
+          <target>Название</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Contragent Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Контрагент Но.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Contragent No.</source>
+          <target>Контрагент Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Contragent No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1897831671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Тип</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Contragent Type</source>
+          <target>Тип</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Contragent Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1897831671 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Поставщик,Клиент</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Vendor,Customer</source>
+          <target>Поставщик,Клиент</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Contragent Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 226557589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Copy From Sales</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Копировать из продаж</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Copy From Sales - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Item</source>
-          <target>[NAB: SUGGESTION]Статья бюджета</target>
-          <target>[NAB: SUGGESTION]Статья</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Статья</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Cost Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>COST TYPE</source>
-          <target>[NAB: SUGGESTION]COST TYPE</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <source>Cost Type</source>
+          <target>Тип затрат</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Cost Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Дата создания</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Create Date</source>
+          <target>Дата создания</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Create Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Время создания</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Create Time</source>
+          <target>Время создания</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Create Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Создал</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Create User</source>
+          <target>Создал</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Create User - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Валюта</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Curency</source>
+          <target>Валюта</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Curency - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2324056710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Курс валюты</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Currency Factor</source>
+          <target>Курс валюты</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Currency Factor - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Дата</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Date</source>
+          <target>Дата</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Описание</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Description</source>
+          <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Описание 2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Description 2</source>
+          <target>Описание 2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Description 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2545923953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Документ Но.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Doc No.</source>
+          <target>Документ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Doc No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1343762524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Option</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Doc Type</source>
+          <target>Документ Тип</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Doc Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1343762524 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pre,Post</source>
-          <target>[NAB: SUGGESTION]Pre,Post</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Пред.,Посл.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Doc Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
-          <target>[NAB: SUGGESTION]Entry No.</target>
-          <target>[NAB: SUGGESTION]Операция Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Операция Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 149522872 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Тип</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Entry Type</source>
+          <target>Тип</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Entry Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 149522872 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Собственные работы,Субподряд,Материалы,Поступления\Расходы</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Own Works,Subcontract,Materials,Income</source>
+          <target>Собственные работы,Субподряд,Материалы,Поступления\Расходы</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Entry Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 799448234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error Line</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Ошибка Строка</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Error Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Внешний Договор Но.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>External Agreement No.</source>
+          <target>Внешний Договор Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field External Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed Version</source>
-          <target>[NAB: SUGGESTION]Fixed Version</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Фиксированная версия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Fixed Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1302918792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed Version Filter</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Фиксированная версия Фильтр</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Fixed Version Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2128204284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Frc Version Code</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Код FRC-версии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Frc Version Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ID</source>
-          <target>[NAB: SUGGESTION]ID</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>ИД</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1430228196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Счет IFRS</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>IFRS Account No.</source>
+          <target>Счет IFRS</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field IFRS Account No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1815700606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>НДС включен</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Including VAT</source>
+          <target>НДС включен</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Including VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 4291869539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>INIT CP</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>INIT CP</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field INIT CP - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
-          <target>[NAB: SUGGESTION]Line No.</target>
-          <target>[NAB: SUGGESTION]Строка Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Строка Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2614226931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Связано</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Linked - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1933288606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Linked Entry No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Связанная операция Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Linked Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2425748246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Main Enty No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Главная операция Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Main Enty No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New</source>
-          <target>[NAB: SUGGESTION]New</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Новая</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field New - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3906294107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New Lines</source>
-          <target>[NAB: SUGGESTION]New Lines</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Новые строки</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field New Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 899120550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Not Run OnInsert</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Не запускать OnInsert</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Not Run OnInsert - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2132826204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Оригинальная Сумма</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Original Ammount</source>
+          <target>Оригинальная Сумма</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Original Ammount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Company</source>
-          <target>[NAB: SUGGESTION]Original Company</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Оригинальная Фирма</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Original Company - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 112760607 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Оригинальная Дата</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Original Date</source>
+          <target>Оригинальная Дата</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Original Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parent Entry</source>
-          <target>[NAB: SUGGESTION]Parent Entry</target>
-          <target>[NAB: SUGGESTION]Родительская Операция</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Родительская Операция</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Parent Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
-          <target>[NAB: SUGGESTION]Проект Код</target>
-          <target>[NAB: SUGGESTION]Project Code</target>
-          <target>[NAB: SUGGESTION]Код проекта</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Проект Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Project Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Turn Code</source>
-          <target>[NAB: SUGGESTION]Project Turn Code</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Проект Код возврата</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Project Turn Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 825293260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Резерв</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Reserve</source>
+          <target>Резерв</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Reserve - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reversed</source>
-          <target>[NAB: SUGGESTION]Сторнировано</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Сторнировано</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Reversed - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 534261515 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сторнировано ID</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Reversed ID</source>
+          <target>Сторнировано ID</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Reversed ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1445432576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reversed</source>
-          <target>[NAB: SUGGESTION]Сторнировано</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <source>Reversed Without Entry</source>
+          <target>Сторнировано без операции</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Reversed Without Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
-          <target>[NAB: SUGGESTION]Ярлык Измерение 1 Код</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Ярлык Измерение 1 Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Shortcut Dimension 1 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
-          <target>[NAB: SUGGESTION]Ярлык Измерение 2 Код</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Ярлык Измерение 2 Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 1391165444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
-          <target>[NAB: SUGGESTION]Сумма</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Сумма</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Temp Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 908668199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Temp Line No.</source>
-          <target>[NAB: SUGGESTION]Temp Line No.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Временная строка No.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Temp Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 339805095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Template Code</source>
-          <target>[NAB: SUGGESTION]Шаблон журнала</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Шаблон журнала</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Template Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3235876235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>User Created</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Создал Пользователь</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field User Created - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>НДС</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>VAT</source>
+          <target>НДС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version Code</source>
-          <target>[NAB: SUGGESTION]Version Code</target>
-          <target>[NAB: SUGGESTION]Код версии</target>
-          <target>[NAB: SUGGESTION]Код Версии</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <target>Код Версии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Version Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Without VAT</source>
+          <target>Сумма без НДС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Without VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3568259090 - Field 584900853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Рабочая версия</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <source>Work Version</source>
+          <target>Рабочая версия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Work Version - Property Caption</note>
         </trans-unit>
@@ -704,7 +617,7 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Budget Entry</source>
-          <target>Projects Budget Entry</target>
+          <target>Проекты Бюджет Операции</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Property Caption</note>
         </trans-unit>
@@ -728,7 +641,7 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
-          <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
+          <target>Инвестиционный расчет, Детальное планирование, Сметный расчет</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Analysis Type - Property OptionCaption</note>
         </trans-unit>
@@ -739,8 +652,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Building Turn - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fact</source>
-          <target>Fact</target>
+          <source>Close</source>
+          <target>Факт</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Close - Property Caption</note>
         </trans-unit>
@@ -806,7 +720,7 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
-          <target>Entry No.</target>
+          <target>Операция Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -830,38 +744,38 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
-          <target>Line No.</target>
+          <target>Строка Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 590857212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parent Entry</source>
-          <target>Parent Entry</target>
+          <target>Родительская операция</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Parent Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3139420653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay Request No.</source>
-          <target>Pay Request No.</target>
+          <target>Запрос на выплату Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Payment Doc. No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 314959317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Problem Pmt. Document</source>
-          <target>[NAB: REVIEW]</target>
+          <target>Проблемный платежный документ</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Problem Pmt. Document - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
-          <target>Project Code</target>
+          <target>Проект Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Project Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Turn Code</source>
-          <target>Project Turn Code</target>
+          <target>Проект Код возврата</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Project Turn Code - Property Caption</note>
         </trans-unit>
@@ -879,7 +793,7 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 908668199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Temp Line No.</source>
-          <target>Temp Line No.</target>
+          <target>Временная строка No.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Temp Line No. - Property Caption</note>
         </trans-unit>
@@ -891,7 +805,7 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version Code</source>
-          <target>Version Code</target>
+          <target>Код Версии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Version Code - Property Caption</note>
         </trans-unit>
@@ -915,7 +829,7 @@
         </trans-unit>
         <trans-unit id="Table 4285604025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Budget Entry Link</source>
-          <target>Projects Budget Entry Link</target>
+          <target>Проекты Бюджетные Операции Ссылка</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Property Caption</note>
         </trans-unit>
@@ -963,19 +877,19 @@
         </trans-unit>
         <trans-unit id="Table 4285604025 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
-          <target>Investment Calculation,Detailed Planning,Estimate Calculation</target>
+          <target>Инвестиционный расчет, Детальное планирование, Сметный расчет</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Analysis Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 4285604025 - Field 2805329373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build Turn</source>
-          <target>Build Turn</target>
+          <target>Строительство Возврат</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Build Turn - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4285604025 - Field 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close</source>
-          <target>Close</target>
+          <target>Факт</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Close - Property Caption</note>
         </trans-unit>
@@ -1017,7 +931,7 @@
         </trans-unit>
         <trans-unit id="Table 4285604025 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed Version</source>
-          <target>Fixed Version</target>
+          <target>Фиксированная версия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Fixed Version - Property Caption</note>
         </trans-unit>
@@ -1035,7 +949,7 @@
         </trans-unit>
         <trans-unit id="Table 4285604025 - Field 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New</source>
-          <target>New</target>
+          <target>Новая</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field New - Property Caption</note>
         </trans-unit>
@@ -1053,7 +967,7 @@
         </trans-unit>
         <trans-unit id="Table 4285604025 - Field 4217298999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Turn Code</source>
-          <target>Project Turn Code</target>
+          <target>Проект Код возврата</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry Link - Field Project Turn Code - Property Caption</note>
         </trans-unit>
@@ -1124,9 +1038,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - NamedType Text005</note>
         </trans-unit>
         <trans-unit id="Table 2622754722 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agrrement No.</source>
-          <target>[NAB: SUGGESTION]Договор Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <source>Agreement No.</source>
+          <target>[NAB: REVIEW]Договор Но.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Agreement No. - Property Caption</note>
         </trans-unit>
