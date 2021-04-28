@@ -59,8 +59,8 @@ page 70262 "Purchase List Act"
                 field(FilterActType; FilterActType)
                 {
                     ApplicationArea = All;
-                    Caption = 'Тип документа';
-                    OptionCaption = 'Все,Акт,КС-2,Акт (Production),КС-2 (Production)';
+                    Caption = 'Document Type';
+                    OptionCaption = 'All,Act,KC-2,Act (Production),KC-2 (Production)';
                     trigger OnValidate()
                     begin
                         SetRecFilters;
@@ -97,7 +97,6 @@ page 70262 "Purchase List Act"
                 {
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Счет покупки';
                     trigger OnDrillDown()
                     var
                         PurchaseHeader: record "Purchase Header";
@@ -212,7 +211,6 @@ page 70262 "Purchase List Act"
                     Editable = false;
                     ShowCaption = false;
                     ApplicationArea = All;
-                    Caption = 'Передано в Бухгалтерию';
                 }
                 field("Location Document"; "Location Document")
                 {
@@ -231,7 +229,7 @@ page 70262 "Purchase List Act"
             {
                 action(ApproveButton)
                 {
-                    Caption = 'Утвердить';
+                    Caption = 'Approve';
                     Enabled = ApproveButtonEnabled;
                     Image = Approve;
                     trigger OnAction()
@@ -293,7 +291,7 @@ page 70262 "Purchase List Act"
                 }
                 action(DelayButton)
                 {
-                    Caption = 'Отклонить';
+                    Caption = 'Reject';
                     Enabled = DelayButtonEnabled;
                     Image = Reject;
                     trigger OnAction()
@@ -378,12 +376,12 @@ page 70262 "Purchase List Act"
         ApproverCheck: boolean;
         ReceiveAcc: boolean;
         MyApproved: boolean;
-        Text50000: Label 'Данные по бюджетам будут удалены. Добавить документ в архив проблемных документов?';
-        Text50001: Label 'Добавить документ в архив проблемных документов?';
-        Text50002: Label 'Отсутствует настройка Кладовщик склад для текущего пользователя. Обратитесь к администратору.';
-        Text50003: Label 'Складской документ,Акт/КС-2 на услугу';
-        Text50004: Label 'Выберите тип создаваемого документа';
-        Text50005: Label 'Требуется выбрать тип документа';
+        Text50000: Label 'Budget data will be deleted. Add a document to the archive of problem documents?';
+        Text50001: Label 'Add a document to the archive of problem documents?';
+        Text50002: Label 'There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.';
+        Text50003: Label 'Warehouse document,Act/KS-2 for the service';
+        Text50004: Label 'Select the type of document to create.';
+        Text50005: Label 'It is required to select the type of document.';
 
         ApproveButtonEnabled: boolean;
         DelayButtonEnabled: boolean;
