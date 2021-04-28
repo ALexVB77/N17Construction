@@ -16,6 +16,7 @@ tableextension 80017 "G/L Entry (Ext)" extends "G/L Entry"
             FieldClass = FlowField;
             CalcFormula = lookup("Dimension Set Entry"."Dimension Value Code" where("Dimension Set ID" = field("Dimension Set ID"), "Dimension Code" = const('ДЕНДОК')));
             Description = '51676';
+
         }
     }
 }
