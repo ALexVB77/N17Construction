@@ -1,14 +1,13 @@
-enum 50005 "User Setup Act Approval Status"
+enum 50003 "Purchase Act Approval Status"
 {
     Extensible = true;
     AssignmentCompatibility = true;
 
     value(0; " ") { Caption = ''; }
-    value(1; "сontroller") { Caption = '[1] Сontroller'; }
-    value(2; "estimator") { Caption = '[2] Estimator'; }
-    value(3; "checker") { Caption = '[3] Checker'; }
-    value(4; "approve") { Caption = '[4] Approve'; }
-    value(6; "accountant") { Caption = '[5] Accountant'; }
-
-    //  ,[1] Контролер,[2] Сметчик,[3] Проверка,[4] Утверждение,[5] Бухгалтерия
+    value(1; "Controller") { Caption = 'Controller'; }
+    value(2; "Estimator") { Caption = 'Estimator'; }
+    value(3; "Checker") { Caption = 'Checker'; }
+    value(4; "Approve") { Caption = 'Approve'; }
+    value(5; "Signing") { Caption = 'Signing'; }
+    value(6; "Accountant") { Caption = 'Accountant'; }
 }
