@@ -9,6 +9,4 @@ enum 50005 "User Setup Act Approval Status"
     value(3; "checker") { Caption = '[3] Checker'; }
     value(4; "approve") { Caption = '[4] Approve'; }
     value(6; "accountant") { Caption = '[5] Accountant'; }
-
-    //  ,[1] Контролер,[2] Сметчик,[3] Проверка,[4] Утверждение,[5] Бухгалтерия
 }

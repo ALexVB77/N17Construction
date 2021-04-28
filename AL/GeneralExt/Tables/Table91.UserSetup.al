@@ -5,7 +5,7 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
         field(70040; "Show All Acts KC-2"; Boolean)
         {
             Description = 'NC 51373 AB';
-            Caption = 'Показать все Акты и КС-2';
+            Caption = 'Show All Acts KC-2';
         }
         field(70015; "Status App Act"; enum "User Setup Act Approval Status")
         {
