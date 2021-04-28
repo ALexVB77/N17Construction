@@ -14,7 +14,6 @@ report 50082 ExportSubform
                 PurchasesPayablesSetup: Record "Purchases & Payables Setup";
             begin
                 SetRange("Agreement No.", CopyStr(DocumentNo, 1, 20));
-                CurStartRow := 0;
 
                 PurchasesPayablesSetup.Get();
                 FileName := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Vendor Agreement Template Code");
@@ -32,32 +31,32 @@ report 50082 ExportSubform
                 Sleep(1);
                 RowNo += 1;
 
-                EnterCell(RowNo, 1, Format("Building Turn All"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 2, Format("Project Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 3, Format("Cost Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 4, Format("Global Dimension 1 Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 5, Format("Global Dimension 2 Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 6, Format("Cost Type"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 7, Format(Description), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 8, Format(VendAgrDetails.CalcGActuals(false,
-                                                                       "Project Code",
-                                                                       "Project Line No.",
-                                                                       "Agreement No.",
-                                                                       "Global Dimension 1 Code",
-                                                                       "Global Dimension 2 Code",
-                                                                       "Cost Type", true), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 9, DelChr(Format(Amount, 0, '<Precision,2:2><Standard Format,1>')), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 10, Format(VendAgrDetails.CalcPostedInvoice2("Vendor No.",
-                                                                              "Agreement No.",
-                                                                              "Global Dimension 1 Code",
-                                                                              "Global Dimension 2 Code",
-                                                                              "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 11, Format(VendAgrDetails.GetCommited("Agreement No.",
-                                                                       "Global Dimension 1 Code",
-                                                                       "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 12, Format(Amount - VendAgrDetails.GetCommited("Agreement No.",
-                                                                                "Global Dimension 1 Code",
-                                                                                "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 1, Format("Building Turn All"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 2, Format("Project Code"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 3, Format("Cost Code"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 4, Format("Global Dimension 1 Code"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 5, Format("Global Dimension 2 Code"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 6, Format("Cost Type"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 7, Format(Description), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 8, Format(CalcGActuals(false,
+                                                        "Project Code",
+                                                        "Project Line No.",
+                                                        "Agreement No.",
+                                                        "Global Dimension 1 Code",
+                                                        "Global Dimension 2 Code",
+                                                        "Cost Type", true), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 9, DelChr(Format(Amount, 0, '<Precision,2:2><Standard Format,1>')), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 10, Format(CalcPostedInvoice2("Vendor No.",
+                                                               "Agreement No.",
+                                                               "Global Dimension 1 Code",
+                                                               "Global Dimension 2 Code",
+                                                               "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 11, Format(GetCommited("Agreement No.",
+                                                        "Global Dimension 1 Code",
+                                                        "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 12, Format(Amount - GetCommited("Agreement No.",
+                                                                 "Global Dimension 1 Code",
+                                                                 "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
             end;
 
             trigger OnPostDataItem()
@@ -88,20 +87,20 @@ report 50082 ExportSubform
             begin
                 RowNo += 1;
 
-                EnterCell(RowNo, 1, Format("Entry No."), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 2, Format(Date), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 3, Format("Date Plan"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 4, Format("Building Turn"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 5, Format("Cost Code"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 6, Format("Transaction Type"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 7, Format("Without VAT", 0, '<Precision,2:2><Standard Format,1>'), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 8, Format("Without VAT (LCY)", 0, '<Precision,2:2><Standard Format,0>'), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 9, Format(Curency), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 10, Format(Description), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 11, Format("Description 2"), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 12, Format(GetInvoiceNo), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 12, Format(GetInvoiceDate), true, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 14, Format("Payment Doc. No."), true, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 1, Format("Entry No."), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 2, Format(Date), false, ExcelBufferTmp."Cell Type"::Date, true);
+                EnterCell(RowNo, 3, Format("Date Plan"), false, ExcelBufferTmp."Cell Type"::Date, true);
+                EnterCell(RowNo, 4, Format("Building Turn"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 5, Format("Cost Code"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 6, Format("Transaction Type"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 7, Format("Without VAT", 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 8, Format("Without VAT (LCY)", 0, '<Precision,2:2><Standard Format,0>'), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 9, Format(Curency), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 10, Format(Description), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 11, Format("Description 2"), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 12, Format(GetInvoiceNo), false, ExcelBufferTmp."Cell Type"::Text, true);
+                EnterCell(RowNo, 12, Format(GetInvoiceDate), false, ExcelBufferTmp."Cell Type"::Date, true);
+                EnterCell(RowNo, 14, Format("Payment Doc. No."), false, ExcelBufferTmp."Cell Type"::Text, true);
             end;
 
             trigger OnPostDataItem()
@@ -116,7 +115,6 @@ report 50082 ExportSubform
 
     var
         DocumentNo: Code[100];
-        CurStartRow: Integer;
         FileName: Text[1024];
         ExcelTemplate: Record "Excel Template";
         ExcelBufferTmp: Record "Excel Buffer Mod" temporary;
@@ -124,8 +122,6 @@ report 50082 ExportSubform
         VendorNo: Code[100];
         Text001: Label 'Разбивка по литерам';
         Text002: Label 'График платежей';
-        VendAgrDetails: Record "Vendor Agreement Details";
-        ExcelReportBuilder: Codeunit "Excel Report Builder Manager";
 
     procedure SetDocNo(DocNo: Code[10]; VendNo: Code[10])
     begin
