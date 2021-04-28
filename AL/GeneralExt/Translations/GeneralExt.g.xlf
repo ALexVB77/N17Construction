@@ -1679,32 +1679,32 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Данные по бюджетам будут удалены. Добавить документ в архив проблемных документов?</source>
+          <source>Budget data will be deleted. Add a document to the archive of problem documents?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Добавить документ в архив проблемных документов?</source>
+          <source>Add a document to the archive of problem documents?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - NamedType Text50001</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 1927858078" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Отсутствует настройка Кладовщик склад для текущего пользователя. Обратитесь к администратору.</source>
+          <source>There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - NamedType Text50002</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 1290161461" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Складской документ,Акт/КС-2 на услугу</source>
+          <source>Warehouse document,Act/KS-2 for the service</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - NamedType Text50003</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 2396645672" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Выберите тип создаваемого документа</source>
+          <source>Select the type of document to create.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - NamedType Text50004</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 1758949055" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Требуется выбрать тип документа</source>
+          <source>It is required to select the type of document.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - NamedType Text50005</note>
         </trans-unit>
@@ -1724,12 +1724,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control cFilter1 - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Control 2805020018 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Тип документа</source>
+          <source>Document Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Control 2805020018 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Все,Акт,КС-2,Акт (Production),КС-2 (Production)</source>
+          <source>All,Act,KC-2,Act (Production),KC-2 (Production)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property OptionCaption</note>
         </trans-unit>
@@ -1753,28 +1753,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Sorting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Control 166038250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Счет покупки</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Invoice No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2825229705 - Control 3336884086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Передано в Бухгалтерию</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Receive Account - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Command Buttons</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action Command Buttons - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Action 1020004867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Утвердить</source>
+          <source>Approve</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action ApproveButton - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Action 3043750541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Отклонить</source>
+          <source>Reject</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DelayButton - Property Caption</note>
         </trans-unit>
