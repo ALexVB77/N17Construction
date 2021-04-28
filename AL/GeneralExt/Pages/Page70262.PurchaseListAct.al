@@ -19,6 +19,7 @@ page 70262 "Purchase List Act"
             group(Filters)
             {
                 Caption = 'Filters';
+                ShowCaption = false;
                 field(Selection; Filter2)
                 {
                     ApplicationArea = Basic, Suite;
