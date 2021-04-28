@@ -103,12 +103,12 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         }
         field(90006; "Invoice No."; Code[20])
         {
-            Caption = 'Счет Покупки Но.';
+            Caption = 'Invoice No.';
             Description = 'NC 51373 AB';
         }
         field(90009; "Receive Account"; Boolean)
         {
-            Caption = 'Получено Бухгалтерией';
+            Caption = 'Receive Account';
             Description = 'NC 51373 AB';
             trigger OnValidate()
             var

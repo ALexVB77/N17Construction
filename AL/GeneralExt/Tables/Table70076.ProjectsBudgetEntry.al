@@ -152,7 +152,7 @@ table 70076 "Projects Budget Entry"
         }
         field(44; Close; Boolean)
         {
-            Caption = 'Fact';
+            Caption = 'Close';
 
             // trigger OnValidate()
             // begin
