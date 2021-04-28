@@ -2697,11 +2697,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method UnpostForecastEntry</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Список документов Акт и КС-2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
           <source>Добавить документ в архив проблемных документов?</source>
           <note from="Developer" annotates="general" priority="2"></note>

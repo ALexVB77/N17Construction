@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="GeneralExt">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="GeneralExt">
     <body>
       <group id="body">
         <trans-unit id="Table 286357085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1675,9 +1675,8 @@
         </trans-unit>
         <trans-unit id="Page 2825229705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Orders List</source>
-          <target>ЖЕСТЬ!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Property Caption</note>        
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>Данные по бюджетам будут удалены. Добавить документ в архив проблемных документов?</source>
