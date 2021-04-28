@@ -213,8 +213,7 @@ table 70094 "Vendor Agreement Details"
         }
         field(70016; "Cost Type"; Code[20])
         {
-            Caption = 'COST TYPE';
-
+            Caption = 'Cost Type';
 
             trigger OnLookup()
             var
@@ -240,7 +239,7 @@ table 70094 "Vendor Agreement Details"
         }
         field(70019; ByOrder; Boolean)
         {
-
+            Caption = 'By Order';
         }
         field(70034; "Close Commitment"; Boolean)
         {
@@ -295,10 +294,10 @@ table 70094 "Vendor Agreement Details"
         CurrencyCode: Code[10];
         // BuildingProject: Record "70050";
         SkipChekEmptyAmount: Boolean;
-        TEXT0001: Label 'Необходимо определить объект строительства';
-        TEXT0002: Label 'Для объекта строительства %1 не найдена статья %2';
-        Text50000: Label 'У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!';
-        Text50001: Label 'Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!';
+        TEXT0001: Label 'It is necessary to determine the construction object';
+        TEXT0002: Label 'No article% 2 found for construction object% 1';
+        Text50000: Label 'For the project% 1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!';
+        Text50001: Label 'Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace% 1!';
 
     trigger OnInsert()
     begin
