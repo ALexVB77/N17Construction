@@ -12,7 +12,7 @@ pageextension 80119 "User Setup (Ext)" extends "User Setup"
             {
                 ApplicationArea = Basic, Suite;
             }
-            field("Administrator IW"; Rec."Administrator IW";)
+            field("Administrator IW"; Rec."Administrator IW")
             {
                 ApplicationArea = Basic, Suite;
             }
