@@ -2702,11 +2702,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Данные по бюджетам будут удалены. Добавить документ в архив проблемных документов?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - NamedType Text50000</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
           <source>Добавить документ в архив проблемных документов?</source>
           <note from="Developer" annotates="general" priority="2"></note>
