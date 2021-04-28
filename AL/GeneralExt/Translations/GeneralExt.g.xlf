@@ -1404,22 +1404,22 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Необходимо определить объект строительства</source>
+          <source>It is necessary to determine the construction object</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0001</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 4156606849" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Для объекта строительства %1 не найдена статья %2</source>
+          <source>No article% 2 found for construction object% 1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0002</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!</source>
+          <source>For the project% 1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</source>
+          <source>Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace% 1!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
         </trans-unit>
@@ -1464,7 +1464,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Building Turn All - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - Field 1577863327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ByOrder</source>
+          <source>By Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field ByOrder - Property Caption</note>
         </trans-unit>
@@ -1484,7 +1484,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Cost Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>COST TYPE</source>
+          <source>Cost Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Cost Type - Property Caption</note>
         </trans-unit>
@@ -1644,29 +1644,29 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text12400</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Комбинации Actuals</source>
+          <source>Proj. Cost Control Entry Buf.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Proj. Cost Control Entry Buf. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Нельзя изменять операции!</source>
+          <source>Operations cannot be changed!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Proj. Cost Control Entry Buf. - NamedType TEXT001</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - NamedType 377269713" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Нельзя удалять операции!</source>
+          <source>You cannot delete operations!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Proj. Cost Control Entry Buf. - NamedType TEXT002</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Control 241882989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма</source>
+          <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Proj. Cost Control Entry Buf. - Control GetAmount1 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3568259090 - Control 1275179034 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма</source>
+        <trans-unit id="Page 3568259090 - Control 520941081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Without VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Proj. Cost Control Entry Buf. - Control Сумма - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Proj. Cost Control Entry Buf. - Control WithoutVAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects CC Entry Constr 2</source>
@@ -1774,67 +1774,67 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 1137032787" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Необходимо задать Код Проекта!</source>
+          <source>You must specify the Project Code!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0004</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 1774729404" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Необходимо задать Статью Бюджета!</source>
+          <source>You must ask a Budget Item!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0005</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 3687819255" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Необходимо выбрать записи Cash Flow, с которых необходимо списать данную сумму.</source>
+          <source>You must select the Cash Flow records from which you want to write off this amount.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0008</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 30548576" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Отменено пользователем.</source>
+          <source>Canceled by the user.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0009</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 2068412800" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Отвязать платеж от поставщика и договора (перевести на уровень 1)?</source>
+          <source>Unlink the payment from the supplier and the contract (transfer to level 1)?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0010</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 3343806034" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень </source>
+          <source>The operation is tied to the IW document \ Amount available for transfer to the 1st level</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0012</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 2706109417" size-unit="char" translate="yes" xml:space="preserve">
-          <source>"Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень </source>
+          <source>The operation is tied to the IW document \ Amount available for transfer to the 1st level</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0013</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - NamedType 324231972" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Вы не имеете прав копировать фактические операции.</source>
+          <source>You are not allowed to copy the actual transactions.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0014</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Method 3626406171 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Превышена Сумма Остатка по Договору!</source>
+          <source>The amount of the Balance under the Agreement has been exceeded!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Method FieldOnAfterValidate - NamedType TEXT001</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 1432122159 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Дата Оплаты</source>
+        <trans-unit id="Page 2884131641 - Control 4286292223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Дата Оплаты - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 2836206738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Номер Заявки</source>
+        <trans-unit id="Page 2884131641 - Control 3048794140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice No</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Номер Заявки - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Control 3368131864 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма платежей</source>
+          <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control GetAmount1_ - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Control 4243530988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Остаток</source>
+          <source>Rest</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Rest - Property Caption</note>
         </trans-unit>
@@ -1843,10 +1843,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action Command Buttons - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Action 1877066897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Отвязать от Договора</source>
+        <trans-unit id="Page 2884131641 - Action 2406781165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Untie from Agreement</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action Отвязать от Договора - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action Untie from Agreement - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Agreement Details</source>
@@ -1854,7 +1854,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Превышена Сумма Остатка!</source>
+          <source>Remaining Amount Exceeded!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - NamedType TEXT001</note>
         </trans-unit>
@@ -1863,43 +1863,43 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Actual Costs Project (VAT) - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 3791597239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>На Утверждении</source>
+        <trans-unit id="Page 1535144756 - Control 323598757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Amount With VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control На Утверждении - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Agreement Amount With VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 2494311699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Неучтенные Счета с НДС</source>
+        <trans-unit id="Page 1535144756 - Control 653592103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Amount Without VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Неучтенные Счета с НДС - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Agreement Amount Without VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 1008919314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма договора без НДС</source>
+        <trans-unit id="Page 1535144756 - Control 3502635538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>On Approval</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма договора без НДС - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control On Approval - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 3829992049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма Договора, с НДС (руб)</source>
+        <trans-unit id="Page 1535144756 - Control 3888822604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма Договора, с НДС (руб) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Posted Invoice - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 3859676945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Сумма Остатка</source>
+        <trans-unit id="Page 1535144756 - Control 3838973809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Invoice Without VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Сумма Остатка - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Posted Invoice Without VAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 1857461107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Учтенные Счета с НДС</source>
+        <trans-unit id="Page 1535144756 - Control 179298956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remain Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Учтенные Счета с НДС - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Remain Amount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 179953497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Учтенные Счета, без НДС</source>
+        <trans-unit id="Page 1535144756 - Control 1125664310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unaccounted VAT Invoices</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Учтенные Счета, без НДС - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Unaccounted VAT Invoices - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Остальные комбинации Actuals</source>
+          <source>Other combinations of Actuals</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Action ActionName - Property Caption</note>
         </trans-unit>
@@ -1964,17 +1964,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Template - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ExportSubform</source>
+          <source>Export Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Разбивка по литерам</source>
+          <source>Breakdown by Letter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>График платежей</source>
+          <source>Payment Schedule</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text002</note>
         </trans-unit>

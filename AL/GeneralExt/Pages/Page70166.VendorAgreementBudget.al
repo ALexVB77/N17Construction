@@ -20,15 +20,14 @@ page 70166 "Vendor Agreement Budget"
                 {
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Остаток';
+                    Caption = 'Rest';
                 }
 
                 field(GetAmount1_; GetAmount1)
                 {
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Сумма платежей';
-
+                    Caption = 'Amount';
                 }
             }
             repeater(Repeater1237120003)
@@ -219,20 +218,18 @@ page 70166 "Vendor Agreement Budget"
 
                 }
 
-                field("Номер Заявки"; GetInvoiceNo)
+                field("Invoice No"; GetInvoiceNo)
                 {
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Номер Заявки';
-
+                    Caption = 'Invoice No';
                 }
 
-                field("Дата Оплаты"; GetInvoiceDate)
+                field("Invoice Date"; GetInvoiceDate)
                 {
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Дата Оплаты';
-
+                    Caption = 'Invoice Date';
                 }
 
                 field("Payment Doc. No."; "Payment Doc. No.")
@@ -255,9 +252,9 @@ page 70166 "Vendor Agreement Budget"
         {
             group("Command Buttons")
             {
-                action("Отвязать от Договора")
+                action("Untie from Agreement")
                 {
-                    Caption = 'Отвязать от Договора';
+                    Caption = 'Untie from Agreement';
                     trigger OnAction()
                     begin
                         IF Close THEN EXIT;
@@ -269,11 +266,7 @@ page 70166 "Vendor Agreement Budget"
                             END;
                         END;
                     end;
-
-
                 }
-
-
             }
         }
     }
@@ -437,15 +430,15 @@ page 70166 "Vendor Agreement Budget"
         vAgreement: record "Vendor Agreement";
         Delta: decimal;
         US: record "User Setup";
-        TEXT0004: Label 'Необходимо задать Код Проекта!';
-        TEXT0005: Label 'Необходимо задать Статью Бюджета!';
-        TEXT0008: Label 'Необходимо выбрать записи Cash Flow, с которых необходимо списать данную сумму.';
-        TEXT0009: Label 'Отменено пользователем.';
-        TEXT0010: Label 'Отвязать платеж от поставщика и договора (перевести на уровень 1)?';
-        TEXT0012: Label '"Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень ';
-        TEXT0013: Label '"Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень ';
+        TEXT0004: Label 'You must specify the Project Code!';
+        TEXT0005: Label 'You must ask a Budget Item!';
+        TEXT0008: Label 'You must select the Cash Flow records from which you want to write off this amount.';
+        TEXT0009: Label 'Canceled by the user.';
+        TEXT0010: Label 'Unlink the payment from the supplier and the contract (transfer to level 1)?';
+        TEXT0012: Label 'The operation is tied to the IW document \ Amount available for transfer to the 1st level';
+        TEXT0013: Label 'The operation is tied to the IW document \ Amount available for transfer to the 1st level';
         CurrTrType: code[20];
-        TEXT0014: Label 'Вы не имеете прав копировать фактические операции.';
+        TEXT0014: Label 'You are not allowed to copy the actual transactions.';
 
 
     procedure ChangeDate()
@@ -747,7 +740,7 @@ page 70166 "Vendor Agreement Budget"
 
     local procedure FieldOnAfterValidate()
     var
-        TEXT001: Label 'Превышена Сумма Остатка по Договору!';
+        TEXT001: Label 'The amount of the Balance under the Agreement has been exceeded!';
         lrProjectsBudgetEntry: record "Projects Budget Entry";
     // lfCFCorrection: page "Forecast List Analisys Correct";
     begin

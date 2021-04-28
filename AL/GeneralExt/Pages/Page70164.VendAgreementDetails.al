@@ -60,62 +60,54 @@ page 70164 "Vendor Agreement Details"
 
                 }
 
-                field("На Утверждении"; GetPlaneAmount(FALSE))
+                field("On Approval"; GetPlaneAmount(FALSE))
                 {
                     ApplicationArea = All;
-                    Caption = 'На Утверждении';
+                    Caption = 'On Approval';
                     trigger OnLookup(var Text: Text): Boolean
                     begin
                         IF GetPlaneAmount(TRUE) = 0 THEN;
                     end;
-
-
                 }
 
-                field("Неучтенные Счета с НДС"; CalcInvoice(TRUE))
+                field("Unaccounted VAT Invoices"; CalcInvoice(TRUE))
                 {
                     ApplicationArea = All;
-                    Caption = 'Неучтенные Счета с НДС';
+                    Caption = 'Unaccounted VAT Invoices';
                     trigger OnLookup(var Text: Text): Boolean
                     begin
                         ShowInvoice;
                     end;
-
-
                 }
 
-                field("Учтенные Счета с НДС"; CalcPostedInvoice(TRUE))
+                field("Posted Invoice"; CalcPostedInvoice(TRUE))
                 {
                     // Name = PostInvVAT;
                     Visible = true;
                     ApplicationArea = All;
-                    Caption = 'Учтенные Счета с НДС';
+                    Caption = 'Posted Invoice';
                     trigger OnLookup(var Text: Text): Boolean
                     begin
                         ShowPostedInvoice;
                     end;
-
-
                 }
 
-                field("Сумма Остатка"; GetRemainAmt)
+                field("Remain Amount"; GetRemainAmt)
                 {
                     ApplicationArea = All;
-                    Caption = 'Сумма Остатка';
+                    Caption = 'Remain Amount';
                     trigger OnAssistEdit()
                     begin
                         GetRemainAmt2;
                     end;
-
-
                 }
 
-                field("Учтенные Счета, без НДС"; CalcPostedInvoice(FALSE))
+                field("Posted Invoice Without VAT"; CalcPostedInvoice(FALSE))
                 {
                     // Name = PostInv;
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Учтенные Счета, без НДС';
+                    Caption = 'Posted Invoice Without VAT';
                     trigger OnValidate()
                     begin
                         CalcSum; // NCS-57 AP 180414 <<
@@ -125,8 +117,6 @@ page 70164 "Vendor Agreement Details"
                     begin
                         ShowPostedInvoice;
                     end;
-
-
                 }
 
                 // field("Выплачено по договору, без НДС"; gcduERPC.GetCommited("Agreement No.","Global Dimension 1 Code","Global Dimension 2 Code"))
@@ -145,11 +135,11 @@ page 70164 "Vendor Agreement Details"
 
                 // }   
 
-                field("Сумма договора без НДС"; Amount)
+                field("Agreement Amount Without VAT"; Amount)
                 {
                     Visible = true;
                     ApplicationArea = All;
-                    Caption = 'Сумма договора без НДС';
+                    Caption = 'Agreement Amount Without VAT';
                     // trigger OnValidate()
                     // var 
                     //     Delta: decimal;
@@ -210,13 +200,12 @@ page 70164 "Vendor Agreement Details"
 
                 }
 
-                field("Сумма Договора, с НДС (руб)"; AmountLCY)
+                field("Agreement Amount With VAT"; AmountLCY)
                 {
                     Visible = false;
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Сумма Договора, с НДС (руб)';
-
+                    Caption = 'Agreement Amount With VAT';
                 }
 
                 field("Currency Code"; "Currency Code")
@@ -269,7 +258,8 @@ page 70164 "Vendor Agreement Details"
             action(ActionName)
             {
                 ApplicationArea = All;
-                Caption = 'Остальные комбинации Actuals';
+                Caption = 'Other combinations of Actuals';
+
                 trigger OnAction()
                 var
                     ProjectsCostControlEntry: record "Projects Cost Control Entry";
@@ -330,7 +320,7 @@ page 70164 "Vendor Agreement Details"
         Calc: boolean;
         "TEMP Vendor Agreement Details": record "Vendor Agreement Details" temporary;
         BuildingProject: record "Building project";
-        TEXT001: Label 'Превышена Сумма Остатка!';
+        TEXT001: Label 'Remaining Amount Exceeded!';
 
     procedure GetAmount() Ret: Decimal
     var
