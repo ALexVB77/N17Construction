@@ -2103,11 +2103,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Sorting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Command Buttons</source>
-          <target>Command Buttons</target>
+        <trans-unit id="Page 2825229705 - Action 227370865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action Command Buttons - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action Approval - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Action 1020004867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Approve</source>
@@ -2364,14 +2365,12 @@
         <trans-unit id="Report 3333280010 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Breakdown by Letter</source>
           <target>Разбивка по литерам</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Schedule</source>
           <target>График платежей</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ExportSubform - NamedType Text002</note>
         </trans-unit>
@@ -3140,7 +3139,6 @@
         <trans-unit id="PageExtension 2153774770 - Action 3640084062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Change Log</source>
           <target>Журнал изменений</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Action ChangeLog - Property Caption</note>
         </trans-unit>
@@ -3171,21 +3169,18 @@
         <trans-unit id="TableExtension 1418812251 - Field 3337756715 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1159403147">
           <source>Document Line</source>
           <target>Документ Строка</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Attachment (Ext) - Field Document Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1418812251 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1159403147">
           <source>Document No.</source>
           <target>Документ Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Attachment (Ext) - Field Document No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1418812251 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1159403147">
           <source>Document Type</source>
           <target>Документ Тип</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Attachment (Ext) - Field Document Type - Property Caption</note>
         </trans-unit>
@@ -3198,14 +3193,12 @@
         <trans-unit id="TableExtension 2300516586 - Field 3518332187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
           <source>Attachment Link</source>
           <target>Вложение Ссылка</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment (Ext) - Field Attachment Link - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2300516586 - Field 1490178770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
           <source>Primary Key 2</source>
           <target>Первичный ключ 2</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Document Attachment (Ext) - Field PK Key 2 - Property Caption</note>
         </trans-unit>
@@ -3236,14 +3229,12 @@
         <trans-unit id="TableExtension 1850561956 - Field 1001460731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>DenDoc Dim Value Code</source>
           <target>ДЕНДОК значение измерения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry (Ext) - Field DenDoc Dim Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1850561956 - Field 3904971218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2825951060">
           <source>Utilities Dim. Value Code</source>
           <target>ИНЖ. СЕТЬ</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension G/L Entry (Ext) - Field Utilities Dim. Value Code - Property Caption</note>
         </trans-unit>
