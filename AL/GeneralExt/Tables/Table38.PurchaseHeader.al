@@ -96,6 +96,42 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Act Type';
             Description = 'NC 51373 AB';
         }
+        field(90003; "Status App Act"; Enum "Purchase Act Approval Status")
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Approval Status';
+        }
+        field(90006; "Invoice No."; Code[20])
+        {
+            Caption = 'Счет Покупки Но.';
+            Description = 'NC 51373 AB';
+        }
+        field(90009; "Receive Account"; Boolean)
+        {
+            Caption = 'Получено Бухгалтерией';
+            Description = 'NC 51373 AB';
+            trigger OnValidate()
+            var
+                VLE: record "Vendor Ledger Entry";
+            begin
+                // NC 51373 AB >>
+                // надо сделать FF поле в Т25 
+                // //NC-47007 DP >>
+                // IF "Invoice No."<>'' THEN
+                // BEGIN
+                //   VLE.SETRANGE("Document No.","Invoice No.");
+                //   VLE.MODIFYALL("Receive Account","Receive Account");
+                // END;
+                //NC-47007 DP <<
+            end;
+        }
+        field(90019; "Location Document"; Boolean)
+        {
+            Description = 'NC 51373 AB';
+            Editable = false;
+            Caption = 'Location Document';
+
+        }
     }
     local procedure UpdateCF()
     var
@@ -121,4 +157,5 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         END;
         //NC 27251 HR end
     end;
+
 }

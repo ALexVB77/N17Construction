@@ -47,6 +47,7 @@ page 70262 "Purchase List Act"
                 {
                     ApplicationArea = All;
                     Caption = 'Scope';
+                    Enabled = Filter1Enabled;
                     OptionCaption = 'My documents,All documents,My Approved';
                     trigger OnValidate()
                     begin
@@ -92,7 +93,7 @@ page 70262 "Purchase List Act"
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(InvoiceNo; InvoiceNo)
+                field("Invoice No."; "Invoice No.")
                 {
                     Editable = false;
                     ApplicationArea = All;
@@ -103,23 +104,23 @@ page 70262 "Purchase List Act"
                         PurchInvHeader: record "Purch. Inv. Header";
                     begin
                         //NC 22512 > DP
-                        IF PurchaseHeader.GET(PurchaseHeader."Document Type"::Order, InvoiceNo) THEN BEGIN
+                        IF PurchaseHeader.GET(PurchaseHeader."Document Type"::Order, "Invoice No.") THEN BEGIN
                             PurchaseHeader.RESET;
                             PurchaseHeader.SETRANGE("Document Type", PurchaseHeader."Document Type"::Order);
-                            PurchaseHeader.SETRANGE("No.", InvoiceNo);
+                            PurchaseHeader.SETRANGE("No.", "Invoice No.");
                             PAGE.RUNMODAL(50, PurchaseHeader)
                         END ELSE
                             //NC 22512 < DP
                             //SWC004 AKA 040914
-                            IF PurchaseHeader.GET(PurchaseHeader."Document Type"::Invoice, InvoiceNo) THEN BEGIN
+                            IF PurchaseHeader.GET(PurchaseHeader."Document Type"::Invoice, "Invoice No.") THEN BEGIN
                                 PurchaseHeader.RESET;
                                 PurchaseHeader.SETFILTER("Document Type", '%1', PurchaseHeader."Document Type"::Invoice);
-                                PurchaseHeader.SETRANGE("No.", InvoiceNo);
+                                PurchaseHeader.SETRANGE("No.", "Invoice No.");
                                 PAGE.RUNMODAL(51, PurchaseHeader)
                             END ELSE BEGIN
-                                IF PurchInvHeader.GET(InvoiceNo) THEN BEGIN
+                                IF PurchInvHeader.GET("Invoice No.") THEN BEGIN
                                     PurchInvHeader.RESET;
-                                    PurchInvHeader.SETRANGE("No.", InvoiceNo);
+                                    PurchInvHeader.SETRANGE("No.", "Invoice No.");
                                     PAGE.RUNMODAL(138, PurchInvHeader);
                                 END;
                             END;
@@ -162,11 +163,10 @@ page 70262 "Purchase List Act"
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field("Статус утверждения"; StatusAppAct)
+                field("Статус утверждения"; "Status App Act")
                 {
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Статус утверждения';
                 }
                 field("Date Status App"; "Date Status App")
                 {
@@ -207,86 +207,145 @@ page 70262 "Purchase List Act"
                     ShowCaption = false;
                     ApplicationArea = All;
                 }
-                field(ReceiveAcc; ReceiveAcc)
+                field("Receive Account"; "Receive Account")
                 {
                     Editable = false;
                     ShowCaption = false;
                     ApplicationArea = All;
                     Caption = 'Передано в Бухгалтерию';
                 }
-                field(LocationDocument; LocationDocument)
+                field("Location Document"; "Location Document")
                 {
                     Editable = false;
-                    ShowCaption = false;
                     ApplicationArea = All;
-                    Caption = 'LocationDocument';
-
                 }
             }
         }
     }
 
-    trigger OnAfterGetRecord()
-    begin
+    actions
+    {
+        area(navigation)
+        {
+            group("Command Buttons")
+            {
+                action(ApproveButton)
+                {
+                    Caption = 'Утвердить';
+                    Enabled = ApproveButtonEnabled;
+                    Image = Approve;
+                    trigger OnAction()
+                    begin
 
 
-        // NC AB >>
-        // #CHECKLATER    
+                        Message('Pressed ApproveButton');
+                        /*
+                        
+                        //SWC380 AKA 200115
+                        // SWC1023 DD 28.03.17 >>
+                        CheckEmptyLines();
+                        // SWC1023 DD 28.03.17 <<
+                        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
+                        
+                        IF StatusAppAct = StatusAppAct::Approve THEN
+                        BEGIN
+                          ApprovalEntry.SETRANGE("Table ID",38);
+                          ApprovalEntry.SETRANGE("Document Type",ApprovalEntry."Document Type"::Order);
+                          ApprovalEntry.SETRANGE("Document No.","No.");
+                          ApprovalEntry.SETRANGE("Approver ID",USERID);
+                          //ApprovalEntry.SETRANGE("Approver ID", 'FIRUSKPT');
+                          ApprovalEntry.SETRANGE(Status,ApprovalEntry.Status::Open);
+                        
+                          IF ApprovalEntry.FIND('-') THEN
+                          BEGIN
+                            ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
+                            IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
+                              IF PurchaseHeader.GET(ApprovalEntry."Document Type",ApprovalEntry."Document No.") THEN BEGIN
+                                ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
+                                IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
+                                BEGIN                                                                     //SWC380 AKA 190115
+                                  PurchaseHeader."Process User":=gcERPC.GetCurrentAppr(PurchaseHeader);
+                                  PurchaseHeader."Date Status App":=TODAY;
+                                  PurchaseHeader.MODIFY;
+                                END;                                                                      //SWC380 AKA 190115
+                              END;
+                            END;
+                          END
+                          // SWC1013 DD 27.03.17 >>
+                          ELSE
+                            ERROR('Утверждающий %1 не указан в таблице утверждения!',USERID);
+                          // SWC1013 DD 27.03.17 <<
+                        END
+                        ELSE
+                        BEGIN
+                          //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC630 AKA 150915
+                          IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC630 AKA 150915
+                            gcERPC.ChangeActStatus(Rec);
+                          //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC630 AKA 150915
+                          IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC630 AKA 150915
+                            gcERPC.ChangeKC2Status(Rec);
+                          // SWC1023 DD 28.03.17 >>
+                          //CurrForm.CLOSE;
+                          // SWC1023 DD 28.03.17 <<
+                        END;
+                        */
+                    end;
+                }
+                action(DelayButton)
+                {
+                    Caption = 'Отклонить';
+                    Enabled = DelayButtonEnabled;
+                    Image = Reject;
+                    trigger OnAction()
+                    begin
 
-        /* 
-
-        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", Rec."No.");
-        InvoiceNo := PurchHeaderAdd.GetInvoiceNo("Document Type", Rec."No.");       //SWC004 AKA 050914
-        ReceiveAcc := PurchHeaderAdd.GetReceiveAccount("Document Type", Rec."No."); //SWC380 AKA 260215
-
-        //NC 22512 > DP
-        LocationDocument := PurchHeaderAdd.GetLocationDocument("Document Type", Rec."No.");
-        //NC 22512 < DP
-
-        */
-
-    end;
+                        Message('Pressed DelayButton');
+                        /*    
+                        //SWC380 AKA 200115
+                        //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC631 AKA 220915
+                        IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC631 AKA 220915
+                          gcERPC.ChangeActStatusDown(Rec);
+                        //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC631 AKA 220915
+                        IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC631 AKA 220915
+                          gcERPC.ChangeKC2StatusDown(Rec);
+                        */
+                    end;
+                }
+            }
+        }
+    }
 
     trigger OnOpenPage()
     begin
-
-        // NC AB >>
-        // #CHECKLATER    
-
-        /*    
-
         grUserSetup.GET(USERID);
+
         // SWC968 DD 19.12.16 >>
         IF grUserSetup."Show All Acts KC-2" AND (Filter1 = 0) THEN
             Filter1 := 1;
         // SWC968 DD 19.12.16 <<
 
+        //--
         SetSortType;
         SetRecFilters;
 
-        IF grUserSetup."Status App Act" = grUserSetup."Status App Act"::Checker THEN;
-        CurrPage.cFilter1.ENABLED := FALSE;
+        IF grUserSetup."Status App Act" = grUserSetup."Status App Act"::Checker THEN
+            Filter1Enabled := FALSE;
 
-        IF grUserSetup."Administrator IW" THEN;
-        CurrPage.cFilter1.ENABLED := TRUE;
-        //--;
+        IF grUserSetup."Administrator IW" THEN
+            Filter1Enabled := TRUE;
+        //--
 
-        //SWC380 AKA 200115 >>;
-        US.GET(USERID);
-        CurrPage.ApproveButton.VISIBLE := FALSE;
-        CurrPage.DelayButton.VISIBLE := FALSE;
-        // SWC1075 DD 28.07.17 >>;
-        IF NOT MyApproved THEN;
-        // SWC1075 DD 28.07.17 <<;
-        IF US."Status App Act" = US."Status App Act"::Approve THEN;
-        BEGIN
-            ;
-            CurrPage.ApproveButton.VISIBLE := TRUE;
-            CurrPage.DelayButton.VISIBLE := TRUE;
-        END;
-        //SWC380 AKA 200115 <<;
-
-        */
+        //SWC380 AKA 200115 >>
+        ApproveButtonEnabled := FALSE;
+        DelayButtonEnabled := FALSE;
+        // SWC1075 DD 28.07.17 >>
+        IF NOT MyApproved THEN
+            // SWC1075 DD 28.07.17 <<
+            IF grUserSetup."Status App Act" = grUserSetup."Status App Act"::Approve THEN BEGIN
+                ApproveButtonEnabled := TRUE;
+                DelayButtonEnabled := TRUE;
+            END;
+        //SWC380 AKA 200115 <<
     end;
 
     var
@@ -296,8 +355,6 @@ page 70262 "Purchase List Act"
         grUserSetup: record "User Setup";
         pCheckDocDate: boolean;
         active: boolean;
-        grUS: record "User Setup";
-        grUS1: record "User Setup";
         ShowOther: boolean;
         grPH: record "Purchase Header";
         grAttachment: record "Attachment";
@@ -306,17 +363,15 @@ page 70262 "Purchase List Act"
         //grPaymentRequest: report "Payment Request";
         SortType: option docno,postdate,vendor,userproc;
         Filter1: option mydoc,all,approved;
+        Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
         r: text[30];
         i: integer;
         //gcERPC: codeunit "ERPC Funtions";
         //PurchHeaderAdd: record "Purchase Header Additional";
-        StatusAppAct: enum "Purchase Act Approval Status";
         FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)";
         Window: dialog;
         // ActTypeOption: option акт,кс-2,"акт (production)","кс-2 (production)";
-        InvoiceNo: code[20];
-        US: record "User Setup";
         ApprovalEntry: record "Approval Entry";
         //ApprovalMgt: codeunit "Approvals Management";
         PurchaseHeader: record "Purchase Header";
@@ -325,11 +380,13 @@ page 70262 "Purchase List Act"
         MyApproved: boolean;
         Text50000: Label 'Данные по бюджетам будут удалены. Добавить документ в архив проблемных документов?';
         Text50001: Label 'Добавить документ в архив проблемных документов?';
-        LocationDocument: boolean;
         Text50002: Label 'Отсутствует настройка Кладовщик склад для текущего пользователя. Обратитесь к администратору.';
         Text50003: Label 'Складской документ,Акт/КС-2 на услугу';
         Text50004: Label 'Выберите тип создаваемого документа';
         Text50005: Label 'Требуется выбрать тип документа';
+
+        ApproveButtonEnabled: boolean;
+        DelayButtonEnabled: boolean;
 
     local procedure SetSortType()
     begin
