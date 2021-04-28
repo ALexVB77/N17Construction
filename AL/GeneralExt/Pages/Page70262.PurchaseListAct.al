@@ -2,15 +2,15 @@ page 70262 "Purchase List Act"
 {
     ApplicationArea = Basic, Suite;
     UsageCategory = Tasks;
-    Editable = true;
     InsertAllowed = false;
     DeleteAllowed = false;
-    ModifyAllowed = false;
     SourceTable = "Purchase Header";
     SourceTableView = SORTING("Document Type", "No.") WHERE("Act Type" = FILTER(<> ' '), "Status App" = FILTER(<> Payment), "Problem Type" = FILTER(<> "Act error"));
     DataCaptionFields = "Document Type";
     PageType = Worksheet;
+    //PageType = List;
     Caption = 'Payment Orders List';
+    RefreshOnActivate = true;
 
     layout
     {
@@ -19,6 +19,7 @@ page 70262 "Purchase List Act"
             group(Filters)
             {
                 Caption = 'Filters';
+                ShowCaption = false;
                 field(Selection; Filter2)
                 {
                     ApplicationArea = Basic, Suite;
@@ -72,6 +73,7 @@ page 70262 "Purchase List Act"
 
             repeater(Repeater1237120003)
             {
+                Editable = false;
                 field("Problem Document"; "Problem Document")
                 {
                     Editable = false;
@@ -223,10 +225,12 @@ page 70262 "Purchase List Act"
 
     actions
     {
-        area(navigation)
+        area(Processing)
         {
-            group("Command Buttons")
+            group(Approval)
             {
+                Caption = 'Approval';
+                Image = Approval;
                 action(ApproveButton)
                 {
                     Caption = 'Approve';
@@ -344,6 +348,13 @@ page 70262 "Purchase List Act"
                 DelayButtonEnabled := TRUE;
             END;
         //SWC380 AKA 200115 <<
+
+
+        //\\ DEBUG
+        ApproveButtonEnabled := TRUE;
+        DelayButtonEnabled := TRUE;
+
+
     end;
 
     var
