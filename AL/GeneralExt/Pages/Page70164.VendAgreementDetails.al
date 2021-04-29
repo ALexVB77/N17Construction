@@ -13,101 +13,97 @@ page 70164 "Vendor Agreement Details"
         {
             repeater(MainRep)
             {
-                field("Building Turn All"; "Building Turn All")
+                field("Building Turn All"; Rec."Building Turn All")
                 {
                     ApplicationArea = All;
-
                 }
 
-                field("Project Code"; "Project Code")
-                {
-                    Editable = false;
-                    ApplicationArea = All;
-
-                }
-
-                field("Cost Code"; "Cost Code")
-                {
-                    ApplicationArea = All;
-
-                }
-
-                field("Global Dimension 1 Code"; "Global Dimension 1 Code")
+                field("Project Code"; Rec."Project Code")
                 {
                     Editable = false;
                     ApplicationArea = All;
-
                 }
 
-                field("Global Dimension 2 Code"; "Global Dimension 2 Code")
+                field("Cost Code"; Rec."Cost Code")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+
+                field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
                     Visible = false;
                     Editable = false;
                     ApplicationArea = All;
-
                 }
 
-                field("Cost Type"; "Cost Type")
+                field("Cost Type"; Rec."Cost Type")
                 {
                     Visible = true;
                     ApplicationArea = All;
-
                 }
 
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
-
                 }
 
-                field("On Approval"; GetPlaneAmount(FALSE))
+                field("On Approval"; Rec.GetPlaneAmount(FALSE))
                 {
                     ApplicationArea = All;
                     Caption = 'On Approval';
+
                     trigger OnLookup(var Text: Text): Boolean
                     begin
-                        IF GetPlaneAmount(TRUE) = 0 THEN;
+                        IF Rec.GetPlaneAmount(TRUE) = 0 THEN;
                     end;
                 }
 
-                field("Unaccounted VAT Invoices"; CalcInvoice(TRUE))
+                field("Unaccounted VAT Invoices"; Rec.CalcInvoice(TRUE))
                 {
                     ApplicationArea = All;
                     Caption = 'Unaccounted VAT Invoices';
+
                     trigger OnLookup(var Text: Text): Boolean
                     begin
-                        ShowInvoice;
+                        Rec.ShowInvoice;
                     end;
                 }
 
-                field("Posted Invoice"; CalcPostedInvoice(TRUE))
+                field(PostInvVAT; Rec.CalcPostedInvoice(TRUE))
                 {
-                    // Name = PostInvVAT;
                     Visible = true;
                     ApplicationArea = All;
-                    Caption = 'Posted Invoice';
+                    Caption = 'Posted Invoice with VAT';
+
                     trigger OnLookup(var Text: Text): Boolean
                     begin
-                        ShowPostedInvoice;
+                        Rec.ShowPostedInvoice;
                     end;
                 }
 
-                field("Remain Amount"; GetRemainAmt)
+                field("Remain Amount"; Rec.GetRemainAmt)
                 {
                     ApplicationArea = All;
                     Caption = 'Remain Amount';
+
                     trigger OnAssistEdit()
                     begin
-                        GetRemainAmt2;
+                        Rec.GetRemainAmt2;
                     end;
                 }
 
-                field("Posted Invoice Without VAT"; CalcPostedInvoice(FALSE))
+                field(PostInv; Rec.CalcPostedInvoice(FALSE))
                 {
-                    // Name = PostInv;
                     Visible = false;
                     ApplicationArea = All;
                     Caption = 'Posted Invoice Without VAT';
+
                     trigger OnValidate()
                     begin
                         CalcSum; // NCS-57 AP 180414 <<
@@ -115,7 +111,7 @@ page 70164 "Vendor Agreement Details"
 
                     trigger OnAssistEdit()
                     begin
-                        ShowPostedInvoice;
+                        Rec.ShowPostedInvoice;
                     end;
                 }
 
@@ -135,11 +131,12 @@ page 70164 "Vendor Agreement Details"
 
                 // }   
 
-                field("Agreement Amount Without VAT"; Amount)
+                field(Amount; Rec.Amount)
                 {
                     Visible = true;
                     ApplicationArea = All;
                     Caption = 'Agreement Amount Without VAT';
+
                     // trigger OnValidate()
                     // var 
                     //     Delta: decimal;
@@ -184,23 +181,19 @@ page 70164 "Vendor Agreement Details"
                         IF ProjectsCostControlEntry.FINDFIRST THEN
                             PAGE.RUNMODAL(70186, ProjectsCostControlEntry);
                     end;
-
-
                 }
 
-                field("Amount Without VAT"; "Amount Without VAT")
+                field("Amount Without VAT"; Rec."Amount Without VAT")
                 {
                     ApplicationArea = All;
-
                 }
 
-                field("Payed by Agreement"; "Payed by Agreement")
+                field("Payed by Agreement"; Rec."Payed by Agreement")
                 {
                     ApplicationArea = All;
-
                 }
 
-                field("Agreement Amount With VAT"; AmountLCY)
+                field(AmountLCY; Rec.AmountLCY)
                 {
                     Visible = false;
                     Editable = false;
@@ -208,21 +201,20 @@ page 70164 "Vendor Agreement Details"
                     Caption = 'Agreement Amount With VAT';
                 }
 
-                field("Currency Code"; "Currency Code")
+                field("Currency Code"; Rec."Currency Code")
                 {
                     Visible = false;
                     Editable = true;
                     ApplicationArea = All;
-
                 }
 
-                field("Actual Costs Project (VAT)"; gActuals)
+                field(Actuals; gActuals)
                 {
-                    // Name = Actuals;
                     Visible = false;
                     Editable = false;
                     ApplicationArea = All;
                     Caption = 'Actual Costs Project (VAT)';
+
                     trigger OnValidate()
                     begin
                         CalcSum; // NCS-57 AP 180414 <<
@@ -244,8 +236,6 @@ page 70164 "Vendor Agreement Details"
                         PAGE.RUN(PAGE::"Projects CC Entry Constr 2", ProjectsCostControlEntry);
                         // NCS-21 AP 240214 <<
                     end;
-
-
                 }
             }
         }
@@ -307,7 +297,7 @@ page 70164 "Vendor Agreement Details"
         }
     }
     var
-        // gcduERPC: codeunit "ERPC Funtions";
+        gcduERPC: codeunit "ERPC Funtions";
         vAgreement: record "Vendor Agreement";
         ProjectsCostControlEntry: record "Projects Cost Control Entry";
         CI: record "Company Information";

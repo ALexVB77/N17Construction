@@ -2196,7 +2196,6 @@
         <trans-unit id="Page 2884131641 - Control 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close</source>
           <target>Факт</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Close - Property Caption</note>
         </trans-unit>
@@ -2236,23 +2235,23 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - NamedType TEXT001</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 3226324891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1535144756 - Control 3980010935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actual Costs Project (VAT)</source>
           <target>Фактическая стоимость проекта (НДС)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Actual Costs Project (VAT) - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Actuals - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 323598757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agreement Amount With VAT</source>
-          <target>Сумма Договора, с НДС (руб)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Agreement Amount With VAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 653592103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1535144756 - Control 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement Amount Without VAT</source>
           <target>Сумма договора без НДС</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Agreement Amount Without VAT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 2092726926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Amount With VAT</source>
+          <target>Сумма Договора, с НДС (руб)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control AmountLCY - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3502635538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>On Approval</source>
@@ -2260,17 +2259,17 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control On Approval - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 3888822604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posted Invoice</source>
-          <target>Учтенные Счета с НДС</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Posted Invoice - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 3838973809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1535144756 - Control 3789019539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted Invoice Without VAT</source>
           <target>Учтенные Счета, без НДС</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Posted Invoice Without VAT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control PostInv - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 126036342 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Invoice with VAT</source>
+          <target>Учтенные Счета с НДС</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control PostInvVAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 179298956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Remain Amount</source>
