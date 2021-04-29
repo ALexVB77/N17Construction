@@ -1843,11 +1843,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Command Buttons</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action Command Buttons - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2884131641 - Action 2406781165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Untie from Agreement</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1862,6 +1857,16 @@
           <source>Remaining Amount Exceeded!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - NamedType TEXT001</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3366197612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Breakdown by Letter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control BreakdownByLetter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 1794219516 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control RemainingAmount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3980010935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actual Costs Project (VAT)</source>

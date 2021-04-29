@@ -2211,12 +2211,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Command Buttons</source>
-          <target>Command Buttons</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action Command Buttons - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2884131641 - Action 2406781165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Untie from Agreement</source>
           <target>Отвязать от договора</target>
@@ -2234,6 +2228,20 @@
           <target>Превышена Сумма Остатка!</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - NamedType TEXT001</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3366197612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Breakdown by Letter</source>
+          <target>Разбивка по литерам</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control BreakdownByLetter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 1794219516 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Amount</source>
+          <target>Остаток</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control RemainingAmount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3980010935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actual Costs Project (VAT)</source>
