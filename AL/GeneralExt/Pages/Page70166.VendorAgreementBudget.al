@@ -249,23 +249,20 @@ page 70166 "Vendor Agreement Budget"
     {
         area(Processing)
         {
-            group("Command Buttons")
+            action("Untie from Agreement")
             {
-                action("Untie from Agreement")
-                {
-                    Caption = 'Untie from Agreement';
-                    trigger OnAction()
-                    begin
-                        IF Close THEN EXIT;
-                        IF CheckCFIW THEN BEGIN
-                            IF CONFIRM(TEXT0010) THEN BEGIN
-                                VALIDATE("Contragent No.", '');
-                                VALIDATE("Agreement No.", '');
-                                MODIFY;
-                            END;
+                Caption = 'Untie from Agreement';
+                trigger OnAction()
+                begin
+                    IF Close THEN EXIT;
+                    IF CheckCFIW THEN BEGIN
+                        IF CONFIRM(TEXT0010) THEN BEGIN
+                            VALIDATE("Contragent No.", '');
+                            VALIDATE("Agreement No.", '');
+                            MODIFY;
                         END;
-                    end;
-                }
+                    END;
+                end;
             }
         }
     }
