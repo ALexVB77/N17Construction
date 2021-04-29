@@ -6,7 +6,7 @@ page 70166 "Vendor Agreement Budget"
     SourceTable = "Projects Budget Entry";
     DelayedInsert = true;
     PopulateAllFields = false;
-    PageType = Worksheet;
+    PageType = ListPart;
     Caption = 'Forecast List';
 
 
@@ -248,7 +248,7 @@ page 70166 "Vendor Agreement Budget"
 
     actions
     {
-        area(navigation)
+        area(Processing)
         {
             group("Command Buttons")
             {

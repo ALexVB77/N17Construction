@@ -365,6 +365,12 @@ table 70076 "Projects Budget Entry"
         {
             Clustered = true;
         }
+        key(Date; Date)
+        {
+            Enabled = true;
+            MaintainSqlIndex = true;
+            MaintainSiftIndex = true;
+        }
     }
     var
         gvCreateRepeat: Boolean;

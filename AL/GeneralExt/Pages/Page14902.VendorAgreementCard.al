@@ -29,6 +29,14 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 SubPageLink = "Agreement No." = field("No."), "Vendor No." = field("Vendor No.");
                 UpdatePropagation = Both;
             }
+            part(PaymentSchedule; "Vendor Agreement Budget")
+            {
+                Caption = 'Payment Schedule';
+                ApplicationArea = Basic, Suite;
+                SubPageLink = "Agreement No." = FIELD("No."), "Contragent No." = FIELD("Vendor No.");
+                SubPageView = sorting(Date);
+                UpdatePropagation = Both;
+            }
         }
     }
     actions
