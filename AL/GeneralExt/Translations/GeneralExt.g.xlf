@@ -1843,10 +1843,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Action 2406781165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2884131641 - Action 1566465917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Untie from Agreement</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action Untie from Agreement - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action UntieFromAgreement - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Agreement Details</source>

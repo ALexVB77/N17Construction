@@ -249,9 +249,11 @@ page 70166 "Vendor Agreement Budget"
     {
         area(Processing)
         {
-            action("Untie from Agreement")
+            action(UntieFromAgreement)
             {
+                ApplicationArea = All;
                 Caption = 'Untie from Agreement';
+
                 trigger OnAction()
                 begin
                     IF Close THEN EXIT;
