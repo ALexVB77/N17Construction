@@ -11,6 +11,23 @@ page 70164 "Vendor Agreement Details"
     {
         area(Content)
         {
+            group(Info)
+            {
+                ShowCaption = false;
+                field(BreakdownByLetter; GetAmount)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'Breakdown by Letter';
+                }
+
+                field(RemainingAmount; AgrAmount - GetAmount)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'Remaining Amount';
+                }
+            }
             repeater(MainRep)
             {
                 field("Building Turn All"; Rec."Building Turn All")
