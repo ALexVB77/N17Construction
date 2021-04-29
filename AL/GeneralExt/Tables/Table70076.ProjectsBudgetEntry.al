@@ -342,9 +342,8 @@ table 70076 "Projects Budget Entry"
         field(61; "Payment Doc. No."; Code[20])
         {
             FieldClass = FlowField;
-            // CalcFormula = Lookup("Purchase Line"."Document No." WHERE ("Forecast Entry"=FIELD("Entry No.")));
+            CalcFormula = Lookup("Purchase Line"."Document No." where("Forecast Entry" = field("Entry No.")));
             Caption = 'Pay Request No.';
-
         }
         field(71; "Without VAT (LCY)"; Decimal)
         {
