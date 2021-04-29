@@ -14,8 +14,9 @@ page 70166 "Vendor Agreement Budget"
     {
         area(content)
         {
-            group(Unbound1237120002)
+            group(Info)
             {
+                ShowCaption = false;
                 field(Rest; vAgreement."Agreement Amount" - GetAmount1)
                 {
                     Editable = false;
@@ -30,27 +31,25 @@ page 70166 "Vendor Agreement Budget"
                     Caption = 'Amount';
                 }
             }
-            repeater(Repeater1237120003)
+            repeater(Lines)
             {
-                field("Entry No."; "Entry No.")
+                field("Entry No."; Rec."Entry No.")
                 {
                     Visible = false;
                     ApplicationArea = All;
-
                 }
 
-                field(Close; Close)
+                field(Close; Rec.Close)
                 {
+                    Caption = 'Close';
                     Editable = true;
-                    ShowCaption = false;
                     ApplicationArea = All;
+
                     trigger OnValidate()
                     begin
 
                         FieldOnAfterValidate; //navnav;
                     end;
-
-
                 }
 
                 field(Date; Date)

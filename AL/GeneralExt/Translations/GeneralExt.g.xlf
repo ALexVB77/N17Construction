@@ -1818,16 +1818,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Method FieldOnAfterValidate - NamedType TEXT001</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 4286292223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice Date - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 3048794140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice No</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2884131641 - Control 3368131864 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1837,6 +1827,21 @@
           <source>Rest</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Rest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2884131641 - Control 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2884131641 - Control 4286292223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2884131641 - Control 3048794140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Command Buttons</source>

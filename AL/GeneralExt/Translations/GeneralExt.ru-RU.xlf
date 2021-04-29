@@ -2181,18 +2181,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Method FieldOnAfterValidate - NamedType TEXT001</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 4286292223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Date</source>
-          <target>Дата Оплаты</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice Date - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 3048794140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice No</source>
-          <target>Номер заявки</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2884131641 - Control 3368131864 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <target>Сумма платежей</target>
@@ -2204,6 +2192,25 @@
           <target>Остаток</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Rest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2884131641 - Control 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target>Факт</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2884131641 - Control 4286292223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Date</source>
+          <target>Дата Оплаты</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2884131641 - Control 3048794140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice No</source>
+          <target>Номер заявки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Command Buttons</source>
@@ -3162,7 +3169,6 @@
         <trans-unit id="PageExtension 2153774770 - Control 3275696945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Payment Schedule</source>
           <target>График платежей</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control PaymentSchedule - Property Caption</note>
         </trans-unit>
