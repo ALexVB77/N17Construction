@@ -17,5 +17,10 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
             Description = 'NC 51373 AB';
             Caption = 'Administrator IW';
         }
+        field(70008; "Administrator PRJ"; Boolean)
+        {
+            Description = 'NC 50086 PA';
+            Caption = 'Administrator PRJ';
+        }
     }
 }

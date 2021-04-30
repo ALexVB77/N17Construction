@@ -7,6 +7,7 @@ tableextension 80079 "Company Information (Ext)" extends "Company Information"
             Caption = 'Company Type';
             OptionMembers = Housing,Construction;
             OptionCaption = 'Housing,Construction';
+            Description = '50086';
         }
     }
 }

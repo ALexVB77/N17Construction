@@ -46,127 +46,160 @@ page 70166 "Vendor Agreement Budget"
                     ApplicationArea = All;
 
                     trigger OnValidate()
+                    var
+                        US: Record "User Setup";
                     begin
-
-                        FieldOnAfterValidate; //navnav;
+                        US.Get(UserId);
+                        if not US."Administrator PRJ" then Rec.Close := not Rec.Close;
                     end;
                 }
 
-                field(Date; Date)
+                field(Date; Rec.Date)
                 {
+                    Caption = 'Data';
                     NotBlank = true;
                     ApplicationArea = All;
-                    trigger OnValidate()
-                    begin
-
-                        FieldOnAfterValidate; //navnav;
-                    end;
-
-
                 }
 
-                field("Date Plan"; "Date Plan")
+                field("Date Plan"; Rec."Date Plan")
                 {
+                    Caption = 'Data Plan';
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+
+                field("Building Turn"; Rec."Building Turn")
+                {
+                    Caption = 'Stage';
                     Editable = false;
                     ApplicationArea = All;
 
-                }
-
-                field("Building Turn"; "Building Turn")
-                {
-                    Editable = false;
-                    ApplicationArea = All;
                     trigger OnValidate()
                     var
                         ProjectsLineDimension: record "Projects Line Dimension";
-                        Buildingturn: record "Building turn";
+                        BuildingTurn: record "Building turn";
                     begin
-                        // Buildingturn.SETRANGE(Code,"Building Turn All");
-                        // IF Buildingturn.FINDFIRST THEN "Shortcut Dimension 1 Code":=Buildingturn."Turn Dimension Code";
+                        BuildingTurn.SetRange(Code, Rec."Building Turn All");
+                        if BuildingTurn.FindFirst() then
+                            Rec."Shortcut Dimension 1 Code" := BuildingTurn."Turn Dimension Code";
 
-                        // IF "Shortcut Dimension 1 Code"<>'' THEN
-                        // BEGIN
-                        //   IF Buildingturn.FINDFIRST THEN
-                        //   BEGIN
-                        //     VALIDATE("Project Turn Code",Buildingturn.Code);
+                        if Rec."Shortcut Dimension 1 Code" <> '' then begin
+                            if BuildingTurn.FindFirst() then begin
+                                Rec.Validate("Project Turn Code", BuildingTurn.Code);
 
-                        //     lrVersion.SETRANGE("Project Code",Buildingturn."Building project Code");
-                        //     lrVersion.SETRANGE("Fixed Version",TRUE);
-                        //     IF lrVersion.FINDFIRST THEN
-                        //     BEGIN
-                        //       "Project Code":=lrVersion."Project Code";
-                        //       "Version Code":=lrVersion."Version Code";
+                                //lrVersion.SetRange("Project Code", Buildingturn."Building project Code");
+                                //lrVersion.SetRange("Fixed Version", TRUE);
 
-                        //       IF "Shortcut Dimension 2 Code"<>'' THEN
-                        //       BEGIN
-                        //         ProjectsLineDimension.SETRANGE("Project No.",lrVersion."Project Code");
-                        //         ProjectsLineDimension.SETRANGE("Project Version No.",lrVersion."Version Code");
-                        //         ProjectsLineDimension.SETRANGE("Dimension Code",'CC');
-                        //         ProjectsLineDimension.SETRANGE("Dimension Value Code","Shortcut Dimension 2 Code");
-                        //         ProjectsLineDimension.SETRANGE("Detailed Line No.",0);
-                        //         IF ProjectsLineDimension.FINDFIRST THEN
-                        //         BEGIN
-                        //           "Line No.":=ProjectsLineDimension."Project Line No.";
-                        //         END;
-                        //       END;
-                        //     END
-                        //     ELSE
-                        //     BEGIN
-                        //       "Project Code":='';
-                        //       "Version Code":='';
-                        //     END;
-                        //   END;
-                        // END;
-                        // ChangeDate2;
+                                //if lrVersion.FindFirst() then begin
+                                //"Project Code" := lrVersion."Project Code";
+                                //"Version Code" := lrVersion."Version Code";
+
+                                //if "Shortcut Dimension 2 Code"<>'' then begin
+                                //ProjectsLineDimension.SetRange("Project No.", lrVersion."Project Code");
+                                //ProjectsLineDimension.SetRange("Project Version No.", lrVersion."Version Code");
+                                //ProjectsLineDimension.SetRange("Dimension Code",'CC');
+                                //ProjectsLineDimension.SetRange("Dimension Value Code", "Shortcut Dimension 2 Code");
+                                //ProjectsLineDimension.SetRange("Detailed Line No.", 0);
+
+                                //if ProjectsLineDimension.FindFirst() then
+                                //"Line No." := ProjectsLineDimension."Project Line No.";
+                                //end;
+                                //end;
+
+                            end else begin
+                                Rec."Project Code" := '';
+                                Rec."Version Code" := '';
+                            end;
+                        end;
                     end;
-
-
                 }
 
-                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
+                    Caption = 'Shortcut Dimension 1 Code';
                     Editable = false;
                     ApplicationArea = All;
-
                 }
 
-                field("Cost Code"; "Cost Code")
+                field("Cost Code"; Rec."Cost Code")
                 {
+                    Caption = 'Budget Item';
                     Editable = false;
                     ApplicationArea = All;
-                    trigger OnValidate()
-                    begin
-
-                        FieldOnAfterValidate; //navnav;
-                    end;
-
-
                 }
 
-                field("Transaction Type"; "Transaction Type")
+                field("Transaction Type"; Rec."Transaction Type")
                 {
+                    Caption = 'Transaction Type';
                     ApplicationArea = All;
-
                 }
 
                 field("Without VAT"; "Without VAT")
                 {
+                    Caption = '=Amount Incl. VAT';
                     NotBlank = true;
                     ApplicationArea = All;
-                    // trigger OnInputChange()
-                    // begin
-                    //     IF "Entry No." = 0 THEN
-                    //       "Entry No." := GetNextEntryNo;
-                    //     "Including VAT":=FALSE;
-                    // end;
 
                     trigger OnValidate()
+
                     begin
+                        if Rec."Entry No." = 0 then
+                            Rec."Entry No." := GetNextEntryNo;
+                        Rec."Including VAT" := FALSE;
 
-                        FieldOnAfterValidate; //navnav;
+                        Delta := Rec.Amount;
+                        if Delta > Round(vAgreement."Agreement Amount" - GetAmount(Rec."Agreement No."), 0.01) then begin
+                            Message(TEXT001);
+                            Rec.Validate("Without VAT", 0);
+                        end;
+
+                        CurrPage.SaveRecord();
+
+                        if Rec."Without VAT" <> 0 then begin
+                            if Rec."Building Turn" = '' then begin
+                                Message(TEXT0004);
+                                Rec."Without VAT" := 0;
+                                exit;
+                            END;
+
+                            if Rec."Cost Code" = '' then begin
+                                Message(TEXT0005);
+                                Rec."Without VAT" := 0;
+                                exit;
+                            end;
+                        end;
+
+                        Commit();
+
+                        //if Rec."Without VAT" <> 0 then begin
+                        //Message(TEXT0008);
+                        //Clear(lfCFCorrection);
+                        //lfCFCorrection.LOOKUPMODE:=TRUE;
+                        //lrProjectsBudgetEntry.SETCURRENTKEY(Date);
+                        //     lrProjectsBudgetEntry.SETRANGE("Project Code","Project Code");
+                        //     lrProjectsBudgetEntry.SETRANGE("Project Turn Code","Project Turn Code");
+                        //     lrProjectsBudgetEntry.SETRANGE("Cost Code","Cost Code");
+                        //     lrProjectsBudgetEntry.SETFILTER("Contragent No.",'%1|%2','',"Contragent No.");
+                        //     lrProjectsBudgetEntry.SETRANGE("Agreement No.",'');
+                        //     lrProjectsBudgetEntry.SETRANGE(NotVisible,FALSE);
+                        //     lrProjectsBudgetEntry.SETFILTER("Entry No.",'<>%1',"Entry No.");
+                        //     IF lrProjectsBudgetEntry.FINDFIRST THEN;
+                        //     lfCFCorrection.SETTABLEVIEW(lrProjectsBudgetEntry);
+                        //     lfCFCorrection.SetData(Rec);
+                        //     IF lfCFCorrection.RUNMODAL = ACTION::LookupOK THEN
+                        //     BEGIN
+                        //       SetSum;
+                        //       "Transaction Type":=CurrTrType;
+                        //     END
+                        //     ELSE
+                        //     BEGIN
+                        //       ClearSum;
+                        //       VALIDATE("Without VAT",0);
+                        //       MESSAGE(TEXT0009);
+                        //   END;
+
+                        // END;
                     end;
-
-
                 }
 
                 field("Without VAT (LCY)"; "Without VAT (LCY)")
@@ -428,6 +461,7 @@ page 70166 "Vendor Agreement Budget"
         vAgreement: record "Vendor Agreement";
         Delta: decimal;
         US: record "User Setup";
+        TEXT001: Label 'The amount of the Balance under the Agreement has been exceeded!';
         TEXT0004: Label 'You must specify the Project Code!';
         TEXT0005: Label 'You must ask a Budget Item!';
         TEXT0008: Label 'You must select the Cash Flow records from which you want to write off this amount.';
@@ -438,45 +472,6 @@ page 70166 "Vendor Agreement Budget"
         CurrTrType: code[20];
         TEXT0014: Label 'You are not allowed to copy the actual transactions.';
 
-
-    procedure ChangeDate()
-    var
-        lrProjectsBudgetEntry: record "Projects Budget Entry";
-        lrProjectsBudgetEntryLink: record "Projects Budget Entry Link";
-        lvAmount: decimal;
-    begin
-        EXIT;
-        // IF xRec.Date<>0D THEN
-        // BEGIN
-        //   lrProjectsBudgetEntry.INIT;
-        //   lrProjectsBudgetEntry.COPY(Rec);
-        //   lrProjectsBudgetEntry."Create Date":=TODAY;
-        //   lrProjectsBudgetEntry.Date:=xRec.Date;
-        //   lrProjectsBudgetEntry."Entry No.":=0;
-        //   lrProjectsBudgetEntry."Not Run OnInsert":=TRUE;
-        //   lrProjectsBudgetEntry.INSERT(TRUE);
-
-
-
-
-        //   lrProjectsBudgetEntryLink.SETRANGE("Main Entry No.","Entry No.");
-        //   lrProjectsBudgetEntryLink.SETRANGE("Project Code","Project Code");
-        //   lrProjectsBudgetEntryLink.SETRANGE("Analysis Type","Analysis Type");
-        //   lrProjectsBudgetEntryLink.SETRANGE("Version Code","Version Code");
-        //   IF lrProjectsBudgetEntryLink.FINDFIRST THEN
-        //   BEGIN
-        //     lrProjectsBudgetEntryLink.MODIFYALL("Main Entry No.",lrProjectsBudgetEntry."Entry No.");
-        //     lrProjectsBudgetEntryLink.MODIFYALL(Date,lrProjectsBudgetEntry.Date);
-
-        //   END;
-        //  // lrProjectsBudgetEntry.CALCFIELDS(Amount);
-        //   lvAmount:=lrProjectsBudgetEntry.Amount;
-        //   lrProjectsBudgetEntry.VALIDATE(Amount,0);
-
-        //   VALIDATE(Amount,lvAmount);
-        // END;
-        // ChangeDate2;
-    end;
 
     local procedure GetNextEntryNo(): Integer
     var

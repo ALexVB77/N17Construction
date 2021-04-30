@@ -335,6 +335,11 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Work Version';
         }
+        field(53; "Building Turn All"; Code[20])
+        {
+            Caption = 'Building Turn All';
+            Description = 'NC 50086 PA';
+        }
         field(60; "Date Plan"; Date)
         {
             Caption = 'Date (Plan)';
