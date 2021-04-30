@@ -317,7 +317,6 @@ page 70164 "Vendor Agreement Details"
         ProjectsCostControlEntry: record "Projects Cost Control Entry";
         CI: record "Company Information";
         AgrAmount: decimal;
-        // ProjecstLinesView: record "Projects Lines View";
         SumAmount: decimal;
         "Vendor Agreement Details": record "Vendor Agreement Details";
         gActuals: decimal;
