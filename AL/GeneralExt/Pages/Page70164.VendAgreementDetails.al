@@ -132,21 +132,19 @@ page 70164 "Vendor Agreement Details"
                     end;
                 }
 
-                // field("Выплачено по договору, без НДС"; gcduERPC.GetCommited("Agreement No.","Global Dimension 1 Code","Global Dimension 2 Code"))
-                // {
-                //     Visible = false;
-                //     ApplicationArea = All;
-                //     Caption = 'Выплачено по договору, без НДС';
+                field("Paid Amount without VAT"; gcduERPC.GetCommited(Rec."Agreement No.", Rec."Global Dimension 1 Code", Rec."Global Dimension 2 Code"))
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+                    Caption = 'Paid Amount without VAT';
+                }
 
-                // }   
-
-                // field("Не разбито"; Amount-gcduERPC.GetCommited("Agreement No.","Global Dimension 1 Code","Global Dimension 2 Code"))
-                // {
-                //     Visible = false;
-                //     ApplicationArea = All;
-                //     Caption = 'Не разбито';
-
-                // }   
+                field("Not broken"; Rec.Amount - gcduERPC.GetCommited(Rec."Agreement No.", Rec."Global Dimension 1 Code", Rec."Global Dimension 2 Code"))
+                {
+                    Visible = false;
+                    ApplicationArea = All;
+                    Caption = 'Not broken';
+                }
 
                 field(Amount; Rec.Amount)
                 {

@@ -1583,6 +1583,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method UnpostForecastEntry</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1993672826" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetCommited</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetCommited</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4047442064 - Method 2815313400" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAReclassLine</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1883,10 +1888,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control AmountLCY - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 4106488158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not broken</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Not broken - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3502635538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>On Approval</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control On Approval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3303652745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paid Amount without VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Paid Amount without VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3789019539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted Invoice Without VAT</source>

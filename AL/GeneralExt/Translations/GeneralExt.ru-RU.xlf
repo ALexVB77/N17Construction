@@ -1899,6 +1899,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method UnpostForecastEntry</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1993672826" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetCommited</source>
+          <target>GetCommited</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetCommited</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4047442064 - Method 2815313400" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAReclassLine</source>
           <target>FAReclassLine</target>
@@ -2214,7 +2221,6 @@
         <trans-unit id="Page 2884131641 - Action 1566465917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Untie from Agreement</source>
           <target>Отвязать от договора</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Action UntieFromAgreement - Property Caption</note>
         </trans-unit>
@@ -2260,11 +2266,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control AmountLCY - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 4106488158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not broken</source>
+          <target>Не разбито</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Not broken - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3502635538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>On Approval</source>
           <target>На Утверждении</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control On Approval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1535144756 - Control 3303652745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paid Amount without VAT</source>
+          <target>Выплачено по договору, без НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Paid Amount without VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3789019539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted Invoice Without VAT</source>
