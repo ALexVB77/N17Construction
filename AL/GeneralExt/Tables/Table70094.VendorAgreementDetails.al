@@ -252,7 +252,6 @@ table 70094 "Vendor Agreement Details"
         field(70036; AmountLCY; Decimal)
         {
             Caption = 'Agreement Amount with VAT (LCY)';
-
         }
         field(70037; "Currency Code"; Code[10])
         {

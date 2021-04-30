@@ -108,14 +108,12 @@
         <trans-unit id="Table 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Credit-Memo Reason</source>
           <target>Причина Кредит-Ноты</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Credit-Memo Reason - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2993483370 - Field 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reason</source>
           <target>Причина</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Credit-Memo Reason - Field Reason - Property Caption</note>
         </trans-unit>
@@ -2225,38 +2223,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Rest - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 3221779637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stage</source>
-          <target>Проект</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Building Turn - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Close</source>
-          <target>Факт</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Close - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Item</source>
-          <target>Статья бюджета</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Cost Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Date</source>
-          <target>Дата</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Date - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 114215241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Date Plan</source>
-          <target>Дата (План)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Date Plan - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2884131641 - Control 4286292223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Date</source>
           <target>Дата Оплаты</target>
@@ -2268,25 +2234,6 @@
           <target>Номер заявки</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Invoice No - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shortcut Dimension 1 Code</source>
-          <target>Ярлык Измерение 1 Код</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Shortcut Dimension 1 Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 3773776616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Transaction Type</source>
-          <target>Тип Операции</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Transaction Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2884131641 - Control 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Incl. VAT</source>
-          <target>Сумма с НДС</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Without VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Action 1566465917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Untie from Agreement</source>
@@ -2323,18 +2270,6 @@
           <target>Фактическая стоимость проекта (НДС)</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Actuals - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agreement Amount Without VAT</source>
-          <target>Сумма договора без НДС</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control Amount - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1535144756 - Control 2092726926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agreement Amount With VAT</source>
-          <target>Сумма Договора, с НДС (руб)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control AmountLCY - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 4106488158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Not broken</source>
@@ -3365,7 +3300,6 @@
         <trans-unit id="TableExtension 1246840681 - Field 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271228953">
           <source>Credit-Memo Reason</source>
           <target>Причина Кредит-Ноты</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr. (Ext) - Field Credit-Memo Reason - Property Caption</note>
         </trans-unit>
@@ -3486,7 +3420,6 @@
         <trans-unit id="TableExtension 2820792494 - Field 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 552782286">
           <source>Credit-Memo Reason</source>
           <target>Причина Кредит-Ноты</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header (Ext) - Field Credit-Memo Reason - Property Caption</note>
         </trans-unit>

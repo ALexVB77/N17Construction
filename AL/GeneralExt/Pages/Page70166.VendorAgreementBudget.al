@@ -19,16 +19,16 @@ page 70166 "Vendor Agreement Budget"
                 ShowCaption = false;
                 field(Rest; vAgreement."Agreement Amount" - GetAmount1)
                 {
+                    Caption = 'Rest';
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Rest';
                 }
 
                 field(GetAmount1_; GetAmount1)
                 {
+                    Caption = 'Amount';
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Amount';
                 }
             }
             repeater(Lines)
@@ -41,7 +41,6 @@ page 70166 "Vendor Agreement Budget"
 
                 field(Close; Rec.Close)
                 {
-                    Caption = 'Close';
                     Editable = CloseEditable;
                     ApplicationArea = All;
 
@@ -56,7 +55,6 @@ page 70166 "Vendor Agreement Budget"
 
                 field(Date; Rec.Date)
                 {
-                    Caption = 'Date';
                     NotBlank = true;
                     Editable = DateEditable;
                     ApplicationArea = All;
@@ -64,14 +62,12 @@ page 70166 "Vendor Agreement Budget"
 
                 field("Date Plan"; Rec."Date Plan")
                 {
-                    Caption = 'Date Plan';
                     Editable = false;
                     ApplicationArea = All;
                 }
 
                 field("Building Turn"; Rec."Building Turn")
                 {
-                    Caption = 'Stage';
                     Editable = false;
                     ApplicationArea = All;
 
@@ -117,27 +113,23 @@ page 70166 "Vendor Agreement Budget"
 
                 field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
-                    Caption = 'Shortcut Dimension 1 Code';
                     Editable = false;
                     ApplicationArea = All;
                 }
 
                 field("Cost Code"; Rec."Cost Code")
                 {
-                    Caption = 'Budget Item';
                     Editable = false;
                     ApplicationArea = All;
                 }
 
                 field("Transaction Type"; Rec."Transaction Type")
                 {
-                    Caption = 'Transaction Type';
                     ApplicationArea = All;
                 }
 
                 field("Without VAT"; Rec."Without VAT")
                 {
-                    Caption = 'Amount Incl. VAT';
                     NotBlank = true;
                     Editable = WithoutVATEditable;
                     ApplicationArea = All;
@@ -243,16 +235,16 @@ page 70166 "Vendor Agreement Budget"
 
                 field("Invoice No"; Rec.GetInvoiceNo)
                 {
+                    Caption = 'Invoice No';
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Invoice No';
                 }
 
                 field("Invoice Date"; Rec.GetInvoiceDate)
                 {
+                    Caption = 'Invoice Date';
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Invoice Date';
                 }
 
                 field("Payment Doc. No."; Rec."Payment Doc. No.")
@@ -271,8 +263,8 @@ page 70166 "Vendor Agreement Budget"
         {
             action(UntieFromAgreement)
             {
-                ApplicationArea = All;
                 Caption = 'Untie from Agreement';
+                ApplicationArea = All;
 
                 trigger OnAction()
                 begin

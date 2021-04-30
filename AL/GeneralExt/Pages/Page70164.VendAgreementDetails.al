@@ -16,16 +16,16 @@ page 70164 "Vendor Agreement Details"
                 ShowCaption = false;
                 field(BreakdownByLetter; GetAmount)
                 {
+                    Caption = 'Breakdown by Letter';
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Breakdown by Letter';
                 }
 
                 field(RemainingAmount; AgrAmount - GetAmount)
                 {
+                    Caption = 'Remaining Amount';
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Remaining Amount';
                 }
             }
             repeater(MainRep)
@@ -72,8 +72,8 @@ page 70164 "Vendor Agreement Details"
 
                 field("On Approval"; Rec.GetPlaneAmount(FALSE))
                 {
-                    ApplicationArea = All;
                     Caption = 'On Approval';
+                    ApplicationArea = All;
 
                     trigger OnLookup(var Text: Text): Boolean
                     begin
@@ -83,8 +83,8 @@ page 70164 "Vendor Agreement Details"
 
                 field("Unaccounted VAT Invoices"; Rec.CalcInvoice(TRUE))
                 {
-                    ApplicationArea = All;
                     Caption = 'Unaccounted VAT Invoices';
+                    ApplicationArea = All;
 
                     trigger OnLookup(var Text: Text): Boolean
                     begin
@@ -94,9 +94,9 @@ page 70164 "Vendor Agreement Details"
 
                 field(PostInvVAT; Rec.CalcPostedInvoice(TRUE))
                 {
+                    Caption = 'Posted Invoice with VAT';
                     Visible = true;
                     ApplicationArea = All;
-                    Caption = 'Posted Invoice with VAT';
 
                     trigger OnLookup(var Text: Text): Boolean
                     begin
@@ -106,8 +106,8 @@ page 70164 "Vendor Agreement Details"
 
                 field("Remain Amount"; Rec.GetRemainAmt)
                 {
-                    ApplicationArea = All;
                     Caption = 'Remain Amount';
+                    ApplicationArea = All;
 
                     trigger OnAssistEdit()
                     begin
@@ -117,9 +117,9 @@ page 70164 "Vendor Agreement Details"
 
                 field(PostInv; Rec.CalcPostedInvoice(FALSE))
                 {
+                    Caption = 'Posted Invoice Without VAT';
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Posted Invoice Without VAT';
 
                     trigger OnValidate()
                     begin
@@ -134,23 +134,22 @@ page 70164 "Vendor Agreement Details"
 
                 field("Paid Amount without VAT"; gcduERPC.GetCommited(Rec."Agreement No.", Rec."Global Dimension 1 Code", Rec."Global Dimension 2 Code"))
                 {
+                    Caption = 'Paid Amount without VAT';
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Paid Amount without VAT';
                 }
 
                 field("Not broken"; Rec.Amount - gcduERPC.GetCommited(Rec."Agreement No.", Rec."Global Dimension 1 Code", Rec."Global Dimension 2 Code"))
                 {
+                    Caption = 'Not broken';
                     Visible = false;
                     ApplicationArea = All;
-                    Caption = 'Not broken';
                 }
 
                 field(Amount; Rec.Amount)
                 {
                     Visible = true;
                     ApplicationArea = All;
-                    Caption = 'Agreement Amount Without VAT';
 
                     trigger OnValidate()
                     var
@@ -213,7 +212,6 @@ page 70164 "Vendor Agreement Details"
                     Visible = false;
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Agreement Amount With VAT';
                 }
 
                 field("Currency Code"; Rec."Currency Code")
@@ -225,10 +223,10 @@ page 70164 "Vendor Agreement Details"
 
                 field(Actuals; gActuals)
                 {
+                    Caption = 'Actual Costs Project (VAT)';
                     Visible = false;
                     Editable = false;
                     ApplicationArea = All;
-                    Caption = 'Actual Costs Project (VAT)';
 
                     trigger OnValidate()
                     begin
@@ -262,8 +260,8 @@ page 70164 "Vendor Agreement Details"
         {
             action(ActionName)
             {
-                ApplicationArea = All;
                 Caption = 'Other combinations of Actuals';
+                ApplicationArea = All;
 
                 trigger OnAction()
                 var
