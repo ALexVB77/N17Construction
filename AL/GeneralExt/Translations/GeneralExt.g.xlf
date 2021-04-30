@@ -1828,10 +1828,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT0014</note>
         </trans-unit>
-        <trans-unit id="Page 2884131641 - Method 3626406171 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The amount of the Balance under the Agreement has been exceeded!</source>
+        <trans-unit id="Page 2884131641 - NamedType 377269713" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not delete entry</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Method FieldOnAfterValidate - NamedType TEXT001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - NamedType TEXT002</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Control 3368131864 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
@@ -1859,12 +1859,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Cost Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Control 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data</source>
+          <source>Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Control 114215241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data Plan</source>
+          <source>Date Plan</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Date Plan - Property Caption</note>
         </trans-unit>
@@ -1889,7 +1889,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Transaction Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Control 2562731265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>=Amount Incl. VAT</source>
+          <source>Amount Incl. VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Budget - Control Without VAT - Property Caption</note>
         </trans-unit>

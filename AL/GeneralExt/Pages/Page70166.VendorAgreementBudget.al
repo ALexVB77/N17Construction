@@ -56,7 +56,7 @@ page 70166 "Vendor Agreement Budget"
 
                 field(Date; Rec.Date)
                 {
-                    Caption = 'Data';
+                    Caption = 'Date';
                     NotBlank = true;
                     Editable = DateEditable;
                     ApplicationArea = All;
@@ -64,7 +64,7 @@ page 70166 "Vendor Agreement Budget"
 
                 field("Date Plan"; Rec."Date Plan")
                 {
-                    Caption = 'Data Plan';
+                    Caption = 'Date Plan';
                     Editable = false;
                     ApplicationArea = All;
                 }
@@ -137,7 +137,7 @@ page 70166 "Vendor Agreement Budget"
 
                 field("Without VAT"; Rec."Without VAT")
                 {
-                    Caption = '=Amount Incl. VAT';
+                    Caption = 'Amount Incl. VAT';
                     NotBlank = true;
                     Editable = WithoutVATEditable;
                     ApplicationArea = All;
