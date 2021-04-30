@@ -2688,6 +2688,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account (Ext) - Field Max Len. Pmt Purpose Text - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1214534909 - Field 332174833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
+          <source>Company Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Company Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1214534909 - Field 332174833 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
+          <source>Housing,Construction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Company Type - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2300516586 - Field 3518332187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
           <source>Attachment Link</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2887,6 +2897,11 @@
           <source>Project Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Project Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 4278954678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Unbound Cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Unbound Cost - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 3632164407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Vat Agent Posting Group</source>

@@ -152,41 +152,41 @@ page 70164 "Vendor Agreement Details"
                     ApplicationArea = All;
                     Caption = 'Agreement Amount Without VAT';
 
-                    // trigger OnValidate()
-                    // var 
-                    //     Delta: decimal;
-                    // begin
-                    //     // SWC1004 DD 18.02.17 >>
-                    //     // модифицировал и перенес из Amount - OnAfterValidate()
-                    //     CI.GET;
-                    //     IF CI."Company Type"=CI."Company Type"::Housing THEN
-                    //     BEGIN
-                    //       Delta:=Amount-xRec.Amount;
-                    //       IF Delta>(ROUND(vAgreement."Agreement Amount"-GetAmount,0.01)) THEN
-                    //       BEGIN
-                    //         //MESSAGE(TEXT001);
-                    //         ERROR(TEXT001);
-                    //         Amount:=xRec.Amount;
-                    //         EXIT;
-                    //       END;
-                    //       vAgreement."Unbound Cost":=ROUND(vAgreement."Agreement Amount"-(GetAmount+Delta),0.01);
-                    //       vAgreement.MODIFY;
-                    //     END
-                    //     ELSE
-                    //     BEGIN
-                    //       Delta:=Amount-xRec.Amount;
-                    //       IF Delta>(ROUND(vAgreement."Amount Without VAT"-GetAmount,0.01)) THEN
-                    //       BEGIN
-                    //         //MESSAGE(TEXT001);
-                    //         ERROR(TEXT001);
-                    //         Amount:=xRec.Amount;
-                    //         EXIT;
-                    //       END;
-                    //       vAgreement."Unbound Cost":=ROUND(vAgreement."Amount Without VAT"-(GetAmount+Delta),0.01);
-                    //       vAgreement.MODIFY;
-                    //     END;
-                    //     // SWC1004 DD 18.02.17 <<
-                    // end;
+                    trigger OnValidate()
+                    var
+                        Delta: decimal;
+                    begin
+                        // SWC1004 DD 18.02.17 >>
+                        // модифицировал и перенес из Amount - OnAfterValidate()
+                        CI.Get;
+                        if CI."Company Type" = CI."Company Type"::Housing then begin
+                            Delta := Rec.Amount - xRec.Amount;
+
+                            if Delta > (Round(vAgreement."Agreement Amount" - GetAmount, 0.01)) then begin
+                                Message(TEXT001);
+                                Error(TEXT001);
+                                Rec.Amount := xRec.Amount;
+                                exit;
+                            end;
+
+                            vAgreement."Unbound Cost" := ROUND(vAgreement."Agreement Amount" - (GetAmount + Delta), 0.01);
+                            vAgreement.MODIFY;
+
+                        end else begin
+                            Delta := Rec.Amount - xRec.Amount;
+
+                            if Delta > (Round(vAgreement."Amount Without VAT" - GetAmount, 0.01)) then begin
+                                //Message(TEXT001);
+                                Error(TEXT001);
+                                Rec.Amount := xRec.Amount;
+                                exit;
+                            end;
+
+                            vAgreement."Unbound Cost" := ROUND(vAgreement."Amount Without VAT" - (GetAmount + Delta), 0.01);
+                            vAgreement.MODIFY;
+                        end;
+                        // SWC1004 DD 18.02.17 <<
+                    end;
 
                     trigger OnAssistEdit()
                     begin
