@@ -1998,42 +1998,36 @@
         <trans-unit id="Codeunit 47354825 - Method 205468244" size-unit="char" translate="yes" xml:space="preserve">
           <source>FuncNewRec</source>
           <target>FuncNewRec</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to create the document. The controller has these rights.</source>
           <target>У вас нет прав на создание документа. Данные права имеет контролер.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 1290161461" size-unit="char" translate="yes" xml:space="preserve">
           <source>Warehouse document,Act/KS-2 for the service</source>
           <target>Складской документ,Акт/КС-2 на услугу</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType Text50003</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 2396645672" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select the type of document to create.</source>
           <target>Выберите тип создаваемого документа.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType Text50004</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 1758949055" size-unit="char" translate="yes" xml:space="preserve">
           <source>It is required to select the type of document.</source>
           <target>Требуется выбрать тип документа.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType Text50005</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 1758212304" size-unit="char" translate="yes" xml:space="preserve">
           <source>The estimator cannot create a document with the type Act!</source>
           <target>Сметчик не может создать документ с типом Аct!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
         </trans-unit>
@@ -2104,8 +2098,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Control 2805020018 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All,Act,KC-2,Act (Production),KC-2 (Production)</source>
-          <target>Все,Акт,КС-2,Акт (Production),КС-2 (Production)</target>
+          <source>All,Act,KC-2,Act (Production),KC-2 (Production),Advance</source>
+          <target>Все,Акт,КС-2,Акт (Production),КС-2 (Production),Авансовый отчет</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property OptionCaption</note>
         </trans-unit>
@@ -2133,20 +2128,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Sorting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New</source>
-          <target>Новый</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action New - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 1128037974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Approve</source>
-          <target>Утвердить</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewButton - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - Action 1020004867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Approve</source>
           <target>Утвердить</target>
@@ -2158,6 +2139,47 @@
           <target>Отклонить</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DelayButton - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New</source>
+          <target>Новый</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 759760750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Act</source>
+          <target>Акт</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewAct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 3049774821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Act (Production)</source>
+          <target>Акт (Production)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewActProd - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 3148315194 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Advance</source>
+          <target>Авансовый отчет</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewAdvance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 1901506946 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KC-2</source>
+          <target>КС-2</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 2078083881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KC-2 (Production)</source>
+          <target>КС-2 (Production)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2Prod - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
@@ -3343,7 +3365,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Controller</source>
-          <target>[NAB: SUGGESTION]Контролер</target>
+          <target>Контролер</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Controller - Property Caption</note>
@@ -3357,7 +3379,6 @@
         <trans-unit id="TableExtension 279653624 - Field 1994559122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Estimator</source>
           <target>Сметчик</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Estimator - Property Caption</note>
         </trans-unit>
@@ -3400,7 +3421,6 @@
         <trans-unit id="TableExtension 279653624 - Field 3630883352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Pre-booking Document</source>
           <target>Pre-booking Document</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Pre-booking Document - Property Caption</note>
         </trans-unit>
@@ -3431,7 +3451,6 @@
         <trans-unit id="TableExtension 279653624 - Field 2032084525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Request Payment Doc Type</source>
           <target>Тип Документа Платежа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Request Payment Doc Type - Property Caption</note>
         </trans-unit>
@@ -3444,7 +3463,6 @@
         <trans-unit id="TableExtension 279653624 - Field 1636544493 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Storekeeper</source>
           <target>Кладовщик</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Storekeeper - Property Caption</note>
         </trans-unit>
@@ -3457,14 +3475,12 @@
         <trans-unit id="TableExtension 2307367824 - Field 1911997122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Base Vendor No.</source>
           <target>Номер базового поставщика</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Base Vendor No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 18752671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Default Estimator</source>
           <target>Сметчик по умолчанию</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Default Estimator - Property Caption</note>
         </trans-unit>
@@ -3585,7 +3601,6 @@
         <trans-unit id="TableExtension 1325709049 - Method 772126332 - NamedType 1927858078" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1325709049">
           <source>There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.</source>
           <target>Отсутствует настройка Кладовщик склад для текущего пользователя. Обратитесь к администратору.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Warehouse Employee (Ext) - Method GetDefaultLocation - NamedType Text50002</note>
         </trans-unit>

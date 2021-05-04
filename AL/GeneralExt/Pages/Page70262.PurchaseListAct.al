@@ -61,7 +61,7 @@ page 70262 "Purchase List Act"
                 {
                     ApplicationArea = All;
                     Caption = 'Document Type';
-                    OptionCaption = 'All,Act,KC-2,Act (Production),KC-2 (Production)';
+                    OptionCaption = 'All,Act,KC-2,Act (Production),KC-2 (Production),Advance';
                     trigger OnValidate()
                     begin
                         SetRecFilters;
@@ -226,27 +226,63 @@ page 70262 "Purchase List Act"
     actions
     {
 
-        area(Creation)
+        area(Processing)
         {
             group(New)
             {
                 Caption = 'New';
                 Image = NewDocument;
-                action(NewButton)
+                action(NewAct)
                 {
                     ApplicationArea = Basic, Suite;
-                    Caption = 'Approve';
+                    Caption = 'Act';
+                    Enabled = NewActEnabled;
                     trigger OnAction()
                     begin
-                        //if FilterActType = FilterActType::All
-                        Message('Press New');
+                        Message('Press New Act');
+                    end;
+                }
+                action(NewKC2)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'KC-2';
+                    Enabled = NewKC2Enabled;
+                    trigger OnAction()
+                    begin
+                        Message('Press New KC-2');
+                    end;
+                }
+                action(NewActProd)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Act (Production)';
+                    Enabled = NewActProdEnabled;
+                    trigger OnAction()
+                    begin
+                        Message('Press New Act (Production)');
+                    end;
+                }
+                action(NewKC2Prod)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'KC-2 (Production)';
+                    Enabled = NewKC2ProdEnabled;
+                    trigger OnAction()
+                    begin
+                        Message('Press New KC-2 (Production)');
+                    end;
+                }
+                action(NewAdvance)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Advance';
+                    Enabled = NewAdvanceEnabled;
+                    trigger OnAction()
+                    begin
+                        Message('Press New Advance');
                     end;
                 }
             }
-
-        }
-        area(Processing)
-        {
             //group(Approval)
             //{
             //    Caption = 'Approval';
@@ -387,12 +423,15 @@ page 70262 "Purchase List Act"
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
         SortType: option docno,postdate,vendor,userproc;
-        FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)";
+        FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)",advance;
         ApproveButtonEnabled: boolean;
         DelayButtonEnabled: boolean;
         MyApproved: boolean;
-        NewActTypeSelectionEnabled: Boolean;
-
+        NewActEnabled: Boolean;
+        NewKC2Enabled: Boolean;
+        NewActProdEnabled: Boolean;
+        NewKC2ProdEnabled: Boolean;
+        NewAdvanceEnabled: Boolean;
 
     local procedure SetSortType()
     begin
@@ -485,19 +524,20 @@ page 70262 "Purchase List Act"
                 SETRANGE("Act Type", "Act Type"::"Act (Production)");
             FilterActType::"KC-2 (Production)":
                 SETRANGE("Act Type", "Act Type"::"KC-2 (Production)");
-        //SWC630 AKA 150915 <<
-        //NC 44119 > KGT
-
-        //\\
-        //FilterActType::Advance:
-        //    SETRANGE("Act Type", "Act Type"::Advance);
-
+            //SWC630 AKA 150915 <<
+            //NC 44119 > KGT
+            FilterActType::Advance:
+                SETRANGE("Act Type", "Act Type"::Advance);
         //NC 44119 < KGT
         END;
 
         FILTERGROUP(2);
 
-        NewActTypeSelectionEnabled := FilterActType <> FilterActType::All;
+        NewActEnabled := FilterActType in [FilterActType::All, FilterActType::act];
+        NewKC2Enabled := FilterActType in [FilterActType::All, FilterActType::"kc-2"];
+        NewActProdEnabled := FilterActType in [FilterActType::All, FilterActType::"act (production)"];
+        NewKC2ProdEnabled := FilterActType in [FilterActType::All, FilterActType::"kc-2 (production)"];
+        NewAdvanceEnabled := FilterActType in [FilterActType::All, FilterActType::advance];
     end;
 
 }

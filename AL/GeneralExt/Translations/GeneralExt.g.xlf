@@ -1749,7 +1749,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Control 2805020018 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All,Act,KC-2,Act (Production),KC-2 (Production)</source>
+          <source>All,Act,KC-2,Act (Production),KC-2 (Production),Advance</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property OptionCaption</note>
         </trans-unit>
@@ -1773,16 +1773,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Sorting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action New - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 1128037974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Approve</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewButton - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - Action 1020004867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Approve</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1792,6 +1782,36 @@
           <source>Reject</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DelayButton - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 759760750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Act</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewAct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 3049774821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Act (Production)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewActProd - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 3148315194 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Advance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewAdvance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 1901506946 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KC-2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 2078083881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KC-2 (Production)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2Prod - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
