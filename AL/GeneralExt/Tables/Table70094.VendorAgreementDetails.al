@@ -285,6 +285,7 @@ table 70094 "Vendor Agreement Details"
         SkipChekEmptyAmount: Boolean;
         TEXT0001: Label 'It is necessary to determine the construction object';
         TEXT0002: Label 'No article% 2 found for construction object% 1';
+        FRAME: Label 'FRAME';
         Text50000: Label 'For the project% 1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!';
         Text50001: Label 'Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace% 1!';
 
@@ -306,18 +307,14 @@ table 70094 "Vendor Agreement Details"
 
     trigger OnModify()
     begin
-        // IF BuildingProject.GET("Project Code") THEN
-        //   IF BuildingProject."Development/Production" = BuildingProject."Development/Production"::Production THEN
-        //   BEGIN
-        //     IF NOT SkipChekEmptyAmount THEN //SWC880 KAE 100816
-        //       //SWC880 KAE 030816 >>
-        //       IF VendorAgreement.GET("Vendor No.", "Agreement No.") THEN
-        //         IF (NOT VendorAgreement.WithOut) AND
-        //                (VendorAgreement."Agreement Group" = 'РАМОЧНЫЙ') THEN
-        //       //SWC880 KAE 030816 <<
-        //           IF ((Amount <> 0) AND ("Amount Without VAT" = 0)) OR ((Amount = 0) AND ("Amount Without VAT" <> 0)) THEN
-        //             ERROR(Text50000, "Project Code");
-        //   END;
+        IF BuildingProject.GET("Project Code") THEN
+            IF BuildingProject."Development/Production" = BuildingProject."Development/Production"::Production THEN BEGIN
+                IF NOT SkipChekEmptyAmount THEN
+                    IF VendorAgreement.Get("Vendor No.", "Agreement No.") THEN
+                        IF (NOT VendorAgreement.WithOut) AND (VendorAgreement."Agreement Group" = FRAME) THEN
+                            IF ((Amount <> 0) AND ("Amount Without VAT" = 0)) OR ((Amount = 0) AND ("Amount Without VAT" <> 0)) THEN
+                                ERROR(Text50000, "Project Code");
+            END;
 
         Validate(Amount);
     end;

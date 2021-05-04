@@ -1453,6 +1453,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1535144756 - NamedType 2524451999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FRAME</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType FRAME</note>
+        </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
           <source>It is necessary to determine the construction object</source>
           <note from="Developer" annotates="general" priority="2"></note>

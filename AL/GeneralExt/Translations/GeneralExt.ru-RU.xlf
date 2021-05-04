@@ -636,7 +636,6 @@
         <trans-unit id="Table 2332267737 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>The amount cannot be more than indicated in the "% 1" agreement card in the breakdown by letter!</source>
           <target>Сумма не может быть больше, чем указано в карточке Договора "%1" в Разбивке по Литерам!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - NamedType Text50000</note>
         </trans-unit>
@@ -685,7 +684,6 @@
         <trans-unit id="Table 2332267737 - Field 249393910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contragent Name</source>
           <target>Название</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Contragent Name - Property Caption</note>
         </trans-unit>
@@ -770,7 +768,6 @@
         <trans-unit id="Table 2332267737 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contragent Name</source>
           <target>Название</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field External Agreement No. - Property Caption</note>
         </trans-unit>
@@ -789,14 +786,12 @@
         <trans-unit id="Table 2332267737 - Field 899120550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Not Run OnInsert</source>
           <target>Не запускать OnInsert</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Not Run OnInsert - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 2617397605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Not Visible</source>
           <target>Не показывать</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field NotVisible - Property Caption</note>
         </trans-unit>
@@ -833,7 +828,6 @@
         <trans-unit id="Table 2332267737 - Field 825293260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reserve</source>
           <target>Резерв</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reserve - Property Caption</note>
         </trans-unit>
@@ -888,7 +882,6 @@
         <trans-unit id="Table 2332267737 - Field 123884346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Write Off Amount</source>
           <target>Сумма списания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Write Off Amount - Property Caption</note>
         </trans-unit>
@@ -1749,6 +1742,13 @@
           <target>Детали соглашения с поставщиком</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1535144756 - NamedType 2524451999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FRAME</source>
+          <target>РАМОЧНЫЙ</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType FRAME</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
           <source>It is necessary to determine the construction object</source>
@@ -3385,7 +3385,6 @@
         <trans-unit id="TableExtension 476953720 - Field 3485708687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
           <source>Allow Diff in Check</source>
           <target>Разрешенная Погрешность в Акте</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Allow Diff in Check - Property Caption</note>
         </trans-unit>
@@ -3686,7 +3685,6 @@
         <trans-unit id="TableExtension 594576918 - Field 4105596384 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>With Out</source>
           <target>По заказам</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field WithOut - Property Caption</note>
         </trans-unit>
