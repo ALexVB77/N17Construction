@@ -451,81 +451,14 @@ page 70166 "Vendor Agreement Budget"
         gDim2 := Dim2;
     end;
 
-    procedure ChangeDate1()
-    var
-        lrProjectsBudgetEntry: record "Projects Budget Entry";
-        lrProjectsBudgetEntryLink: record "Projects Budget Entry Link";
-        lvAmount: decimal;
-    begin
-        EXIT;
-        // IF xRec.Date<>0D THEN
-        // BEGIN
-        //   lrProjectsBudgetEntry.INIT;
-        //   lrProjectsBudgetEntry.COPY(Rec);
-        //   lrProjectsBudgetEntry."Create Date":=TODAY;
-        //   lrProjectsBudgetEntry.Date:=xRec.Date;
-        //   lrProjectsBudgetEntry."Entry No.":=0;
-        //   lrProjectsBudgetEntry."Not Run OnInsert":=TRUE;
-        //   lrProjectsBudgetEntry.INSERT(TRUE);
-
-
-
-
-        //   lrProjectsBudgetEntryLink.SETRANGE("Main Entry No.","Entry No.");
-        //   lrProjectsBudgetEntryLink.SETRANGE("Project Code","Project Code");
-        //   lrProjectsBudgetEntryLink.SETRANGE("Analysis Type","Analysis Type");
-        //   lrProjectsBudgetEntryLink.SETRANGE("Version Code","Version Code");
-        //   IF lrProjectsBudgetEntryLink.FINDFIRST THEN
-        //   BEGIN
-        //     lrProjectsBudgetEntryLink.MODIFYALL("Main Entry No.",lrProjectsBudgetEntry."Entry No.");
-        //     lrProjectsBudgetEntryLink.MODIFYALL(Date,lrProjectsBudgetEntry.Date);
-
-        //   END;
-        //  // lrProjectsBudgetEntry.CALCFIELDS(Amount);
-        //   lvAmount:=lrProjectsBudgetEntry.Amount;
-        //   lrProjectsBudgetEntry.VALIDATE(Amount,0);
-
-        //   VALIDATE(Amount,lvAmount);
-        // END;
-    end;
-
-    procedure ChangeDate2()
-    var
-        lrProjectsBudgetEntry: record "Projects Budget Entry";
-        lrProjectsBudgetEntryLink: record "Projects Budget Entry Link";
-        lvAmount: decimal;
-    begin
-        EXIT;
-        //IF xRec.Date<>0D THEN
-        BEGIN
-
-            lrProjectsBudgetEntryLink.SETRANGE("Main Entry No.", "Entry No.");
-            IF lrProjectsBudgetEntryLink.FINDFIRST THEN BEGIN
-                lrProjectsBudgetEntryLink.MODIFYALL("Project Code", "Project Code");
-                lrProjectsBudgetEntryLink.MODIFYALL("Version Code", "Version Code");
-                lrProjectsBudgetEntryLink.MODIFYALL("Line No.", "Line No.");
-                lrProjectsBudgetEntryLink.MODIFYALL("Project Turn Code", "Project Turn Code");
-            END;
-        END;
-    end;
-
     procedure GetAmount(vAgrNo: code[20]) Ret: Decimal
     var
         VendorAgreementDetails: record "Projects Budget Entry";
     begin
-        /*VendorAgreementDetails.COPY(Rec);
-        IF VendorAgreementDetails.FINDSET THEN
-        BEGIN
-          REPEAT
-           // VendorAgreementDetails.CALCFIELDS("Without VAT");
-            Ret:=Ret+VendorAgreementDetails."Without VAT";
-          UNTIL VendorAgreementDetails.NEXT=0;
-        END;  */
-
-        VendorAgreementDetails.SETRANGE("Contragent No.", "Contragent No.");
+        VendorAgreementDetails.SETRANGE("Contragent No.", Rec."Contragent No.");
         VendorAgreementDetails.SETRANGE("Agreement No.", vAgrNo);
-        VendorAgreementDetails.SETFILTER("Entry No.", '<>%1', "Entry No.");
-        //MESSAGE(VendorAgreementDetails.GETFILTERS);
+        VendorAgreementDetails.SETFILTER("Entry No.", '<>%1', Rec."Entry No.");
+
         IF VendorAgreementDetails.FINDSET THEN BEGIN
             REPEAT
                 Ret := Ret + VendorAgreementDetails."Without VAT";
@@ -552,20 +485,19 @@ page 70166 "Vendor Agreement Budget"
     var
         lrProjectsBudgetEntry: record "Projects Budget Entry";
     begin
-        // lrProjectsBudgetEntry.SETRANGE("Project Code","Project Code");
-        // lrProjectsBudgetEntry.SETRANGE("Project Turn Code","Project Turn Code");
-        // lrProjectsBudgetEntry.SETRANGE("Cost Code","Cost Code");
-        // lrProjectsBudgetEntry.SETFILTER("Contragent No.",'%1|%2','',"Contragent No.");
-        // lrProjectsBudgetEntry.SETRANGE("Agreement No.",'');
-        // lrProjectsBudgetEntry.SETFILTER("Without VAT",'<>%1',0);
-        // lrProjectsBudgetEntry.SETFILTER("Entry No.",'<>%1',"Entry No.");
-        // IF lrProjectsBudgetEntry.FINDSET THEN
-        // BEGIN
-        //   REPEAT
-        //     lrProjectsBudgetEntry."Write Off Amount":=0;
-        //     lrProjectsBudgetEntry.MODIFY;
-        //   UNTIL lrProjectsBudgetEntry.NEXT=0;
-        // END;
+        lrProjectsBudgetEntry.SETRANGE("Project Code", "Project Code");
+        lrProjectsBudgetEntry.SETRANGE("Project Turn Code", "Project Turn Code");
+        lrProjectsBudgetEntry.SETRANGE("Cost Code", "Cost Code");
+        lrProjectsBudgetEntry.SETFILTER("Contragent No.", '%1|%2', '', "Contragent No.");
+        lrProjectsBudgetEntry.SETRANGE("Agreement No.", '');
+        lrProjectsBudgetEntry.SETFILTER("Without VAT", '<>%1', 0);
+        lrProjectsBudgetEntry.SETFILTER("Entry No.", '<>%1', "Entry No.");
+        IF lrProjectsBudgetEntry.FINDSET THEN BEGIN
+            REPEAT
+                //lrProjectsBudgetEntry."Write Off Amount":=0;
+                lrProjectsBudgetEntry.MODIFY;
+            UNTIL lrProjectsBudgetEntry.NEXT = 0;
+        END;
     end;
 
     procedure CheckCFIW() Ret: Boolean
