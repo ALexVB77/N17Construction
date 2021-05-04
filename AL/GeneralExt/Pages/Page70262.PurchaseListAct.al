@@ -239,7 +239,7 @@ page 70262 "Purchase List Act"
                     Enabled = NewActEnabled;
                     trigger OnAction()
                     begin
-                        Message('Press New Act');
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::Act);
                     end;
                 }
                 action(NewKC2)
@@ -249,7 +249,7 @@ page 70262 "Purchase List Act"
                     Enabled = NewKC2Enabled;
                     trigger OnAction()
                     begin
-                        Message('Press New KC-2');
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"KC-2");
                     end;
                 }
                 action(NewActProd)
@@ -259,7 +259,7 @@ page 70262 "Purchase List Act"
                     Enabled = NewActProdEnabled;
                     trigger OnAction()
                     begin
-                        Message('Press New Act (Production)');
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"Act (Production)");
                     end;
                 }
                 action(NewKC2Prod)
@@ -269,7 +269,7 @@ page 70262 "Purchase List Act"
                     Enabled = NewKC2ProdEnabled;
                     trigger OnAction()
                     begin
-                        Message('Press New KC-2 (Production)');
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"Act (Production)");
                     end;
                 }
                 action(NewAdvance)
@@ -279,7 +279,7 @@ page 70262 "Purchase List Act"
                     Enabled = NewAdvanceEnabled;
                     trigger OnAction()
                     begin
-                        Message('Press New Advance');
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::Advance);
                     end;
                 }
             }
@@ -418,12 +418,13 @@ page 70262 "Purchase List Act"
     //\\
     var
         grUserSetup: record "User Setup";
-
+        PaymentOrderMgt: Codeunit "Payment Order Management";
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
         SortType: option docno,postdate,vendor,userproc;
         FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)",advance;
+        NewActTypeOption: Enum "Purchase Act Type";
         ApproveButtonEnabled: boolean;
         DelayButtonEnabled: boolean;
         MyApproved: boolean;
