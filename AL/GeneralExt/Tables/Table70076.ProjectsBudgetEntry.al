@@ -335,6 +335,11 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Work Version';
         }
+        field(53; "Building Turn All"; Code[20])
+        {
+            Caption = 'Building Turn All';
+            Description = 'NC 50086 PA';
+        }
         field(60; "Date Plan"; Date)
         {
             Caption = 'Date (Plan)';
@@ -342,9 +347,8 @@ table 70076 "Projects Budget Entry"
         field(61; "Payment Doc. No."; Code[20])
         {
             FieldClass = FlowField;
-            // CalcFormula = Lookup("Purchase Line"."Document No." WHERE ("Forecast Entry"=FIELD("Entry No.")));
+            CalcFormula = Lookup("Purchase Line"."Document No." where("Forecast Entry" = field("Entry No.")));
             Caption = 'Pay Request No.';
-
         }
         field(71; "Without VAT (LCY)"; Decimal)
         {
@@ -364,6 +368,12 @@ table 70076 "Projects Budget Entry"
         key(PK; "Entry No.")
         {
             Clustered = true;
+        }
+        key(Date; Date)
+        {
+            Enabled = true;
+            MaintainSqlIndex = true;
+            MaintainSiftIndex = true;
         }
     }
     var

@@ -6,7 +6,7 @@ page 70171 "Proj. Cost Control Entry Buf."
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    Caption = 'Комбинации Actuals';
+    Caption = 'Proj. Cost Control Entry Buf.';
 
     layout
     {
@@ -17,7 +17,7 @@ page 70171 "Proj. Cost Control Entry Buf."
                 field(GetAmount1; GetAmount)
                 {
                     ApplicationArea = All;
-                    Caption = 'Сумма';
+                    Caption = 'Amount';
                 }
             }
             repeater(Repeater1237120003)
@@ -125,11 +125,11 @@ page 70171 "Proj. Cost Control Entry Buf."
 
                 }
 
-                field(Сумма; "Without VAT")
+                field(WithoutVAT; "Without VAT")
                 {
                     DecimalPlaces = 0 : 0;
                     ApplicationArea = All;
-                    Caption = 'Сумма';
+                    Caption = 'Without VAT';
                     trigger OnValidate()
                     begin
 
@@ -235,8 +235,8 @@ page 70171 "Proj. Cost Control Entry Buf."
         PurchaseHeader: record "Purchase Header";
         ShowReversed: boolean;
         Dim1: code[20];
-        TEXT001: Label 'Нельзя изменять операции!';
-        TEXT002: Label 'Нельзя удалять операции!';
+        TEXT001: Label 'Operations cannot be changed!';
+        TEXT002: Label 'You cannot delete operations!';
         grPCCE: record "Projects Cost Control Entry" temporary;
         US: record "User Setup";
 

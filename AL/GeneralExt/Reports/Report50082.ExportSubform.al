@@ -1,5 +1,6 @@
 report 50082 ExportSubform
 {
+    Caption = 'Export Subform';
     UsageCategory = Administration;
     ApplicationArea = All;
     ShowPrintStatus = true;
@@ -120,8 +121,8 @@ report 50082 ExportSubform
         ExcelBufferTmp: Record "Excel Buffer Mod" temporary;
         RowNo: Integer;
         VendorNo: Code[100];
-        Text001: Label 'Разбивка по литерам';
-        Text002: Label 'График платежей';
+        Text001: Label 'Breakdown by Letter';
+        Text002: Label 'Payment Schedule';
 
     procedure SetDocNo(DocNo: Code[10]; VendNo: Code[10])
     begin

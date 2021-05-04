@@ -81,6 +81,12 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
             Caption = 'Paid With VAT';
             Description = '50085';
         }
+
+        field(70018; "Unbound Cost"; Decimal)
+        {
+            Caption = 'Unbound Cost';
+        }
+
         field(70025; "Paid With VAT Date Filter"; Date)
         {
             Caption = 'Paid With VAT Date Filter';
