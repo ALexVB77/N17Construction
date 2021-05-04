@@ -67,11 +67,11 @@ codeunit 50010 "Payment Order Management"
             if "Act Type" in ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"] then
                 if PurchSetup."Default Estimator" <> '' then
                     Estimator := PurchSetup."Default Estimator";
-            grPurchHeader.MODIFY(TRUE);
+            MODIFY(TRUE);
 
             // COMMIT;
             // PAGE.RUNMODAL(PAGE::"Purchase Order Act", grPurchHeader);
-            ERROR('Must open form "Purchase Order Act"');
+            MESSAGE('Must open form "Purchase Order Act"');
         end;
     end;
 
