@@ -228,14 +228,23 @@ page 70262 "Purchase List Act"
 
         area(Creation)
         {
-            action(NewButton)
+            group(New)
             {
-                //if FilterActType = FilterActType::All
-
+                Caption = 'New';
+                Image = NewDocument;
+                action(NewButton)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Approve';
+                    trigger OnAction()
+                    begin
+                        //if FilterActType = FilterActType::All
+                        Message('Press New');
+                    end;
+                }
             }
 
         }
-
         area(Processing)
         {
             //group(Approval)
@@ -462,10 +471,14 @@ page 70262 "Purchase List Act"
             FilterActType::"KC-2":
                 SETRANGE("Act Type", "Act Type"::"KC-2");
             FilterActType::All:                                        //SWC004 AKA 080714
-                                                                       //SWC672 AKA 061015 >>
-                                                                       //SETRANGE("Act Type","Act Type"::Act,"Act Type"::"KC-2");  //SWC004 AKA 080714
-                SETFILTER("Act Type", '%1|%2|%3|%4', "Act Type"::Act, "Act Type"::"KC-2", "Act Type"::"Act (Production)",
-                  "Act Type"::"KC-2 (Production)");
+                //SWC672 AKA 061015 >>
+                //SETRANGE("Act Type","Act Type"::Act,"Act Type"::"KC-2");  //SWC004 AKA 080714
+                //NC 44119 > KGT
+                // SETFILTER("Act Type",'%1|%2|%3|%4',"Act Type"::Act,"Act Type"::"KC-2","Act Type"::"Act (Production)",
+                //"Act Type"::"KC-2 (Production)");
+                SETFILTER("Act Type", '%1|%2|%3|%4|%5', "Act Type"::Act, "Act Type"::"KC-2", "Act Type"::"Act (Production)",
+                    "Act Type"::"KC-2 (Production)", "Act Type"::Advance);
+            //NC 44119 < KGT
             //SWC672 AKA 061015 <<
             //SWC630 AKA 150915 >>
             FilterActType::"Act (Production)":
@@ -473,6 +486,13 @@ page 70262 "Purchase List Act"
             FilterActType::"KC-2 (Production)":
                 SETRANGE("Act Type", "Act Type"::"KC-2 (Production)");
         //SWC630 AKA 150915 <<
+        //NC 44119 > KGT
+
+        //\\
+        //FilterActType::Advance:
+        //    SETRANGE("Act Type", "Act Type"::Advance);
+
+        //NC 44119 < KGT
         END;
 
         FILTERGROUP(2);
