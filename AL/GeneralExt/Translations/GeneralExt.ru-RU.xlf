@@ -1923,6 +1923,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetCommited</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3381789034" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetLinesDocumentsAmount</source>
+          <target>GetLinesDocumentsAmount</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetLinesDocumentsAmount</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4047442064 - Method 2815313400" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAReclassLine</source>
           <target>FAReclassLine</target>
@@ -3204,7 +3211,6 @@
         <trans-unit id="PageExtension 2307367824 - Control 2262780988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3921990236">
           <source>Payment requests</source>
           <target>Заявки на оплату</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchases &amp; Payab. Setup (Ext) - Control Payment requests - Property Caption</note>
         </trans-unit>
@@ -3400,6 +3406,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Invoice No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 52401814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>IW Documents</source>
+          <target>Документы IW</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field IW Documents - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 2361543958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Location Document</source>
           <target>Складской документ</target>
@@ -3471,6 +3484,27 @@
           <target>Строка Cash Flow</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Forecast Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 2873261106 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>IW</source>
+          <target>IW</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field IW - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 789473408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Paid</source>
+          <target>Оплачено</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Paid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 1161569196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Pay</source>
+          <target>Оплатить</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Pay - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 1911997122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Base Vendor No.</source>
