@@ -30,10 +30,10 @@ page 70164 "Vendor Agreement Details"
             }
             repeater(MainRep)
             {
-                field("Building Turn All"; Rec."Building Turn All")
+                /*field("Building Turn All"; Rec."Building Turn All")
                 {
                     ApplicationArea = All;
-                }
+                }*/
 
                 field("Project Code"; Rec."Project Code")
                 {
@@ -41,10 +41,10 @@ page 70164 "Vendor Agreement Details"
                     ApplicationArea = All;
                 }
 
-                field("Cost Code"; Rec."Cost Code")
+                /*field("Cost Code"; Rec."Cost Code")
                 {
                     ApplicationArea = All;
-                }
+                }*/
 
                 field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
@@ -59,11 +59,11 @@ page 70164 "Vendor Agreement Details"
                     ApplicationArea = All;
                 }
 
-                field("Cost Type"; Rec."Cost Type")
+                /*field("Cost Type"; Rec."Cost Type")
                 {
                     Visible = true;
                     ApplicationArea = All;
-                }
+                }*/
 
                 field(Description; Rec.Description)
                 {
@@ -115,21 +115,20 @@ page 70164 "Vendor Agreement Details"
                     end;
                 }
 
-                field(PostInv; Rec.CalcPostedInvoice(FALSE))
+                field(PostInv; Rec.CalcPostedInvoice(false))
                 {
                     Caption = 'Posted Invoice Without VAT';
-                    Visible = false;
+                    Visible = PostInvVisible;
                     ApplicationArea = All;
-
-                    trigger OnValidate()
-                    begin
-                        CalcSum; // NCS-57 AP 180414 <<
-                    end;
 
                     trigger OnAssistEdit()
                     begin
                         Rec.ShowPostedInvoice;
                     end;
+                }
+                field("Payed by Agreement"; Rec."Payed by Agreement")
+                {
+                    ApplicationArea = All;
                 }
 
                 field("Paid Amount without VAT"; gcduERPC.GetCommited(Rec."Agreement No.", Rec."Global Dimension 1 Code", Rec."Global Dimension 2 Code"))
@@ -175,7 +174,6 @@ page 70164 "Vendor Agreement Details"
                             Delta := Rec.Amount - xRec.Amount;
 
                             if Delta > (Round(vAgreement."Amount Without VAT" - GetAmount, 0.01)) then begin
-                                //Message(TEXT001);
                                 Error(TEXT001);
                                 Rec.Amount := xRec.Amount;
                                 exit;
@@ -202,11 +200,6 @@ page 70164 "Vendor Agreement Details"
                     ApplicationArea = All;
                 }
 
-                field("Payed by Agreement"; Rec."Payed by Agreement")
-                {
-                    ApplicationArea = All;
-                }
-
                 field(AmountLCY; Rec.AmountLCY)
                 {
                     Visible = false;
@@ -228,17 +221,10 @@ page 70164 "Vendor Agreement Details"
                     Editable = false;
                     ApplicationArea = All;
 
-                    trigger OnValidate()
-                    begin
-                        CalcSum; // NCS-57 AP 180414 <<
-                    end;
-
                     trigger OnDrillDown()
                     begin
-                        // NCS-21 AP 240214 >>
                         ProjectsCostControlEntry.RESET;
                         ProjectsCostControlEntry.SETRANGE("Project Code", "Project Code");
-                        //ProjectsCostControlEntry.SETRANGE("Analysis Type","Analysis Type");
                         ProjectsCostControlEntry.SETRANGE("Line No.", "Project Line No.");
                         ProjectsCostControlEntry.SETRANGE("Agreement No.", "Agreement No.");
                         ProjectsCostControlEntry.SETRANGE("Analysis Type", ProjectsCostControlEntry."Analysis Type"::Actuals);
@@ -247,7 +233,6 @@ page 70164 "Vendor Agreement Details"
                         ProjectsCostControlEntry.SETRANGE("Cost Type", "Cost Type");
 
                         PAGE.RUN(PAGE::"Projects CC Entry Constr 2", ProjectsCostControlEntry);
-                        // NCS-21 AP 240214 <<
                     end;
                 }
             }
@@ -271,7 +256,6 @@ page 70164 "Vendor Agreement Details"
                     PCCEForm: page "Proj. Cost Control Entry Buf.";
                     Window: dialog;
                 begin
-                    //SWC076 AKA 220414 >>
                     ProjCostControlEntryBuf.RESET;
                     ProjCostControlEntryBuf.DELETEALL;
 
@@ -304,12 +288,64 @@ page 70164 "Vendor Agreement Details"
                         UNTIL VendorAgreementDetailsLoc.NEXT = 0;
 
                     PCCEForm.RUN();
-                    //SWC076 AKA 220414 <<
                 end;
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+        if vAgreement.Get(Rec."Vendor No.", Rec."Agreement No.") then;
+
+        CI.Get;
+
+        if CI."Company Type" = CI."Company Type"::Housing then begin
+            AgrAmount := vAgreement."Agreement Amount";
+            PostInvVisible := false;
+        end else begin
+            AgrAmount := vAgreement."Amount Without VAT";
+            PostInvVisible := true;
+        end;
+    end;
+
+    trigger OnClosePage()
+    begin
+        Calc := false;
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        if vAgreement.Get(Rec."Vendor No.", Rec."Agreement No.") then;
+
+        CI.Get;
+
+        if CI."Company Type" = CI."Company Type"::Housing then
+            AgrAmount := vAgreement."Agreement Amount"
+        else
+            AgrAmount := vAgreement."Amount Without VAT";
+
+        gActuals := Rec.CalcGActuals(SortInit, Rec."Project Code", Rec."Project Line No.", Rec."Agreement No.",
+                                     Rec."Global Dimension 1 Code", Rec."Global Dimension 2 Code", Rec."Cost Type", true);
+    end;
+
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        CheckCT;
+    end;
+
+    trigger OnModifyRecord(): Boolean
+    begin
+        CheckCT;
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        vAgreement."Unbound Cost" := vAgreement."Agreement Amount" - (GetAmount - Rec.Amount);
+        vAgreement.Modify();
+    end;
+
     var
+        PostInvVisible: Boolean;
         gcduERPC: codeunit "ERPC Funtions";
         vAgreement: record "Vendor Agreement";
         ProjectsCostControlEntry: record "Projects Cost Control Entry";
@@ -318,8 +354,8 @@ page 70164 "Vendor Agreement Details"
         SumAmount: decimal;
         "Vendor Agreement Details": record "Vendor Agreement Details";
         gActuals: decimal;
-        SortInit: boolean;
-        Calc: boolean;
+        SortInit: Boolean;
+        Calc: Boolean;
         "TEMP Vendor Agreement Details": record "Vendor Agreement Details" temporary;
         BuildingProject: record "Building project";
         TEXT001: Label 'Remaining Amount Exceeded!';
@@ -336,14 +372,9 @@ page 70164 "Vendor Agreement Details"
         END;
     end;
 
-    procedure CalcSum()
-    begin
-    end;
-
     procedure SumPostedInvoice() ret: Decimal
     begin
-        // AP SWC057 310314 >>
-        IF Calc THEN BEGIN // NCS-72 AP 250414 <<
+        IF Calc THEN BEGIN
             "Vendor Agreement Details".RESET;
             "Vendor Agreement Details".SETRANGE("Vendor No.", vAgreement."Vendor No.");
             "Vendor Agreement Details".SETRANGE("Agreement No.", vAgreement."No.");
@@ -353,7 +384,6 @@ page 70164 "Vendor Agreement Details"
                     ret += CalcSumPostedInvoice;
                 UNTIL "Vendor Agreement Details".NEXT = 0;
         END;
-        // AP SWC057 310314 <<
     end;
 
     procedure CalcSumPostedInvoice() ret: Decimal
@@ -400,10 +430,19 @@ page 70164 "Vendor Agreement Details"
                 //    Ret:=Ret-PILC.Amount;
                 //   UNTIL PILC.NEXT=0;
                 //  END;
-                PILC.CALCSUMS(Amount);
+                PILC.CalcSumS(Amount);
                 Ret -= PIL.Amount;
 
             UNTIL PIHC.NEXT = 0;
         END;
+    end;
+
+    local procedure CheckCT()
+    var
+        BP: Record "Building Project";
+    begin
+        IF BP.Get(Rec."Project Code") THEN
+            IF BP."Development/Production" = BP."Development/Production"::Production THEN
+                Rec.TestField(Rec."Cost Type");
     end;
 }
