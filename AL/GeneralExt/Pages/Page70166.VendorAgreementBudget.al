@@ -308,6 +308,8 @@ page 70166 "Vendor Agreement Budget"
             end;
         end;
         if vAgreement.Get(Rec."Contragent No.", Rec."Agreement No.") then;
+
+        Rec.Curency := vAgreement."Currency Code";
     end;
 
     trigger OnAfterGetCurrRecord()
@@ -344,20 +346,20 @@ page 70166 "Vendor Agreement Budget"
         lrVendor: record Vendor;
         lrVendorAgree: record "Vendor Agreement";
     begin
-        Rec.Curency := vAgreement."Currency Code";//AP SWC026 310314 <<
+        Rec.Curency := vAgreement."Currency Code";
 
         Rec."Work Version" := true;
 
         Rec."Including VAT" := false;
-        //Rec."Not Run OnInsert" := true;
+        Rec."Not Run OnInsert" := true;
         Rec."Contragent No." := gVendor;
         Rec."Agreement No." := gAgr;
 
-        //if lrVendor.GET(gVendor) then
-        //Rec."Contragent Name" := lrVendor.Name;
+        if lrVendor.GET(gVendor) then
+            Rec."Contragent Name" := lrVendor.Name;
 
-        //if lrVendorAgree.GET(gVendor, gAgr) then
-        //Rec."External Agreement No." := lrVendorAgree."External Agreement No.";
+        if lrVendorAgree.GET(gVendor, gAgr) then
+            Rec."External Agreement No." := lrVendorAgree."External Agreement No.";
 
         if gDim1 <> '' then
             Rec."Shortcut Dimension 1 Code" := gDim1;
@@ -474,9 +476,9 @@ page 70166 "Vendor Agreement Budget"
         IF VendorAgreementDetails.FINDSET THEN BEGIN
             REPEAT
                 IF vAgreement."Currency Code" <> '' THEN
-                    Ret := Ret + VendorAgreementDetails."Without VAT"  //AP SWC026 250814 <<
+                    Ret := Ret + VendorAgreementDetails."Without VAT"
                 ELSE
-                    Ret := Ret + VendorAgreementDetails."Without VAT (LCY)"// AP SWC026 160414 <<
+                    Ret := Ret + VendorAgreementDetails."Without VAT (LCY)"
             UNTIL VendorAgreementDetails.NEXT = 0;
         END;
     end;
@@ -494,7 +496,7 @@ page 70166 "Vendor Agreement Budget"
         lrProjectsBudgetEntry.SETFILTER("Entry No.", '<>%1', "Entry No.");
         IF lrProjectsBudgetEntry.FINDSET THEN BEGIN
             REPEAT
-                //lrProjectsBudgetEntry."Write Off Amount":=0;
+                lrProjectsBudgetEntry."Write Off Amount" := 0;
                 lrProjectsBudgetEntry.MODIFY;
             UNTIL lrProjectsBudgetEntry.NEXT = 0;
         END;
@@ -591,29 +593,27 @@ page 70166 "Vendor Agreement Budget"
         lrProjectsBudgetEntry: record "Projects Budget Entry";
         MaxAmount: decimal;
     begin
-        // lrProjectsBudgetEntry.SETRANGE("Project Code","Project Code");
-        // lrProjectsBudgetEntry.SETRANGE("Project Turn Code","Project Turn Code");
-        // lrProjectsBudgetEntry.SETRANGE("Cost Code","Cost Code");
-        // lrProjectsBudgetEntry.SETFILTER("Contragent No.",'%1|%2','',"Contragent No.");
-        // lrProjectsBudgetEntry.SETRANGE("Agreement No.",'');
-        // lrProjectsBudgetEntry.SETFILTER("Without VAT",'<>%1',0);
-        // lrProjectsBudgetEntry.SETFILTER("Entry No.",'<>%1',"Entry No.");
-        // IF lrProjectsBudgetEntry.FINDSET THEN
-        // BEGIN
-        //   REPEAT
-        //     lrProjectsBudgetEntry.VALIDATE("Without VAT",lrProjectsBudgetEntry."Without VAT"-lrProjectsBudgetEntry."Write Off Amount");
-        //     IF MaxAmount<lrProjectsBudgetEntry."Write Off Amount" THEN
-        //     BEGIN
-        //       MaxAmount:=lrProjectsBudgetEntry."Write Off Amount";
-        //       CurrTrType:=lrProjectsBudgetEntry."Transaction Type";
-        //     END;
+        lrProjectsBudgetEntry.SETRANGE("Project Code", Rec."Project Code");
+        lrProjectsBudgetEntry.SETRANGE("Project Turn Code", Rec."Project Turn Code");
+        lrProjectsBudgetEntry.SETRANGE("Cost Code", Rec."Cost Code");
+        lrProjectsBudgetEntry.SETFILTER("Contragent No.", '%1|%2', '', Rec."Contragent No.");
+        lrProjectsBudgetEntry.SETRANGE("Agreement No.", '');
+        lrProjectsBudgetEntry.SETFILTER("Without VAT", '<>%1', 0);
+        lrProjectsBudgetEntry.SETFILTER("Entry No.", '<>%1', Rec."Entry No.");
+        if lrProjectsBudgetEntry.FINDSET then begin
+            repeat
+                lrProjectsBudgetEntry.Validate("Without VAT", lrProjectsBudgetEntry."Without VAT" - lrProjectsBudgetEntry."Write Off Amount");
+                if MaxAmount < lrProjectsBudgetEntry."Write Off Amount" then begin
+                    MaxAmount := lrProjectsBudgetEntry."Write Off Amount";
+                    CurrTrType := lrProjectsBudgetEntry."Transaction Type";
+                end;
 
-        //     lrProjectsBudgetEntry."Write Off Amount":=0;
-        //     IF lrProjectsBudgetEntry."Without VAT" = 0 THEN
-        //       lrProjectsBudgetEntry.NotVisible:=TRUE;
-        //      lrProjectsBudgetEntry.MODIFY;
-        //   UNTIL lrProjectsBudgetEntry.NEXT=0;
-        // END;
+                lrProjectsBudgetEntry."Write Off Amount" := 0;
+                if lrProjectsBudgetEntry."Without VAT" = 0 then
+                    lrProjectsBudgetEntry.NotVisible := true;
+                lrProjectsBudgetEntry.Modify();
+            until lrProjectsBudgetEntry.Next() = 0;
+        end;
     end;
 }
 
