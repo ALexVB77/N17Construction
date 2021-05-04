@@ -30,10 +30,11 @@ page 70164 "Vendor Agreement Details"
             }
             repeater(MainRep)
             {
-                /*field("Building Turn All"; Rec."Building Turn All")
+                field("Building Turn All"; Rec."Building Turn All")
                 {
                     ApplicationArea = All;
-                }*/
+                    Visible = false;
+                }
 
                 field("Project Code"; Rec."Project Code")
                 {
@@ -41,10 +42,10 @@ page 70164 "Vendor Agreement Details"
                     ApplicationArea = All;
                 }
 
-                /*field("Cost Code"; Rec."Cost Code")
+                field("Cost Code"; Rec."Cost Code")
                 {
                     ApplicationArea = All;
-                }*/
+                }
 
                 field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
@@ -59,11 +60,11 @@ page 70164 "Vendor Agreement Details"
                     ApplicationArea = All;
                 }
 
-                /*field("Cost Type"; Rec."Cost Type")
+                field("Cost Type"; Rec."Cost Type")
                 {
-                    Visible = true;
+                    Visible = false;
                     ApplicationArea = All;
-                }*/
+                }
 
                 field(Description; Rec.Description)
                 {
@@ -134,7 +135,7 @@ page 70164 "Vendor Agreement Details"
                 field("Paid Amount without VAT"; gcduERPC.GetCommited(Rec."Agreement No.", Rec."Global Dimension 1 Code", Rec."Global Dimension 2 Code"))
                 {
                     Caption = 'Paid Amount without VAT';
-                    Visible = false;
+                    Visible = true;
                     ApplicationArea = All;
                 }
 
@@ -360,7 +361,7 @@ page 70164 "Vendor Agreement Details"
         BuildingProject: record "Building project";
         TEXT001: Label 'Remaining Amount Exceeded!';
 
-    procedure GetAmount() Ret: Decimal
+    local procedure GetAmount() Ret: Decimal
     var
         VendorAgreementDetails: record "Vendor Agreement Details";
     begin
@@ -372,7 +373,7 @@ page 70164 "Vendor Agreement Details"
         END;
     end;
 
-    procedure SumPostedInvoice() ret: Decimal
+    local procedure SumPostedInvoice() ret: Decimal
     begin
         IF Calc THEN BEGIN
             "Vendor Agreement Details".RESET;
@@ -386,7 +387,7 @@ page 70164 "Vendor Agreement Details"
         END;
     end;
 
-    procedure CalcSumPostedInvoice() ret: Decimal
+    local procedure CalcSumPostedInvoice() ret: Decimal
     var
         PIH: record "Purch. Inv. Header";
         PIL: record "Purch. Inv. Line";
