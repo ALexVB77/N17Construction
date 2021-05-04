@@ -61,7 +61,7 @@ page 70262 "Purchase List Act"
                 {
                     ApplicationArea = All;
                     Caption = 'Document Type';
-                    OptionCaption = 'All,Act,KC-2,Act (Production),KC-2 (Production)';
+                    OptionCaption = 'All,Act,KC-2,Act (Production),KC-2 (Production),Advance';
                     trigger OnValidate()
                     begin
                         SetRecFilters;
@@ -225,95 +225,153 @@ page 70262 "Purchase List Act"
 
     actions
     {
+
         area(Processing)
         {
-            group(Approval)
+            group(New)
             {
-                Caption = 'Approval';
-                Image = Approval;
-                action(ApproveButton)
+                Caption = 'New';
+                Image = NewDocument;
+                action(NewAct)
                 {
-                    Caption = 'Approve';
-                    Enabled = ApproveButtonEnabled;
-                    Image = Approve;
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Act';
+                    Enabled = NewActEnabled;
                     trigger OnAction()
                     begin
-
-
-                        Message('Pressed ApproveButton');
-                        /*
-                        
-                        //SWC380 AKA 200115
-                        // SWC1023 DD 28.03.17 >>
-                        CheckEmptyLines();
-                        // SWC1023 DD 28.03.17 <<
-                        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
-                        
-                        IF StatusAppAct = StatusAppAct::Approve THEN
-                        BEGIN
-                          ApprovalEntry.SETRANGE("Table ID",38);
-                          ApprovalEntry.SETRANGE("Document Type",ApprovalEntry."Document Type"::Order);
-                          ApprovalEntry.SETRANGE("Document No.","No.");
-                          ApprovalEntry.SETRANGE("Approver ID",USERID);
-                          //ApprovalEntry.SETRANGE("Approver ID", 'FIRUSKPT');
-                          ApprovalEntry.SETRANGE(Status,ApprovalEntry.Status::Open);
-                        
-                          IF ApprovalEntry.FIND('-') THEN
-                          BEGIN
-                            ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
-                            IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
-                              IF PurchaseHeader.GET(ApprovalEntry."Document Type",ApprovalEntry."Document No.") THEN BEGIN
-                                ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
-                                IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
-                                BEGIN                                                                     //SWC380 AKA 190115
-                                  PurchaseHeader."Process User":=gcERPC.GetCurrentAppr(PurchaseHeader);
-                                  PurchaseHeader."Date Status App":=TODAY;
-                                  PurchaseHeader.MODIFY;
-                                END;                                                                      //SWC380 AKA 190115
-                              END;
-                            END;
-                          END
-                          // SWC1013 DD 27.03.17 >>
-                          ELSE
-                            ERROR('Утверждающий %1 не указан в таблице утверждения!',USERID);
-                          // SWC1013 DD 27.03.17 <<
-                        END
-                        ELSE
-                        BEGIN
-                          //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC630 AKA 150915
-                          IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC630 AKA 150915
-                            gcERPC.ChangeActStatus(Rec);
-                          //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC630 AKA 150915
-                          IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC630 AKA 150915
-                            gcERPC.ChangeKC2Status(Rec);
-                          // SWC1023 DD 28.03.17 >>
-                          //CurrForm.CLOSE;
-                          // SWC1023 DD 28.03.17 <<
-                        END;
-                        */
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::Act);
                     end;
                 }
-                action(DelayButton)
+                action(NewKC2)
                 {
-                    Caption = 'Reject';
-                    Enabled = DelayButtonEnabled;
-                    Image = Reject;
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'KC-2';
+                    Enabled = NewKC2Enabled;
                     trigger OnAction()
                     begin
-
-                        Message('Pressed DelayButton');
-                        /*    
-                        //SWC380 AKA 200115
-                        //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC631 AKA 220915
-                        IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC631 AKA 220915
-                          gcERPC.ChangeActStatusDown(Rec);
-                        //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC631 AKA 220915
-                        IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC631 AKA 220915
-                          gcERPC.ChangeKC2StatusDown(Rec);
-                        */
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"KC-2");
+                    end;
+                }
+                action(NewActProd)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Act (Production)';
+                    Enabled = NewActProdEnabled;
+                    trigger OnAction()
+                    begin
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"Act (Production)");
+                    end;
+                }
+                action(NewKC2Prod)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'KC-2 (Production)';
+                    Enabled = NewKC2ProdEnabled;
+                    trigger OnAction()
+                    begin
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"Act (Production)");
+                    end;
+                }
+                action(NewAdvance)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Advance';
+                    Enabled = NewAdvanceEnabled;
+                    trigger OnAction()
+                    begin
+                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::Advance);
                     end;
                 }
             }
+            //group(Approval)
+            //{
+            //    Caption = 'Approval';
+            //    Image = Approval;
+            action(ApproveButton)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Approve';
+                Enabled = ApproveButtonEnabled;
+                Image = Approve;
+                trigger OnAction()
+                begin
+
+
+                    Message('Pressed ApproveButton');
+                    /*
+
+                    //SWC380 AKA 200115
+                    // SWC1023 DD 28.03.17 >>
+                    CheckEmptyLines();
+                    // SWC1023 DD 28.03.17 <<
+                    StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
+
+                    IF StatusAppAct = StatusAppAct::Approve THEN
+                    BEGIN
+                      ApprovalEntry.SETRANGE("Table ID",38);
+                      ApprovalEntry.SETRANGE("Document Type",ApprovalEntry."Document Type"::Order);
+                      ApprovalEntry.SETRANGE("Document No.","No.");
+                      ApprovalEntry.SETRANGE("Approver ID",USERID);
+                      //ApprovalEntry.SETRANGE("Approver ID", 'FIRUSKPT');
+                      ApprovalEntry.SETRANGE(Status,ApprovalEntry.Status::Open);
+
+                      IF ApprovalEntry.FIND('-') THEN
+                      BEGIN
+                        ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
+                        IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
+                          IF PurchaseHeader.GET(ApprovalEntry."Document Type",ApprovalEntry."Document No.") THEN BEGIN
+                            ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
+                            IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
+                            BEGIN                                                                     //SWC380 AKA 190115
+                              PurchaseHeader."Process User":=gcERPC.GetCurrentAppr(PurchaseHeader);
+                              PurchaseHeader."Date Status App":=TODAY;
+                              PurchaseHeader.MODIFY;
+                            END;                                                                      //SWC380 AKA 190115
+                          END;
+                        END;
+                      END
+                      // SWC1013 DD 27.03.17 >>
+                      ELSE
+                        ERROR('Утверждающий %1 не указан в таблице утверждения!',USERID);
+                      // SWC1013 DD 27.03.17 <<
+                    END
+                    ELSE
+                    BEGIN
+                      //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC630 AKA 150915
+                      IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC630 AKA 150915
+                        gcERPC.ChangeActStatus(Rec);
+                      //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC630 AKA 150915
+                      IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC630 AKA 150915
+                        gcERPC.ChangeKC2Status(Rec);
+                      // SWC1023 DD 28.03.17 >>
+                      //CurrForm.CLOSE;
+                      // SWC1023 DD 28.03.17 <<
+                    END;
+                    */
+                end;
+            }
+            action(DelayButton)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Reject';
+                Enabled = DelayButtonEnabled;
+                Image = Reject;
+                trigger OnAction()
+                begin
+
+                    Message('Pressed DelayButton');
+                    /*    
+                    //SWC380 AKA 200115
+                    //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC631 AKA 220915
+                    IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC631 AKA 220915
+                      gcERPC.ChangeActStatusDown(Rec);
+                    //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC631 AKA 220915
+                    IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC631 AKA 220915
+                      gcERPC.ChangeKC2StatusDown(Rec);
+                    */
+                end;
+            }
+            //}
         }
     }
 
@@ -357,45 +415,24 @@ page 70262 "Purchase List Act"
 
     end;
 
+    //\\
     var
-        //DimMgt: codeunit DimensionManagement;
-        grPurchHeader: record "Purchase Header";
-        //gcduERPCF: codeunit "ERPC Funtions";
         grUserSetup: record "User Setup";
-        pCheckDocDate: boolean;
-        active: boolean;
-        ShowOther: boolean;
-        grPH: record "Purchase Header";
-        grAttachment: record "Attachment";
-        //gfAttachment: page "Attacments List";
-        grPurchPay: record "Purchases & Payables Setup";
-        //grPaymentRequest: report "Payment Request";
-        SortType: option docno,postdate,vendor,userproc;
+        PaymentOrderMgt: Codeunit "Payment Order Management";
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
-        r: text[30];
-        i: integer;
-        //gcERPC: codeunit "ERPC Funtions";
-        //PurchHeaderAdd: record "Purchase Header Additional";
-        FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)";
-        Window: dialog;
-        // ActTypeOption: option акт,кс-2,"акт (production)","кс-2 (production)";
-        ApprovalEntry: record "Approval Entry";
-        //ApprovalMgt: codeunit "Approvals Management";
-        PurchaseHeader: record "Purchase Header";
-        ApproverCheck: boolean;
-        ReceiveAcc: boolean;
-        MyApproved: boolean;
-        Text50000: Label 'Budget data will be deleted. Add a document to the archive of problem documents?';
-        Text50001: Label 'Add a document to the archive of problem documents?';
-        Text50002: Label 'There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.';
-        Text50003: Label 'Warehouse document,Act/KS-2 for the service';
-        Text50004: Label 'Select the type of document to create.';
-        Text50005: Label 'It is required to select the type of document.';
-
+        SortType: option docno,postdate,vendor,userproc;
+        FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)",advance;
+        NewActTypeOption: Enum "Purchase Act Type";
         ApproveButtonEnabled: boolean;
         DelayButtonEnabled: boolean;
+        MyApproved: boolean;
+        NewActEnabled: Boolean;
+        NewKC2Enabled: Boolean;
+        NewActProdEnabled: Boolean;
+        NewKC2ProdEnabled: Boolean;
+        NewAdvanceEnabled: Boolean;
 
     local procedure SetSortType()
     begin
@@ -474,20 +511,34 @@ page 70262 "Purchase List Act"
             FilterActType::"KC-2":
                 SETRANGE("Act Type", "Act Type"::"KC-2");
             FilterActType::All:                                        //SWC004 AKA 080714
-                                                                       //SWC672 AKA 061015 >>
-                                                                       //SETRANGE("Act Type","Act Type"::Act,"Act Type"::"KC-2");  //SWC004 AKA 080714
-                SETFILTER("Act Type", '%1|%2|%3|%4', "Act Type"::Act, "Act Type"::"KC-2", "Act Type"::"Act (Production)",
-                  "Act Type"::"KC-2 (Production)");
+                //SWC672 AKA 061015 >>
+                //SETRANGE("Act Type","Act Type"::Act,"Act Type"::"KC-2");  //SWC004 AKA 080714
+                //NC 44119 > KGT
+                // SETFILTER("Act Type",'%1|%2|%3|%4',"Act Type"::Act,"Act Type"::"KC-2","Act Type"::"Act (Production)",
+                //"Act Type"::"KC-2 (Production)");
+                SETFILTER("Act Type", '%1|%2|%3|%4|%5', "Act Type"::Act, "Act Type"::"KC-2", "Act Type"::"Act (Production)",
+                    "Act Type"::"KC-2 (Production)", "Act Type"::Advance);
+            //NC 44119 < KGT
             //SWC672 AKA 061015 <<
             //SWC630 AKA 150915 >>
             FilterActType::"Act (Production)":
                 SETRANGE("Act Type", "Act Type"::"Act (Production)");
             FilterActType::"KC-2 (Production)":
                 SETRANGE("Act Type", "Act Type"::"KC-2 (Production)");
-        //SWC630 AKA 150915 <<
+            //SWC630 AKA 150915 <<
+            //NC 44119 > KGT
+            FilterActType::Advance:
+                SETRANGE("Act Type", "Act Type"::Advance);
+        //NC 44119 < KGT
         END;
 
         FILTERGROUP(2);
+
+        NewActEnabled := FilterActType in [FilterActType::All, FilterActType::act];
+        NewKC2Enabled := FilterActType in [FilterActType::All, FilterActType::"kc-2"];
+        NewActProdEnabled := FilterActType in [FilterActType::All, FilterActType::"act (production)"];
+        NewKC2ProdEnabled := FilterActType in [FilterActType::All, FilterActType::"kc-2 (production)"];
+        NewAdvanceEnabled := FilterActType in [FilterActType::All, FilterActType::advance];
     end;
 
 }

@@ -9,5 +9,24 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 ApplicationArea = All;
             }
         }
+        addafter("Default Accounts")
+        {
+            group("Payment requests")
+            {
+                Caption = 'Payment requests';
+                field("Base Vendor No."; Rec."Base Vendor No.")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Default Estimator"; Rec."Default Estimator")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Payment Delay Period"; Rec."Payment Delay Period")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+            }
+        }
     }
 }

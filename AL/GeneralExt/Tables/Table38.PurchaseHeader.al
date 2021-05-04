@@ -39,6 +39,18 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
                 // NC 51373 AB >>
             end;
         }
+        field(70011; "Request Payment Doc Type"; Boolean)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Request Payment Doc Type';
+        }
+        field(70015; Controller; Code[20])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Controller';
+            TableRelation = User."User Name";
+            ValidateTableRelation = false;
+        }
         field(70016; Paid; Boolean)
         {
             Description = 'NC 51373 AB';
@@ -95,6 +107,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'IW Documents';
             Description = 'NC 50085 PA';
         }
+        field(70038; "Pre-booking Document"; Boolean)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Pre-booking Document';
+        }
         field(70045; "Act Type"; enum "Purchase Act Type")
         {
             Caption = 'Act Type';
@@ -104,6 +121,14 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         {
             Description = 'NC 51373 AB';
             Caption = 'Approval Status';
+        }
+
+        field(90004; Estimator; Code[20])
+        {
+            Caption = 'Estimator';
+            Description = 'NC 51373 AB';
+            TableRelation = User."User Name";
+            ValidateTableRelation = false;
         }
         field(90006; "Invoice No."; Code[20])
         {
@@ -135,6 +160,13 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Editable = false;
             Caption = 'Location Document';
 
+        }
+        field(90020; Storekeeper; Code[20])
+        {
+            TableRelation = "User Setup";
+            Description = 'NC 51373 AB';
+            Editable = false;
+            Caption = 'Storekeeper';
         }
     }
     local procedure UpdateCF()
