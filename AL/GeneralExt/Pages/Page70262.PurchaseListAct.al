@@ -225,95 +225,108 @@ page 70262 "Purchase List Act"
 
     actions
     {
+
+        area(Creation)
+        {
+            action(NewButton)
+            {
+                //if FilterActType = FilterActType::All
+
+            }
+
+        }
+
         area(Processing)
         {
-            group(Approval)
+            //group(Approval)
+            //{
+            //    Caption = 'Approval';
+            //    Image = Approval;
+            action(ApproveButton)
             {
-                Caption = 'Approval';
-                Image = Approval;
-                action(ApproveButton)
-                {
-                    Caption = 'Approve';
-                    Enabled = ApproveButtonEnabled;
-                    Image = Approve;
-                    trigger OnAction()
-                    begin
+                ApplicationArea = Basic, Suite;
+                Caption = 'Approve';
+                Enabled = ApproveButtonEnabled;
+                Image = Approve;
+                trigger OnAction()
+                begin
 
 
-                        Message('Pressed ApproveButton');
-                        /*
-                        
-                        //SWC380 AKA 200115
-                        // SWC1023 DD 28.03.17 >>
-                        CheckEmptyLines();
-                        // SWC1023 DD 28.03.17 <<
-                        StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
-                        
-                        IF StatusAppAct = StatusAppAct::Approve THEN
-                        BEGIN
-                          ApprovalEntry.SETRANGE("Table ID",38);
-                          ApprovalEntry.SETRANGE("Document Type",ApprovalEntry."Document Type"::Order);
-                          ApprovalEntry.SETRANGE("Document No.","No.");
-                          ApprovalEntry.SETRANGE("Approver ID",USERID);
-                          //ApprovalEntry.SETRANGE("Approver ID", 'FIRUSKPT');
-                          ApprovalEntry.SETRANGE(Status,ApprovalEntry.Status::Open);
-                        
-                          IF ApprovalEntry.FIND('-') THEN
-                          BEGIN
-                            ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
-                            IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
-                              IF PurchaseHeader.GET(ApprovalEntry."Document Type",ApprovalEntry."Document No.") THEN BEGIN
-                                ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
-                                IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
-                                BEGIN                                                                     //SWC380 AKA 190115
-                                  PurchaseHeader."Process User":=gcERPC.GetCurrentAppr(PurchaseHeader);
-                                  PurchaseHeader."Date Status App":=TODAY;
-                                  PurchaseHeader.MODIFY;
-                                END;                                                                      //SWC380 AKA 190115
-                              END;
-                            END;
-                          END
-                          // SWC1013 DD 27.03.17 >>
-                          ELSE
-                            ERROR('Утверждающий %1 не указан в таблице утверждения!',USERID);
-                          // SWC1013 DD 27.03.17 <<
-                        END
-                        ELSE
-                        BEGIN
-                          //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC630 AKA 150915
-                          IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC630 AKA 150915
-                            gcERPC.ChangeActStatus(Rec);
-                          //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC630 AKA 150915
-                          IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC630 AKA 150915
-                            gcERPC.ChangeKC2Status(Rec);
-                          // SWC1023 DD 28.03.17 >>
-                          //CurrForm.CLOSE;
-                          // SWC1023 DD 28.03.17 <<
+                    Message('Pressed ApproveButton');
+                    /*
+
+                    //SWC380 AKA 200115
+                    // SWC1023 DD 28.03.17 >>
+                    CheckEmptyLines();
+                    // SWC1023 DD 28.03.17 <<
+                    StatusAppAct := PurchHeaderAdd.GetStatusAppAct("Document Type", "No.");
+
+                    IF StatusAppAct = StatusAppAct::Approve THEN
+                    BEGIN
+                      ApprovalEntry.SETRANGE("Table ID",38);
+                      ApprovalEntry.SETRANGE("Document Type",ApprovalEntry."Document Type"::Order);
+                      ApprovalEntry.SETRANGE("Document No.","No.");
+                      ApprovalEntry.SETRANGE("Approver ID",USERID);
+                      //ApprovalEntry.SETRANGE("Approver ID", 'FIRUSKPT');
+                      ApprovalEntry.SETRANGE(Status,ApprovalEntry.Status::Open);
+
+                      IF ApprovalEntry.FIND('-') THEN
+                      BEGIN
+                        ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
+                        IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
+                          IF PurchaseHeader.GET(ApprovalEntry."Document Type",ApprovalEntry."Document No.") THEN BEGIN
+                            ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
+                            IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
+                            BEGIN                                                                     //SWC380 AKA 190115
+                              PurchaseHeader."Process User":=gcERPC.GetCurrentAppr(PurchaseHeader);
+                              PurchaseHeader."Date Status App":=TODAY;
+                              PurchaseHeader.MODIFY;
+                            END;                                                                      //SWC380 AKA 190115
+                          END;
                         END;
-                        */
-                    end;
-                }
-                action(DelayButton)
-                {
-                    Caption = 'Reject';
-                    Enabled = DelayButtonEnabled;
-                    Image = Reject;
-                    trigger OnAction()
-                    begin
-
-                        Message('Pressed DelayButton');
-                        /*    
-                        //SWC380 AKA 200115
-                        //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC631 AKA 220915
-                        IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC631 AKA 220915
-                          gcERPC.ChangeActStatusDown(Rec);
-                        //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC631 AKA 220915
-                        IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC631 AKA 220915
-                          gcERPC.ChangeKC2StatusDown(Rec);
-                        */
-                    end;
-                }
+                      END
+                      // SWC1013 DD 27.03.17 >>
+                      ELSE
+                        ERROR('Утверждающий %1 не указан в таблице утверждения!',USERID);
+                      // SWC1013 DD 27.03.17 <<
+                    END
+                    ELSE
+                    BEGIN
+                      //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC630 AKA 150915
+                      IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC630 AKA 150915
+                        gcERPC.ChangeActStatus(Rec);
+                      //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC630 AKA 150915
+                      IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC630 AKA 150915
+                        gcERPC.ChangeKC2Status(Rec);
+                      // SWC1023 DD 28.03.17 >>
+                      //CurrForm.CLOSE;
+                      // SWC1023 DD 28.03.17 <<
+                    END;
+                    */
+                end;
             }
+            action(DelayButton)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Reject';
+                Enabled = DelayButtonEnabled;
+                Image = Reject;
+                trigger OnAction()
+                begin
+
+                    Message('Pressed DelayButton');
+                    /*    
+                    //SWC380 AKA 200115
+                    //IF "Act Type" = "Act Type"::Act THEN                                                      //SWC631 AKA 220915
+                    IF ("Act Type" = "Act Type"::Act) OR ("Act Type" = "Act Type"::"Act (Production)") THEN     //SWC631 AKA 220915
+                      gcERPC.ChangeActStatusDown(Rec);
+                    //IF "Act Type" = "Act Type"::"KC-2" THEN                                                   //SWC631 AKA 220915
+                    IF ("Act Type" = "Act Type"::"KC-2") OR ("Act Type" = "Act Type"::"KC-2 (Production)") THEN //SWC631 AKA 220915
+                      gcERPC.ChangeKC2StatusDown(Rec);
+                    */
+                end;
+            }
+            //}
         }
     }
 
@@ -357,45 +370,20 @@ page 70262 "Purchase List Act"
 
     end;
 
+    //\\
     var
-        //DimMgt: codeunit DimensionManagement;
-        grPurchHeader: record "Purchase Header";
-        //gcduERPCF: codeunit "ERPC Funtions";
         grUserSetup: record "User Setup";
-        pCheckDocDate: boolean;
-        active: boolean;
-        ShowOther: boolean;
-        grPH: record "Purchase Header";
-        grAttachment: record "Attachment";
-        //gfAttachment: page "Attacments List";
-        grPurchPay: record "Purchases & Payables Setup";
-        //grPaymentRequest: report "Payment Request";
-        SortType: option docno,postdate,vendor,userproc;
+
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
-        r: text[30];
-        i: integer;
-        //gcERPC: codeunit "ERPC Funtions";
-        //PurchHeaderAdd: record "Purchase Header Additional";
+        SortType: option docno,postdate,vendor,userproc;
         FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)";
-        Window: dialog;
-        // ActTypeOption: option акт,кс-2,"акт (production)","кс-2 (production)";
-        ApprovalEntry: record "Approval Entry";
-        //ApprovalMgt: codeunit "Approvals Management";
-        PurchaseHeader: record "Purchase Header";
-        ApproverCheck: boolean;
-        ReceiveAcc: boolean;
-        MyApproved: boolean;
-        Text50000: Label 'Budget data will be deleted. Add a document to the archive of problem documents?';
-        Text50001: Label 'Add a document to the archive of problem documents?';
-        Text50002: Label 'There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.';
-        Text50003: Label 'Warehouse document,Act/KS-2 for the service';
-        Text50004: Label 'Select the type of document to create.';
-        Text50005: Label 'It is required to select the type of document.';
-
         ApproveButtonEnabled: boolean;
         DelayButtonEnabled: boolean;
+        MyApproved: boolean;
+        NewActTypeSelectionEnabled: Boolean;
+
 
     local procedure SetSortType()
     begin
@@ -488,6 +476,8 @@ page 70262 "Purchase List Act"
         END;
 
         FILTERGROUP(2);
+
+        NewActTypeSelectionEnabled := FilterActType <> FilterActType::All;
     end;
 
 }
