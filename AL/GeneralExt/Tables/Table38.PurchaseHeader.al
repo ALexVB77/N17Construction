@@ -89,7 +89,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         {
             Description = 'NC 51373 AB';
             Caption = 'Approver';
-
+        }
+        field(70034; "IW Documents"; Boolean)
+        {
+            Caption = 'IW Documents';
+            Description = 'NC 50085 PA';
         }
         field(70045; "Act Type"; enum "Purchase Act Type")
         {
