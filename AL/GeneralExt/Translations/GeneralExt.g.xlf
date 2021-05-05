@@ -1763,6 +1763,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Proj. Cost Control Entry Buf. - Control WithoutVAT - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3083544924 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Projects Article List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Article List - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects CC Entry Constr 2</source>
           <note from="Developer" annotates="general" priority="2"></note>
