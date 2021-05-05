@@ -113,6 +113,51 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Project Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Detail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 2302756823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount with VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Amount with VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Document Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 2363328873 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv,Credit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Document Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149100676 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Line No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
           <note from="Developer" annotates="general" priority="2"></note>
