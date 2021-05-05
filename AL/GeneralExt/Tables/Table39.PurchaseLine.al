@@ -21,5 +21,39 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
             FieldClass = FlowField;
             CalcFormula = lookup("Purchase Header".Paid where("Document Type" = field("Document Type"), "No." = field("Document No.")));
         }
+        field(70016; "Cost Type"; Code[20])
+        {
+            Caption = 'Cost Type';
+            Description = '50085';
+
+            trigger OnValidate()
+            var
+                GLS: Record "General Ledger Setup";
+                DimensionValue: Record "Dimension Value";
+                DimensionManagement: Codeunit "Dimension Management (Ext)";
+            begin
+                if "Line No." <> 0 then begin
+                    GLS.Get;
+                    DimensionManagement.valDimValue(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID");
+                end;
+            end;
+
+            trigger OnLookup()
+            var
+                GLS: Record "General Ledger Setup";
+                DimensionValue: Record "Dimension Value";
+                DimensionManagement: Codeunit "Dimension Management (Ext)";
+            begin
+                GLS.Get;
+                DimensionValue.SetRange("Dimension Code", GLS."Cost Type Dimension Code");
+                if DimensionValue.FindFirst() then begin
+                    if DimensionValue.Get(GLS."Cost Type Dimension Code", "Cost Type") then;
+                    if Page.RUNMODAL(Page::"Dimension Value List", DimensionValue) = Action::LookupOK then begin
+                        "Cost Type" := DimensionValue.Code;
+                        DimensionManagement.valDimValue(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID");
+                    end;
+                end;
+            end;
+        }
     }
 }

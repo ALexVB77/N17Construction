@@ -1703,6 +1703,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1747097237 - Method 3899360893" size-unit="char" translate="yes" xml:space="preserve">
+          <source>valDimValue</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dimension Management (Ext) - Method valDimValue</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 2945192868" size-unit="char" translate="yes" xml:space="preserve">
           <source>PostForecastEntry</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3032,6 +3037,11 @@
           <source>Storekeeper</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Storekeeper - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Cost Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Cost Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 363487199 - Field 2296741137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Forecast Entry</source>
