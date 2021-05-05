@@ -144,7 +144,6 @@ table 70094 "Vendor Agreement Details"
         {
             Caption = 'Budget Item';
 
-
             trigger OnLookup()
             var
                 ProjectsLineDimension: Record "Projects Line Dimension";
@@ -153,17 +152,19 @@ table 70094 "Vendor Agreement Details"
                 grProjectsStructureLines1.SetRange("Project Code", "Project Code");
 
                 if grProjectsStructureLines1.FindFirst() then begin
-                    //IF FORM.RUNMODAL(FORM::"Projects Article List",grProjectsStructureLines1) = ACTION::LookupOK THEN BEGIN
-                    //"Cost Code":=grProjectsStructureLines1.Code;
-                    //ProjectsLineDimension.SETRANGE("Project No.","Project Code");
-                    //ProjectsLineDimension.SETRANGE("Project Line No.",grProjectsStructureLines1."Line No.");
-                    //ProjectsLineDimension.SETRANGE("Detailed Line No.",0);
-                    // ProjectsLineDimension.SETRANGE("Dimension Code",'CC');
-                    //IF ProjectsLineDimension.FINDFIRST THEN
-                    //VALIDATE("Global Dimension 2 Code",ProjectsLineDimension."Dimension Value Code");
-                    //"Project Line No.":=grProjectsStructureLines1."Line No.";
-                    //Description:=grProjectsStructureLines1.Description;
-                    //END;
+                    if Page.RUNMODAL(Page::"Projects Article List", grProjectsStructureLines1) = Action::LookupOK then begin
+                        "Cost Code" := grProjectsStructureLines1.Code;
+                        ProjectsLineDimension.SetRange("Project No.", "Project Code");
+                        ProjectsLineDimension.SetRange("Project Line No.", grProjectsStructureLines1."Line No.");
+                        ProjectsLineDimension.SetRange("Detailed Line No.", 0);
+                        ProjectsLineDimension.SETRANGE("Dimension Code", 'CC');
+
+                        if ProjectsLineDimension.FindFirst() then
+                            Validate("Global Dimension 2 Code", ProjectsLineDimension."Dimension Value Code");
+
+                        "Project Line No." := grProjectsStructureLines1."Line No.";
+                        Description := grProjectsStructureLines1.Description;
+                    end;
                 end;
             end;
 
