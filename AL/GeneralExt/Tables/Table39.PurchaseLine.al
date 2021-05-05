@@ -14,13 +14,6 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
             FieldClass = FlowField;
             CalcFormula = lookup("Purchase Header"."IW Documents" where("Document Type" = field("Document Type"), "No." = field("Document No.")));
         }
-        field(70005; Pay; Boolean)
-        {
-            Caption = 'Pay';
-            Description = '50085';
-            //FieldClass = FlowField;
-            //CalcFormula = lookup("Purchase Header".Paid where("Document Type" = field("Document Type"), "No." = field("Document No.")));
-        }
         field(70011; Paid; Boolean)
         {
             Caption = 'Paid';

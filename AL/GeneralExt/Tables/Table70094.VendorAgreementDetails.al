@@ -211,17 +211,13 @@ table 70094 "Vendor Agreement Details"
                 GLS: Record "General Ledger Setup";
                 DimensionValue: Record "Dimension Value";
             begin
-                GLS.GET;
-                // DimensionValue.SETRANGE("Dimension Code",GLS."Cost Type Dimension Code");
-                // IF DimensionValue.FINDFIRST THEN
-                // BEGIN
-                //   IF DimensionValue.GET(GLS."Cost Type Dimension Code","Cost Type") THEN;
-
-                //   IF PAGE.RUNMODAL(PAGE::"Dimension Value List",DimensionValue) = ACTION::LookupOK THEN
-                //   BEGIN
-                //     "Cost Type" := DimensionValue.Code;
-                //   END;
-                // END;
+                GLS.Get;
+                DimensionValue.SetRange("Dimension Code", GLS."Cost Type Dimension Code");
+                if DimensionValue.FindFirst() then begin
+                    if DimensionValue.Get(GLS."Cost Type Dimension Code", "Cost Type") then;
+                    if Page.RunModal(Page::"Dimension Value List", DimensionValue) = Action::LookupOK then
+                        "Cost Type" := DimensionValue.Code;
+                end;
             end;
         }
         field(70017; "Original Amount"; Decimal)
@@ -296,9 +292,9 @@ table 70094 "Vendor Agreement Details"
         IF "Line No." = 0 THEN
             "Line No." := GetNextEntryNo;
 
-        //if BuildingProject.Get("Project Code") then      
-        //   IF NOT BuildingProject."Without Details" THEN
-        //       TESTFIELD("Building Turn All");
+        if BuildingProject.Get("Project Code") then
+            if not BuildingProject."Without Details" then
+                TestField("Building Turn All");
 
         IF VendorAgreement.Get("Vendor No.", "Agreement No.") THEN
             "Currency Code" := VendorAgreement."Currency Code";
@@ -433,7 +429,6 @@ table 70094 "Vendor Agreement Details"
     var
         PL: Record "Purchase Line";
         PH: Record "Purchase Header";
-        // PHA: Record "70141";
         PLt: Record "Purchase Line" temporary;
         gcduERPC: Codeunit "ERPC Funtions";
         Buff: Record "Inventory Buffer" temporary;
@@ -445,30 +440,19 @@ table 70094 "Vendor Agreement Details"
         PL.SetRange("Shortcut Dimension 2 Code", "Global Dimension 2 Code");
         //PL.SETRANGE("Cost Type", "Cost Type");
         PL.SETRANGE(Paid, FALSE);
-        PL.SETRANGE(Pay, FALSE);
         PL.SETRANGE(IW, FALSE);
         if PL.FindSet() then
             repeat
-            //IF PHA.GetStatusAppAct(PL."Document Type", PL."Document No.") IN [PHA."Status App Act"::Checker,
-            //   //PHA."Status App Act"::Accountant,
-            //     PHA."Status App Act"::Approve,PHA."Status App Act"::Signing] THEN
-            //   IF PH.GET(PL."Document Type",PL."Document No.") AND NOT PH."Problem Document" THEN BEGIN
-            //     IF Lookup THEN BEGIN
-            //       PLt := PL;
-            //       PLt.INSERT;
-            //     END ELSE
-            //       //IF PL."Amount Including VAT" = 0 THEN
-            //       //  Amt += PL."Outstanding Amount (LCY)"+PL."VAT Difference"
-            //       //ELSE
-            //       //  Amt += PL."Amount Including VAT"+PL."VAT Difference";
-
-            //       //IF NOT Buff.GET(PL."Shortcut Dimension 1 Code",PL."Shortcut Dimension 2 Code") THEN BEGIN
-            //       //  Buff."Item No." := PL."Shortcut Dimension 1 Code";
-            //       //  Buff."Variant Code" := PL."Shortcut Dimension 2 Code";
-            //       //  Buff.INSERT;
-            //         Amt+=gcduERPC.GetLinesDocumentsAmount(PL);
-            //       //END;
-            //   END;
+                if PH.GetStatusAppAct(PL."Document Type", PL."Document No.") in [PH."Status App Act"::Checker.AsInteger(),
+                                                                                 PH."Status App Act"::Approve.AsInteger(),
+                                                                                 PH."Status App Act"::Signing.AsInteger()] then
+                    if PH.Get(PL."Document Type", PL."Document No.") and not PH."Problem Document" then begin
+                        if Lookup then begin
+                            PLt := PL;
+                            PLt.Insert();
+                        end else
+                            Amt += gcduERPC.GetLinesDocumentsAmount(PL);
+                    end;
             until PL.Next() = 0;
 
         if Lookup then
