@@ -578,7 +578,7 @@ table 70094 "Vendor Agreement Details"
         PIL: Record "Purch. Inv. Line";
         PIHC: Record "Purch. Cr. Memo Hdr.";
         PILC: Record "Purch. Cr. Memo Line";
-    // InvoiceDetail: Record "70132" temporary;
+        InvoiceDetail: Record "Invoice Detail" temporary;
     begin
         PIH.SetRange("Pay-to Vendor No.", "Vendor No.");
         PIH.SetRange("Agreement No.", "Agreement No.");
@@ -591,14 +591,14 @@ table 70094 "Vendor Agreement Details"
 
                 if PIL.FindSet() then begin
                     repeat
-                    //InvoiceDetail."Document Type":=0;
-                    //InvoiceDetail."Document No.":=PIL."Document No.";
-                    //InvoiceDetail."Line No.":=PIL."Line No.";
-                    //InvoiceDetail.Description:=PIL.Description;
-                    //InvoiceDetail.Amount:=PIL.Amount;
-                    //InvoiceDetail."Amount with VAT" := PIL."Amount Including VAT";
-                    //InvoiceDetail."Document Date" := PIH."Document Date";
-                    //InvoiceDetail.INSERT;
+                        InvoiceDetail."Document Type" := 0;
+                        InvoiceDetail."Document No." := PIL."Document No.";
+                        InvoiceDetail."Line No." := PIL."Line No.";
+                        InvoiceDetail.Description := PIL.Description;
+                        InvoiceDetail.Amount := PIL.Amount;
+                        InvoiceDetail."Amount with VAT" := PIL."Amount Including VAT";
+                        InvoiceDetail."Document Date" := PIH."Document Date";
+                        InvoiceDetail.Insert();
                     until PIL.Next() = 0;
                 end;
             until PIH.Next() = 0;
@@ -615,25 +615,27 @@ table 70094 "Vendor Agreement Details"
 
                 if PILC.FindSet() then begin
                     repeat
-                    //InvoiceDetail."Document Type":=1;
-                    //InvoiceDetail."Document No.":=PILC."Document No.";
-                    //InvoiceDetail."Line No.":=PILC."Line No.";
-                    //InvoiceDetail.Description:=PILC.Description;
-                    //InvoiceDetail.Amount:=-PILC.Amount;
-                    //InvoiceDetail."Amount with VAT" := -PILC."Amount Including VAT";
-                    //InvoiceDetail."Document Date" := PIHC."Document Date";
-                    //InvoiceDetail.INSERT;
+                        InvoiceDetail."Document Type" := 1;
+                        InvoiceDetail."Document No." := PILC."Document No.";
+                        InvoiceDetail."Line No." := PILC."Line No.";
+                        InvoiceDetail.Description := PILC.Description;
+                        InvoiceDetail.Amount := -PILC.Amount;
+                        InvoiceDetail."Amount with VAT" := -PILC."Amount Including VAT";
+                        InvoiceDetail."Document Date" := PIHC."Document Date";
+                        InvoiceDetail.Insert();
                     until PILC.Next() = 0;
                 end;
             until PIHC.Next() = 0;
         end;
-        //Page.RUN(70243,InvoiceDetail);
+
+        Page.Run(70243, InvoiceDetail);
     end;
 
 
     procedure GetRemainAmt2(): Decimal
     var
         VAD: Record "Vendor Agreement Details";
+        Text001: Label '% 1 = Amount 70094:% 2, Accounts:% 3, Acc. Accounts:% 4, On Approval:% 5';
     begin
         VAD.SetCurrentKey("Agreement No.", "Vendor No.", "Global Dimension 1 Code");
         VAD.SetRange("Vendor No.", "Vendor No.");
@@ -642,7 +644,7 @@ table 70094 "Vendor Agreement Details"
         VAD.SetRange("Global Dimension 2 Code", "Global Dimension 2 Code");
         VAD.SetRange("Cost Type", "Cost Type");
         VAD.CalcSums(AmountLCY);
-        Message('%1 = Сумма 70094: %2, Счета: %3, Учт. Счета: %4, На Утверждении: %5',
+        Message(Text001,
                 VAD.AmountLCY - CalcInvoice(true) - CalcPostedInvoice(true) - GetPlaneAmount(false),
                 VAD.AmountLCY, -CalcInvoice(true), -CalcPostedInvoice(true), -GetPlaneAmount(false));
     end;
