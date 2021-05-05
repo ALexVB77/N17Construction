@@ -55,7 +55,6 @@ table 70076 "Projects Budget Entry"
 
             trigger OnValidate()
             begin
-                // // NCS-026 AP 110314 >>
                 // IF Curency <> '' THEN
                 //     UpdateCurrencyFactor
                 // ELSE BEGIN
@@ -139,6 +138,16 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Including VAT';
             Editable = false;
+        }
+        field(36; "Contragent Name"; Text[250])
+        {
+            Caption = 'Contragent Name';
+            Description = 'NC 50085 PA';
+        }
+        field(37; "External Agreement No."; Text[30])
+        {
+            Caption = 'Contragent Name';
+            Description = 'NC 50085 PA';
         }
         field(40; "Contragent Type"; Option)
         {
@@ -331,9 +340,41 @@ table 70076 "Projects Budget Entry"
             //     END;
             // end;
         }
+        field(50; "Not Run OnInsert"; Boolean)
+        {
+            Caption = 'Not Run OnInsert';
+            Description = 'NC 50085 PA';
+        }
         field(51; "Work Version"; Boolean)
         {
             Caption = 'Work Version';
+            Description = 'NC 50085 PA';
+        }
+        field(52; Reserve; Boolean)
+        {
+            Caption = 'Reserve';
+            Description = 'NC 50085 PA';
+
+            trigger OnValidate()
+            var
+                myInt: Integer;
+            begin
+                lrProjectsBudgetEntryLink.SetRange("Main Entry No.", "Entry No.");
+                lrProjectsBudgetEntryLink.SetRange("Project Code", "Project Code");
+                lrProjectsBudgetEntryLink.SetRange("Analysis Type", "Analysis Type");
+                lrProjectsBudgetEntryLink.SetRange("Version Code", "Version Code");
+                if lrProjectsBudgetEntryLink.FindFirst() then begin
+                    repeat
+                        lrProjectsBudgetEntryLink.Reserv := Reserve;
+                        lrProjectsBudgetEntryLink.Modify();
+                    until lrProjectsBudgetEntryLink.Next() = 0;
+                end;
+            end;
+        }
+        field(53; "Building Turn All"; Code[20])
+        {
+            Caption = 'Building Turn All';
+            Description = 'NC 50086 PA';
         }
         field(60; "Date Plan"; Date)
         {
@@ -344,6 +385,41 @@ table 70076 "Projects Budget Entry"
             FieldClass = FlowField;
             CalcFormula = Lookup("Purchase Line"."Document No." where("Forecast Entry" = field("Entry No.")));
             Caption = 'Pay Request No.';
+        }
+        field(62; "Write Off Amount"; Decimal)
+        {
+            Caption = 'Write Off Amount';
+            Description = 'NC 50085 PA';
+
+            trigger OnValidate()
+            var
+                PBE: Record "Projects Budget Entry";
+            begin
+                WriteOffAmount := "Write Off Amount";
+
+                if (AgrNo <> '') and ("Write Off Amount" > 0) then begin
+                    PBE.SetCurrentKey("Work Version", "Agreement No.", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
+                    PBE.SetFilter("Contragent No.", '%1|%2', "Contragent No.", '');
+                    PBE.SetRange("Agreement No.", '');
+                    PBE.SetRange("Shortcut Dimension 1 Code", "Shortcut Dimension 1 Code");
+                    PBE.SetRange("Shortcut Dimension 2 Code", "Shortcut Dimension 2 Code");
+                    PBE.SetRange(Close, FALSE);
+                    PBE.SETRANGE(Reserve, FALSE);
+                    PBE.SETFILTER("Without VAT", '<>%1', 0);
+                    PBE.SETFILTER("Write Off Amount", '<>0');
+                    PBE.SETFILTER("Entry No.", '<>%1', "Entry No.");
+                    IF PBE.FINDSET THEN
+                        REPEAT
+                            WriteOffAmount += PBE."Write Off Amount";
+                        UNTIL PBE.NEXT = 0;
+                    CheckCF(VendNo, AgrNo, WriteOffAmount);
+                END;
+            end;
+        }
+        field(63; NotVisible; Boolean)
+        {
+            Caption = 'Not Visible';
+            Description = 'NC 50085 PA';
         }
         field(71; "Without VAT (LCY)"; Decimal)
         {
@@ -373,6 +449,12 @@ table 70076 "Projects Budget Entry"
     }
     var
         gvCreateRepeat: Boolean;
+        WriteOffAmount: Decimal;
+        AgrNo: Code[20];
+        VendNo: Code[20];
+        lrProjectsBudgetEntryLink: Record "Projects Budget Entry Link";
+        Text50000: Label 'The amount cannot be more than indicated in the "% 1" agreement card in the breakdown by letter!';
+
 
     procedure SetCreateRepeat(lvCreateRepeat: Boolean)
     begin
@@ -417,5 +499,38 @@ table 70076 "Projects Budget Entry"
                 end;
             end;
         end;
+    end;
+
+    procedure CheckCF(VendNo: Code[20]; AgrNo: Code[20]; CheckAmt: Decimal)
+    var
+        VAD: Record "Vendor Agreement Details";
+        PBE: Record "Projects Budget Entry";
+        Amt: Decimal;
+        VendAgr: Record "Vendor Agreement";
+        GLSetup: Record "General Ledger Setup";
+    begin
+        if not "Not Run OnInsert" then
+            if VendAgr.Get(VendNo, AgrNo) and not VendAgr.WithOut and not VendAgr."Don't Check CashFlow" then begin
+                VAD.SetCurrentKey("Vendor No.", "Agreement No.", "Global Dimension 1 Code");
+                VAD.SetRange("Vendor No.", VendNo);
+                VAD.SetRange("Agreement No.", AgrNo);
+                VAD.SetRange("Global Dimension 1 Code", "Shortcut Dimension 1 Code");
+                VAD.CalcSums(AmountLCY);
+                Amt := VAD.AmountLCY;
+
+                PBE.SetCurrentKey("Contragent No.", "Agreement No.");
+                PBE.SetRange("Contragent No.", VendNo);
+                PBE.SetRange("Agreement No.", AgrNo);
+                PBE.SetRange("Shortcut Dimension 1 Code", "Shortcut Dimension 1 Code");
+
+                if PBE.FINDSET then
+                    repeat
+                        Amt -= PBE."Without VAT (LCY)";
+                    until PBE.Next() = 0;
+
+                GLSetup.Get;
+                if CheckAmt > Amt + GLSetup."Allow Diff in Check" then
+                    Error(Text50000, AgrNo);
+            end;
     end;
 }
