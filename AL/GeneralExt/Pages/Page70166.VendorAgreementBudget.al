@@ -334,11 +334,6 @@ page 70166 "Vendor Agreement Budget"
         end;
     end;
 
-    // trigger OnBeforePutRecord()
-    // begin
-    //     Curency:=vAgreement."Currency Code"; //AP SWC026 310314 <<
-    // end;
-
     trigger OnNewRecord(BelowxRec: Boolean)
     var
         ProjectsLineDimension: record "Projects Line Dimension";
@@ -374,7 +369,7 @@ page 70166 "Vendor Agreement Budget"
                 Rec.Validate("Project Turn Code", BuildingTurn.Code);
                 Rec.Validate("Building Turn", Buildingturn.Code);
                 Rec."Project Code" := BuildingTurn."Building project Code";
-                //Rec."Version Code":= GetDefVersion1("Project Code");
+                //Rec."Version Code":= Rec.GetDefVersion1(Rec."Project Code");
             end;
         end;
 
@@ -385,7 +380,7 @@ page 70166 "Vendor Agreement Budget"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
         Rec."Including VAT" := FALSE;
-        //Rec."Not Run OnInsert" := TRUE;
+        Rec."Not Run OnInsert" := TRUE;
 
         IF Rec.Close THEN BEGIN
             US.Get(UserId);

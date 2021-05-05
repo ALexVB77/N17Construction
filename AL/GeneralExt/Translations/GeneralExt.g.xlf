@@ -588,6 +588,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -612,6 +617,11 @@
           <source>Close</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 249393910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contragent Name</source>
@@ -647,6 +657,11 @@
           <source>Currency Factor</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Currency Factor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1550463695 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Rate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Currency Rate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
@@ -697,6 +712,11 @@
           <source>Line No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3906294107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field New Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 899120550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Not Run OnInsert</source>

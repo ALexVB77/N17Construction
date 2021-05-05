@@ -705,6 +705,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (LCY)</source>
+          <target>Сумма (РУБ)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis Type</source>
           <target>Тип Анализа</target>
@@ -734,6 +741,13 @@
           <target>Факт</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target>Код</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 249393910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contragent Name</source>
@@ -776,6 +790,13 @@
           <target>Курс валюты</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Currency Factor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1550463695 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Rate</source>
+          <target>Курс валюты</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Currency Rate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
@@ -836,6 +857,13 @@
           <target>Строка Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3906294107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Lines</source>
+          <target>Новые строки</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field New Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 899120550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Not Run OnInsert</source>
@@ -1830,7 +1858,6 @@
         <trans-unit id="Table 1535144756 - Method 4254886844 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>% 1 = Amount 70094:% 2, Accounts:% 3, Acc. Accounts:% 4, On Approval:% 5</source>
           <target>% 1 = Сумма 70094:% 2, Счета:% 3, Учт. Счета:% 4, На Утверждении:% 5</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Method GetRemainAmt2 - NamedType Text001</note>
         </trans-unit>
