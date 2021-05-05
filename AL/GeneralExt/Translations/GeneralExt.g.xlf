@@ -1778,6 +1778,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text12400</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CreateItemDocumentLines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method CreateItemDocumentLines</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1175723943 - Method 1284526640" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SetItemDocumentHeader</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method SetItemDocumentHeader</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1175723943 - Method 805467299" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetInventoryLines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method GetInventoryLines</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1175723943 - Method 2974941077" size-unit="char" translate="yes" xml:space="preserve">
+          <source>_GetBinContent</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _GetBinContent</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1175723943 - Method 3581596261" size-unit="char" translate="yes" xml:space="preserve">
+          <source>_GetInitBinFromWHSE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _GetInitBinFromWHSE</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1175723943 - Method 3329998866" size-unit="char" translate="yes" xml:space="preserve">
+          <source>_CheckLocBinCombiantion</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _CheckLocBinCombiantion</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1175723943 - Method 874884802" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AvailableBinQty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method AvailableBinQty</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 205468244" size-unit="char" translate="yes" xml:space="preserve">
           <source>FuncNewRec</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1807,6 +1842,11 @@
           <source>The estimator cannot create a document with the type Act!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
+        </trans-unit>
+        <trans-unit id="Page 3157774153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Item Ledger Entry Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Get Item Ledger Entry Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
@@ -2902,6 +2942,16 @@
           <source>Allow Diff in Check</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Allow Diff in Check - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2040759808 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Comment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ledger Entry (Ext) - Field Comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2040759808 - Field 3174111411 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>User ID from value</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ledger Entry (Ext) - Field User ID from Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3235211674 - Field 516867376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1311705274">
           <source>New FA Posting Group</source>
