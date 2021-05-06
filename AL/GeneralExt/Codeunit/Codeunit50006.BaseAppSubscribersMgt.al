@@ -1,5 +1,14 @@
 codeunit 50006 "Base App. Subscribers Mgt."
 {
+
+    // cu 367 >>
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::CheckManagement, 'OnBeforeVoidCheckGenJnlLine2Modify', '', false, false)]
+    local procedure OnBeforeVoidCheckGenJnlLine2Modify(var GenJournalLine2: Record "Gen. Journal Line"; GenJournalLine: Record "Gen. Journal Line");
+    begin
+        GenJournalLine2."Document No." := GenJournalLine."Document No.";
+    end;
+
+    // cu 367 <<
     [EventSubscriber(ObjectType::Table, DATABASE::"Report Selections", 'OnBeforeSetReportLayoutCustom', '', true, true)]
     local procedure SetDocumentPrintBufferUserFilter(RecordVariant: Variant; ReportUsage: Integer; var DocumentPrintBuffer: Record "Document Print Buffer")
     begin
