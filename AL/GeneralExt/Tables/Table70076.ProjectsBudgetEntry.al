@@ -91,7 +91,7 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Transaction Type';
             InitValue = 'OUT PURCH';
-            //TableRelation = "Cash Flow Transaction Type";
+            TableRelation = "Cash Flow Transaction Type";
         }
         field(23; "Parent Entry"; Integer)
         {
@@ -229,8 +229,8 @@ table 70076 "Projects Budget Entry"
                     gvBuildingTurn.GET("Building Turn");
                     VALIDATE("Shortcut Dimension 1 Code", gvBuildingTurn."Turn Dimension Code");
                     "Project Code" := gvBuildingTurn."Building project Code";
-                    //IF "Version Code" = '' THEN
-                    //"Version Code" := GetDefVersion1("Project Code");
+                    if "Version Code" = '' then
+                        "Version Code" := GetDefVersion1("Project Code");
                 end;
             end;
         }
