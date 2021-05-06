@@ -2968,10 +2968,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1118084349 - Action 1773556888 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
+        <trans-unit id="PageExtension 1118084349 - Action 1087833226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
           <source>Print Payment Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Payment Journal (Ext) - Action Print Payment Order Ext - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Payment Journal (Ext) - Action PrintCheckExt - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3985706558 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
           <source>Print</source>

@@ -10,6 +10,10 @@ pageextension 99990 "Payment Journal BS" extends "Payment Journal"
         {
             Visible = false;
         }
+        modify("Print Payment Order")
+        {
+            Visible = false;
+        }
     }
 
 }
