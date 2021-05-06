@@ -17,16 +17,15 @@ page 70166 "Vendor Agreement Budget"
             group(Info)
             {
                 ShowCaption = false;
-                field(Rest; vAgreement."Agreement Amount" - GetAmount1)
-                {
-                    Caption = 'Rest';
-                    Editable = false;
-                    ApplicationArea = All;
-                }
-
                 field(GetAmount1_; GetAmount1)
                 {
                     Caption = 'Amount';
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field(Rest; vAgreement."Agreement Amount" - GetAmount1)
+                {
+                    Caption = 'Rest';
                     Editable = false;
                     ApplicationArea = All;
                 }
