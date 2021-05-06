@@ -113,6 +113,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3861211528 - Field 1301274640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pref Vesion Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Pref Vesion Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3861211528 - Field 329847988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Dimension 1 Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -547,6 +552,106 @@
           <source>Work Version</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Work Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Analysis Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Analysis Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 1360803378 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3032449165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2410790940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Create User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2859300660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field First Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 1517275350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2382315497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 362031637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Int - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 4200994410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modify Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Last Modify Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2905032134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Show</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field No Show - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Version Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 1215052562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Version Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2960147102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Line</source>
@@ -1312,6 +1417,11 @@
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 3997519884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LastVersion</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field LastVersion - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1929626373 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
@@ -2953,6 +3063,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Allow Diff in Check - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 476953720 - Field 1386837218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
+          <source>Cost Type Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2040759808 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Comment</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2962,10 +3077,6 @@
           <source>User ID from value</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ledger Entry (Ext) - Field User ID from Value - Property Caption</note>
-        <trans-unit id="TableExtension 476953720 - Field 1386837218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
-          <source>Cost Type Dimension Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3235211674 - Field 516867376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1311705274">
           <source>New FA Posting Group</source>

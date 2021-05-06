@@ -135,6 +135,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3861211528 - Field 1301274640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pref Vesion Code</source>
+          <target>Префикс кодировки версий</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Pref Vesion Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3861211528 - Field 329847988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Global Dimension 1 Code</source>
           <target>Аналитика очереди Код</target>
@@ -656,6 +663,146 @@
           <target>Рабочая версия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Proj. Cost Control Entry Buf. - Field Work Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Version</source>
+          <target>Код проекта</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analysis Type</source>
+          <target>Тип Анализа</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Analysis Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
+          <target>Инвестиционный расчет, Детальное планирование, Сметный расчет</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Analysis Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 1360803378 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Date</source>
+          <target>Дата</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3032449165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive User</source>
+          <target>Пользователь</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2410790940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Version</source>
+          <target>Архивная Версия</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <target>Дата создания</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <target>Создал пользователь</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Create User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Описание</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2859300660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Version</source>
+          <target>Базовая версия</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field First Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 1517275350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Date</source>
+          <target>Дата Фиксации</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2382315497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed User</source>
+          <target>Фиксировал Пользователь</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Version</source>
+          <target>Фиксированная версия</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 362031637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int</source>
+          <target>Int</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Int - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 4200994410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modify Date</source>
+          <target>Дата последнего изменения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Last Modify Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2905032134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Show</source>
+          <target>Не показывать</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field No Show - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Company</source>
+          <target>Оригинальная Фирма</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <target>Код проекта</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Code</source>
+          <target>Код версии</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Version Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1859765769 - Field 1215052562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Date</source>
+          <target>Дата Версии</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Version Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2960147102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Line</source>
@@ -1575,6 +1722,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1929626373 - Field 3997519884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LastVersion</source>
+          <target>Последняя версия</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field LastVersion - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1929626373 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
           <target>Ярлык Измерение 1 Код</target>
@@ -2046,7 +2200,6 @@
         <trans-unit id="Codeunit 1747097237 - Method 3899360893" size-unit="char" translate="yes" xml:space="preserve">
           <source>valDimValue</source>
           <target>valDimValue</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dimension Management (Ext) - Method valDimValue</note>
         </trans-unit>
@@ -2149,49 +2302,42 @@
         <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
           <source>CreateItemDocumentLines</source>
           <target></target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method CreateItemDocumentLines</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 1284526640" size-unit="char" translate="yes" xml:space="preserve">
           <source>SetItemDocumentHeader</source>
           <target></target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method SetItemDocumentHeader</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 805467299" size-unit="char" translate="yes" xml:space="preserve">
           <source>GetInventoryLines</source>
           <target></target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method GetInventoryLines</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 2974941077" size-unit="char" translate="yes" xml:space="preserve">
           <source>_GetBinContent</source>
           <target></target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _GetBinContent</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 3581596261" size-unit="char" translate="yes" xml:space="preserve">
           <source>_GetInitBinFromWHSE</source>
           <target></target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _GetInitBinFromWHSE</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 3329998866" size-unit="char" translate="yes" xml:space="preserve">
           <source>_CheckLocBinCombiantion</source>
           <target></target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _CheckLocBinCombiantion</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 874884802" size-unit="char" translate="yes" xml:space="preserve">
           <source>AvailableBinQty</source>
           <target></target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method AvailableBinQty</note>
         </trans-unit>
@@ -2234,7 +2380,6 @@
         <trans-unit id="Page 3157774153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Get Item Ledger Entry Lines</source>
           <target>Получить строки товарных операций</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Get Item Ledger Entry Lines - Property Caption</note>
         </trans-unit>
@@ -3552,24 +3697,341 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Allow Diff in Check - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 476953720 - Field 1386837218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
+          <source>Cost Type Dimension Code</source>
+          <target>Тип затрат</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2040759808 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Comment</source>
           <target>Комментарий</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ledger Entry (Ext) - Field Comment - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2040759808 - Field 3174111411 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>User ID from value</source>
           <target>Код пользователя из СК </target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Тип затрат</target>
+          <target>Новая учетная группа ОС</target>
+          <target>Причина Кредит-Ноты</target>
+          <target>Тип затрат</target>
+          <target>Тип затрат</target>
+          <target>Акт тип</target>
+          <target>Утверждающий</target>
+          <target>Контролер</target>
+          <target>Дата статуса утвержденния</target>
+          <target>Сметчик</target>
+          <target>Содержит Вложение</target>
+          <target>Сумма счета c НДС</target>
+          <target>Счет Покупки Но.</target>
+          <target>Документы IW</target>
+          <target>Складской документ</target>
+          <target>Оплачено</target>
+          <target>Дата оплаты (Факт)</target>
+          <target>Pre-booking Document</target>
+          <target>Проблемный документ</target>
+          <target>Характер проблемы</target>
+          <target>Пользователь процесса</target>
+          <target>Получено Бухгалтерией</target>
+          <target>Тип Документа Платежа</target>
+          <target>Статус утверждения для акта</target>
+          <target>Кладовщик</target>
+          <target>Тип затрат</target>
+          <target>Строка Cash Flow</target>
+          <target>IW</target>
+          <target>Оплачено</target>
+          <target>Номер базового поставщика</target>
+          <target>Сметчик по умолчанию</target>
+          <target>Период отсрочки даты опл. проб. док.</target>
+          <target>Код шаблона договора с поставшиком</target>
+          <target>Причина Кредит-Ноты</target>
+          <target>Администратор IW</target>
+          <target>Администратор PRJ</target>
+          <target>Показать все Акты и КС-2</target>
+          <target>Статус утверждения</target>
+          <target>Налоговый Агент Учетная Группа</target>
+          <target>Сумма договора</target>
+          <target>Сумма без НДС</target>
+          <target>Не проверять CashFlow</target>
+          <target>Содержит Вложение</target>
+          <target>Содержит Комментарий</target>
+          <target>Выплачено, с НДС</target>
+          <target>Выплачено, с НДС Дата Фильтр</target>
+          <target>Аналитика проекта Код</target>
+          <target>Нераспределенная сумма</target>
+          <target>Налоговый Агент Учетная Группа</target>
+          <target>Сумма НДС</target>
+          <target>По заказам</target>
+          <target>Отсутствует настройка Кладовщик склад для текущего пользователя. Обратитесь к администратору.</target>
+          <target>Actuals</target>
+          <target>Actuals IFRS</target>
+          <target>Adv</target>
+          <target>AllocActuals</target>
+          <target>AllocForecast</target>
+          <target>ApprForecast</target>
+          <target>CashFlow</target>
+          <target>Commitet</target>
+          <target>Current Budget</target>
+          <target>Estimate</target>
+          <target>Fix Budget</target>
+          <target>Forecast</target>
+          <target>PrevApprForecast</target>
+          <target>PrevForecast</target>
+          <target>Акт</target>
+          <target>Акт Строки</target>
+          <target>Доп. Соглашение</target>
+          <target>Клиент Договор</target>
+          <target>ДевОбъект</target>
+          <target>АктСписания</target>
+          <target>Объект</target>
+          <target>УчтАктСписания</target>
+          <target>Покупка</target>
+          <target>СчетПокупки</target>
+          <target>Задачи</target>
+          <target>Поставщик Договор</target>
+          <target>Поставщик</target>
+          <target></target>
+          <target>Бухгалтерия</target>
+          <target>Утверждение</target>
+          <target>Проверка</target>
+          <target>Контролер</target>
+          <target>Сметчик</target>
+          <target>Подписание</target>
+          <target></target>
+          <target>Акт</target>
+          <target>Акт (Production)</target>
+          <target>Авансовый отчет</target>
+          <target>КС-2</target>
+          <target>КС-2 (Production)</target>
+          <target></target>
+          <target>Ошибка в Акте</target>
+          <target>Нет договора</target>
+          <target>Ошибка в документе</target>
+          <target>Отклонен утверждающим</target>
+          <target>Отклонен проверяющим</target>
+          <target>Отклонен контролером</target>
+          <target>Отклонен сметчиком</target>
+          <target></target>
+          <target>[5] Бухгалтерия</target>
+          <target>[4] Утверждение</target>
+          <target>[3] Проверка</target>
+          <target>[2] Сметчик</target>
+          <target>[1] Контролер</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ledger Entry (Ext) - Field User ID from Value - Property Caption</note>
-        <trans-unit id="TableExtension 476953720 - Field 1386837218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
-          <source>Cost Type Dimension Code</source>
-          <target>Тип затрат</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Posted FA Doc. Line (Ext) - Field New FA Posting Group - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr. (Ext) - Field Credit-Memo Reason - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Line (Ext) - Field Cost Type - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Line (Ext) - Field Cost Type - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Act Type - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Approver - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Controller - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Date Status App - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Estimator - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Exists Attachment - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Invoice Amount Incl. VAT - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Invoice No. - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field IW Documents - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Location Document - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Paid - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Paid Date Fact - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Pre-booking Document - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Problem Document - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Problem Type - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Process User - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Receive Account - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Request Payment Doc Type - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Status App Act - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Storekeeper - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Cost Type - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Forecast Entry - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field IW - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Paid - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Base Vendor No. - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Default Estimator - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Delay Period - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Vendor Agreement Template Code - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr.Memo Header (Ext) - Field Credit-Memo Reason - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Administrator IW - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Administrator PRJ - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Show All Acts KC-2 - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Status App Act - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Vat Agent Posting Group - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Agreement Amount - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Amount Without VAT - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Don't Check CashFlow - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Exists Attachment - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Exists Comment - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Paid With VAT - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Paid With VAT Date Filter - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Project Dimension Code - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Unbound Cost - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Vat Agent Posting Group - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field VAT Amount - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field WithOut - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Warehouse Employee (Ext) - Method GetDefaultLocation - NamedType Text50002</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Actuals - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Actuals IFRS - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Adv - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue AllocActuals - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue AllocForecast - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue ApprForecast - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue CashFlow - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Commitet - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Current Budget - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Estimate - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Fix Budget - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue Forecast - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevApprForecast - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevForecast - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Act - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue ActLine - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue AddAgr - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue CustAgreement - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue DevObj - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue ItemShipment - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Object - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue PostItemShipment - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Purchase - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue PurchInv - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue ToDo - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue VendAgreement - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Attachment Document Type Ext - EnumValue Vendor - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Approval Status - EnumValue   - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Approval Status - EnumValue Accountant - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Approval Status - EnumValue Approve - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Approval Status - EnumValue Checker - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Approval Status - EnumValue Controller - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Approval Status - EnumValue Estimator - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Approval Status - EnumValue Signing - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue   - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Act - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Act (Production) - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Advance - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 (Production) - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue   - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue Act error - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue AgrMiss - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue Mistake - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue RApprover - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue RChecker - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue RController - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue REstimator - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue   - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue accountant - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue approve - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue checker - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue estimator - Property Caption</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue сontroller - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3235211674 - Field 516867376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1311705274">
           <source>New FA Posting Group</source>
@@ -3718,7 +4180,6 @@
         <trans-unit id="TableExtension 363487199 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Cost Type</source>
           <target>Тип затрат</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Cost Type - Property Caption</note>
         </trans-unit>

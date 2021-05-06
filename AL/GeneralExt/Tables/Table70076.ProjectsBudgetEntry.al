@@ -562,16 +562,15 @@ table 70076 "Projects Budget Entry"
                     Error(Text50000, AgrNo);
             end;
     end;
-    /*
-        local procedure GetDefVersion1(pProjectCode: Code[20]) Ret: Code[20]
-        var
-            lrProjectVersion: Record "Project Version";
-        begin
-            lrProjectVersion.SETRANGE("Project Code",pProjectCode);
-            lrProjectVersion.SETRANGE("Fixed Version");
-            lrProjectVersion.SETRANGE("First Version",TRUE);
-            IF lrProjectVersion.FIND('-') THEN
-                Ret:=lrProjectVersion."Version Code";
-        end;
-    */
+
+    procedure GetDefVersion1(pProjectCode: Code[20]) Ret: Code[20]
+    var
+        lrProjectVersion: Record "Project Version";
+    begin
+        lrProjectVersion.SetRange("Project Code", pProjectCode);
+        lrProjectVersion.SetRange("Fixed Version");
+        lrProjectVersion.SetRange("First Version", true);
+        IF lrProjectVersion.Find('-') THEN
+            Ret := lrProjectVersion."Version Code";
+    end;
 }
