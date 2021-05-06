@@ -93,6 +93,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Turn Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1320817489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cash Flow Transaction Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cash Flow Transaction Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1320817489 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cash Flow Transaction Type - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1320817489 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cash Flow Transaction Type - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1320817489 - Field 4130293374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Priority</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cash Flow Transaction Type - Field Priority - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Credit-Memo Reason</source>
           <note from="Developer" annotates="general" priority="2"></note>
