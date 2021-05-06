@@ -618,7 +618,7 @@ table 70094 "Vendor Agreement Details"
     procedure GetRemainAmt2(): Decimal
     var
         VAD: Record "Vendor Agreement Details";
-        Text001: Label '% 1 = Amount 70094:% 2, Accounts:% 3, Acc. Accounts:% 4, On Approval:% 5';
+        Text001: Label '%1 = Amount 70094: %2, Invoices: %3, Posted Invoices: %4, On Approval: %5';
     begin
         VAD.SetCurrentKey("Agreement No.", "Vendor No.", "Global Dimension 1 Code");
         VAD.SetRange("Vendor No.", "Vendor No.");

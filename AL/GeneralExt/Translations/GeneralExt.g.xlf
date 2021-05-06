@@ -1679,7 +1679,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - Method 4254886844 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>% 1 = Amount 70094:% 2, Accounts:% 3, Acc. Accounts:% 4, On Approval:% 5</source>
+          <source>%1 = Amount 70094: %2, Invoices: %3, Posted Invoices: %4, On Approval: %5</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Method GetRemainAmt2 - NamedType Text001</note>
         </trans-unit>
