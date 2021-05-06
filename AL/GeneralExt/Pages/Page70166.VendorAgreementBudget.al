@@ -84,24 +84,24 @@ page 70166 "Vendor Agreement Budget"
                             if BuildingTurn.FindFirst() then begin
                                 Rec.Validate("Project Turn Code", BuildingTurn.Code);
 
-                                //lrVersion.SetRange("Project Code", Buildingturn."Building project Code");
-                                //lrVersion.SetRange("Fixed Version", TRUE);
+                                lrVersion.SetRange("Project Code", Buildingturn."Building project Code");
+                                lrVersion.SetRange("Fixed Version", true);
 
-                                //if lrVersion.FindFirst() then begin
-                                //"Project Code" := lrVersion."Project Code";
-                                //"Version Code" := lrVersion."Version Code";
+                                if lrVersion.FindFirst() then begin
+                                    Rec."Project Code" := lrVersion."Project Code";
+                                    Rec."Version Code" := lrVersion."Version Code";
 
-                                //if "Shortcut Dimension 2 Code"<>'' then begin
-                                //ProjectsLineDimension.SetRange("Project No.", lrVersion."Project Code");
-                                //ProjectsLineDimension.SetRange("Project Version No.", lrVersion."Version Code");
-                                //ProjectsLineDimension.SetRange("Dimension Code",'CC');
-                                //ProjectsLineDimension.SetRange("Dimension Value Code", "Shortcut Dimension 2 Code");
-                                //ProjectsLineDimension.SetRange("Detailed Line No.", 0);
+                                    if Rec."Shortcut Dimension 2 Code" <> '' then begin
+                                        ProjectsLineDimension.SetRange("Project No.", lrVersion."Project Code");
+                                        ProjectsLineDimension.SetRange("Project Version No.", lrVersion."Version Code");
+                                        ProjectsLineDimension.SetRange("Dimension Code", 'CC');
+                                        ProjectsLineDimension.SetRange("Dimension Value Code", Rec."Shortcut Dimension 2 Code");
+                                        ProjectsLineDimension.SetRange("Detailed Line No.", 0);
 
-                                //if ProjectsLineDimension.FindFirst() then
-                                //"Line No." := ProjectsLineDimension."Project Line No.";
-                                //end;
-                                //end;
+                                        if ProjectsLineDimension.FindFirst() then
+                                            Rec."Line No." := ProjectsLineDimension."Project Line No.";
+                                    end;
+                                end;
 
                             end else begin
                                 Rec."Project Code" := '';
@@ -176,7 +176,7 @@ page 70166 "Vendor Agreement Budget"
                             lrProjectsBudgetEntry.SetRange("Cost Code", Rec."Cost Code");
                             lrProjectsBudgetEntry.SetFilter("Contragent No.", '%1|%2', '', Rec."Contragent No.");
                             lrProjectsBudgetEntry.SetRange("Agreement No.", '');
-                            //lrProjectsBudgetEntry.SetRange(NotVisible, FALSE);
+                            lrProjectsBudgetEntry.SetRange(NotVisible, false);
                             lrProjectsBudgetEntry.SetFilter("Entry No.", '<>%1', Rec."Entry No.");
                             if lrProjectsBudgetEntry.FINDFIRST then;
                             //lfCFCorrection.SETTABLEVIEW(lrProjectsBudgetEntry);
@@ -369,7 +369,7 @@ page 70166 "Vendor Agreement Budget"
                 Rec.Validate("Project Turn Code", BuildingTurn.Code);
                 Rec.Validate("Building Turn", Buildingturn.Code);
                 Rec."Project Code" := BuildingTurn."Building project Code";
-                //Rec."Version Code":= Rec.GetDefVersion1(Rec."Project Code");
+                Rec."Version Code" := Rec.GetDefVersion1(Rec."Project Code");
             end;
         end;
 
@@ -411,7 +411,7 @@ page 70166 "Vendor Agreement Budget"
         gAgr: code[20];
         gDim1: code[20];
         gDim2: code[20];
-        // lrVersion: record "Project Version";
+        lrVersion: record "Project Version";
         DimV: record "Dimension Value";
         CurrTrType: code[20];
         vAgreement: record "Vendor Agreement";
