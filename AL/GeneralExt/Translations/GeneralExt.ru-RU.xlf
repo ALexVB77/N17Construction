@@ -2682,7 +2682,7 @@
         </trans-unit>
         <trans-unit id="Page 1535144756 - Control 3366197612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Breakdown by Letter</source>
-          <target>Разбивка по литерам</target>
+          <target>Разбито по литерам</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Control BreakdownByLetter - Property Caption</note>
         </trans-unit>
@@ -3631,7 +3631,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 3366197612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Breakdown by Letter</source>
-          <target>Разбивка по литерам</target>
+          <target>Разбито по литерам</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control BreakdownByLetter - Property Caption</note>
         </trans-unit>
