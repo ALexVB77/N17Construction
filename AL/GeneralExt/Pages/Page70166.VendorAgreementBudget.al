@@ -137,6 +137,7 @@ page 70166 "Vendor Agreement Budget"
                     trigger OnValidate()
                     var
                         lrProjectsBudgetEntry: Record "Projects Budget Entry";
+                        lfCFCorrection: Page "Forecast List Analisys Correct";
                     begin
                         if Rec."Entry No." = 0 then
                             Rec."Entry No." := GetNextEntryNo;
@@ -168,8 +169,7 @@ page 70166 "Vendor Agreement Budget"
 
                         if Rec."Without VAT" <> 0 then begin
                             Message(TEXT0008);
-                            //Clear(lfCFCorrection);
-                            //lfCFCorrection.LOOKUPMODE:=TRUE;
+                            Clear(lfCFCorrection);
                             lrProjectsBudgetEntry.SetCurrentKey(Date);
                             lrProjectsBudgetEntry.SetRange("Project Code", Rec."Project Code");
                             lrProjectsBudgetEntry.SetRange("Project Turn Code", Rec."Project Turn Code");
@@ -179,15 +179,20 @@ page 70166 "Vendor Agreement Budget"
                             lrProjectsBudgetEntry.SetRange(NotVisible, false);
                             lrProjectsBudgetEntry.SetFilter("Entry No.", '<>%1', Rec."Entry No.");
                             if lrProjectsBudgetEntry.FINDFIRST then;
-                            //lfCFCorrection.SETTABLEVIEW(lrProjectsBudgetEntry);
-                            //lfCFCorrection.SetData(Rec);
-                            //if lfCFCorrection.RUNMODAL = ACTION::LookupOK begin
-                            //  SetSum;
-                            Rec."Transaction Type" := CurrTrType;
-                        end else begin
-                            ClearSum;
-                            Rec.Validate(Rec."Without VAT", 0);
-                            Message(TEXT0009);
+                            lfCFCorrection.SetTableView(lrProjectsBudgetEntry);
+                            lfCFCorrection.SetData(Rec);
+                            if (Rec."Without VAT" - lfCFCorrection.GetSum) <> 0 then
+                                lfCFCorrection.LookupMode := true
+                            else
+                                lfCFCorrection.LookupMode := false;
+                            if lfCFCorrection.RunModal() = Action::LookupOK then begin
+                                SetSum;
+                                Rec."Transaction Type" := CurrTrType;
+                            end else begin
+                                ClearSum;
+                                Rec.Validate(Rec."Without VAT", 0);
+                                Message(TEXT0009);
+                            end;
                         end;
                     end;
                 }

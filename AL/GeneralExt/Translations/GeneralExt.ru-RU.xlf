@@ -138,7 +138,6 @@
         <trans-unit id="Table 3861211528 - Field 1301274640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pref Vesion Code</source>
           <target>Префикс кодировки версий</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Pref Vesion Code - Property Caption</note>
         </trans-unit>
@@ -667,140 +666,120 @@
         <trans-unit id="Table 1859765769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Version</source>
           <target>Код проекта</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 273371814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis Type</source>
           <target>Тип Анализа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Analysis Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 273371814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Calculation,Detailed Planning,Estimate Calculation</source>
           <target>Инвестиционный расчет, Детальное планирование, Сметный расчет</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Analysis Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 1360803378 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Archive Date</source>
           <target>Дата</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 3032449165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Archive User</source>
           <target>Пользователь</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive User - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 2410790940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Archive Version</source>
           <target>Архивная Версия</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Archive Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Date</source>
           <target>Дата создания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Create Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create User</source>
           <target>Создал пользователь</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Create User - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 2859300660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>First Version</source>
           <target>Базовая версия</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field First Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 1517275350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed Date</source>
           <target>Дата Фиксации</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 2382315497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed User</source>
           <target>Фиксировал Пользователь</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed User - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 3756764184 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fixed Version</source>
           <target>Фиксированная версия</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Fixed Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 362031637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Int</source>
           <target>Int</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Int - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 4200994410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last Modify Date</source>
           <target>Дата последнего изменения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Last Modify Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 2905032134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No Show</source>
           <target>Не показывать</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field No Show - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Original Company</source>
           <target>Оригинальная Фирма</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Original Company - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Код проекта</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Project Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version Code</source>
           <target>Код версии</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Version Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1859765769 - Field 1215052562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version Date</source>
           <target>Дата Версии</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Project Version - Field Version Date - Property Caption</note>
         </trans-unit>
@@ -1725,7 +1704,6 @@
         <trans-unit id="Table 1929626373 - Field 3997519884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>LastVersion</source>
           <target>Последняя версия</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Structure - Field LastVersion - Property Caption</note>
         </trans-unit>
@@ -2376,6 +2354,34 @@
           <target>Сметчик не может создать документ с типом Аct!</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
+        </trans-unit>
+        <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Register</source>
+          <target>Transaction Register</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys Correct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1741419279 - NamedType 30548576" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The amount of the remainder of the line has been exceeded!</source>
+          <target>Превышена сумма остатка строки!</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys Correct - NamedType TEXT0009</note>
+        </trans-unit>
+        <trans-unit id="Page 1741419279 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must select the Cash Flow records from which you want to write off this amount</source>
+          <target>Необходимо выбрать записи Cash Flow, с которых необходимо списать данную сумму.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys Correct - NamedType TEXT001</note>
+        </trans-unit>
+        <trans-unit id="Page 1741419279 - NamedType 2068412800" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The sum of the remainder of the distribution is not 0.</source>
+          <target>Сумма остатка распределения не равна 0.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys Correct - NamedType TEXT0010</note>
         </trans-unit>
         <trans-unit id="Page 3157774153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Get Item Ledger Entry Lines</source>
