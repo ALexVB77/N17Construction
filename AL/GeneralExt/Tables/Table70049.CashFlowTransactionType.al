@@ -3,7 +3,7 @@ table 70049 "Cash Flow Transaction Type"
     Caption = 'Cash Flow Transaction Type';
     Description = 'NC 50085 PA';
     DataPerCompany = false;
-    //LookupPageId = "Cash Flow Transaction Type";
+    LookupPageId = "Cash Flow Transaction Type";
 
     fields
     {
