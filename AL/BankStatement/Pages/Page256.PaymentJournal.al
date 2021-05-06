@@ -1,8 +1,7 @@
-pagecustomization "Payment Journal BS" customizes "Payment Journal"
+pageextension 99990 "Payment Journal BS" extends "Payment Journal"
 {
     actions
     {
-        // Add changes to page actions here
         modify("Void Payment Order")
         {
             Visible = false;
@@ -12,4 +11,6 @@ pagecustomization "Payment Journal BS" customizes "Payment Journal"
             Visible = false;
         }
     }
+
 }
+
