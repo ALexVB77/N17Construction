@@ -5,7 +5,7 @@ codeunit 70004 "Inven.-Get Inventory"
     var
         lrTempInvenLedgEntry: Record "Item Ledger Entry" temporary;
     begin
-        ItemDocumentHeader.GET("Document Type", "Document No.");
+        ItemDocumentHeader.GET(Rec."Document Type", Rec."Document No.");
         ItemDocumentHeader.TESTFIELD(Status, ItemDocumentHeader.Status::Open);
         ItemDocumentHeader.TESTFIELD("Location Code");
         GetInventoryLines(lrTempInvenLedgEntry, ItemDocumentHeader);
