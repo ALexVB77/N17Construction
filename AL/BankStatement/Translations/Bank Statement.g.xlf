@@ -90,7 +90,7 @@
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 315308444" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank marks</source>
-          <note from="Developer" annotates="general" priority="2">Must be translated: ÄÔ¼ÑÔ¬¿ íá¡¬á</note>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType BankMarksTxt</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 1232383976" size-unit="char" translate="yes" xml:space="preserve">

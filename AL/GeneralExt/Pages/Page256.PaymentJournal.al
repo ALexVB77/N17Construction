@@ -29,19 +29,19 @@ pageextension 80256 "Payment Journal (Ext)" extends "Payment Journal"
                     GenJnlLine.Reset();
                     GenJnlLine.Copy(Rec);
                     CurrPage.SETSELECTIONFILTER(GenJnlLine);
-                    if (GenJnlLine.findset()) then begin
-                        repeat
-                            GenJnlLine.TestField("Bal. Account Type", GenJnlLine."Bal. Account Type"::"Bank Account");
-                            BankAcc.Get(GenJnlLine."Bal. Account No.");
-                            case BankAcc."Account Type" of
-                                BankAcc."Account Type"::"Bank Account":
-                                    DocPrint.PrintCheck(GenJnlLine);
+                    //if (GenJnlLine.findset()) then begin
+                    //    repeat
+                    GenJnlLine.TestField("Bal. Account Type", GenJnlLine."Bal. Account Type"::"Bank Account");
+                    BankAcc.Get(GenJnlLine."Bal. Account No.");
+                    case BankAcc."Account Type" of
+                        BankAcc."Account Type"::"Bank Account":
+                            DocPrint.PrintCheck(GenJnlLine);
 
-                                BankAcc."Account Type"::"Cash Account":
-                                    DocPrint.PrintCashOrder(GenJnlLine);
-                            end;
-                        until (GenJnlLine.next() = 0)
+                        BankAcc."Account Type"::"Cash Account":
+                            DocPrint.PrintCashOrder(GenJnlLine);
                     end;
+                    //    until (GenJnlLine.next() = 0)
+                    //end;
                     CODEUNIT.Run(CODEUNIT::"Adjust Gen. Journal Balance", Rec);
                 end;
             }

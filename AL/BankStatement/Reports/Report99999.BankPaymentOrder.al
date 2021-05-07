@@ -93,10 +93,7 @@ report 99999 "Bank Payment Order BS"
                 else
                     BankMark := BankMarksTxt;
 
-                if (addSection) then begin
-                    BankPaymentOrderHelper.AddDocument();
-                end;
-                addSection := true;
+
 
                 BankPaymentOrderHelper.FillHeader(OKUD);
                 case PaymentDocType of
@@ -190,7 +187,7 @@ report 99999 "Bank Payment Order BS"
         DocumentNoTxt: Label 'XXXXXXXXXX', Locked = true;
         PrintQst: Label 'If %1 is not empty then it will be changed during posting %2\\Do you want to continue printing?';
         CanNotBeUsedErr: Label 'Cannot be used if %1 %2', Comment = '%1 - field caption, %2 - field value';
-        BankMarksTxt: Label 'Bank marks', Comment = 'Must be translated: ÄÔ¼ÑÔ¬¿ íá¡¬á';
+        BankMarksTxt: Label 'Bank marks';
         CheckLedgEntry: Record "Check Ledger Entry";
         CompanyInfo: Record "Company Information";
         VendorPayer: Record Vendor;
@@ -200,7 +197,7 @@ report 99999 "Bank Payment Order BS"
         LocMgt: Codeunit "Localisation Management";
         StdRepMgt: Codeunit "Local Report Management";
         NoSeriesMgt: Codeunit NoSeriesManagement;
-        BankPaymentOrderHelper: Codeunit "Bank Payment Order Helper BS";
+        BankPaymentOrderHelper: Codeunit "Bank Payment Order Helper";
         DocAmount: Decimal;
         PrintTest: Boolean;
         PaymentDocType: Option "Payment Order","Collection Payment Order","Payment Requisition";
@@ -226,7 +223,7 @@ report 99999 "Bank Payment Order BS"
         InkPayNoteTxt: Label 'COLLECTION\PAYMENT ORDER # %1', Comment = 'Must be translated: ê¡¬áßß«ó«Ñ\»½áÔÑª¡«Ñ »«ÓÒþÑ¡¿Ñ';
         PayingRequestTxt: Label 'PAYMENT REQUEST # %1', Comment = 'Must be translated: Å½áÔÑª¡«Ñ ÔÓÑí«óá¡¿Ñ';
         Preview: Boolean;
-        addSection: Boolean;
+
 
     [Scope('OnPrem')]
     procedure FormatAmount(Amount: Decimal): Text[30]
