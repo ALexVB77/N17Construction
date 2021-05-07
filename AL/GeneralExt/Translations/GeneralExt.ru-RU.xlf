@@ -3762,14 +3762,12 @@
         <trans-unit id="PageExtension 2153774770 - Control 1961212789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Paid, with VAT</source>
           <target>Выплачено, с НДС</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control PaidWithVATREstateTest - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 3435806664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Remain, with VAT</source>
           <target>Остаток, с НДС</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Remain - Property Caption</note>
         </trans-unit>
@@ -4481,6 +4479,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Exists Comment - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Original Company</source>
+          <target>Оригинальная компания</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 157049546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Original No.</source>
+          <target>Оригинальный Но.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Original No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 2293804479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Paid With VAT</source>
           <target>Выплачено, с НДС</target>
@@ -4522,6 +4534,13 @@
           <target>По заказам</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field WithOut - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1524380135 - Field 559372978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">
+          <source>Include in Paid With VAT</source>
+          <target>включать в расчет Выплачено с НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Ledger Entry (Ext) - Field Include in Paid With VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1325709049 - Method 772126332 - NamedType 1927858078" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1325709049">
           <source>There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.</source>
