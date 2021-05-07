@@ -102,119 +102,102 @@
         <trans-unit id="Report 304731933 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Payment Order</source>
           <target>Платежное поручение</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 315308444" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank marks</source>
           <target>Отметки банка</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Developer" annotates="general" priority="2">Must be translated: ÄÔ¼ÑÔ¬¿ íá¡¬á</note>
+          <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType BankMarksTxt</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 1232383976" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cannot be used if %1 %2</source>
           <target>Не может быть использовано, если %1 %2.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2">%1 - field caption, %2 - field value</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType CanNotBeUsedErr</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 3827407032" size-unit="char" translate="yes" xml:space="preserve">
           <source>COLLECTION\PAYMENT ORDER # %1</source>
           <target>СБОР\ПЛАТЕЖНОЕ ПОРУЧЕНИЕ # %1</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2">Must be translated: ê¡¬áßß«ó«Ñ\»½áÔÑª¡«Ñ »«ÓÒþÑ¡¿Ñ</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType InkPayNoteTxt</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 3215900615" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cannot be less than 0</source>
           <target>Не может быть меньше 0</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType LessThanZeroErr</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 1846945219" size-unit="char" translate="yes" xml:space="preserve">
           <source>PAYMENT REQUEST # %1</source>
           <target>ЗАПРОС НА ПЛАТЕЖ # %1</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2">Must be translated: Å½áÔÑª¡«Ñ ÔÓÑí«óá¡¿Ñ</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType PayingRequestTxt</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 1481418588" size-unit="char" translate="yes" xml:space="preserve">
           <source>PAYMENT ORDER # %1</source>
           <target>ПЛАТЕЖНОЕ ПОРУЧЕНИЕ # %1</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2">Must be translated: Å½áÔÑª¡«Ñ »«ÓÒþÑ¡¿Ñ</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType PayNoteTxt</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 1564390617" size-unit="char" translate="yes" xml:space="preserve">
           <source>If %1 is not empty then it will be changed during posting %2\\Do you want to continue printing?</source>
           <target>Если %1 не пустой, он будет изменен во время учета %2\\Продолжить печать?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType PrintQst</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 2033344483" size-unit="char" translate="yes" xml:space="preserve">
           <source>Marks of the beneficiary bank</source>
           <target>Отметки банка получателя</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2">Must be translated: ÄÔ¼ÑÔ¬¿ íá¡¬á »«½ÒþáÔÑ½´</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType ReceiverBankMarksTxt</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - NamedType 944581012" size-unit="char" translate="yes" xml:space="preserve">
           <source>The number of the document %1 does not match the input mask %2 or greater than the last number.</source>
           <target>Номер документа %1 не соответствует входной маске %2 или превышает последний номер.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - NamedType WrongDocumentNoErr</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <target>Параметры</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control Options - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - Control 1246743062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if the related document is for a payment or a refund.</source>
           <target>Определяет, относится связанный документ к оплате или к возмещению.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control PaymentDocType - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - Control 1246743062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Document Type</source>
           <target>Тип платежного документа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control PaymentDocType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - Control 1246743062 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Order,Collection Payment Order,Payment Requisition</source>
           <target>Платежное поручение,Платежное поручение коллекции,Заявка на платеж</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control PaymentDocType - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - Control 2937449465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Test Print</source>
           <target>Тестовая печать</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control PrintTest - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - Control 3894400428 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies that the report can be previewed.</source>
           <target>Указывает, что доступен предварительный просмотр отчета.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control SetPreview - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 304731933 - Control 3894400428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Preview</source>
           <target>Просмотр</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control SetPreview - Property Caption</note>
         </trans-unit>
@@ -265,6 +248,13 @@
           <target>Клиент-Банк</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Account Card BS - Control ClientBank - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 807125158 - Action 1087833226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
+          <source>Print Payment Order</source>
+          <target>Печать платежных поручений</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Payment Journal BS - Action PrintCheckExt - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3146835237 - Field 2193737767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2110786292">
           <source>Posted Amount</source>

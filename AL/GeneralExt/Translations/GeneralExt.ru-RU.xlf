@@ -2016,7 +2016,6 @@
         <trans-unit id="Table 1535144756 - Method 4254886844 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = Amount 70094: %2, Invoices: %3, Posted Invoices: %4, On Approval: %5</source>
           <target>%1 = Сумма 70094: %2, Счета: %3, Учт. Счета: %4, На Утверждении: %5</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Method GetRemainAmt2 - NamedType Text001</note>
         </trans-unit>
@@ -3561,13 +3560,6 @@
           <target>Определяет учетную группу РСБУ для ОС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1118084349 - Action 1087833226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
-          <source>Print Payment Order</source>
-          <target>Печать платежного поручения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Payment Journal (Ext) - Action PrintCheckExt - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3985706558 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
           <source>Print</source>
