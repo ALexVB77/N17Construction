@@ -9,17 +9,6 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 ApplicationArea = Basic, Suite;
             }
         }
-        addbefore(Control1905767507)
-        {
-            part("Attached Documents"; "Document Attachment Factbox")
-            {
-                ApplicationArea = All;
-                Caption = 'Attachments';
-                SubPageLink = "Table ID" = CONST(14901),
-                              "No." = FIELD("No."),
-                              "PK Key 2" = FIELD("Vendor No.");
-            }
-        }
         addafter("VAT Agent")
         {
             part(BreakdownByLetter; "Vendor Agreement Details")
@@ -38,6 +27,30 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 UpdatePropagation = Both;
             }
         }
+        addafter(Priority)
+        {
+            field("Exist Comment"; Rec."Exists Comment")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+            field("Exist Attachment"; Rec."Exists Attachment")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+
+        }
+        addbefore(Control1905767507)
+        {
+            part("Attached Documents"; "Document Attachment Factbox")
+            {
+                ApplicationArea = All;
+                Caption = 'Attachments';
+                SubPageLink = "Table ID" = CONST(14901),
+                              "No." = FIELD("No."),
+                              "PK Key 2" = FIELD("Vendor No.");
+            }
+        }
+
     }
     actions
     {
