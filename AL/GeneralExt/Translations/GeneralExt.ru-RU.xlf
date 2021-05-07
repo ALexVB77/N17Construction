@@ -138,147 +138,126 @@
         <trans-unit id="Table 2738500395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Commited Detail</source>
           <target>Commited Detail</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 3454607982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement Date</source>
           <target>Дата договора</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Agreement Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 3412919364 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Agreement Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement No.</source>
           <target>Договор Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 1676340591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount 1</source>
           <target>Разбивка по литерам</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Amount 1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 3589430442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actuals</source>
           <target>Actuals</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Amount 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 2951733825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount 3</source>
           <target>Amount 3</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Amount 3 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 2198096983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Incl. VAT (PCCE)</source>
           <target>Amount Incl. VAT (PCCE)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Amount Incl. VAT (PCCE) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 758726140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Incl. VAT (VAG)</source>
           <target>Amount Incl. VAT (VAG)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Amount Incl. VAT (VAG) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 1577863327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>By Order</source>
           <target>По заказам</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field ByOrder - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 1779522364 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cost Code</source>
           <target>Cost Code</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field CC - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comment</source>
           <target>Комментарий</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Comment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 804007701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cost Place</source>
           <target>Cost Place</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field CP - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 2548188529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cost Type</source>
           <target>Cost Type</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field CT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Agreement No.</source>
           <target>Номер внешнего договора</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field External Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Строка Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 2993619861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ordered Amount</source>
           <target>Ordered Amount</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Ordered Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Код проекта</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Project Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 373345468 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Turn Code</source>
           <target>Объект строительства</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Turn Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 3119688693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Name</source>
           <target>Имя поставщика</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Vendor Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2738500395 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor No.</source>
           <target>Поставщик Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Commited Detail - Field Vendor No. - Property Caption</note>
         </trans-unit>
@@ -3780,6 +3759,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control PaymentSchedule - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Control 1961212789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Paid, with VAT</source>
+          <target>Выплачено, с НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control PaidWithVATREstateTest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Control 3435806664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Remain, with VAT</source>
+          <target>Остаток, с НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Remain - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 1658766258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Attachments</source>
           <target>Вложения</target>
@@ -4419,14 +4412,12 @@
         <trans-unit id="TableExtension 2802827400 - Method 970250691 - NamedType 1559726398" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2802827400">
           <source>For following ILE Remaining Qty is greater than Open Qty =  Remaining Qty - Tracked Qty - Reserved Qty. Only lines with open Quantities are transferred to Order.</source>
           <target>For following ILE Remaining Qty is greater than Open Qty =  Remaining Qty - Tracked Qty - Reserved Qty. Only lines with open Quantities are transferred to Order.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Method GetInventoryLines - NamedType Text60001</note>
         </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Method 970250691 - NamedType 3941603843" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2802827400">
           <source>ILE No. %1, Remaining Qty %2, Open Qty %3</source>
           <target>ILE No. %1, Remaining Qty %2, Open Qty %3</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Method GetInventoryLines - NamedType Text60002</note>
         </trans-unit>

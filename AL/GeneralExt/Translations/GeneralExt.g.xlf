@@ -3133,6 +3133,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control PaymentSchedule - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Control 1961212789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Paid, with VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control PaidWithVATREstateTest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Control 3435806664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Remain, with VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Remain - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 1658766258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>

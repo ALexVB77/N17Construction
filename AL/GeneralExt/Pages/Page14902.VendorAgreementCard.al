@@ -37,7 +37,39 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             {
                 ApplicationArea = Basic, Suite;
             }
-
+            field("Project Dimension Code"; Rec."Project Dimension Code")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+            field("Do not check CashFlow"; Rec."Don't Check CashFlow")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+            group(Amounts)
+            {
+                field("Agreement Amount"; "Agreement Amount")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("VAT Amount"; "VAT Amount")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Amount Without VAT"; "Amount Without VAT")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field(PaidWithVATREstateTest; PaidWithVATREstateTest)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Paid, with VAT';
+                }
+                field(Remain; "Agreement Amount" - PaidWithVATREstateTest)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Remain, with VAT';
+                }
+            }
         }
         addbefore(Control1905767507)
         {
@@ -93,4 +125,6 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             }
         }
     }
+    var
+        PaidWithVATREstateTest: Decimal;
 }
