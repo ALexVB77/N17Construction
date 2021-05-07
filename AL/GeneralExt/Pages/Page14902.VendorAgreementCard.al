@@ -136,17 +136,18 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         DetVendLE: Record "Detailed Vendor Ledg. Entry";
         dvleTMP: Record "Detailed Vendor Ledg. Entry" temporary;
         VendAgrConstrTest: Record "Vendor Agreement";
+        Monkey: Codeunit "Code Monkey Translation";
     begin
 
         PaidWithVAT := 0;
         PaidWithVATConstrTest := 0;
         PaidWithVATSumTest := 0;
         PaidWithVATREstateTest := 0;
-        IF (COMPANYNAME = 'NCC Real Estate') THEN BEGIN
+        IF (COMPANYNAME = Monkey.ConstCompany('NCC Real Estate')) THEN BEGIN
             DetVendLE.SETCURRENTKEY("Vendor No.", "Initial Document Type", "Document Type", "Entry Type", "Posting Date",
                 "Currency Code", "Agreement No.", "Prepmt. Diff. in TA");
-            DetVendLE.SETRANGE("Vendor No.", "Vendor No.");
-            DetVendLE.SETRANGE("Agreement No.", "No.");
+            DetVendLE.SETRANGE("Vendor No.", Rec."Vendor No.");
+            DetVendLE.SETRANGE("Agreement No.", Rec."No.");
             DetVendLE.SETFILTER("Document Type", '%1|%2', DetVendLE."Document Type"::Payment,
                                                         DetVendLE."Document Type"::Refund);
             DetVendLE.SETFILTER("Entry Type",
@@ -159,11 +160,11 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             PaidWithVAT := DetVendLE."Amount (LCY)";
 
             VendAgrConstrTest.RESET;
-            VendAgrConstrTest.CHANGECOMPANY('NCC Construction');
-            VendAgrConstrTest.SETRANGE("No.", "Original No.");
+            VendAgrConstrTest.CHANGECOMPANY(Monkey.ConstCompany('NCC Construction'));
+            VendAgrConstrTest.SETRANGE("No.", Rec."Original No.");
             IF VendAgrConstrTest.FINDFIRST THEN BEGIN
                 VendAgrConstrTest.CALCFIELDS("Paid With VAT");
-                IF "Original No." <> '' THEN BEGIN
+                IF Rec."Original No." <> '' THEN BEGIN
                     PaidWithVATConstrTest := VendAgrConstrTest."Paid With VAT";
                     PaidWithVATSumTest := PaidWithVAT + VendAgrConstrTest."Paid With VAT";
                 END ELSE BEGIN
@@ -173,10 +174,10 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             END;
 
             // SWC1061 DD 26.06.17 >>
-            IF "Original Company" = 'VL' THEN BEGIN
+            IF Rec."Original Company" = 'VL' THEN BEGIN
                 VendAgrConstrTest.RESET;
-                VendAgrConstrTest.CHANGECOMPANY('NCC Village');
-                VendAgrConstrTest.SETRANGE("No.", COPYSTR("No.", 4));
+                VendAgrConstrTest.CHANGECOMPANY(Monkey.ConstCompany('NCC Village'));
+                VendAgrConstrTest.SETRANGE("No.", COPYSTR(Rec."No.", 4));
                 IF VendAgrConstrTest.FINDFIRST THEN BEGIN
                     VendAgrConstrTest.CALCFIELDS("Paid With VAT");
                     PaidWithVATConstrTest := VendAgrConstrTest."Paid With VAT";
@@ -186,8 +187,8 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             // SWC1061 DD 26.06.17 <<
 
             PaidWithVAT := 0;
-            DetVendLE.SETRANGE("Vendor No.", "Vendor No.");
-            DetVendLE.SETRANGE("Agreement No.", "No.");
+            DetVendLE.SETRANGE("Vendor No.", Rec."Vendor No.");
+            DetVendLE.SETRANGE("Agreement No.", Rec."No.");
             DetVendLE.SETFILTER("Document Type", '%1|%2|%3', DetVendLE."Document Type"::" ",
                                                             DetVendLE."Document Type"::Payment,
                                                             DetVendLE."Document Type"::Refund);
