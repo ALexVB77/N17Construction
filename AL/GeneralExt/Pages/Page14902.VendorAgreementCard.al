@@ -59,17 +59,10 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Paid With VAT"; Rec."Paid With VAT")
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Paid, with VAT';
-                    Visible = PaidWithVATVisiable;
-                }
                 field(PaidWithVATREstateTest; PaidWithVATREstateTest)
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Paid, with VAT';
-                    Visible = PaidWithVATREstateTestVisiable;
                 }
                 field(Remain; Rec."Agreement Amount" - PaidWithVATREstateTest)
                 {
@@ -275,9 +268,7 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         PaidWithVATREstateTest: Decimal;
         PaidWithVATConstrTest: Decimal;
         PaidWithVATSumTest: Decimal;
-        [InDataSet]
         PaidWithVATVisiable: Boolean;
-        [InDataSet]
         PaidWithVATREstateTestVisiable: Boolean;
 
     local procedure DublicateOperationExists(var dvle: Record "Detailed Vendor Ledg. Entry"; var dvleTMP: Record "Detailed Vendor Ledg. Entry" temporary): Boolean
