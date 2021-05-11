@@ -47,6 +47,8 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             }
             group(Amounts)
             {
+                ShowCaption = false;
+
                 field("Agreement Amount"; Rec."Agreement Amount")
                 {
                     ApplicationArea = Basic, Suite;
