@@ -2319,6 +2319,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstOther</note>
         </trans-unit>
+        <trans-unit id="Codeunit 848050111 - Method 910530893" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ConstCompany</source>
+          <target>ConstCompany</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstCompany</note>
+        </trans-unit>
         <trans-unit id="Codeunit 848050111 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unknown text constant - "%1".</source>
           <target>Неизвестная текстовая константа - "%1".</target>
@@ -3759,6 +3766,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control PaymentSchedule - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Control 2293804479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Paid, with VAT</source>
+          <target>Выплачено, с НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Paid With VAT - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 1961212789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Paid, with VAT</source>
           <target>Выплачено, с НДС</target>
@@ -4482,14 +4496,12 @@
         <trans-unit id="TableExtension 594576918 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Original Company</source>
           <target>Оригинальная компания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Original Company - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 157049546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Original No.</source>
           <target>Оригинальный Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Original No. - Property Caption</note>
         </trans-unit>
@@ -4538,7 +4550,6 @@
         <trans-unit id="TableExtension 1524380135 - Field 559372978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">
           <source>Include in Paid With VAT</source>
           <target>включать в расчет Выплачено с НДС</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Ledger Entry (Ext) - Field Include in Paid With VAT - Property Caption</note>
         </trans-unit>
