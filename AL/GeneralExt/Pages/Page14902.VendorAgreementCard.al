@@ -129,10 +129,8 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
     }
 
     trigger OnOpenPage()
-    var
-        Monkey: Codeunit "Code Monkey Translation";
     begin
-        if (CompanyName = 'NCC Real Estate') then begin
+        if (CompanyName = Monkey.ConstCompany('NCC Real Estate')) then begin
             PaidWithVATREstateTestVisiable := true;
             PaidWithVATVisiable := false;
         end else begin
@@ -158,7 +156,7 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         PaidWithVATConstrTest := 0;
         PaidWithVATSumTest := 0;
         PaidWithVATREstateTest := 0;
-        IF (COMPANYNAME = 'NCC Real Estate') THEN BEGIN
+        IF (COMPANYNAME = Monkey.ConstCompany('NCC Real Estate')) THEN BEGIN
             DetVendLE.SETCURRENTKEY("Vendor No.", "Initial Document Type", "Document Type", "Entry Type", "Posting Date",
                 "Currency Code", "Agreement No.", "Prepmt. Diff. in TA");
             DetVendLE.SETRANGE("Vendor No.", Rec."Vendor No.");
@@ -272,6 +270,7 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         PaidWithVATSumTest: Decimal;
         PaidWithVATVisiable: Boolean;
         PaidWithVATREstateTestVisiable: Boolean;
+        Monkey: Codeunit "Code Monkey Translation";
 
     local procedure DublicateOperationExists(var dvle: Record "Detailed Vendor Ledg. Entry"; var dvleTMP: Record "Detailed Vendor Ledg. Entry" temporary): Boolean
     var

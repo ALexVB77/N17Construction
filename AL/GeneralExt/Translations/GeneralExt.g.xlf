@@ -1928,11 +1928,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstOther</note>
         </trans-unit>
-        <trans-unit id="Codeunit 848050111 - Method 4088365915" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ConstOther</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstOther</note>
-        </trans-unit>
         <trans-unit id="Codeunit 848050111 - Method 910530893" size-unit="char" translate="yes" xml:space="preserve">
           <source>ConstCompany</source>
           <note from="Developer" annotates="general" priority="2"></note>
