@@ -310,10 +310,10 @@ table 70050 "Building Project"
         // {
         //     Caption = 'Include Advances in Cash Flow';
         // }
-        // field(70016; "Without Details"; Boolean)
-        // {
-        //     Caption = 'Without Details';
-        // }
+        field(70016; "Without Details"; Boolean)
+        {
+            Caption = 'Without Details';
+        }
         // field(70017; "Housing Dimension"; Text[250])
         // {
         //     Caption = 'Housing Dimension';

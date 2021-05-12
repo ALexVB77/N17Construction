@@ -211,7 +211,7 @@ table 70078 "Projects Budget Entry Link"
         grProjectsBudgetEntry.SetRange("Version Code", "Version Code");
         grProjectsBudgetEntry.SetRange("Entry No.", "Main Entry No.");
 
-        if WorkDate() >= CodeMonkeyTranslation.ConstOther(20190101D) then
+        if WorkDate() >= 20190101D then
             VATRate := 1.2
         else
             VATRate := 1.18;

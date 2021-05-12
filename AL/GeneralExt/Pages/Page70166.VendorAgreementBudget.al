@@ -17,16 +17,15 @@ page 70166 "Vendor Agreement Budget"
             group(Info)
             {
                 ShowCaption = false;
-                field(Rest; vAgreement."Agreement Amount" - GetAmount1)
-                {
-                    Caption = 'Rest';
-                    Editable = false;
-                    ApplicationArea = All;
-                }
-
                 field(GetAmount1_; GetAmount1)
                 {
                     Caption = 'Amount';
+                    Editable = false;
+                    ApplicationArea = All;
+                }
+                field(Rest; vAgreement."Agreement Amount" - GetAmount1)
+                {
+                    Caption = 'Rest';
                     Editable = false;
                     ApplicationArea = All;
                 }
@@ -84,24 +83,24 @@ page 70166 "Vendor Agreement Budget"
                             if BuildingTurn.FindFirst() then begin
                                 Rec.Validate("Project Turn Code", BuildingTurn.Code);
 
-                                //lrVersion.SetRange("Project Code", Buildingturn."Building project Code");
-                                //lrVersion.SetRange("Fixed Version", TRUE);
+                                lrVersion.SetRange("Project Code", Buildingturn."Building project Code");
+                                lrVersion.SetRange("Fixed Version", true);
 
-                                //if lrVersion.FindFirst() then begin
-                                //"Project Code" := lrVersion."Project Code";
-                                //"Version Code" := lrVersion."Version Code";
+                                if lrVersion.FindFirst() then begin
+                                    Rec."Project Code" := lrVersion."Project Code";
+                                    Rec."Version Code" := lrVersion."Version Code";
 
-                                //if "Shortcut Dimension 2 Code"<>'' then begin
-                                //ProjectsLineDimension.SetRange("Project No.", lrVersion."Project Code");
-                                //ProjectsLineDimension.SetRange("Project Version No.", lrVersion."Version Code");
-                                //ProjectsLineDimension.SetRange("Dimension Code",'CC');
-                                //ProjectsLineDimension.SetRange("Dimension Value Code", "Shortcut Dimension 2 Code");
-                                //ProjectsLineDimension.SetRange("Detailed Line No.", 0);
+                                    if Rec."Shortcut Dimension 2 Code" <> '' then begin
+                                        ProjectsLineDimension.SetRange("Project No.", lrVersion."Project Code");
+                                        ProjectsLineDimension.SetRange("Project Version No.", lrVersion."Version Code");
+                                        ProjectsLineDimension.SetRange("Dimension Code", 'CC');
+                                        ProjectsLineDimension.SetRange("Dimension Value Code", Rec."Shortcut Dimension 2 Code");
+                                        ProjectsLineDimension.SetRange("Detailed Line No.", 0);
 
-                                //if ProjectsLineDimension.FindFirst() then
-                                //"Line No." := ProjectsLineDimension."Project Line No.";
-                                //end;
-                                //end;
+                                        if ProjectsLineDimension.FindFirst() then
+                                            Rec."Line No." := ProjectsLineDimension."Project Line No.";
+                                    end;
+                                end;
 
                             end else begin
                                 Rec."Project Code" := '';
@@ -137,6 +136,7 @@ page 70166 "Vendor Agreement Budget"
                     trigger OnValidate()
                     var
                         lrProjectsBudgetEntry: Record "Projects Budget Entry";
+                        lfCFCorrection: Page "Forecast List Analisys Correct";
                     begin
                         if Rec."Entry No." = 0 then
                             Rec."Entry No." := GetNextEntryNo;
@@ -168,26 +168,30 @@ page 70166 "Vendor Agreement Budget"
 
                         if Rec."Without VAT" <> 0 then begin
                             Message(TEXT0008);
-                            //Clear(lfCFCorrection);
-                            //lfCFCorrection.LOOKUPMODE:=TRUE;
+                            Clear(lfCFCorrection);
                             lrProjectsBudgetEntry.SetCurrentKey(Date);
                             lrProjectsBudgetEntry.SetRange("Project Code", Rec."Project Code");
                             lrProjectsBudgetEntry.SetRange("Project Turn Code", Rec."Project Turn Code");
                             lrProjectsBudgetEntry.SetRange("Cost Code", Rec."Cost Code");
                             lrProjectsBudgetEntry.SetFilter("Contragent No.", '%1|%2', '', Rec."Contragent No.");
                             lrProjectsBudgetEntry.SetRange("Agreement No.", '');
-                            //lrProjectsBudgetEntry.SetRange(NotVisible, FALSE);
+                            lrProjectsBudgetEntry.SetRange(NotVisible, false);
                             lrProjectsBudgetEntry.SetFilter("Entry No.", '<>%1', Rec."Entry No.");
                             if lrProjectsBudgetEntry.FINDFIRST then;
-                            //lfCFCorrection.SETTABLEVIEW(lrProjectsBudgetEntry);
-                            //lfCFCorrection.SetData(Rec);
-                            //if lfCFCorrection.RUNMODAL = ACTION::LookupOK begin
-                            //  SetSum;
-                            Rec."Transaction Type" := CurrTrType;
-                        end else begin
-                            ClearSum;
-                            Rec.Validate(Rec."Without VAT", 0);
-                            Message(TEXT0009);
+                            lfCFCorrection.SetTableView(lrProjectsBudgetEntry);
+                            lfCFCorrection.SetData(Rec);
+                            if (Rec."Without VAT" - lfCFCorrection.GetSum) <> 0 then
+                                lfCFCorrection.LookupMode := true
+                            else
+                                lfCFCorrection.LookupMode := false;
+                            if lfCFCorrection.RunModal() = Action::LookupOK then begin
+                                SetSum;
+                                Rec."Transaction Type" := CurrTrType;
+                            end else begin
+                                ClearSum;
+                                Rec.Validate(Rec."Without VAT", 0);
+                                Message(TEXT0009);
+                            end;
                         end;
                     end;
                 }
@@ -308,6 +312,8 @@ page 70166 "Vendor Agreement Budget"
             end;
         end;
         if vAgreement.Get(Rec."Contragent No.", Rec."Agreement No.") then;
+
+        Rec.Curency := vAgreement."Currency Code";
     end;
 
     trigger OnAfterGetCurrRecord()
@@ -332,11 +338,6 @@ page 70166 "Vendor Agreement Budget"
         end;
     end;
 
-    // trigger OnBeforePutRecord()
-    // begin
-    //     Curency:=vAgreement."Currency Code"; //AP SWC026 310314 <<
-    // end;
-
     trigger OnNewRecord(BelowxRec: Boolean)
     var
         ProjectsLineDimension: record "Projects Line Dimension";
@@ -344,20 +345,20 @@ page 70166 "Vendor Agreement Budget"
         lrVendor: record Vendor;
         lrVendorAgree: record "Vendor Agreement";
     begin
-        Rec.Curency := vAgreement."Currency Code";//AP SWC026 310314 <<
+        Rec.Curency := vAgreement."Currency Code";
 
         Rec."Work Version" := true;
 
         Rec."Including VAT" := false;
-        //Rec."Not Run OnInsert" := true;
+        Rec."Not Run OnInsert" := true;
         Rec."Contragent No." := gVendor;
         Rec."Agreement No." := gAgr;
 
-        //if lrVendor.GET(gVendor) then
-        //Rec."Contragent Name" := lrVendor.Name;
+        if lrVendor.GET(gVendor) then
+            Rec."Contragent Name" := lrVendor.Name;
 
-        //if lrVendorAgree.GET(gVendor, gAgr) then
-        //Rec."External Agreement No." := lrVendorAgree."External Agreement No.";
+        if lrVendorAgree.GET(gVendor, gAgr) then
+            Rec."External Agreement No." := lrVendorAgree."External Agreement No.";
 
         if gDim1 <> '' then
             Rec."Shortcut Dimension 1 Code" := gDim1;
@@ -372,7 +373,7 @@ page 70166 "Vendor Agreement Budget"
                 Rec.Validate("Project Turn Code", BuildingTurn.Code);
                 Rec.Validate("Building Turn", Buildingturn.Code);
                 Rec."Project Code" := BuildingTurn."Building project Code";
-                //Rec."Version Code":= GetDefVersion1("Project Code");
+                Rec."Version Code" := Rec.GetDefVersion1(Rec."Project Code");
             end;
         end;
 
@@ -383,7 +384,7 @@ page 70166 "Vendor Agreement Budget"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
         Rec."Including VAT" := FALSE;
-        //Rec."Not Run OnInsert" := TRUE;
+        Rec."Not Run OnInsert" := TRUE;
 
         IF Rec.Close THEN BEGIN
             US.Get(UserId);
@@ -414,7 +415,7 @@ page 70166 "Vendor Agreement Budget"
         gAgr: code[20];
         gDim1: code[20];
         gDim2: code[20];
-        // lrVersion: record "Project Version";
+        lrVersion: record "Project Version";
         DimV: record "Dimension Value";
         CurrTrType: code[20];
         vAgreement: record "Vendor Agreement";
@@ -474,9 +475,9 @@ page 70166 "Vendor Agreement Budget"
         IF VendorAgreementDetails.FINDSET THEN BEGIN
             REPEAT
                 IF vAgreement."Currency Code" <> '' THEN
-                    Ret := Ret + VendorAgreementDetails."Without VAT"  //AP SWC026 250814 <<
+                    Ret := Ret + VendorAgreementDetails."Without VAT"
                 ELSE
-                    Ret := Ret + VendorAgreementDetails."Without VAT (LCY)"// AP SWC026 160414 <<
+                    Ret := Ret + VendorAgreementDetails."Without VAT (LCY)"
             UNTIL VendorAgreementDetails.NEXT = 0;
         END;
     end;
@@ -494,7 +495,7 @@ page 70166 "Vendor Agreement Budget"
         lrProjectsBudgetEntry.SETFILTER("Entry No.", '<>%1', "Entry No.");
         IF lrProjectsBudgetEntry.FINDSET THEN BEGIN
             REPEAT
-                //lrProjectsBudgetEntry."Write Off Amount":=0;
+                lrProjectsBudgetEntry."Write Off Amount" := 0;
                 lrProjectsBudgetEntry.MODIFY;
             UNTIL lrProjectsBudgetEntry.NEXT = 0;
         END;
@@ -591,29 +592,27 @@ page 70166 "Vendor Agreement Budget"
         lrProjectsBudgetEntry: record "Projects Budget Entry";
         MaxAmount: decimal;
     begin
-        // lrProjectsBudgetEntry.SETRANGE("Project Code","Project Code");
-        // lrProjectsBudgetEntry.SETRANGE("Project Turn Code","Project Turn Code");
-        // lrProjectsBudgetEntry.SETRANGE("Cost Code","Cost Code");
-        // lrProjectsBudgetEntry.SETFILTER("Contragent No.",'%1|%2','',"Contragent No.");
-        // lrProjectsBudgetEntry.SETRANGE("Agreement No.",'');
-        // lrProjectsBudgetEntry.SETFILTER("Without VAT",'<>%1',0);
-        // lrProjectsBudgetEntry.SETFILTER("Entry No.",'<>%1',"Entry No.");
-        // IF lrProjectsBudgetEntry.FINDSET THEN
-        // BEGIN
-        //   REPEAT
-        //     lrProjectsBudgetEntry.VALIDATE("Without VAT",lrProjectsBudgetEntry."Without VAT"-lrProjectsBudgetEntry."Write Off Amount");
-        //     IF MaxAmount<lrProjectsBudgetEntry."Write Off Amount" THEN
-        //     BEGIN
-        //       MaxAmount:=lrProjectsBudgetEntry."Write Off Amount";
-        //       CurrTrType:=lrProjectsBudgetEntry."Transaction Type";
-        //     END;
+        lrProjectsBudgetEntry.SETRANGE("Project Code", Rec."Project Code");
+        lrProjectsBudgetEntry.SETRANGE("Project Turn Code", Rec."Project Turn Code");
+        lrProjectsBudgetEntry.SETRANGE("Cost Code", Rec."Cost Code");
+        lrProjectsBudgetEntry.SETFILTER("Contragent No.", '%1|%2', '', Rec."Contragent No.");
+        lrProjectsBudgetEntry.SETRANGE("Agreement No.", '');
+        lrProjectsBudgetEntry.SETFILTER("Without VAT", '<>%1', 0);
+        lrProjectsBudgetEntry.SETFILTER("Entry No.", '<>%1', Rec."Entry No.");
+        if lrProjectsBudgetEntry.FINDSET then begin
+            repeat
+                lrProjectsBudgetEntry.Validate("Without VAT", lrProjectsBudgetEntry."Without VAT" - lrProjectsBudgetEntry."Write Off Amount");
+                if MaxAmount < lrProjectsBudgetEntry."Write Off Amount" then begin
+                    MaxAmount := lrProjectsBudgetEntry."Write Off Amount";
+                    CurrTrType := lrProjectsBudgetEntry."Transaction Type";
+                end;
 
-        //     lrProjectsBudgetEntry."Write Off Amount":=0;
-        //     IF lrProjectsBudgetEntry."Without VAT" = 0 THEN
-        //       lrProjectsBudgetEntry.NotVisible:=TRUE;
-        //      lrProjectsBudgetEntry.MODIFY;
-        //   UNTIL lrProjectsBudgetEntry.NEXT=0;
-        // END;
+                lrProjectsBudgetEntry."Write Off Amount" := 0;
+                if lrProjectsBudgetEntry."Without VAT" = 0 then
+                    lrProjectsBudgetEntry.NotVisible := true;
+                lrProjectsBudgetEntry.Modify();
+            until lrProjectsBudgetEntry.Next() = 0;
+        end;
     end;
 }
 

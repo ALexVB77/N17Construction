@@ -5,6 +5,12 @@ codeunit 99999 "Additional Management BS"
     // TABLES
 
     // t 81 >>
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnModifyOnBeforeTestCheckPrinted', '', false, false)]
+    local procedure OnModifyOnBeforeTestCheckPrinted(var GenJournalLine: Record "Gen. Journal Line"; var IsHandled: Boolean);
+    begin
+        IsHandled := true;
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterModifyEvent', '', false, false)]
     local procedure OnAfterModifyT81(var Rec: Record "Gen. Journal Line"; var xRec: Record "Gen. Journal Line"; RunTrigger: Boolean)
     begin
@@ -449,7 +455,8 @@ codeunit 99999 "Additional Management BS"
                 paymentJournal.SETRECORD(gjl);
             END;
             paymentJournal.SETTABLEVIEW(gjl);
-            IF (paymentJournal.RUNMODAL() = ACTION::OK) THEN BEGIN
+            paymentJournal.LookupMode(true);
+            IF (paymentJournal.RUNMODAL() = ACTION::LookupOK) THEN BEGIN
                 paymentJournal.GETRECORD(gjl);
                 IF (gjl.Amount = R."Statement Amount") THEN BEGIN
                     setLink := FALSE;

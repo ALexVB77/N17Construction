@@ -11,9 +11,9 @@ report 50094 "Find Error 70095"
     begin
 
         ProjectsCostCtrlEntry.SetFilter("Analysis Type", '%1|%2', ProjectsCostCtrlEntry."Analysis Type"::Adv, ProjectsCostCtrlEntry."Analysis Type"::Actuals);
-        ProjectsCostCtrlEntry.SetFilter("Create Date", '%1..', CodeMonkeyTranslation.ConstOther(20170628D));
+        ProjectsCostCtrlEntry.SetFilter("Create Date", '%1..', 20170628D);
         ProjectsCostCtrlEntry2.SetFilter("Analysis Type", '%1|%2', ProjectsCostCtrlEntry2."Analysis Type"::Adv, ProjectsCostCtrlEntry2."Analysis Type"::Actuals);
-        ProjectsCostCtrlEntry2.SetFilter("Create Date", '%1..', CodeMonkeyTranslation.ConstOther(20170628D));
+        ProjectsCostCtrlEntry2.SetFilter("Create Date", '%1..', 20170628D);
         if ProjectsCostCtrlEntry.FindSet() then
             repeat
                 ProjectsCostCtrlEntry2.SetRange("Project Code", ProjectsCostCtrlEntry."Project Code");

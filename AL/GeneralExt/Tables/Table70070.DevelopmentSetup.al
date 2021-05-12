@@ -19,10 +19,10 @@ table 70070 "Development Setup"
         //     Caption = 'Bank Account Nos.';
         //     TableRelation = "No. Series";
         // }
-        // field(30; "Pref Vesion Code"; Code[10])
-        // {
-        //     Caption = 'Pref Vesion Code';
-        // }
+        field(30; "Pref Vesion Code"; Code[10])
+        {
+            Caption = 'Pref Vesion Code';
+        }
         // field(31; "Project Turn Dimension Code"; Code[20])
         // {
         //     Caption = 'Global Dimension 1 Code';

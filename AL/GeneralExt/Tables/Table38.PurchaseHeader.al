@@ -101,7 +101,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         {
             Description = 'NC 51373 AB';
             Caption = 'Approver';
-
+        }
+        field(70034; "IW Documents"; Boolean)
+        {
+            Caption = 'IW Documents';
+            Description = 'NC 50085 PA';
         }
         field(70038; "Pre-booking Document"; Boolean)
         {
@@ -190,4 +194,9 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         //NC 27251 HR end
     end;
 
+    procedure GetStatusAppAct(DocType: Enum "Purchase Act Approval Status"; No: Code[20]): Integer
+    begin
+        IF GET(DocType, No) THEN
+            EXIT("Status App Act".AsInteger());
+    end;
 }

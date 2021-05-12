@@ -98,10 +98,10 @@ table 70072 "Projects Structure"
             Caption = 'Shortcut Dimension 8 Code';
             TableRelation = Dimension;
         }
-        // field(89; LastVersion; Integer)
-        // {
-        //     Caption = 'LastVersion';
-        // }
+        field(89; LastVersion; Integer)
+        {
+            Caption = 'LastVersion';
+        }
         // field(90; "Template Code"; Code[20])
         // {
         //     Caption = 'Template Code';
