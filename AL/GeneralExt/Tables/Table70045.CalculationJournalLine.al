@@ -108,8 +108,8 @@ table 70045 "Calculation Journal Line"
             Caption = 'BegEndSaldo';
             Editable = false;
             OptionMembers = "Begin Saldo","End Saldo";
-            //FieldClass = FlowField;
-            //CalcFormula = Lookup("Calc. Gen Journal Operand".BegEndSaldo WHERE ("Calc. Gen. Jnl. Entry No."=FIELD("Entry No."),"Type Operation"=CONST('SummaLCY')));
+            FieldClass = FlowField;
+            CalcFormula = Lookup("Calc. Gen Journal Operand".BegEndSaldo WHERE("Calc. Gen. Jnl. Entry No." = FIELD("Entry No."), "Type Operation" = CONST("SummaLCY")));
         }
         field(51101; "Calc Some Accounts"; Boolean)
         {

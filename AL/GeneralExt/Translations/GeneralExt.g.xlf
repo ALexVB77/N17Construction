@@ -93,6 +93,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Turn Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1141732079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calc. Gen Journal Operand</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 917956814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BegEndSaldo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field BegEndSaldo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 917956814 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BegSaldo,EndSaldo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field BegEndSaldo - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 4048883904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calc. Gen. Jnl. Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Calc. Gen. Jnl. Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3853688615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type Operation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Type Operation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3853688615 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Condition,SummaLCY,Base,BaseItem,Distribute,DistributeItem,DimDistribute</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Type Operation - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 2419670394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calculation Journal Line</source>
           <note from="Developer" annotates="general" priority="2"></note>
