@@ -138,6 +138,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Journal Line - NamedType Text003</note>
         </trans-unit>
+        <trans-unit id="Table 2419670394 - Field 2076762503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>An.View Dimension 1 Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Journal Line - Field An.View Dimension 1 Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2419670394 - Field 610269486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Analysis View Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2262,6 +2267,16 @@
           <source>The estimator cannot create a document with the type Act!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calculation General Journal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActionName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action ActionName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1320817489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cash Flow Transaction Type</source>
