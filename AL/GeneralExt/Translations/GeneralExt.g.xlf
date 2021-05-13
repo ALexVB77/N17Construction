@@ -93,6 +93,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Building Turn - Field Turn Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2419670394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calculation Journal Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Journal Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2419670394 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Journal Line - Field Entry No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1320817489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cash Flow Transaction Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
