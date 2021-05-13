@@ -1,3 +1,5 @@
+#release 21.05.0
+
 param($ObjectID)
 if (!$ObjectID){
 	Throw "Object ID must be specified!"
@@ -13,15 +15,15 @@ $Param = @"
 	"RemoteHost": "$env:COMPUTERNAME",
 	"User": "$env:USERNAME",
     "GetOriganalObject": true,
-	"GetXliffData": false
+	"GetTranslations": true
 }
 "@
 
 $ToConvertObjectID = $ObjectID
 $ConvertedObject = ""
 $OriginalObject = ""
-$XliffData = ""
-$ResponseText = $WS.GimmeAL($Param, $ToConvertObjectID, [ref]$ConvertedObject, [ref]$OriginalObject, [ref]$XliffData)
+$Translations = ""
+$ResponseText = $WS.GimmeAL($Param, $ToConvertObjectID, [ref]$ConvertedObject, [ref]$OriginalObject, [ref]$Translations)
 Write-Host $ResponseText
 
 
@@ -39,8 +41,8 @@ if ($ConvertedObject){
 	Set-Content -Path $OutputFilename -Value $ConvertedObject
 }
 
-if ($XliffData){
-	$Filename = "navnav-$ToConvertObjectID.xlf"
+if ($Translations){
+	$Filename = "navnav-$ToConvertObjectID-trans.txt"
 	$OutputFilename = Join-Path -Path $OutputFolder -ChildPath $Filename
-	Set-Content -Path $OutputFilename -Value $XliffData
+	Set-Content -Path $OutputFilename -Value $Translations
 }
