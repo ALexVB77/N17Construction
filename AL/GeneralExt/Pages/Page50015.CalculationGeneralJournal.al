@@ -56,10 +56,11 @@ page 50015 "Calculation General Journal"
                 {
                     ApplicationArea = All;
                 }
-                /*field("Description"; debType)
+                field("debType"; debType)
                 {
+                    Caption = 'Debet Account Type';
                     ApplicationArea = All;
-                }*/
+                }
                 field("Debit Account No."; Rec."Debit Account No.")
                 {
                     ApplicationArea = All;
@@ -68,10 +69,11 @@ page 50015 "Calculation General Journal"
                 {
                     ApplicationArea = All;
                 }
-                /*field("Description"; CreType)
+                field("CreType"; CreType)
                 {
+                    Caption = 'Credit Account Type';
                     ApplicationArea = All;
-                }*/
+                }
                 field("Credit Account No."; Rec."Credit Account No.")
                 {
                     ApplicationArea = All;
@@ -80,10 +82,11 @@ page 50015 "Calculation General Journal"
                 {
                     ApplicationArea = All;
                 }
-                /*field("Description"; TypeExtRt)
+                field("TypeExRt"; TypeExRt)
                 {
+                    Caption = 'Exch. Rates Account Type';
                     ApplicationArea = All;
-                }*/
+                }
                 field("Dim. Allocation"; Rec."Dim. Allocation")
                 {
                     ApplicationArea = All;
@@ -122,5 +125,72 @@ page 50015 "Calculation General Journal"
     }
 
     var
-        myInt: Integer;
+        GenJnlMgt: Codeunit 230;
+        CurrentJnlBatchName: Code[10];
+        GenJnlBatch: Record 232;
+        TypeExRt: Option " ","G/L Account","Bank Account";
+        DebType: Option " ","G/L Account","Bank Account";
+        CreType: Option " ","G/L Account","Bank Account";
+        Mail: Codeunit 397;
+        DateRun: Date;
+        TimeRun: Time;
+        FlagRun: Boolean;
+        TempBatchNm: Code[10];
+        TempDocNo: Code[20];
+        TempPostDate: Date;
+        //GLCalcMgt: Codeunit 70023;
+        DimAlloc: Record 70043;
+    //CalcMonth: Record 70044;
+    //CalcMonthForm: Page 50013;
+    //Text01: Label 'Документ No %1 \';
+    //Text02: Label '%2 должен быть задан.';
+    //Text03: Label 'Условие выполнения не задано.';
+    //Text04: Label 'В операнде %2 не найден %3 %4.';
+    //Text05: Label 'У Счета %2 нет измерения %3.';
+    //Text051: Label 'Измерения не могут быть использованы с Счетом %2.';
+    //Text061: Label 'Счет %2 не раскрывается по Измерениям %3,%4,%5.';
+    //Text07: Label 'Расчет суммы не задан.';
+    //Text08: Label 'ENU=Analyzing Data...\\;RUS=Удаление      @1@@@@@@@@@@@@@@\';
+    //Text09: Label 'ENU=Analyzing Data...\\;RUS=Расчет               @2@@@@@@@@@@@@@@\';
+    //Text10: Label 'RUS=%2 должен быть %3,%4,%5.';
+    //Text11: Label 'ENU=Calc. Indirect Cost;RUS=Расчет Косвенных Издержек';
+    //Text12: Label 'RUS=Рассчитать Документ No. %1?';
+    //"Text12-1": Label 'RUS=Обновить Строки в Документах Связанных с Шаблоном %1?';
+    //"Text12-2": Label 'RUS=Обновить Строки в Документе No. %1 из Шаблона?';
+    //Text14: Label 'RUS=Рассчитать все документы?';
+    //Text15: Label 'RUS=Расчет Документа No. #3##############\';
+    //"Text15-1": Label 'RUS=Обновление Строк в Документах Связанных с Шаблоном\@1@@@@@@@@@@@@@@';
+    //Text16: Label 'RUS=Документа No. #3##############\';
+    //Text17: Label 'RUS=Конечное Сальдо Счета No. %2 равно 0.';
+    //Text18: Label 'ENU=Calculation;RUS=Расчет';
+    //Text19: Label 'RUS=Счет %2 должен иметь тип %3';
+    //Text20: Label 'RUS=Выпуск по Произ.Заказу No.%2 не найден';
+    //Text22: Label 'RUS=Не найден Запущенный Произ. Заказ No. %2';
+    //Text23: Label 'RUS=Общая Себестоимость по Складу %2 равна 0.';
+    //Text001: Label 'RUS=Документ No. %1 Блокирован.';
+    //Text24: Label 'RUS=%2 не может быть %3.';
+    //Text25: Label 'RUS=Не найдены измерения %2';
+    //Text26: Label 'RUS=Не найдены счета при группировке счетов';
+    //Text27: Label 'RUS=Нет записей в таблице %2';
+    //Text28: Label 'RUS=Закрытый период';
+    //Text29: Label 'RUS=Рассчитано %1 документов.';
+    //Text30: Label 'RUS=В счете No. %2 не указана валюта.';
+    //Text31: Label 'RUS=Счет No. %2 должен быть Активным или Пассивным';
+    //Text32: Label 'RUS=Не найден курс %2 на %3';
+    //Text33: Label 'RUS=В валюте %2 не задан %3';
+    //Text34: Label 'RUS=Копировать Документ No.%1?';
+    //Text35: Label 'RUS=%2 должен быть задан в документе или в строках базы.';
+    //Text36: Label 'RUS=%2 в строках базы не может быть %3.';
+    //Text37: Label 'RUS=Сохранение           @4@@@@@@@@@@@@@@\';
+    //Text38: Label 'RUS=Измерения %1 и %2 должны быть разными.';
+    //Text39: Label 'RUS=Неверно поставлены Скобки в формуле Условия.';
+    //Text407: Label 'RUS=Неверно поставлены Скобки в формуле Суммы.';
+
+    //Text41: Label 'RUS=Дата запуска расчета %1 меньше текущей даты %2';
+    //Text42: Label 'RUS=Время запуска расчета %1 уже прошло. Сейчас %2';
+    //Text43: Label 'RUS=Запустить расчет %1 в %2?';
+    //Text44: Label 'RUS=Списание Себестоимости';
+    //Text45: Label 'ENU=Analyzing Data...\\;RUS=Товар No.            #4###################\';
+    //Text46: Label 'ENU=Analyzing Data...\\;RUS=Склад                #5###################\';
+
 }

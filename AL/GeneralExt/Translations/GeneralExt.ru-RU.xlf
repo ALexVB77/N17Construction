@@ -168,7 +168,6 @@
         <trans-unit id="Table 2419670394 - Field 2076762503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>An.View Dimension 1 Filter</source>
           <target>Фильтр измерения 1 аналитического очета</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Journal Line - Field An.View Dimension 1 Filter - Property Caption</note>
         </trans-unit>
@@ -2725,9 +2724,28 @@
         <trans-unit id="Page 1722712914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calculation General Journal</source>
           <target>Расчетный Журнал</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Control 3826626000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Account Type</source>
+          <target>Кредит Тип Счета</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Control CreType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Control 1139035637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debet Account Type</source>
+          <target>Дебет Тип Счета</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Control debType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Control 1548112357 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exch. Rates Account Type</source>
+          <target>Курс. Разн. Тип Счета</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Control TypeExRt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActionName</source>
