@@ -24,6 +24,26 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             Caption = 'Exists Attachment';
         }
+        field(70007; "Payments Amount"; Decimal)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Payments Amount';
+        }
+        field(70008; "Invoice VAT Amount"; Decimal)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'VAT Amount';
+            trigger OnValidate()
+            begin
+                // NC 51373 AB >> #CHECKLATER
+                // отключил, мне не надо                
+                // "Invoice Amount":="Invoice Amount Incl. VAT"-"Invoice VAT Amount";
+                // // NCS-026 AP 110314 >>
+                // ExchangeFCYtoLCY();
+                // // NCS-026 AP 110314 <<
+                // NC 51373 AB >>
+            end;
+        }
         field(70009; "Invoice Amount Incl. VAT"; Decimal)
         {
             Description = 'NC 51373 AB';
