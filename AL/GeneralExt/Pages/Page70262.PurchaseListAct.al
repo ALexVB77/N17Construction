@@ -28,7 +28,7 @@ page 70262 "Purchase List Act"
                     trigger OnValidate()
                     begin
                         SetRecFilters;
-                        CurrPage.UPDATE;
+                        CurrPage.UPDATE(FALSE);
                     end;
                 }
 
@@ -40,7 +40,7 @@ page 70262 "Purchase List Act"
                     trigger OnValidate()
                     begin
                         SetSortType;
-                        CurrPage.UPDATE;
+                        CurrPage.UPDATE(FALSE);
                     end;
                 }
 
@@ -53,7 +53,7 @@ page 70262 "Purchase List Act"
                     trigger OnValidate()
                     begin
                         SetRecFilters;
-                        CurrPage.UPDATE;
+                        CurrPage.UPDATE(FALSE);
                     end;
                 }
 
@@ -65,7 +65,7 @@ page 70262 "Purchase List Act"
                     trigger OnValidate()
                     begin
                         SetRecFilters;
-                        CurrPage.UPDATE;
+                        CurrPage.UPDATE(FALSE);
                     end;
                 }
 
