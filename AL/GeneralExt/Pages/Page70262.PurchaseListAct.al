@@ -283,7 +283,22 @@ page 70262 "Purchase List Act"
                 }
             }
 
-
+            action(DocCard)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Edit';
+                Image = Edit;
+                trigger OnAction()
+                begin
+                    case Rec."Act Type" of
+                        Rec."Act Type"::Advance:
+                            ;
+                        else
+                            page.RunModal(Page::"Purchase Order Act", Rec);
+                    end;
+                    CurrPage.Update();
+                end;
+            }
 
             //group(Approval)
             //{
