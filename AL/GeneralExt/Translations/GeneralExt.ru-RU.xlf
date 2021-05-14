@@ -2784,14 +2784,12 @@
         <trans-unit id="Page 2147051387 - Action 501661907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calculation</source>
           <target>Расчет</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calc. Gen. Journal Update - Action Calculation - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2580165686 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calc. Operand Subform</source>
           <target>Операнды</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calc. Operand Subform - Property Caption</note>
         </trans-unit>
@@ -3028,6 +3026,13 @@
           <target>Отклонить</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DelayButton - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target>Изменить</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DocCard - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Action 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New</source>
