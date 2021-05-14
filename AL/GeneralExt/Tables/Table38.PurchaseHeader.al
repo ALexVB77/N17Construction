@@ -64,6 +64,43 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             Caption = 'Request Payment Doc Type';
         }
+        field(70012; "Payment Details"; Text[230])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Payment Details';
+            trigger OnValidate()
+            var
+                CreditMemoReason: record "Credit-Memo Reason";
+            begin
+                IF ("Payment Details" <> '') AND ("Document Type" = "Document Type"::"Credit Memo") THEN
+                    CreditMemoReason.GET("Payment Details");
+            end;
+
+            trigger OnLookup()
+            var
+                CreditMemoReason: record "Credit-Memo Reason";
+            begin
+                IF "Document Type" = "Document Type"::"Credit Memo" THEN BEGIN
+                    IF CreditMemoReason.GET("Payment Details") THEN;
+                    IF PAGE.RUNMODAL(0, CreditMemoReason) = ACTION::LookupOK THEN
+                        VALIDATE("Payment Details", CreditMemoReason.Reason);
+                END;
+            end;
+        }
+        field(70013; "Vendor Bank Account"; Code[20])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Vendor Bank Account';
+            TableRelation = "Bank Directory".BIC;
+            ValidateTableRelation = false;
+        }
+        field(70014; "Vendor Bank Account No."; Text[30])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Vendor Bank Account #';
+            TableRelation = "Vendor Bank Account".Code WHERE("Vendor No." = field("Pay-to Vendor No."));
+            ValidateTableRelation = false;
+        }
         field(70015; Controller; Code[20])
         {
             Caption = 'Controller';
@@ -116,6 +153,19 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         {
             Caption = 'Problem Type';
             Description = 'NC 51373 AB';
+        }
+        field(70021; "OKATO Code"; Text[30])
+        {
+            TableRelation = OKATO;
+            Description = 'NC 51373 AB';
+            Caption = 'OKATO Code';
+        }
+
+        field(70022; "KBK Code"; Text[30])
+        {
+            TableRelation = KBK;
+            Description = 'NC 51373 AB';
+            Caption = 'KBK Code';
         }
         field(70023; Approver; Code[20])
         {

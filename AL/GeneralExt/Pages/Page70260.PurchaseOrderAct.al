@@ -248,6 +248,48 @@ page 70260 "Purchase Order Act"
                 }
 
             }
+            group("Payment Request")
+            {
+                Caption = 'Payment Request';
+                field("Vendor Bank Account"; Rec."Vendor Bank Account")
+                {
+                    ApplicationArea = All;
+
+                    trigger OnAssistEdit()
+                    var
+                        VendorBankAccount: Record "Vendor Bank Account";
+                    begin
+                        VendorBankAccount.SETRANGE("Vendor No.", Rec."Pay-to Vendor No.");
+                        IF Page.RUNMODAL(0, VendorBankAccount) = ACTION::LookupOK THEN BEGIN
+                            Rec."Vendor Bank Account" := VendorBankAccount.BIC;
+                            Rec."Vendor Bank Account No." := VendorBankAccount."Bank Account No.";
+                        END;
+                    end;
+                }
+                field("Vendor Bank Account Name"; GetVendorBankAccountName)
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Caption = 'Vendor Bank Account Name';
+                }
+                field("Vendor Bank Account No."; rec."Vendor Bank Account No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Payment Details"; rec."Payment Details")
+                {
+                    ApplicationArea = All;
+                }
+                field("OKATO Code"; rec."OKATO Code")
+                {
+                    ApplicationArea = All;
+                }
+                field("KBK Code"; rec."KBK Code")
+                {
+                    ApplicationArea = All;
+                }
+            }
+
         }
     }
 
@@ -271,6 +313,15 @@ page 70260 "Purchase Order Act"
         ActTypeEditable: Boolean;
         EstimatorEnable: Boolean;
         ProblemType: text;
+
+    local procedure GetVendorBankAccountName(): text
+    var
+        VendorBankAccount: Record "Vendor Bank Account";
+    begin
+        if Rec."Vendor Bank Account No." <> '' then
+            if VendorBankAccount.get("Vendor Bank Account No.") then
+                exit(VendorBankAccount.Name + VendorBankAccount."Name 2");
+    end;
 
     procedure PreApproveOnLookup()
     begin
