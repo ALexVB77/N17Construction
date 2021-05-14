@@ -1,9 +1,11 @@
 page 50016 "Calc. Gen. Journal Update"
 {
+    Caption = 'Calc. Gen. Journal Update';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "Calc. Gen Journal Operand";
+    SourceTable = "Calculation Journal Line";
+
 
     layout
     {
@@ -24,11 +26,13 @@ page 50016 "Calc. Gen. Journal Update"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(Calculation)
             {
+                Caption = 'Calculation';
                 ApplicationArea = All;
 
                 trigger OnAction()
+                var
                 begin
 
                 end;
@@ -37,5 +41,5 @@ page 50016 "Calc. Gen. Journal Update"
     }
 
     var
-        myInt: Integer;
+
 }
