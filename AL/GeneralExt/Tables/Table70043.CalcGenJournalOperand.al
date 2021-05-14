@@ -20,6 +20,11 @@ table 70043 "Calc. Gen Journal Operand"
             OptionMembers = "Condition","SummaLCY","Base","BaseItem","Distribute","DistributeItem","DimDistribute";
 
         }
+        field(50002; "Line No."; Integer)
+        {
+            Caption = 'Line No.';
+            DataClassification = ToBeClassified;
+        }
         field(50014; "BegEndSaldo"; Option)
         {
             Caption = 'BegEndSaldo';
@@ -32,6 +37,10 @@ table 70043 "Calc. Gen Journal Operand"
         key(Key1; "Entry No.")
         {
             Clustered = true;
+        }
+        key(Key2; "Calc. Gen. Jnl. Entry No.", "Type Operation", "Line No.")
+        {
+
         }
     }
 }
