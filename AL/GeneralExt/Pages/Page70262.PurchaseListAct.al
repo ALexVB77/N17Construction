@@ -4,12 +4,11 @@ page 70262 "Purchase List Act"
     UsageCategory = Lists;
     InsertAllowed = false;
     DeleteAllowed = false;
-    //Editable = false;
     SourceTable = "Purchase Header";
     SourceTableView = SORTING("Document Type", "No.") WHERE("Act Type" = FILTER(<> ' '), "Status App" = FILTER(<> Payment), "Problem Type" = FILTER(<> "Act error"));
     DataCaptionFields = "Document Type";
-    //PageType = Worksheet;
-    PageType = List;
+    PageType = Worksheet;
+    //PageType = List;
     Caption = 'Payment Orders List';
     RefreshOnActivate = true;
     CardPageId = "Purchase Order Act";
