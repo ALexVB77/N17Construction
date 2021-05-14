@@ -249,6 +249,7 @@ page 70260 "Purchase Order Act"
 
             }
         }
+    }
 
     trigger OnAfterGetCurrRecord()
     begin
@@ -362,5 +363,5 @@ page 70260 "Purchase Order Act"
         END;
         */
 
-    }
+    end;
 }
