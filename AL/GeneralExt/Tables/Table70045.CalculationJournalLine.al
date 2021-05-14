@@ -90,6 +90,10 @@ table 70045 "Calculation Journal Line"
             Caption = 'Journal Batch Name';
             TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Journal Template Name"));
         }
+        field(50027; "Blocked"; Boolean)
+        {
+            Caption = 'Blocked';
+        }
         field(50555; "Calculate Record"; Boolean)
         {
             Caption = 'Calculate Record';
@@ -99,17 +103,36 @@ table 70045 "Calculation Journal Line"
             Caption = 'Analysis View Code';
             TableRelation = "Analysis View";
         }
+        field(50600; "An.View Dimension 1 Filter"; Code[150])
+        {
+            Caption = 'An.View Dimension 1 Filter';
+
+        }
         field(50955; "Dim. Allocation"; Text[150])
         {
             Caption = 'Dim. Allocation';
+            trigger OnLookup()
+            begin
+                Message('Dim allocation OnLookup trigger');
+                // MC IK 20120910 >>
+                /*DimAlloc.FILTERGROUP(4);
+                DimAlloc.SETRANGE("Calc. Gen. Jnl. Entry No.","Entry No.");
+                DimAlloc.SETRANGE("Type Operation",DimAlloc."Type Operation"::DimDistribute);
+                DimAlloc.FILTERGROUP(0);
+                CLEAR(FormCalcOperand);
+                FormCalcOperand.SETTABLEVIEW(DimAlloc);
+                FormCalcOperand.SETRECORD(DimAlloc);
+                FormCalcOperand.RUN;*/
+                // MC IK 20120910 <<   
+            end;
         }
         field(51100; "BegEndSaldo"; Option)
         {
             Caption = 'BegEndSaldo';
             Editable = false;
             OptionMembers = "Begin Saldo","End Saldo";
-            //FieldClass = FlowField;
-            //CalcFormula = Lookup("Calc. Gen Journal Operand".BegEndSaldo WHERE ("Calc. Gen. Jnl. Entry No."=FIELD("Entry No."),"Type Operation"=CONST('SummaLCY')));
+            FieldClass = FlowField;
+            CalcFormula = Lookup("Calc. Gen Journal Operand".BegEndSaldo WHERE("Calc. Gen. Jnl. Entry No." = FIELD("Entry No."), "Type Operation" = CONST("SummaLCY")));
         }
         field(51101; "Calc Some Accounts"; Boolean)
         {
@@ -122,6 +145,18 @@ table 70045 "Calculation Journal Line"
         key(Key1; "Entry No.")
         {
             Clustered = true;
+        }
+        key(Key2; Year, Month, "Journal Template Name", "Journal Batch Name", "Line No.")
+        {
+            Clustered = false;
+        }
+        key(Key3; Year, Month, "Journal Template Name", "Journal Batch Name", "Document No.")
+        {
+            Clustered = false;
+        }
+        key(Key4; Year, Month, "Calculation Type")
+        {
+            Clustered = false;
         }
     }
 
