@@ -324,6 +324,69 @@ codeunit 70023 "G/L Calculation Management"
         */
     end;
 
+    procedure CopyDocument(FromCalculationRecord: Record "Calculation Journal Line"; var ToCalculationRecord: Record "Calculation Journal Line")
+    var
+        CGenJnl: Record "Calculation Journal Line";
+        CGenJnlLine: Record "Calculation Journal Line";
+        CGenJnlOper: Record "Calc. Gen Journal Operand";
+        CGenJnlOper1: Record "Calc. Gen Journal Operand";
+        EnNoOper: Integer;
+    begin
+
+        ToCalculationRecord := FromCalculationRecord;
+        ToCalculationRecord."Entry No." := 0;
+        ToCalculationRecord."Last Run Date" := 0D;
+        ToCalculationRecord."Last Run Time" := 0T;
+        ToCalculationRecord."User ID" := '';
+
+        CGenJnl.RESET;
+        CGenJnl.SETRANGE(Month, ToCalculationRecord.Month);
+        CGenJnl.SETRANGE(Year, ToCalculationRecord.Year);
+        CGenJnl.SETRANGE("Journal Template Name", ToCalculationRecord."Journal Template Name");
+        CGenJnl.SETRANGE("Journal Batch Name", ToCalculationRecord."Journal Batch Name");
+        CGenJnl.SETCURRENTKEY(Year, Month, "Journal Template Name", "Journal Batch Name", "Document No.");
+        IF CGenJnl.FIND('+') THEN ToCalculationRecord."Document No." := INCSTR(CGenJnl."Document No.");
+
+
+        ToCalculationRecord.INSERT(TRUE);
+
+        //Измерения
+        //JnlLineDim.RESET;
+        //JnlLineDim.SETRANGE("Table ID",DATABASE::"Calculation Journal Line");
+        //JnlLineDim.SETRANGE("Journal Template Name",'');
+        //JnlLineDim.SETRANGE("Journal Batch Name",'');
+        //JnlLineDim.SETRANGE("Journal Line No.","Entry No.");
+        //IF JnlLineDim.FIND('-') THEN BEGIN
+        // JnlLineDim1.LOCKTABLE;
+        //REPEAT
+        //JnlLineDim1 := JnlLineDim;
+        //JnlLineDim1."Journal Line No." := ToCalculationRecord."Entry No.";
+        //nlLineDim1.INSERT;
+        //UNTIL JnlLineDim.NEXT = 0;
+        //END;
+
+        CGenJnlOper1.LOCKTABLE;
+        CGenJnlOper1.RESET;
+        IF CGenJnlOper1.FIND('+') THEN
+            EnNoOper := CGenJnlOper1."Entry No." + 1
+        ELSE
+            EnNoOper := 1;
+
+        //Операнды
+        CGenJnlOper.RESET;
+        CGenJnlOper.SETCURRENTKEY("Calc. Gen. Jnl. Entry No.", "Type Operation", "Line No.");
+        CGenJnlOper.SETRANGE("Calc. Gen. Jnl. Entry No.", FromCalculationRecord."Entry No.");
+        IF CGenJnlOper.FIND('-') THEN
+            REPEAT
+                CGenJnlOper1 := CGenJnlOper;
+                CGenJnlOper1."Entry No." := EnNoOper;
+                CGenJnlOper1."Calc. Gen. Jnl. Entry No." := ToCalculationRecord."Entry No.";
+                CGenJnlOper1.INSERT;
+                EnNoOper += 1;
+            UNTIL CGenJnlOper.NEXT = 0;
+        //END;
+    end;
+
     var
         myInt: Integer;
 }

@@ -191,13 +191,180 @@ page 50015 "Calculation General Journal"
                     CurrPage.UPDATE(FALSE);
                 end;
             }
+            action(Update)
+            {
+                ApplicationArea = All;
+                Caption = 'Undo';
+                trigger OnAction()
+                var
+                    CalcGenJnlLine: Record "Calculation Journal Line";
+                begin
+
+                    CalcGenJnlLine.RESET;
+                    CalcGenJnlLine.FILTERGROUP := 2;
+                    CalcGenJnlLine.SETRANGE(Year, CalcMonth.Year);
+                    CalcGenJnlLine.SETRANGE(Month, CalcMonth.Mes);
+                    FILTERGROUP := 2;
+                    CalcGenJnlLine.SETFILTER("Journal Template Name", GETFILTER("Journal Template Name"));
+                    IF GETFILTER("Journal Batch Name") <> '' THEN
+                        CalcGenJnlLine.SETFILTER("Journal Batch Name", GETFILTER("Journal Batch Name"));
+                    FILTERGROUP := 0;
+                    CalcGenJnlLine.FILTERGROUP := 0;
+                    CalcGenJnlLine.SETRANGE("Entry No.", "Entry No.");
+                    Page.RUNMODAL(50016, CalcGenJnlLine);
+                    CurrPage.UPDATE(FALSE);
+                end;
+            }
 
             group(Document)
             {
                 Caption = 'Document';
+                action(DocumentCalculation)
+                {
+                    Caption = 'Document Calculation';
+                    ApplicationArea = All;
+
+                    trigger OnAction()
+                    var
+                        Flag: Boolean;
+                    begin
+
+                        IF CheckPeriod("Posting Date") THEN EXIT;
+                        IF Blocked THEN ERROR(Text001, "Document No.");
+                        Flag := CONFIRM(Text12, FALSE, "Document No.");
+                        IF Flag THEN BEGIN
+                            GLCalcMgt.FuncCalcRec(Rec);
+                            CurrPage.UPDATE(FALSE);
+                        END;
+
+                    end;
+                }
 
             }
+            action(ClearCalcRecFields)
+            {
+                ApplicationArea = All;
+                Caption = 'Unmark Calculation';
+                trigger OnAction()
+                var
+                    Rc: Record "Calculation Journal Line";
+                begin
+
+
+                    Rc.RESET;
+                    IF Rc.FIND('-') THEN
+                        REPEAT
+                            Rc."Calculate Record" := FALSE;
+                            Rc.MODIFY;
+                        UNTIL Rc.NEXT = 0;
+                end;
+            }
+            action(MarkAllCalculations)
+            {
+                ApplicationArea = All;
+                Caption = 'Mark All Calculations';
+                trigger OnAction()
+                var
+                    Rc: Record "Calculation Journal Line";
+                begin
+
+
+                    Rc.RESET;
+                    IF Rc.FIND('-') THEN
+                        REPEAT
+                            Rc."Calculate Record" := TRUE;
+                            Rc.MODIFY;
+                        UNTIL Rc.NEXT = 0;
+                end;
+            }
+            action(MarkChosenCalculations)
+            {
+                ShortcutKey = 'Ctrl+S';
+                ApplicationArea = All;
+                Caption = 'Mark Chosen Calculations';
+                trigger OnAction()
+                var
+                    CJL: Record "Calculation Journal Line";
+                begin
+                    CurrPage.SETSELECTIONFILTER(CJL);
+                    CJL.MODIFYALL("Calculate Record", TRUE);
+                end;
+            }
+            action(UnmarkChosenCalculations)
+            {
+                ShortcutKey = 'Ctrl+D';
+                ApplicationArea = All;
+                Caption = 'Unmark Chosen Calculations';
+                trigger OnAction()
+                var
+                    CJL: Record "Calculation Journal Line";
+                begin
+                    CurrPage.SETSELECTIONFILTER(CJL);
+                    CJL.MODIFYALL("Calculate Record", false);
+                end;
+            }
+            action(DocumentBlockOnOF)
+            {
+                ApplicationArea = All;
+                Caption = 'Block Document';
+                trigger OnAction()
+                var
+                    Rc: Record "Calculation Journal Line";
+                begin
+
+                    IF Rc.GET("Entry No.") THEN BEGIN
+                        Rc.VALIDATE(Blocked, NOT Rc.Blocked);
+                        Rc.LOCKTABLE;
+                        Rc.MODIFY;
+                        COMMIT;
+                        CurrPage.UPDATE(FALSE);
+                    END;
+                end;
+            }
+            action(CopyDocument)
+            {
+                ShortcutKey = 'F5';
+                ApplicationArea = All;
+                Caption = 'Copy Document';
+                trigger OnAction()
+                var
+                    CGenJnlLine: Record "Calculation Journal Line";
+                    CGenJnl: Record "Calculation Journal Line";
+                    CopyCalcJnlLine: Record "Calculation Journal Line";
+                begin
+
+                    //Копировать документ
+                    CurrPage.SETSELECTIONFILTER(CopyCalcJnlLine);
+                    IF CopyCalcJnlLine.FINDSET THEN
+                        REPEAT
+                            IF CONFIRM(Text34, FALSE, "Document No.") THEN BEGIN
+                                GLCalcMgt.CopyDocument(CopyCalcJnlLine, CGenJnlLine);
+                                COMMIT;
+                                IF CopyCalcJnlLine.COUNT = 1 THEN BEGIN
+                                    GET(CGenJnlLine."Entry No.");
+                                    CGenJnlLine.RESET;
+                                    CGenJnlLine.FILTERGROUP := 2;
+                                    CGenJnlLine.SETRANGE(Year, Year);
+                                    CGenJnlLine.SETRANGE(Month, Month);
+                                    CGenJnlLine.SETRANGE("Journal Template Name", "Journal Template Name");
+                                    FILTERGROUP := 2;
+                                    IF GETFILTER("Journal Batch Name") <> '' THEN
+                                        CGenJnlLine.SETRANGE("Journal Batch Name", "Journal Batch Name");
+                                    FILTERGROUP := 0;
+                                    CGenJnlLine.FILTERGROUP := 0;
+                                    CGenJnlLine.SETRANGE("Entry No.", "Entry No.");
+                                    Page.RUNMODAL(Page::"Calc. Gen. Journal Update", CGenJnlLine);
+                                    CurrPage.UPDATE(FALSE);
+                                END;
+                            END;
+
+                        UNTIL CopyCalcJnlLine.NEXT = 0;
+                end;
+            }
+
+
         }
+
 
 
     }
@@ -232,7 +399,7 @@ page 50015 "Calculation General Journal"
         //Text09: Label 'ENU=Analyzing Data...\\;RUS=Расчет               @2@@@@@@@@@@@@@@\';
         //Text10: Label 'RUS=%2 должен быть %3,%4,%5.';
         //Text11: Label 'ENU=Calc. Indirect Cost;RUS=Расчет Косвенных Издержек';
-        //Text12: Label 'RUS=Рассчитать Документ No. %1?';
+        Text12: Label 'Рассчитать Документ No. %1?';
         //"Text12-1": Label 'RUS=Обновить Строки в Документах Связанных с Шаблоном %1?';
         //"Text12-2": Label 'RUS=Обновить Строки в Документе No. %1 из Шаблона?';
         Text14: Label 'Calculate All Docunments?';
@@ -245,18 +412,18 @@ page 50015 "Calculation General Journal"
         //Text20: Label 'RUS=Выпуск по Произ.Заказу No.%2 не найден';
         //Text22: Label 'RUS=Не найден Запущенный Произ. Заказ No. %2';
         //Text23: Label 'RUS=Общая Себестоимость по Складу %2 равна 0.';
-        //Text001: Label 'RUS=Документ No. %1 Блокирован.';
+        Text001: Label 'Document No. %1 is Blocked.';
         //Text24: Label 'RUS=%2 не может быть %3.';
         //Text25: Label 'RUS=Не найдены измерения %2';
         //Text26: Label 'RUS=Не найдены счета при группировке счетов';
         //Text27: Label 'RUS=Нет записей в таблице %2';
         Text28: Label 'Closed Period';
         Text29: Label 'Calculated %1 documents.';
-    //Text30: Label 'RUS=В счете No. %2 не указана валюта.';
-    //Text31: Label 'RUS=Счет No. %2 должен быть Активным или Пассивным';
-    //Text32: Label 'RUS=Не найден курс %2 на %3';
-    //Text33: Label 'RUS=В валюте %2 не задан %3';
-    //Text34: Label 'RUS=Копировать Документ No.%1?';
+        //Text30: Label 'RUS=В счете No. %2 не указана валюта.';
+        //Text31: Label 'RUS=Счет No. %2 должен быть Активным или Пассивным';
+        //Text32: Label 'RUS=Не найден курс %2 на %3';
+        //Text33: Label 'RUS=В валюте %2 не задан %3';
+        Text34: Label 'Копировать Документ No.%1?';
     //Text35: Label 'RUS=%2 должен быть задан в документе или в строках базы.';
     //Text36: Label 'RUS=%2 в строках базы не может быть %3.';
     //Text37: Label 'RUS=Сохранение           @4@@@@@@@@@@@@@@\';

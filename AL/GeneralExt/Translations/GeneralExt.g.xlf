@@ -118,6 +118,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Line No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1141732079 - Field 3853688615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type Operation</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2248,6 +2253,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CalcRec</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3792856986 - Method 3105205295" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CopyDocument</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CopyDocument</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
           <source>CreateItemDocumentLines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2333,6 +2343,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1722712914 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No. %1 is Blocked.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - NamedType 2566095090" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Рассчитать Документ No. %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - NamedType Text12</note>
+        </trans-unit>
         <trans-unit id="Page 1722712914 - NamedType 3841488324" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calculate All Docunments?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2352,6 +2372,11 @@
           <source>Calculated %1 documents.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - NamedType Text29</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - NamedType 3305219782" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Копировать Документ No.%1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - NamedType Text34</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - Control 3826626000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Credit Account Type</source>
@@ -2383,15 +2408,55 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action CalculationMarcked - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 436138315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unmark Calculation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action ClearCalcRecFields - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action CopyDocument - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1722712914 - Action 1167507281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action Document - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 2288693082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Calculation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action DocumentCalculation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 2652211426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Block Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action DocumentBlockOnOF - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1722712914 - Action 3232840338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Insert</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action Insert1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 4167646882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mark All Calculations</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action MarkAllCalculations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 1309176669 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mark Chosen Calculations</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action MarkChosenCalculations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 388916788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unmark Chosen Calculations</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action UnmarkChosenCalculations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1722712914 - Action 642782499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Undo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action Update - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1320817489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cash Flow Transaction Type</source>
