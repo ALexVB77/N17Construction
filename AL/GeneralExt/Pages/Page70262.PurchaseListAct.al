@@ -75,10 +75,9 @@ page 70262 "Purchase List Act"
             repeater(Repeater1237120003)
             {
                 Editable = false;
-                field("Problem Document"; "Problem Document")
+                field("Problem Document"; Rec."Problem Document")
                 {
                     Editable = false;
-                    ShowCaption = false;
                     ApplicationArea = All;
                 }
                 field("No."; "No.")
