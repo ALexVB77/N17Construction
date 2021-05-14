@@ -1,7 +1,7 @@
 page 70262 "Purchase List Act"
 {
     ApplicationArea = Basic, Suite;
-    UsageCategory = Tasks;
+    UsageCategory = Lists;
     InsertAllowed = false;
     DeleteAllowed = false;
     SourceTable = "Purchase Header";
