@@ -289,7 +289,34 @@ page 70260 "Purchase Order Act"
                     ApplicationArea = All;
                 }
             }
-
+            group("Details")
+            {
+                Caption = 'Details';
+                field("Buy-from Contact No."; "Buy-from Contact No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Buy-from Vendor Name Dtld"; Rec."Buy-from Vendor Name")
+                {
+                    ApplicationArea = All;
+                }
+                field("Buy-from Address"; "Buy-from Address")
+                {
+                    ApplicationArea = All;
+                }
+                field("Buy-from Post Code"; "Buy-from Post Code")
+                {
+                    ApplicationArea = All;
+                }
+                field("Buy-from City"; "Buy-from City")
+                {
+                    ApplicationArea = All;
+                }
+                field("Buy-from Contact"; "Buy-from Contact")
+                {
+                    ApplicationArea = All;
+                }
+            }
         }
     }
 

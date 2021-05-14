@@ -144,7 +144,6 @@
         <trans-unit id="Table 1141732079 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Строка Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Line No. - Property Caption</note>
         </trans-unit>
@@ -2707,7 +2706,6 @@
         <trans-unit id="Codeunit 3792856986 - Method 3105205295" size-unit="char" translate="yes" xml:space="preserve">
           <source>CopyDocument</source>
           <target>CopyDocument</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CopyDocument</note>
         </trans-unit>
@@ -2816,14 +2814,12 @@
         <trans-unit id="Page 1722712914 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No. %1 is Blocked.</source>
           <target>Äîêóìåíò No. %1 Áëîêèðîâàí.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - NamedType 2566095090" size-unit="char" translate="yes" xml:space="preserve">
           <source>Рассчитать Документ No. %1?</source>
           <target>Рассчитать Документ No. %1?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - NamedType Text12</note>
         </trans-unit>
@@ -2854,7 +2850,6 @@
         <trans-unit id="Page 1722712914 - NamedType 3305219782" size-unit="char" translate="yes" xml:space="preserve">
           <source>Копировать Документ No.%1?</source>
           <target>Копировать Документ No.%1?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - NamedType Text34</note>
         </trans-unit>
@@ -2897,14 +2892,12 @@
         <trans-unit id="Page 1722712914 - Action 436138315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unmark Calculation</source>
           <target>Снять выделение расчетов</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action ClearCalcRecFields - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Copy Document</source>
           <target>Копировать Документ</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action CopyDocument - Property Caption</note>
         </trans-unit>
@@ -2917,14 +2910,12 @@
         <trans-unit id="Page 1722712914 - Action 2288693082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Calculation</source>
           <target>Расчет Документа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action DocumentCalculation - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - Action 2652211426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Block Document</source>
           <target>Вкл.\Выкл. Блокировку Документа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action DocumentBlockOnOF - Property Caption</note>
         </trans-unit>
@@ -2937,28 +2928,24 @@
         <trans-unit id="Page 1722712914 - Action 4167646882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Mark All Calculations</source>
           <target>Выделить все расчеты</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action MarkAllCalculations - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - Action 1309176669 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Mark Chosen Calculations</source>
           <target>Выделить выбранные расчеты</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action MarkChosenCalculations - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - Action 388916788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unmark Chosen Calculations</source>
           <target>Снять выбранные расчеты</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action UnmarkChosenCalculations - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1722712914 - Action 642782499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Undo</source>
           <target>Изменить</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Calculation General Journal - Action Update - Property Caption</note>
         </trans-unit>
@@ -3166,6 +3153,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Control 318613646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details</source>
+          <target>Реквизиты</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Details - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <target>Общее</target>
@@ -3223,14 +3217,12 @@
         <trans-unit id="Page 3437592965 - Control 1725717413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Request</source>
           <target>Заявка на платеж</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Payment Request - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Control 2344504216 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Bank Account Name</source>
           <target>Название банка поставщика</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
@@ -4833,7 +4825,6 @@
         <trans-unit id="TableExtension 279653624 - Field 3021479305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>KBK Code</source>
           <target>Код КБК</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field KBK Code - Property Caption</note>
         </trans-unit>
@@ -4846,7 +4837,6 @@
         <trans-unit id="TableExtension 279653624 - Field 1203376573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>OKATO Code</source>
           <target>Код ОКАТО</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field OKATO Code - Property Caption</note>
         </trans-unit>
@@ -4865,7 +4855,6 @@
         <trans-unit id="TableExtension 279653624 - Field 3955594068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Payment Details</source>
           <target>Основание Платежа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Payment Details - Property Caption</note>
         </trans-unit>
@@ -4944,14 +4933,12 @@
         <trans-unit id="TableExtension 279653624 - Field 4231435149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Vendor Bank Account</source>
           <target>Поставщик Банк. Счет</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Vendor Bank Account - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3692472288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Vendor Bank Account #</source>
           <target>Поставщик Банк. Счет Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Vendor Bank Account No. - Property Caption</note>
         </trans-unit>
