@@ -289,12 +289,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Month - Field Mes - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3746790827 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Month</source>
+          <source>Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Month - Field Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3746790827 - Field 2832340769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Month</source>
+          <source>Year</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calculation Month - Field Year - Property Caption</note>
         </trans-unit>

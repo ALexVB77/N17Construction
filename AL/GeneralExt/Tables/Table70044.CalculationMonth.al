@@ -13,13 +13,13 @@ table 70044 "Calculation Month"
         }
         field(50000; Year; Integer)
         {
-            Caption = 'Month';
+            Caption = 'Year';
             DataClassification = ToBeClassified;
 
         }
         field(50001; Name; Text[60])
         {
-            Caption = 'Month';
+            Caption = 'Name';
             DataClassification = ToBeClassified;
 
         }
