@@ -112,16 +112,94 @@ page 50015 "Calculation General Journal"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(CalcMonth)
             {
+                Caption = 'Calc. Month';
                 ApplicationArea = All;
 
                 trigger OnAction()
                 begin
-
+                    IF SetMonthYear(TRUE) THEN;
+                    CurrPage.UPDATE;
                 end;
             }
+            action(CalculationMarcked)
+            {
+                Caption = 'Calculation marked';
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    Rc: Record "Calculation Journal Line";
+                    I: Integer;
+                begin
+
+                    IF CheckPeriod("Posting Date") THEN EXIT;
+                    IF CONFIRM(Text14, FALSE) THEN BEGIN
+                        Rc.COPYFILTERS(Rec);
+                        Rc.SETRANGE(Rc."Calculate Record", TRUE);
+                        GLCalcMgt.RunCalc(Rc, I);
+                        MESSAGE(Text29, I);
+                        CurrPage.UPDATE(FALSE);
+                    END;
+                end;
+            }
+            action(Calculation)
+            {
+                Caption = 'Calculation';
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    Rc: Record "Calculation Journal Line";
+                    I: Integer;
+                begin
+
+
+                    IF CheckPeriod("Posting Date") THEN EXIT;
+                    IF CONFIRM(Text14, FALSE) THEN BEGIN
+                        Rc.COPY(Rec);
+                        GLCalcMgt.RunCalc(Rc, I);
+                        MESSAGE(Text29, I);
+                        CurrPage.UPDATE(FALSE);
+                    END;
+                end;
+            }
+            action(Insert1)
+            {
+                Caption = 'Insert';
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    CalcGenJnlLine: Record "Calculation Journal Line";
+
+                begin
+
+                    CalcGenJnlLine.RESET;
+                    CalcGenJnlLine.FILTERGROUP := 2;
+                    CalcGenJnlLine.SETRANGE(Year, CalcMonth.Year);
+                    CalcGenJnlLine.SETRANGE(Month, CalcMonth.Mes);
+                    FILTERGROUP := 2;
+                    CalcGenJnlLine.SETFILTER("Journal Template Name", GETFILTER("Journal Template Name"));
+                    IF GETFILTER("Journal Batch Name") <> '' THEN
+                        CalcGenJnlLine.SETFILTER("Journal Batch Name", GETFILTER("Journal Batch Name"));
+                    FILTERGROUP := 0;
+                    CalcGenJnlLine.FILTERGROUP := 0;
+                    CalcGenJnlLine.SETRANGE("Entry No.", 0);
+                    Page.RUNMODAL(50016, CalcGenJnlLine);
+                    CurrPage.UPDATE(FALSE);
+                end;
+            }
+
+            group(Document)
+            {
+                Caption = 'Document';
+
+            }
         }
+
+
     }
 
     var
@@ -138,42 +216,42 @@ page 50015 "Calculation General Journal"
         TempBatchNm: Code[10];
         TempDocNo: Code[20];
         TempPostDate: Date;
-        //GLCalcMgt: Codeunit 70023;
+        GLCalcMgt: Codeunit 70023;
         DimAlloc: Record 70043;
-    //CalcMonth: Record 70044;
-    //CalcMonthForm: Page 50013;
-    //Text01: Label 'Документ No %1 \';
-    //Text02: Label '%2 должен быть задан.';
-    //Text03: Label 'Условие выполнения не задано.';
-    //Text04: Label 'В операнде %2 не найден %3 %4.';
-    //Text05: Label 'У Счета %2 нет измерения %3.';
-    //Text051: Label 'Измерения не могут быть использованы с Счетом %2.';
-    //Text061: Label 'Счет %2 не раскрывается по Измерениям %3,%4,%5.';
-    //Text07: Label 'Расчет суммы не задан.';
-    //Text08: Label 'ENU=Analyzing Data...\\;RUS=Удаление      @1@@@@@@@@@@@@@@\';
-    //Text09: Label 'ENU=Analyzing Data...\\;RUS=Расчет               @2@@@@@@@@@@@@@@\';
-    //Text10: Label 'RUS=%2 должен быть %3,%4,%5.';
-    //Text11: Label 'ENU=Calc. Indirect Cost;RUS=Расчет Косвенных Издержек';
-    //Text12: Label 'RUS=Рассчитать Документ No. %1?';
-    //"Text12-1": Label 'RUS=Обновить Строки в Документах Связанных с Шаблоном %1?';
-    //"Text12-2": Label 'RUS=Обновить Строки в Документе No. %1 из Шаблона?';
-    //Text14: Label 'RUS=Рассчитать все документы?';
-    //Text15: Label 'RUS=Расчет Документа No. #3##############\';
-    //"Text15-1": Label 'RUS=Обновление Строк в Документах Связанных с Шаблоном\@1@@@@@@@@@@@@@@';
-    //Text16: Label 'RUS=Документа No. #3##############\';
-    //Text17: Label 'RUS=Конечное Сальдо Счета No. %2 равно 0.';
-    //Text18: Label 'ENU=Calculation;RUS=Расчет';
-    //Text19: Label 'RUS=Счет %2 должен иметь тип %3';
-    //Text20: Label 'RUS=Выпуск по Произ.Заказу No.%2 не найден';
-    //Text22: Label 'RUS=Не найден Запущенный Произ. Заказ No. %2';
-    //Text23: Label 'RUS=Общая Себестоимость по Складу %2 равна 0.';
-    //Text001: Label 'RUS=Документ No. %1 Блокирован.';
-    //Text24: Label 'RUS=%2 не может быть %3.';
-    //Text25: Label 'RUS=Не найдены измерения %2';
-    //Text26: Label 'RUS=Не найдены счета при группировке счетов';
-    //Text27: Label 'RUS=Нет записей в таблице %2';
-    //Text28: Label 'RUS=Закрытый период';
-    //Text29: Label 'RUS=Рассчитано %1 документов.';
+        CalcMonth: Record 70044;
+        //CalcMonthForm: Page 50013;
+        //Text01: Label 'Документ No %1 \';
+        //Text02: Label '%2 должен быть задан.';
+        //Text03: Label 'Условие выполнения не задано.';
+        //Text04: Label 'В операнде %2 не найден %3 %4.';
+        //Text05: Label 'У Счета %2 нет измерения %3.';
+        //Text051: Label 'Измерения не могут быть использованы с Счетом %2.';
+        //Text061: Label 'Счет %2 не раскрывается по Измерениям %3,%4,%5.';
+        //Text07: Label 'Расчет суммы не задан.';
+        //Text08: Label 'ENU=Analyzing Data...\\;RUS=Удаление      @1@@@@@@@@@@@@@@\';
+        //Text09: Label 'ENU=Analyzing Data...\\;RUS=Расчет               @2@@@@@@@@@@@@@@\';
+        //Text10: Label 'RUS=%2 должен быть %3,%4,%5.';
+        //Text11: Label 'ENU=Calc. Indirect Cost;RUS=Расчет Косвенных Издержек';
+        //Text12: Label 'RUS=Рассчитать Документ No. %1?';
+        //"Text12-1": Label 'RUS=Обновить Строки в Документах Связанных с Шаблоном %1?';
+        //"Text12-2": Label 'RUS=Обновить Строки в Документе No. %1 из Шаблона?';
+        Text14: Label 'Calculate All Docunments?';
+        //Text15: Label 'RUS=Расчет Документа No. #3##############\';
+        //"Text15-1": Label 'RUS=Обновление Строк в Документах Связанных с Шаблоном\@1@@@@@@@@@@@@@@';
+        //Text16: Label 'RUS=Документа No. #3##############\';
+        //Text17: Label 'RUS=Конечное Сальдо Счета No. %2 равно 0.';
+        //Text18: Label 'ENU=Calculation;RUS=Расчет';
+        Text19: Label 'Account %2 Should have type %3';
+        //Text20: Label 'RUS=Выпуск по Произ.Заказу No.%2 не найден';
+        //Text22: Label 'RUS=Не найден Запущенный Произ. Заказ No. %2';
+        //Text23: Label 'RUS=Общая Себестоимость по Складу %2 равна 0.';
+        //Text001: Label 'RUS=Документ No. %1 Блокирован.';
+        //Text24: Label 'RUS=%2 не может быть %3.';
+        //Text25: Label 'RUS=Не найдены измерения %2';
+        //Text26: Label 'RUS=Не найдены счета при группировке счетов';
+        //Text27: Label 'RUS=Нет записей в таблице %2';
+        Text28: Label 'Closed Period';
+        Text29: Label 'Calculated %1 documents.';
     //Text30: Label 'RUS=В счете No. %2 не указана валюта.';
     //Text31: Label 'RUS=Счет No. %2 должен быть Активным или Пассивным';
     //Text32: Label 'RUS=Не найден курс %2 на %3';
@@ -193,4 +271,78 @@ page 50015 "Calculation General Journal"
     //Text45: Label 'ENU=Analyzing Data...\\;RUS=Товар No.            #4###################\';
     //Text46: Label 'ENU=Analyzing Data...\\;RUS=Склад                #5###################\';
 
+    procedure RunCalc(VAR Rc: Record 70045; VAR I: Integer)
+    var
+
+    begin
+        //Расчет нескольких документов
+
+        I := 0;
+        IF Rc.FIND('-') THEN    //Расчет
+            REPEAT
+                IF NOT Rc.Blocked THEN BEGIN
+                    GLCalcMgt.RunCalc(Rc, I);
+                    I += 1;
+                END;
+            UNTIL Rc.NEXT = 0;
+    end;
+
+    procedure SetMonthYear(FlaqRec: Boolean): Boolean
+    var
+
+    begin
+        Message('P 50015 SetMonthYear Func');
+        /* 
+        CLEAR(CalcMonthForm);
+        CalcMonthForm.LOOKUPMODE(TRUE);
+        IF FlagRec THEN CalcMonthForm.SavRec(CalcMonth);
+        IF CalcMonthForm.RUNMODAL = ACTION::LookupOK THEN BEGIN
+           CalcMonthForm.GETRECORD(CalcMonth);
+           //CurrForm.UPDATECONTROLS;
+           FILTERGROUP := 2;
+           SETRANGE(Year,CalcMonth.Year);
+           SETRANGE(Month,CalcMonth.Mes);
+           FILTERGROUP := 0;
+           EXIT(TRUE);
+        END;
+        EXIT(FALSE);
+         */
+    end;
+
+    /*procedure FuncCalcRec(VAR Rc: Record 70045; VAR I: Integer)
+    var
+
+    begin
+        //Расчет нескольких документов
+
+
+        CASE Rc."Calculation Type" OF  //Тип Документа
+            Rc."Calculation Type"::Calculation:
+                BEGIN  //Расчет
+                    Rc.LOCKTABLE;
+                    CalcRec(Rc);
+                END;
+        END;
+        Rc.MODIFY;
+        COMMIT;
+    end;
+
+    procedure CalcRec(VAR Rc: Record 70045)
+    var
+
+    begin
+
+    end;*/
+    procedure CheckPeriod(D: date): Boolean
+    var
+        AccountingPeriod: Record "Accounting Period";
+    begin
+
+        AccountingPeriod."Starting Date" := NORMALDATE(D);
+        IF AccountingPeriod.FIND('=<') AND AccountingPeriod.Closed THEN BEGIN
+            MESSAGE(Text28);
+            EXIT(TRUE);
+        END;
+        EXIT(FALSE);
+    end;
 }

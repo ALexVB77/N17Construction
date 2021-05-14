@@ -90,6 +90,10 @@ table 70045 "Calculation Journal Line"
             Caption = 'Journal Batch Name';
             TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Journal Template Name"));
         }
+        field(50027; "Blocked"; Boolean)
+        {
+            Caption = 'Blocked';
+        }
         field(50555; "Calculate Record"; Boolean)
         {
             Caption = 'Calculate Record';
