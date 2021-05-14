@@ -66,9 +66,9 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         }
         field(70015; Controller; Code[20])
         {
-            Description = 'NC 51373 AB';
             Caption = 'Controller';
-            TableRelation = User."User Name";
+            Description = 'NC 51373 AB';
+            TableRelation = "User Setup"."User ID" WHERE("Status App Act" = CONST(1));
             ValidateTableRelation = false;
         }
         field(70016; Paid; Boolean)
@@ -122,10 +122,34 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             Caption = 'Approver';
         }
+
+        field(70024; "Pre-Approver"; Code[20])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Pre-Approver';
+
+        }
+        field(70026; PreApprover; Boolean)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Exist Pre-Approver';
+
+            trigger OnValidate()
+            begin
+                IF NOT PreApprover THEN
+                    "Pre-Approver" := '';
+            end;
+        }
         field(70034; "IW Documents"; Boolean)
         {
             Caption = 'IW Documents';
             Description = 'NC 50085 PA';
+        }
+
+        field(70035; "Problem Type Txt"; Text[180])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Problem Type';
         }
         field(70038; "Pre-booking Document"; Boolean)
         {
@@ -147,7 +171,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         {
             Caption = 'Estimator';
             Description = 'NC 51373 AB';
-            TableRelation = User."User Name";
+            TableRelation = "User Setup"."User ID" WHERE("Status App Act" = CONST(Estimator));
             ValidateTableRelation = false;
         }
         field(90006; "Invoice No."; Code[20])
@@ -183,7 +207,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         }
         field(90020; Storekeeper; Code[20])
         {
-            TableRelation = "User Setup";
+            TableRelation = "User Setup"."User ID";
             Description = 'NC 51373 AB';
             Editable = false;
             Caption = 'Storekeeper';

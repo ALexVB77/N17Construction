@@ -105,4 +105,34 @@ codeunit 70000 "ERPC Funtions"
 
         Ret := AmountWVAT;
     end;
+
+    procedure LookUpLocationCode(var LocationCode: code[10]): boolean
+    var
+        UserSetup: record "User Setup";
+        Location: record Location;
+        StorekeeperLocation: record "Warehouse Employee";
+        LocationList: page "Location List";
+        StorekeeperLocationList: page "Warehouse Employees";
+        StoreKeeper: boolean;
+    begin
+        StorekeeperLocation.FILTERGROUP(2);
+        StorekeeperLocation.SETRANGE("User ID", USERID);
+        StorekeeperLocation.FILTERGROUP(0);
+        IF NOT StorekeeperLocation.IsEmpty THEN BEGIN
+            StorekeeperLocationList.SETTABLEVIEW(StorekeeperLocation);
+            StorekeeperLocationList.LOOKUPMODE(TRUE);
+            IF StorekeeperLocationList.RUNMODAL = ACTION::LookupOK THEN BEGIN
+                StorekeeperLocationList.GETRECORD(StorekeeperLocation);
+                LocationCode := StorekeeperLocation."Location Code";
+                EXIT(TRUE);
+            END;
+        END ELSE BEGIN
+            LocationList.LOOKUPMODE(TRUE);
+            IF LocationList.RUNMODAL = ACTION::LookupOK THEN BEGIN
+                LocationList.GETRECORD(Location);
+                LocationCode := Location.Code;
+                EXIT(TRUE);
+            END;
+        END;
+    end;
 }
