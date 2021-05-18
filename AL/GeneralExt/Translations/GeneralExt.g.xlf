@@ -3578,6 +3578,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchases &amp; Payab. Setup (Ext) - Control Payment requests - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1054806567 - Action 4056321329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 66664215">
+          <source>Get Item Ledger Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Transfer Order (Ext) - Action GetItemLedgerEntryLines - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Action 3640084062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Change Log</source>
           <note from="Developer" annotates="general" priority="2"></note>
