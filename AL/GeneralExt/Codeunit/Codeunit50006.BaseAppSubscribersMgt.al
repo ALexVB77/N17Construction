@@ -1,6 +1,24 @@
 codeunit 50006 "Base App. Subscribers Mgt."
 {
 
+    // t 5740 >>
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnUpdateTransLines', '', false, false)]
+    local procedure OnUpdateTransLines(var TransferLine: Record "Transfer Line"; TransferHeader: Record "Transfer Header"; FieldID: Integer);
+    var
+        Location: Record Location;
+    begin
+        case FieldID of
+            TransferHeader.FieldNo("Vendor No."):
+                begin
+                    //NC 22512 > DP
+                    IF Location.GET(TransferLine."Transfer-to Code") AND Location."Bin Mandatory" THEN
+                        TransferLine.VALIDATE("Transfer-To Bin Code", TransferHeader."Vendor No.");
+                    //NC 22512 < DP
+                end;
+        end
+    end;
+
+    // t 5740 <<
     // cu 367 >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::CheckManagement, 'OnBeforeVoidCheckGenJnlLine2Modify', '', false, false)]
     local procedure OnBeforeVoidCheckGenJnlLine2Modify(var GenJournalLine2: Record "Gen. Journal Line"; GenJournalLine: Record "Gen. Journal Line");
