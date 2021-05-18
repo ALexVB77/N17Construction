@@ -2,6 +2,17 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
 {
     fields
     {
+        field(70000; "Full Description"; Text[250])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Description';
+
+            trigger OnValidate()
+            begin
+                Description := COPYSTR("Full Description", 1, MaxStrLen(Description));
+                "Description 2" := COPYSTR("Full Description", MaxStrLen(Description) + 1, MaxStrLen("Description 2"));
+            end;
+        }
         field(70003; "Forecast Entry"; Integer)
         {
             Caption = 'Forecast Entry';

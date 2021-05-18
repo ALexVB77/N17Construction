@@ -180,11 +180,12 @@ page 70260 "Purchase Order Act"
                 field("PreApprover"; Rec."PreApprover")
                 {
                     ApplicationArea = All;
+                    Editable = AllApproverEditable;
                 }
                 field("Pre-Approver"; Rec."Pre-Approver")
                 {
                     ApplicationArea = All;
-                    Editable = Rec.PreApprover;
+                    Editable = Rec.PreApprover AND AllApproverEditable;
 
                     trigger OnLookup(var Text: Text): Boolean
                     begin
@@ -194,6 +195,7 @@ page 70260 "Purchase Order Act"
                 field("Approver"; Rec."Approver")
                 {
                     ApplicationArea = All;
+                    Editable = AllApproverEditable;
 
                     trigger OnLookup(var Text: Text): Boolean
                     begin
@@ -244,7 +246,7 @@ page 70260 "Purchase Order Act"
                 field("Receive Account"; Rec."Receive Account")
                 {
                     ApplicationArea = All;
-                    Editable = false;
+                    Editable = ReceiveAccountEditable;
                 }
 
             }
@@ -320,8 +322,24 @@ page 70260 "Purchase Order Act"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        if UserMgt.GetPurchasesFilter <> '' then begin
+            FilterGroup(2);
+            SetRange("Responsibility Center", UserMgt.GetPurchasesFilter);
+            FilterGroup(0);
+        end;
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        "Responsibility Center" := UserMgt.GetPurchasesFilter;
+    end;
+
     trigger OnAfterGetCurrRecord()
     begin
+        UserSetup.GET(UserId);
+
         ActTypeEditable := Rec."Problem Document" AND (Rec."Status App Act" = Rec."Status App Act"::Controller);
         EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
 
@@ -332,14 +350,57 @@ page 70260 "Purchase Order Act"
                 ProblemType := FORMAT(Rec."Problem Type");
             else
                 ProblemType := '';
-        end
+        end;
+        AppButtonEnabled :=
+            NOT ((UPPERCASE("Process User") <> UPPERCASE(USERID)) AND (UserSetup."Status App Act" <> Rec."Status App Act"));
+        IF "Status App Act" = "Status App Act"::Approve THEN BEGIN
+            ApprovalEntry.SETRANGE("Table ID", 38);
+            ApprovalEntry.SETRANGE("Document Type", ApprovalEntry."Document Type"::Order);
+            ApprovalEntry.SETRANGE("Document No.", "No.");
+            ApprovalEntry.SETRANGE("Approver ID", USERID);
+            IF ApprovalEntry.FINDSET THEN
+                AppButtonEnabled := NOT ApprovalEntry.IsEmpty;
+        END;
+
+        AllApproverEditable := "Status App" = "Status App"::Checker;
+
+        IF ("Status App Act" = "Status App Act"::Accountant) THEN
+            CurrPage.EDITABLE := FALSE
+        ELSE
+            IF ("Status App Act" = "Status App Act"::Estimator) THEN
+                CurrPage.EDITABLE := FALSE
+            ELSE
+                CurrPage.EDITABLE := TRUE;
+        IF "Problem Type" = "Problem Type"::"Act error" THEN
+            CurrPage.EDITABLE := FALSE;
+        IF UserSetup."Status App Act" = UserSetup."Status App Act"::"сontroller" THEN BEGIN
+            CurrPage.EDITABLE := TRUE;
+            ReceiveAccountEditable := TRUE;
+        END;
+        IF "Location Document" THEN
+            CurrPage.EDITABLE := NOT ("Status App Act" IN ["Status App Act"::Approve, "Status App Act"::Signing, "Status App Act"::Accountant]);
+
+        // check later
+        ///CurrForm.PurchLines.FORM.SetEditableForEstimator(); //SWC875 KAE 010816   
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        CurrPage.SaveRecord;
+        exit(ConfirmDeletion);
     end;
 
     var
+        UserSetup: Record "User Setup";
+        ApprovalEntry: Record "Approval Entry";
         gcERPC: Codeunit "ERPC Funtions";
+        UserMgt: Codeunit "User Setup Management";
         ActTypeEditable: Boolean;
         EstimatorEnable: Boolean;
         ProblemType: text;
+        AppButtonEnabled: Boolean;
+        AllApproverEditable: Boolean;
+        ReceiveAccountEditable: Boolean;
 
     local procedure GetVendorBankAccountName(): text
     var
