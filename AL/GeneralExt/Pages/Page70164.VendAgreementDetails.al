@@ -188,9 +188,9 @@ page 70164 "Vendor Agreement Details"
 
                     trigger OnAssistEdit()
                     begin
-                        ProjectsCostControlEntry.SETRANGE("Agreement No.", "Agreement No.");
-                        ProjectsCostControlEntry.SETRANGE("Shortcut Dimension 1 Code", "Global Dimension 1 Code");
-                        ProjectsCostControlEntry.SETRANGE("Shortcut Dimension 2 Code", "Global Dimension 2 Code");
+                        ProjectsCostControlEntry.SETRANGE("Agreement No.", Rec."Agreement No.");
+                        ProjectsCostControlEntry.SETRANGE("Shortcut Dimension 1 Code", Rec."Global Dimension 1 Code");
+                        ProjectsCostControlEntry.SETRANGE("Shortcut Dimension 2 Code", Rec."Global Dimension 2 Code");
                         IF ProjectsCostControlEntry.FINDFIRST THEN
                             PAGE.RUNMODAL(70186, ProjectsCostControlEntry);
                     end;

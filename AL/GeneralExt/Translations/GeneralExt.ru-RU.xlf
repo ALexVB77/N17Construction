@@ -528,28 +528,24 @@
         <trans-unit id="Table 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Company</source>
           <target>CRM Компания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Company - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4148916677 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company name</source>
           <target>Компания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Company - Field Company Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4148916677 - Field 2165254382 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Guid</source>
           <target>ID Проекта</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Company - Field Project Guid - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4148916677 - Field 904306078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Name</source>
           <target>Наименование Проекта</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Company - Field Project Name - Property Caption</note>
         </trans-unit>
@@ -2986,7 +2982,6 @@
         <trans-unit id="Page 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Copmany</source>
           <target>CRM Компания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
         </trans-unit>

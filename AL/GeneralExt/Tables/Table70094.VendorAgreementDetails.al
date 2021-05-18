@@ -222,7 +222,7 @@ table 70094 "Vendor Agreement Details"
         }
         field(70017; "Original Amount"; Decimal)
         {
-
+            Caption = 'Original Amount';
         }
         field(70019; ByOrder; Boolean)
         {
@@ -230,11 +230,11 @@ table 70094 "Vendor Agreement Details"
         }
         field(70034; "Close Commitment"; Boolean)
         {
-
+            Caption = 'Close Commitment';
         }
         field(70035; "Close Ordered"; Boolean)
         {
-
+            Caption = 'Close Ordered';
         }
         field(70036; AmountLCY; Decimal)
         {
