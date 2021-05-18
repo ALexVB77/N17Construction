@@ -3663,6 +3663,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Company Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1546208205 - Field 788841756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
+          <source>Check CF Forecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Check CF Forecast - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2300516586 - Field 3518332187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 282138634">
           <source>Attachment Link</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3918,6 +3923,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field IW - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 3747039418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Without VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Not VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 3164040704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Old VAT Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Old VAT Prod. Posting Group - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 363487199 - Field 789473408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Paid</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3938,10 +3953,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Delay Period - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 3656735161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Skip Check CF Forecast Dimension</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Skip Check CF Forecast Dim. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 3186547235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Skip Check CF Forecast Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Skip Check CF Forecast Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3907382913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Vendor Agreement Template Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Vendor Agreement Template Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 3943955395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Zero VAT Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Zero VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2820792494 - Field 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 552782286">
           <source>Credit-Memo Reason</source>

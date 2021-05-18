@@ -13,6 +13,28 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
                 "Description 2" := COPYSTR("Full Description", MaxStrLen(Description) + 1, MaxStrLen("Description 2"));
             end;
         }
+        field(70001; "Not VAT"; Boolean)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Without VAT';
+            trigger OnValidate()
+            begin
+                IF xRec."Not VAT" <> "Not VAT" THEN
+                    CheckProductionPrjDataModify(xRec."Dimension Set ID");
+                IF "Not VAT" THEN BEGIN
+                    PurchSetup.Get();
+                    PurchSetup.TestField("Zero VAT Prod. Posting Group");
+                    "Old VAT Prod. Posting Group" := "VAT Prod. Posting Group";
+                    VALIDATE("VAT Prod. Posting Group", PurchSetup."Zero VAT Prod. Posting Group");
+                END ELSE
+                    VALIDATE("VAT Prod. Posting Group", "Old VAT Prod. Posting Group");
+            end;
+        }
+        field(70002; "Old VAT Prod. Posting Group"; Code[20])
+        {
+            Caption = 'Old VAT Prod. Posting Group';
+            Description = 'NC 51373 AB';
+        }
         field(70003; "Forecast Entry"; Integer)
         {
             Caption = 'Forecast Entry';
@@ -67,4 +89,39 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
             end;
         }
     }
+    var
+        PurchSetup: Record "Purchases & Payables Setup";
+
+    procedure CheckProductionPrjDataModify(xDimSetID: integer);
+    var
+        DimValue: record "Dimension Value";
+        PurchSetup: Record "Purchases & Payables Setup";
+        DimSetEntry: Record "Dimension Set Entry";
+    begin
+        IF "Forecast Entry" = 0 THEN
+            EXIT;
+        IF xDimSetID = 0 then
+            exit;
+        PurchSetup.GET;
+        PurchSetup.TESTFIELD("Skip Check CF Forecast Dim.");
+        IF PurchSetup."Skip Check CF Forecast Filter" <> '' THEN begin
+            DimSetEntry.SetRange("Dimension Code", PurchSetup."Skip Check CF Forecast Dim.");
+            DimSetEntry.SetRange("Dimension Set ID", xDimSetID);
+            IF DimSetEntry.FindSet() then begin
+                DimValue.SetRange("Dimension Code", PurchSetup."Skip Check CF Forecast Dim.");
+                DimValue.SetFilter(Code, PurchSetup."Skip Check CF Forecast Filter");
+                DimValue.FilterGroup(2);
+                DimValue.Setrange(Code, DimSetEntry."Dimension Value Code");
+                DimValue.FilterGroup(0);
+                if not DimValue.IsEmpty then
+                    exit;
+                DimValue.GET(PurchSetup."Skip Check CF Forecast Dim.", DimSetEntry."Dimension Value Code");
+                if not DimValue."Check CF Forecast" then
+                    exit;
+            end else
+                exit;
+        end;
+        TESTFIELD("Forecast Entry", 0);
+    end;
+
 }

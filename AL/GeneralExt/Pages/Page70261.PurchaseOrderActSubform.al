@@ -100,36 +100,85 @@ page 70261 "Purchase Order Act Subform"
                         DeltaUpdateTotals();
                     end;
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                field("Unit of Measure Code"; "Unit of Measure Code")
+                field("Location Code"; "Location Code")
                 {
                     ApplicationArea = All;
-                    Editable = UnitofMeasureCodeIsChangeable;
-                    Enabled = UnitofMeasureCodeIsChangeable;
+                    Editable = NOT IsBlankNumber;
+                    Enabled = NOT IsBlankNumber;
+                    ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
+
+                    trigger OnValidate()
+                    begin
+                        DeltaUpdateTotals();
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        IF gcERPC.LookUpLocationCode("Location Code") THEN BEGIN
+                            VALIDATE("Location Code");
+                            DeltaUpdateTotals();
+                        END;
+                    end;
+                }
+                field(Quantity; Quantity)
+                {
+                    ApplicationArea = All;
+                    BlankZero = true;
+                    Editable = NOT IsBlankNumber;
+                    Enabled = NOT IsBlankNumber;
+                    ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
+
                     trigger OnValidate()
                     begin
                         DeltaUpdateTotals();
                     end;
                 }
+                field("Unit of Measure Code"; "Unit of Measure Code")
+                {
+                    ApplicationArea = All;
+                    Editable = UnitofMeasureCodeIsChangeable;
+                    Enabled = UnitofMeasureCodeIsChangeable;
+                    ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
+
+                    trigger OnValidate()
+                    begin
+                        DeltaUpdateTotals();
+                    end;
+                }
+                field("Direct Unit Cost"; "Direct Unit Cost")
+                {
+                    ApplicationArea = All;
+                    BlankZero = true;
+                    Editable = NOT IsBlankNumber;
+                    Enabled = NOT IsBlankNumber;
+                    ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
+
+                    trigger OnValidate()
+                    begin
+                        DeltaUpdateTotals();
+                    end;
+                }
+                field("Not VAT"; "Not VAT")
+                {
+                    ApplicationArea = All;
+                    Editable = NOT IsBlankNumber;
+                    Enabled = NOT IsBlankNumber;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             }
         }
@@ -150,9 +199,11 @@ page 70261 "Purchase Order Act Subform"
     var
         grInventorySetup: Record "Inventory Setup";
         TempOptionLookupBuffer: Record "Option Lookup Buffer" temporary;
+        TotalPurchaseLine: Record "Purchase Line";
+
         TransferExtendedText: Codeunit "Transfer Extended Text";
         DocumentTotals: Codeunit "Document Totals";
-        TotalPurchaseLine: Record "Purchase Line";
+        gcERPC: Codeunit "ERPC Funtions";
         IsCommentLine: Boolean;
         IsBlankNumber: Boolean;
         UnitofMeasureCodeIsChangeable: Boolean;
