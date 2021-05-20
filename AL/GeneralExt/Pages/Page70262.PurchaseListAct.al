@@ -84,7 +84,7 @@ page 70262 "Purchase List Act"
                     Editable = false;
                     ApplicationArea = All;
 
-                    trigger OnLookup(var Text: Text): Boolean
+                    trigger OnAssistEdit()
                     begin
                         OpenActCard();
                     end;
