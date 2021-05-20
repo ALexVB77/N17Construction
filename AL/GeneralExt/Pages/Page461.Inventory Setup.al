@@ -2,11 +2,11 @@ pageextension 80461 "Inventory Setup (Ext)" extends "Inventory Setup"
 {
     layout
     {
-        addlast(Templates)
+        addlast(content)
         {
-            group(Other)
+            group(Another)
             {
-                Caption = 'Other';
+                Caption = 'Another';
                 field("Temp Item Code"; rec."Temp Item Code")
                 {
                     ApplicationArea = All;
