@@ -83,6 +83,11 @@ page 70262 "Purchase List Act"
                 {
                     Editable = false;
                     ApplicationArea = All;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        OpenActCard();
+                    end;
                 }
                 field("Act Type"; "Act Type")
                 {
@@ -290,13 +295,7 @@ page 70262 "Purchase List Act"
                 Image = Edit;
                 trigger OnAction()
                 begin
-                    case Rec."Act Type" of
-                        Rec."Act Type"::Advance:
-                            ;
-                        else
-                            page.RunModal(Page::"Purchase Order Act", Rec);
-                    end;
-                    CurrPage.Update();
+                    OpenActCard();
                 end;
             }
 
@@ -450,6 +449,17 @@ page 70262 "Purchase List Act"
         NewActProdEnabled: Boolean;
         NewKC2ProdEnabled: Boolean;
         NewAdvanceEnabled: Boolean;
+
+    local procedure OpenActCard()
+    begin
+        case Rec."Act Type" of
+            Rec."Act Type"::Advance:
+                ;
+            else
+                page.RunModal(Page::"Purchase Order Act", Rec);
+        end;
+        CurrPage.Update(false);
+    end;
 
     local procedure SetSortType()
     begin
