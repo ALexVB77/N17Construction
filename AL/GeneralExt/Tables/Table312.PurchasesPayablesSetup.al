@@ -15,14 +15,15 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             TableRelation = User."User Name";
             ValidateTableRelation = false;
         }
-        field(50003; "Skip Check CF Forecast Dim."; code[20])
+        field(50003; "Cost Place Dimension"; code[20])
         {
-            Caption = 'Skip Check CF Forecast Dimension';
+            Caption = 'Cost Place Dimension';
             Description = 'NC 51373 AB';
             TableRelation = Dimension;
         }
         field(50004; "Skip Check CF Forecast Filter"; text[100])
         {
+            InitValue = '?????????P*';
             Caption = 'Skip Check CF Forecast Filter';
             Description = 'NC 51373 AB';
         }
