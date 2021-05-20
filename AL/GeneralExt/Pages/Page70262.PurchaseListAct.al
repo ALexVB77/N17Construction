@@ -290,12 +290,14 @@ page 70262 "Purchase List Act"
 
             action(DocCard)
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
                 Caption = 'Edit';
                 Image = Edit;
+
                 trigger OnAction()
                 begin
                     OpenActCard();
+                    Message('OK!');
                 end;
             }
 
@@ -450,7 +452,7 @@ page 70262 "Purchase List Act"
         NewKC2ProdEnabled: Boolean;
         NewAdvanceEnabled: Boolean;
 
-    local procedure OpenActCard()
+    procedure OpenActCard()
     begin
         case Rec."Act Type" of
             Rec."Act Type"::Advance:
