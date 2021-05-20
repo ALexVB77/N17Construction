@@ -452,7 +452,7 @@ page 70262 "Purchase List Act"
         NewKC2ProdEnabled: Boolean;
         NewAdvanceEnabled: Boolean;
 
-    procedure OpenActCard()
+    local procedure OpenActCard()
     begin
         case Rec."Act Type" of
             Rec."Act Type"::Advance:
