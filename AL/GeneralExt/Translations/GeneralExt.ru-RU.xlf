@@ -3276,42 +3276,36 @@
         <trans-unit id="Page 38647611 - Control 1249528335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Excl. VAT</source>
           <target>Сумма без НДС</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountExclVAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 3579438461 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Excl. VAT (LCY)</source>
           <target>Сумма без НДС (руб.)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountExclVATLCY - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 1067826989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Including VAT</source>
           <target>Сумма с НДС</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 1534044927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Including VAT (LCY)</source>
           <target>Сумма с НДС (руб.)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVATLCY - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 2892191201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Amount</source>
           <target>Сумма НДС</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 3446512155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Amount (LCY)</source>
           <target>Сумма НДС (руб.)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmountLCY - Property Caption</note>
         </trans-unit>
@@ -4305,6 +4299,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3887120495 - Control 3448339824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
+          <source>Other</source>
+          <target>Прочее</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Setup (Ext) - Control Other - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3985024665 - Action 4056321329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 858112265">
           <source>Get Item Ledger Lines</source>
           <target>Получить строки запасов</target>
@@ -4452,7 +4453,6 @@
         <trans-unit id="TableExtension 1546208205 - Field 3510225301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Cost Holder</source>
           <target>Ответственный за Центр Затрат</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Cost Holder - Property Caption</note>
         </trans-unit>
@@ -5059,7 +5059,6 @@
         <trans-unit id="TableExtension 363487199 - Field 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Approver</source>
           <target>Утверждающий</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Approver - Property Caption</note>
         </trans-unit>
@@ -5114,7 +5113,6 @@
         <trans-unit id="TableExtension 2307367824 - Field 3552419404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Cost Place Dimension</source>
           <target>Измерение Центра Затрат</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Cost Place Dimension - Property Caption</note>
         </trans-unit>
@@ -5211,7 +5209,6 @@
         <trans-unit id="TableExtension 3550601874 - Field 1443314568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Absents</source>
           <target>Отсутствует</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Absents - Property Caption</note>
         </trans-unit>
