@@ -195,49 +195,56 @@ page 70261 "Purchase Order Act Subform"
             }
             group(TotalAmounts)
             {
-
                 ShowCaption = false;
-                field(AmountExclVAT; TotalPurchaseLine."Amount")
+                group(Split1)
                 {
-                    ApplicationArea = All;
-                    AutoFormatExpression = "Currency Code";
-                    AutoFormatType = 1;
-                    Caption = 'Amount Excl. VAT';
-                    Editable = false;
+                    ShowCaption = false;
+                    field(AmountExclVAT; TotalPurchaseLine."Amount")
+                    {
+                        ApplicationArea = All;
+                        AutoFormatExpression = "Currency Code";
+                        AutoFormatType = 1;
+                        Caption = 'Amount Excl. VAT';
+                        Editable = false;
+                    }
+                    field(AmountExclVATLCY; TotalPurchaseLine."Amount (LCY)")
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Amount Excl. VAT (LCY)';
+                        Editable = false;
+                    }
+                    field(VATAmount; TotalPurchaseLine."Amount Including VAT" - TotalPurchaseLine."Amount")
+                    {
+                        ApplicationArea = All;
+                        AutoFormatExpression = "Currency Code";
+                        AutoFormatType = 1;
+                        Caption = 'VAT Amount';
+                        Editable = false;
+                    }
                 }
-                field(AmountExclVATLCY; TotalPurchaseLine."Amount (LCY)")
+                group(Split2)
                 {
-                    ApplicationArea = All;
-                    Caption = 'Amount Excl. VAT (LCY)';
-                    Editable = false;
-                }
-                field(VATAmount; TotalPurchaseLine."Amount Including VAT" - TotalPurchaseLine."Amount")
-                {
-                    ApplicationArea = All;
-                    AutoFormatExpression = "Currency Code";
-                    AutoFormatType = 1;
-                    Caption = 'VAT Amount';
-                    Editable = false;
-                }
-                field(VATAmountLCY; TotalPurchaseLine."Amount Including VAT (LCY)" - TotalPurchaseLine."Amount (LCY)")
-                {
-                    ApplicationArea = All;
-                    Caption = 'VAT Amount (LCY)';
-                    Editable = false;
-                }
-                field(AmountIncVAT; TotalPurchaseLine."Amount Including VAT")
-                {
-                    ApplicationArea = All;
-                    AutoFormatExpression = "Currency Code";
-                    AutoFormatType = 1;
-                    Caption = 'Amount Including VAT';
-                    Editable = false;
-                }
-                field(AmountIncVATLCY; TotalPurchaseLine."Amount Including VAT (LCY)")
-                {
-                    ApplicationArea = All;
-                    Caption = 'Amount Including VAT (LCY)';
-                    Editable = false;
+                    ShowCaption = false;
+                    field(VATAmountLCY; TotalPurchaseLine."Amount Including VAT (LCY)" - TotalPurchaseLine."Amount (LCY)")
+                    {
+                        ApplicationArea = All;
+                        Caption = 'VAT Amount (LCY)';
+                        Editable = false;
+                    }
+                    field(AmountIncVAT; TotalPurchaseLine."Amount Including VAT")
+                    {
+                        ApplicationArea = All;
+                        AutoFormatExpression = "Currency Code";
+                        AutoFormatType = 1;
+                        Caption = 'Amount Including VAT';
+                        Editable = false;
+                    }
+                    field(AmountIncVATLCY; TotalPurchaseLine."Amount Including VAT (LCY)")
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Amount Including VAT (LCY)';
+                        Editable = false;
+                    }
                 }
             }
         }
