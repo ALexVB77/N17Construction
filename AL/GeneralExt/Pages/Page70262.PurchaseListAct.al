@@ -300,11 +300,6 @@ page 70262 "Purchase List Act"
                     Message('OK!');
                 end;
             }
-
-            //group(Approval)
-            //{
-            //    Caption = 'Approval';
-            //    Image = Approval;
             action(ApproveButton)
             {
                 ApplicationArea = Basic, Suite;
@@ -389,7 +384,22 @@ page 70262 "Purchase List Act"
                     */
                 end;
             }
-            //}
+            action(DocAttach)
+            {
+                ApplicationArea = All;
+                Caption = 'Attachments';
+                Image = Attach;
+
+                trigger OnAction()
+                var
+                    DocumentAttachmentDetails: Page "Document Attachment Details";
+                    RecRef: RecordRef;
+                begin
+                    RecRef.GetTable(Rec);
+                    DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                    DocumentAttachmentDetails.RunModal;
+                end;
+            }
         }
     }
 

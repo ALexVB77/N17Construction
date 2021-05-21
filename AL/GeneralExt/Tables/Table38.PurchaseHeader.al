@@ -20,7 +20,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         field(70005; "Exists Attachment"; Boolean)
         {
             FieldClass = FlowField;
-            CalcFormula = Exist("Attachment" WHERE("Document Type" = CONST(Purchase), "Document No." = FIELD("No."), "Document Line" = CONST(0)));
+            CalcFormula = Exist("Document Attachment" WHERE("Table ID" = CONST(38), "Document Type" = FIELD("Document Type"), "No." = FIELD("No.")));
             Description = 'NC 51373 AB';
             Caption = 'Exists Attachment';
         }

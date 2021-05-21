@@ -2,7 +2,7 @@ page 70260 "Purchase Order Act"
 {
     Caption = 'Purchase Order Act';
     PageType = Document;
-    // PromotedActionCategories = 'New,Process,Report,Approve,Invoice,Posting,View,Request Approval,Incoming Document,Release,Navigate';
+    PromotedActionCategories = 'New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -329,6 +329,90 @@ page 70260 "Purchase Order Act"
         }
     }
 
+    actions
+    {
+        area(navigation)
+        {
+            group(OrderAct)
+            {
+                Caption = 'O&rder Act';
+                Image = "Order";
+                action(Dimensions)
+                {
+                    AccessByPermission = TableData Dimension = R;
+                    ApplicationArea = Dimensions;
+                    Caption = 'Dimensions';
+                    Enabled = "No." <> '';
+                    Image = Dimensions;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    PromotedIsBig = true;
+                    ShortCutKey = 'Alt+D';
+
+                    trigger OnAction()
+                    begin
+                        ShowDocDim;
+                        CurrPage.SaveRecord;
+                    end;
+                }
+                action("Co&mments")
+                {
+                    ApplicationArea = Comments;
+                    Caption = 'Co&mments';
+                    Image = ViewComments;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    RunObject = Page "Purch. Comment Sheet";
+                    RunPageLink = "Document Type" = FIELD("Document Type"),
+                                  "No." = FIELD("No."),
+                                  "Document Line No." = CONST(0);
+                }
+                action(DocAttach)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Attachments';
+                    Image = Attach;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+
+                    trigger OnAction()
+                    var
+                        DocumentAttachmentDetails: Page "Document Attachment Details";
+                        RecRef: RecordRef;
+                    begin
+                        RecRef.GetTable(Rec);
+                        DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                        DocumentAttachmentDetails.RunModal;
+                    end;
+                }
+            }
+            action(ViewAttachDoc)
+            {
+                ApplicationArea = All;
+                Caption = 'Documents View';
+                Enabled = ShowDocEnabled;
+                Image = Export;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    DocumentAttachment: Record "Document Attachment";
+                    RecRef: RecordRef;
+                begin
+                    CalcFields("Exists Attachment");
+                    TestField("Exists Attachment");
+                    DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
+                    DocumentAttachment.SetRange("Document Type", rec."Document Type");
+                    DocumentAttachment.SetRange("No.", Rec."No.");
+                    DocumentAttachment.FindFirst();
+                    DocumentAttachment.Export(true);
+                end;
+            }
+        }
+    }
+
     trigger OnOpenPage()
     begin
         if UserMgt.GetPurchasesFilter <> '' then begin
@@ -349,6 +433,8 @@ page 70260 "Purchase Order Act"
 
         ActTypeEditable := Rec."Problem Document" AND (Rec."Status App Act" = Rec."Status App Act"::Controller);
         EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
+        CalcFields("Exists Attachment");
+        ShowDocEnabled := "Exists Attachment";
 
         case true of
             "Problem Document" and ("Problem Type" = "Problem Type"::" "):
@@ -408,6 +494,7 @@ page 70260 "Purchase Order Act"
         AppButtonEnabled: Boolean;
         AllApproverEditable: Boolean;
         ReceiveAccountEditable: Boolean;
+        ShowDocEnabled: Boolean;
 
     local procedure GetVendorBankAccountName(): text
     var
@@ -510,4 +597,6 @@ page 70260 "Purchase Order Act"
         */
 
     end;
+
+
 }
