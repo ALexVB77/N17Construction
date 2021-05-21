@@ -15,6 +15,16 @@ codeunit 50006 "Base App. Subscribers Mgt."
                         TransferLine.VALIDATE("Transfer-To Bin Code", TransferHeader."Vendor No.");
                     //NC 22512 < DP
                 end;
+            // NC 51144 GG >>
+            TransferHeader.FieldNo("New Shortcut Dimension 1 Code"):
+                begin
+                    TransferLine.Validate("New Shortcut Dimension 1 Code", TransferHeader."New Shortcut Dimension 1 Code");
+                end;
+            TransferHeader.FieldNo("New Shortcut Dimension 2 Code"):
+                begin
+                    TransferLine.Validate("New Shortcut Dimension 2 Code", TransferHeader."New Shortcut Dimension 2 Code");
+                end;
+        // NC 51144 GG <<
         end
     end;
 

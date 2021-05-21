@@ -33,4 +33,6 @@ table 70049 "Cash Flow Transaction Type"
             Enabled = true;
         }
     }
+
+
 }
