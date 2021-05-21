@@ -3018,105 +3018,90 @@
         <trans-unit id="Page 2647103437 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Release,Posting,Order,Documents,Print/Send,Navigate</source>
           <target>Новый,Процесс,Отчет,Выпустить,Учет,Заказ,Документы,Печать/отправить,Навигатор</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Property PromotedActionCategories</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Transfer Order</source>
           <target>Передача материалов в переработку</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to change %1 in all related records in the warehouse?</source>
           <target>Изменить %1 во всех связанных записях на складе?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - NamedType Text000</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 2956989985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Warehouse</source>
           <target>Склад</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Control19 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 3111468436 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the time it takes to make items part of available inventory, after the items have been posted as received.</source>
           <target>Определяет время, которое требуется для того, чтобы сделать товары частью доступных запасов после учета их получения.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Inbound Whse. Handling Time - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 3624777196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Foreign Trade</source>
           <target>Внешняя торговля</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Foreign Trade - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 3532935625 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the area of the customer or vendor, for the purpose of reporting to INTRASTAT.</source>
           <target>Определяет регион клиента или поставщика в целях отчетности Интрастат.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Area - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 3814925297 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the code of either the port of entry at which the items passed into your country/region, or the port of exit.</source>
           <target>Определяет код порта, через который товары прибыли в вашу страну/регион либо покинули вашу страну/регион.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Entry/Exit Point - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 1267997203 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a specification of the document's transaction, for the purpose of reporting to INTRASTAT.</source>
           <target>Определяет спецификацию транзакции документа в целях отчетности Интрастат.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transaction Specification - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 3773776616 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the type of transaction that the document represents, for the purpose of reporting to INTRASTAT.</source>
           <target>Определяет тип транзакции, представляемой документом, в целях отчетности Интрастат.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transaction Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 3193866272 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the transport method, for the purpose of reporting to INTRASTAT.</source>
           <target>Определяет метод перевозки в целях отчетности Интрастат.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transport Method - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <target>Общее</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 3294270728 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the ID of the user who is responsible for the document.</source>
           <target>Определяет код пользователя, который отвечает за документ.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Assigned User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 2421377490 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies that the transfer does not use an in-transit location. When you transfer directly, the Qty. to Receive field will be locked with the same value as the quantity to ship.</source>
           <target>Указывает, что при перемещении не используется транзитный склад. При непосредственном перемещении поле "Кол-во для получения" будет заблокировано и будет содержать значение количества для отгрузки.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Direct Transfer - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2647103437 - Control 2307065988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the in-transit code for the transfer order, such as a shipping agent.</source>
           <target>Определяет код транзитного склада для заказа на перемещение, например код экспедитора.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control In-Transit Code - Property ToolTip</note>
         </trans-unit>
@@ -3556,8 +3541,8 @@
         </trans-unit>
         <trans-unit id="Page 2647103437 - Action 1484878399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Warehouse</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>[NAB: SUGGESTION]Склад</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Warehouse - Property Caption</note>
         </trans-unit>
@@ -3829,8 +3814,8 @@
         </trans-unit>
         <trans-unit id="Page 3368656099 - Control 3111468436 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the time it takes to make items part of available inventory, after the items have been posted as received.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>[NAB: SUGGESTION]Определяет время, которое требуется для того, чтобы сделать товары частью доступных запасов после учета их получения.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Inbound Whse. Handling Time - Property ToolTip</note>
         </trans-unit>
@@ -4395,17 +4380,23 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description/Comment</source>
-          <target>Описание/комментарий</target>
+        <trans-unit id="Page 38647611 - Control 1067826989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT</source>
+          <target>Сумма с НДС</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control Description - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVAT - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 2721142765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Type</source>
-          <target>Тип</target>
+        <trans-unit id="Page 38647611 - Control 1534044927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT (LCY)</source>
+          <target>Сумма с НДС (руб.)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control FilteredTypeField - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVATLCY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Control 3446512155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount (LCY)</source>
+          <target>Сумма НДС (руб.)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmountLCY - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 1249528335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount Excl. VAT</source>
@@ -4419,29 +4410,23 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountExclVATLCY - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 1067826989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Including VAT</source>
-          <target>Сумма с НДС</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 38647611 - Control 1534044927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Including VAT (LCY)</source>
-          <target>Сумма с НДС (руб.)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVATLCY - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 38647611 - Control 2892191201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Amount</source>
           <target>Сумма НДС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 3446512155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount (LCY)</source>
-          <target>Сумма НДС (руб.)</target>
+        <trans-unit id="Page 38647611 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description/Comment</source>
+          <target>Описание/комментарий</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmountLCY - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Control 2721142765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target>Тип</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control FilteredTypeField - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
@@ -5436,7 +5421,6 @@
         <trans-unit id="PageExtension 3887120495 - Control 3573897381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
           <source>Another</source>
           <target>Другое</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Setup (Ext) - Control Another - Property Caption</note>
         </trans-unit>
@@ -6262,15 +6246,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Delay Period - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="TableExtension 2307367824 - Field 3656735161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
-          <source>Skip Check CF Forecast Dimension</source>
-          <target>Пропуск проверки ДДС прогноза измер.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Skip Check CF Forecast Dim. - Property Caption</note>
-        </trans-unit>
-=======
->>>>>>> b7391df8d7977767f6b118265785eb97fac14559
         <trans-unit id="TableExtension 2307367824 - Field 3186547235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Skip Check CF Forecast Filter</source>
           <target>Пропуск проверки ДДС прогноза фильтр</target>
@@ -6316,42 +6291,36 @@
         <trans-unit id="TableExtension 2802827400 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>Customer No.</source>
           <target>Клиент Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>Description</source>
           <target>Описание</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>Gen. Bus. Posting Group</source>
           <target>Общая бизнес-группа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Gen. Bus. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 2002556613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>New Dimension Set Id</source>
           <target>Новый код набора измерений</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field New Dimension Set Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 1639668988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>New Shortcut Dimension 1 Code</source>
           <target>Новый код ярлыка измерения 1</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field New Shortcut Dimension 1 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 3443100701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>New Shortcut Dimension 2 Code</source>
           <target>Новый код ярлыка измерения 1</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field New Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
