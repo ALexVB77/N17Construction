@@ -3423,6 +3423,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DelayButton - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DocAttach - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2825229705 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Edit</source>
           <note from="Developer" annotates="general" priority="2"></note>
