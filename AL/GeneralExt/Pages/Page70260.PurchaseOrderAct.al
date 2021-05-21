@@ -2,7 +2,7 @@ page 70260 "Purchase Order Act"
 {
     Caption = 'Purchase Order Act';
     PageType = Document;
-    // PromotedActionCategories = 'New,Process,Report,Approve,Invoice,Posting,View,Request Approval,Incoming Document,Release,Navigate';
+    PromotedActionCategories = 'New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -390,11 +390,10 @@ page 70260 "Purchase Order Act"
             {
                 ApplicationArea = All;
                 Caption = 'Documents View';
-                Enabled = Rec."Exists Attachment";
+                //Enabled = ShowDocEnabled;
                 Image = Export;
                 Promoted = true;
                 PromotedCategory = Process;
-                //PromotedCategory = Category8;
                 PromotedIsBig = true;
 
                 trigger OnAction()
@@ -403,6 +402,7 @@ page 70260 "Purchase Order Act"
                     DocumentAttachment: Record "Document Attachment";
                     RecRef: RecordRef;
                 begin
+                    CalcFields("Exists Attachment");
                     TestField("Exists Attachment");
                     DocumentAttachmentDetails.OpenForRecRef(RecRef);
                     DocumentAttachmentDetails.GetRecord(DocumentAttachment);
@@ -426,17 +426,14 @@ page 70260 "Purchase Order Act"
         "Responsibility Center" := UserMgt.GetPurchasesFilter;
     end;
 
-    trigger OnAfterGetRecord()
-    begin
-        CalcFields("Exists Attachment");
-    end;
-
     trigger OnAfterGetCurrRecord()
     begin
         UserSetup.GET(UserId);
 
         ActTypeEditable := Rec."Problem Document" AND (Rec."Status App Act" = Rec."Status App Act"::Controller);
         EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
+        CalcFields("Exists Attachment");
+        ShowDocEnabled := "Exists Attachment";
 
         case true of
             "Problem Document" and ("Problem Type" = "Problem Type"::" "):
@@ -496,6 +493,7 @@ page 70260 "Purchase Order Act"
         AppButtonEnabled: Boolean;
         AllApproverEditable: Boolean;
         ReceiveAccountEditable: Boolean;
+        ShowDocEnabled: Boolean;
 
     local procedure GetVendorBankAccountName(): text
     var

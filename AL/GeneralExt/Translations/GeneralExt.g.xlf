@@ -3463,6 +3463,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2Prod - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Approve,Invoice,Posting,View,Request Approval,Incoming Document,Release,Navigate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Order Act</source>
           <note from="Developer" annotates="general" priority="2"></note>
