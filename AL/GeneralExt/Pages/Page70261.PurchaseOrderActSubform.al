@@ -182,7 +182,7 @@ page 70261 "Purchase Order Act Subform"
                     ShowCaption = false;
                     field(AmountExclVAT; TotalPurchaseLine."Amount")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = Basic, Suite;
                         AutoFormatExpression = "Currency Code";
                         AutoFormatType = 1;
                         Caption = 'Amount Excl. VAT';
@@ -190,13 +190,13 @@ page 70261 "Purchase Order Act Subform"
                     }
                     field(AmountExclVATLCY; TotalPurchaseLine."Amount (LCY)")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Amount Excl. VAT (LCY)';
                         Editable = false;
                     }
                     field(VATAmount; TotalPurchaseLine."Amount Including VAT" - TotalPurchaseLine."Amount")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = Basic, Suite;
                         AutoFormatExpression = "Currency Code";
                         AutoFormatType = 1;
                         Caption = 'VAT Amount';
@@ -208,13 +208,13 @@ page 70261 "Purchase Order Act Subform"
                     ShowCaption = false;
                     field(VATAmountLCY; TotalPurchaseLine."Amount Including VAT (LCY)" - TotalPurchaseLine."Amount (LCY)")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'VAT Amount (LCY)';
                         Editable = false;
                     }
                     field(AmountIncVAT; TotalPurchaseLine."Amount Including VAT")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = Basic, Suite;
                         AutoFormatExpression = "Currency Code";
                         AutoFormatType = 1;
                         Caption = 'Amount Including VAT';
@@ -222,7 +222,7 @@ page 70261 "Purchase Order Act Subform"
                     }
                     field(AmountIncVATLCY; TotalPurchaseLine."Amount Including VAT (LCY)")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Amount Including VAT (LCY)';
                         Editable = false;
                     }
