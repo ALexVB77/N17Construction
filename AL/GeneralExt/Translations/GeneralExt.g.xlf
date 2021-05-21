@@ -2513,6 +2513,816 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Get Item Ledger Entry Lines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2647103437 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Release,Posting,Order,Documents,Print/Send,Navigate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Property PromotedActionCategories</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giv. Transfer Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to change %1 in all related records in the warehouse?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2956989985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Control19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3111468436 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the time it takes to make items part of available inventory, after the items have been posted as received.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Inbound Whse. Handling Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3624777196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Foreign Trade</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Foreign Trade - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3532935625 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the area of the customer or vendor, for the purpose of reporting to INTRASTAT.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Area - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3814925297 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code of either the port of entry at which the items passed into your country/region, or the port of exit.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Entry/Exit Point - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1267997203 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a specification of the document's transaction, for the purpose of reporting to INTRASTAT.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transaction Specification - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3773776616 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the type of transaction that the document represents, for the purpose of reporting to INTRASTAT.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transaction Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3193866272 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the transport method, for the purpose of reporting to INTRASTAT.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transport Method - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3294270728 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the ID of the user who is responsible for the document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Assigned User ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2421377490 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that the transfer does not use an in-transit location. When you transfer directly, the Qty. to Receive field will be locked with the same value as the quantity to ship.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Direct Transfer - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2307065988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the in-transit code for the transfer order, such as a shipping agent.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control In-Transit Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the involved entry or record, according to the specified number series.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the posting date of the transfer order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Posting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for Shortcut Dimension 1, which is one of two global dimension codes that you set up in the General Ledger Setup window.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shortcut Dimension 1 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for Shortcut Dimension 2, which is one of two global dimension codes that you set up in the General Ledger Setup window.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shortcut Dimension 2 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 513339096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the transfer order is open or has been released for warehouse handling.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 520660911 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code of the location that items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 324034516 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code of the location that the items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 538715564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1562764323 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a date formula for the time it takes to get items ready to ship from this location. The time element is used in the calculation of the delivery date as follows: Shipment Date + Outbound Warehouse Handling Time = Planned Shipment Date + Shipping Time = Planned Delivery Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Outbound Whse. Handling Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 358029708 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date that you expect the transfer-to location to receive the shipment.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Receipt Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 4112852368 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies when items on the document are shipped or were shipped. A shipment date is usually calculated from a requested delivery date plus lead time.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shipment Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2205104606 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the delivery conditions of the related shipment, such as free on board (FOB).</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shipment Method Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3744117490 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an instruction to the warehouse that ships the items, for example, that it is acceptable to do partial shipment.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shipping Advice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 4045368290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the shipping agent who is transporting the items.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shipping Agent Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2730811709 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the service, such as a one-day delivery, that is offered by the shipping agent.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shipping Agent Service Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1913523417 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how long it takes from when the items are shipped from the warehouse to when they are delivered.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Shipping Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3530778836 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transfer-from</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2729005590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>County</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1277114954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the address of the location that the items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Address - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1277114954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2343213752 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an additional part of the address of the location that items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Address 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2343213752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Address 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 953831401 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the city of the location that the items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 953831401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2972337268 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the contact person at the location that the items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2972337268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3755656249 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the sender at the location that the items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3755656249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3692351575 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an additional part of the name of the sender at the location that the items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Name 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3692351575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2582901159 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the postal code of the location that the items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 2582901159 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-from Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3562769272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Trsf.-from Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 369552167 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transfer-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1033824321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>County</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1917146997 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the address of the location that the items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Address - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1917146997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1582495123 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an additional part of the address of the location that the items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Address 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1582495123 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Address 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1730839582 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the city of the location that items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1730839582 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1860394327 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the contact person at the location that items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 1860394327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3242223630 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the recipient at the location that the items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 3242223630 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 460356348 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an additional part of the name of the recipient at the location that the items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Name 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 460356348 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 476768916 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the postal code of the location that the items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 476768916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Transfer-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Control 926423283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Control Trsf.-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3324780168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 1253819395 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View related posted transfer receipts.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Re&amp;ceipts - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 1253819395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Re&amp;ceipts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Re&amp;ceipts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2787584647 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View related posted transfer shipments.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action S&amp;hipments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2787584647 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S&amp;hipments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action S&amp;hipments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 4051756668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>O&amp;rder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action O&amp;rder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or add comments for the record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Co&amp;mments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2173385693 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or edit dimensions, such as area, project, or department, that you can assign to sales and purchase documents to distribute costs and analyze transaction history.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Dimensions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 84074407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View statistical information about the transfer order, such as the quantity and total weight transferred.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Statistics - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 1484878399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Warehouse - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2062084290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View inbound items that have been received with warehouse activities for the transfer order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action &amp;Whse. Receipts - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2062084290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Whse. Receipts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action &amp;Whse. Receipts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 330508317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Employee Si&amp;gnatures</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Employee Si&amp;gnatures - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 626952520 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View items that are inbound or outbound on inventory put-away or inventory pick documents for the transfer order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action In&amp;vt. Put-away/Pick Lines - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 626952520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>In&amp;vt. Put-away/Pick Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action In&amp;vt. Put-away/Pick Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2551057102 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View outbound items that have been shipped with warehouse activities for the transfer order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Whse. Shi&amp;pments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2551057102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Whse. Shi&amp;pments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Whse. Shi&amp;pments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 1344672713 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepare to print the document. A report request window for the document opens where you can specify what to include on the print-out.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action &amp;Print - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 1845035571 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create a warehouse receipt to start a receive and put-away process according to an advanced warehouse configuration.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Create &amp;Whse. Receipt - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 1845035571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create &amp;Whse. Receipt</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Create &amp;Whse. Receipt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 875193488 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create an inventory put-away or inventory pick to handle items on the document with a basic warehouse process that does not require warehouse receipt or shipment documents.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Create Inventor&amp;y Put-away/Pick - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 875193488 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Inventor&amp;y Put-away/Pick</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Create Inventor&amp;y Put-away/Pick - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3806954191 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create a warehouse shipment to start a pick a ship process according to an advanced warehouse configuration.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Create Whse. S&amp;hipment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3806954191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Whse. S&amp;hipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Create Whse. S&amp;hipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3408808366 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use a function to create transfer lines with items to put away or pick based on the actual content in the specified bin.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Get Bin Content - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 3408808366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Bin Content</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Get Bin Content - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2115854233 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add transfer order lines from posted purchase receipt lines.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action GetReceiptLines - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2115854233 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Receipt Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action GetReceiptLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2245087378 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;osting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action P&amp;osting - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2282416948 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finalize the document or journal by posting the amounts and quantities to the related accounts in your company books.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Post - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2282416948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;ost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Post - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 513012614 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finalize and prepare to print the document or journal. The values and quantities are posted to the related accounts. A report request window where you can specify what to include on the print-out.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action PostAndPrint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 513012614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post and &amp;Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action PostAndPrint - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Release</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Release - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 4056321329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Item Ledger Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action GetItemLedgerEntryLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 483158641 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Release the document to the next stage of processing. When a document is released, it will be included in all availability calculations from the expected receipt date of the items. You must reopen the document before you can make changes to it.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Re&amp;lease - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 483158641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Re&amp;lease</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Re&amp;lease - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2973068799 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reopen the transfer order after being released for warehouse handling.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Reo&amp;pen - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2973068799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reo&amp;pen</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Reo&amp;pen - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2002558571 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View which items are currently on inbound transfer orders.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Inventory - Inbound Transfer - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2002558571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory - Inbound Transfer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Inventory - Inbound Transfer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2156671416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View ongoing receipt and shipments for items that are transferred within the organization. </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Transfer Order TORG-13 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2647103437 - Action 2156671416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transfer Order TORG-13</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Transfer Order TORG-13 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giv. Transfer Order Subform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 3244334840 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the item ledger entry that the document or journal line is applied to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Appl.-to Item Entry - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a description of the entry.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 3111468436 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the time it takes to make items part of available inventory, after the items have been posted as received.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Inbound Whse. Handling Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the item that will be transferred.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 1562764323 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a date formula for the time it takes to get items ready to ship from this location. The time element is used in the calculation of the delivery date as follows: Shipment Date + Outbound Warehouse Handling Time = Planned Shipment Date + Shipping Time = Planned Delivery Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Outbound Whse. Handling Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 751190652 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the supply represented by this line is considered by the planning system when calculating action messages.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Planning Flexibility - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 714568894 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the quantity of items that remains to be received.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Qty. to Receive - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 1128541325 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the quantity of items that remain to be shipped.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Qty. to Ship - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the quantity of the item that will be processed as the document stipulates.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 3122616504 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many units of the item on the line have been posted as received.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Quantity Received - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 2529837284 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many units of the item on the line have been posted as shipped.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Quantity Shipped - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 358029708 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date that you expect the transfer-to location to receive the shipment.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Receipt Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 28453114 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the quantity of the item reserved at the transfer-to location.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Reserved Quantity Inbnd. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 2707506985 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the quantity of the item reserved at the transfer-from location.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Reserved Quantity Outbnd. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 915156552 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many units on the shipped transfer order are reserved.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Reserved Quantity Shipped - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 4112852368 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies when items on the document are shipped or were shipped. A shipment date is usually calculated from a requested delivery date plus lead time.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Shipment Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 4045368290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the shipping agent who is transporting the items.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Shipping Agent Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 2730811709 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the service, such as a one-day delivery, that is offered by the shipping agent.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Shipping Agent Service Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 1913523417 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how long it takes from when the items are shipped from the warehouse to when they are delivered.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Shipping Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for Shortcut Dimension 1, which is one of two global dimension codes that you set up in the General Ledger Setup window.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Shortcut Dimension 1 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for Shortcut Dimension 2, which is one of two global dimension codes that you set up in the General Ledger Setup window.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Shortcut Dimension 2 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 1582893468 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the bin that the items are transferred from.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Transfer-from Bin Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 2931954263 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code for the bin that the items are transferred to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Transfer-To Bin Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 1920046521 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the item or resource's unit of measure, such as piece or hour.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Unit of Measure - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 2385270358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how each unit of the item or resource is measured, such as in pieces or hours. By default, the value in the Base Unit of Measure field on the item or resource card is inserted.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Unit of Measure Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Control 3450651614 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the variant of the item on the line.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Control Variant Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action &amp;Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 2173385693 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or edit dimensions, such as area, project, or department, that you can assign to sales and purchase documents to distribute costs and analyze transaction history.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Dimensions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 1621753147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item &amp;Tracking Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Item &amp;Tracking Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3081714176 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or edit serial numbers and lot numbers that are assigned to the item on the document or journal line.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Receipt - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3081714176 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Receipt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 538715564 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or edit serial numbers and lot numbers that are assigned to the item on the document or journal line.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Shipment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 538715564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Shipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3035192297 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Availability by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Item Availability by - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 2882465090 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View availability figures for items on bills of materials that show how many units of a parent item you can make based on the availability of child items.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action BOM Level - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 2882465090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BOM Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action BOM Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3310733264 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View how the actual and the projected available balance of an item will develop over time according to supply and demand events.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Event - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3310733264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Event</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Event - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3891454143 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View the actual and projected quantity of the item per location.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Location - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3891454143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Location - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 912261439 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show the projected quantity of the item over time according to time periods, such as day, week, or month.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Period - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 912261439 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 112710097 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or edit the item's variants. Instead of setting up each color of an item as a separate item, you can set up the various colors as variants of the item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Variant - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 112710097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Variant</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Variant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 825293260 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserve the quantity that is required on the document line that you opened this window for.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Reserve - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3368656099 - Action 825293260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Reserve</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Reserve - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3997,6 +4807,36 @@
           <source>Agreement No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Gen. Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 2002556613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>New Dimension Set Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field New Dimension Set Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 1639668988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>New Shortcut Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field New Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 3443100701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>New Shortcut Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field New Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 3119688693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>Vendor Name</source>

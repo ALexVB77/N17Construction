@@ -3,6 +3,44 @@ tableextension 85740 "Transfer Header (Ext)" extends "Transfer Header"
     // Подписки в cu 50006 
     fields
     {
+        field(50000; "Customer No."; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Customer No.';
+            TableRelation = "Customer";
+        }
+        field(50001; Description; Text[250])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Description';
+        }
+        field(50002; "New Shortcut Dimension 1 Code"; Code[20])
+        {
+            Caption = 'New Shortcut Dimension 1 Code';
+            DataClassification = CustomerContent;
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            CaptionClass = '1,2,1';
+            trigger OnValidate()
+
+            begin
+                NewSaveDocDim(1, "New Shortcut Dimension 1 Code");   //NCC002 CITRU\ROMB 10.01.12  inserted
+                UpdateTransLines(Rec, FIELDNO("New Shortcut Dimension 1 Code")); // NC 51144 GG
+
+            end;
+        }
+        field(50003; "New Shortcut Dimension 2 Code"; Code[20])
+        {
+            Caption = 'New Shortcut Dimension 2 Code';
+            DataClassification = CustomerContent;
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            CaptionClass = '1,2,2';
+            trigger OnValidate()
+
+            begin
+                NewSaveDocDim(2, "New Shortcut Dimension 2 Code");   //NCC002 CITRU\ROMB 10.01.12  inserted
+                UpdateTransLines(Rec, FIELDNO("New Shortcut Dimension 2 Code")); // NC 51144 GG
+            end;
+        }
 
         field(50010; "Vendor No."; Code[50])
         {
@@ -18,7 +56,6 @@ tableextension 85740 "Transfer Header (Ext)" extends "Transfer Header"
                 // SWC816 AK 200416 <<
 
             end;
-
         }
         field(50011; "Agreement No."; Code[20])
         {
@@ -26,11 +63,24 @@ tableextension 85740 "Transfer Header (Ext)" extends "Transfer Header"
             TableRelation = "Vendor Agreement"."No." WHERE("Vendor No." = FIELD("Vendor No."));
             DataClassification = CustomerContent;
         }
+
         field(50012; "Vendor Name"; Text[100])
         {
             Caption = 'Vendor Name';
             FieldClass = FlowField;
             CalcFormula = Lookup(Vendor.Name WHERE("No." = FIELD("Vendor No.")));
+            Editable = false;
+        }
+        field(50020; "Gen. Bus. Posting Group"; Code[10])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Gen. Business Posting Group";
+        }
+
+        field(50481; "New Dimension Set Id"; Integer)
+        {
+            Caption = 'New Dimension Set Id';
+            TableRelation = "Dimension Set Entry";
             Editable = false;
         }
     }
@@ -182,4 +232,11 @@ tableextension 85740 "Transfer Header (Ext)" extends "Transfer Header"
         //NC 22512 < DP
     end;
 
+    procedure NewSaveDocDim(GlobalDimNumber: integer; GlobalDimValueCode: Code[20])
+    var
+        dimMgt: codeunit DimensionManagement;
+    begin
+        DimMgt.ValidateShortcutDimValues(GlobalDimNumber, GlobalDimValueCode, "New Dimension Set ID");
+
+    end;
 }
