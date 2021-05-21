@@ -9,7 +9,7 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 ApplicationArea = All;
             }
         }
-        addafter("Default Accounts")
+        addlast("content")
         {
             group("Payment requests")
             {
@@ -23,6 +23,18 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                     ApplicationArea = Basic, Suite;
                 }
                 field("Payment Delay Period"; Rec."Payment Delay Period")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Cost Place Dimension"; Rec."Cost Place Dimension")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Skip Check CF Forecast Filter"; Rec."Skip Check CF Forecast Filter")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Zero VAT Prod. Posting Group"; Rec."Zero VAT Prod. Posting Group")
                 {
                     ApplicationArea = Basic, Suite;
                 }

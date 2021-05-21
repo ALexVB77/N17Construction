@@ -2,6 +2,11 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
 {
     fields
     {
+        field(70003; Absents; Boolean)
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Absents';
+        }
         field(70040; "Show All Acts KC-2"; Boolean)
         {
             Description = 'NC 51373 AB';

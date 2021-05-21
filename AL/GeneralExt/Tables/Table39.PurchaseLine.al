@@ -88,6 +88,12 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
                 end;
             end;
         }
+        field(70021; Approver; Code[50])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Approver';
+            TableRelation = "User Setup";
+        }
     }
     var
         PurchSetup: Record "Purchases & Payables Setup";
@@ -103,19 +109,19 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
         IF xDimSetID = 0 then
             exit;
         PurchSetup.GET;
-        PurchSetup.TESTFIELD("Skip Check CF Forecast Dim.");
+        PurchSetup.TESTFIELD("Cost Place Dimension");
         IF PurchSetup."Skip Check CF Forecast Filter" <> '' THEN begin
-            DimSetEntry.SetRange("Dimension Code", PurchSetup."Skip Check CF Forecast Dim.");
+            DimSetEntry.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
             DimSetEntry.SetRange("Dimension Set ID", xDimSetID);
             IF DimSetEntry.FindSet() then begin
-                DimValue.SetRange("Dimension Code", PurchSetup."Skip Check CF Forecast Dim.");
+                DimValue.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
                 DimValue.SetFilter(Code, PurchSetup."Skip Check CF Forecast Filter");
                 DimValue.FilterGroup(2);
                 DimValue.Setrange(Code, DimSetEntry."Dimension Value Code");
                 DimValue.FilterGroup(0);
                 if not DimValue.IsEmpty then
                     exit;
-                DimValue.GET(PurchSetup."Skip Check CF Forecast Dim.", DimSetEntry."Dimension Value Code");
+                DimValue.GET(PurchSetup."Cost Place Dimension", DimSetEntry."Dimension Value Code");
                 if not DimValue."Check CF Forecast" then
                     exit;
             end else

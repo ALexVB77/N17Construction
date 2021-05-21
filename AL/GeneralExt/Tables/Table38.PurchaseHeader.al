@@ -2,7 +2,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
 {
     fields
     {
-        field(70002; "Process User"; Code[20])
+        field(70002; "Process User"; Code[50])
         {
             TableRelation = "User Setup";
             Description = 'NC 51373 AB';
@@ -101,7 +101,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             TableRelation = "Vendor Bank Account".Code WHERE("Vendor No." = field("Pay-to Vendor No."));
             ValidateTableRelation = false;
         }
-        field(70015; Controller; Code[20])
+        field(70015; Controller; Code[50])
         {
             Caption = 'Controller';
             Description = 'NC 51373 AB';
@@ -167,17 +167,18 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             Caption = 'KBK Code';
         }
-        field(70023; Approver; Code[20])
+        field(70023; Approver; Code[50])
         {
             Description = 'NC 51373 AB';
             Caption = 'Approver';
+            TableRelation = "User Setup";
         }
 
-        field(70024; "Pre-Approver"; Code[20])
+        field(70024; "Pre-Approver"; Code[50])
         {
             Description = 'NC 51373 AB';
             Caption = 'Pre-Approver';
-
+            TableRelation = "User Setup";
         }
         field(70026; PreApprover; Boolean)
         {
@@ -217,7 +218,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Approval Status';
         }
 
-        field(90004; Estimator; Code[20])
+        field(90004; Estimator; Code[50])
         {
             Caption = 'Estimator';
             Description = 'NC 51373 AB';
@@ -255,9 +256,9 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Location Document';
 
         }
-        field(90020; Storekeeper; Code[20])
+        field(90020; Storekeeper; Code[50])
         {
-            TableRelation = "User Setup"."User ID";
+            TableRelation = "User Setup";
             Description = 'NC 51373 AB';
             Editable = false;
             Caption = 'Storekeeper';

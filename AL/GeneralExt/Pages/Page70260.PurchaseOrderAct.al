@@ -248,7 +248,14 @@ page 70260 "Purchase Order Act"
                     ApplicationArea = All;
                     Editable = ReceiveAccountEditable;
                 }
-
+            }
+            part(PurchaseOrderActLines; "Purchase Order Act Subform")
+            {
+                ApplicationArea = All;
+                Editable = "Buy-from Vendor No." <> '';
+                Enabled = "Buy-from Vendor No." <> '';
+                SubPageLink = "Document No." = FIELD("No.");
+                UpdatePropagation = Both;
             }
             group("Payment Request")
             {
