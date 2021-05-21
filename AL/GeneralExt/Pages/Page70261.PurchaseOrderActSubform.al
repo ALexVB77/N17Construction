@@ -174,57 +174,64 @@ page 70261 "Purchase Order Act Subform"
                 }
             }  // repeater end
 
-            group(Control39)
+            group(LineTotals)
             {
                 ShowCaption = false;
-                group(Control33)
+                fixed(DefiningFixedControl)
                 {
-                    ShowCaption = false;
-                    field(AmountExclVAT; TotalPurchaseLine."Amount")
+                    group(AmountTotals)
                     {
-                        ApplicationArea = Basic, Suite;
-                        AutoFormatExpression = "Currency Code";
-                        AutoFormatType = 1;
-                        Caption = 'Amount Excl. VAT';
-                        Editable = false;
+                        Caption = 'Excluding VAT';
+                        field(AmountExclVAT; TotalPurchaseLine."Amount")
+                        {
+                            ApplicationArea = Basic, Suite;
+                            AutoFormatExpression = "Currency Code";
+                            AutoFormatType = 1;
+                            Caption = 'Amount';
+                            Editable = false;
+                        }
+                        field(AmountExclVATLCY; TotalPurchaseLine."Amount (LCY)")
+                        {
+                            ApplicationArea = Basic, Suite;
+                            Caption = 'Amount (LCY)';
+                            Editable = false;
+                        }
                     }
-                    field(AmountExclVATLCY; TotalPurchaseLine."Amount (LCY)")
+                    group(VATTotals)
                     {
-                        ApplicationArea = Basic, Suite;
-                        Caption = 'Amount Excl. VAT (LCY)';
-                        Editable = false;
+                        Caption = 'VAT';
+                        field(VATAmount; TotalPurchaseLine."Amount Including VAT" - TotalPurchaseLine."Amount")
+                        {
+                            ApplicationArea = Basic, Suite;
+                            AutoFormatExpression = "Currency Code";
+                            AutoFormatType = 1;
+                            //Caption = 'VAT Amount';
+                            Editable = false;
+                        }
+                        field(VATAmountLCY; TotalPurchaseLine."Amount Including VAT (LCY)" - TotalPurchaseLine."Amount (LCY)")
+                        {
+                            ApplicationArea = Basic, Suite;
+                            //Caption = 'VAT Amount (LCY)';
+                            Editable = false;
+                        }
                     }
-                    field(VATAmount; TotalPurchaseLine."Amount Including VAT" - TotalPurchaseLine."Amount")
+                    group(AmtIncVATTotals)
                     {
-                        ApplicationArea = Basic, Suite;
-                        AutoFormatExpression = "Currency Code";
-                        AutoFormatType = 1;
-                        Caption = 'VAT Amount';
-                        Editable = false;
-                    }
-                }
-                group(Control15)
-                {
-                    ShowCaption = false;
-                    field(VATAmountLCY; TotalPurchaseLine."Amount Including VAT (LCY)" - TotalPurchaseLine."Amount (LCY)")
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Caption = 'VAT Amount (LCY)';
-                        Editable = false;
-                    }
-                    field(AmountIncVAT; TotalPurchaseLine."Amount Including VAT")
-                    {
-                        ApplicationArea = Basic, Suite;
-                        AutoFormatExpression = "Currency Code";
-                        AutoFormatType = 1;
-                        Caption = 'Amount Including VAT';
-                        Editable = false;
-                    }
-                    field(AmountIncVATLCY; TotalPurchaseLine."Amount Including VAT (LCY)")
-                    {
-                        ApplicationArea = Basic, Suite;
-                        Caption = 'Amount Including VAT (LCY)';
-                        Editable = false;
+                        Caption = 'Including VAT';
+                        field(AmountIncVAT; TotalPurchaseLine."Amount Including VAT")
+                        {
+                            ApplicationArea = Basic, Suite;
+                            AutoFormatExpression = "Currency Code";
+                            AutoFormatType = 1;
+                            //Caption = 'Amount Including VAT';
+                            Editable = false;
+                        }
+                        field(AmountIncVATLCY; TotalPurchaseLine."Amount Including VAT (LCY)")
+                        {
+                            ApplicationArea = Basic, Suite;
+                            //Caption = 'Amount Including VAT (LCY)';
+                            Editable = false;
+                        }
                     }
                 }
             }

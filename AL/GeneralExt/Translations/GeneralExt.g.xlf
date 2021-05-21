@@ -3528,35 +3528,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 1067826989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Including VAT</source>
+        <trans-unit id="Page 38647611 - Control 1306780623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excluding VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 38647611 - Control 1534044927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Including VAT (LCY)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVATLCY - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 38647611 - Control 3446512155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount (LCY)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmountLCY - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountTotals - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 1249528335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Excl. VAT</source>
+          <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountExclVAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 3579438461 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Excl. VAT (LCY)</source>
+          <source>Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountExclVATLCY - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 2892191201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount</source>
+        <trans-unit id="Page 38647611 - Control 792987298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Including VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmount - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmtIncVATTotals - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Control 4021325286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATTotals - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description/Comment</source>

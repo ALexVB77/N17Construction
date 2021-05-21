@@ -4380,41 +4380,40 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 1067826989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Including VAT</source>
-          <target>Сумма с НДС</target>
+        <trans-unit id="Page 38647611 - Control 1306780623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excluding VAT</source>
+          <target>Без НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 38647611 - Control 1534044927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Including VAT (LCY)</source>
-          <target>Сумма с НДС (руб.)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountIncVATLCY - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 38647611 - Control 3446512155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount (LCY)</source>
-          <target>Сумма НДС (руб.)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmountLCY - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountTotals - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 1249528335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Excl. VAT</source>
-          <target>Сумма без НДС</target>
+          <source>Amount</source>
+          <target>Сумма</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountExclVAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 3579438461 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount Excl. VAT (LCY)</source>
-          <target>Сумма без НДС (руб.)</target>
+          <source>Amount (LCY)</source>
+          <target>Сумма (руб.)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmountExclVATLCY - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Control 2892191201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>VAT Amount</source>
-          <target>Сумма НДС</target>
+        <trans-unit id="Page 38647611 - Control 792987298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Including VAT</source>
+          <target>Включая НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATAmount - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control AmtIncVATTotals - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Control 4021325286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <target>НДС</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATTotals - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description/Comment</source>
