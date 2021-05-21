@@ -3017,7 +3017,7 @@
         </trans-unit>
         <trans-unit id="Page 2647103437 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Release,Posting,Order,Documents,Print/Send,Navigate</source>
-          <target>Новый,Процесс,Отчет,Выпустить,Учет,Заказ,Документы,Печать/отправить,Навигатор<</target>
+          <target>Новый,Процесс,Отчет,Выпустить,Учет,Заказ,Документы,Печать/отправить,Навигатор</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Property PromotedActionCategories</note>
