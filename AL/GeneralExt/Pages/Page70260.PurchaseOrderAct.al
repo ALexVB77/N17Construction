@@ -398,14 +398,15 @@ page 70260 "Purchase Order Act"
 
                 trigger OnAction()
                 var
-                    DocumentAttachmentDetails: Page "Document Attachment Details";
                     DocumentAttachment: Record "Document Attachment";
                     RecRef: RecordRef;
                 begin
                     CalcFields("Exists Attachment");
                     TestField("Exists Attachment");
-                    DocumentAttachmentDetails.OpenForRecRef(RecRef);
-                    DocumentAttachmentDetails.GetRecord(DocumentAttachment);
+                    DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
+                    DocumentAttachment.SetRange("Document Type", rec."Document Type");
+                    DocumentAttachment.SetRange("No.", Rec."No.");
+                    DocumentAttachment.FindFirst();
                     DocumentAttachment.Export(true);
                 end;
             }
