@@ -390,7 +390,7 @@ page 70260 "Purchase Order Act"
             {
                 ApplicationArea = All;
                 Caption = 'Documents View';
-                //Enabled = ShowDocEnabled;
+                Enabled = ShowDocEnabled;
                 Image = Export;
                 Promoted = true;
                 PromotedCategory = Process;
