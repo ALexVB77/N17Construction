@@ -192,7 +192,8 @@ page 70261 "Purchase Order Act Subform"
                     ApplicationArea = All;
                     ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
                 }
-            }
+            }  // repeater end
+
             group(TotalAmounts)
             {
                 ShowCaption = false;
@@ -213,10 +214,6 @@ page 70261 "Purchase Order Act Subform"
                         Caption = 'Amount Excl. VAT (LCY)';
                         Editable = false;
                     }
-                }
-                group(Split2)
-                {
-                    ShowCaption = false;
                     field(VATAmount; TotalPurchaseLine."Amount Including VAT" - TotalPurchaseLine."Amount")
                     {
                         ApplicationArea = All;
@@ -225,6 +222,9 @@ page 70261 "Purchase Order Act Subform"
                         Caption = 'VAT Amount';
                         Editable = false;
                     }
+                }
+                group(Split2)
+                {
                     ShowCaption = false;
                     field(VATAmountLCY; TotalPurchaseLine."Amount Including VAT (LCY)" - TotalPurchaseLine."Amount (LCY)")
                     {
@@ -232,9 +232,6 @@ page 70261 "Purchase Order Act Subform"
                         Caption = 'VAT Amount (LCY)';
                         Editable = false;
                     }
-                }
-                group(Split2)
-                {                                       
                     field(AmountIncVAT; TotalPurchaseLine."Amount Including VAT")
                     {
                         ApplicationArea = All;
@@ -251,6 +248,9 @@ page 70261 "Purchase Order Act Subform"
                     }
                 }
             }
+
+
+
         }
     }
 
