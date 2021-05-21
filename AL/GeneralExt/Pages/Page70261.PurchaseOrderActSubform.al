@@ -15,26 +15,6 @@ page 70261 "Purchase Order Act Subform"
         {
             repeater(PurchDetailLine)
             {
-                /*
-                field(Type; Rec.Type)
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                    trigger OnValidate()
-                    begin
-                        IF Type <> xRec.Type THEN
-                            IF Type=Type::Item THEN BEGIN
-                                grInventorySetup.GET;
-                                grInventorySetup.TESTFIELD("Temp Item Code");
-                                VALIDATE("No.", grInventorySetup."Temp Item Code");
-                            END;
-                        NoOnAfterValidate();
-                        UpdateEditableOnRow();
-                        UpdateTypeText();
-                        DeltaUpdateTotals();
-                    end;
-                }                    
-                */
                 field(FilteredTypeField; TypeAsText)
                 {
                     ApplicationArea = All;
@@ -194,10 +174,10 @@ page 70261 "Purchase Order Act Subform"
                 }
             }  // repeater end
 
-            group(TotalAmounts)
+            group(Control39)
             {
                 ShowCaption = false;
-                group(Split1)
+                group(Control33)
                 {
                     ShowCaption = false;
                     field(AmountExclVAT; TotalPurchaseLine."Amount")
@@ -223,7 +203,7 @@ page 70261 "Purchase Order Act Subform"
                         Editable = false;
                     }
                 }
-                group(Split2)
+                group(Control15)
                 {
                     ShowCaption = false;
                     field(VATAmountLCY; TotalPurchaseLine."Amount Including VAT (LCY)" - TotalPurchaseLine."Amount (LCY)")
