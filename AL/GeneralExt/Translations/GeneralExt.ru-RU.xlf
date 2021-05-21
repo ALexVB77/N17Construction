@@ -3506,8 +3506,8 @@
         </trans-unit>
         <trans-unit id="Page 2647103437 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>[NAB: SUGGESTION]Ко&amp;мментарии</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Co&amp;mments - Property Caption</note>
         </trans-unit>
@@ -3520,8 +3520,8 @@
         </trans-unit>
         <trans-unit id="Page 2647103437 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimensions</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>[NAB: SUGGESTION]Измерения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order - Action Dimensions - Property Caption</note>
         </trans-unit>
@@ -3996,8 +3996,8 @@
         </trans-unit>
         <trans-unit id="Page 3368656099 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimensions</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>[NAB: SUGGESTION]Измерения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Transfer Order Subform - Action Dimensions - Property Caption</note>
         </trans-unit>
@@ -4302,6 +4302,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2Prod - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate</source>
+          <target>Новый,Процесс,Отчет,Утвердить,Выпустить,Учет,Подготовить,Акт,Запросить утверждение,Печать/отправить,Навигатор</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Order Act</source>
           <target>Документы Акт и КС-2</target>
@@ -4383,35 +4390,30 @@
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
           <target>Акт</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action OrderAct - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <target>Ко&amp;мментарии</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Co&amp;mments - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimensions</source>
           <target>Измерения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Dimensions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attachments</source>
           <target>Вложения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action DocAttach - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documents View</source>
           <target>Просмотр Документа</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ViewAttachDoc - Property Caption</note>
         </trans-unit>
@@ -5560,24 +5562,6 @@
           <target>Перенести на счет ГУ</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries (Ext) - Action TransferToGD - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1418812251 - Field 3337756715 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1159403147">
-          <source>Document Line</source>
-          <target>Документ Строка</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Attachment (Ext) - Field Document Line - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1418812251 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1159403147">
-          <source>Document No.</source>
-          <target>Документ Но.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Attachment (Ext) - Field Document No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1418812251 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1159403147">
-          <source>Document Type</source>
-          <target>Документ Тип</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Attachment (Ext) - Field Document Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1850888649 - Field 2188116433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
           <source>Max Len. Pmt Purpose Text</source>
