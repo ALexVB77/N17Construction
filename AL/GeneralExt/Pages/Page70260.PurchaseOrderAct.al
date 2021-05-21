@@ -329,6 +329,89 @@ page 70260 "Purchase Order Act"
         }
     }
 
+    actions
+    {
+        area(navigation)
+        {
+            group(OrderAct)
+            {
+                Caption = 'O&rder Act';
+                Image = "Order";
+                action(Dimensions)
+                {
+                    AccessByPermission = TableData Dimension = R;
+                    ApplicationArea = Dimensions;
+                    Caption = 'Dimensions';
+                    Enabled = "No." <> '';
+                    Image = Dimensions;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    PromotedIsBig = true;
+                    ShortCutKey = 'Alt+D';
+
+                    trigger OnAction()
+                    begin
+                        ShowDocDim;
+                        CurrPage.SaveRecord;
+                    end;
+                }
+                action("Co&mments")
+                {
+                    ApplicationArea = Comments;
+                    Caption = 'Co&mments';
+                    Image = ViewComments;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    RunObject = Page "Purch. Comment Sheet";
+                    RunPageLink = "Document Type" = FIELD("Document Type"),
+                                  "No." = FIELD("No."),
+                                  "Document Line No." = CONST(0);
+                }
+                action(DocAttach)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Attachments';
+                    Image = Attach;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+
+                    trigger OnAction()
+                    var
+                        DocumentAttachmentDetails: Page "Document Attachment Details";
+                        RecRef: RecordRef;
+                    begin
+                        RecRef.GetTable(Rec);
+                        DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                        DocumentAttachmentDetails.RunModal;
+                    end;
+                }
+            }
+            action(ViewAttachDoc)
+            {
+                ApplicationArea = All;
+                Caption = 'Documents View';
+                Enabled = Rec."Exists Attachment";
+                Image = Export;
+                Promoted = true;
+                PromotedCategory = Process;
+                //PromotedCategory = Category8;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    DocumentAttachmentDetails: Page "Document Attachment Details";
+                    DocumentAttachment: Record "Document Attachment";
+                    RecRef: RecordRef;
+                begin
+                    TestField("Exists Attachment");
+                    DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                    DocumentAttachmentDetails.GetRecord(DocumentAttachment);
+                    DocumentAttachment.Export(true);
+                end;
+            }
+        }
+    }
+
     trigger OnOpenPage()
     begin
         if UserMgt.GetPurchasesFilter <> '' then begin
@@ -341,6 +424,11 @@ page 70260 "Purchase Order Act"
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         "Responsibility Center" := UserMgt.GetPurchasesFilter;
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        CalcFields("Exists Attachment");
     end;
 
     trigger OnAfterGetCurrRecord()
@@ -510,4 +598,6 @@ page 70260 "Purchase Order Act"
         */
 
     end;
+
+
 }

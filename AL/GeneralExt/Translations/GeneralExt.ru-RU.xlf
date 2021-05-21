@@ -4257,7 +4257,6 @@
         <trans-unit id="Page 2825229705 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attachments</source>
           <target>Вложения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DocAttach - Property Caption</note>
         </trans-unit>
@@ -4380,6 +4379,41 @@
           <target>Название банка поставщика</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Vendor Bank Account Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>O&amp;rder Act</source>
+          <target>Акт</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action OrderAct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <target>Ко&amp;мментарии</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <target>Измерения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <target>Вложения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action DocAttach - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents View</source>
+          <target>Просмотр Документа</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ViewAttachDoc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>
