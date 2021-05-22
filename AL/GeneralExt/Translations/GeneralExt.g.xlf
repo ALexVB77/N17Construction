@@ -3,6 +3,36 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="GeneralExt">
     <body>
       <group id="body">
+        <trans-unit id="Table 938572801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Apartments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 938572801 - Field 1898223579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Descriotion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 938572801 - Field 1618224966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Object No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 938572801 - Field 2565249915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Area (Projected)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Total Area (Project) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 938572801 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 938572801 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VPP,MOP,Flat,Garage,Parking,Storage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Type - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 286357085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Building project</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2342,6 +2372,16 @@
           <source>The estimator cannot create a document with the type Act!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
+        </trans-unit>
+        <trans-unit id="Page 938572801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Apartments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 938572801 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActionName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Action ActionName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2147051387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calc. Gen. Journal Update</source>
