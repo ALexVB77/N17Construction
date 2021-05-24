@@ -162,6 +162,14 @@ page 70261 "Purchase Order Act Subform"
                         DeltaUpdateTotals();
                     end;
                 }
+                field("VAT Difference"; Rec."VAT Difference")
+                {
+                    ApplicationArea = All;
+                    BlankZero = true;
+                    Editable = false;
+                    Enabled = NOT IsBlankNumber;
+                }
+
                 field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
@@ -172,6 +180,37 @@ page 70261 "Purchase Order Act Subform"
                     ApplicationArea = All;
                     ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
                 }
+
+                field("Utilities Dim. Value Code"; UtilitiesDimValueCode)
+                {
+                    Caption = 'Utilities Dim. Value Code';
+                    ApplicationArea = All;
+                    Editable = UtilitiesEnabled;
+                    Enabled = UtilitiesEnabled;
+
+                    trigger OnValidate()
+                    begin
+                        Rec.ValidateUtilitiesDimValueCode(UtilitiesDimValueCode);
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        DimValue: Record "Dimension Value";
+                    begin
+                        IF GLSetup."Utilities Dimension Code" <> '' then begin
+                            DimValue.FilterGroup(3);
+                            DimValue.SetRange("Dimension Code", GLSetup."Utilities Dimension Code");
+                            DimValue.FilterGroup(0);
+                            IF page.RunModal(0, DimValue) = Action::LookupOK then begin
+                                UtilitiesDimValueCode := DimValue.Code;
+                                Rec.ValidateUtilitiesDimValueCode(UtilitiesDimValueCode);
+                            end;
+                        end;
+                    end;
+
+                }
+
+
             }  // repeater end
 
             group(LineTotals)
@@ -254,12 +293,18 @@ page 70261 "Purchase Order Act Subform"
     end;
 
     trigger OnAfterGetCurrRecord()
+    var
+        DimSetEntry: Record "Dimension Set Entry";
     begin
         GetTotalPurchHeader();
         CalculateTotals();
         UpdateEditableOnRow();
         UpdateTypeText();
         //SetItemChargeFieldsStyle();
+        UtilitiesDimValueCode := '';
+        IF (GLSetup."Utilities Dimension Code" <> '') and (Rec."Dimension Set ID" <> 0) then
+            IF DimSetEntry.GET(Rec."Dimension Set ID", GLSetup."Utilities Dimension Code") then
+                UtilitiesDimValueCode := DimSetEntry."Dimension Value Code";
     end;
 
     trigger OnDeleteRecord(): Boolean
@@ -279,6 +324,8 @@ page 70261 "Purchase Order Act Subform"
         Currency.InitRoundingPrecision();
         TempOptionLookupBuffer.FillBuffer(TempOptionLookupBuffer."Lookup Type"::Purchases);
         //IsFoundation := ApplicationAreaMgmtFacade.IsFoundationEnabled();
+        GLSetup.Get();
+        UtilitiesEnabled := GLSetup."Utilities Dimension Code" <> '';
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
@@ -317,6 +364,8 @@ page 70261 "Purchase Order Act Subform"
     end;
 
     var
+
+        GLSetup: Record "General Ledger Setup";
         Currency: Record Currency;
         PurchasesSetup: Record "Purchases & Payables Setup";
         TotalPurchaseHeader: Record "Purchase Header";
@@ -336,9 +385,11 @@ page 70261 "Purchase Order Act Subform"
         IsSaaSExcelAddinEnabled: Boolean;
         SuppressTotals: Boolean;
         ShortcutDimCode: array[8] of Code[20];
+        UtilitiesDimValueCode: code[20];
         VATAmount: Decimal;
         InvoiceDiscountAmount: Decimal;
         InvoiceDiscountPct: Decimal;
+        UtilitiesEnabled: Boolean;
 
 
     procedure NoOnAfterValidate()
@@ -430,5 +481,10 @@ page 70261 "Purchase Order Act Subform"
                     END;
         END;
     end;
+
+    //ShowShortcutDimCode(ShortcutDimCode);
+    //DimMgt.GetShortcutDimensions("Dimension Set ID", ShortcutDimCode);
+    //GetShortcutDimensionValues.GetShortcutDimensions(DimSetID, ShortcutDimCode);
+    //ShortcutDimCode[i] := GetDimSetEntry(DimSetID, GLSetupShortcutDimCode[i]
 
 }
