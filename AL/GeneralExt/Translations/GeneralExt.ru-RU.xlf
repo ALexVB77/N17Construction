@@ -6,42 +6,36 @@
         <trans-unit id="Table 938572801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apartments</source>
           <target>Объекты</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 938572801 - Field 1898223579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Descriotion - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 938572801 - Field 1618224966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Code</source>
           <target>Объект Но.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Object No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 938572801 - Field 2565249915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Area (Projected)</source>
           <target>Общая Площадь (Проект.)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Total Area (Project) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 938572801 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type</source>
           <target>Тип</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 938572801 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>VPP,MOP,Flat,Garage,Parking,Storage</source>
           <target>ВПП,МОП,Квартира,Гараж,Машиноместо,Кладовка</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Type - Property OptionCaption</note>
         </trans-unit>
@@ -2855,17 +2849,10 @@
         </trans-unit>
         <trans-unit id="Page 938572801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apartments</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <target>Объекты</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 938572801 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActionName</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Action ActionName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2147051387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calc. Gen. Journal Update</source>
@@ -5488,6 +5475,13 @@
           <target>Housing,Construction</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Company Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1049217136 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>CRM GUID</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM GUID - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 788841756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Check CF Forecast</source>

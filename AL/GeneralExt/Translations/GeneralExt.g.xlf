@@ -2378,11 +2378,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 938572801 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActionName</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Action ActionName - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2147051387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calc. Gen. Journal Update</source>
           <note from="Developer" annotates="general" priority="2"></note>
