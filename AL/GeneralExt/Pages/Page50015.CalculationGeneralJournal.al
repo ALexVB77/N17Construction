@@ -512,4 +512,6 @@ page 50015 "Calculation General Journal"
         END;
         EXIT(FALSE);
     end;
+
+
 }

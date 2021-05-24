@@ -8,4 +8,23 @@ tableextension 99991 "Gen. Journal Line BS" extends "Gen. Journal Line"
             Caption = 'Payer KPP';
         }
     }
+    procedure setupNewLine2(PageNo: integer)
+
+    begin
+        CASE PageNo OF
+            PAGE::"Payment Journal":
+                BEGIN
+                    VALIDATE("Bank Payment Type", "Bank Payment Type"::"Computer Check");
+                    VALIDATE("Payment Method", "Payment Method"::Electronic);
+                    VALIDATE("Payment Subsequence", '5');
+                    VALIDATE("Payment Type", '01');
+                END;
+            PAGE::"Cash Order Journal":
+                BEGIN
+                    "Bank Payment Type" := "Bank Payment Type"::"Computer Check";
+                    "Document Type" := "Document Type"::" ";
+                END;
+        END;
+
+    end;
 }

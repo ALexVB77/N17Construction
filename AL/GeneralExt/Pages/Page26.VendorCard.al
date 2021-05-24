@@ -10,5 +10,4 @@ pageextension 80026 "Vendor Card (Ext)" extends "Vendor Card"
             }
         }
     }
-
 }
