@@ -256,6 +256,8 @@ page 70262 "Purchase List Act"
                         PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"KC-2");
                     end;
                 }
+
+                /*
                 action(NewActProd)
                 {
                     ApplicationArea = Basic, Suite;
@@ -276,6 +278,8 @@ page 70262 "Purchase List Act"
                         PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"Act (Production)");
                     end;
                 }
+                */
+
                 action(NewAdvance)
                 {
                     ApplicationArea = Basic, Suite;
