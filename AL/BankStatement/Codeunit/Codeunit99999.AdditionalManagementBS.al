@@ -54,6 +54,13 @@ codeunit 99999 "Additional Management BS"
         IF (NOT gjl.ISEMPTY()) THEN ERROR(locText001);
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterSetupNewLine', '', false, false)]
+    local procedure OnAfterSetupNewLine(var GenJournalLine: Record "Gen. Journal Line"; GenJournalTemplate: Record "Gen. Journal Template"; GenJournalBatch: Record "Gen. Journal Batch"; LastGenJournalLine: Record "Gen. Journal Line"; Balance: Decimal; BottomLine: Boolean);
+    begin
+        //PAGE::"Payment Journal"
+        GenJournalLine.setupNewLine2(PAGE::"Payment Journal");
+    end;
+
     // t 81 <<
 
     // t 1237 >>
