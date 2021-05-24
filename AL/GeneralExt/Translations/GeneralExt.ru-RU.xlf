@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="GeneralExt">
     <body>
@@ -5475,27 +5475,57 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Company Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3698907964 - Field 238175783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3993128796">
+          <source>Passport issued</source>
+          <target>Паспорт выдан</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Delivery of passport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3698907964 - Field 36154713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3993128796">
+          <source>Passport No.</source>
+          <target>Номер паспорта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Passport No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3698907964 - Field 939626701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3993128796">
+          <source>Passport series</source>
+          <target>Паспорт серия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Passport Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3698907964 - Field 684573827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3993128796">
+          <source>Registration address</source>
+          <target>Адрес регистрации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Registration - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1049217136 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>CRM GUID</source>
           <target>CRM Guid</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM GUID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Agreement amount</source>
+          <target>Сумма договора</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Amount - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1828300862 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>Invest Agreement Type</source>
-          <target>Вид Договора</target>
+          <source>Invest agreement type</source>
+          <target>Вид договора</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Sub Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1828300862 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>Basic,Additional Agreement</source>
-          <target>Основной,Доп.Соглашение</target>
+          <source>Basic,Additional agreement</source>
+          <target>Основной,Доп. соглашение</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Sub Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>Agreement Type</source>
-          <target>Тип Договора</target>
+          <source>Agreement type</source>
+          <target>Тип договора</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property Caption</note>
         </trans-unit>
@@ -5505,16 +5535,349 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1397166390 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Owner 1</source>
+          <target>Долевой взнос дольщика 1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1889689170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Amount</source>
+          <target>Долевой взнос</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 1 Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3779043835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Owner 2</source>
+          <target>Долевой взнос дольщика 2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2909735807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Amount</source>
+          <target>Долевой взнос</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 2 Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 121773156 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Owner 3</source>
+          <target>Долевой взнос дольщика 3</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 606557392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Amount</source>
+          <target>Долевой взнос</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 3 Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2503650601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Owner 4</source>
+          <target>Долевой взнос дольщика 4</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2582176261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Amount</source>
+          <target>Долевой взнос</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 4 Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3141347218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Owner 5</source>
+          <target>Долевой взнос дольщика 5</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1684029462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Contribution Amount</source>
+          <target>Долевой взнос</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Amount part 5 Amount - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 3411967124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Cost object (RUB)</source>
           <target>Стоимость Объекта (РУБ)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Apartment Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3080071771 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Balance owner 1 (LCY)</source>
+          <target>Баланс дольщик 1 (руб)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Balance Cust 1 (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3932353590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Balance owner 2 (LCY)</source>
+          <target>Баланс дольщик 2 (руб)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Balance Cust 2 (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2230241901 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Balance owner 3 (LCY)</source>
+          <target>Баланс дольщик 3 (руб)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Balance Cust 3 (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 918096768 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Balance owner 4 (LCY)</source>
+          <target>Баланс дольщик 4 (руб)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Balance Cust 4 (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1633428983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Balance owner 5 (LCY)</source>
+          <target>Баланс дольщик 5 (руб)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Balance Cust 5 (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3076155525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Birthdate and palce</source>
+          <target>Место и дата</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C1 Place and BirthDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2741568424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Passport issued</source>
+          <target>Паспорт выдан</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C2 Delivery of passport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2269654740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Email</source>
+          <target>Адрес эд. почты</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C2 E-Mail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 96383522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Name</source>
+          <target>ФИО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C2 name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2785472250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Passport No.</source>
+          <target>Номер паспорта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C2 Passport No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 262857798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Passport Series</source>
+          <target>Паспот серия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C2 Passport Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 837714484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Registration Adress</source>
+          <target>Адрес регистрации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C2 Registration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3523391023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Phone</source>
+          <target>Телефон</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C2 Telephone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3613545015 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Passport issued</source>
+          <target>Паспорт выдан</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C3 Delivery of passport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1927128659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Email</source>
+          <target>Адрес эд. почты</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C3 E-Mail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 4278350641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Name</source>
+          <target>ФИО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C3 name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3016398429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Passport Series</source>
+          <target>Паспот серия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C3 Passport Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2091288703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Passport No.</source>
+          <target>Номер паспорта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C3 Passport № - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1108558163 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Registration Address</source>
+          <target>Адрес регистрации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C3 Registration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3144391656 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Phone</source>
+          <target>Телефон</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C3 Telephone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2195203972 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Name</source>
+          <target>ФИО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C4 name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2433406309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Phone</source>
+          <target>Телефон</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C4 Telephone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3007580723 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Name</source>
+          <target>ФИО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C5 Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 314053406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Phone</source>
+          <target>Телефон</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field C5 Telephone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2242835150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Owner 2</source>
+          <target>Дольщик 2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1605138533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Owner 3</source>
+          <target>Дольщик 3</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2711622744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Owner 4</source>
+          <target>Дольщик 4</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2073926127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Owner 5</source>
+          <target>Дольщшик 5</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>CRM GUID</source>
+          <target>CRM Guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field CRM GUID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 228588990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 1 Name</source>
+          <target>Клиент 1 название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 1 Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1931804971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 2 Name</source>
+          <target>Клиент 2 название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 2 Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 325299739 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 2 No.</source>
+          <target>Клиент 2 Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 2 No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2978445596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 3 Name</source>
+          <target>Клиент 3 название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 3 Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 444402308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 2 No.</source>
+          <target>Клиент 2 Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 3 No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1029227849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 4 Name</source>
+          <target>Клиент 4 название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 4 Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2731277161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 4 No.</source>
+          <target>Клиент 4 Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 4 No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 889498746 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 5 Name</source>
+          <target>Клиент 5 название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 5 Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 223142994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Customer 5 No.</source>
+          <target>Клиент 5 Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Customer 5 No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3732593877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Finishing</source>
+          <target>Отделка</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Finishing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 469287241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Including Finishing Price</source>
+          <target>Включая стоимость отделки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Including Finishing Price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 569985976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Installment % (shareholder 1)</source>
+          <target>Рассрочка % (дольщик 1)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Installment plan 1 % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 3405135569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Installment % (shareholder 2)</source>
+          <target>Рассрочка % (дольщик 2)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Installment plan 2 % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2790496810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Installment % (shareholder 3)</source>
+          <target>Рассрочка % (дольщик 3)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Installment plan 3 % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2197423416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Cost installment (RUB)</source>
+          <target>Стоимость рассрочки (руб)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Installment Plan Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2824587825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Object of Investing</source>
+          <target>Объект инвестирования</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Object of Investing - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 907492870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>Payment Type</source>
-          <target>Тип Оплаты</target>
+          <source>Payment type</source>
+          <target>Тип оплаты</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Payment Type - Property Caption</note>
         </trans-unit>
@@ -5523,6 +5886,30 @@
           <target>100%,Рассрочка,Ипотека</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Payment Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1939097362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Share in property</source>
+          <target>Несколько дольщиков</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Share in property 3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 1939097362 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>No,Two shareholders,Three shareholders,Four shareholders,Five shareholders</source>
+          <target>Нет,Два дольщика,Три дольщика,Четыре дольщика,Пять дольщиков</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Share in property 3 - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Status</source>
+          <target>Статус</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 788841756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Check CF Forecast</source>
