@@ -5,6 +5,25 @@ codeunit 99999 "Additional Management BS"
     // TABLES
 
     // t 81 >>
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerAccount', '', false, false)]
+    local procedure OnAfterAccountNoOnValidateGetCustomerAccount(var GenJournalLine: Record "Gen. Journal Line"; var Customer: Record Customer; CallingFieldNo: Integer);
+    var
+        compInfo: Record "Company Information";
+    begin
+        compInfo.get();
+        GenJournalLine."Payer KPP" := compInfo."KPP Code";
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorAccount', '', false, false)]
+    local procedure OnAfterAccountNoOnValidateGetVendorAccount(var GenJournalLine: Record "Gen. Journal Line"; var Vendor: Record Vendor; CallingFieldNo: Integer);
+    var
+        compInfo: Record "Company Information";
+    begin
+        compInfo.get();
+        GenJournalLine."Payer KPP" := compInfo."KPP Code";
+    end;
+
+
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnModifyOnBeforeTestCheckPrinted', '', false, false)]
     local procedure OnModifyOnBeforeTestCheckPrinted(var GenJournalLine: Record "Gen. Journal Line"; var IsHandled: Boolean);
     begin
