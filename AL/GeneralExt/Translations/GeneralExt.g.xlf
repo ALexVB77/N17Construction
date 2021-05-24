@@ -5043,6 +5043,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Status App Act - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Field 691798731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
+          <source>Giv. Manuf. Bin Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Giv. Manuf. Bin Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Field 222185691 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
+          <source>Giv. Manuf. Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Giv. Manuf. Location Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1982677864 - Field 3632164407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Vat Agent Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>

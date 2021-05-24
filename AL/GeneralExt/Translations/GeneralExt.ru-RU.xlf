@@ -6846,6 +6846,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue сontroller - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Field 691798731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
+          <source>Giv. Manuf. Bin Code</source>
+          <target>Дав. Пр-во Код Ячейки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Giv. Manuf. Bin Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Field 222185691 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
+          <source>Giv. Manuf. Location Code</source>
+          <target>Дав. Пр-во Код Склада</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Giv. Manuf. Location Code - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
