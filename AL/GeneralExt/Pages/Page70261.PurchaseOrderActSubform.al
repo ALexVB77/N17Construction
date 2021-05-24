@@ -280,6 +280,46 @@ page 70261 "Purchase Order Act Subform"
         }
     }
 
+    actions
+    {
+        area(processing)
+        {
+            group("&Line")
+            {
+                Caption = '&Line';
+                Image = Line;
+                group("Related Information")
+                {
+                    Caption = 'Related Information';
+                    action(Dimensions)
+                    {
+                        AccessByPermission = TableData Dimension = R;
+                        ApplicationArea = Dimensions;
+                        Caption = 'Dimensions';
+                        Image = Dimensions;
+                        ShortCutKey = 'Alt+D';
+
+                        trigger OnAction()
+                        begin
+                            ShowDimensions();
+                        end;
+                    }
+                    action("Co&mments")
+                    {
+                        ApplicationArea = Comments;
+                        Caption = 'Co&mments';
+                        Image = ViewComments;
+
+                        trigger OnAction()
+                        begin
+                            ShowLineComments();
+                        end;
+                    }
+                }
+            }
+        }
+    }
+
     trigger OnOpenPage()
     var
         ServerSetting: Codeunit "Server Setting";

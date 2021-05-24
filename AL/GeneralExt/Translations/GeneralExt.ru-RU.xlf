@@ -4353,6 +4353,34 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control Utilities Dim. Value Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 38647611 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Line</source>
+          <target>&amp;Строка</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action &amp;Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Action 2499942453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Related Information</source>
+          <target>Связанные сведения]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Related Information - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <target>Ко&amp;мментарии</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <target>Измерения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Dimensions - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
           <target>Список прогнозов</target>
@@ -5592,7 +5620,6 @@
         <trans-unit id="TableExtension 476953720 - Field 2267463381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
           <source>UTILITIES Dim. Code</source>
           <target>ИНЖ. СЕТЬ Код измерения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Utilities Dimension Code - Property Caption</note>
         </trans-unit>
