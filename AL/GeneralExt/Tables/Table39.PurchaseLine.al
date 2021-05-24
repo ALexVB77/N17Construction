@@ -130,4 +130,46 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
         TESTFIELD("Forecast Entry", 0);
     end;
 
+    procedure ValidateUtilitiesDimValueCode(var UtilitiesDimCode: code[20])
+    var
+        GLSetup: Record "General Ledger Setup";
+        TempDimSetEntry: Record "Dimension Set Entry" temporary;
+        DimVal: Record "Dimension Value";
+        DimMgt: Codeunit DimensionManagement;
+        LocText003: Label '%1 is not an available %2 for that dimension.';
+    begin
+        GLSetup.Get();
+        GLSetup.TestField("Utilities Dimension Code");
+
+        DimVal.SetRange("Dimension Code", GLSetup."Utilities Dimension Code");
+        if UtilitiesDimCode <> '' then begin
+            DimVal.SetRange(Code, UtilitiesDimCode);
+            if not DimVal.FindFirst then begin
+                DimVal.SetFilter(Code, StrSubstNo('%1*', UtilitiesDimCode));
+                if DimVal.FindFirst then
+                    UtilitiesDimCode := DimVal.Code
+                else
+                    Error(
+                      LocText003,
+                      UtilitiesDimCode, DimVal.FieldCaption(Code));
+            end;
+            DimVal.Get(GLSetup."Utilities Dimension Code", UtilitiesDimCode);
+            if not DimMgt.CheckDim(DimVal."Dimension Code") then
+                Error(DimMgt.GetDimErr);
+            if not DimMgt.CheckDimValue(DimVal."Dimension Code", UtilitiesDimCode) then
+                Error(DimMgt.GetDimErr);
+        end;
+        DimMgt.GetDimensionSet(TempDimSetEntry, Rec."Dimension Set ID");
+        if TempDimSetEntry.Get(TempDimSetEntry."Dimension Set ID", DimVal."Dimension Code") then
+            if TempDimSetEntry."Dimension Value Code" <> UtilitiesDimCode then
+                TempDimSetEntry.Delete();
+        if UtilitiesDimCode <> '' then begin
+            TempDimSetEntry."Dimension Code" := DimVal."Dimension Code";
+            TempDimSetEntry."Dimension Value Code" := DimVal.Code;
+            TempDimSetEntry."Dimension Value ID" := DimVal."Dimension Value ID";
+            if TempDimSetEntry.Insert() then;
+        end;
+        Rec."Dimension Set ID" := DimMgt.GetDimensionSetID(TempDimSetEntry);
+    end;
+
 }

@@ -4173,12 +4173,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewAct - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 3049774821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Act (Production)</source>
-          <target>Акт (Production)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewActProd - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - Action 3148315194 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Advance</source>
           <target>Авансовый отчет</target>
@@ -4190,12 +4184,6 @@
           <target>КС-2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 2078083881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>KC-2 (Production)</source>
-          <target>КС-2 (Production)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2Prod - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate</source>
@@ -4358,6 +4346,40 @@
           <target>Тип</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control FilteredTypeField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Control 3904971218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Utilities Dim. Value Code</source>
+          <target>ИНЖ. СЕТЬ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control Utilities Dim. Value Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Action 1402615620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Line</source>
+          <target>&amp;Строка</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action &amp;Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Action 2499942453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Related Information</source>
+          <target>Связанные сведения]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Related Information - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <target>Ко&amp;мментарии</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38647611 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <target>Измерения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Dimensions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
@@ -5983,6 +6005,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 476953720 - Field 2267463381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
+          <source>UTILITIES Dim. Code</source>
+          <target>ИНЖ. СЕТЬ Код измерения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Utilities Dimension Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 3752981272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Temp Item Code</source>
           <target>Временный Товар Код</target>
@@ -6523,6 +6551,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Vendor Bank Account No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Method 413587170 - NamedType 3744062858" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 363487199">
+          <source>%1 is not an available %2 for that dimension.</source>
+          <target>%1 не доступно %2 для этого измерения.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Method ValidateUtilitiesDimValueCode - NamedType LocText003</note>
+        </trans-unit>
         <trans-unit id="TableExtension 363487199 - Field 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Approver</source>
           <target>Утверждающий</target>
@@ -6757,6 +6791,34 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Amount Without VAT - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 624138068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Amount (LCY)</source>
+          <target>Контроль Лимита Сумма с НДС (руб.)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3625617217 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Date Filter</source>
+          <target>Контроль Лимита Фильтр по Дате</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Date Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 2640133388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Ending Date</source>
+          <target>Контроль Лимита Дата Конца</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3426844729 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Starting Date</source>
+          <target>Контроль Лимита Дата Начала</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Starting Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 3064476469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Don't Check CashFlow</source>
           <target>Не проверять CashFlow</target>
@@ -6804,6 +6866,13 @@
           <target>Аналитика проекта Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Project Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3738848438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Purch. Original Amt. (LCY)</source>
+          <target>Закуплено Сумма (руб.)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Purch. Original Amt. (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4278954678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Unbound Cost</source>
@@ -7164,6 +7233,18 @@
           <target>[1] Контролер</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue сontroller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Field 691798731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
+          <source>Giv. Manuf. Bin Code</source>
+          <target>Дав. Пр-во Код Ячейки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Giv. Manuf. Bin Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Field 222185691 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
+          <source>Giv. Manuf. Location Code</source>
+          <target>Дав. Пр-во Код Склада</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Giv. Manuf. Location Code - Property Caption</note>
         </trans-unit>
       </group>
     </body>

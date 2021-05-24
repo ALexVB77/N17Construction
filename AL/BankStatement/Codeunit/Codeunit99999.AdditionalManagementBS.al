@@ -5,6 +5,25 @@ codeunit 99999 "Additional Management BS"
     // TABLES
 
     // t 81 >>
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetCustomerAccount', '', false, false)]
+    local procedure OnAfterAccountNoOnValidateGetCustomerAccount(var GenJournalLine: Record "Gen. Journal Line"; var Customer: Record Customer; CallingFieldNo: Integer);
+    var
+        compInfo: Record "Company Information";
+    begin
+        compInfo.get();
+        GenJournalLine."Payer KPP" := compInfo."KPP Code";
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorAccount', '', false, false)]
+    local procedure OnAfterAccountNoOnValidateGetVendorAccount(var GenJournalLine: Record "Gen. Journal Line"; var Vendor: Record Vendor; CallingFieldNo: Integer);
+    var
+        compInfo: Record "Company Information";
+    begin
+        compInfo.get();
+        GenJournalLine."Payer KPP" := compInfo."KPP Code";
+    end;
+
+
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnModifyOnBeforeTestCheckPrinted', '', false, false)]
     local procedure OnModifyOnBeforeTestCheckPrinted(var GenJournalLine: Record "Gen. Journal Line"; var IsHandled: Boolean);
     begin
@@ -33,6 +52,13 @@ codeunit 99999 "Additional Management BS"
         gjl.SETFILTER("Bal. Account No.", '<>%1', GenJournalLine."Bal. Account No.");
         gjl.FILTERGROUP(0);
         IF (NOT gjl.ISEMPTY()) THEN ERROR(locText001);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterSetupNewLine', '', false, false)]
+    local procedure OnAfterSetupNewLine(var GenJournalLine: Record "Gen. Journal Line"; GenJournalTemplate: Record "Gen. Journal Template"; GenJournalBatch: Record "Gen. Journal Batch"; LastGenJournalLine: Record "Gen. Journal Line"; Balance: Decimal; BottomLine: Boolean);
+    begin
+        //PAGE::"Payment Journal"
+        GenJournalLine.setupNewLine2(PAGE::"Payment Journal");
     end;
 
     // t 81 <<
