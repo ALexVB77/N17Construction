@@ -3633,11 +3633,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action &amp;Line - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 38647611 - Action 2499942453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Related Information</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Related Information - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 38647611 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <note from="Developer" annotates="general" priority="2"></note>
