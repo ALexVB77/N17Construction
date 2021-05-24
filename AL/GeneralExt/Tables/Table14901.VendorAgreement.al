@@ -99,10 +99,41 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
             Caption = 'Paid With VAT';
             Description = '50085';
         }
-
         field(70018; "Unbound Cost"; Decimal)
         {
             Caption = 'Unbound Cost';
+        }
+        field(70020; "Check Limit Starting Date"; Date)
+        {
+            Caption = 'Check Limit Starting Date';
+            Description = 'NC 51432 PA';
+        }
+        field(70021; "Check Limit Ending Date"; Date)
+        {
+            Caption = 'Check Limit Ending Date';
+            Description = 'NC 51432 PA';
+        }
+        field(70022; "Check Limit Amount (LCY)"; Decimal)
+        {
+            Caption = 'Check Limit Amount (LCY)';
+            Description = 'NC 51432 PA';
+        }
+        field(70023; "Purch. Original Amt. (LCY)"; Decimal)
+        {
+            Caption = 'Purch. Original Amt. (LCY)';
+            Description = 'NC 51432 PA';
+            FieldClass = FlowField;
+            CalcFormula = - Sum("Detailed Vendor Ledg. Entry"."Amount (LCY)" where("Entry Type" = filter("Initial Entry"),
+                                                                                   "Document Type" = filter(Invoice | "Credit Memo"),
+                                                                                   "Vendor No." = field("Vendor No."),
+                                                                                   "Agreement No." = field("No."),
+                                                                                   "Posting Date" = field("Check Limit Date Filter")));
+        }
+        field(70024; "Check Limit Date Filter"; Date)
+        {
+            Caption = 'Check Limit Date Filter';
+            Description = 'NC 51432 PA';
+            FieldClass = FlowField;
         }
 
         field(70025; "Paid With VAT Date Filter"; Date)

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="GeneralExt">
     <body>
@@ -5508,7 +5508,6 @@
         <trans-unit id="TableExtension 2936356446 - Field 3411967124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Cost object (RUB)</source>
           <target>Стоимость Объекта (РУБ)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Apartment Amount - Property Caption</note>
         </trans-unit>
@@ -6370,6 +6369,34 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Amount Without VAT - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 624138068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Amount (LCY)</source>
+          <target>Контроль Лимита Сумма с НДС (руб.)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3625617217 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Date Filter</source>
+          <target>Контроль Лимита Фильтр по Дате</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Date Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 2640133388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Ending Date</source>
+          <target>Контроль Лимита Дата Конца</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3426844729 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Starting Date</source>
+          <target>Контроль Лимита Дата Начала</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Starting Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 3064476469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Don't Check CashFlow</source>
           <target>Не проверять CashFlow</target>
@@ -6417,6 +6444,13 @@
           <target>Аналитика проекта Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Project Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3738848438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Purch. Original Amt. (LCY)</source>
+          <target>Закуплено Сумма (руб.)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Purch. Original Amt. (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4278954678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Unbound Cost</source>

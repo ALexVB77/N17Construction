@@ -5043,6 +5043,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Amount Without VAT - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 624138068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Amount (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3625617217 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Date Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Date Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 2640133388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3426844729 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Check Limit Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Starting Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 3064476469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Don't Check CashFlow</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5082,6 +5102,11 @@
           <source>Project Dimension Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Project Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Field 3738848438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Purch. Original Amt. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Purch. Original Amt. (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4278954678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Unbound Cost</source>
