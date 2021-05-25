@@ -103,10 +103,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 938572801 - Field 1898223579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 938572801 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Descriotion - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 938572801 - Field 1618224966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Code</source>
@@ -3588,6 +3588,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control General - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3861133141 - Control 4164513963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Hand over status</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3602,6 +3607,16 @@
           <source>Remaining Amount (LCY)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Remaining Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 3673127570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment object</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control InvestingObject - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 2645159796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Investing Object Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
