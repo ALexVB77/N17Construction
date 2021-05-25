@@ -55,6 +55,15 @@ page 70260 "Purchase Order Act"
                     ApplicationArea = All;
                     Editable = false;
                 }
+                field("Prices Including VAT"; "Prices Including VAT")
+                {
+                    ApplicationArea = All;
+
+                    trigger OnValidate()
+                    begin
+                        PricesIncludingVATOnAfterValid;
+                    end;
+                }
                 group(DocAmounts)
                 {
                     Caption = 'Amounts';
@@ -211,6 +220,15 @@ page 70260 "Purchase Order Act"
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
+
+                    trigger OnValidate()
+                    var
+                        VendAgreement: Record "Vendor Agreement";
+                    begin
+                        if "Agreement No." <> '' then
+                            if VendAgreement.Get(Rec."Buy-from Vendor No.", Rec."Agreement No.") then
+                                Rec."Purchaser Code" := VendAgreement."Purchaser Code";
+                    end;
                 }
                 field("Vendor Invoice No."; Rec."Vendor Invoice No.")
                 {
@@ -341,6 +359,24 @@ page 70260 "Purchase Order Act"
             {
                 Caption = 'O&rder Act';
                 Image = "Order";
+                action(Statistics)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Statistics';
+                    Image = Statistics;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    PromotedIsBig = true;
+                    ShortCutKey = 'F7';
+
+                    trigger OnAction()
+                    begin
+                        CalcInvDiscForHeader;
+                        Commit();
+                        PAGE.RunModal(PAGE::"Purchase Statistics", Rec);
+                        //PurchCalcDiscByType.ResetRecalculateInvoiceDisc(Rec);
+                    end;
+                }
                 action(Dimensions)
                 {
                     AccessByPermission = TableData Dimension = R;
@@ -390,6 +426,21 @@ page 70260 "Purchase Order Act"
                     end;
                 }
             }
+            action(EnterBasedOn)
+            {
+                ApplicationArea = All;
+                Caption = 'Enter Based On';
+                Image = Filed;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                begin
+                    PaymentOrderMgt.ActInterBasedOn(Rec);
+                end;
+            }
+
             action(ViewAttachDoc)
             {
                 ApplicationArea = All;
@@ -492,6 +543,7 @@ page 70260 "Purchase Order Act"
         ApprovalEntry: Record "Approval Entry";
         gcERPC: Codeunit "ERPC Funtions";
         UserMgt: Codeunit "User Setup Management";
+        PaymentOrderMgt: Codeunit "Payment Order Management";
         ActTypeEditable: Boolean;
         EstimatorEnable: Boolean;
         ProblemType: text;
@@ -507,6 +559,12 @@ page 70260 "Purchase Order Act"
         if Rec."Vendor Bank Account No." <> '' then
             if VendorBankAccount.get("Vendor Bank Account No.") then
                 exit(VendorBankAccount.Name + VendorBankAccount."Name 2");
+    end;
+
+    local procedure PricesIncludingVATOnAfterValid()
+    begin
+        CurrPage.Update;
+        CalcFields("Invoice Discount Amount");
     end;
 
     procedure PreApproveOnLookup()

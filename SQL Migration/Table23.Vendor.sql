@@ -4,7 +4,7 @@ GO
 -- Base Table
 INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Vendor$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
-	   [No_]
+	 [No_]
       ,[Name]
       ,[Search Name]
       ,[Name 2]
@@ -96,7 +96,7 @@ INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Vendor$437dbf0e-84ff-
       ,[Agreement Nos_]
 )
 SELECT
-	   [No_]
+	 [No_]
       ,NULL --[Name]
       ,NULL --[Search Name]
       ,NUll --[Name 2]
@@ -194,7 +194,6 @@ INSERT INTO [dbo].[CRONUS Россия ЗАО$Vendor$2944687f-9cf8-4134-a24c-e21
            ,[Vat Agent Posting Group]
            ,[Giv_ Manuf_ Location Code]
            ,[Giv_ Manuf_ Bin Code])
-     /****** Script for SelectTopNRows command from SSMS  ******/
 SELECT 
       ,[No_]
       ,NULL
