@@ -88,16 +88,16 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                /*
                 field("Purch. Original Amt. (LCY)"; Rec."Purch. Original Amt. (LCY)")
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                
+
                 field(CtrlDeviation; Rec."Check Limit Amount (LCY)" - Rec."Purch. Original Amt. (LCY)")
                 {
                     ApplicationArea = Basic, Suite;
-                }*/
+                    Caption = 'Deviation';
+                }
             }
         }
         addbefore(Control1905767507)

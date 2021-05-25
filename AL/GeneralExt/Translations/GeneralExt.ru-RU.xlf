@@ -1374,21 +1374,18 @@
         <trans-unit id="Table 2332267737 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Date</source>
           <target>Дата создания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Time</source>
           <target>Время создания</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create Time - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create User</source>
           <target>Создал</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create User - Property Caption</note>
         </trans-unit>
@@ -5519,6 +5516,13 @@
           <target>Контроль Лимита Закупки</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Purchase Limit Control - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Control 2379059534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Deviation</source>
+          <target>Отклонение (руб.)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control CtrlDeviation - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 1658766258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Attachments</source>
