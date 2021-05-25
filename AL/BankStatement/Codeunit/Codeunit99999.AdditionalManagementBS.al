@@ -185,6 +185,23 @@ codeunit 99999 "Additional Management BS"
             ism.setString('T1237.BankAccountCode', FORMAT(fldRef.VALUE));
         END;
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Process Data Exch.", 'OnBeforeFormatFieldValue', '', false, false)]
+    local procedure OnBeforeFormatFieldValue(var TransformedValue: Text; DataExchField: Record "Data Exch. Field"; var DataExchFieldMapping: Record "Data Exch. Field Mapping"; FieldRef: FieldRef; DataExchColumnDef: Record "Data Exch. Column Def"; var IsHandled: Boolean);
+    var
+        dt: Date;
+    begin
+        case FieldRef.Type of
+            FieldType::Date:
+                begin
+                    IsHandled := evaluate(dt, TransformedValue);
+                    if (IsHandled) then begin
+                        FieldRef.Value := dt;
+                    end;
+                end;
+        end;
+    end;
+
     // cu 1201 <<
 
     // cu 1210 >>

@@ -5337,6 +5337,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[3] - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
+          <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
+          <target>Новый,Процесс,Отчет,Категория4,Касса,Категория6,Категория7,Категория8,Категория9</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Cash Account Card (Ext) - Property PromotedActionCategories</note>
+        </trans-unit>
         <trans-unit id="PageExtension 759612072 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 759612072">
           <source>Do you want to replace the existing definition for template %1?</source>
           <target>Заменить существующее определение для шаблона %1?</target>
