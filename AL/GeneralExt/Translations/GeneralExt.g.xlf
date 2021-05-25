@@ -2348,6 +2348,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2873201457" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActInterBasedOn</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ActInterBasedOn</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2292960103" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SetPurchLineApprover</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetPurchLineApprover</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nothing selected!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ActInterBasedOn - NamedType Text001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to create the document. The controller has these rights.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3563,6 +3578,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 2379455676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter Based On</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3582,6 +3602,11 @@
           <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action DocAttach - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Statistics - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documents View</source>

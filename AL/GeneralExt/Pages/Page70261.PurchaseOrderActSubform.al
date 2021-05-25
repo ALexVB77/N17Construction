@@ -209,7 +209,11 @@ page 70261 "Purchase Order Act Subform"
                     end;
 
                 }
-
+                field(Approver; Approver)
+                {
+                    Editable = NOT IsBlankNumber;
+                    Enabled = NOT IsBlankNumber;
+                }
 
             }  // repeater end
 
@@ -371,7 +375,7 @@ page 70261 "Purchase Order Act Subform"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
         UpdateTypeText();
-        SetApprover();
+        PaymentOrderMgt.SetPurchLineApprover(Rec);
     end;
 
     trigger OnModifyRecord(): Boolean
@@ -399,7 +403,7 @@ page 70261 "Purchase Order Act Subform"
                 grInventorySetup.TESTFIELD("Temp Item Code");
                 VALIDATE("No.", grInventorySetup."Temp Item Code");
             END;
-            SetApprover();
+            PaymentOrderMgt.SetPurchLineApprover(Rec);
         END;
     end;
 
@@ -417,6 +421,7 @@ page 70261 "Purchase Order Act Subform"
         DocumentTotals: Codeunit "Document Totals";
         gcERPC: Codeunit "ERPC Funtions";
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+        PaymentOrderMgt: Codeunit "Payment Order Management";
         IsCommentLine: Boolean;
         IsBlankNumber: Boolean;
         UnitofMeasureCodeIsChangeable: Boolean;
@@ -430,7 +435,6 @@ page 70261 "Purchase Order Act Subform"
         InvoiceDiscountAmount: Decimal;
         InvoiceDiscountPct: Decimal;
         UtilitiesEnabled: Boolean;
-
 
     procedure NoOnAfterValidate()
     begin
@@ -498,33 +502,4 @@ page 70261 "Purchase Order Act Subform"
             if xRec."Document No." = '' then
                 Type := Type::Item;
     end;
-
-    local procedure SetApprover()
-    var
-        DimSetEntry: Record "Dimension Set Entry";
-        DimValue: Record "Dimension Value";
-        UserSetup: Record "User Setup";
-    begin
-        IF ("Dimension Set ID" = 0) or (Approver <> '') then
-            EXIT;
-        IF "Dimension Set ID" <> 0 THEN begin
-            PurchasesSetup.GET;
-            PurchasesSetup.TestField("Cost Place Dimension");
-            IF DimSetEntry.GET("Dimension Set ID", PurchasesSetup."Cost Place Dimension") THEN
-                IF DimValue.GET(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
-                    IF DimValue."Cost Holder" <> '' THEN BEGIN
-                        UserSetup.GET(DimValue."Cost Holder");
-                        IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
-                            Approver := UserSetup.Substitute
-                        ELSE
-                            Approver := UserSetup."User ID";
-                    END;
-        END;
-    end;
-
-    //ShowShortcutDimCode(ShortcutDimCode);
-    //DimMgt.GetShortcutDimensions("Dimension Set ID", ShortcutDimCode);
-    //GetShortcutDimensionValues.GetShortcutDimensions(DimSetID, ShortcutDimCode);
-    //ShortcutDimCode[i] := GetDimSetEntry(DimSetID, GLSetupShortcutDimCode[i]
-
 }
