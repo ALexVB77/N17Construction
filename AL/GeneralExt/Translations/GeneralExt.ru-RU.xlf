@@ -1371,6 +1371,27 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Cost Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <target>Дата создания</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Time</source>
+          <target>Время создания</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <target>Создал</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create User - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency</source>
           <target>Валюта</target>
@@ -2820,21 +2841,18 @@
         <trans-unit id="Codeunit 47354825 - Method 2873201457" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActInterBasedOn</source>
           <target>ActInterBasedOn</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ActInterBasedOn</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2292960103" size-unit="char" translate="yes" xml:space="preserve">
           <source>SetPurchLineApprover</source>
           <target>SetPurchLineApprover</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetPurchLineApprover</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nothing selected!</source>
           <target>Ничего не выбрано!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ActInterBasedOn - NamedType Text001</note>
         </trans-unit>
@@ -4299,7 +4317,6 @@
         <trans-unit id="Page 3437592965 - Action 2379455676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Enter Based On</source>
           <target>Ввести на основании</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
         </trans-unit>
@@ -4330,7 +4347,6 @@
         <trans-unit id="Page 3437592965 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statistics</source>
           <target>Статистика</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Statistics - Property Caption</note>
         </trans-unit>

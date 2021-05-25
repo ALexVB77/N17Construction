@@ -1143,6 +1143,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Cost Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1717033355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Create User - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3523409287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency</source>
           <note from="Developer" annotates="general" priority="2"></note>
