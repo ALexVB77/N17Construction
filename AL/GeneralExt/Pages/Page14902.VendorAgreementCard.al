@@ -79,14 +79,29 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 field("Check Limit Starting Date"; Rec."Check Limit Starting Date")
                 {
                     ApplicationArea = Basic, Suite;
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update();
+                    end;
                 }
                 field("Check Limit Ending Date"; Rec."Check Limit Ending Date")
                 {
                     ApplicationArea = Basic, Suite;
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update();
+                    end;
                 }
                 field("Check Limit Amount (LCY)"; Rec."Check Limit Amount (LCY)")
                 {
                     ApplicationArea = Basic, Suite;
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update();
+                    end;
                 }
                 field("Purch. Original Amt. (LCY)"; Rec."Purch. Original Amt. (LCY)")
                 {
