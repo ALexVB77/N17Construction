@@ -55,27 +55,31 @@ page 70260 "Purchase Order Act"
                     ApplicationArea = All;
                     Editable = false;
                 }
-                field("Invoice Amount Incl. VAT"; Rec."Invoice Amount Incl. VAT")
+                group(DocAmounts)
                 {
-                    ApplicationArea = All;
-                    ShowMandatory = true;
-                }
-                field("Invoice VAT Amount"; Rec."Invoice VAT Amount")
-                {
-                    ApplicationArea = All;
-                    ShowMandatory = true;
-                }
-                field("Invoice Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Invoice VAT Amount")
-                {
-                    Caption = 'Invoice Amount';
-                    ApplicationArea = All;
-                    Editable = false;
-                }
-                field("Remaining Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Payments Amount")
-                {
-                    Caption = 'Remaining Amount';
-                    ApplicationArea = All;
-                    Editable = false;
+                    Caption = 'Amounts';
+                    field("Invoice Amount Incl. VAT"; Rec."Invoice Amount Incl. VAT")
+                    {
+                        ApplicationArea = All;
+                        ShowMandatory = true;
+                    }
+                    field("Invoice VAT Amount"; Rec."Invoice VAT Amount")
+                    {
+                        ApplicationArea = All;
+                        ShowMandatory = true;
+                    }
+                    field("Invoice Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Invoice VAT Amount")
+                    {
+                        Caption = 'Invoice Amount';
+                        ApplicationArea = All;
+                        Editable = false;
+                    }
+                    field("Remaining Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Payments Amount")
+                    {
+                        Caption = 'Remaining Amount';
+                        ApplicationArea = All;
+                        Editable = false;
+                    }
                 }
                 field("Problem Document"; Rec."Problem Document")
                 {

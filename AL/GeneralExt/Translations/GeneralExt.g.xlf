@@ -3508,10 +3508,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Control 38210337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control DocAmounts - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Control 3143542455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Invoice Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Control 2975378708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Remaining Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Control 3724343034 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Date</source>
@@ -3537,11 +3547,6 @@
           <source>Checker</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Purchaser Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Control 2975378708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Remaining Amount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Remaining Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Control 609835670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Warehouse Document</source>
