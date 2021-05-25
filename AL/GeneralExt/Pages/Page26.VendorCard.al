@@ -9,5 +9,12 @@ pageextension 80026 "Vendor Card (Ext)" extends "Vendor Card"
                 ApplicationArea = Basic, Suite;
             }
         }
+        addlast(Receiving)
+        {
+            field("Giv. Manuf. Bin Code"; Rec."Giv. Manuf. Bin Code")
+            {
+                ApplicationArea = All;
+            }
+        }
     }
 }
