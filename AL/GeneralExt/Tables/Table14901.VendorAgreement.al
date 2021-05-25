@@ -133,7 +133,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         {
             Caption = 'Check Limit Date Filter';
             Description = 'NC 51432 PA';
-            FieldClass = FlowField;
+            FieldClass = FlowFilter;
         }
 
         field(70025; "Paid With VAT Date Filter"; Date)
