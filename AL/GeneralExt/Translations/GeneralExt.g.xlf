@@ -693,20 +693,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Document Attachment Archive - Field Version No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 461452718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>G\L Account Mapping</source>
+        <trans-unit id="Table 729295803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account Mapping</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G/L Account Mapping - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 461452718 - Field 1403669541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 729295803 - Field 1403669541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New No."</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Field New No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G/L Account Mapping - Field New No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 461452718 - Field 798588572 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 729295803 - Field 798588572 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Old No."</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Field Old No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G/L Account Mapping - Field Old No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
@@ -2603,6 +2603,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - NamedType Text12400</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3453610959 - Method 1665861916 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import G/L Account Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Account Mapping Migration - Method OnRun - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3453610959 - Method 1665861916 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*.xlsx</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Account Mapping Migration - Method OnRun - NamedType ExcelExt</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3792856986 - Method 4036785280" size-unit="char" translate="yes" xml:space="preserve">
           <source>RunCalc</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2622,16 +2632,6 @@
           <source>CopyDocument</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CopyDocument</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 454282370 - Method 1665861916 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import G\L Account Mapping</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - Method OnRun - NamedType Text001</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 454282370 - Method 1665861916 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
-          <source>*.xlsx</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - Method OnRun - NamedType ExcelExt</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
           <source>CreateItemDocumentLines</source>
@@ -3807,6 +3807,16 @@
           <source>Invoice Detail</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Invoice Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2098758111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Migration Data Run</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Migration Data Run - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2098758111 - Action 2209699709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run G\L Account Mapping Migration</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Migration Data Run - Action GLAccountMappingMigrationRun - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
