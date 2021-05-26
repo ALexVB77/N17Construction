@@ -4613,6 +4613,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Attached Documents - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1726891836 - Action 279309469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Create Giv. Bin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Card (Ext) - Action CreateGivenedBin - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1977683957 - Action 127879565 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1567633909">
           <source>Transfer to GD</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4622,6 +4627,16 @@
           <source>Max Len. Pmt Purpose Text</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account (Ext) - Field Max Len. Pmt Purpose Text - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 656864343 - Method 664725388 - NamedType 2735932857" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 656864343">
+          <source>Renaming Bins with attribute "%1" is not allowed</source>
+          <note from="Developer" annotates="general" priority="2">%1 = Attribute Field Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bin (Ext) - Method OnBeforeRename - NamedType RenameProhibitedErr</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 656864343 - Field 2671369903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 400793991">
+          <source>Givened Manuf.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bin (Ext) - Field Givened Manuf. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1214534909 - Field 332174833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
           <source>Company Type</source>
@@ -5048,10 +5063,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Utilities Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3887120495 - Field 3717217199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
+          <source>Giv. Materials Loc. Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Giv. Materials Loc. Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3887120495 - Field 1379535130 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
+          <source>Giv. Production Loc. Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Giv. Production Loc. Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 3752981272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Temp Item Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Temp Item Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3887120495 - Field 2407675490 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
+          <source>Use Giv. Production Func.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Use Giv. Production Func. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2040759808 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Comment</source>
@@ -5417,6 +5447,11 @@
           <source>Approval Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Status App Act - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Method 279309469 - NamedType 3290652800" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1982677864">
+          <source>Bin %1 has been created</source>
+          <note from="Developer" annotates="general" priority="2">%1 = Created Bin Code</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Method CreateGivenedBin - NamedType BinCreatedMsg</note>
         </trans-unit>
         <trans-unit id="TableExtension 1982677864 - Field 691798731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Giv. Manuf. Bin Code</source>
