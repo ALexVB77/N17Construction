@@ -158,5 +158,41 @@ codeunit 70000 "ERPC Funtions"
         END;
     end;
 
+    procedure DeleteBCPreBooking(PurchaseHeader: record "Purchase Header")
+    var
+        PurchLine: record "Purchase Line";
+        VendorAgreementDetails: record "Projects Cost Control Entry";
+        Buildingturn: record "Building turn";
+        ProjectsLineDimension: record "Projects Line Dimension";
+        ProjectsStructureLines: record "Projects Structure Lines";
+        VAgreement: record "Vendor Agreement";
+        VendorAgreementDetails1: record "Vendor Agreement Details";
+        Vendor: record Vendor;
+    begin
+        VendorAgreementDetails.SETCURRENTKEY("Doc No.");
+        VendorAgreementDetails.SETRANGE("Doc No.", PurchaseHeader."No.");
+        IF VendorAgreementDetails.FINDFIRST THEN
+            VendorAgreementDetails.DELETEALL(TRUE);
+        IF Vendor.GET(PurchaseHeader."Buy-from Vendor No.") AND (Vendor."Agreement Posting" = Vendor."Agreement Posting"::Mandatory) THEN
+            VAgreement.GET(PurchaseHeader."Buy-from Vendor No.", PurchaseHeader."Agreement No.")
+        ELSE
+            VAgreement.WithOut := true;
+        IF VAgreement.WithOut THEN BEGIN
+            PurchLine.SETRANGE("Document Type", PurchaseHeader."Document Type");
+            PurchLine.SETRANGE("Document No.", PurchaseHeader."No.");
+            IF PurchLine.FINDSET THEN
+                REPEAT
+                    VendorAgreementDetails1.SETRANGE("Vendor No.", PurchaseHeader."Buy-from Vendor No.");
+                    VendorAgreementDetails1.SETRANGE("Agreement No.", PurchaseHeader."Agreement No.");
+                    VendorAgreementDetails1.SETRANGE("Global Dimension 1 Code", PurchLine."Shortcut Dimension 1 Code");
+                    VendorAgreementDetails1.SETRANGE("Global Dimension 2 Code", PurchLine."Shortcut Dimension 2 Code");
+                    VendorAgreementDetails1.SETRANGE("Cost Type", PurchLine."Cost Type");
+                    IF VendorAgreementDetails1.FINDFIRST THEN BEGIN
+                        VendorAgreementDetails1.Amount := VendorAgreementDetails1.Amount - PurchLine."Line Amount";
+                        VendorAgreementDetails1.MODIFY(TRUE);
+                    END;
+                UNTIL PurchLine.NEXT = 0;
+        END;
+    end;
 
 }

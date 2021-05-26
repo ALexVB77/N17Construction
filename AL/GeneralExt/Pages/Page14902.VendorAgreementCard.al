@@ -97,9 +97,11 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 field("Check Limit Amount (LCY)"; Rec."Check Limit Amount (LCY)")
                 {
                     ApplicationArea = Basic, Suite;
+                    StyleExpr = CheckLimitAmountColor;
 
                     trigger OnValidate()
                     begin
+                        SetCheckLimitAmountColor(CheckLimitAmountColor);
                         CurrPage.Update();
                     end;
                 }
@@ -112,6 +114,12 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Deviation';
+
+                    trigger OnValidate()
+                    begin
+                        SetCheckLimitAmountColor(CheckLimitAmountColor);
+                        CurrPage.Update();
+                    end;
                 }
             }
         }
@@ -313,6 +321,7 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         PaidWithVATVisiable: Boolean;
         PaidWithVATREstateTestVisiable: Boolean;
         Monkey: Codeunit "Code Monkey Translation";
+        CheckLimitAmountColor: Text;
 
     local procedure DublicateOperationExists(var dvle: Record "Detailed Vendor Ledg. Entry"; var dvleTMP: Record "Detailed Vendor Ledg. Entry" temporary): Boolean
     var
@@ -335,5 +344,12 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         END ELSE BEGIN
             EXIT(TRUE);
         END;
+    end;
+
+    local procedure SetCheckLimitAmountColor(var CheckLimitAmountColor: Text)
+    begin
+        CheckLimitAmountColor := 'None';
+        if Rec."Check Limit Amount (LCY)" = 0 then
+            CheckLimitAmountColor := 'Attention';
     end;
 }
