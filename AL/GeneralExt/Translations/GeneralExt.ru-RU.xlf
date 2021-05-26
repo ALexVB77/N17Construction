@@ -4587,12 +4587,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Control 284195533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filters</source>
-          <target>Фильтры</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Filters - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - Control 2402680566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Scope</source>
           <target>Принадлежность</target>
@@ -4644,7 +4638,6 @@
         <trans-unit id="Page 2825229705 - Control 1136693549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Exists Comment</source>
           <target>Содержит Комментарий</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Exists Comment - Property Caption</note>
         </trans-unit>
@@ -4657,7 +4650,6 @@
         <trans-unit id="Page 2825229705 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <target>Ко&amp;мментарии</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action Co&amp;mments - Property Caption</note>
         </trans-unit>
@@ -4702,6 +4694,55 @@
           <target>КС-2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices (Checking)</source>
+          <target>Счета на оплату (Проверка)</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 2402680566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scope</source>
+          <target>Принадлежность</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control cFilter1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 2402680566 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>My documents,All documents,My Approved</source>
+          <target>Мои документы,Все документы,Утвержденные Мной</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control cFilter1 - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 870794884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selection</source>
+          <target>Отбор</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Selection - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 870794884 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All documents,Documents in processing,Ready-to-pay documents,Paid documents,Problem documents</source>
+          <target>Все документы,Документы в обработке,Готовые к оплате документы,Оплаченные документы,Проблемные документы</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Selection - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 3299771246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sorting</source>
+          <target>Сортировка</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Sorting - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 3299771246 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.,Postng Date,Buy-from Vendor Name,Status App,Process User</source>
+          <target>Документ Но.,Дата Учета,Поставщик Название,Статус Утверждения,Пользователь Процесса</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Sorting - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate</source>
@@ -7266,9 +7307,24 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Show All Acts KC-2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3550601874 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+        <trans-unit id="TableExtension 3550601874 - Field 4566989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Show all Payment Invoices</source>
+          <target>Показать все Счета на оплату</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Show All Pay Inv - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Approval Status</source>
           <target>Статус утверждения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Status App - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Act Approval Status</source>
+          <target>Статус утверждения для актов</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Status App Act - Property Caption</note>
         </trans-unit>
@@ -7667,6 +7723,54 @@
           <target>[1] Контролер</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue сontroller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 803889193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[4] Approve</source>
+          <target>[4] Утверждение</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Approve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 2301147363 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[3] Checker</source>
+          <target>[3] Проверка</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Checker - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[2] Сontroller</source>
+          <target>[2] Контролер</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Controller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[5] Payment</source>
+          <target>[5] Платеж</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Payment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 2512678143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[1] Reception</source>
+          <target>[1] Reception</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Reception - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 3351914939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[6] Request</source>
+          <target>[6] Заявка</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Request - Property Caption</note>
         </trans-unit>
         <trans-unit id="EnumExtension 3159974426 - EnumValue 745310178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 337701178">
           <source>Act</source>

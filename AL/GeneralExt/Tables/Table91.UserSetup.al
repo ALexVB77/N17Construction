@@ -2,6 +2,11 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
 {
     fields
     {
+        field(70001; "Status App"; enum "User Setup Approval Status")
+        {
+            Description = 'NC 51378 AB';
+            Caption = 'Approval Status';
+        }
         field(70003; Absents; Boolean)
         {
             Description = 'NC 51373 AB';
@@ -20,7 +25,12 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
         field(70015; "Status App Act"; enum "User Setup Act Approval Status")
         {
             Description = 'NC 51373 AB';
-            Caption = 'Approval Status';
+            Caption = 'Act Approval Status';
+        }
+        field(70030; "Show All Pay Inv"; Boolean)
+        {
+            Description = 'NC 51378 AB';
+            Caption = 'Show all Payment Invoices';
         }
         field(70040; "Show All Acts KC-2"; Boolean)
         {

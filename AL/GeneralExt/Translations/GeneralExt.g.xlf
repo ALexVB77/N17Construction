@@ -3823,11 +3823,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Control 284195533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filters</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Filters - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - Control 2402680566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Scope</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3917,6 +3912,41 @@
           <source>KC-2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices (Checking)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 2402680566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scope</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control cFilter1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 2402680566 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>My documents,All documents,My Approved</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control cFilter1 - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 870794884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selection</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Selection - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 870794884 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All documents,Documents in processing,Ready-to-pay documents,Paid documents,Problem documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Selection - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 3299771246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sorting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Sorting - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 758120940 - Control 3299771246 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.,Postng Date,Buy-from Vendor Name,Status App,Process User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Sorting - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate</source>
@@ -6053,8 +6083,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Show All Acts KC-2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3550601874 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+        <trans-unit id="TableExtension 3550601874 - Field 4566989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Show all Payment Invoices</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Show All Pay Inv - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Status App - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Act Approval Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Status App Act - Property Caption</note>
         </trans-unit>
@@ -6387,6 +6427,41 @@
           <source>[1] Сontroller</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Act Approval Status - EnumValue сontroller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 803889193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[4] Approve</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Approve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 2301147363 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[3] Checker</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Checker - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[2] Сontroller</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Controller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[5] Payment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Payment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 2512678143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[1] Reception</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Reception - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2099825727 - EnumValue 3351914939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[6] Request</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum User Setup Approval Status - EnumValue Request - Property Caption</note>
         </trans-unit>
         <trans-unit id="EnumExtension 3159974426 - EnumValue 745310178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 337701178">
           <source>Act</source>
