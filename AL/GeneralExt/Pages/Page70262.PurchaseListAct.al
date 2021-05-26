@@ -202,6 +202,7 @@ page 70262 "Purchase List Act"
                 }
                 field("Exists Comment"; Comment)
                 {
+                    Caption = 'Exists Comment';
                     Editable = false;
                     ShowCaption = false;
                     ApplicationArea = All;
@@ -369,7 +370,7 @@ page 70262 "Purchase List Act"
             }
             action(DelayButton)
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = All;
                 Caption = 'Reject';
                 Enabled = DelayButtonEnabled;
                 Image = Reject;
@@ -387,6 +388,16 @@ page 70262 "Purchase List Act"
                       gcERPC.ChangeKC2StatusDown(Rec);
                     */
                 end;
+            }
+            action("Co&mments")
+            {
+                ApplicationArea = All;
+                Caption = 'Co&mments';
+                Image = ViewComments;
+                RunObject = Page "Purch. Comment Sheet";
+                RunPageLink = "Document Type" = FIELD("Document Type"),
+                            "No." = FIELD("No."),
+                            "Document Line No." = CONST(0);
             }
             action(DocAttach)
             {
