@@ -3,6 +3,31 @@ tableextension 85740 "Transfer Header (Ext)" extends "Transfer Header"
     // Подписки в cu 50006 
     fields
     {
+        modify("In-Transit Code")
+        {
+            trigger OnAfterValidate()
+            var
+                Location: Record Location;
+            begin
+                // NC 51143 > EP
+                // Перенес модификацию из OnValidate().
+                /* Комментарий:
+                    В оригинале кастомный код лежит в середине триггера - после вызова TestStatusOpen() и до UpdateTransLines().
+                    Однако в UpdateTransLines() заполняемое поле "Gen. Bus. Posting Group" никак не используется
+                    (к нему обращаются только в функциях учета документа),
+                    поэтому можно спокойно перенести кастом в OnAfterValidate() - от этого ничего не сломается.
+                */
+
+                //NC 22512 > DP
+                if Location.Get("In-Transit Code") then
+                    Rec.Validate("Gen. Bus. Posting Group", Location."Def. Gen. Bus. Posting Group")
+                else
+                    Rec.Validate("Gen. Bus. Posting Group", '');
+                //NC 22512 < DP
+
+                // NC 51143 < EP
+            end;
+        }
         field(50000; "Customer No."; Code[20])
         {
             DataClassification = CustomerContent;
