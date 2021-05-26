@@ -7775,6 +7775,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">EnumExtension Attachment Document Type (Ext) - EnumValue Vendor - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2317248895 - Field 3543129988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3891454143">
+          <source>Blocked</source>
+          <target>Заблокирован</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Location (Ext) - Field Blocked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2317248895 - Field 395299122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3891454143">
+          <source>Def. Gen. Bus. Posting Group</source>
+          <target>Общая бизнес-группа по умолчанию</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Location (Ext) - Field Def. Gen. Bus. Posting Group - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
