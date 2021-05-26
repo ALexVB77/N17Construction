@@ -126,7 +126,6 @@
         <trans-unit id="Table 938572801 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Description - Property Caption</note>
         </trans-unit>
@@ -4309,7 +4308,6 @@
         <trans-unit id="Page 3861133141 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <target>Общее</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control General - Property Caption</note>
         </trans-unit>
@@ -4331,17 +4329,43 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Remaining Amount (LCY) - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 934166137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 2</source>
+          <target>Дольщик 2</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 1571862754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 3</source>
+          <target>Дольщик 3</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 2209559371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 4</source>
+          <target>Дольщик 4</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 2847255988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 5</source>
+          <target>Дольщик 5</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder5 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3861133141 - Control 3673127570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment object</source>
           <target>Объект инвестирования</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control InvestingObject - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3861133141 - Control 2645159796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Investing Object Description - Property Caption</note>
         </trans-unit>
