@@ -52,6 +52,16 @@ codeunit 99999 "Additional Management BS"
         gjl.SETFILTER("Bal. Account No.", '<>%1', GenJournalLine."Bal. Account No.");
         gjl.FILTERGROUP(0);
         IF (NOT gjl.ISEMPTY()) THEN ERROR(locText001);
+
+        gjl.FILTERGROUP(2);
+        gjl.SETrange("Bal. Account No.");
+        gjl.FILTERGROUP(0);
+        if (gjl.findset()) then begin
+            repeat
+                gjl.TestField("Beneficiary Bank Code");
+            until (gjl.next() = 0);
+        end;
+
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterSetupNewLine', '', false, false)]
