@@ -1,6 +1,6 @@
-table 50001 "G\L Account Mapping"
+table 50001 "G/L Account Mapping"
 {
-    Caption = 'G\L Account Mapping';
+    Caption = 'G/L Account Mapping';
 
     fields
     {

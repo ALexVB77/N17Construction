@@ -1,14 +1,14 @@
-codeunit 50011 "G\L Account Mapping Migration"
+codeunit 50011 "G/L Account Mapping Migration"
 {
     trigger OnRun()
     var
         ServerFileName: Text;
         FileManagement: Codeunit "File Management";
         SheetName: Text;
-        Text001: Label 'Import G\L Account Mapping';
+        Text001: Label 'Import G/L Account Mapping';
         ExcelExt: Label '*.xlsx';
         RowNo: Integer;
-        GLAccountMapping: Record "G\L Account Mapping";
+        GLAccountMapping: Record "G/L Account Mapping";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
