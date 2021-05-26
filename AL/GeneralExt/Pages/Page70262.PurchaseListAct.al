@@ -204,19 +204,16 @@ page 70262 "Purchase List Act"
                 {
                     Caption = 'Exists Comment';
                     Editable = false;
-                    ShowCaption = false;
                     ApplicationArea = All;
                 }
                 field("Exists Attachment"; "Exists Attachment")
                 {
                     Editable = false;
-                    ShowCaption = false;
                     ApplicationArea = All;
                 }
                 field("Receive Account"; "Receive Account")
                 {
                     Editable = false;
-                    ShowCaption = false;
                     ApplicationArea = All;
                 }
                 field("Location Document"; "Location Document")
