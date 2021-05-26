@@ -3498,100 +3498,129 @@
         <trans-unit id="Page 2269272589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
           <target>Реестр операций</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 1137032787" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must set the Project Code!</source>
           <target>Необходимо задать Код Проекта!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0004</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 1774729404" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must set CC!</source>
           <target>Необходимо задать СС!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0005</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 2412426021" size-unit="char" translate="yes" xml:space="preserve">
           <source>The amount of the transaction must be determined!</source>
           <target>Необходимо определить сумму операции!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0006</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 3050122638" size-unit="char" translate="yes" xml:space="preserve">
           <source>Clear contract number!</source>
           <target>Очистить номер договора!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0007</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 3687819255" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must select the Cash Flow records from which you want to debit this amount.</source>
           <target>Необходимо выбрать записи Cash Flow, с которых необходимо списать данную сумму.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0008</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 30548576" size-unit="char" translate="yes" xml:space="preserve">
           <source>Canceled by user.</source>
           <target>Отменено пользователем.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0009</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Contract Balance Amount has been exceeded!</source>
           <target>Превышена Сумма Остатка по Договору!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT001</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 2068412800" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unlink payment from supplier and contract (move to level 1)?</source>
           <target>Отвязать платеж от поставщика и договора (перевести на уровень 1)?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0010</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 1430716183" size-unit="char" translate="yes" xml:space="preserve">
           <source>Operations cannot be deleted!</source>
           <target>Нельзя удалять операции!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0011</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 3343806034" size-unit="char" translate="yes" xml:space="preserve">
           <source>Operation is bound to document IW \ Amount available for transfer to 1st level =% 1 \ Continue?</source>
           <target>Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень =%1\ Продолжить?</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0012</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 2706109417" size-unit="char" translate="yes" xml:space="preserve">
           <source>Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible!</source>
           <target>Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень =%1\ Перевод невозможен!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0013</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 324231972" size-unit="char" translate="yes" xml:space="preserve">
           <source>You are not allowed to copy actual operations.</source>
           <target>Вы не имеете прав копировать фактические операции.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
         </trans-unit>
-        <trans-unit id="Page 2269272589 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActionName</source>
-          <target>Акцион</target>
+        <trans-unit id="Page 2269272589 - Control 2608293804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COST CODE</source>
+          <target>COST CODE</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action ActionName - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control CostCodeFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1604419066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COST PLACE</source>
+          <target>COST PLACE</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control CostPlaceFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 539855287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Filter</source>
+          <target>Фильтр по дате</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control DateFilter1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1211859957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue on Date</source>
+          <target>Просроченные на дату</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control gDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1039389876 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Don't show zero amount lines</source>
+          <target>Не показывать нулевые строки</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control HideZeroAmountLine - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 4263389294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue</source>
+          <target>Просроченные</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Overdue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target>Код</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control TemplateCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>

@@ -2978,10 +2978,40 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
         </trans-unit>
-        <trans-unit id="Page 2269272589 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActionName</source>
+        <trans-unit id="Page 2269272589 - Control 2608293804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COST CODE</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action ActionName - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control CostCodeFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1604419066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COST PLACE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control CostPlaceFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 539855287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control DateFilter1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1211859957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue on Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control gDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1039389876 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Don't show zero amount lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control HideZeroAmountLine - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 4263389294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overdue</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Overdue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control TemplateCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>

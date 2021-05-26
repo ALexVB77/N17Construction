@@ -19,6 +19,7 @@ page 70143 "Forecast List Analisys"
                 field(TemplateCode; TemplateCode)
                 {
                     ApplicationArea = All;
+                    Caption = 'Code';
                     trigger OnLookup(var Text: text): boolean
                     begin
                         // //NC 27251 HR beg
@@ -39,6 +40,137 @@ page 70143 "Forecast List Analisys"
                         TemplateCodeOnAfterValidate; //navnav;
 
                     end;
+                }
+                field(TemplateDescription; TemplateDescription)
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+            }
+            group(FilterGr2)
+            {
+                field(DateFilter1; DateFilter1)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Date Filter';
+                    // trigger OnValidate()
+                    // var 
+                    //     ApplicationManagement: codeunit ApplicationManagement;
+                    // begin
+                    //     DateFilter1OnAfterValidate; //navnav;
+
+                    //     IF ApplicationManagement.MakeDateFilter(DateFilter1) = 0 THEN;
+                    //     GLAccBudgetBuf.SETFILTER("Date Filter",DateFilter1);
+                    //     DateFilter1 := GLAccBudgetBuf.GETFILTER("Date Filter");
+                    // end;
+
+
+                }
+
+                field(CostPlaceFlt; CostPlaceFlt)
+                {
+                    ApplicationArea = All;
+                    Caption = 'COST PLACE';
+                    trigger OnLookup(var Text: text): boolean
+                    begin
+                        // gvBuildingTurn.SETRANGE("Building project Code", "Project Code");
+                        // IF gvBuildingTurn.FINDFIRST THEN BEGIN
+                        //     IF PAGE.RUNMODAL(PAGE::"Dev Building turn", gvBuildingTurn) = ACTION::LookupOK THEN BEGIN
+                        //         CostPlaceFlt := gvBuildingTurn.Code;
+                        //         SETFILTER("Building Turn", CostPlaceFlt);
+                        //         CurrPage.UPDATE;
+                        //         CurrPage.UPDATECONTROLS;
+                        //     END;
+                        // END;
+                    end;
+
+                    trigger OnValidate()
+                    begin
+                        // CostPlaceFltOnAfterValidate; //navnav;
+
+                    end;
+
+
+                }
+
+                field(CostCodeFlt; CostCodeFlt)
+                {
+                    ApplicationArea = All;
+                    Caption = 'COST CODE';
+                    trigger OnValidate()
+                    var
+                        _PSL: record "Projects Structure Lines";
+                    begin
+                        // CostCodeFltOnAfterValidate; //navnav;
+
+                        // //NC 37278 17-09-2019 HR beg
+                        // IF CostCodeFlt <> '' THEN BEGIN
+                        //     _PSL.SETRANGE("Project Code", "Project Code");
+                        //     _PSL.SETRANGE(Version, GetDefVersion1(TemplateCode));
+                        //     _PSL.SETRANGE("Structure Post Type", _PSL."Structure Post Type"::Posting);
+                        //     _PSL.SETFILTER(Code, CostCodeFlt);
+                        //     IF _PSL.ISEMPTY THEN
+                        //         ERROR('Статья бюджета %1 не существует', CostCodeFlt);
+                        // END;
+                        // //NC 37278 17-09-2019 HR end
+                    end;
+
+                    trigger OnLookup(var Text: text): boolean
+                    begin
+                        grProjectsStructureLines1.SETRANGE("Project Code", "Project Code");
+                        grProjectsStructureLines1.SETRANGE(Version, GetDefVersion1(TemplateCode));
+                        grProjectsStructureLines1.SETRANGE("Structure Post Type", grProjectsStructureLines1."Structure Post Type"::Posting);
+                        IF grProjectsStructureLines1.FINDFIRST THEN BEGIN
+                            IF grProjectsStructureLines1.GET("Project Code", "Analysis Type", "Version Code", "Line No.") THEN;
+
+                            IF PAGE.RUNMODAL(PAGE::"Projects Article List", grProjectsStructureLines1) = ACTION::LookupOK THEN BEGIN
+                                CostCodeFlt := grProjectsStructureLines1.Code;
+                                SETFILTER("Shortcut Dimension 2 Code", CostCodeFlt);
+                                CurrPage.UPDATE;
+                            END;
+                        END;
+                    end;
+
+
+                }
+
+                field(Overdue; Overdue)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Overdue';
+                    trigger OnValidate()
+                    begin
+                        // OverdueOnAfterValidate; //navnav;
+
+                    end;
+
+
+                }
+
+                field(gDate; gDate)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Overdue on Date';
+                    trigger OnValidate()
+                    begin
+                        // gDateOnAfterValidate; //navnav;
+
+                    end;
+
+
+                }
+
+                field(HideZeroAmountLine; HideZeroAmountLine)
+                {
+                    ShowCaption = false;
+                    ApplicationArea = All;
+                    Caption = 'Don''t show zero amount lines';
+                    trigger OnValidate()
+                    begin
+                        // HideZeroAmountLineOnAfterValidate; //navnav;
+
+                    end;
 
 
                 }
@@ -48,18 +180,7 @@ page 70143 "Forecast List Analisys"
 
     actions
     {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
 
-                trigger OnAction()
-                begin
-
-                end;
-            }
-        }
     }
 
     var
