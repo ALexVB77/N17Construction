@@ -2913,6 +2913,76 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2269272589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Register</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 1137032787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must set the Project Code!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0004</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 1774729404" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must set CC!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0005</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 2412426021" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The amount of the transaction must be determined!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0006</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 3050122638" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Clear contract number!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0007</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 3687819255" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must select the Cash Flow records from which you want to debit this amount.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0008</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 30548576" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Canceled by user.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0009</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 4034540392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Contract Balance Amount has been exceeded!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT001</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 2068412800" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unlink payment from supplier and contract (move to level 1)?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0010</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 1430716183" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operations cannot be deleted!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0011</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 3343806034" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation is bound to document IW \ Amount available for transfer to 1st level =% 1 \ Continue?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0012</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 2706109417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0013</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 324231972" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You are not allowed to copy actual operations.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActionName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action ActionName - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
           <note from="Developer" annotates="general" priority="2"></note>
