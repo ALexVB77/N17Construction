@@ -16,7 +16,7 @@ page 70076 Apartments
                     ApplicationArea = All;
 
                 }
-                field(Descriotion; Rec.Descriotion)
+                field(Descriotion; Rec.Description)
                 {
                     ApplicationArea = All;
 
