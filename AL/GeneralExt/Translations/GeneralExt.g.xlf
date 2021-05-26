@@ -3608,6 +3608,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Remaining Amount (LCY) - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 934166137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 1571862754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 2209559371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 4</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Control 2847255988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shareholder 5</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder5 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3861133141 - Control 3673127570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment object</source>
           <note from="Developer" annotates="general" priority="2"></note>

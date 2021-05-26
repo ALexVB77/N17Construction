@@ -96,7 +96,8 @@ page 70091 "Investment Agreement Card"
 
                 group(Shareholder2)
                 {
-                    Visible = ShareholderView[2];
+                    Caption = 'Shareholder 2';
+                    Visible = ShareHolder2InfoVisible;
 
                     field("Customer 2 No."; Rec."Customer 2 No.")
                     {
@@ -118,7 +119,8 @@ page 70091 "Investment Agreement Card"
 
                 group(Shareholder3)
                 {
-                    Visible = ShareholderView[3];
+                    Caption = 'Shareholder 3';
+                    Visible = ShareHolder3InfoVisible;
 
                     field("Customer 3 No."; Rec."Customer 3 No.")
                     {
@@ -140,7 +142,8 @@ page 70091 "Investment Agreement Card"
 
                 group(Shareholder4)
                 {
-                    Visible = ShareholderView[4];
+                    Caption = 'Shareholder 4';
+                    Visible = ShareHolder4InfoVisible;
 
                     field("Customer 4 No."; Rec."Customer 4 No.")
                     {
@@ -160,7 +163,8 @@ page 70091 "Investment Agreement Card"
 
                 group(Shareholder5)
                 {
-                    Visible = ShareholderView[5];
+                    Caption = 'Shareholder 5';
+                    Visible = ShareHolder5InfoVisible;
 
                     field("Customer 5 No."; Rec."Customer 5 No.")
                     {
@@ -180,9 +184,6 @@ page 70091 "Investment Agreement Card"
 
 
             }
-
-
-        }
 
             group(InvestingObject)
             {
@@ -356,6 +357,10 @@ page 70091 "Investment Agreement Card"
         gcduERPC: Codeunit "ERPC Funtions";
         lrApartments: record Apartments;
         ShareholderView: array[5] of Boolean;
+        ShareHolder2InfoVisible: Boolean;
+        ShareHolder3InfoVisible: Boolean;
+        ShareHolder4InfoVisible: Boolean;
+        ShareHolder5InfoVisible: Boolean;
 
     procedure GetObjValue()
     var
