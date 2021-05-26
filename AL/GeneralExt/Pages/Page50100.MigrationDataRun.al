@@ -4,6 +4,11 @@ page 50100 "Migration Data Run"
     ApplicationArea = All;
     UsageCategory = Lists;
 
+    layout
+    {
+
+    }
+
     actions
     {
         area(Processing)
