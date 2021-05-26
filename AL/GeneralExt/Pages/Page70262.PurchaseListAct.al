@@ -18,7 +18,6 @@ page 70262 "Purchase List Act"
         {
             group(Filters)
             {
-                Caption = 'Filters';
                 ShowCaption = false;
                 field(Selection; Filter2)
                 {
@@ -31,7 +30,6 @@ page 70262 "Purchase List Act"
                         CurrPage.UPDATE(FALSE);
                     end;
                 }
-
                 field("Sorting"; SortType)
                 {
                     ApplicationArea = All;
@@ -420,8 +418,8 @@ page 70262 "Purchase List Act"
         grUserSetup.GET(USERID);
 
         // SWC968 DD 19.12.16 >>
-        IF grUserSetup."Show All Acts KC-2" AND (Filter1 = 0) THEN
-            Filter1 := 1;
+        IF grUserSetup."Show All Acts KC-2" AND (Filter1 = Filter1::mydoc) THEN
+            Filter1 := Filter1::all;
         // SWC968 DD 19.12.16 <<
 
         //--
@@ -462,7 +460,7 @@ page 70262 "Purchase List Act"
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
-        SortType: option docno,postdate,vendor,userproc;
+        SortType: option docno,postdate,vendor,statusapp,userproc;
         FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)",advance;
         NewActTypeOption: Enum "Purchase Act Type";
         ApproveButtonEnabled: boolean;
@@ -498,6 +496,8 @@ page 70262 "Purchase List Act"
                 SETCURRENTKEY("Posting Date");
             SortType::Vendor:
                 SETCURRENTKEY("Buy-from Vendor Name");
+            SortType::StatusApp:
+                SETCURRENTKEY("Status App");
             SortType::UserProc:
                 SETCURRENTKEY("Process User");
         END;
