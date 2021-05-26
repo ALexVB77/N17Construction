@@ -21,4 +21,25 @@ pageextension 80026 "Vendor Card (Ext)" extends "Vendor Card"
             }
         }
     }
+
+    actions
+    {
+        addlast("F&unctions")
+        {
+            action(CreateGivenedBin)
+            {
+                ApplicationArea = All;
+                Caption = 'Create Giv. Bin';
+                Image = CreateBins;
+                Description = 'NC 51411 EP';
+
+                trigger OnAction()
+                begin
+                    // SWC816 AK 190416 >>
+                    Rec.CreateGivenedBin();
+                    // SWC816 AK 190416 <<
+                end;
+            }
+        }
+    }
 }
