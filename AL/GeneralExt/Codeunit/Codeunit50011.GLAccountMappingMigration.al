@@ -1,6 +1,14 @@
 codeunit 50011 "G\L Account Mapping Migration"
 {
     trigger OnRun()
+    var
+        ServerFileName: Text;
+        FileManagement: Codeunit "File Management";
+        SheetName: Text;
+        Text001: Label 'Import G\L Account Mapping';
+        ExcelExt: Label '*.xlsx';
+        RowNo: Integer;
+        GLAccountMapping: Record "G\L Account Mapping";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -11,13 +19,30 @@ codeunit 50011 "G\L Account Mapping Migration"
         ExcelBuffer.LockTable();
         ExcelBuffer.OpenBook(ServerFileName, SheetName);
         ExcelBuffer.ReadSheet();
+
+        for RowNo := 3 to GetLastRow do
+            if not GLAccountMapping.Get(GetValueAtCall(RowNo, 1)) then begin
+                GLAccountMapping.Init();
+                GLAccountMapping."New No." := GetValueAtCall(RowNo, 1);
+                GLAccountMapping."New No." := GetValueAtCall(RowNo, 2);
+                GLAccountMapping.Insert(true);
+            end;
     end;
 
     var
-        ServerFileName: Text;
-        FileManagement: Codeunit "File Management";
-        SheetName: Text;
         ExcelBuffer: Record "Excel Buffer Mod";
-        Text001: Label 'Import G\L Account Mapping';
-        ExcelExt: Label '*.xlsx';
+
+    local procedure GetLastRow(): Integer
+
+    begin
+        if ExcelBuffer.FindLast() then
+            exit(ExcelBuffer."Row No.");
+    end;
+
+    local procedure GetValueAtCall(RowNo: Integer; ColNo: Integer): Text
+
+    begin
+        if ExcelBuffer.Get(RowNo, ColNo) then
+            exit(ExcelBuffer."Cell Value as Text");
+    end;
 }

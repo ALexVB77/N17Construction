@@ -693,6 +693,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Document Attachment Archive - Field Version No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 461452718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G\L Account Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 461452718 - Field 1403669541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New No."</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Field New No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 461452718 - Field 798588572 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Old No."</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Field Old No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2607,6 +2622,16 @@
           <source>CopyDocument</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CopyDocument</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 454282370 - Method 1665861916 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import G\L Account Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - Method OnRun - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 454282370 - Method 1665861916 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*.xlsx</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - Method OnRun - NamedType ExcelExt</note>
         </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
           <source>CreateItemDocumentLines</source>

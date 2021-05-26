@@ -831,6 +831,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Document Attachment Archive - Field Version No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 461452718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G\L Account Mapping</source>
+          <target>Соостветсвие номеров итогового плана счетов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 461452718 - Field 1403669541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New No."</source>
+          <target>Новый номер</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Field New No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 461452718 - Field 798588572 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Old No."</source>
+          <target>Текущей номер</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table G\L Account Mapping - Field Old No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
           <target>Детали счета</target>
@@ -3129,6 +3148,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CopyDocument</note>
         </trans-unit>
+        <trans-unit id="Codeunit 454282370 - Method 1665861916 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import G\L Account Mapping</source>
+          <target>Импорт итогового плана счетов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - Method OnRun - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 454282370 - Method 1665861916 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*.xlsx</source>
+          <target>*.xlsx</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - Method OnRun - NamedType ExcelExt</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
           <source>CreateItemDocumentLines</source>
           <target></target>
@@ -4644,7 +4675,6 @@
         <trans-unit id="Page 2825229705 - Control 1136693549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Exists Comment</source>
           <target>Содержит Комментарий</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Exists Comment - Property Caption</note>
         </trans-unit>
@@ -4657,7 +4687,6 @@
         <trans-unit id="Page 2825229705 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <target>Ко&amp;мментарии</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action Co&amp;mments - Property Caption</note>
         </trans-unit>
