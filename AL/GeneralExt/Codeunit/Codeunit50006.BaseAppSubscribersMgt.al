@@ -255,4 +255,30 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::ArchiveManagement, 'OnAfterStorePurchDocument', '', false, false)]
+    local procedure OnAfterStorePurchDocument(var PurchaseHeader: Record "Purchase Header"; var PurchaseHeaderArchive: Record "Purchase Header Archive");
+    var
+        DocAttach: Record "Document Attachment";
+        DocAttachArch: Record "Document Attachment Archive";
+    begin
+        DocAttach.SetFilter("Table ID", '%1|%2', Database::"Purchase Header", Database::"Purchase Line");
+        DocAttach.SetRange("Document Type", PurchaseHeader."Document Type");
+        DocAttach.SetRange("No.", PurchaseHeader."No.");
+        if DocAttach.FindSet() then
+            repeat
+                DocAttachArch.Init();
+                DocAttachArch.TransferFields(DocAttach);
+                IF DocAttach."Table ID" = Database::"Purchase Header" then
+                    DocAttachArch."Table ID" := Database::"Purchase Header Archive"
+                else
+                    DocAttachArch."Table ID" := Database::"Purchase Line Archive";
+                DocAttachArch."Version No." := PurchaseHeaderArchive."Version No.";
+                DocAttachArch."Doc. No. Occurrence" := PurchaseHeaderArchive."Doc. No. Occurrence";
+                DocAttach.CalcFields("Document Reference ID");
+                DocAttachArch."Document Reference ID" := DocAttach."Document Reference ID";
+                DocAttachArch.INSERT;
+            until DocAttach.Next() = 0;
+    end;
+
+
 }

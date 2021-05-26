@@ -402,6 +402,7 @@ page 70260 "Purchase Order Act"
                     Image = ViewComments;
                     Promoted = true;
                     PromotedCategory = Category8;
+                    PromotedIsBig = true;
                     RunObject = Page "Purch. Comment Sheet";
                     RunPageLink = "Document Type" = FIELD("Document Type"),
                                   "No." = FIELD("No."),
@@ -414,6 +415,7 @@ page 70260 "Purchase Order Act"
                     Image = Attach;
                     Promoted = true;
                     PromotedCategory = Category8;
+                    PromotedIsBig = true;
 
                     trigger OnAction()
                     var
@@ -425,7 +427,66 @@ page 70260 "Purchase Order Act"
                         DocumentAttachmentDetails.RunModal;
                     end;
                 }
+                action(ChangeLog)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Change Log';
+                    Image = ChangeLog;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    var
+                        lrChangeLE: Record "Change Log Entry";
+                    begin
+                        lrChangeLE.SETCURRENTKEY("Table No.", "Primary Key Field 2 Value", "Date and Time");
+                        lrChangeLE.SETRANGE("Table No.", Database::"Purchase Header");
+                        lrChangeLE.SETRANGE("Primary Key Field 2 Value", Rec."No.");
+                        IF NOT lrChangeLE.IsEmpty THEN
+                            Page.RUNMODAL(Page::"Change Log Entries", lrChangeLE);
+                    end;
+                }
             }
+
+            group("F&unctions")
+            {
+                Caption = 'F&unctions';
+                Image = "Action";
+                action(CopyDocument)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Copy Document';
+                    Ellipsis = true;
+                    Enabled = "No." <> '';
+                    Image = CopyDocument;
+                    Promoted = true;
+                    PromotedCategory = Process;
+
+                    trigger OnAction()
+                    begin
+                        CopyDocument();
+                        if Get("Document Type", "No.") then;
+                    end;
+                }
+                action(ArchiveProblemDoc)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Archive Problem Document';
+                    Ellipsis = true;
+                    Enabled = "No." <> '';
+                    Image = Archive;
+                    Promoted = true;
+                    PromotedCategory = Process;
+
+                    trigger OnAction()
+                    begin
+
+
+                    end;
+                }
+            }
+
             action(EnterBasedOn)
             {
                 ApplicationArea = All;
