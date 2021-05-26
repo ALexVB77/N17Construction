@@ -14,6 +14,28 @@ codeunit 70000 "ERPC Funtions"
         message('Call function UppostForecastEntry() in CU 70000 ERPC Funtions')
     end;
 
+    procedure GetActStatus(pActCode: code[20]) Ret: code[30]
+    var
+        lrActLines: record "Act Lines";
+        lrActLines1: record "Act Lines";
+    begin
+        lrActLines.SETRANGE("Act No.", pActCode);
+        lrActLines.SETRANGE(Close, TRUE);
+        IF lrActLines.FIND('+') THEN
+            Ret := lrActLines."Stage Code";
+    end;
+
+    procedure GetAgreementActStatus(pAgrCode: code[20]) Ret: code[30]
+    var
+        lrActLines: record "Act Lines";
+        lrActLines1: record "Act Lines";
+        lrAct: record "Objects Act";
+    begin
+        lrAct.SETRANGE("Agreement No.", pAgrCode);
+        lrAct.SETFILTER(Status, '<>%1&<>%2', lrAct.Status::New, lrAct.Status::Cancell);
+        IF lrAct.FIND('-') THEN Ret := GetActStatus(lrAct."No.");
+    end;
+
     procedure GetCommited(pAgreement: Code[20]; pCP: Code[20]; pCC: Code[20]) ReturnValue: Decimal
     var
         lrProjectsBudgetEntry: Record "Projects Budget Entry";

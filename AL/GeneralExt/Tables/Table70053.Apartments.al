@@ -10,7 +10,7 @@ table 70053 "Apartments"
         {
             Caption = 'Object Code';
         }
-        field(2; Descriotion; Text[250])
+        field(2; Description; Text[250])
         {
             Caption = 'Description';
         }

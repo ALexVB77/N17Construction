@@ -93,6 +93,18 @@ table 70076 "Projects Budget Entry"
             InitValue = 'OUT PURCH';
             TableRelation = "Cash Flow Transaction Type";
         }
+        field(20; "Create User"; code[65])
+        {
+            Caption = 'Create User';
+        }
+        field(21; "Create Date"; Date)
+        {
+            Caption = 'Create Date';
+        }
+        field(22; "Create Time"; Time)
+        {
+            Caption = 'Create Time';
+        }
         field(23; "Parent Entry"; Integer)
         {
             Caption = 'Parent Entry';
