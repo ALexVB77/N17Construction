@@ -78,7 +78,111 @@ page 70091 "Investment Agreement Card"
                     Caption = 'Hand over status';
                 }
 
+                //Shareholder 1
+                field("Customer No."; Rec."Customer No.")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Customer 1 Name"; Rec."Customer 1 Name")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Balance Cust 1 (LCY)"; Rec."Balance Cust 1 (LCY)")
+                {
+                    ApplicationArea = All;
+                }
+
+                group(Shareholder2)
+                {
+                    Visible = ShareholderView[2];
+
+                    field("Customer 2 No."; Rec."Customer 2 No.")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Customer 2 Name"; Rec."Customer 2 Name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Balance Cust 2 (LCY)"; Rec."Balance Cust 2 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                }
+
+
+                group(Shareholder3)
+                {
+                    Visible = ShareholderView[3];
+
+                    field("Customer 3 No."; Rec."Customer 3 No.")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Customer 3 Name"; Rec."Customer 3 Name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Balance Cust 3 (LCY)"; Rec."Balance Cust 3 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                }
+
+
+                group(Shareholder4)
+                {
+                    Visible = ShareholderView[4];
+
+                    field("Customer 4 No."; Rec."Customer 4 No.")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Customer 4 Name"; Rec."Customer 4 Name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Balance Cust 4 (LCY)"; Rec."Balance Cust 4 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+                }
+
+                group(Shareholder5)
+                {
+                    Visible = ShareholderView[5];
+
+                    field("Customer 5 No."; Rec."Customer 5 No.")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Customer 5 Name"; Rec."Customer 5 Name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Balance Cust 5 (LCY)"; Rec."Balance Cust 5 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+                }
+
+
             }
+
+
+        }
 
             group(InvestingObject)
             {
@@ -251,6 +355,7 @@ page 70091 "Investment Agreement Card"
     var
         gcduERPC: Codeunit "ERPC Funtions";
         lrApartments: record Apartments;
+        ShareholderView: array[5] of Boolean;
 
     procedure GetObjValue()
     var
