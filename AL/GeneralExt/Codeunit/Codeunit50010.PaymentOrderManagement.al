@@ -159,4 +159,83 @@ codeunit 50010 "Payment Order Management"
         end;
     end;
 
+    procedure PurchOrderActArchiveQst(PurchHeader: Record "Purchase Header")
+    var
+        UserSetup: record "User Setup";
+        LocText50000: Label 'Budget data will be deleted. Add a document to the archive of problem documents?';
+        LocText50008: Label 'Do you want to add %1 %2 to the archive of problem documents and send the Order %3 to the archive? Order-related Receipts will be canceled.';
+        LocText50009: Label 'Access is denied.';
+        LocText50010: label 'Do you want to add a document to the archive of problem documents?';
+        LocText50011: Label 'You can send a document to the archive at the stage of Controller, Approve, Signing or Accountant!';
+        LocText50012: Label 'You can send a document to the archive only at the Verification stage.';
+        Txt: Text;
+    begin
+        with PurchHeader do begin
+            IF "Location Document" THEN BEGIN
+                IF "Status App Act" <> "Status App Act"::Checker THEN
+                    ERROR(LocText50012);
+                UserSetup.GET(USERID);
+                IF "Process User" <> USERID THEN
+                    ERROR(LocText50009);
+                IF PurchHeader.GET("Document Type"::Order, "Invoice No.") THEN
+                    Txt := STRSUBSTNO(LocText50008, "Act Type", "No.", PurchHeader."No.")
+                ELSE
+                    Txt := LocText50010;
+                IF NOT CONFIRM(Txt, FALSE) THEN
+                    EXIT;
+                PurchOrderActArchive(PurchHeader);
+                IF PurchHeader.GET("Document Type"::Order, "Invoice No.") THEN
+                    PurchHeader.PurchOrderArchive();
+            END ELSE BEGIN
+                IF "Status App Act" IN
+                    ["Status App Act"::"Controller", "Status App Act"::Approve, "Status App Act"::Signing, "Status App Act"::Accountant]
+                THEN BEGIN
+                    IF "Status App Act" = "Status App Act"::Signing THEN
+                        Txt := LocText50000
+                    ELSE
+                        Txt := LocText50010;
+                    IF CONFIRM(Txt, TRUE) THEN
+                        PurchOrderActArchive(PurchHeader);
+                END ELSE
+                    ERROR(LocText50011);
+            END;
+        end;
+    end;
+
+    local procedure PurchOrderActArchive(PurchHeader: Record "Purchase Header");
+    var
+        gvduERPC: Codeunit "ERPC Funtions";
+        LocText50013: Label 'Document %1 has been sent to the archive.';
+        ArchiveMgt: Codeunit ArchiveManagement;
+    begin
+        DeleteRelatedInvoiceDoc(PurchHeader);
+        gvduERPC.DeleteBCPreBooking(PurchHeader); //Удаление бюджета
+        PurchHeader."Problem Document" := TRUE;
+        PurchHeader."Problem Type" := PurchHeader."Problem Type"::"Act error";
+        // NC AB >>
+        // не оставляем архивный акт в T36 и T37, оправляем его в T5109 и T5110
+        // PurchHeader.MODIFY();
+        ArchiveMgt.StorePurchDocument(PurchHeader, false);
+        PurchHeader.SetHideValidationDialog(true);
+        PurchHeader.Delete(true);
+        // NC AB <<
+        MESSAGE(LocText50013, PurchHeader."No.");
+    end;
+
+    procedure DeleteRelatedInvoiceDoc(var InPurchHeader: Record "Purchase Header")
+    var
+        PurchHeader: record "Purchase Header";
+        PurchCommentLine: record "Purch. Comment Line";
+        DocSignMgt: codeunit "Doc. Signature Management";
+    begin
+        IF InPurchHeader."Invoice No." <> '' THEN BEGIN
+            IF PurchHeader.GET(PurchHeader."Document Type"::Invoice, InPurchHeader."Invoice No.") THEN BEGIN
+                DocSignMgt.DeleteDocSign(DATABASE::"Purchase Header", PurchHeader."Document Type".AsInteger(), PurchHeader."No.");
+                PurchCommentLine.DeleteComments(PurchHeader."Document Type".AsInteger(), PurchHeader."No.");
+                InPurchHeader."Invoice No." := '';
+                InPurchHeader.MODIFY();
+            END;
+        END;
+    end;
+
 }

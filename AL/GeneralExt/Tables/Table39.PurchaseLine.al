@@ -17,6 +17,7 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
         {
             Description = 'NC 51373 AB';
             Caption = 'Without VAT';
+
             trigger OnValidate()
             begin
                 IF xRec."Not VAT" <> "Not VAT" THEN
