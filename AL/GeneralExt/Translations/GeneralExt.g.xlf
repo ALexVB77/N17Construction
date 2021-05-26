@@ -2969,7 +2969,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0012</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 2706109417" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible?</source>
+          <source>Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0013</note>
         </trans-unit>
