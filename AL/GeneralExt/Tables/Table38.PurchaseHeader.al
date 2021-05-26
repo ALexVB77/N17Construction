@@ -110,6 +110,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         }
         field(70016; Paid; Boolean)
         {
+            Caption = 'Paid';
             Description = 'NC 51373 AB';
             trigger OnValidate()
             var
@@ -293,5 +294,31 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
     begin
         IF GET(DocType, No) THEN
             EXIT("Status App Act".AsInteger());
+    end;
+
+    procedure PurchOrderArchive()
+    var
+        PurchRcptLine: record "Purch. Rcpt. Line";
+        UndoPurchRcptLine: codeunit "Undo Purchase Receipt Line";
+        ArchiveMgt: Codeunit ArchiveManagement;
+        LocText50013: Label 'Document %1 has been sent to the archive.';
+    begin
+        PurchRcptLine.SETRANGE("Order No.", "No.");
+        PurchRcptLine.SETRANGE(Correction, FALSE);
+        IF NOT PurchRcptLine.ISEMPTY THEN BEGIN
+            UndoPurchRcptLine.SetHideDialog(TRUE);
+            UndoPurchRcptLine.RUN(PurchRcptLine);
+        END;
+
+        // NC AB >>
+        // не оставляем архивный акт в T36 и T37, оправляем его в T5109 и T5110
+        // Archival := TRUE;
+        // MODIFY;
+        ArchiveMgt.StorePurchDocument(Rec, false);
+        Rec.SetHideValidationDialog(true);
+        Rec.Delete(true);
+        // NC AB <<
+
+        MESSAGE(LocText50013, "No.");
     end;
 }

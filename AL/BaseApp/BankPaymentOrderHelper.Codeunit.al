@@ -116,5 +116,13 @@ codeunit 14937 "Bank Payment Order Helper"
     begin
         ExcelReportBuilderManager.AddSection('MARKS');
     end;
+
+    // NC 50110 GG >>
+    [Scope('OnPrem')]
+    procedure addPageBreak()
+    begin
+        ExcelReportBuilderManager.AddPagebreak();
+    end;
+    // NC 50110 GG <<
 }
 

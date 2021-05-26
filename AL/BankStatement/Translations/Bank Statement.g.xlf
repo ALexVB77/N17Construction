@@ -168,16 +168,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Bank Payment Order BS - Control SetPreview - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 3273168915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TestRep</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report TestRep - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3273168915 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActionName</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report TestRep - Action ActionName - Property Caption</note>
-        </trans-unit>
         <trans-unit id="XmlPort 4143417745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Data Exch. Import - CSV BS</source>
           <note from="Developer" annotates="general" priority="2"></note>
