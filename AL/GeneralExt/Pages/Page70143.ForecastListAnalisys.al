@@ -175,6 +175,284 @@ page 70143 "Forecast List Analisys"
 
                 }
             }
+            repeater(Repeater12370003)
+            {
+                field("Entry No."; Rec."Entry No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Line No."; Rec."Line No.")
+                {
+                    Visible = false;
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+                field(Close; Rec.Close)
+                {
+                    Editable = false;
+                    ShowCaption = false;
+                    ApplicationArea = All;
+                    Caption = 'Actual Flag';
+                    trigger OnValidate()
+                    begin
+                        // CloseOnAfterValidate; //navnav;
+
+                    end;
+
+
+                }
+
+                field("Date"; Rec.Date)
+                {
+                    Editable = true;
+                    NotBlank = true;
+                    ApplicationArea = All;
+                    Caption = 'Date';
+                    trigger OnValidate()
+                    begin
+                        // DateOnAfterValidate; //navnav;
+
+                        //NC 27251 HR beg
+                        //CheckUniqMonthCFLine;
+                        //NC 27251 HR end
+                    end;
+
+
+                }
+
+                field("Project Code"; Rec."Project Code")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'Project Code';
+
+                }
+                field("Cost Code"; Rec."Cost Code")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
+                {
+                    Visible = false;
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+                field(Description; Rec.Description)
+                {
+                    Editable = true;
+                    ApplicationArea = All;
+                    Caption = 'Description';
+                    trigger OnAssistEdit()
+                    var
+                        lrPL: record "Purchase Line";
+                        lrPH: record "Purchase Header";
+                    begin
+                        IF Close THEN BEGIN
+                            lrPL.SETCURRENTKEY("Forecast Entry");
+                            lrPL.SETRANGE("Forecast Entry", "Entry No.");
+                            IF lrPL.FINDFIRST THEN BEGIN
+                                lrPH.SETRANGE("Document Type", lrPL."Document Type");
+                                lrPH.SETRANGE("No.", lrPL."Document No.");
+                                IF lrPH.FINDFIRST THEN BEGIN
+                                    PAGE.RUN(70000, lrPH);
+
+                                END;
+                            END;
+                        END;
+                    end;
+
+
+                }
+                field("Description 2"; Rec."Description 2")
+                {
+                    Editable = true;
+                    ApplicationArea = All;
+                    Caption = 'Description 2';
+
+                }
+                field("Without VAT (LCY)"; Rec."Without VAT (LCY)")
+                {
+                    Visible = true;
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+                field("Contragent No."; Rec."Contragent No.")
+                {
+                    Editable = true;
+                    ApplicationArea = All;
+                    Caption = 'Vendor No.';
+                    trigger OnValidate()
+                    begin
+                        //NC 27251 HR beg
+                        //CheckUniqMonthCFLine;
+                        //NC 27251 HR end
+                    end;
+
+                    trigger OnLookup(var Text: text): boolean
+                    begin
+
+                        IF grVendor.FINDFIRST THEN BEGIN
+                            IF grVendor.GET("Contragent No.") THEN;
+                            IF PAGE.RUNMODAL(PAGE::"Vendor List", grVendor) = ACTION::LookupOK THEN BEGIN
+                                Rec.VALIDATE("Contragent No.", grVendor."No.");
+                            END;
+                        END;
+                    end;
+                }
+                field(CName; Rec."Contragent Name")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'Vendor Name';
+
+                }
+                field("Agreement No."; Rec."Agreement No.")
+                {
+                    Editable = true;
+                    ApplicationArea = All;
+                    Caption = 'Agreement No.';
+                    trigger OnLookup(var Text: text): boolean
+                    var
+                        lrProjectsBudgetEntry: record "Projects Budget Entry";
+                        lfCFCorrection: page "Forecast List Analisys Correct";
+                    begin
+                        CurrPage.SAVERECORD;
+                        COMMIT;
+                        grVendorAgreement.SETRANGE("Vendor No.", Rec."Contragent No.");
+                        grVendorAgreement.SETRANGE(Active, TRUE);
+                        IF grVendorAgreement.FINDFIRST THEN BEGIN
+                            IF grVendorAgreement.GET("Contragent No.", "Agreement No.") THEN;
+                            IF PAGE.RUNMODAL(PAGE::"Vendor Agreements", grVendorAgreement) = ACTION::LookupOK THEN BEGIN
+                                IF grVendorAgreement."No." <> '' THEN BEGIN
+                                    IF Rec."Building Turn" = '' THEN BEGIN
+                                        MESSAGE(TEXT0004);
+                                        EXIT;
+                                    END;
+
+                                    //NC 28666 HR beg
+                                    //IF "Cost Code"  = '' THEN
+                                    //BEGIN
+                                    //  MESSAGE(TEXT0005);
+                                    //  EXIT;
+                                    //END;
+                                    IF (NOT IsProductionProject) AND (Rec."Cost Code" = '') THEN BEGIN
+                                        MESSAGE(TEXT0005);
+                                        EXIT;
+                                    END;
+                                    //NC 28666 HR end
+
+                                    IF Rec."Without VAT" = 0 THEN BEGIN
+                                        MESSAGE(TEXT0006);
+                                        EXIT;
+                                    END;
+                                END;
+
+                                Delta := Amount;
+                                vAgreement.GET("Contragent No.", grVendorAgreement."No.");
+                                // IF NOT vAgreement.Virtual THEN   // CHECK
+                                if true then BEGIN
+                                    // SWC DD 20.07.17 >>
+                                    IF NOT vAgreement."Don't Check CashFlow" THEN
+                                        // SWC DD 20.07.17 <<
+                                        //   IF Delta>(vAgreement."Agreement Amount"-GetAmount(grVendorAgreement."No.")) THEN
+                                        //   BEGIN
+                                        //     MESSAGE(TEXT001);
+                                        //     EXIT;
+                                        //   END;
+
+
+                                        VALIDATE("Agreement No.", grVendorAgreement."No.");
+                                    IF ("Agreement No." <> '') AND (xRec."Agreement No." = '') THEN BEGIN
+                                        //NC 29435 HR beg
+                                        ////NC 28666 HR beg
+                                        //IF NOT (IsProductionProject AND ("Cost Code" = '')) THEN BEGIN
+                                        ////NC 28666 HR end
+                                        IF NOT IsProductionProject THEN BEGIN
+                                            //NC 29435 HR end
+
+                                            MESSAGE(TEXT0008);
+                                            CLEAR(lfCFCorrection);
+                                            lfCFCorrection.LOOKUPMODE := TRUE;
+                                            lrProjectsBudgetEntry.SETCURRENTKEY(Date);
+                                            lrProjectsBudgetEntry.SETRANGE("Project Code", "Project Code");
+                                            lrProjectsBudgetEntry.SETRANGE("Project Turn Code", "Project Turn Code");
+                                            lrProjectsBudgetEntry.SETRANGE("Cost Code", "Cost Code");
+                                            lrProjectsBudgetEntry.SETFILTER("Contragent No.", '%1|%2', '', "Contragent No.");
+                                            lrProjectsBudgetEntry.SETRANGE("Agreement No.", '');
+                                            lrProjectsBudgetEntry.SETFILTER("Entry No.", '<>%1', "Entry No.");
+                                            lrProjectsBudgetEntry.SETRANGE(NotVisible, FALSE);
+                                            IF lrProjectsBudgetEntry.FINDFIRST THEN;
+                                            lfCFCorrection.SETTABLEVIEW(lrProjectsBudgetEntry);
+                                            lfCFCorrection.SetData(Rec);
+                                            IF lfCFCorrection.RUNMODAL = ACTION::LookupOK THEN BEGIN
+                                                // SetSum;
+                                            END
+                                            ELSE BEGIN
+                                                // ClearSum;
+                                                Rec.VALIDATE("Agreement No.", OldAgreement);
+                                                MESSAGE(TEXT0009);
+                                            END;
+                                        END; //NC 28666 HR <>
+                                    END;
+                                END
+                                ELSE
+                                    VALIDATE("Agreement No.", grVendorAgreement."No.");
+
+                            END;
+                        END;
+                        OldAgreement := "Agreement No.";
+                        CurrPage.UPDATE;
+                    end;
+
+                    trigger OnValidate()
+                    begin
+                        // AgreementNoOnAfterValidate; //navnav;
+
+                    end;
+
+
+                }
+
+                field(AE; Rec."External Agreement No.")
+                {
+                    Editable = false;
+                    ApplicationArea = All;
+                    Caption = 'External Agreement No.';
+
+                }
+                field("Payment Doc. No."; Rec."Payment Doc. No.")
+                {
+                    Visible = true;
+                    Editable = false;
+                    ApplicationArea = All;
+
+                }
+
+                field("Create User"; Rec."Create User")
+                {
+                    ApplicationArea = All;
+
+                }
+                field("Parent Entry"; Rec."Parent Entry")
+                {
+                    ApplicationArea = All;
+                }
+
+            }
         }
     }
 
