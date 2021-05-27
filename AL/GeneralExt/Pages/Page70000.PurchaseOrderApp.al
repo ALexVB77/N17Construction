@@ -272,8 +272,7 @@ page 70000 "Purchase Order App"
                 }
             }
 
-            /*
-            part(PurchaseOrderActLines; "Purchase Order Act Subform")
+            part(PurchaseOrderAppLines; "Purchase Order Subform App")
             {
                 ApplicationArea = All;
                 Editable = "Buy-from Vendor No." <> '';
@@ -281,7 +280,7 @@ page 70000 "Purchase Order App"
                 SubPageLink = "Document No." = FIELD("No.");
                 UpdatePropagation = Both;
             }
-            */
+
             group("Payment Request")
             {
                 Caption = 'Payment Request';
