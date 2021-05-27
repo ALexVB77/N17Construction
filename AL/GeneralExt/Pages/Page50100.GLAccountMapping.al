@@ -1,6 +1,6 @@
 page 50100 "G/L Account Mapping"
 {
-    PageType = StandardDialog;
+    PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "G/L Account Mapping";
@@ -10,7 +10,7 @@ page 50100 "G/L Account Mapping"
     {
         area(Content)
         {
-            group(GroupName)
+            repeater(RepeaterName)
             {
                 field("New No."; Rec."New No.")
                 {
@@ -32,6 +32,7 @@ page 50100 "G/L Account Mapping"
             {
                 ApplicationArea = All;
                 Caption = 'Import G\L Account Mapping';
+                Image = ImportExcel;
 
                 trigger OnAction()
                 var
