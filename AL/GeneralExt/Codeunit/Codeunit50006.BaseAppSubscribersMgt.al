@@ -280,5 +280,29 @@ codeunit 50006 "Base App. Subscribers Mgt."
             until DocAttach.Next() = 0;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Transfer Document", 'OnBeforeCheckTransLines', '', false, false)]
+    local procedure OnBeforeCheckTransLines(var TransferLine: Record "Transfer Line";
+                                            var IsHandled: Boolean;
+                                            TransHeader: Record "Transfer Header");
+    var
+        InvtSetup: Record "Inventory Setup";
+    begin
+        // NC 51411 > EP
+        // Перенес модификацию из cu "Release Transfer Document".OnRun()
+
+        // SWC816 AK 200416 >>
+        InvtSetup.Get();
+        if InvtSetup."Use Giv. Production Func." then begin
+            InvtSetup.TestField("Giv. Materials Loc. Code");
+            if (TransHeader."Transfer-from Code" = InvtSetup."Giv. Materials Loc. Code") or
+               (TransHeader."Transfer-to Code" = InvtSetup."Giv. Materials Loc. Code") then begin
+                TransHeader.TestField("Vendor No.");
+                TransHeader.TestField("Agreement No.");
+            end;
+        end;
+        // SWC816 AK 200416 <<
+
+        // NC 51411 < EP
+    end;
 
 }
