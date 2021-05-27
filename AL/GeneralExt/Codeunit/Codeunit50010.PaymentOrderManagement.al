@@ -41,7 +41,8 @@ codeunit 50010 "Payment Order Management"
             INSERT(TRUE);
             VALIDATE("Buy-from Vendor No.", PurchSetup."Base Vendor No.");
 
-            IF WhseEmployee.get(UserId) THEN BEGIN
+            WhseEmployee.SetRange("User ID", UserId);
+            IF WhseEmployee.FindFirst() THEN BEGIN
                 Selected := DIALOG.STRMENU(Text50003, 1, Text50004);
                 CASE Selected OF
                     1:
