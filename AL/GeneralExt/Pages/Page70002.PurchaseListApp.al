@@ -186,6 +186,7 @@ page 70002 "Purchase List App"
                 field("Status App"; Rec."Status App")
                 {
                     ApplicationArea = All;
+                    Caption = 'Approval Status';
                 }
                 field("Date Status App"; Rec."Date Status App")
                 {

@@ -259,6 +259,7 @@ page 70000 "Purchase Order App"
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    Caption = 'Approval Status';
                 }
                 field("Date Status App"; Rec."Date Status App")
                 {

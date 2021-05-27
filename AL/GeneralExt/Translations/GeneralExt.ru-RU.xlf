@@ -5081,6 +5081,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Sorting - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Page 758120940 - Control 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval Status</source>
+          <target>Статус утверждения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Status App - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 758120940 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <target>Ко&amp;мментарии</target>
@@ -5404,6 +5411,13 @@
           <target>Характер проблемы</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Problem Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Control 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval Status</source>
+          <target>Статус утверждения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Status App - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 1725717413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Request</source>

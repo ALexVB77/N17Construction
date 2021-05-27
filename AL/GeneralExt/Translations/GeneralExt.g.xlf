@@ -4218,6 +4218,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Sorting - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Page 758120940 - Control 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Status App - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 758120940 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4487,6 +4492,11 @@
           <source>Problem Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Problem Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Control 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Status App - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 1725717413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Request</source>
