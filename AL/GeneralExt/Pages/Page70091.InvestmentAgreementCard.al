@@ -222,6 +222,228 @@ page 70091 "Investment Agreement Card"
                 }
 
             }
+
+            group(ShareholdersDetails)
+            {
+                Caption = 'Shareholders details';
+
+                field("Contact 1"; Rec."Contact 1")
+                {
+                    ApplicationArea = All;
+                }
+                field("C1 Name"; Rec."C1 Name")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("C1 Telephone"; Rec."C1 Telephone")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("C1 Passport Series"; Rec."C1 Passport Series")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("C1 Delivery of passport"; Rec."C1 Delivery of passport")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("C1 Passport No."; Rec."C1 Passport No.")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("C1 Registration"; Rec."C1 Registration")
+                {
+                    ApplicationArea = All;
+                }
+
+                //долевой взнос %/сумма
+                field("Amount part 1"; Rec."Amount part 1")
+                {
+                    ApplicationArea = All;
+                }
+                field("Amount part 1 Amount"; rec."Amount part 1 Amount")
+                {
+                    ApplicationArea = All;
+                }
+
+                //рассрочка % год/сумма
+                field("Installment plan 1 %"; Rec."Installment plan 1 %")
+                {
+                    ApplicationArea = All;
+                }
+
+
+                field("BalanceCust1Req"; Rec."Balance Cust 1 (LCY)")
+                {
+                    ApplicationArea = All;
+                }
+
+                //"Amount part 1 Amount"+"Installment plan 1 Amount"+"Balance Cust 1 (LCY)"
+                field("RemainingAmtLCYReq"; "Amount part 1 Amount" + "Balance Cust 1 (LCY)")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("C1 Place and BirthDate"; Rec."C1 Place and BirthDate")
+                {
+                    ApplicationArea = All;
+                }
+
+                group(Shareholder2Req)
+                {
+                    Caption = 'Shareholder 2 details';
+
+                    field("Contact 2"; Rec."Contact 2")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("C2 name"; Rec."C2 name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(C2TelephoneReq; Rec."C2 Telephone")
+                    {
+                        ApplicationArea = All;
+                    }
+
+
+                    field("Amount part 2"; Rec."Amount part 2")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Amount part 2 Amount"; Rec."Amount part 2 Amount")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(BalanceCust2LCYReq; Rec."Balance Cust 2 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                }
+
+                group(Shareholder3Req)
+                {
+                    Caption = 'Shareholder 3 details';
+
+                    field("Contact 3"; Rec."Contact 3")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("C3 name"; Rec."C3 name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(C3TelephoneReq; Rec."C3 Telephone")
+                    {
+                        ApplicationArea = All;
+                    }
+
+
+                    field("Amount part 3"; Rec."Amount part 3")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Amount part 3 Amount"; Rec."Amount part 3 Amount")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(BalanceCust3LCYReq; Rec."Balance Cust 3 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                }
+
+                group(Shareholder4Req)
+                {
+                    Caption = 'Shareholder 4 details';
+
+                    field("Contact 4"; Rec."Contact 4")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("C4 name"; Rec."C4 name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(C4TelephoneReq; Rec."C4 Telephone")
+                    {
+                        ApplicationArea = All;
+                    }
+
+
+                    field("Amount part 4"; Rec."Amount part 4")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Amount part 4 Amount"; Rec."Amount part 4 Amount")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(BalanceCust4LCYReq; Rec."Balance Cust 4 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                }
+
+                group(Shareholder5Req)
+                {
+                    Caption = 'Shareholder 5 details';
+
+                    field("Contact 5"; Rec."Contact 5")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("C5 name"; Rec."C5 name")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(C5TelephoneReq; Rec."C5 Telephone")
+                    {
+                        ApplicationArea = All;
+                    }
+
+
+                    field("Amount part 5"; Rec."Amount part 5")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field("Amount part 5 Amount"; Rec."Amount part 5 Amount")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                    field(BalanceCust5LCYReq; Rec."Balance Cust 5 (LCY)")
+                    {
+                        ApplicationArea = All;
+                    }
+
+                }
+
+
+            }
         }
     }
 

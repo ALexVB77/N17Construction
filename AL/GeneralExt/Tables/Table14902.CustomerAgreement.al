@@ -190,6 +190,78 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
             OptionMembers = Basic,Additional;
         }
 
+        field(70011; "Contact 1"; Code[20])
+        {
+            TableRelation = Contact;
+            Caption = 'Owner 1';
+            trigger OnValidate()
+            var
+                grContact: Record Contact;
+            begin
+                if grContact.GET("Contact 1") then begin
+                    "C1 name" := grContact.Name;
+                    "C1 Passport No." := grContact."Passport No.";
+                    "C1 Passport Series" := grContact."Passport Series";
+                    "C1 Delivery of passport" := grContact."Delivery of passport";
+                    "C1 Registration" := grContact.Registration;
+                    "C1 Telephone" := grContact."Phone No.";
+                    "C1 E-Mail" := COPYSTR(grContact."E-Mail", 1, MAXSTRLEN("C1 E-Mail"));
+                end else begin
+                    "C1 name" := '';
+                    "C1 Passport No." := '';
+                    "C1 Passport Series" := '';
+                    "C1 Delivery of passport" := '';
+                    "C1 Registration" := '';
+                    "C1 Telephone" := '';
+                    "C1 E-Mail" := '';
+                END
+            end;
+        }
+
+        field(70026; "C1 Name"; Text[250])
+        {
+            FieldClass = FlowField;
+            CalcFormula = Lookup(Contact.Name WHERE("No." = FIELD("Contact 1")));
+            Caption = 'Name';
+        }
+
+        field(70020; "C1 Passport No."; Code[20])
+        {
+            Caption = 'Passport No.';
+        }
+
+        field(70086; "C1 Passport Series"; Code[20])
+        {
+            Caption = 'Passport Series';
+        }
+
+        field(70021; "C1 Delivery of passport"; Text[245])
+        {
+            Caption = 'Passport issued';
+        }
+
+        field(70022; "C1 Registration"; Text[245])
+        {
+            Caption = 'Registration Address';
+        }
+
+        field(70023; "C1 Telephone"; Text[30])
+        {
+            Caption = 'Phone';
+        }
+
+        field(70024; "C1 Telephone 1"; Text[30])
+        {
+            Caption = 'Phone Home';
+        }
+
+        field(70025; "C1 E-Mail"; Text[30])
+        {
+            Caption = 'Email';
+        }
+
+
+
         field(70012; "Contact 2"; Code[20])
         {
             TableRelation = Contact;
@@ -719,6 +791,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
             Caption = 'Installment % (shareholder 3)';
             BlankZero = true;
         }
+
 
         /*
         field(70058; "Installment plan 1 Amount"; Decimal)
