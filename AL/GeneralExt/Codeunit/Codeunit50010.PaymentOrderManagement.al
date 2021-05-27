@@ -19,6 +19,8 @@ codeunit 50010 "Payment Order Management"
         Text50005: Label 'It is required to select the type of document.';
         LocErrorText1: Label 'The estimator cannot create a document with the type Act!';
         Selected: Integer;
+        IsLocationDocument: Boolean;
+        LocationCode: code[20];
     begin
         grUS.GET(USERID);
         IF NOT (grUS."Status App Act" IN [grUS."Status App Act"::Сontroller, grUS."Status App Act"::Estimator]) then begin
@@ -31,6 +33,24 @@ codeunit 50010 "Payment Order Management"
         PurchSetup.GET;
         PurchSetup.TestField("Base Vendor No.");
 
+        WhseEmployee.SetRange("User ID", UserId);
+        IF WhseEmployee.FindFirst() THEN BEGIN
+            Selected := DIALOG.STRMENU(Text50003, 1, Text50004);
+            CASE Selected OF
+                1:
+                    BEGIN
+                        IsLocationDocument := TRUE;
+                        Location.GET(WhseEmployee.GetDefaultLocation('', TRUE));
+                        Location.TESTFIELD("Bin Mandatory", FALSE);
+                        LocationCode := Location.Code;
+                    END;
+                2:
+                    ;
+                ELSE
+                    ERROR(Text50005);
+            END;
+        END;
+
         with grPurchHeader do begin
             RESET;
             INIT;
@@ -41,28 +61,15 @@ codeunit 50010 "Payment Order Management"
             INSERT(TRUE);
             VALIDATE("Buy-from Vendor No.", PurchSetup."Base Vendor No.");
 
-            WhseEmployee.SetRange("User ID", UserId);
-            IF WhseEmployee.FindFirst() THEN BEGIN
-                Selected := DIALOG.STRMENU(Text50003, 1, Text50004);
-                CASE Selected OF
-                    1:
-                        BEGIN
-                            "Location Document" := TRUE;
-                            Storekeeper := USERID;
-                            Location.GET(WhseEmployee.GetDefaultLocation('', TRUE));
-                            Location.TESTFIELD("Bin Mandatory", FALSE);
-                            VALIDATE("Location Code", Location.Code);
-                        END;
-                    2:
-                        ;
-                    ELSE
-                        ERROR(Text50005);
-                END;
-            END;
+            if IsLocationDocument then begin
+                "Location Document" := TRUE;
+                Storekeeper := USERID;
+                VALIDATE("Location Code", LocationCode);
+            end;
 
             "Status App Act" := "Status App Act"::Controller;
             "Process User" := USERID;
-            "Request Payment Doc Type" := TRUE;
+            "Payment Doc Type" := "Payment Doc Type"::"Payment Request";
             "Date Status App" := TODAY;
             Controller := USERID;
             if "Act Type" in ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"] then
@@ -73,6 +80,40 @@ codeunit 50010 "Payment Order Management"
             COMMIT;
             PAGE.RUNMODAL(PAGE::"Purchase Order Act", grPurchHeader);
         end;
+    end;
+
+    procedure NewOrderApp(PurchHeader: Record "Purchase Header")
+    var
+        grPurchHeader: Record "Purchase Header";
+        PurchSetup: Record "Purchases & Payables Setup";
+        grUS: Record "User Setup";
+    begin
+
+        PurchSetup.GET;
+        PurchSetup.TestField("Base Vendor No.");
+
+        grUS.GET(USERID);
+
+        grPurchHeader.RESET;
+        grPurchHeader.INIT;
+        grPurchHeader."No." := '';
+        grPurchHeader."Document Type" := grPurchHeader."Document Type"::Order;
+        grPurchHeader."IW Documents" := TRUE;
+        grPurchHeader.INSERT(TRUE);
+
+        grPurchHeader.VALIDATE("Buy-from Vendor No.", PurchSetup."Base Vendor No.");
+        grPurchHeader.VALIDATE("Status App", grUS."Status App");
+        grPurchHeader."Process User" := USERID;
+        IF grUS."Status App" <> grUS."Status App"::Reception THEN
+            grPurchHeader."Payment Doc Type" := grPurchHeader."Payment Doc Type"::"Payment Request"
+        ELSE
+            grPurchHeader."Payment Doc Type" := grPurchHeader."Payment Doc Type"::Invoice;
+        grPurchHeader."Status App" := grPurchHeader."Status App"::Reception;
+        grPurchHeader."Date Status App" := TODAY;
+        grPurchHeader.MODIFY(TRUE);
+
+        COMMIT;
+        Page.RUNMODAL(Page::"Purchase Order App", grPurchHeader);
     end;
 
     procedure ActInterBasedOn(PurchHeader: Record "Purchase Header")
@@ -125,7 +166,7 @@ codeunit 50010 "Payment Order Management"
                         PurchLine.VALIDATE("VAT Prod. Posting Group");
                         PurchLine.MODIFY(TRUE);
 
-                        SetPurchLineApprover(PurchLine);
+                        SetPurchLineApprover(PurchLine, true);
                         PurchLine.MODIFY;
                     END;
                 UNTIL VendArgDtld2.NEXT = 0;
@@ -134,7 +175,7 @@ codeunit 50010 "Payment Order Management"
 
     end;
 
-    procedure SetPurchLineApprover(PurchLine: Record "Purchase Line")
+    procedure SetPurchLineApprover(var PurchLine: Record "Purchase Line"; CheckSubstitute: Boolean)
     var
         DimSetEntry: Record "Dimension Set Entry";
         DimValue: Record "Dimension Value";
@@ -149,15 +190,47 @@ codeunit 50010 "Payment Order Management"
                 PurchasesSetup.TestField("Cost Place Dimension");
                 IF DimSetEntry.GET("Dimension Set ID", PurchasesSetup."Cost Place Dimension") THEN
                     IF DimValue.GET(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
-                        IF DimValue."Cost Holder" <> '' THEN BEGIN
-                            UserSetup.GET(DimValue."Cost Holder");
-                            IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
-                                Approver := UserSetup.Substitute
-                            ELSE
-                                Approver := UserSetup."User ID";
-                        END;
+                        if not CheckSubstitute THEN
+                            Approver := DimValue."Cost Holder"
+                        else
+                            if DimValue."Cost Holder" <> '' THEN BEGIN
+                                UserSetup.GET(DimValue."Cost Holder");
+                                IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
+                                    Approver := UserSetup.Substitute
+                                ELSE
+                                    Approver := UserSetup."User ID";
+                            END;
             END;
         end;
+    end;
+
+    procedure FillPurchLineApproverFromGlobalDim(GlobalDimNo: Integer; DimValueCode: code[20]; var PurchLine: Record "Purchase Line"; CheckSubstitute: Boolean)
+    var
+        DimValue: Record "Dimension Value";
+        UserSetup: Record "User Setup";
+        PurchasesSetup: Record "Purchases & Payables Setup";
+    begin
+        if DimValueCode = '' then
+            exit;
+        DimValue.SetRange(Code, DimValueCode);
+        DimValue.SetRange("Global Dimension No.", GlobalDimNo);
+        if not DimValue.FindFirst() then
+            exit;
+        PurchasesSetup.GET;
+        PurchasesSetup.TestField("Cost Place Dimension");
+        if PurchasesSetup."Cost Place Dimension" <> DimValue."Dimension Code" then
+            exit;
+
+        if not CheckSubstitute THEN
+            PurchLine.Approver := DimValue."Cost Holder"
+        else
+            if DimValue."Cost Holder" <> '' THEN BEGIN
+                UserSetup.GET(DimValue."Cost Holder");
+                IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
+                    PurchLine.Approver := UserSetup.Substitute
+                ELSE
+                    PurchLine.Approver := UserSetup."User ID";
+            END;
     end;
 
     procedure PurchOrderActArchiveQst(PurchHeader: Record "Purchase Header")
@@ -238,5 +311,4 @@ codeunit 50010 "Payment Order Management"
             END;
         END;
     end;
-
 }

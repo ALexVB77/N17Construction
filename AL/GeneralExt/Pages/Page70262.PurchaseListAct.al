@@ -225,7 +225,6 @@ page 70262 "Purchase List Act"
 
     actions
     {
-
         area(Processing)
         {
             group(New)
@@ -297,7 +296,6 @@ page 70262 "Purchase List Act"
                 trigger OnAction()
                 begin
                     OpenActCard();
-                    Message('OK!');
                 end;
             }
             action(ApproveButton)
@@ -478,7 +476,7 @@ page 70262 "Purchase List Act"
             Rec."Act Type"::Advance:
                 ;
             else
-                page.Run(Page::"Purchase Order Act", Rec);
+                page.Runmodal(Page::"Purchase Order Act", Rec);
         end;
         CurrPage.Update(false);
     end;

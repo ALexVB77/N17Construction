@@ -1,6 +1,7 @@
 page 70002 "Purchase List App"
 {
-    Editable = true;
+    ApplicationArea = Basic, Suite;
+    UsageCategory = Lists;
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = false;
@@ -8,7 +9,8 @@ page 70002 "Purchase List App"
     DataCaptionFields = "Document Type";
     PageType = Worksheet;
     Caption = 'Payment Invoices (Checking)';
-
+    RefreshOnActivate = true;
+    CardPageId = "Purchase Order App";
     layout
     {
         area(content)
@@ -210,39 +212,97 @@ page 70002 "Purchase List App"
             }
         }
     }
-    
+
+    actions
+    {
+        area(Processing)
+        {
+            action(NewOrderApp)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'New';
+                Image = NewDocument;
+
+                trigger OnAction()
+                begin
+                    PaymentOrderMgt.NewOrderApp(Rec);
+                    CurrPage.Update(false);
+                end;
+            }
+            action(DocCard)
+            {
+                ApplicationArea = All;
+                Caption = 'Edit';
+                Image = Edit;
+
+                trigger OnAction()
+                begin
+                    page.Runmodal(Page::"Purchase Order App", Rec);
+                    CurrPage.Update(false);
+                end;
+            }
+            action("Co&mments")
+            {
+                ApplicationArea = All;
+                Caption = 'Co&mments';
+                Image = ViewComments;
+                RunObject = Page "Purch. Comment Sheet";
+                RunPageLink = "Document Type" = FIELD("Document Type"),
+                            "No." = FIELD("No."),
+                            "Document Line No." = CONST(0);
+            }
+            action(DocAttach)
+            {
+                ApplicationArea = All;
+                Caption = 'Attachments';
+                Image = Attach;
+
+                trigger OnAction()
+                var
+                    DocumentAttachmentDetails: Page "Document Attachment Details";
+                    RecRef: RecordRef;
+                begin
+                    RecRef.GetTable(Rec);
+                    DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                    DocumentAttachmentDetails.RunModal;
+                end;
+            }
+        }
+    }
+
     trigger OnOpenPage()
     begin
         grUserSetup.GET(USERID);
-        
+
         // SWC968 DD 19.12.16 >>
         IF grUserSetup."Show All Pay Inv" AND (Filter1 = Filter1::mydoc) THEN
-          Filter1 := Filter1::all;
+            Filter1 := Filter1::all;
         // SWC968 DD 19.12.16 <<
-        
-        FILTERGROUP:=0;
-        SETRANGE("IW Documents",TRUE);
+
+        FILTERGROUP := 0;
+        SETRANGE("IW Documents", TRUE);
         //SWC004 AKA 120514 >>
         SETFILTER("Act Type", '%1', "Act Type"::" ");
         //SWC004 AKA 120514 <<
-        FILTERGROUP:=2;
-        
+        FILTERGROUP := 2;
+
         //--
         SetSortType;
         SetRecFilters;
-        
+
         //IF grUserSetup."Status App"<>grUserSetup."Status App"::Сontroller THEN //SWC318 AKA 151014
         IF grUserSetup."Status App" = grUserSetup."Status App"::Checker THEN      //SWC318 AKA 151014
             Filter1Enabled := FALSE;
-        
+
         IF grUserSetup."Administrator IW" THEN
-            Filter1Enabled :=TRUE;
+            Filter1Enabled := TRUE;
         //--
-    end;   
-    
-    
+    end;
+
+
     var
         grUserSetup: Record "User Setup";
+        PaymentOrderMgt: Codeunit "Payment Order Management";
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;

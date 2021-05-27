@@ -2,6 +2,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
 {
     fields
     {
+        field(50001; "Payment Assignment"; Text[15])
+        {
+            Description = 'NC 51378 AB';
+            Caption = 'Payment Assignment';
+        }
         field(70002; "Process User"; Code[50])
         {
             TableRelation = "User Setup";
@@ -59,10 +64,19 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
                 // NC 51373 AB >>
             end;
         }
-        field(70011; "Request Payment Doc Type"; Boolean)
+        field(70010; "Payment Type"; Option)
+        {
+            Description = 'NC 51378 AB';
+            Caption = 'Payment Type';
+            OptionCaption = 'Prepay,Postpay';
+            OptionMembers = "pre-pay","post-payment";
+        }
+        field(70011; "Payment Doc Type"; Option)
         {
             Description = 'NC 51373 AB';
-            Caption = 'Request Payment Doc Type';
+            Caption = 'Payment Doc Type';
+            OptionCaption = 'Invoice,Payment Request';
+            OptionMembers = Invoice,"Payment Request";
         }
         field(70012; "Payment Details"; Text[230])
         {
@@ -192,6 +206,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
                     "Pre-Approver" := '';
             end;
         }
+        field(70027; "IW Planned Repayment Date"; Date)
+        {
+            Description = 'NC 51378 AB';
+            Caption = 'IW Planned Repayment Date';
+        }
         field(70034; "IW Documents"; Boolean)
         {
             Caption = 'IW Documents';
@@ -212,6 +231,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         {
             Caption = 'Act Type';
             Description = 'NC 51373 AB';
+        }
+        field(70047; "Payment to Person"; Boolean)
+        {
+            Caption = 'Payment to Person';
+            Description = 'NC 51378 AB';
         }
         field(90003; "Status App Act"; Enum "Purchase Act Approval Status")
         {
@@ -320,5 +344,17 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         // NC AB <<
 
         MESSAGE(LocText50013, "No.");
+    end;
+
+    procedure HasBoundedCashFlows(): Boolean
+    var
+        PurchLine3: record "Purchase Line";
+    begin
+        //NC 29594 HR beg
+        PurchLine3.SETRANGE("Document Type", "Document Type");
+        PurchLine3.SETRANGE("Document No.", "No.");
+        PurchLine3.SETFILTER("Forecast Entry", '<>0');
+        EXIT(NOT PurchLine3.ISEMPTY);
+        //NC 29594 HR end
     end;
 }

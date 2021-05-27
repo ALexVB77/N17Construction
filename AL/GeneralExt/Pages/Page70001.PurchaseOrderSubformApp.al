@@ -1,4 +1,4 @@
-page 70261 "Purchase Order Act Subform"
+page 70001 "Purchase Order Subform App"
 {
     AutoSplitKey = true;
     Caption = 'Lines';
@@ -80,26 +80,6 @@ page 70261 "Purchase Order Act Subform"
                         DeltaUpdateTotals();
                     end;
                 }
-                field("Location Code"; "Location Code")
-                {
-                    ApplicationArea = All;
-                    Editable = NOT IsBlankNumber;
-                    Enabled = NOT IsBlankNumber;
-                    ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
-
-                    trigger OnValidate()
-                    begin
-                        DeltaUpdateTotals();
-                    end;
-
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        IF gcERPC.LookUpLocationCode("Location Code") THEN BEGIN
-                            VALIDATE("Location Code");
-                            DeltaUpdateTotals();
-                        END;
-                    end;
-                }
                 field(Quantity; Quantity)
                 {
                     ApplicationArea = All;
@@ -169,7 +149,11 @@ page 70261 "Purchase Order Act Subform"
                     Editable = false;
                     Enabled = NOT IsBlankNumber;
                 }
-
+                field(Approver; Approver)
+                {
+                    Editable = NOT IsBlankNumber;
+                    Enabled = NOT IsBlankNumber;
+                }
                 field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
@@ -190,7 +174,11 @@ page 70261 "Purchase Order Act Subform"
                         PaymentOrderMgt.FillPurchLineApproverFromGlobalDim(2, "Shortcut Dimension 2 Code", Rec, false);
                     end;
                 }
-
+                field("Forecast Entry"; Rec."Forecast Entry")
+                {
+                    ApplicationArea = All;
+                    ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
+                }
                 field("Utilities Dim. Value Code"; UtilitiesDimValueCode)
                 {
                     Caption = 'Utilities Dim. Value Code';
@@ -207,7 +195,7 @@ page 70261 "Purchase Order Act Subform"
                     var
                         DimValue: Record "Dimension Value";
                     begin
-                        GLSetup.Get();
+                        GLSetup.GET;
                         IF GLSetup."Utilities Dimension Code" <> '' then begin
                             DimValue.FilterGroup(3);
                             DimValue.SetRange("Dimension Code", GLSetup."Utilities Dimension Code");
@@ -218,15 +206,8 @@ page 70261 "Purchase Order Act Subform"
                             end;
                         end;
                     end;
-
                 }
-                field(Approver; Approver)
-                {
-                    Editable = NOT IsBlankNumber;
-                    Enabled = NOT IsBlankNumber;
-                }
-
-            }  // repeater end
+            } // repeater end
 
             group(LineTotals)
             {
@@ -289,7 +270,6 @@ page 70261 "Purchase Order Act Subform"
                     }
                 }
             }
-
 
 
         }
@@ -415,38 +395,32 @@ page 70261 "Purchase Order Act Subform"
     end;
 
     var
-
         GLSetup: Record "General Ledger Setup";
-        Currency: Record Currency;
         PurchasesSetup: Record "Purchases & Payables Setup";
-        TotalPurchaseHeader: Record "Purchase Header";
-        PurchaseHeader: Record "Purchase Header";
+        Currency: Record Currency;
         grInventorySetup: Record "Inventory Setup";
         TempOptionLookupBuffer: Record "Option Lookup Buffer" temporary;
         TotalPurchaseLine: Record "Purchase Line";
+        TotalPurchaseHeader: Record "Purchase Header";
+        PurchaseHeader: Record "Purchase Header";
         TransferExtendedText: Codeunit "Transfer Extended Text";
         DocumentTotals: Codeunit "Document Totals";
-        gcERPC: Codeunit "ERPC Funtions";
-        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
         PaymentOrderMgt: Codeunit "Payment Order Management";
+        ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
+
+        TypeAsText: Text[30];
+        CurrPageIsEditable: Boolean;
         IsCommentLine: Boolean;
         IsBlankNumber: Boolean;
         UnitofMeasureCodeIsChangeable: Boolean;
-        TypeAsText: Text[30];
-        CurrPageIsEditable: Boolean;
-        IsSaaSExcelAddinEnabled: Boolean;
-        SuppressTotals: Boolean;
         ShortcutDimCode: array[8] of Code[20];
-        UtilitiesDimValueCode: code[20];
+        SuppressTotals: Boolean;
         VATAmount: Decimal;
         InvoiceDiscountAmount: Decimal;
         InvoiceDiscountPct: Decimal;
+        UtilitiesDimValueCode: code[20];
         UtilitiesEnabled: Boolean;
-
-    procedure UpdateForm(SetSaveRecord: Boolean)
-    begin
-        CurrPage.Update(SetSaveRecord);
-    end;
+        IsSaaSExcelAddinEnabled: Boolean;
 
     local procedure NoOnAfterValidate()
     begin
@@ -514,4 +488,5 @@ page 70261 "Purchase Order Act Subform"
             if xRec."Document No." = '' then
                 Type := Type::Item;
     end;
+
 }
