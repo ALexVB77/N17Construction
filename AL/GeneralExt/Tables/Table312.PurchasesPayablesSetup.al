@@ -33,6 +33,12 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Description = 'NC 51373 AB';
             TableRelation = "VAT Product Posting Group";
         }
+        field(50006; "Default Payment Assignment"; Text[15])
+        {
+            Caption = 'Default Payment Assignment';
+            Description = 'NC 51378 AB';
+            InitValue = '1';
+        }
         field(50030; "Vendor Agreement Template Code"; Code[250])
         {
             Caption = 'Vendor Agreement Template Code';

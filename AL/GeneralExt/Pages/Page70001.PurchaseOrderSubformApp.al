@@ -422,6 +422,11 @@ page 70001 "Purchase Order Subform App"
         UtilitiesEnabled: Boolean;
         IsSaaSExcelAddinEnabled: Boolean;
 
+    procedure UpdateForm(SetSaveRecord: Boolean)
+    begin
+        CurrPage.Update(SetSaveRecord);
+    end;
+
     local procedure NoOnAfterValidate()
     begin
         UpdateEditableOnRow();

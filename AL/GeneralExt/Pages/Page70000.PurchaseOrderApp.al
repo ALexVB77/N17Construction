@@ -70,23 +70,27 @@ page 70000 "Purchase Order App"
                     field("Invoice Amount Incl. VAT"; Rec."Invoice Amount Incl. VAT")
                     {
                         ApplicationArea = All;
+                        BlankZero = true;
                         ShowMandatory = true;
                     }
                     field("Invoice VAT Amount"; Rec."Invoice VAT Amount")
                     {
                         ApplicationArea = All;
+                        BlankZero = true;
                         ShowMandatory = true;
                     }
                     field("Invoice Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Invoice VAT Amount")
                     {
                         Caption = 'Invoice Amount';
                         ApplicationArea = All;
+                        BlankZero = true;
                         Editable = false;
                     }
                     field("Remaining Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Payments Amount")
                     {
                         Caption = 'Remaining Amount';
                         ApplicationArea = All;
+                        BlankZero = true;
                         Editable = false;
                     }
                 }
@@ -114,13 +118,15 @@ page 70000 "Purchase Order App"
 
                     trigger OnValidate()
                     begin
+                        PurchSetup.Get();
+                        if "Payment to Person" and ("Payment Assignment" = '') then
+                            "Payment Assignment" := PurchSetup."Default Payment Assignment";
                         CurrPage.Update(true);
                     end;
                 }
                 field("Payment Assignment"; Rec."Payment Assignment")
                 {
                     ApplicationArea = All;
-                    ShowMandatory = true;
                 }
                 field("Payment Type"; Rec."Payment Type")
                 {
@@ -146,14 +152,13 @@ page 70000 "Purchase Order App"
 
                     trigger OnValidate()
                     begin
-                        // NC AB: see later
-                        // SaveInvoiceDiscountAmount;
+                        SaveInvoiceDiscountAmount;
                     end;
                 }
                 field("IW Planned Repayment Date"; Rec."IW Planned Repayment Date")
                 {
                     ApplicationArea = All;
-                    ShowMandatory = true;
+                    ShowMandatory = IWPlanRepayDateMandatory;
                 }
                 field("Controller"; Rec.Controller)
                 {
@@ -163,12 +168,12 @@ page 70000 "Purchase Order App"
                 field("Purchaser Code"; Rec."Purchaser Code")
                 {
                     ApplicationArea = All;
+                    Caption = 'Checker';
+                    ShowMandatory = true;
 
                     trigger OnValidate()
                     begin
-                        // PurchaserCodeOnAfterValidate;
-                        // = CurrPage.PurchLines.PAGE.UpdateForm(true);
-                        // NA AB: check later
+                        CurrPage.PurchaseOrderAppLines.PAGE.UpdateForm(true);
                     end;
                 }
                 field("PreApprover"; Rec."PreApprover")
@@ -243,8 +248,7 @@ page 70000 "Purchase Order App"
                             ChangeExchangeRate.SetParameter("Currency Code", "Currency Factor", WorkDate);
                         if ChangeExchangeRate.RunModal = ACTION::OK then begin
                             Validate("Currency Factor", ChangeExchangeRate.GetParameter);
-                            // NC AB: see later
-                            // SaveInvoiceDiscountAmount;
+                            SaveInvoiceDiscountAmount;
                         end;
                         Clear(ChangeExchangeRate);
                     end;
@@ -378,8 +382,7 @@ page 70000 "Purchase Order App"
                         CalcInvDiscForHeader;
                         Commit();
                         PAGE.RunModal(PAGE::"Purchase Statistics", Rec);
-                        // check later
-                        //PurchCalcDiscByType.ResetRecalculateInvoiceDisc(Rec);
+                        PurchCalcDiscByType.ResetRecalculateInvoiceDisc(Rec);
                     end;
                 }
                 action("Co&mments")
@@ -498,6 +501,8 @@ page 70000 "Purchase Order App"
         IF "Status App" = "Status App"::Request THEN
             CurrPage.EDITABLE(TRUE);
 
+        IWPlanRepayDateMandatory := Rec."Payment Type" = Rec."Payment Type"::"pre-pay";
+
         case true of
             "Problem Document" and ("Problem Type" = "Problem Type"::" "):
                 ProblemType := Rec."Problem Type Txt";
@@ -539,6 +544,7 @@ page 70000 "Purchase Order App"
     end;
 
     var
+        PurchSetup: Record "Purchases & Payables Setup";
         UserSetup: Record "User Setup";
         ApprovalEntry: Record "Approval Entry";
         ChangeExchangeRate: Page "Change Exchange Rate";
@@ -552,6 +558,16 @@ page 70000 "Purchase Order App"
         PaymentTypeEditable: Boolean;
         AppButtonEnabled: Boolean;
         ProblemTypeEnabled: Boolean;
+        IWPlanRepayDateMandatory: Boolean;
+
+    local procedure SaveInvoiceDiscountAmount()
+    var
+        DocumentTotals: Codeunit "Document Totals";
+    begin
+        CurrPage.SaveRecord;
+        DocumentTotals.PurchaseRedistributeInvoiceDiscountAmountsOnDocument(Rec);
+        CurrPage.Update(false);
+    end;
 
     local procedure GetVendorBankAccountName(): text
     var

@@ -4458,6 +4458,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Problem Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3790301120 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Checker</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Purchaser Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3790301120 - Control 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Approval Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6477,6 +6482,11 @@
           <source>Default Estimator</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Default Estimator - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 3313250190 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Default Payment Assignment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Default Payment Assignment - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3717557870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Payment Delay Period</source>

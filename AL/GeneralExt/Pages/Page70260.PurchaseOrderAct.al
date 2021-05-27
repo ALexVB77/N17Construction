@@ -71,23 +71,27 @@ page 70260 "Purchase Order Act"
                     {
                         ApplicationArea = All;
                         ShowMandatory = true;
+                        BlankZero = true;
                     }
                     field("Invoice VAT Amount"; Rec."Invoice VAT Amount")
                     {
                         ApplicationArea = All;
                         ShowMandatory = true;
+                        BlankZero = true;
                     }
                     field("Invoice Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Invoice VAT Amount")
                     {
                         Caption = 'Invoice Amount';
                         ApplicationArea = All;
                         Editable = false;
+                        BlankZero = true;
                     }
                     field("Remaining Amount"; Rec."Invoice Amount Incl. VAT" - Rec."Payments Amount")
                     {
                         Caption = 'Remaining Amount';
                         ApplicationArea = All;
                         Editable = false;
+                        BlankZero = true;
                     }
                 }
                 field("Problem Document"; Rec."Problem Document")
@@ -150,6 +154,7 @@ page 70260 "Purchase Order Act"
                     field("Location Code"; Rec."Location Code")
                     {
                         ApplicationArea = All;
+                        ShowMandatory = LocationCodeShowMandatory;
 
                         trigger OnLookup(var Text: Text): Boolean
                         var
@@ -371,8 +376,7 @@ page 70260 "Purchase Order Act"
                         CalcInvDiscForHeader;
                         Commit();
                         PAGE.RunModal(PAGE::"Purchase Statistics", Rec);
-                        // check
-                        //PurchCalcDiscByType.ResetRecalculateInvoiceDisc(Rec);
+                        PurchCalcDiscByType.ResetRecalculateInvoiceDisc(Rec);
                     end;
                 }
                 action(Dimensions)
@@ -548,6 +552,7 @@ page 70260 "Purchase Order Act"
         CalcFields("Exists Attachment");
         ShowDocEnabled := "Exists Attachment";
         ProblemTypeEnabled := Rec."Problem Document";
+        LocationCodeShowMandatory := Rec."Location Document";
 
         case true of
             "Problem Document" and ("Problem Type" = "Problem Type"::" "):
@@ -599,6 +604,7 @@ page 70260 "Purchase Order Act"
         gcERPC: Codeunit "ERPC Funtions";
         UserMgt: Codeunit "User Setup Management";
         PaymentOrderMgt: Codeunit "Payment Order Management";
+        PurchCalcDiscByType: Codeunit "Purch - Calc Disc. By Type";
         ActTypeEditable: Boolean;
         EstimatorEnable: Boolean;
         ProblemType: text;
@@ -607,6 +613,7 @@ page 70260 "Purchase Order Act"
         ReceiveAccountEditable: Boolean;
         ShowDocEnabled: Boolean;
         ProblemTypeEnabled: Boolean;
+        LocationCodeShowMandatory: Boolean;
 
     local procedure SaveInvoiceDiscountAmount()
     var

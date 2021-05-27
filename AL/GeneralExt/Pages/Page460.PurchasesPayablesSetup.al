@@ -38,6 +38,10 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("Default Payment Assignment"; "Default Payment Assignment")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
             }
         }
     }
