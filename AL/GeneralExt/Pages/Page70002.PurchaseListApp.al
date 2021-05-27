@@ -1,6 +1,7 @@
 page 70002 "Purchase List App"
 {
-    Editable = true;
+    ApplicationArea = Basic, Suite;
+    UsageCategory = Lists;
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = false;
@@ -8,7 +9,8 @@ page 70002 "Purchase List App"
     DataCaptionFields = "Document Type";
     PageType = Worksheet;
     Caption = 'Payment Invoices (Checking)';
-
+    RefreshOnActivate = true;
+    CardPageId = "Purchase Order App";
     layout
     {
         area(content)
