@@ -4,6 +4,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
     {
         field(50700; "CRM GUID"; GUID)
         {
+            Editable = false;
         }
 
         field(70001; "Agreement Type"; Option)
