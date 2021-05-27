@@ -3108,6 +3108,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys Correct - NamedType TEXT0010</note>
         </trans-unit>
+        <trans-unit id="Page 729295803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page G/L Account Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 729295803 - Action 3492634373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import G\L Account Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page G/L Account Mapping - Action ImportGLAccountMapping - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3157774153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Get Item Ledger Entry Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4003,20 +4013,45 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder5Req - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 4280988192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Agreements</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 1240668114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Agreement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 503024588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Comments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 1287641072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S&amp;ales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action CustomerSales - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 162786187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry Statistics</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Entry Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 1940178401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ledger E&amp;ntries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Ledger Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Statistics - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Invoice Detail - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2098758111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Migration Data Run</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Migration Data Run - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2098758111 - Action 2209699709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Run G\L Account Mapping Migration</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Migration Data Run - Action GLAccountMappingMigrationRun - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
