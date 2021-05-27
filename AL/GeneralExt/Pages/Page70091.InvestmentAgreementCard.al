@@ -297,6 +297,7 @@ page 70091 "Investment Agreement Card"
                 group(Shareholder2Req)
                 {
                     Caption = 'Shareholder 2 details';
+                    Visible = ShareHolder2InfoVisible;
 
                     field("Contact 2"; Rec."Contact 2")
                     {
@@ -334,6 +335,7 @@ page 70091 "Investment Agreement Card"
                 group(Shareholder3Req)
                 {
                     Caption = 'Shareholder 3 details';
+                    Visible = ShareHolder5InfoVisible;
 
                     field("Contact 3"; Rec."Contact 3")
                     {
@@ -371,6 +373,7 @@ page 70091 "Investment Agreement Card"
                 group(Shareholder4Req)
                 {
                     Caption = 'Shareholder 4 details';
+                    Visible = ShareHolder5InfoVisible;
 
                     field("Contact 4"; Rec."Contact 4")
                     {
@@ -408,6 +411,7 @@ page 70091 "Investment Agreement Card"
                 group(Shareholder5Req)
                 {
                     Caption = 'Shareholder 5 details';
+                    Visible = ShareHolder5InfoVisible;
 
                     field("Contact 5"; Rec."Contact 5")
                     {
@@ -453,6 +457,8 @@ page 70091 "Investment Agreement Card"
 
 
     trigger OnAfterGetRecord()
+    var
+        Apartments: Record Apartments;
     begin
         //BC to-do
         /*
@@ -557,6 +563,17 @@ page 70091 "Investment Agreement Card"
         CurrPage.bal5.VISIBLE := "Share in property 3" = "Share in property 3"::Owner5;
         // SWC1117 DD 17.11.17 >>
         */
+
+        if "Object of Investing" <> '' then
+            Apartments.GET("Object of Investing")
+        else
+            Apartments.Init;
+
+        ShareHolder2InfoVisible := Rec."Share in property 3" = rec."Share in property 3"::Owner2;
+        ShareHolder3InfoVisible := Rec."Share in property 3" = rec."Share in property 3"::Owner3;
+        ShareHolder4InfoVisible := Rec."Share in property 3" = rec."Share in property 3"::Owner4;
+        ShareHolder5InfoVisible := Rec."Share in property 3" = rec."Share in property 3"::Owner5;
+
     end;
 
     trigger OnNewRecord(BelowxRec: boolean)
@@ -578,7 +595,6 @@ page 70091 "Investment Agreement Card"
     var
         gcduERPC: Codeunit "ERPC Funtions";
         lrApartments: record Apartments;
-        ShareholderView: array[5] of Boolean;
         ShareHolder2InfoVisible: Boolean;
         ShareHolder3InfoVisible: Boolean;
         ShareHolder4InfoVisible: Boolean;
@@ -590,29 +606,9 @@ page 70091 "Investment Agreement Card"
         lrVendor: record Vendor;
     begin
         CLEAR(lrApartments);
-        IF "Object of Investing" <> '' THEN
-        //NCS-441
-        BEGIN
-            IF NOT
-            //-NCS-441
-            lrApartments.GET("Object of Investing")
-            //NCS-441
-            THEN BEGIN
-                CLEAR(lrApartments);
-            END;
-        END
-        //-NCS-441
-        ELSE
-            CLEAR(lrApartments);
-
-        //BC out
-        /*
-        IF "Bank Creditor"<>'' THEN BEGIN
-          lrVendor.GET("Bank Creditor");
-          VendName:=lrVendor."Full Name";
-          VendAddress:=lrVendor.Address;
-        END;
-        */
+        if "Object of Investing" <> '' then begin
+            lrApartments.GET("Object of Investing");
+        end;
     end;
 
 
