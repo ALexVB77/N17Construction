@@ -64,6 +64,12 @@ page 70002 "Purchase List App"
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+
+                    trigger OnAssistEdit()
+                    begin
+                        page.Runmodal(Page::"Purchase Order App", Rec);
+                        CurrPage.Update(false);
+                    end;
                 }
                 field("Vendor Invoice No."; Rec."Vendor Invoice No.")
                 {
