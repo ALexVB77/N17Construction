@@ -2633,16 +2633,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CopyDocument</note>
         </trans-unit>
-        <trans-unit id="Codeunit 454282370 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
-          <source>*.xlsx</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - NamedType ExcelExt</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 454282370 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import G\L Account Mapping</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G\L Account Mapping Migration - NamedType Text001</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
           <source>CreateItemDocumentLines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3022,6 +3012,51 @@
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control TemplateCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 2129730760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control AE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actual Flag</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 4037868816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control CName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Contragent No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Description 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Project Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
