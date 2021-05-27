@@ -195,4 +195,50 @@ codeunit 70000 "ERPC Funtions"
         END;
     end;
 
+    procedure DeleteInvoice(prInvoice: record "Purchase Header"): boolean
+    var
+        grPurchPay: record "Purchases & Payables Setup";
+        lrGenJnlLine: record "Gen. Journal Line";
+        LocText001: Label 'Do you want to delete Payment Invoice %1 for %2?'; // Вы хотите удалить Счет на оплату %1 для %2?
+        LocText002: Label 'There are Cash Flow linked lines. Continue?'; // Имеются привязанные строки Cash Flow. Продолжить?
+        LocText50021: Label 'Request %1 in the "Payment" approval status. Unable to delete.\Use the archiving function.'; //Заявка %1 в статусе утверждения "Платеж". Удаление невозможно.\Воспользуйтесь функцией архивирования. 
+    begin
+        // NC AB:
+        // функция подвешена не к кнопке, на на триггер OnDelete, поэтому саму запись prInvoice не удаляем
+
+        //NC 44343 > KGT
+        IF prInvoice."Status App" = prInvoice."Status App"::Payment THEN
+            ERROR(LocText50021, prInvoice."No.");
+        //NC 44343 < KGT
+
+        IF CONFIRM(STRSUBSTNO(LocText001, prInvoice."No.", prInvoice."Buy-from Vendor Name")) THEN BEGIN
+            //NC 29594 HR beg
+            IF prInvoice.HasBoundedCashFlows THEN BEGIN
+                IF NOT CONFIRM(LocText002, FALSE) THEN
+                    EXIT(false);
+            END;
+            //NC 29594 HR end
+
+            grPurchPay.GET;
+
+            Message('Вызвано удаление строк фин. журнала из DeleteInvoice() CU 70000. ПРОВЕРИТЬ!');
+            /*
+            lrGenJnlLine.SETRANGE("Journal Template Name", grPurchPay."Payment Calendar Tmpl");
+            lrGenJnlLine.SETRANGE("Journal Batch Name", grPurchPay."Payment Calendar Batch");
+            lrGenJnlLine.SETRANGE("Document No.", prInvoice."No.");
+            IF lrGenJnlLine.FINDFIRST THEN 
+                lrGenJnlLine.DELETEALL(TRUE);
+            */
+
+            // NC AB >>
+            // // SWC DD 25.05.17 >>
+            // prInvoice.GET(prInvoice."Document Type", prInvoice."No.");
+            // // SWC DD 25.05.17 <<
+            // prInvoice.DELETE(TRUE);
+            // NC AB <<
+            exit(true);
+
+        END;
+    end;
+
 }

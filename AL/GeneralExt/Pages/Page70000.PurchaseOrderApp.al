@@ -1,6 +1,6 @@
-page 70260 "Purchase Order Act"
+page 70000 "Purchase Order App"
 {
-    Caption = 'Purchase Order Act';
+    Caption = 'Purchase Order App';
     PageType = Document;
     PromotedActionCategories = 'New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate';
     RefreshOnActivate = true;
@@ -61,7 +61,7 @@ page 70260 "Purchase Order Act"
 
                     trigger OnValidate()
                     begin
-                        PricesIncludingVATOnAfterValid;
+                        CurrPage.Update;
                     end;
                 }
                 group(DocAmounts)
@@ -93,23 +93,10 @@ page 70260 "Purchase Order Act"
                 field("Problem Document"; Rec."Problem Document")
                 {
                     ApplicationArea = All;
-                    Editable = false;
-                }
-                field("Act Type"; Rec."Act Type")
-                {
-                    ApplicationArea = All;
-                    Editable = ActTypeEditable;
 
                     trigger OnValidate()
                     begin
-                        IF xRec."Act Type" IN ["Act Type"::Act, "Act Type"::"Act (Production)"] THEN
-                            IF NOT ("Act Type" IN ["Act Type"::Act, "Act Type"::"Act (Production)"]) THEN
-                                FIELDERROR("Act Type");
-                        IF xRec."Act Type" IN ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"] THEN
-                            IF NOT ("Act Type" IN ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"]) THEN
-                                FIELDERROR("Act Type");
-
-                        EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
+                        CurrPage.Update(true);
                     end;
                 }
                 field("Problem Type"; ProblemType)
@@ -119,14 +106,32 @@ page 70260 "Purchase Order Act"
                     Editable = false;
                     Enabled = "Problem Document";
                 }
-                field("Invoice No."; Rec."Invoice No.")
+
+                field("Payment to Person"; Rec."Payment to Person")
                 {
                     ApplicationArea = All;
                     Editable = false;
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update(true);
+                    end;
+                }
+                field("Payment Assignment"; Rec."Payment Assignment")
+                {
+                    ApplicationArea = All;
+                    ShowMandatory = true;
+                }
+                field("Payment Type"; Rec."Payment Type")
+                {
+                    ApplicationArea = All;
+                    ShowMandatory = true;
+                    Editable = PaymentTypeEditable;
                 }
                 field("Order Date"; Rec."Order Date")
                 {
                     ApplicationArea = All;
+                    ShowMandatory = true;
                 }
                 field("Document Date"; Rec."Document Date")
                 {
@@ -141,51 +146,29 @@ page 70260 "Purchase Order Act"
 
                     trigger OnValidate()
                     begin
-                        SaveInvoiceDiscountAmount;
+                        // NC AB: see later
+                        // SaveInvoiceDiscountAmount;
                     end;
                 }
-                group("Warehouse Document")
-                {
-                    Caption = 'Warehouse Document';
-                    field("Location Code"; Rec."Location Code")
-                    {
-                        ApplicationArea = All;
-
-                        trigger OnLookup(var Text: Text): Boolean
-                        var
-                            LocationCode: code[10];
-                        begin
-                            IF gcERPC.LookUpLocationCode(LocationCode) THEN
-                                VALIDATE("Location Code", LocationCode);
-                        end;
-                    }
-                    field(Storekeeper; Rec.Storekeeper)
-                    {
-                        ApplicationArea = All;
-                        Editable = false;
-                    }
-                    field("Location Document"; Rec."Location Document")
-                    {
-                        ApplicationArea = All;
-                        Editable = false;
-                    }
-                }
-
-                field("Estimator"; Rec."Estimator")
+                field("IW Planned Repayment Date"; Rec."IW Planned Repayment Date")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    Enabled = EstimatorEnable;
+                }
+                field("Controller"; Rec.Controller)
+                {
+                    ApplicationArea = All;
+                    ShowMandatory = true;
                 }
                 field("Purchaser Code"; Rec."Purchaser Code")
                 {
                     ApplicationArea = All;
-                    Caption = 'Checker';
-                    ShowMandatory = true;
 
                     trigger OnValidate()
                     begin
-                        CurrPage.PurchaseOrderActLines.PAGE.UpdateForm(true);
+                        // PurchaserCodeOnAfterValidate;
+                        // = CurrPage.PurchLines.PAGE.UpdateForm(true);
+                        // NA AB: check later
                     end;
                 }
                 field("PreApprover"; Rec."PreApprover")
@@ -247,7 +230,32 @@ page 70260 "Purchase Order Act"
                         Editable = false;
                     }
                 }
-                field("Status App Act"; Rec."Status App Act")
+                field("Currency Code"; "Currency Code")
+                {
+                    ApplicationArea = All;
+
+                    trigger OnAssistEdit()
+                    begin
+                        Clear(ChangeExchangeRate);
+                        if "Posting Date" <> 0D then
+                            ChangeExchangeRate.SetParameter("Currency Code", "Currency Factor", "Posting Date")
+                        else
+                            ChangeExchangeRate.SetParameter("Currency Code", "Currency Factor", WorkDate);
+                        if ChangeExchangeRate.RunModal = ACTION::OK then begin
+                            Validate("Currency Factor", ChangeExchangeRate.GetParameter);
+                            // NC AB: see later
+                            // SaveInvoiceDiscountAmount;
+                        end;
+                        Clear(ChangeExchangeRate);
+                    end;
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.SaveRecord;
+                        PurchCalcDiscByType.ApplyDefaultInvoiceDiscount(0, Rec);
+                    end;
+                }
+                field("Status App"; Rec."Status App")
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -262,12 +270,9 @@ page 70260 "Purchase Order Act"
                     ApplicationArea = All;
                     Editable = false;
                 }
-                field("Receive Account"; Rec."Receive Account")
-                {
-                    ApplicationArea = All;
-                    Editable = ReceiveAccountEditable;
-                }
             }
+
+            /*
             part(PurchaseOrderActLines; "Purchase Order Act Subform")
             {
                 ApplicationArea = All;
@@ -276,12 +281,14 @@ page 70260 "Purchase Order Act"
                 SubPageLink = "Document No." = FIELD("No.");
                 UpdatePropagation = Both;
             }
+            */
             group("Payment Request")
             {
                 Caption = 'Payment Request';
                 field("Vendor Bank Account"; Rec."Vendor Bank Account")
                 {
                     ApplicationArea = All;
+                    ShowMandatory = true;
 
                     trigger OnAssistEdit()
                     var
@@ -352,9 +359,9 @@ page 70260 "Purchase Order Act"
     {
         area(navigation)
         {
-            group(OrderAct)
+            group(Order)
             {
-                Caption = 'O&rder Act';
+                Caption = 'O&rder';
                 Image = "Order";
                 action(Statistics)
                 {
@@ -371,26 +378,8 @@ page 70260 "Purchase Order Act"
                         CalcInvDiscForHeader;
                         Commit();
                         PAGE.RunModal(PAGE::"Purchase Statistics", Rec);
-                        // check
+                        // check later
                         //PurchCalcDiscByType.ResetRecalculateInvoiceDisc(Rec);
-                    end;
-                }
-                action(Dimensions)
-                {
-                    AccessByPermission = TableData Dimension = R;
-                    ApplicationArea = Dimensions;
-                    Caption = 'Dimensions';
-                    Enabled = "No." <> '';
-                    Image = Dimensions;
-                    Promoted = true;
-                    PromotedCategory = Category8;
-                    PromotedIsBig = true;
-                    ShortCutKey = 'Alt+D';
-
-                    trigger OnAction()
-                    begin
-                        ShowDocDim;
-                        CurrPage.SaveRecord;
                     end;
                 }
                 action("Co&mments")
@@ -446,7 +435,6 @@ page 70260 "Purchase Order Act"
                     end;
                 }
             }
-
             group("F&unctions")
             {
                 Caption = 'F&unctions';
@@ -467,10 +455,11 @@ page 70260 "Purchase Order Act"
                         if Get("Document Type", "No.") then;
                     end;
                 }
-                action(ArchiveProblemDoc)
+
+                action("Archive Document")
                 {
                     ApplicationArea = Suite;
-                    Caption = 'Archive Problem Document';
+                    Caption = 'Archi&ve Document';
                     Enabled = "No." <> '';
                     Image = Archive;
                     Promoted = true;
@@ -478,49 +467,11 @@ page 70260 "Purchase Order Act"
 
                     trigger OnAction()
                     begin
-                        PaymentOrderMgt.PurchOrderActArchiveQst(Rec);
+                        ArchiveManagement.ArchivePurchDocument(Rec);
+                        CurrPage.Update(false);
                     end;
                 }
-            }
 
-            action(EnterBasedOn)
-            {
-                ApplicationArea = All;
-                Caption = 'Enter Based On';
-                Image = Filed;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-
-                trigger OnAction()
-                begin
-                    PaymentOrderMgt.ActInterBasedOn(Rec);
-                end;
-            }
-
-            action(ViewAttachDoc)
-            {
-                ApplicationArea = All;
-                Caption = 'Documents View';
-                Enabled = ShowDocEnabled;
-                Image = Export;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-
-                trigger OnAction()
-                var
-                    DocumentAttachment: Record "Document Attachment";
-                    RecRef: RecordRef;
-                begin
-                    CalcFields("Exists Attachment");
-                    TestField("Exists Attachment");
-                    DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
-                    DocumentAttachment.SetRange("Document Type", rec."Document Type");
-                    DocumentAttachment.SetRange("No.", Rec."No.");
-                    DocumentAttachment.FindFirst();
-                    DocumentAttachment.Export(true);
-                end;
             }
         }
     }
@@ -541,12 +492,11 @@ page 70260 "Purchase Order Act"
 
     trigger OnAfterGetCurrRecord()
     begin
-        UserSetup.GET(UserId);
+        UserSetup.GET(USERID);
 
-        ActTypeEditable := Rec."Problem Document" AND (Rec."Status App Act" = Rec."Status App Act"::Controller);
-        EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
-        CalcFields("Exists Attachment");
-        ShowDocEnabled := "Exists Attachment";
+        CurrPage.EDITABLE("Status App" < "Status App"::Approve);
+        IF "Status App" = "Status App"::Request THEN
+            CurrPage.EDITABLE(TRUE);
 
         case true of
             "Problem Document" and ("Problem Type" = "Problem Type"::" "):
@@ -556,8 +506,11 @@ page 70260 "Purchase Order Act"
             else
                 ProblemType := '';
         end;
+
+        PaymentTypeEditable := "Status App" < "Status App"::Checker;
         AppButtonEnabled :=
             NOT ((UPPERCASE("Process User") <> UPPERCASE(USERID)) AND (UserSetup."Status App Act" <> Rec."Status App Act"));
+
         IF "Status App Act" = "Status App Act"::Approve THEN BEGIN
             ApprovalEntry.SETRANGE("Table ID", Database::"Purchase Header");
             ApprovalEntry.SETRANGE("Document Type", ApprovalEntry."Document Type"::Order);
@@ -566,54 +519,36 @@ page 70260 "Purchase Order Act"
             IF ApprovalEntry.FINDSET THEN
                 AppButtonEnabled := NOT ApprovalEntry.IsEmpty;
         END;
+        IF "Status App" = "Status App"::Request THEN
+            AppButtonEnabled := TRUE;
 
         AllApproverEditable := "Status App" = "Status App"::Checker;
-
-        IF ("Status App Act" = "Status App Act"::Accountant) THEN
-            CurrPage.EDITABLE := FALSE
-        ELSE
-            IF ("Status App Act" = "Status App Act"::Estimator) THEN
-                CurrPage.EDITABLE := FALSE
-            ELSE
-                CurrPage.EDITABLE := TRUE;
-        IF "Problem Type" = "Problem Type"::"Act error" THEN
-            CurrPage.EDITABLE := FALSE;
-        IF UserSetup."Status App Act" = UserSetup."Status App Act"::"сontroller" THEN BEGIN
-            CurrPage.EDITABLE := TRUE;
-            ReceiveAccountEditable := TRUE;
-        END;
-        IF "Location Document" THEN
-            CurrPage.EDITABLE := NOT ("Status App Act" IN ["Status App Act"::Approve, "Status App Act"::Signing, "Status App Act"::Accountant]);
     end;
 
     trigger OnDeleteRecord(): Boolean
     begin
         CurrPage.SaveRecord;
+        UserSetup.GET;
+        IF not ((UserSetup."Status App" = UserSetup."Status App"::Controller) OR UserSetup."Administrator IW") THEN
+            ERROR(TextDelError, Rec."No.");
+        IF NOT gcERPC.DeleteInvoice(Rec) then
+            ERROR('');
         exit(ConfirmDeletion);
     end;
 
     var
         UserSetup: Record "User Setup";
         ApprovalEntry: Record "Approval Entry";
+        ChangeExchangeRate: Page "Change Exchange Rate";
+        PurchCalcDiscByType: Codeunit "Purch - Calc Disc. By Type";
+        ArchiveManagement: Codeunit ArchiveManagement;
         gcERPC: Codeunit "ERPC Funtions";
         UserMgt: Codeunit "User Setup Management";
-        PaymentOrderMgt: Codeunit "Payment Order Management";
-        ActTypeEditable: Boolean;
-        EstimatorEnable: Boolean;
-        ProblemType: text;
-        AppButtonEnabled: Boolean;
         AllApproverEditable: Boolean;
-        ReceiveAccountEditable: Boolean;
-        ShowDocEnabled: Boolean;
-
-    local procedure SaveInvoiceDiscountAmount()
-    var
-        DocumentTotals: Codeunit "Document Totals";
-    begin
-        CurrPage.SaveRecord;
-        DocumentTotals.PurchaseRedistributeInvoiceDiscountAmountsOnDocument(Rec);
-        CurrPage.Update(false);
-    end;
+        TextDelError: Label 'You cannot delete Purchase Order Act %1';
+        ProblemType: text;
+        PaymentTypeEditable: Boolean;
+        AppButtonEnabled: Boolean;
 
     local procedure GetVendorBankAccountName(): text
     var
@@ -624,13 +559,7 @@ page 70260 "Purchase Order Act"
                 exit(VendorBankAccount.Name + VendorBankAccount."Name 2");
     end;
 
-    local procedure PricesIncludingVATOnAfterValid()
-    begin
-        CurrPage.Update;
-        CalcFields("Invoice Discount Amount");
-    end;
-
-    procedure PreApproveOnLookup()
+    local procedure PreApproveOnLookup()
     begin
 
         Message('Вызов PreApproveOnLookup');
@@ -670,58 +599,65 @@ page 70260 "Purchase Order Act"
         END;
         END;
         END;
-        */
 
+        */
     end;
 
-    procedure ApproveOnLookup()
+    local procedure ApproveOnLookup()
     begin
 
         Message('Вызов ApproveOnLookup');
 
         /*
-        AT.RESET;
-        AT.SETRANGE("Document Type",AT."Document Type"::Order);
-        AT.SETRANGE("Table ID",DATABASE::"Purchase Header");
-        AT.SETRANGE(Enabled,TRUE);
-        IF AT.FINDFIRST THEN
-        BEGIN
+    AT.RESET;
+    AT.SETRANGE("Document Type",AT."Document Type"::Order);
+    AT.SETRANGE("Table ID",DATABASE::"Purchase Header");
+    AT.SETRANGE(Enabled,TRUE);
+    IF AT.FINDFIRST THEN
+    BEGIN
 
-        TempApp:='';
-        AddApp.RESET;
-        AddApp.SETCURRENTKEY("Approver ID","Shortcut Dimension 1 Code");
-        AddApp.SETRANGE("Approval Code",AT."Approval Code");
-        AddApp.SETRANGE("Approval Type",AT."Approval Type");
-        AddApp.SETRANGE("Document Type",AT."Document Type");
-        AddApp.SETRANGE("Limit Type",AT."Limit Type");
-        IF AddApp.FIND('-') THEN
-        REPEAT
-        IF TempApp<>AddApp."Approver ID" THEN
-        AddApp.MARK(TRUE);
-        TempApp:=AddApp."Approver ID";
-        UNTIL AddApp.NEXT=0;
+    TempApp:='';
+    AddApp.RESET;
+    AddApp.SETCURRENTKEY("Approver ID","Shortcut Dimension 1 Code");
+    AddApp.SETRANGE("Approval Code",AT."Approval Code");
+    AddApp.SETRANGE("Approval Type",AT."Approval Type");
+    AddApp.SETRANGE("Document Type",AT."Document Type");
+    AddApp.SETRANGE("Limit Type",AT."Limit Type");
+    IF AddApp.FIND('-') THEN
+    REPEAT
+    IF TempApp<>AddApp."Approver ID" THEN
+    AddApp.MARK(TRUE);
+    TempApp:=AddApp."Approver ID";
+    UNTIL AddApp.NEXT=0;
 
 
-        AddApp.MARKEDONLY(TRUE);
+    AddApp.MARKEDONLY(TRUE);
 
-        AddApp.SETFILTER("Approver ID",'<>%1',USERID);
-        IF AddApp.FINDFIRST THEN;
+    // SWC1002 DD 13.02.17 >>
+    AddApp.SETRANGE("Approver ID",Approver);
+    IF AddApp.FINDFIRST THEN;
+    // SWC1002 DD 13.02.17 <<
+    AddApp.SETFILTER("Approver ID",'<>%1',USERID);
+    // SWC1002 DD 13.02.17 >>
+    //IF AddApp.FINDFIRST THEN;
+    // SWC1002 DD 13.02.17 <<
 
-        IF FORM.RUNMODAL(70067,AddApp)=ACTION::LookupOK THEN
-        BEGIN
-        IF CurrForm.EDITABLE AND ("Status App"="Status App"::Checker) THEN
-        BEGIN
-        IF ("Pre-Approver"<>'') AND ("Pre-Approver"=AddApp."Approver ID") THEN ERROR(Text003);
-        IF CheckLinesCostPlace(AddApp."Shortcut Dimension 1 Code") THEN
-            Approver:=AddApp."Approver ID";
+    IF FORM.RUNMODAL(70067,AddApp)=ACTION::LookupOK THEN
+    BEGIN
+    IF CurrForm.EDITABLE AND ("Status App"="Status App"::Checker) THEN
+    BEGIN
+    IF ("Pre-Approver"<>'') AND ("Pre-Approver"=AddApp."Approver ID") THEN ERROR(Text003);
+    // SWC1002 DD 13.02.17 >>
+    //IF CheckLinesCostPlace(AddApp."Shortcut Dimension 1 Code") THEN
+    IF CheckLinesApprover(AddApp."Approver ID") THEN
+    // SWC1002 DD 13.02.17 <<
+        Approver:=AddApp."Approver ID";
 
-        CurrForm.UPDATECONTROLS;
-        END;
-        END;
-        END;
-        */
+    CurrForm.UPDATECONTROLS;
+    END;
+    END;
+    END;
+    */
 
     end;
-
-
 }
