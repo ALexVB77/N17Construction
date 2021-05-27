@@ -199,9 +199,9 @@ codeunit 70000 "ERPC Funtions"
     var
         grPurchPay: record "Purchases & Payables Setup";
         lrGenJnlLine: record "Gen. Journal Line";
-        LocText001: Label 'Do you want to delete Payment Invoice %1 for %2?'; // Вы хотите удалить Счет на оплату %1 для %2?
-        LocText002: Label 'There are Cash Flow linked lines. Continue?'; // Имеются привязанные строки Cash Flow. Продолжить?
-        LocText50021: Label 'Request %1 in the "Payment" approval status. Unable to delete.\Use the archiving function.'; //Заявка %1 в статусе утверждения "Платеж". Удаление невозможно.\Воспользуйтесь функцией архивирования. 
+        LocText001: Label 'Do you want to delete Payment Invoice %1 for %2?';
+        LocText002: Label 'There are Cash Flow linked lines. Continue?';
+        LocText50021: Label 'Request %1 in the "Payment" approval status. Unable to delete.\Use the archiving function.';
     begin
         // NC AB:
         // функция подвешена не к кнопке, на на триггер OnDelete, поэтому саму запись prInvoice не удаляем
