@@ -104,7 +104,7 @@ page 70000 "Purchase Order App"
                     Caption = 'Problem Type';
                     ApplicationArea = All;
                     Editable = false;
-                    Enabled = "Problem Document";
+                    Enabled = ProblemTypeEnabled;
                 }
 
                 field("Payment to Person"; Rec."Payment to Person")
@@ -506,6 +506,8 @@ page 70000 "Purchase Order App"
                 ProblemType := '';
         end;
 
+        ProblemTypeEnabled := "Problem Document";
+
         PaymentTypeEditable := "Status App" < "Status App"::Checker;
         AppButtonEnabled :=
             NOT ((UPPERCASE("Process User") <> UPPERCASE(USERID)) AND (UserSetup."Status App Act" <> Rec."Status App Act"));
@@ -548,6 +550,7 @@ page 70000 "Purchase Order App"
         ProblemType: text;
         PaymentTypeEditable: Boolean;
         AppButtonEnabled: Boolean;
+        ProblemTypeEnabled: Boolean;
 
     local procedure GetVendorBankAccountName(): text
     var
