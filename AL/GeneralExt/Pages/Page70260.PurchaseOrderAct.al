@@ -117,7 +117,7 @@ page 70260 "Purchase Order Act"
                     Caption = 'Problem Type';
                     ApplicationArea = All;
                     Editable = false;
-                    Enabled = "Problem Document";
+                    Enabled = ProblemTypeEnabled;
                 }
                 field("Invoice No."; Rec."Invoice No.")
                 {
@@ -547,6 +547,7 @@ page 70260 "Purchase Order Act"
         EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
         CalcFields("Exists Attachment");
         ShowDocEnabled := "Exists Attachment";
+        ProblemTypeEnabled := Rec."Problem Document";
 
         case true of
             "Problem Document" and ("Problem Type" = "Problem Type"::" "):
@@ -605,6 +606,7 @@ page 70260 "Purchase Order Act"
         AllApproverEditable: Boolean;
         ReceiveAccountEditable: Boolean;
         ShowDocEnabled: Boolean;
+        ProblemTypeEnabled: Boolean;
 
     local procedure SaveInvoiceDiscountAmount()
     var
