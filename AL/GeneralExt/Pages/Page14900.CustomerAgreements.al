@@ -1,4 +1,4 @@
-pageextension 14900 "Customer Agreements (Ext)" extends "Customer Agreements"
+pageextension 84900 "Customer Agreements (Ext)" extends "Customer Agreements"
 {
     layout
     {
