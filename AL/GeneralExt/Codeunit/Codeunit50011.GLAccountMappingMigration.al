@@ -24,7 +24,7 @@ codeunit 50011 "G/L Account Mapping Migration"
             if not GLAccountMapping.Get(GetValueAtCall(RowNo, 1)) then begin
                 GLAccountMapping.Init();
                 GLAccountMapping."New No." := GetValueAtCall(RowNo, 1);
-                GLAccountMapping."New No." := GetValueAtCall(RowNo, 2);
+                GLAccountMapping."Old No." := GetValueAtCall(RowNo, 2);
                 GLAccountMapping.Insert(true);
             end;
     end;
