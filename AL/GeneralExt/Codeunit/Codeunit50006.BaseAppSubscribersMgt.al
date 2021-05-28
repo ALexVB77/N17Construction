@@ -255,6 +255,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
     end;
 
+    // Codeunit 5063 ArchiveManagement 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::ArchiveManagement, 'OnAfterStorePurchDocument', '', false, false)]
     local procedure OnAfterStorePurchDocument(var PurchaseHeader: Record "Purchase Header"; var PurchaseHeaderArchive: Record "Purchase Header Archive");
     var
@@ -303,6 +304,61 @@ codeunit 50006 "Base App. Subscribers Mgt."
         // SWC816 AK 200416 <<
 
         // NC 51411 < EP
+    end;
+
+    // Table 38 Purchase Header
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnBeforeTestNoSeries', '', false, false)]
+    local procedure OnBeforeTestNoSeries(var PurchaseHeader: Record "Purchase Header"; var IsHandled: Boolean);
+    var
+        PurchSetup: Record "Purchases & Payables Setup";
+    begin
+        IsHandled := true;
+        PurchSetup.Get();
+        with PurchaseHeader do
+            case "Document Type" of
+                "Document Type"::Quote:
+                    PurchSetup.TestField("Quote Nos.");
+                "Document Type"::Order:
+                    //PurchSetup.TestField("Order Nos.");
+                    if "Act Type" = "Act Type"::" " then begin
+                        if not "IW Documents" then
+                            PurchSetup.TestField("Order Nos.")
+                        else
+                            PurchSetup.TestField("Payment Request Nos.");
+                    end else
+                        PurchSetup.TestField("Act Order Nos.");
+                "Document Type"::Invoice:
+                    begin
+                        if "Empl. Purchase" then
+                            PurchSetup.TestField("Advance Statement Nos.")
+                        else begin
+                            PurchSetup.TestField("Invoice Nos.");
+                            PurchSetup.TestField("Posted Invoice Nos.");
+                        end;
+                    end;
+                "Document Type"::"Return Order":
+                    PurchSetup.TestField("Return Order Nos.");
+                "Document Type"::"Credit Memo":
+                    begin
+                        PurchSetup.TestField("Credit Memo Nos.");
+                        PurchSetup.TestField("Posted Credit Memo Nos.");
+                    end;
+                "Document Type"::"Blanket Order":
+                    PurchSetup.TestField("Blanket Order Nos.");
+            end;
+
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnAfterGetNoSeriesCode', '', false, false)]
+    local procedure OnAfterGetNoSeriesCode(var PurchHeader: Record "Purchase Header"; PurchSetup: Record "Purchases & Payables Setup"; var NoSeriesCode: Code[20]);
+    begin
+        if PurchHeader."Document Type" = PurchHeader."Document Type"::Order then begin
+            if PurchHeader."Act Type" = PurchHeader."Act Type"::" " then begin
+                if PurchHeader."IW Documents" then
+                    NoSeriesCode := PurchSetup."Payment Request Nos.";
+            end else
+                NoSeriesCode := PurchSetup."Act Order Nos.";
+        end;
     end;
 
 }
