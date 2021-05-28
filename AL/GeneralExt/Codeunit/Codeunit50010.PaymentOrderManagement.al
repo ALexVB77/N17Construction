@@ -182,6 +182,13 @@ codeunit 50010 "Payment Order Management"
         Page.RUNMODAL(Page::"Purchase Order App", PurchOrderAct);
     end;
 
+    procedure LinkActAndPaymentInvoice(var PurchHeader: Record "Purchase Header")
+    begin
+        PurchHeader.FilterGroup(3);
+        message(PurchHeader.GetFilter("Linked Purchase Order Act No."));
+        PurchHeader.FilterGroup(0);
+    end;
+
     procedure ActInterBasedOn(PurchHeader: Record "Purchase Header")
     var
         InvSetup: Record "Inventory Setup";

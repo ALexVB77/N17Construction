@@ -181,6 +181,21 @@ page 50045 "Purch. Order Act PayReq. List"
 
     actions
     {
+        area(Processing)
+        {
+            action(LinkPaymentInvoice)
+            {
+                ApplicationArea = All;
+                Caption = 'Link Payment Invoice';
+                Image = LinkWithExisting;
+
+                trigger OnAction()
+                begin
+                    PaymentOrderMgt.LinkActAndPaymentInvoice(Rec);
+                end;
+            }
+        }
+
         area(Navigation)
         {
             action("Co&mments")
@@ -211,4 +226,7 @@ page 50045 "Purch. Order Act PayReq. List"
             }
         }
     }
+
+    var
+        PaymentOrderMgt: Codeunit "Payment Order Management";
 }
