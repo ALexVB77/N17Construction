@@ -449,12 +449,42 @@ page 70260 "Purchase Order Act"
                             Page.RUNMODAL(Page::"Change Log Entries", lrChangeLE);
                     end;
                 }
+                action(PaymentInvoices)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Payment Invoices';
+                    Image = Payment;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    PromotedIsBig = true;
+                    RunObject = Page "Purch. Order Act PayReq. List";
+                    RunPageLink = "Document Type" = CONST(Order),
+                                  "IW Documents" = CONST(true),
+                                  "Linked Purchase Order Act No." = field("No.");
+                }
             }
 
             group("F&unctions")
             {
                 Caption = 'F&unctions';
                 Image = "Action";
+                action(CreatePaymentInvoice)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Create Payment Invoice';
+                    Enabled = "No." <> '';
+                    Image = CreateDocument;
+                    Promoted = true;
+                    PromotedCategory = Process;
+
+                    trigger OnAction()
+                    begin
+                        if confirm(CreateAppConfText, true, "No.") then
+                            PaymentOrderMgt.CreatePurchaseOrderAppFromAct(Rec);
+                        if Get("Document Type", "No.") then;
+                    end;
+                }
+
                 action(CopyDocument)
                 {
                     ApplicationArea = Suite;
@@ -486,7 +516,6 @@ page 70260 "Purchase Order Act"
                     end;
                 }
             }
-
             action(EnterBasedOn)
             {
                 ApplicationArea = All;
@@ -614,6 +643,7 @@ page 70260 "Purchase Order Act"
         ShowDocEnabled: Boolean;
         ProblemTypeEnabled: Boolean;
         LocationCodeShowMandatory: Boolean;
+        CreateAppConfText: Label 'Do you want to create a payment invoice from Act %1?';
 
     local procedure SaveInvoiceDiscountAmount()
     var

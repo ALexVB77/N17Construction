@@ -175,7 +175,11 @@ codeunit 50010 "Payment Order Management"
             PurchOrderAct."Invoice VAT Amount" :=
                 RemActAmount - Round(RemActAmount / (1 + (1 - 0 / 100) * VATPostingSetup."VAT %" / 100), Currency."Amount Rounding Precision");
         end;
+        PurchOrderAct."Linked Purchase Order Act No." := PurchaseHeader."No.";
         PurchOrderAct.Modify(true);
+
+        COMMIT;
+        Page.RUNMODAL(Page::"Purchase Order App", PurchOrderAct);
     end;
 
     procedure ActInterBasedOn(PurchHeader: Record "Purchase Header")

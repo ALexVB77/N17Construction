@@ -5159,6 +5159,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2655527564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices for Act</source>
+          <target>Счета на оплату для Акта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2655527564 - Control 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval Status</source>
+          <target>Статус утверждения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Control Status App - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2655527564 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <target>Ко&amp;мментарии</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2655527564 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <target>Вложения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Action DocAttach - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2825229705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Orders List</source>
           <target>Список документов Акт и КС-2</target>
@@ -5273,6 +5297,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices</source>
+          <target>Заявки на оплату</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action PaymentInvoices - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 758120940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Checking)</source>
           <target>Счета на оплату (Проверка)</target>
@@ -5329,7 +5360,7 @@
         </trans-unit>
         <trans-unit id="Page 758120940 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attachments</source>
-          <target>]Вложения</target>
+          <target>Вложения</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Action DocAttach - Property Caption</note>
         </trans-unit>
@@ -5356,6 +5387,12 @@
           <target>Документы Акт и КС-2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - NamedType 2108382360" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to create a payment invoice from Act %1?</source>
+          <target>Создать заявку на оплату для Акта %1?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - NamedType CreateAppConfText</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Control 318613646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Details</source>
@@ -5459,6 +5496,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CopyDocument - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1848810545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Payment Invoice</source>
+          <target>Создать заявку на оплату</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CreatePaymentInvoice - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
           <target>Акт</target>
@@ -5488,6 +5532,12 @@
           <target>Вложения</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action DocAttach - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices</source>
+          <target>Заявки на оплату</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action PaymentInvoices - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statistics</source>
@@ -6735,7 +6785,6 @@
         <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
           <source>Agreement Card</source>
           <target>Карточка договора</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Agreements (Ext) - Action AgreementCard - Property Caption</note>
         </trans-unit>
