@@ -408,6 +408,16 @@ page 70262 "Purchase List Act"
                     DocumentAttachmentDetails.RunModal;
                 end;
             }
+            action(PaymentInvoices)
+            {
+                ApplicationArea = All;
+                Caption = 'Payment Invoices';
+                Image = Payment;
+                RunObject = Page "Purch. Order Act PayReq. List";
+                RunPageLink = "Document Type" = CONST(Order),
+                                "IW Documents" = CONST(true),
+                                "Linked Purchase Order Act No." = field("No.");
+            }
         }
     }
 

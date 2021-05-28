@@ -468,10 +468,10 @@ page 70260 "Purchase Order Act"
             {
                 Caption = 'F&unctions';
                 Image = "Action";
-                action(CreatePaymentRequest)
+                action(CreatePaymentInvoice)
                 {
                     ApplicationArea = Suite;
-                    Caption = 'Create Payment Request';
+                    Caption = 'Create Payment Invoice';
                     Enabled = "No." <> '';
                     Image = CreateDocument;
                     Promoted = true;
@@ -516,7 +516,6 @@ page 70260 "Purchase Order Act"
                     end;
                 }
             }
-
             action(EnterBasedOn)
             {
                 ApplicationArea = All;

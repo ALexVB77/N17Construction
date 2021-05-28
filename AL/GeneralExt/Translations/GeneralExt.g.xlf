@@ -4413,6 +4413,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action PaymentInvoices - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 758120940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Checking)</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4573,10 +4578,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CopyDocument - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 3091414537 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Payment Request</source>
+        <trans-unit id="Page 3437592965 - Action 1848810545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Payment Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CreatePaymentRequest - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CreatePaymentInvoice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
