@@ -9,6 +9,17 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 ApplicationArea = All;
             }
         }
+        addlast("Number Series")
+        {
+            field("Payment Request Nos."; Rec."Payment Request Nos.")
+            {
+                ApplicationArea = All;
+            }
+            field("Act Order Nos."; Rec."Act Order Nos.")
+            {
+                ApplicationArea = All;
+            }
+        }
         addlast("content")
         {
             group("Payment requests")

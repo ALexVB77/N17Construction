@@ -50,5 +50,18 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Caption = 'Payment Delay Period';
         }
 
+        field(75007; "Payment Request Nos."; Code[10])
+        {
+            TableRelation = "No. Series";
+            Caption = 'Payment Request Nos.';
+            Description = 'NC 51378 AB';
+
+        }
+        field(75015; "Act Order Nos."; Code[10])
+        {
+            TableRelation = "No. Series";
+            Caption = 'Act Order Nos.';
+            Description = 'NC 51378 AB';
+        }
     }
 }

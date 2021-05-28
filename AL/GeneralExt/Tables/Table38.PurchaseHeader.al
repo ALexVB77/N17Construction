@@ -7,6 +7,12 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51378 AB';
             Caption = 'Payment Assignment';
         }
+        field(50010; "Linked Purchase Order Act No."; Code[20])
+        {
+            Description = 'NC 51378 AB';
+            Caption = 'Linked Purchase Order Act No.';
+            TableRelation = "Purchase Header"."No." WHERE("Document Type" = CONST(Order));
+        }
         field(70002; "Process User"; Code[50])
         {
             TableRelation = "User Setup";
