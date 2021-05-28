@@ -3755,67 +3755,63 @@
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 2129730760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Agreement No.</source>
-          <target>[NAB: SUGGESTION]Номер внешнего договора</target>
-          <target>[NAB: SUGGESTION]Внешний Договор Но.</target>
+          <target>Номер внешнего договора</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control AE - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement No.</source>
-          <target>[NAB: SUGGESTION]Договор Но.</target>
+          <target>Договор Но.</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actual Flag</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Actual Flag</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Close - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 4037868816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Name</source>
-          <target>[NAB: SUGGESTION]Имя поставщика</target>
-          <target>[NAB: SUGGESTION]Поставщик название</target>
+          <target>Поставщик название</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control CName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 42719614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor No.</source>
-          <target>[NAB: SUGGESTION]Поставщик Но.</target>
-          <target>[NAB: SUGGESTION]Поставщик</target>
+          <target>Поставщик Но.</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Contragent No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
-          <target>[NAB: SUGGESTION]Дата</target>
+          <target>Дата</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target>[NAB: SUGGESTION]Описание</target>
+          <target>Описание</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description 2</source>
-          <target>[NAB: SUGGESTION]Описание 2</target>
+          <target>Описание 2</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Description 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
-          <target>[NAB: SUGGESTION]Проект Код</target>
-          <target>[NAB: SUGGESTION]Код проекта</target>
+          <target>Проект Код</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Project Code - Property Caption</note>
@@ -6569,6 +6565,27 @@
           <target>Найти ошибку 70095</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Posting Group</source>
+          <target>Импорт учетных групп</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Posting Group</source>
+          <target>Импорт учетных групп</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*.xlsx</source>
+          <target>*.xlsx</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType ExcelExt</note>
         </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory for Deferrals INV-11</source>

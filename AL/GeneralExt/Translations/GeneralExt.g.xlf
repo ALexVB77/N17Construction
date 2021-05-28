@@ -5453,6 +5453,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2331743510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*.xlsx</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType ExcelExt</note>
+        </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory for Deferrals INV-11</source>
           <note from="Developer" annotates="general" priority="2"></note>
