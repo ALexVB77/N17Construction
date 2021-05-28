@@ -5603,6 +5603,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Cash Account Card (Ext) - Property PromotedActionCategories</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
+          <source>Open customer card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Agreements (Ext) - Action AgreementCard - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
+          <source>Agreement Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Agreements (Ext) - Action AgreementCard - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 759612072 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 759612072">
           <source>Do you want to replace the existing definition for template %1?</source>
           <note from="Developer" annotates="general" priority="2"></note>
