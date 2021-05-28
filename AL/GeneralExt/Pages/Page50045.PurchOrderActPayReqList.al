@@ -1,7 +1,5 @@
 page 50045 "Purch. Order Act PayReq. List"
 {
-    // ApplicationArea = Basic, Suite;
-    // UsageCategory = Lists;
     Editable = false;
     InsertAllowed = false;
     DeleteAllowed = false;
@@ -185,6 +183,21 @@ page 50045 "Purch. Order Act PayReq. List"
     {
         area(Processing)
         {
+            action(LinkPaymentInvoice)
+            {
+                ApplicationArea = All;
+                Caption = 'Link Payment Invoice';
+                Image = LinkWithExisting;
+
+                trigger OnAction()
+                begin
+                    PaymentOrderMgt.LinkActAndPaymentInvoice(Rec);
+                end;
+            }
+        }
+
+        area(Navigation)
+        {
             action("Co&mments")
             {
                 ApplicationArea = All;
@@ -214,4 +227,6 @@ page 50045 "Purch. Order Act PayReq. List"
         }
     }
 
+    var
+        PaymentOrderMgt: Codeunit "Payment Order Management";
 }

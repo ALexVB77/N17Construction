@@ -286,7 +286,6 @@ page 70262 "Purchase List Act"
                     end;
                 }
             }
-
             action(DocCard)
             {
                 ApplicationArea = All;
@@ -382,6 +381,9 @@ page 70262 "Purchase List Act"
                     */
                 end;
             }
+        }
+        area(Navigation)
+        {
             action("Co&mments")
             {
                 ApplicationArea = All;
@@ -516,8 +518,8 @@ page 70262 "Purchase List Act"
         AE: record "Approval Entry";
         PH: record "Purchase Header";
     begin
-        //--
-        FILTERGROUP(0);
+        FILTERGROUP(2);
+
         SETRANGE("Process User");
         SETRANGE("Status App");
         SETRANGE("Problem Document");
@@ -591,7 +593,7 @@ page 70262 "Purchase List Act"
         //NC 44119 < KGT
         END;
 
-        FILTERGROUP(2);
+        FILTERGROUP(0);
 
         NewActEnabled := FilterActType in [FilterActType::All, FilterActType::act];
         NewKC2Enabled := FilterActType in [FilterActType::All, FilterActType::"kc-2"];
