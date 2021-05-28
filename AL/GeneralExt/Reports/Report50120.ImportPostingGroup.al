@@ -26,5 +26,5 @@ report 50120 "Import Posting Group"
     end;
 
     var
-        ExcelBuffer: Record "Excel Buffer Mod";
+        ExcelBuffer: Record "Excel Buffer Mod" temporary;
 }
