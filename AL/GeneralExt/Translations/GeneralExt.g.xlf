@@ -2698,6 +2698,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method NewOrderApp</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1537043917" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CreatePurchaseOrderAppFromAct</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CreatePurchaseOrderAppFromAct</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2873201457" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActInterBasedOn</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2727,6 +2732,11 @@
           <source>Nothing selected!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ActInterBasedOn - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 734814332 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The total amount of linked payment orders exceeds the amount of Act %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CreatePurchaseOrderAppFromAct - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to create the document. The controller has these rights.</source>
@@ -5592,6 +5602,16 @@
           <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Cash Account Card (Ext) - Property PromotedActionCategories</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
+          <source>Open customer card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Agreements (Ext) - Action AgreementCard - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
+          <source>Agreement Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Agreements (Ext) - Action AgreementCard - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 759612072 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 759612072">
           <source>Do you want to replace the existing definition for template %1?</source>

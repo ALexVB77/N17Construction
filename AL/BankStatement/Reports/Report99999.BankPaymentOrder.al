@@ -115,6 +115,7 @@ report 99999 "Bank Payment Order BS"
                     PaymentDocType::"Collection Payment Order", PaymentDocType::"Payment Requisition":
                         BankPaymentOrderHelper.FillMarks;
                 end;
+                BankPaymentOrderHelper.addPageBreak();
             end;
 
             trigger OnPostDataItem()

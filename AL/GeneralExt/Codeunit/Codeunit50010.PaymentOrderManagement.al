@@ -116,6 +116,68 @@ codeunit 50010 "Payment Order Management"
         Page.RUNMODAL(Page::"Purchase Order App", grPurchHeader);
     end;
 
+    procedure CreatePurchaseOrderAppFromAct(PurchaseHeader: Record "Purchase Header")
+    var
+        PurchSetup: Record "Purchases & Payables Setup";
+        InvtSetup: Record "Inventory Setup";
+        PurchOrderAct: Record "Purchase Header";
+        Item: Record Item;
+        VATPostingSetup: Record "VAT Posting Setup";
+        Currency: Record Currency;
+        CopyDocMgt: Codeunit "Copy Document Mgt.";
+        RemAmount: Decimal;
+        LinkedActExists: Boolean;
+        RemActAmount: Decimal;
+        FromDocType: Enum "Purchase Document Type From";
+        LocText001: Label 'The total amount of linked payment orders exceeds the amount of Act %1.';
+    begin
+        PurchaseHeader.TestField("Invoice Amount Incl. VAT");
+        RemActAmount := PurchaseHeader."Invoice Amount Incl. VAT";
+
+        PurchOrderAct.SetCurrentKey("IW Documents", "Linked Purchase Order Act No.");
+        PurchOrderAct.SetRange("IW Documents", true);
+        PurchOrderAct.SetRange("Linked Purchase Order Act No.", PurchaseHeader."No.");
+        PurchOrderAct.SetRange("Document Type", PurchOrderAct."Document Type"::Order);
+        LinkedActExists := not PurchOrderAct.IsEmpty;
+        if LinkedActExists then begin
+            PurchOrderAct.CalcSums("Invoice Amount Incl. VAT");
+            if PurchOrderAct."Invoice Amount Incl. VAT" >= PurchaseHeader."Invoice Amount Incl. VAT" then
+                error(LocText001, PurchaseHeader."No.");
+            RemActAmount -= PurchOrderAct."Invoice Amount Incl. VAT";
+        end;
+
+        PurchOrderAct.RESET;
+        PurchOrderAct.INIT;
+        PurchOrderAct."No." := '';
+        PurchOrderAct."Document Type" := PurchOrderAct."Document Type"::Order;
+        PurchOrderAct."IW Documents" := TRUE;
+        PurchOrderAct.INSERT(TRUE);
+
+        PurchSetup.Get();
+        CopyDocMgt.SetProperties(true, true, false, false, false, PurchSetup."Exact Cost Reversing Mandatory", false);
+        CopyDocMgt.CopyPurchDoc(FromDocType::Order, PurchaseHeader."No.", PurchOrderAct);
+
+        PurchOrderAct."IW Documents" := TRUE;
+        PurchOrderAct."Act Type" := PurchOrderAct."Act Type"::" ";
+        if LinkedActExists then begin
+            InvtSetup.Get();
+            InvtSetup.TestField("Temp Item Code");
+            Item.Get(InvtSetup."Temp Item Code");
+            Item.TestField("VAT Prod. Posting Group");
+            VATPostingSetup.GET(PurchOrderAct."VAT Bus. Posting Group", Item."VAT Prod. Posting Group");
+
+            if PurchOrderAct."Currency Code" = '' then
+                Currency.InitRoundingPrecision()
+            else
+                Currency.GET(PurchOrderAct."Currency Code");
+
+            PurchOrderAct."Invoice Amount Incl. VAT" := RemActAmount;
+            PurchOrderAct."Invoice VAT Amount" :=
+                RemActAmount - Round(RemActAmount / (1 + (1 - 0 / 100) * VATPostingSetup."VAT %" / 100), Currency."Amount Rounding Precision");
+        end;
+        PurchOrderAct.Modify(true);
+    end;
+
     procedure ActInterBasedOn(PurchHeader: Record "Purchase Header")
     var
         InvSetup: Record "Inventory Setup";
@@ -311,4 +373,6 @@ codeunit 50010 "Payment Order Management"
             END;
         END;
     end;
+
+
 }

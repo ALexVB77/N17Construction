@@ -295,6 +295,15 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Storekeeper';
         }
     }
+
+    keys
+    {
+        key(Key50000; "IW Documents", "Linked Purchase Order Act No.")
+        {
+            SumIndexFields = "Invoice Amount Incl. VAT";
+        }
+    }
+
     local procedure UpdateCF()
     var
         PL: record "Purchase Line";
