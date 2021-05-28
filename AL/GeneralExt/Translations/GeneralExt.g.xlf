@@ -2943,6 +2943,91 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3226742824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Event Subscriptions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1090351696 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the event subscription is active.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2760791360 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies manual event subscriptions that are active.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Active Manual Instances - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 389609624 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the codeunit that contains the event subscriber function.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control CodeunitName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 389609624 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscriber Codeunit Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control CodeunitName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2482318504 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an error that occurred for the event subscription.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Error Information - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1270596704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the event type, which can be Business, Integration, or Trigger.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Event Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2748736117 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many times the event subscriber function has been called. The event subscriber function is called when the published event is raised in the application.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Number of Calls - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2776749897 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the object that triggers the event.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Originating App Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1724702414 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the event publisher function in the publisher object that the event subscriber function subscribes to.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Published Function - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2520533602 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the ID of the object that contains the event publisher function that publishes the event.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Publisher Object ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2597190965 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the type of object that contains the event publisher function that publishes the event.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Publisher Object Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1792853995 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the object that contains the event publisher function that publishes the event.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control PublisherName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1792853995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Publisher Object Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control PublisherName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 249710912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the ID of codeunit that contains the event subscriber function.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Codeunit ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 771801340 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the event subscriber function in the subscriber codeunit that subscribes to the event.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Function - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 634546629 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the event subscription.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Instance - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4015,41 +4100,6 @@
         </trans-unit>
         <trans-unit id="Page 4280988192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Agreements</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1240668114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agreement</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Agreement - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 503024588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Co&amp;mments</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Comments - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1287641072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>S&amp;ales</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action CustomerSales - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 162786187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry Statistics</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Entry Statistics - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1940178401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ledger E&amp;ntries</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Ledger Entries - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Statistics</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Statistics - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Detail</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Property Caption</note>
         </trans-unit>

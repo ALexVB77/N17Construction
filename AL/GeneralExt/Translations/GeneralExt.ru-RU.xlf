@@ -3531,6 +3531,125 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3226742824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Event Subscriptions</source>
+          <target>Event Subscriptions</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1090351696 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the event subscription is active.</source>
+          <target>Specifies if the event subscription is active.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2760791360 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies manual event subscriptions that are active.</source>
+          <target>Specifies manual event subscriptions that are active.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Active Manual Instances - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 389609624 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the codeunit that contains the event subscriber function.</source>
+          <target>Specifies the name of the codeunit that contains the event subscriber function.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control CodeunitName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 389609624 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscriber Codeunit Name</source>
+          <target>Subscriber Codeunit Name</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control CodeunitName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2482318504 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an error that occurred for the event subscription.</source>
+          <target>Specifies an error that occurred for the event subscription.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Error Information - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1270596704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the event type, which can be Business, Integration, or Trigger.</source>
+          <target>Specifies the event type, which can be Business, Integration, or Trigger.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Event Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2748736117 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many times the event subscriber function has been called. The event subscriber function is called when the published event is raised in the application.</source>
+          <target>Specifies how many times the event subscriber function has been called. The event subscriber function is called when the published event is raised in the application.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Number of Calls - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2776749897 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the object that triggers the event.</source>
+          <target>Specifies the object that triggers the event.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Originating App Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1724702414 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the event publisher function in the publisher object that the event subscriber function subscribes to.</source>
+          <target>Specifies the name of the event publisher function in the publisher object that the event subscriber function subscribes to.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Published Function - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2520533602 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the ID of the object that contains the event publisher function that publishes the event.</source>
+          <target>Specifies the ID of the object that contains the event publisher function that publishes the event.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Publisher Object ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 2597190965 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the type of object that contains the event publisher function that publishes the event.</source>
+          <target>Specifies the type of object that contains the event publisher function that publishes the event.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Publisher Object Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1792853995 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the object that contains the event publisher function that publishes the event.</source>
+          <target>Specifies the name of the object that contains the event publisher function that publishes the event.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control PublisherName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 1792853995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Publisher Object Name</source>
+          <target>Publisher Object Name</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control PublisherName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 249710912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the ID of codeunit that contains the event subscriber function.</source>
+          <target>Specifies the ID of codeunit that contains the event subscriber function.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Codeunit ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 771801340 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the event subscriber function in the subscriber codeunit that subscribes to the event.</source>
+          <target>Specifies the event subscriber function in the subscriber codeunit that subscribes to the event.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Function - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3226742824 - Control 634546629 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the event subscription.</source>
+          <target>Specifies the event subscription.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Instance - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
           <target>Реестр операций</target>
@@ -3745,14 +3864,12 @@
         <trans-unit id="Page 729295803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>G/L Account Mapping</source>
           <target>Соответствие итогового плана счетов</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page G/L Account Mapping - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 729295803 - Action 3492634373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import G\L Account Mapping</source>
           <target>Импорт соответствия итогового плана счетов</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page G/L Account Mapping - Action ImportGLAccountMapping - Property Caption</note>
         </trans-unit>
@@ -4884,54 +5001,6 @@
           <target>Детали счета</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1240668114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agreement</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Agreement - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 503024588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Co&amp;mments</source>
-          <target>[NAB: SUGGESTION]Ко&amp;мментарии</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Comments - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1287641072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>S&amp;ales</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action CustomerSales - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 162786187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry Statistics</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Entry Statistics - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1940178401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ledger E&amp;ntries</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Ledger Entries - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Statistics</source>
-          <target>[NAB: SUGGESTION]Статистика</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Statistics - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Detail</source>
-          <target>Детали счета</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Invoice Detail - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
@@ -7463,7 +7532,6 @@
         <trans-unit id="TableExtension 279653624 - Field 2330118551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Linked Purchase Order Act No.</source>
           <target>Связанный документ Акт и КС-2</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Linked Purchase Order Act No. - Property Caption</note>
         </trans-unit>
@@ -7884,7 +7952,6 @@
         <trans-unit id="TableExtension 2307367824 - Field 2622566760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Act Order Nos.</source>
           <target>Серия номеров актов</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Act Order Nos. - Property Caption</note>
         </trans-unit>
@@ -7921,7 +7988,6 @@
         <trans-unit id="TableExtension 2307367824 - Field 1989928865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Payment Request Nos.</source>
           <target>Серия номеров заявок на платеж</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Request Nos. - Property Caption</note>
         </trans-unit>
