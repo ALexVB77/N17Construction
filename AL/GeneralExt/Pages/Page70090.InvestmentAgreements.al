@@ -52,67 +52,99 @@ page 70090 "Investment Agreements"
         }
     }
 
-
     actions
     {
         area(navigation)
         {
-            group(Agreement)
+            group("A&greement")
             {
-                action("Ledger Entries")
+                Caption = 'A&greement';
+                action("Ledger E&ntries")
                 {
-                    ShortCutKey = 'Ctrl+F5';
-                    RunObject = Page "Customer Ledger Entries";
+                    ApplicationArea = Basic, Suite;
                     Caption = 'Ledger E&ntries';
+                    Image = GL;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    RunObject = Page "Customer Ledger Entries";
+                    RunPageLink = "Customer No." = FIELD("Customer No."),
+                                  "Agreement No." = FIELD("No.");
                     RunPageView = SORTING("Customer No.");
-                    RunPageLink = "Customer No." = FIELD("Customer No."), "Agreement No." = FIELD("No.");
+                    ShortCutKey = 'Ctrl+F7';
+                    ToolTip = 'View the history of transactions that have been posted for the selected record.';
                 }
-
-                action(Comments)
+                action("Co&mments")
                 {
-                    RunObject = page "Comment Sheet";
                     Caption = 'Co&mments';
-                    RunPageLink = "Table Name" = CONST("Customer Agreement"), "No." = FIELD("No.");
+                    Image = ViewComments;
+                    RunObject = Page "Comment Sheet";
+                    RunPageLink = "Table Name" = CONST("Customer Agreement"),
+                                  "No." = FIELD("No.");
                 }
-
+                action(Dimensions)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Dimensions';
+                    Image = Dimensions;
+                    RunObject = Page "Default Dimensions";
+                    RunPageLink = "Table ID" = CONST(14902),
+                                  "No." = FIELD("No.");
+                    ShortCutKey = 'Shift+Ctrl+D';
+                }
+                separator(Action1210023)
+                {
+                }
                 action(Statistics)
                 {
-                    ShortCutKey = 'F9';
-                    RunObject = page "Customer Statistics";
                     Caption = 'Statistics';
-                    RunPageLink = "No." = FIELD("Customer No."), "Agreement Filter" = FIELD("No.");
-
+                    Image = Statistics;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    RunObject = Page "Customer Statistics";
+                    RunPageLink = "No." = FIELD("Customer No."),
+                                  "Agreement Filter" = FIELD("No.");
+                    ShortCutKey = 'F7';
+                    ToolTip = 'View statistical information, such as the value of posted entries, for the record.';
                 }
-
-                // action("Statistics by Currencies")
-                // {
-                //     RunObject = page "Customer Stats. by Currencies";
-                //     Caption = 'Statistics by C&urrencies';
-                //     RunPageLink = No.=FIELD(Customer No.), Agreement Filter=FIELD(No.);
-                // }   
-
                 action("Entry Statistics")
                 {
-                    RunObject = page "Customer Entry Statistics";
+                    ApplicationArea = Basic, Suite;
                     Caption = 'Entry Statistics';
-                    RunPageLink = "No." = FIELD("Customer No."), "Agreement Filter" = FIELD("No.");
+                    Image = EntryStatistics;
+                    RunObject = Page "Customer Entry Statistics";
+                    RunPageLink = "No." = FIELD("Customer No."),
+                                  "Agreement Filter" = FIELD("No.");
                 }
-
-                action(CustomerSales)
+                action("S&ales")
                 {
-                    RunObject = page "Customer Sales";
+                    ApplicationArea = Suite;
                     Caption = 'S&ales';
-                    RunPageLink = "No." = FIELD("Customer No."), "Agreement Filter" = FIELD("No.");
+                    Image = Sales;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    RunObject = Page "Customer Sales";
+                    RunPageLink = "No." = FIELD("Customer No."),
+                                  "Agreement Filter" = FIELD("No.");
+                }
+            }
+            group(Action1210028)
+            {
+                Caption = 'S&ales';
+                Image = Sales;
+                action(Orders)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Orders';
+                    Image = Document;
+                    RunObject = Page "Sales Order List";
+                    RunPageLink = "Sell-to Customer No." = FIELD("Customer No."),
+                                  "Agreement No." = FIELD("No.");
+                    RunPageView = SORTING("Document Type", "Sell-to Customer No.", "No.");
+                    ToolTip = 'View any related sales orders. ';
                 }
             }
         }
     }
-
-
-
-
-
-
 
 }
 

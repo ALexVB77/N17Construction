@@ -4108,40 +4108,155 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Control Shareholder5Req - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 134333476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A&amp;greement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action A&amp;greement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 604304905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Action100</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Action100 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or add comments for the record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Co&amp;mments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 2173385693 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View or edit dimensions, such as area, project, or department, that you can assign to sales and purchase documents to distribute costs and analyze transaction history.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Dimensions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 162786187 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View entry statistics for the record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Entry Statistics - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 162786187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry Statistics</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Entry Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 1111476699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View the history of transactions that have been posted for the selected record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Ledger E&amp;ntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 1111476699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ledger E&amp;ntries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Ledger E&amp;ntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 655202066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S&amp;ales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action S&amp;ales - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 84074407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View statistical information, such as the value of posted entries, for the record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Statistics - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 3442759616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S&amp;ales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Action82 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 3435539207 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View any related sales orders. </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Orders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3861133141 - Action 3435539207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Orders - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 4280988192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment Agreements</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1240668114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Agreement</source>
+        <trans-unit id="Page 4280988192 - Action 134333476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A&amp;greement</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Agreement - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action A&amp;greement - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 503024588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4280988192 - Action 1695989207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Action1210023</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Action1210023 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Comments - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Co&amp;mments - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1287641072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>S&amp;ales</source>
+        <trans-unit id="Page 4280988192 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action CustomerSales - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Dimensions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4280988192 - Action 162786187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry Statistics</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Entry Statistics - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4280988192 - Action 1940178401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4280988192 - Action 1111476699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View the history of transactions that have been posted for the selected record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Ledger E&amp;ntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 1111476699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ledger E&amp;ntries</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Ledger Entries - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Ledger E&amp;ntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 655202066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S&amp;ales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action S&amp;ales - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 84074407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View statistical information, such as the value of posted entries, for the record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Statistics - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4280988192 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statistics</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 2802473418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S&amp;ales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Action1210028 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 3435539207 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View any related sales orders. </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Orders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4280988192 - Action 3435539207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Orders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2149100676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Detail</source>
@@ -5347,6 +5462,21 @@
           <source>Find Error 70095</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*.xlsx</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType ExcelExt</note>
         </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory for Deferrals INV-11</source>
