@@ -3,6 +3,7 @@ report 50120 "Import Posting Group"
     UsageCategory = Administration;
     ApplicationArea = All;
     Caption = 'Import Posting Group';
+    ProcessingOnly = true;
 
     trigger OnPreReport()
     var
