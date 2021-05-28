@@ -184,9 +184,16 @@ codeunit 50010 "Payment Order Management"
 
     procedure LinkActAndPaymentInvoice(var PurchHeader: Record "Purchase Header")
     begin
+        PurchHeader.FilterGroup(4);
+        message('Group4:\' + PurchHeader.GetFilters);
         PurchHeader.FilterGroup(3);
-        message(PurchHeader.GetFilter("Linked Purchase Order Act No."));
+        message('Group3:\' + PurchHeader.GetFilters);
+        PurchHeader.FilterGroup(2);
+        message('Group2:\' + PurchHeader.GetFilters);
+        PurchHeader.FilterGroup(1);
+        message('Group1:\' + PurchHeader.GetFilters);
         PurchHeader.FilterGroup(0);
+        message('Group0:\' + PurchHeader.GetFilters);
     end;
 
     procedure ActInterBasedOn(PurchHeader: Record "Purchase Header")
