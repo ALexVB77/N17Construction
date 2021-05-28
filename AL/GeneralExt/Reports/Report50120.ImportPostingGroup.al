@@ -14,6 +14,7 @@ report 50120 "Import Posting Group"
         ExcelExt: Label '*.xlsx';
         RowNo: Integer;
         CustomerPostingGroup: Record "Customer Posting Group";
+        VondorPostingGroup: Record "Vendor Posting Group";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -40,6 +41,22 @@ report 50120 "Import Posting Group"
                             CustomerPostingGroup."Credit Rounding Account" := GetValueAtCall(RowNo, 15);
                             //CustomerPostingGroup."Skip Posting" := GetValueAtCall(RowNo, 18);
                             CustomerPostingGroup.Insert(true);
+                        end;
+                end;
+            'Учетные группы поставщика':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not VondorPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
+                            VondorPostingGroup.Init();
+                            VondorPostingGroup.Code := GetValueAtCall(RowNo, 1);
+                            VondorPostingGroup.Description := GetValueAtCall(RowNo, 2);
+                            VondorPostingGroup."Payables Account" := GetValueAtCall(RowNo, 3);
+                            VondorPostingGroup."Prepayment Account" := GetValueAtCall(RowNo, 4);
+                            VondorPostingGroup."Debit Curr. Appln. Rndg. Acc." := GetValueAtCall(RowNo, 5);
+                            VondorPostingGroup."Credit Curr. Appln. Rndg. Acc." := GetValueAtCall(RowNo, 6);
+                            VondorPostingGroup."Debit Rounding Account" := GetValueAtCall(RowNo, 7);
+                            VondorPostingGroup."Credit Rounding Account" := GetValueAtCall(RowNo, 8);
+                            VondorPostingGroup.Insert(true);
                         end;
                 end;
         end;
