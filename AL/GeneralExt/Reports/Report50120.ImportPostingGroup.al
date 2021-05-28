@@ -12,8 +12,8 @@ report 50120 "Import Posting Group"
         SheetName: Text;
         Text001: Label 'Import Posting Group';
         ExcelExt: Label '*.xlsx';
+        ExcelBuffer: Record "Excel Buffer Mod" temporary;
     begin
-        ExcelBuffer.DeleteAll();
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
             exit;
@@ -24,7 +24,4 @@ report 50120 "Import Posting Group"
         ExcelBuffer.OpenBook(ServerFileName, SheetName);
         ExcelBuffer.ReadSheet();
     end;
-
-    var
-        ExcelBuffer: Record "Excel Buffer Mod" temporary;
 }
