@@ -286,7 +286,6 @@ page 70262 "Purchase List Act"
                     end;
                 }
             }
-
             action(DocCard)
             {
                 ApplicationArea = All;
@@ -382,6 +381,9 @@ page 70262 "Purchase List Act"
                     */
                 end;
             }
+        }
+        area(Navigation)
+        {
             action("Co&mments")
             {
                 ApplicationArea = All;

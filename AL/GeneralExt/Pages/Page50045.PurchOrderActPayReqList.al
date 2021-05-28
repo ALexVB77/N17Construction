@@ -1,7 +1,5 @@
 page 50045 "Purch. Order Act PayReq. List"
 {
-    // ApplicationArea = Basic, Suite;
-    // UsageCategory = Lists;
     Editable = false;
     InsertAllowed = false;
     DeleteAllowed = false;
@@ -183,7 +181,7 @@ page 50045 "Purch. Order Act PayReq. List"
 
     actions
     {
-        area(Processing)
+        area(Navigation)
         {
             action("Co&mments")
             {
@@ -213,5 +211,4 @@ page 50045 "Purch. Order Act PayReq. List"
             }
         }
     }
-
 }

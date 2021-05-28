@@ -248,6 +248,9 @@ page 70002 "Purchase List App"
                     CurrPage.Update(false);
                 end;
             }
+        }
+        area(Navigation)
+        {
             action("Co&mments")
             {
                 ApplicationArea = All;
