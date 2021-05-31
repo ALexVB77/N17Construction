@@ -4944,7 +4944,6 @@
         <trans-unit id="Page 3861133141 - Action 1225782422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attachments</source>
           <target>Вложения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Attachments - Property Caption</note>
         </trans-unit>
@@ -6875,6 +6874,20 @@
           <target>Определяет учетную группу РСБУ для ОС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Fixed Asset List (Ext) - Control RAS Posting Group - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 250922747 - Control 1231965224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>DenDoc Dim Value</source>
+          <target>ДЕНДОК значение измерения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries (Ext) - Control DenDoc Dim Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 250922747 - Control 3904971218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+          <source>Utilities Dim. Value</source>
+          <target>ИНЖ. СЕТЬ</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries (Ext) - Control Utilities Dim. Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3887120495 - Control 3573897381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1180040559">
           <source>Another</source>

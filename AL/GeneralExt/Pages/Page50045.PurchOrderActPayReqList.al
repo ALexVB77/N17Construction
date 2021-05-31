@@ -188,6 +188,7 @@ page 50045 "Purch. Order Act PayReq. List"
                 ApplicationArea = All;
                 Caption = 'Link Payment Invoice';
                 Image = LinkWithExisting;
+                Enabled = LinkPaymentInvoiceEndabled;
 
                 trigger OnAction()
                 begin
@@ -227,6 +228,18 @@ page 50045 "Purch. Order Act PayReq. List"
         }
     }
 
+    trigger OnOpenPage()
+    var
+        PurchHeader: Record "Purchase Header";
+    begin
+        PurchHeader.CopyFilters(Rec);
+        PurchHeader.FilterGroup(0);
+        CurrActNo := PurchHeader.GetFilter("No.");
+        LinkPaymentInvoiceEndabled := CurrActNo <> '';
+    end;
+
     var
         PaymentOrderMgt: Codeunit "Payment Order Management";
+        LinkPaymentInvoiceEndabled: Boolean;
+        CurrActNo: code[20];
 }
