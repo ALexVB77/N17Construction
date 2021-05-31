@@ -192,7 +192,7 @@ page 50045 "Purch. Order Act PayReq. List"
 
                 trigger OnAction()
                 begin
-                    PaymentOrderMgt.LinkActAndPaymentInvoice(Rec);
+                    PaymentOrderMgt.LinkActAndPaymentInvoice(Rec, CurrActNo);
                 end;
             }
         }
@@ -234,7 +234,7 @@ page 50045 "Purch. Order Act PayReq. List"
     begin
         PurchHeader.CopyFilters(Rec);
         PurchHeader.FilterGroup(0);
-        CurrActNo := PurchHeader.GetFilter("No.");
+        CurrActNo := PurchHeader.GetFilter("Linked Purchase Order Act No.");
         LinkPaymentInvoiceEndabled := CurrActNo <> '';
     end;
 

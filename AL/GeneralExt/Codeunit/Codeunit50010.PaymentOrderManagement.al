@@ -120,7 +120,7 @@ codeunit 50010 "Payment Order Management"
     var
         PurchSetup: Record "Purchases & Payables Setup";
         InvtSetup: Record "Inventory Setup";
-        PurchOrderAct: Record "Purchase Header";
+        PaymentInvoice: Record "Purchase Header";
         Item: Record Item;
         VATPostingSetup: Record "VAT Posting Setup";
         Currency: Record Currency;
@@ -134,57 +134,66 @@ codeunit 50010 "Payment Order Management"
         PurchaseHeader.TestField("Invoice Amount Incl. VAT");
         RemActAmount := PurchaseHeader."Invoice Amount Incl. VAT";
 
-        PurchOrderAct.SetCurrentKey("IW Documents", "Linked Purchase Order Act No.");
-        PurchOrderAct.SetRange("IW Documents", true);
-        PurchOrderAct.SetRange("Linked Purchase Order Act No.", PurchaseHeader."No.");
-        PurchOrderAct.SetRange("Document Type", PurchOrderAct."Document Type"::Order);
-        LinkedActExists := not PurchOrderAct.IsEmpty;
+        PaymentInvoice.SetCurrentKey("IW Documents", "Linked Purchase Order Act No.");
+        PaymentInvoice.SetRange("IW Documents", true);
+        PaymentInvoice.SetRange("Linked Purchase Order Act No.", PurchaseHeader."No.");
+        PaymentInvoice.SetRange("Document Type", PaymentInvoice."Document Type"::Order);
+        LinkedActExists := not PaymentInvoice.IsEmpty;
         if LinkedActExists then begin
-            PurchOrderAct.CalcSums("Invoice Amount Incl. VAT");
-            if PurchOrderAct."Invoice Amount Incl. VAT" >= PurchaseHeader."Invoice Amount Incl. VAT" then
+            PaymentInvoice.CalcSums("Invoice Amount Incl. VAT");
+            if PaymentInvoice."Invoice Amount Incl. VAT" >= PurchaseHeader."Invoice Amount Incl. VAT" then
                 error(LocText001, PurchaseHeader."No.");
-            RemActAmount -= PurchOrderAct."Invoice Amount Incl. VAT";
+            RemActAmount -= PaymentInvoice."Invoice Amount Incl. VAT";
         end;
 
-        PurchOrderAct.RESET;
-        PurchOrderAct.INIT;
-        PurchOrderAct."No." := '';
-        PurchOrderAct."Document Type" := PurchOrderAct."Document Type"::Order;
-        PurchOrderAct."IW Documents" := TRUE;
-        PurchOrderAct.INSERT(TRUE);
+        PaymentInvoice.RESET;
+        PaymentInvoice.INIT;
+        PaymentInvoice."No." := '';
+        PaymentInvoice."Document Type" := PaymentInvoice."Document Type"::Order;
+        PaymentInvoice."IW Documents" := TRUE;
+        PaymentInvoice.INSERT(TRUE);
 
         PurchSetup.Get();
         CopyDocMgt.SetProperties(true, true, false, false, false, PurchSetup."Exact Cost Reversing Mandatory", false);
-        CopyDocMgt.CopyPurchDoc(FromDocType::Order, PurchaseHeader."No.", PurchOrderAct);
+        CopyDocMgt.CopyPurchDoc(FromDocType::Order, PurchaseHeader."No.", PaymentInvoice);
 
-        PurchOrderAct."IW Documents" := TRUE;
-        PurchOrderAct."Act Type" := PurchOrderAct."Act Type"::" ";
+        PaymentInvoice."IW Documents" := TRUE;
+        PaymentInvoice."Act Type" := PaymentInvoice."Act Type"::" ";
         if LinkedActExists then begin
             InvtSetup.Get();
             InvtSetup.TestField("Temp Item Code");
             Item.Get(InvtSetup."Temp Item Code");
             Item.TestField("VAT Prod. Posting Group");
-            VATPostingSetup.GET(PurchOrderAct."VAT Bus. Posting Group", Item."VAT Prod. Posting Group");
+            VATPostingSetup.GET(PaymentInvoice."VAT Bus. Posting Group", Item."VAT Prod. Posting Group");
 
-            if PurchOrderAct."Currency Code" = '' then
+            if PaymentInvoice."Currency Code" = '' then
                 Currency.InitRoundingPrecision()
             else
-                Currency.GET(PurchOrderAct."Currency Code");
+                Currency.GET(PaymentInvoice."Currency Code");
 
-            PurchOrderAct."Invoice Amount Incl. VAT" := RemActAmount;
-            PurchOrderAct."Invoice VAT Amount" :=
+            PaymentInvoice."Invoice Amount Incl. VAT" := RemActAmount;
+            PaymentInvoice."Invoice VAT Amount" :=
                 RemActAmount - Round(RemActAmount / (1 + (1 - 0 / 100) * VATPostingSetup."VAT %" / 100), Currency."Amount Rounding Precision");
         end;
-        PurchOrderAct."Linked Purchase Order Act No." := PurchaseHeader."No.";
-        PurchOrderAct.Modify(true);
+        PaymentInvoice."Linked Purchase Order Act No." := PurchaseHeader."No.";
+        PaymentInvoice.Modify(true);
 
         COMMIT;
-        Page.RUNMODAL(Page::"Purchase Order App", PurchOrderAct);
+        Page.RUNMODAL(Page::"Purchase Order App", PaymentInvoice);
     end;
 
-    procedure LinkActAndPaymentInvoice(PurchHeader: Record "Purchase Header"; ActNo: code[20])
+    procedure LinkActAndPaymentInvoice(PurchaseHeader: Record "Purchase Header"; ActNo: code[20])
+    var
+        PaymentInvoice: Record "Purchase Header";
     begin
 
+        PaymentInvoice.SetCurrentKey("Buy-from Vendor No.", "Agreement No.");
+        PaymentInvoice.SetRange("Buy-from Vendor No.", PurchaseHeader."Buy-from Vendor No.");
+
+
+        //PaymentInvoice.SetRange("IW Documents", true);
+        // PaymentInvoice.SetRange("Linked Purchase Order Act No.", PurchaseHeader."No.");
+        // PaymentInvoice.SetRange("Document Type", PaymentInvoice."Document Type"::Order);       
     end;
 
     procedure ActInterBasedOn(PurchHeader: Record "Purchase Header")
