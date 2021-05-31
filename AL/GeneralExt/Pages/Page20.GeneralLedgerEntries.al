@@ -4,15 +4,18 @@ pageextension 80020 "General Ledger Entries (Ext)" extends "General Ledger Entri
     {
         addlast(Control1)
         {
-            /*field("DenDoc Dim Value"; Rec."DenDoc Dim Value Code")
+            field("DenDoc Dim Value"; GetDenDocDim())
             {
                 ApplicationArea = Basic, Suite;
-            }*/
+                Caption = 'DenDoc Dim Value';
+            }
 
-            /*field("Utilities Dim. Value Code"; Rec."Utilities Dim. Value Code")
+            field("Utilities Dim. Value Code"; GetUtilitiesDim())
             {
                 ApplicationArea = Basic, Suite;
-            }*/
+                Caption = 'Utilities Dim. Value';
+
+            }
 
             field("Credit-Memo Reason"; GetCrMemoReason())
             {
@@ -20,6 +23,30 @@ pageextension 80020 "General Ledger Entries (Ext)" extends "General Ledger Entri
             }
         }
     }
+
+    local procedure GetDenDocDim(): Code[20]
+    var
+        DimSet: Record "Dimension Set Entry";
+        GLSetup: Record "General Ledger Setup";
+    begin
+        GLSetup.Get();
+        if DimSet.Get(rec."Dimension Set ID", GLSetup."Shortcut Dimension 8 Code") then
+            exit(DimSet."Dimension Value Code");
+        exit('');
+
+    end;
+
+    local procedure GetUtilitiesDim(): Code[20]
+    var
+        DimSet: Record "Dimension Set Entry";
+        GLSetup: Record "General Ledger Setup";
+    begin
+        GLSetup.Get();
+        if DimSet.Get(rec."Dimension Set ID", GLSetup."Utilities Dimension Code") then
+            exit(DimSet."Dimension Value Code");
+        exit('');
+    end;
+
     procedure GetCrMemoReason(): Text[230]
     var
         PCMH: Record "Purch. Cr. Memo Hdr.";
