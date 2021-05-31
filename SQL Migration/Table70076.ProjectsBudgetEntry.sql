@@ -1,7 +1,7 @@
 USE [Bonava Objects]
 GO
 
-INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Projects Budget Entry$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
+INSERT INTO [Bonava-Dev].[dbo].[Bonava$Projects Budget Entry$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
 (
 	[Entry No_],
 	[Date],
