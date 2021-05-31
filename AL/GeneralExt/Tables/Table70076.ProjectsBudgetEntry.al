@@ -418,6 +418,14 @@ table 70076 "Projects Budget Entry"
                 Validate(Curency);
             end;
         }
+        field(51000; "Close Date"; Date)
+        {
+            Caption = 'Date Fact';
+        }
+        field(51010; "Payment Description"; Text[250])
+        {
+            Caption = 'Payment Description';
+        }
     }
 
     keys

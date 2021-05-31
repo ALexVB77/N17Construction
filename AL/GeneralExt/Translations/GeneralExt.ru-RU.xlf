@@ -1677,6 +1677,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Close - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Fact</source>
+          <target>Дата факт</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Close Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <target>Код</target>
@@ -1832,6 +1839,13 @@
           <target>Родительская операция</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Parent Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 2843497360 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Description</source>
+          <target>Описание оплаты</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Payment Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3139420653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay Request No.</source>
@@ -3243,9 +3257,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CreatePurchaseOrderAppFromAct</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1760127043" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 47354825 - Method 2457845426" size-unit="char" translate="yes" xml:space="preserve">
           <source>LinkActAndPaymentInvoice</source>
-          <target>LinkActAndPaymentInvoice</target>
+          <target>[NAB: SUGGESTION]LinkActAndPaymentInvoice</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice</note>
         </trans-unit>
@@ -6878,14 +6893,12 @@
         <trans-unit id="PageExtension 250922747 - Control 1231965224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>DenDoc Dim Value</source>
           <target>ДЕНДОК значение измерения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries (Ext) - Control DenDoc Dim Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 250922747 - Control 3904971218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Utilities Dim. Value</source>
           <target>ИНЖ. СЕТЬ</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries (Ext) - Control Utilities Dim. Value Code - Property Caption</note>
         </trans-unit>
