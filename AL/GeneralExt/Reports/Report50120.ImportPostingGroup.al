@@ -18,6 +18,10 @@ report 50120 "Import Posting Group"
         InventoryPostingGroup: Record "Inventory Posting Group";
         FAPostingGroup: Record "FA Posting Group";
         GenBusinessPostingGroup: Record "Gen. Business Posting Group";
+        GenProductPostingGroup: Record "Gen. Product Posting Group";
+        VATProductPostingGroup: Record "VAT Product Posting Group";
+        VATBusinessPostingGroup: Record "VAT Business Posting Group";
+        GeneralPostingSetup: Record "General Posting Setup";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -101,7 +105,7 @@ report 50120 "Import Posting Group"
                             FAPostingGroup.Insert(true);
                         end;
                 end;
-            'НДС Товарные Группы':
+            'Общие бизнес-группы':
                 begin
                     for RowNo := 3 to GetLastRow do
                         if not GenBusinessPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
@@ -109,6 +113,58 @@ report 50120 "Import Posting Group"
                             GenBusinessPostingGroup.Code := GetValueAtCall(RowNo, 1);
                             GenBusinessPostingGroup.Description := GetValueAtCall(RowNo, 2);
                             GenBusinessPostingGroup.Insert(true);
+                        end;
+                end;
+            'Общие товарные группы':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not GenProductPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
+                            GenProductPostingGroup.Init();
+                            GenProductPostingGroup.Code := GetValueAtCall(RowNo, 1);
+                            GenProductPostingGroup.Description := GetValueAtCall(RowNo, 2);
+                            GenProductPostingGroup.Insert(true);
+                        end;
+                end;
+            'НДС Товарные Группы':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not VATProductPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
+                            VATProductPostingGroup.Init();
+                            VATProductPostingGroup.Code := GetValueAtCall(RowNo, 1);
+                            VATProductPostingGroup.Description := GetValueAtCall(RowNo, 2);
+                            VATProductPostingGroup.Insert(true);
+                        end;
+                end;
+            'НДС бизнес-группы':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not VATBusinessPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
+                            VATBusinessPostingGroup.Init();
+                            VATBusinessPostingGroup.Code := GetValueAtCall(RowNo, 1);
+                            VATBusinessPostingGroup.Description := GetValueAtCall(RowNo, 2);
+                            VATBusinessPostingGroup.Insert(true);
+                        end;
+                end;
+            'Общая настройка учета':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not GeneralPostingSetup.Get(GetValueAtCall(RowNo, 1), GetValueAtCall(RowNo, 2)) then begin
+                            GeneralPostingSetup.Init();
+                            GeneralPostingSetup."Gen. Bus. Posting Group" := GetValueAtCall(RowNo, 1);
+                            GeneralPostingSetup."Gen. Prod. Posting Group" := GetValueAtCall(RowNo, 2);
+                            GeneralPostingSetup."Sales Account" := GetValueAtCall(RowNo, 3);
+                            GeneralPostingSetup."Sales Credit Memo Account" := GetValueAtCall(RowNo, 4);
+                            GeneralPostingSetup."Sales Line Disc. Account" := GetValueAtCall(RowNo, 5);
+                            GeneralPostingSetup."Sales Inv. Disc. Account" := GetValueAtCall(RowNo, 6);
+                            GeneralPostingSetup."Purch. Account" := GetValueAtCall(RowNo, 13);
+                            GeneralPostingSetup."Purch. Credit Memo Account" := GetValueAtCall(RowNo, 14);
+                            GeneralPostingSetup."Purch. Line Disc. Account" := GetValueAtCall(RowNo, 15);
+                            GeneralPostingSetup."COGS Account" := GetValueAtCall(RowNo, 22);
+                            GeneralPostingSetup."Inventory Adjmt. Account" := GetValueAtCall(RowNo, 24);
+                            GeneralPostingSetup."Direct Cost Applied Account" := GetValueAtCall(RowNo, 28);
+                            GeneralPostingSetup."Overhead Applied Account" := GetValueAtCall(RowNo, 29);
+                            GeneralPostingSetup."Purchase Variance Account" := GetValueAtCall(RowNo, 30);
+                            GeneralPostingSetup.Insert(true);
                         end;
                 end;
         end;
