@@ -32,6 +32,14 @@ pageextension 80119 "User Setup (Ext)" extends "User Setup"
             {
                 ApplicationArea = Basic, Suite;
             }
+            field("CF Allow Long Entries Edit"; Rec."CF Allow Long Entries Edit")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+            field("CF Allow Short Entries Edit"; Rec."CF Allow Short Entries Edit")
+            {
+                ApplicationArea = Basic, Suite;
+            }
         }
     }
 }
