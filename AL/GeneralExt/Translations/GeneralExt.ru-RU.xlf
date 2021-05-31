@@ -3243,9 +3243,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CreatePurchaseOrderAppFromAct</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1760127043" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 47354825 - Method 2457845426" size-unit="char" translate="yes" xml:space="preserve">
           <source>LinkActAndPaymentInvoice</source>
-          <target>LinkActAndPaymentInvoice</target>
+          <target>[NAB: SUGGESTION]LinkActAndPaymentInvoice</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice</note>
         </trans-unit>
@@ -6094,6 +6095,27 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Create Guarantee Deduction - Control Template - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1104067303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Migration From Excel</source>
+          <target>Миграция данных из Excel</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Migration From Excel</source>
+          <target>Миграция данных из Excel</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*.xlsx</source>
+          <target>*.xlsx</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType ExcelExt</note>
+        </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Subform</source>
           <target>Выгрузка в Excel</target>
@@ -6616,24 +6638,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2331743510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Posting Group</source>
-          <target>Импорт учетных групп</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Posting Group</source>
-          <target>Импорт учетных групп</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType Text001</note>
-        </trans-unit>
-        <trans-unit id="Report 2331743510 - Method 1544076788 - NamedType 752669642" size-unit="char" translate="yes" xml:space="preserve">
-          <source>*.xlsx</source>
-          <target>*.xlsx</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Posting Group - Method OnPreReport - NamedType ExcelExt</note>
-        </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory for Deferrals INV-11</source>
           <target>Акт инвентаризации РБП - ИНВ-11</target>
@@ -6878,14 +6882,12 @@
         <trans-unit id="PageExtension 250922747 - Control 1231965224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>DenDoc Dim Value</source>
           <target>ДЕНДОК значение измерения</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries (Ext) - Control DenDoc Dim Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 250922747 - Control 3904971218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Utilities Dim. Value</source>
           <target>ИНЖ. СЕТЬ</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension General Ledger Entries (Ext) - Control Utilities Dim. Value Code - Property Caption</note>
         </trans-unit>
