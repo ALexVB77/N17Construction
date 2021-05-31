@@ -17,6 +17,7 @@ report 50120 "Import Posting Group"
         VondorPostingGroup: Record "Vendor Posting Group";
         InventoryPostingGroup: Record "Inventory Posting Group";
         FAPostingGroup: Record "FA Posting Group";
+        GenBusinessPostingGroup: Record "Gen. Business Posting Group";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -98,6 +99,16 @@ report 50120 "Import Posting Group"
                             FAPostingGroup."Depreciation Expense Acc." := GetValueAtCall(RowNo, 14);
                             FAPostingGroup."Disposal Expense Account" := GetValueAtCall(RowNo, 15);
                             FAPostingGroup.Insert(true);
+                        end;
+                end;
+            'НДС Товарные Группы':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not GenBusinessPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
+                            GenBusinessPostingGroup.Init();
+                            GenBusinessPostingGroup.Code := GetValueAtCall(RowNo, 1);
+                            GenBusinessPostingGroup.Description := GetValueAtCall(RowNo, 2);
+                            GenBusinessPostingGroup.Insert(true);
                         end;
                 end;
         end;
