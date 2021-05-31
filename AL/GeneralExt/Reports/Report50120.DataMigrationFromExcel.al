@@ -22,6 +22,7 @@ report 50120 "Data Migration From Excel"
         VATProductPostingGroup: Record "VAT Product Posting Group";
         VATBusinessPostingGroup: Record "VAT Business Posting Group";
         GeneralPostingSetup: Record "General Posting Setup";
+        DimensionValue: Record "Dimension Value";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -167,6 +168,87 @@ report 50120 "Data Migration From Excel"
                             GeneralPostingSetup."Overhead Applied Account" := GetValueAtCell(RowNo, 29);
                             GeneralPostingSetup."Purchase Variance Account" := GetValueAtCell(RowNo, 30);
                             GeneralPostingSetup.Insert(true);
+                        end;
+                end;
+            'CP':
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get('CP', GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := 'CP';
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            //DimensionValue."Project is Finished" := GetValueAtBool(RowNo, 3);
+                            DimensionValue."Check CF Forecast" := GetValueAtBool(RowNo, 5);
+                            //DimensionValue."Post Without Forecast" := GetValueAtBool(RowNo, 6);
+                            DimensionValue.Insert(true);
+                        end;
+                end;
+            'CC':
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get('CC', GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := 'CC';
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            Evaluate(DimensionValue."Dimension Value Type", GetValueAtCell(RowNo, 3));
+                            DimensionValue.Totaling := GetValueAtCell(RowNo, 4);
+                            DimensionValue.Insert(true);
+                        end;
+                end;
+            'НП':
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get('НП', GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := 'НП';
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            DimensionValue.Insert(true);
+                        end;
+                end;
+            'НУ-ВИД':
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get('НУ-ВИД', GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := 'НУ-ВИД';
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            DimensionValue.Insert(true);
+                        end;
+                end;
+            'НУ-ОБЪЕКТ':
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get('НУ-ОБЪЕКТ', GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := 'НУ-ОБЪЕКТ';
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            DimensionValue.Insert(true);
+                        end;
+                end;
+            'НУ-РАЗНИЦА':
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get('НУ-РАЗНИЦА', GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := 'НУ-РАЗНИЦА';
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            DimensionValue.Insert(true);
+                        end;
+                end;
+            'ПРИБ_УБ_ПРОШ_ЛЕТ':
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get('ПРИБ_УБ_ПРОШ_ЛЕТ', GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := 'ПРИБ_УБ_ПРОШ_ЛЕТ';
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Insert(true);
                         end;
                 end;
         end;
