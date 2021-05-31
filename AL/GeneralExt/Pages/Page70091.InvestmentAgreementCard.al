@@ -520,9 +520,6 @@ page 70091 "Investment Agreement Card"
                     ShortCutKey = 'Shift+Ctrl+D';
                     ToolTip = 'View or edit dimensions, such as area, project, or department, that you can assign to sales and purchase documents to distribute costs and analyze transaction history.';
                 }
-                separator(Action100)
-                {
-                }
                 action(Statistics)
                 {
                     Caption = 'Statistics';
@@ -535,6 +532,7 @@ page 70091 "Investment Agreement Card"
                     ShortCutKey = 'F7';
                     ToolTip = 'View statistical information, such as the value of posted entries, for the record.';
                 }
+
                 action("Entry Statistics")
                 {
                     ApplicationArea = Basic, Suite;
@@ -556,6 +554,25 @@ page 70091 "Investment Agreement Card"
                     RunPageLink = "No." = FIELD("Customer No."),
                                   "Agreement Filter" = FIELD("No.");
                 }
+                action(Attachments)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Attachments';
+                    Image = Attach;
+                    Promoted = true;
+                    PromotedCategory = Category9;
+
+                    trigger OnAction()
+                    var
+                        DocumentAttachmentDetails: Page "Document Attachment Details";
+                        RecRef: RecordRef;
+                    begin
+                        RecRef.GetTable(Rec);
+                        DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                        DocumentAttachmentDetails.RunModal;
+                    end;
+                }
+
             }
             group(Action82)
             {
