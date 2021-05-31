@@ -223,6 +223,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1267408499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Account - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3697311341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Corr</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Account Corr. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 767681740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field All Account - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 2638546648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Amount Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 2638546648 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LCY,Currency</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Amount Type - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 1141732079 - Field 917956814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BegEndSaldo</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -238,15 +268,120 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Calc. Gen. Jnl. Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3015731813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closing Bracket</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Closing Bracket - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 2195204445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Credit Account No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Currency Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3093016464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operand Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Debit/Credit Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3093016464 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit,Credit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Debit/Credit Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1604963913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Decimal Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Decimal Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3401278773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distr. Item Category Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Distr. Item Category Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1894349114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distr. Location Code Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Distr. Location Code Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1886903342 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distr. Product Group Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Distr. Product Group Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1416383892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distribution Item No. Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Distribution Item No. Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1141732079 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1092014012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FlagBoolean</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field FlagBoolean - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1789400218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 317744733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LevelBase</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field LevelBase - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1141732079 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 325475072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opening Bracket</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Opening Bracket - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 616778909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operand Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Operand Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 616778909 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Oborot,Saldo,Decimal,Curs,Variable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Operand Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 3137344076 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ResBoolean</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field ResBoolean - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 685401789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sign</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Sign - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 685401789 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> , +, -, *, /, &gt;,&gt;=, &lt;,&lt;=,&lt;&gt;, =,AND,OR</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Sign - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 1821279055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Text - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1141732079 - Field 3853688615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type Operation</source>
@@ -257,6 +392,11 @@
           <source>Condition,SummaLCY,Base,BaseItem,Distribute,DistributeItem,DimDistribute</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Type Operation - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1141732079 - Field 2548116083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Variable Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calc. Gen Journal Operand - Field Variable Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2419670394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calculation Journal Line</source>
