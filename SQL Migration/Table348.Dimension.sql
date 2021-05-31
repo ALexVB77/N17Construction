@@ -21,10 +21,10 @@ SELECT
 	[Consolidation Code],
 	[Map-to IC Dimension Code]
 FROM [dbo].[Dimension]
-WHERE [Code] = '—–' OR 
-	  [Code] = '——' OR
-	  [Code] = 'Õœ' OR
-	  [Code] = 'Õ”-¬»ƒ' OR
-	  [Code] = 'Õ”-Œ¡≈ “' OR
-	  [Code] = 'Õ”-–¿«Õ»÷¿' OR
-	  [Code] = 'œ–»¡_”¡_œ–Œÿ_À≈“'
+WHERE [Code] = 'CC' OR 
+	  [Code] = 'CP' OR
+	  [Code] = '–ù–ü' OR
+	  [Code] = '–ù–£-–í–ò–î' OR
+	  [Code] = '–ù–£-–û–ë–™–ï–ö–¢' OR
+	  [Code] = '–ù–£-–†–ê–ó–ù–ò–¶–ê' OR
+	  [Code] = '–ü–†–ò–ë_–£–ë_–ü–†–û–®_–õ–ï–¢'
