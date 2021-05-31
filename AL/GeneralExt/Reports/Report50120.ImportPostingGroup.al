@@ -15,6 +15,8 @@ report 50120 "Import Posting Group"
         RowNo: Integer;
         CustomerPostingGroup: Record "Customer Posting Group";
         VondorPostingGroup: Record "Vendor Posting Group";
+        InventoryPostingGroup: Record "Inventory Posting Group";
+        FAPostingGroup: Record "FA Posting Group";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -57,6 +59,45 @@ report 50120 "Import Posting Group"
                             VondorPostingGroup."Debit Rounding Account" := GetValueAtCall(RowNo, 7);
                             VondorPostingGroup."Credit Rounding Account" := GetValueAtCall(RowNo, 8);
                             VondorPostingGroup.Insert(true);
+                        end;
+                end;
+            'Учетные группы товаров':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not InventoryPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
+                            InventoryPostingGroup.Init();
+                            InventoryPostingGroup.Code := GetValueAtCall(RowNo, 1);
+                            InventoryPostingGroup.Description := GetValueAtCall(RowNo, 2);
+                            //InventoryPostingGroup."?" := GetValueAtCall(RowNo, 3);
+                            //InventoryPostingGroup."Purch. Amt. Diff. Alloc. Type" := GetValueAtCall(RowNo, 4);
+                            InventoryPostingGroup."Purch. PD Charge FCY (Item)" := GetValueAtCall(RowNo, 5);
+                            InventoryPostingGroup."Purch. PD Charge Conv. (Item)" := GetValueAtCall(RowNo, 6);
+                            InventoryPostingGroup."Sales PD Charge FCY (Item)" := GetValueAtCall(RowNo, 7);
+                            InventoryPostingGroup."Sales PD Charge Conv. (Item)" := GetValueAtCall(RowNo, 8);
+                            InventoryPostingGroup.Insert(true);
+                        end;
+                end;
+            'Учетные группы ОС':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not FAPostingGroup.Get(GetValueAtCall(RowNo, 1)) then begin
+                            FAPostingGroup.Init();
+                            FAPostingGroup.Code := GetValueAtCall(RowNo, 1);
+                            FAPostingGroup.Description := GetValueAtCall(RowNo, 2);
+                            FAPostingGroup."Acquisition Cost Account" := GetValueAtCall(RowNo, 3);
+                            FAPostingGroup."Accum. Depreciation Account" := GetValueAtCall(RowNo, 4);
+                            FAPostingGroup."Write-Down Account" := GetValueAtCall(RowNo, 5);
+                            FAPostingGroup."Write-Down Acc. on Disposal" := GetValueAtCall(RowNo, 6);
+                            //FAPostingGroup."Disposal Expense Account" := GetValueAtCall(RowNo, 7);
+                            FAPostingGroup."Acquisition Cost Bal. Acc." := GetValueAtCall(RowNo, 8);
+                            FAPostingGroup."Sales Bal. Acc." := GetValueAtCall(RowNo, 9);
+                            FAPostingGroup."Acq. Cost Acc. on Disposal" := GetValueAtCall(RowNo, 10);
+                            FAPostingGroup."Accum. Depr. Acc. on Disposal" := GetValueAtCall(RowNo, 11);
+                            FAPostingGroup."Gains Acc. on Disposal" := GetValueAtCall(RowNo, 12);
+                            FAPostingGroup."Losses Acc. on Disposal" := GetValueAtCall(RowNo, 13);
+                            FAPostingGroup."Depreciation Expense Acc." := GetValueAtCall(RowNo, 14);
+                            FAPostingGroup."Disposal Expense Account" := GetValueAtCall(RowNo, 15);
+                            FAPostingGroup.Insert(true);
                         end;
                 end;
         end;

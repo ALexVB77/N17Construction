@@ -289,14 +289,13 @@ page 70002 "Purchase List App"
             Filter1 := Filter1::all;
         // SWC968 DD 19.12.16 <<
 
-        FILTERGROUP := 0;
+        FILTERGROUP(2);
         SETRANGE("IW Documents", TRUE);
         //SWC004 AKA 120514 >>
         SETFILTER("Act Type", '%1', "Act Type"::" ");
         //SWC004 AKA 120514 <<
-        FILTERGROUP := 2;
+        FILTERGROUP(0);
 
-        //--
         SetSortType;
         SetRecFilters;
 
@@ -306,7 +305,6 @@ page 70002 "Purchase List App"
 
         IF grUserSetup."Administrator IW" THEN
             Filter1Enabled := TRUE;
-        //--
     end;
 
 
@@ -324,8 +322,8 @@ page 70002 "Purchase List App"
         AE: record "Approval Entry";
         PH: record "Purchase Header";
     begin
-        //--
-        FILTERGROUP(0);
+        FILTERGROUP(2);
+
         SETRANGE("Process User");
         SETRANGE("Status App");
         SETRANGE("Problem Document");
@@ -370,7 +368,7 @@ page 70002 "Purchase List App"
         // SWC1075 DD 28.07.17 <<
         END;
 
-        FILTERGROUP(2);
+        FILTERGROUP(0);
     end;
 
     procedure SetSortType()
