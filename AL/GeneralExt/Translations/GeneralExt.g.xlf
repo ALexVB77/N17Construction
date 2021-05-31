@@ -4118,10 +4118,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action A&amp;greement - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3861133141 - Action 604304905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Action100</source>
+        <trans-unit id="Page 3861133141 - Action 1225782422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Action100 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Attachments - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3861133141 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View or add comments for the record.</source>

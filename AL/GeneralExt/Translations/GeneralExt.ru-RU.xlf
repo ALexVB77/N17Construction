@@ -3246,7 +3246,6 @@
         <trans-unit id="Codeunit 47354825 - Method 1760127043" size-unit="char" translate="yes" xml:space="preserve">
           <source>LinkActAndPaymentInvoice</source>
           <target>LinkActAndPaymentInvoice</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice</note>
         </trans-unit>
@@ -4942,12 +4941,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action A&amp;greement - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3861133141 - Action 604304905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Action100</source>
-          <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+        <trans-unit id="Page 3861133141 - Action 1225782422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <target>Вложения</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Action100 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreement Card - Action Attachments - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3861133141 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View or add comments for the record.</source>
@@ -5193,7 +5192,6 @@
         <trans-unit id="Page 2655527564 - Action 3694299429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Link Payment Invoice</source>
           <target>Привязать счет на оплату</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Action LinkPaymentInvoice - Property Caption</note>
         </trans-unit>
