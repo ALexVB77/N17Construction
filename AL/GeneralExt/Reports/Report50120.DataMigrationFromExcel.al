@@ -170,6 +170,9 @@ report 50120 "Data Migration From Excel"
                             GeneralPostingSetup.Insert(true);
                         end;
                 end;
+        end;
+
+        case SheetName of
             'CP':
                 begin
                     for RowNo := 2 to GetLastRow do
