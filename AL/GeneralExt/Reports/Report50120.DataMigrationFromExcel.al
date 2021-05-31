@@ -1,8 +1,8 @@
-report 50120 "Import Posting Group"
+report 50120 "Data Migration From Excel"
 {
     UsageCategory = Administration;
     ApplicationArea = All;
-    Caption = 'Import Posting Group';
+    Caption = 'Data Migration From Excel';
     ProcessingOnly = true;
 
     trigger OnPreReport()
@@ -10,7 +10,7 @@ report 50120 "Import Posting Group"
         ServerFileName: Text;
         FileManagement: Codeunit "File Management";
         SheetName: Text;
-        Text001: Label 'Import Posting Group';
+        Text001: Label 'Data Migration From Excel';
         ExcelExt: Label '*.xlsx';
         RowNo: Integer;
         CustomerPostingGroup: Record "Customer Posting Group";
