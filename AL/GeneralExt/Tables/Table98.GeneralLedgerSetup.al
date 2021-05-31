@@ -24,12 +24,6 @@ tableextension 80098 "General Ledger Setup (Ext)" extends "General Ledger Setup"
                 "Shortcut Dimension 1 Code" := "Global Dimension 1 Code";
             end;
         }
-        field(60131; "DenDoc Dimension Code"; Code[20])
-        {
-            Caption = 'DenDoc Dimension Code';
-            Description = 'NC 51676';
-            TableRelation = Dimension;
-        }
 
     }
 }
