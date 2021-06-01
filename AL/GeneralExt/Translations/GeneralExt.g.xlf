@@ -2888,10 +2888,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ActInterBasedOn - NamedType Text001</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 734814332 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 47354825 - Method 3507672376 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>The total amount of linked payment orders exceeds the amount of Act %1.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CreatePurchaseOrderAppFromAct - NamedType LocText001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CalcActRemaingAmount - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to create the document. The controller has these rights.</source>
@@ -2917,6 +2917,11 @@
           <source>The estimator cannot create a document with the type Act!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2918232106 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no payment invoices to be linked to the act %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1701143074 - NamedType 1751475910" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document %1 has been sent to the archive.</source>
