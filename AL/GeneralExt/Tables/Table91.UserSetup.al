@@ -37,5 +37,15 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
             Description = 'NC 51373 AB';
             Caption = 'Show All Acts KC-2';
         }
+        field(71000; "CF Allow Long Entries Edit"; Boolean)
+        {
+            Description = 'NC 51381';
+            Caption = 'CF Allow Long Term Entries Edit';
+        }
+        field(71010; "CF Allow Short Entries Edit"; Boolean)
+        {
+            Description = 'NC 51381';
+            Caption = 'CF Allow Short Term Entries Edit';
+        }
     }
 }

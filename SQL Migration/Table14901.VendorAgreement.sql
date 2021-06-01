@@ -1,7 +1,7 @@
 USE [Bonava Objects]
 GO
 
-INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Vendor Agreement$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Dev].[dbo].[Bonava$Vendor Agreement$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Vendor No_],
 	[No_],
@@ -73,7 +73,7 @@ SELECT
 	[Tax Authority No_]
 FROM [dbo].[test$Vendor Agreement];
 
-INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Comment Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Dev].[dbo].[Bonava$Comment Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Table Name],
 	[No_],
@@ -85,7 +85,7 @@ SELECT
 	[Line No_]
 FROM [dbo].[test$Comment Line];
 
-INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Vendor Agreement$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
+INSERT INTO [Bonava-Dev].[dbo].[Bonava$Vendor Agreement$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
 (
 	[Vendor No_],
 	[No_],
@@ -116,7 +116,7 @@ SELECT
 FROM [dbo].[test$Vendor Agreement];
 
 /*
-INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Dimension Value$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Dev].[dbo].[Bonava$Dimension Value$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Dimension Code],
 	[Code],
@@ -143,7 +143,7 @@ SELECT
 FROM [dbo].[Dimension Value] WHERE [Dimension Code] = 'CP' AND [Project is Finished] = '0' AND [Post Without Forecast] = '0';
 */
 
-INSERT INTO [Bonava-Dev].[dbo].[CRONUS Россия ЗАО$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Dev].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Table ID],
 	[No_],
