@@ -192,7 +192,8 @@ page 50045 "Purch. Order Act PayReq. List"
 
                 trigger OnAction()
                 begin
-                    PaymentOrderMgt.LinkActAndPaymentInvoice(Rec, CurrActNo);
+                    PaymentOrderMgt.LinkActAndPaymentInvoice(CurrActNo);
+                    CurrPage.Update(false);
                 end;
             }
         }

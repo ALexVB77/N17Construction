@@ -3423,7 +3423,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CreatePurchaseOrderAppFromAct</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 2457845426" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 47354825 - Method 3858743014" size-unit="char" translate="yes" xml:space="preserve">
           <source>LinkActAndPaymentInvoice</source>
           <target>LinkActAndPaymentInvoice</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
@@ -3469,7 +3469,6 @@
         <trans-unit id="Codeunit 47354825 - Method 3507672376 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>The total amount of linked payment orders exceeds the amount of Act %1.</source>
           <target>Общая сумма привязанных заявок на оплату превышает сумму акта %1.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CalcActRemaingAmount - NamedType LocText001</note>
         </trans-unit>
@@ -3506,9 +3505,15 @@
         <trans-unit id="Codeunit 47354825 - Method 2918232106 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>There are no payment invoices to be linked to the act %1.</source>
           <target>Нет заявок на оплату для привязки к акту %1.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2918232106 - NamedType 3106366241" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 payment invoices were related to Act %2.</source>
+          <target>%1 заявок на оплату было привязано к акту %2.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText002</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1701143074 - NamedType 1751475910" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document %1 has been sent to the archive.</source>

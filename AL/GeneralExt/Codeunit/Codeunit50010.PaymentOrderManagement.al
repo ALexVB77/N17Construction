@@ -168,14 +168,18 @@ codeunit 50010 "Payment Order Management"
         Page.RUNMODAL(Page::"Purchase Order App", PaymentInvoice);
     end;
 
-    procedure LinkActAndPaymentInvoice(PurchaseHeader: Record "Purchase Header"; ActNo: code[20])
+    procedure LinkActAndPaymentInvoice(ActNo: code[20])
     var
+        PurchaseHeader: Record "Purchase Header";
         PaymentInvoice: Record "Purchase Header";
         PurchListApp: Page "Purchase List App";
         LinkedActExists: Boolean;
         RemAmount: Decimal;
+        LinkedCount: Integer;
         LocText001: Label 'There are no payment invoices to be linked to the act %1.';
+        LocText002: Label '%1 payment invoices were related to Act %2.';
     begin
+        PurchaseHeader.get(PurchaseHeader."Document Type"::Order, ActNo);
         CalcActRemaingAmount(PurchaseHeader, PaymentInvoice, LinkedActExists, RemAmount);
 
         PaymentInvoice.Reset();
@@ -190,9 +194,18 @@ codeunit 50010 "Payment Order Management"
         if not PaymentInvoice.IsEmpty then begin
             PurchListApp.SetTableView(PaymentInvoice);
             PurchListApp.LookupMode(true);
-            IF PurchListApp.RunModal() = Action::LookupOK then begin
+            if PurchListApp.RunModal() = Action::LookupOK then begin
                 PurchListApp.SetSelectionFilter(PaymentInvoice);
-                message('%1', PaymentInvoice.Count);
+                if PaymentInvoice.FindSet() then
+                    repeat
+                        if RemAmount >= PaymentInvoice."Invoice Amount Incl. VAT" then begin
+                            PaymentInvoice."Linked Purchase Order Act No." := ActNo;
+                            PaymentInvoice.Modify();
+                            RemAmount -= PaymentInvoice."Invoice Amount Incl. VAT";
+                            LinkedCount += 1;
+                        end;
+                    until PaymentInvoice.next = 0;
+                Message(LocText002, LinkedCount, ActNo);
             end;
             exit;
         end;
