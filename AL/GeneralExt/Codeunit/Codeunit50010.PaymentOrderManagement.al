@@ -129,22 +129,8 @@ codeunit 50010 "Payment Order Management"
         LinkedActExists: Boolean;
         RemActAmount: Decimal;
         FromDocType: Enum "Purchase Document Type From";
-        LocText001: Label 'The total amount of linked payment orders exceeds the amount of Act %1.';
     begin
-        PurchaseHeader.TestField("Invoice Amount Incl. VAT");
-        RemActAmount := PurchaseHeader."Invoice Amount Incl. VAT";
-
-        PaymentInvoice.SetCurrentKey("IW Documents", "Linked Purchase Order Act No.");
-        PaymentInvoice.SetRange("IW Documents", true);
-        PaymentInvoice.SetRange("Linked Purchase Order Act No.", PurchaseHeader."No.");
-        PaymentInvoice.SetRange("Document Type", PaymentInvoice."Document Type"::Order);
-        LinkedActExists := not PaymentInvoice.IsEmpty;
-        if LinkedActExists then begin
-            PaymentInvoice.CalcSums("Invoice Amount Incl. VAT");
-            if PaymentInvoice."Invoice Amount Incl. VAT" >= PurchaseHeader."Invoice Amount Incl. VAT" then
-                error(LocText001, PurchaseHeader."No.");
-            RemActAmount -= PaymentInvoice."Invoice Amount Incl. VAT";
-        end;
+        CalcActRemaingAmount(PurchaseHeader, PaymentInvoice, LinkedActExists, RemAmount);
 
         PaymentInvoice.RESET;
         PaymentInvoice.INIT;
@@ -182,18 +168,67 @@ codeunit 50010 "Payment Order Management"
         Page.RUNMODAL(Page::"Purchase Order App", PaymentInvoice);
     end;
 
-    procedure LinkActAndPaymentInvoice(PurchaseHeader: Record "Purchase Header"; ActNo: code[20])
+    procedure LinkActAndPaymentInvoice(ActNo: code[20])
     var
+        PurchaseHeader: Record "Purchase Header";
         PaymentInvoice: Record "Purchase Header";
+        PurchListApp: Page "Purchase List App";
+        LinkedActExists: Boolean;
+        RemAmount: Decimal;
+        LinkedCount: Integer;
+        LocText001: Label 'There are no payment invoices to be linked to the act %1.';
+        LocText002: Label '%1 payment invoices were related to Act %2.';
     begin
+        PurchaseHeader.get(PurchaseHeader."Document Type"::Order, ActNo);
+        CalcActRemaingAmount(PurchaseHeader, PaymentInvoice, LinkedActExists, RemAmount);
 
+        PaymentInvoice.Reset();
+        PaymentInvoice.FilterGroup(2);
         PaymentInvoice.SetCurrentKey("Buy-from Vendor No.", "Agreement No.");
         PaymentInvoice.SetRange("Buy-from Vendor No.", PurchaseHeader."Buy-from Vendor No.");
+        PaymentInvoice.SetRange("Agreement No.", PurchaseHeader."Agreement No.");
+        PaymentInvoice.SetRange("IW Documents", true);
+        PaymentInvoice.SetRange("Linked Purchase Order Act No.", '');
+        PaymentInvoice.SetRange("Document Type", PaymentInvoice."Document Type"::Order);
+        PaymentInvoice.FilterGroup(0);
+        if not PaymentInvoice.IsEmpty then begin
+            PurchListApp.SetTableView(PaymentInvoice);
+            PurchListApp.LookupMode(true);
+            if PurchListApp.RunModal() = Action::LookupOK then begin
+                PurchListApp.SetSelectionFilter(PaymentInvoice);
+                if PaymentInvoice.FindSet() then
+                    repeat
+                        if RemAmount >= PaymentInvoice."Invoice Amount Incl. VAT" then begin
+                            PaymentInvoice."Linked Purchase Order Act No." := ActNo;
+                            PaymentInvoice.Modify();
+                            RemAmount -= PaymentInvoice."Invoice Amount Incl. VAT";
+                            LinkedCount += 1;
+                        end;
+                    until PaymentInvoice.next = 0;
+                Message(LocText002, LinkedCount, ActNo);
+            end;
+            exit;
+        end;
+        Message(LocText001);
+    end;
 
-
-        //PaymentInvoice.SetRange("IW Documents", true);
-        // PaymentInvoice.SetRange("Linked Purchase Order Act No.", PurchaseHeader."No.");
-        // PaymentInvoice.SetRange("Document Type", PaymentInvoice."Document Type"::Order);       
+    local procedure CalcActRemaingAmount(PurchaseHeader: Record "Purchase Header"; PaymentInvoice: Record "Purchase Header"; var LinkedActExists: Boolean; var RemActAmount: Decimal)
+    var
+        LocText001: Label 'The total amount of linked payment orders exceeds the amount of Act %1.';
+    begin
+        PurchaseHeader.TestField("Invoice Amount Incl. VAT");
+        RemActAmount := PurchaseHeader."Invoice Amount Incl. VAT";
+        PaymentInvoice.SetCurrentKey("IW Documents", "Linked Purchase Order Act No.");
+        PaymentInvoice.SetRange("IW Documents", true);
+        PaymentInvoice.SetRange("Linked Purchase Order Act No.", PurchaseHeader."No.");
+        PaymentInvoice.SetRange("Document Type", PaymentInvoice."Document Type"::Order);
+        LinkedActExists := not PaymentInvoice.IsEmpty;
+        if LinkedActExists then begin
+            PaymentInvoice.CalcSums("Invoice Amount Incl. VAT");
+            if PaymentInvoice."Invoice Amount Incl. VAT" >= PurchaseHeader."Invoice Amount Incl. VAT" then
+                error(LocText001, PurchaseHeader."No.");
+            RemActAmount -= PaymentInvoice."Invoice Amount Incl. VAT";
+        end;
     end;
 
     procedure ActInterBasedOn(PurchHeader: Record "Purchase Header")
