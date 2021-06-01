@@ -13,6 +13,13 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Linked Purchase Order Act No.';
             TableRelation = "Purchase Header"."No." WHERE("Document Type" = CONST(Order));
         }
+        field(50011; "Archiving Type"; Option)
+        {
+            Description = 'NC 51378 AB';
+            Caption = 'Archiving Type';
+            OptionCaption = ' ,Problem Act,Payment Invoice';
+            OptionMembers = " ","Problem Act","Payment Invoice";
+        }
         field(70002; "Process User"; Code[50])
         {
             TableRelation = "User Setup";

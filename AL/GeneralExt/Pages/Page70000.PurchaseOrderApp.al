@@ -438,6 +438,9 @@ page 70000 "Purchase Order App"
                     end;
                 }
             }
+        }
+        area(processing)
+        {
             group("F&unctions")
             {
                 Caption = 'F&unctions';
@@ -470,13 +473,27 @@ page 70000 "Purchase Order App"
 
                     trigger OnAction()
                     begin
-                        ArchiveManagement.ArchivePurchDocument(Rec);
-                        CurrPage.Update(false);
+                        if PaymentOrderMgt.PurchPaymentInvoiceArchive(Rec) then
+                            CurrPage.Close();
                     end;
                 }
+            }
+            action("&Print")
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = '&Print';
+                Ellipsis = true;
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
 
+                trigger OnAction()
+                begin
+                    Message('Нажата кнопка Печать');
+                end;
             }
         }
+
     }
 
     trigger OnOpenPage()
@@ -552,6 +569,7 @@ page 70000 "Purchase Order App"
         ArchiveManagement: Codeunit ArchiveManagement;
         gcERPC: Codeunit "ERPC Funtions";
         UserMgt: Codeunit "User Setup Management";
+        PaymentOrderMgt: Codeunit "Payment Order Management";
         AllApproverEditable: Boolean;
         TextDelError: Label 'You cannot delete Purchase Order Act %1';
         ProblemType: text;

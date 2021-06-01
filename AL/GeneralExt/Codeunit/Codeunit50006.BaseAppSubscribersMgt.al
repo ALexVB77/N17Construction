@@ -262,6 +262,9 @@ codeunit 50006 "Base App. Subscribers Mgt."
         DocAttach: Record "Document Attachment";
         DocAttachArch: Record "Document Attachment Archive";
     begin
+        if PurchaseHeader."Archiving Type" = PurchaseHeader."Archiving Type"::" " then
+            exit;
+
         DocAttach.SetFilter("Table ID", '%1|%2', Database::"Purchase Header", Database::"Purchase Line");
         DocAttach.SetRange("Document Type", PurchaseHeader."Document Type");
         DocAttach.SetRange("No.", PurchaseHeader."No.");

@@ -348,7 +348,7 @@ codeunit 50010 "Payment Order Management"
             END;
     end;
 
-    procedure PurchOrderActArchiveQst(PurchHeader: Record "Purchase Header")
+    procedure PurchOrderActArchiveQst(PurchHeader: Record "Purchase Header"): Boolean;
     var
         UserSetup: record "User Setup";
         LocText50000: Label 'Budget data will be deleted. Add a document to the archive of problem documents?';
@@ -371,7 +371,7 @@ codeunit 50010 "Payment Order Management"
                 ELSE
                     Txt := LocText50010;
                 IF NOT CONFIRM(Txt, FALSE) THEN
-                    EXIT;
+                    exit(false);
                 PurchOrderActArchive(PurchHeader);
                 IF PurchHeader.GET("Document Type"::Order, "Invoice No.") THEN
                     PurchHeader.PurchOrderArchive();
@@ -383,12 +383,14 @@ codeunit 50010 "Payment Order Management"
                         Txt := LocText50000
                     ELSE
                         Txt := LocText50010;
-                    IF CONFIRM(Txt, TRUE) THEN
-                        PurchOrderActArchive(PurchHeader);
+                    IF not CONFIRM(Txt, TRUE) THEN
+                        exit(false);
+                    PurchOrderActArchive(PurchHeader);
                 END ELSE
                     ERROR(LocText50011);
             END;
         end;
+        exit(true);
     end;
 
     local procedure PurchOrderActArchive(PurchHeader: Record "Purchase Header");
@@ -404,6 +406,7 @@ codeunit 50010 "Payment Order Management"
         // NC AB >>
         // не оставляем архивный акт в T36 и T37, оправляем его в T5109 и T5110
         // PurchHeader.MODIFY();
+        PurchHeader."Archiving Type" := PurchHeader."Archiving Type"::"Problem Act";
         ArchiveMgt.StorePurchDocument(PurchHeader, false);
         PurchHeader.SetHideValidationDialog(true);
         PurchHeader.Delete(true);
@@ -427,5 +430,58 @@ codeunit 50010 "Payment Order Management"
         END;
     end;
 
+    procedure PurchPaymentInvoiceArchive(PurchHeader: Record "Purchase Header"): Boolean;
+    var
+        ArchiveMgt: Codeunit ArchiveManagement;
+        ConfirmManagement: Codeunit "Confirm Management";
+        LocText001: Label 'Document %1 has been archived.';
+        LocText007: Label 'Archive %1 no.: %2?';
+    begin
+        PurchHeader.TestField("Status App", PurchHeader."Status App"::Payment);
 
+        if not ConfirmManagement.GetResponseOrDefault(
+             StrSubstNo(LocText007, PurchHeader."Document Type", PurchHeader."No."), true)
+        then
+            exit(false);
+        PurchHeader."Archiving Type" := PurchHeader."Archiving Type"::"Problem Act";
+        ArchiveMgt.StorePurchDocument(PurchHeader, false);
+        //NC 44684 > KGT
+        DisconnectFromAgreement(PurchHeader);
+        //NC 44684 < KGT
+        PurchHeader.SetHideValidationDialog(true);
+        PurchHeader.Delete(true);
+        Message(LocText001, PurchHeader."No.");
+        exit(true);
+    end;
+
+    procedure DisconnectFromAgreement(PurchaseHeader: Record "Purchase Header")
+    var
+        PurchaseLine: Record "Purchase Line";
+        ProjectsBudgetEntry: Record "Projects Budget Entry";
+        ForecastListAnalisys: page "Forecast List Analisys";
+    begin
+        // debug see later
+        exit;
+
+        //NC 44684 > KGT
+        PurchaseLine.RESET;
+        PurchaseLine.SETRANGE("Document Type", PurchaseHeader."Document Type");
+        PurchaseLine.SETRANGE("Document No.", PurchaseHeader."No.");
+        IF PurchaseLine.FINDSET THEN BEGIN
+            REPEAT
+                IF PurchaseLine."Forecast Entry" <> 0 THEN BEGIN
+                    ProjectsBudgetEntry.SETCURRENTKEY("Entry No.");
+                    ProjectsBudgetEntry.SETRANGE("Entry No.", PurchaseLine."Forecast Entry");
+                    IF ProjectsBudgetEntry.FINDFIRST THEN BEGIN
+                        PurchaseLine."Forecast Entry" := 0;
+                        PurchaseLine.MODIFY;
+                        ForecastListAnalisys.SETRECORD(ProjectsBudgetEntry);
+                        message('Вызов ForecastListAnalisys.DisconnectFromAgreement');
+                        exit;
+                    END;
+                END;
+            UNTIL PurchaseLine.NEXT = 0;
+        END;
+        //NC 44684 < KGT
+    end;
 }

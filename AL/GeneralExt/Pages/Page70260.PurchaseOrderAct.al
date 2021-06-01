@@ -463,7 +463,9 @@ page 70260 "Purchase Order Act"
                                   "Linked Purchase Order Act No." = field("No.");
                 }
             }
-
+        }
+        area(processing)
+        {
             group("F&unctions")
             {
                 Caption = 'F&unctions';
@@ -512,25 +514,26 @@ page 70260 "Purchase Order Act"
 
                     trigger OnAction()
                     begin
-                        PaymentOrderMgt.PurchOrderActArchiveQst(Rec);
+                        if PaymentOrderMgt.PurchOrderActArchiveQst(Rec) then
+                            CurrPage.Close();
+                    end;
+                }
+
+                action(EnterBasedOn)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Enter Based On';
+                    Image = Filed;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    begin
+                        PaymentOrderMgt.ActInterBasedOn(Rec);
                     end;
                 }
             }
-            action(EnterBasedOn)
-            {
-                ApplicationArea = All;
-                Caption = 'Enter Based On';
-                Image = Filed;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-
-                trigger OnAction()
-                begin
-                    PaymentOrderMgt.ActInterBasedOn(Rec);
-                end;
-            }
-
             action(ViewAttachDoc)
             {
                 ApplicationArea = All;

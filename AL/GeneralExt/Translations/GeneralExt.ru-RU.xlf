@@ -3426,7 +3426,6 @@
         <trans-unit id="Codeunit 47354825 - Method 3858743014" size-unit="char" translate="yes" xml:space="preserve">
           <source>LinkActAndPaymentInvoice</source>
           <target>LinkActAndPaymentInvoice</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice</note>
         </trans-unit>
@@ -3448,9 +3447,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FillPurchLineApproverFromGlobalDim</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1468807320" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 47354825 - Method 4105173375" size-unit="char" translate="yes" xml:space="preserve">
           <source>PurchOrderActArchiveQst</source>
           <target>PurchOrderActArchiveQst</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchOrderActArchiveQst</note>
         </trans-unit>
@@ -3459,6 +3459,20 @@
           <target>DeleteRelatedInvoiceDoc</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method DeleteRelatedInvoiceDoc</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1182923536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PurchPaymentInvoiceArchive</source>
+          <target>PurchPaymentInvoiceArchive</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2233398926" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DisconnectFromAgreement</source>
+          <target>DisconnectFromAgreement</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method DisconnectFromAgreement</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nothing selected!</source>
@@ -3511,7 +3525,6 @@
         <trans-unit id="Codeunit 47354825 - Method 2918232106 - NamedType 3106366241" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 payment invoices were related to Act %2.</source>
           <target>%1 заявок на оплату было привязано к акту %2.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText002</note>
         </trans-unit>
@@ -3556,6 +3569,20 @@
           <target>Отправить документ в архив можно только на стадии Проверка.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchOrderActArchiveQst - NamedType LocText50012</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1715794959 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document %1 has been archived.</source>
+          <target>Документ %1 сохранен в архиве.</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1715794959 - NamedType 1999882030" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive %1 no.: %2?</source>
+          <target>Архивировать %1 с номером: %2?</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText007</note>
         </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Act Stage</source>
@@ -5676,36 +5703,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 2379455676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Enter Based On</source>
-          <target>Ввести на основании</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>F&amp;unctions</source>
-          <target>Ф&amp;ункции</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action F&amp;unctions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 3954252683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Archive Problem Document</source>
-          <target>Архивировать проблемный документ</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ArchiveProblemDoc - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Copy Document</source>
-          <target>Копировать Документ</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CopyDocument - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 1848810545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Payment Invoice</source>
-          <target>Создать заявку на оплату</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CreatePaymentInvoice - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
           <target>Акт</target>
@@ -5747,6 +5744,36 @@
           <target>Статистика</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <target>Ф&amp;ункции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3954252683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Problem Document</source>
+          <target>Архивировать проблемный документ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ArchiveProblemDoc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy Document</source>
+          <target>Копировать Документ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CopyDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1848810545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Payment Invoice</source>
+          <target>Создать заявку на оплату</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CreatePaymentInvoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 2379455676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter Based On</source>
+          <target>Ввести на основании</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documents View</source>
@@ -5922,24 +5949,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>F&amp;unctions</source>
-          <target>Ф&amp;ункции</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action F&amp;unctions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 3304622623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Archi&amp;ve Document</source>
-          <target>Архи&amp;вировать Документ</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Archive Document - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Copy Document</source>
-          <target>Копировать Документ</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action CopyDocument - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3790301120 - Action 146219450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder</source>
           <target>З&amp;аказ</target>
@@ -5969,6 +5978,31 @@
           <target>Статистика</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Print</source>
+          <target>&amp;Печать</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <target>Ф&amp;ункции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 3304622623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archi&amp;ve Document</source>
+          <target>Архи&amp;вировать Документ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Archive Document - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy Document</source>
+          <target>Копировать Документ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action CopyDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3187706650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>
@@ -7975,6 +8009,20 @@
           <target>Утверждающий</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Approver - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3086258489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Archiving Type</source>
+          <target>Тип архивации</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Archiving Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3086258489 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source> ,Problem Act,Payment Invoice</source>
+          <target> ,Проблемный Акт,Заявка на Оплату</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Archiving Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Controller</source>
