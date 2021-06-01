@@ -189,6 +189,7 @@ codeunit 50010 "Payment Order Management"
         PaymentInvoice.FilterGroup(0);
         if not PaymentInvoice.IsEmpty then begin
             PurchListApp.SetTableView(PaymentInvoice);
+            PurchListApp.LookupMode(true);
             IF PurchListApp.RunModal() = Action::LookupOK then begin
                 PurchListApp.SetSelectionFilter(PaymentInvoice);
                 message('%1', PaymentInvoice.Count);
