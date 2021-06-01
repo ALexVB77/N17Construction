@@ -48,17 +48,6 @@ report 50005 "Payment Report"
             }
         }
 
-        actions
-        {
-            area(processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-
-                }
-            }
-        }
     }
 
     var
@@ -66,7 +55,7 @@ report 50005 "Payment Report"
         txtUnPost: Label 'Unpost. op.';
         txtPost: label 'Post. op.';
         txtFillDates: label 'Fill Period';
-        txtLarger label 'Start Date must be before End Date';
+        txtLarger: label 'Start Date must be before End Date';
         txtCustomer: label 'Customer';
         txtVendor: label 'Vendor';
         txtGLAcc: label 'G/L Account';

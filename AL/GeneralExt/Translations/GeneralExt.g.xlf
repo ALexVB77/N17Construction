@@ -5798,6 +5798,81 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[3] - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2923491568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 1259357581" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtBA</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 2853728800" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtCustomer</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 153228489" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtFA</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 2249104380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fill Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtFillDates</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 3698267166" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtGLAcc</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 2004098329" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date must be before End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtLarger</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 739730804" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post. op.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtPost</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 481316237" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unpost. op.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtUnPost</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 166708488" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtVendor</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - NamedType 3902872312" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data #1#################### \ Progress @2@@@@@@@@@@@@</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtWind</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - Control 1260915842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control boolPost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - Control 3244668023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unposted</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control boolUnPost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - Control 845401037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control EndDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2923491568 - Control 3605153064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control StartDate - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
           <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
           <note from="Developer" annotates="general" priority="2"></note>
