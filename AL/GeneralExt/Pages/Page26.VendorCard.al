@@ -2,6 +2,10 @@ pageextension 80026 "Vendor Card (Ext)" extends "Vendor Card"
 {
     layout
     {
+        modify("No.")
+        {
+            StyleExpr = LineColor;
+        }
         addafter("Tax Authority No.")
         {
             field("Vat Agent Posting Group"; Rec."Vat Agent Posting Group")
@@ -42,4 +46,12 @@ pageextension 80026 "Vendor Card (Ext)" extends "Vendor Card"
             }
         }
     }
+    var
+        LineColor: Text;
+
+    trigger OnAfterGetRecord()
+    begin
+        Rec.SetRange("No.");
+        LineColor := Rec.GetLineColor();
+    end;
 }
