@@ -185,7 +185,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
             Error(Text12402, FieldCaption("Check Limit Ending Date"), FieldCaption("Check Limit Starting Date"));
     end;
 
-    procedure CheckLimitDateFilter(): Text
+    procedure GetLimitDateFilter(): Text
     begin
         if ("Check Limit Starting Date" = 0D) and ("Check Limit Ending Date" = 0D) then
             exit('');
@@ -198,5 +198,36 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
 
         if ("Check Limit Starting Date" <> 0D) and ("Check Limit Ending Date" <> 0D) then
             exit(STRSUBSTNO('%1..%2', "Check Limit Starting Date", "Check Limit Ending Date"));
+    end;
+
+    procedure GetLineColor(): Text
+    var
+        CompanyInfo: Record "Company Information";
+        Vend: Record "Vendor";
+        CheckLimitDateFilter: Text[250];
+    begin
+        CompanyInfo.Get;
+        if not CompanyInfo."Use RedFlags in Agreements" then
+            exit('None');
+
+        if not Vend.Get("Vendor No.") then
+            Clear(Vend);
+
+        CheckLimitDateFilter := GetLimitDateFilter();
+        if CheckLimitDateFilter <> '' then
+            SetFilter("Check Limit Date Filter", CheckLimitDateFilter)
+        else
+            SetRange("Check Limit Date Filter");
+        CalcFields("Purch. Original Amt. (LCY)");
+
+        if ("Agreement Group" in ['РАМОЧНЫЙ', 'РАМОЧНЫЙ ПОЗАКАЗНЫЙ']) and
+           (("Check Limit Amount (LCY)" - "Purch. Original Amt. (LCY)" < 0) or ("Check Limit Amount (LCY)" = 0)) and
+           ("Expire Date" >= WORKDATE) and
+           Active and
+           not (Vend."Vendor Type" = Vend."Vendor Type"::"Resp. Employee") and
+           not (Vend."Vendor Type" = Vend."Vendor Type"::"Tax Authority") then
+            exit('Attention')
+        else
+            exit('None');
     end;
 }

@@ -107,7 +107,7 @@ tableextension 80023 "Vendor (Ext)" extends Vendor
         if not VendAgr.IsEmpty then begin
             VendAgr.FindSet();
             repeat
-                CheckLimitDateFilter := VendAgr.CheckLimitDateFilter();
+                CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
                 if CheckLimitDateFilter <> '' then
                     VendAgr.SetFilter("Check Limit Date Filter", CheckLimitDateFilter)
                 else
