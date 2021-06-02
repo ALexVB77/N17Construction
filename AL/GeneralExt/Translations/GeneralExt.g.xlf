@@ -7293,6 +7293,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Field Vat Agent Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 594576918 - NamedType 862007932" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>%1 should be later than %2.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
+        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Agreement Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
