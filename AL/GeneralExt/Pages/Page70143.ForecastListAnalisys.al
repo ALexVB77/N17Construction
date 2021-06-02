@@ -511,6 +511,30 @@ page 70143 "Forecast List Analisys"
                     CreateSTPrBEntPage.RunModal();
                 end;
             }
+            action(DeleteSTEntries)
+            {
+                Caption = 'Delete short-term planning lines';
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    lPrBudEntry: Record "Projects Budget Entry";
+                begin
+                    CurrPage.SetSelectionFilter(lPrBudEntry);
+                    DeleteSTLine(lPrBudEntry);
+                end;
+            }
+            action(ShowRelatedEntries)
+            {
+                Caption = 'Show related lines';
+                ApplicationArea = All;
+                trigger OnAction()
+                begin
+                    if Rec.GetFilter("Parent Entry") <> '' then
+                        Rec.SetRange("Parent Entry")
+                    else
+                        Rec.SetRange("Parent Entry", Rec."Parent Entry");
+                end;
+            }
         }
     }
 
@@ -641,7 +665,20 @@ page 70143 "Forecast List Analisys"
     local procedure GetLineStyle(pPrBudEnt: Record "Projects Budget Entry")
     begin
         LineStyletxt := '';
-        if pPrBudEnt."Parent Entry" = 0 then
+        if (pPrBudEnt."Parent Entry" = 0) or (pPrBudEnt."Entry No." = pPrBudEnt."Parent Entry") then
             LineStyletxt := 'StandardAccent';
+    end;
+
+    procedure DeleteSTLine(pPrBudEntry: Record "Projects Budget Entry")
+    var
+        lTextErr001: Label 'Deleting long-term entries denied!';
+    begin
+        if pPrBudEntry.GetFilters = '' then
+            exit;
+        if pPrBudEntry.FindSet() then
+            repeat
+                if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
+                    Error(lTextErr001);
+            until pPrBudEntry.Next() = 0;
     end;
 }
