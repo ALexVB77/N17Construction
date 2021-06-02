@@ -3762,7 +3762,6 @@
         <trans-unit id="Page 2675196445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create ST Proj Budget Entries</source>
           <target>Создание строк краткосрочного планирования</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Create ST Proj Budget Entries - Property Caption</note>
         </trans-unit>
@@ -4069,7 +4068,6 @@
         <trans-unit id="Page 2269272589 - Action 4180990891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create short-term planning lines</source>
           <target>Создать строки краткосрочного планирования</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action CreateSTEntries - Property Caption</note>
         </trans-unit>
@@ -7392,6 +7390,13 @@
           <target>Housing,Construction</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Company Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1214534909 - Field 3364076239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
+          <source>Use RedFlags in Agreements</source>
+          <target>Использовать RedFlags в договорах</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Use RedFlags in Agreements - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3698907964 - Field 238175783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3993128796">
           <source>Passport issued</source>
