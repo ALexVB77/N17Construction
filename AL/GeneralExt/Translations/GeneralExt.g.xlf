@@ -3133,6 +3133,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cash Flow Transaction Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2675196445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create ST Proj Budget Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Create ST Proj Budget Entries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Copmany</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3382,6 +3387,11 @@
           <source>Project Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Action 4180990891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create short-term planning lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action CreateSTEntries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
