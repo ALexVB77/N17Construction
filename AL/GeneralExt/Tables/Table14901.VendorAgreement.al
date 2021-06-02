@@ -107,11 +107,21 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         {
             Caption = 'Check Limit Starting Date';
             Description = 'NC 51432 PA';
+
+            trigger OnValidate()
+            begin
+                CheckDatesForLimit();
+            end;
         }
         field(70021; "Check Limit Ending Date"; Date)
         {
             Caption = 'Check Limit Ending Date';
             Description = 'NC 51432 PA';
+
+            trigger OnValidate()
+            begin
+                CheckDatesForLimit();
+            end;
         }
         field(70022; "Check Limit Amount (LCY)"; Decimal)
         {
@@ -151,6 +161,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
     var
         grDimValue: Record "Dimension Value";
         grDevSetup: Record "Development Setup";
+        Text12402: Label '%1 should be later than %2.';
 
     procedure UpdateCommitedDetail()
     var
@@ -164,5 +175,13 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
                 CommitedDetail.ByOrder := WithOut;
                 CommitedDetail.MODIFY();
             UNTIL CommitedDetail.NEXT = 0;
+    end;
+
+    local procedure CheckDatesForLimit()
+    begin
+        if ("Check Limit Ending Date" <> 0D) and
+           ("Check Limit Starting Date" <> 0D) and
+           ("Check Limit Ending Date" < "Check Limit Starting Date") then
+            Error(Text12402, FieldCaption("Check Limit Ending Date"), FieldCaption("Check Limit Starting Date"));
     end;
 }

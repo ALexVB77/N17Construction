@@ -16,6 +16,7 @@ page 70143 "Forecast List Analisys"
         {
             group(FiltersGr1)
             {
+                Caption = 'Project Filter';
                 field(TemplateCode; TemplateCode)
                 {
                     ApplicationArea = All;
@@ -45,11 +46,13 @@ page 70143 "Forecast List Analisys"
                 {
                     Editable = false;
                     ApplicationArea = All;
+                    ShowCaption = false;
 
                 }
             }
             group(FilterGr2)
             {
+                Caption = 'Filters';
                 field(DateFilter1; DateFilter1)
                 {
                     ApplicationArea = All;
@@ -181,6 +184,7 @@ page 70143 "Forecast List Analisys"
                 {
                     Editable = false;
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
 
@@ -189,6 +193,7 @@ page 70143 "Forecast List Analisys"
                     Visible = false;
                     Editable = false;
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
                 field(Close; Rec.Close)
@@ -197,6 +202,7 @@ page 70143 "Forecast List Analisys"
                     ShowCaption = false;
                     ApplicationArea = All;
                     Caption = 'Actual Flag';
+                    StyleExpr = LineStyletxt;
                     trigger OnValidate()
                     begin
                         // CloseOnAfterValidate; //navnav;
@@ -212,6 +218,7 @@ page 70143 "Forecast List Analisys"
                     NotBlank = true;
                     ApplicationArea = All;
                     Caption = 'Date';
+                    StyleExpr = LineStyletxt;
                     trigger OnValidate()
                     begin
                         // DateOnAfterValidate; //navnav;
@@ -229,12 +236,14 @@ page 70143 "Forecast List Analisys"
                     Editable = false;
                     ApplicationArea = All;
                     Caption = 'Project Code';
+                    StyleExpr = LineStyletxt;
 
                 }
                 field("Cost Code"; Rec."Cost Code")
                 {
                     Editable = false;
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
                 field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
@@ -242,12 +251,14 @@ page 70143 "Forecast List Analisys"
                     Visible = false;
                     Editable = false;
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
                 field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     Editable = false;
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
                 field(Description; Rec.Description)
@@ -255,6 +266,7 @@ page 70143 "Forecast List Analisys"
                     Editable = true;
                     ApplicationArea = All;
                     Caption = 'Description';
+                    StyleExpr = LineStyletxt;
                     trigger OnAssistEdit()
                     var
                         lrPL: record "Purchase Line";
@@ -281,13 +293,21 @@ page 70143 "Forecast List Analisys"
                     Editable = true;
                     ApplicationArea = All;
                     Caption = 'Description 2';
+                    StyleExpr = LineStyletxt;
 
+                }
+                field("Payment Description"; "Payment Description")
+                {
+                    Editable = true;
+                    ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
                 }
                 field("Without VAT (LCY)"; Rec."Without VAT (LCY)")
                 {
                     Visible = true;
                     Editable = false;
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
                 field("Contragent No."; Rec."Contragent No.")
@@ -295,6 +315,7 @@ page 70143 "Forecast List Analisys"
                     Editable = true;
                     ApplicationArea = All;
                     Caption = 'Vendor No.';
+                    StyleExpr = LineStyletxt;
                     trigger OnValidate()
                     begin
                         //NC 27251 HR beg
@@ -318,6 +339,7 @@ page 70143 "Forecast List Analisys"
                     Editable = false;
                     ApplicationArea = All;
                     Caption = 'Vendor Name';
+                    StyleExpr = LineStyletxt;
 
                 }
                 field("Agreement No."; Rec."Agreement No.")
@@ -325,6 +347,7 @@ page 70143 "Forecast List Analisys"
                     Editable = true;
                     ApplicationArea = All;
                     Caption = 'Agreement No.';
+                    StyleExpr = LineStyletxt;
                     trigger OnLookup(var Text: text): boolean
                     var
                         lrProjectsBudgetEntry: record "Projects Budget Entry";
@@ -432,6 +455,7 @@ page 70143 "Forecast List Analisys"
                     Editable = false;
                     ApplicationArea = All;
                     Caption = 'External Agreement No.';
+                    StyleExpr = LineStyletxt;
 
                 }
                 field("Payment Doc. No."; Rec."Payment Doc. No.")
@@ -439,17 +463,26 @@ page 70143 "Forecast List Analisys"
                     Visible = true;
                     Editable = false;
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
 
                 field("Create User"; Rec."Create User")
                 {
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
 
                 }
                 field("Parent Entry"; Rec."Parent Entry")
                 {
                     ApplicationArea = All;
+                    StyleExpr = LineStyletxt;
+                }
+                field("Close Date"; Rec."Close Date")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    StyleExpr = LineStyletxt;
                 }
 
             }
@@ -461,7 +494,13 @@ page 70143 "Forecast List Analisys"
 
     }
 
+    trigger OnAfterGetRecord()
+    begin
+        GetLineStyle(Rec);
+    end;
+
     var
+        LineStyletxt: Text;
         CurrTrType: code[20];
         GLSetup: record "General Ledger Setup";
         TemplateName: code[10];
@@ -577,5 +616,11 @@ page 70143 "Forecast List Analisys"
         // IF Rec.FIND('-') THEN;
         // CurrPage.UPDATE(FALSE); 
         //NC 27251 HR end
+    end;
+
+    local procedure GetLineStyle(pPrBudEnt: Record "Projects Budget Entry")
+    begin
+        if pPrBudEnt."Parent Entry" = 0 then
+            LineStyletxt := 'StandardAccent';
     end;
 }
