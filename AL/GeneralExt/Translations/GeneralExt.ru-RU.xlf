@@ -3177,6 +3177,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1852166102 - Method 493242633" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ImportObject</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Integration API - Method ImportObject</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1747097237 - Method 3899360893" size-unit="char" translate="yes" xml:space="preserve">
           <source>valDimValue</source>
           <target>valDimValue</target>
@@ -3759,6 +3766,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cash Flow Transaction Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2675196445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create ST Proj Budget Entries</source>
+          <target>Создание строк краткосрочного планирования</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Create ST Proj Budget Entries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Copmany</source>
           <target>CRM Компания</target>
@@ -3951,10 +3964,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
         </trans-unit>
+        <trans-unit id="Page 2269272589 - Method 877441836 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deleting long-term entries denied!</source>
+          <target>Нельзя удалять долгосрочные операции!</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Method DeleteSTLine - NamedType lTextErr001</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Control 1820841161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Filters</source>
           <target>Параметры</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control FilterGr2 - Property Caption</note>
         </trans-unit>
@@ -3997,7 +4016,6 @@
         <trans-unit id="Page 2269272589 - Control 1749114713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Filter</source>
           <target>Проект</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control FiltersGr1 - Property Caption</note>
         </trans-unit>
@@ -4060,6 +4078,24 @@
           <target>Проект Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Action 4180990891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create short-term planning lines</source>
+          <target>Создать строки краткосрочного планирования</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action CreateSTEntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Action 41647728 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delete short-term planning lines</source>
+          <target>Удалить строку краткосрочного планирования</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action DeleteSTEntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Action 53126066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show related lines</source>
+          <target>[Показать связанные строки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action ShowRelatedEntries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
@@ -7381,6 +7417,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Company Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1214534909 - Field 3364076239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
+          <source>Use RedFlags in Agreements</source>
+          <target>Использовать RedFlags в договорах</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Company Information (Ext) - Field Use RedFlags in Agreements - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3698907964 - Field 238175783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3993128796">
           <source>Passport issued</source>
           <target>Паспорт выдан</target>
@@ -7906,7 +7949,6 @@
         <trans-unit id="TableExtension 1546208205 - Field 135933677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Production Cost Place Holder</source>
           <target>Ответств. за Production (Cost Place)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Production Cost Place Holder - Property Caption</note>
         </trans-unit>
@@ -8814,7 +8856,6 @@
         <trans-unit id="TableExtension 594576918 - NamedType 862007932" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
           <source>%1 should be later than %2.</source>
           <target>%1 должно следовать за %2.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
         </trans-unit>
