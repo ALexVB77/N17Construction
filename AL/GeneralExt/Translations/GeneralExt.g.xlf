@@ -5893,6 +5893,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - NamedType txtWind</note>
         </trans-unit>
+        <trans-unit id="Report 2923491568 - Method 4165189797 - NamedType 4264768193" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Yes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Method BoolText - NamedType txtYes</note>
+        </trans-unit>
         <trans-unit id="Report 2923491568 - Control 1260915842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted</source>
           <note from="Developer" annotates="general" priority="2"></note>
