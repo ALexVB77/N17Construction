@@ -2873,7 +2873,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FillPurchLineApproverFromGlobalDim</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1468807320" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 47354825 - Method 4105173375" size-unit="char" translate="yes" xml:space="preserve">
           <source>PurchOrderActArchiveQst</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchOrderActArchiveQst</note>
@@ -2882,6 +2882,16 @@
           <source>DeleteRelatedInvoiceDoc</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method DeleteRelatedInvoiceDoc</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1182923536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PurchPaymentInvoiceArchive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2233398926" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DisconnectFromAgreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method DisconnectFromAgreement</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nothing selected!</source>
@@ -2962,6 +2972,16 @@
           <source>You can send a document to the archive only at the Verification stage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchOrderActArchiveQst - NamedType LocText50012</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1715794959 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document %1 has been archived.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1715794959 - NamedType 1999882030" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive %1 no.: %2?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText007</note>
         </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Act Stage</source>
@@ -3117,6 +3137,11 @@
           <source>CRM Copmany</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents Approval</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3226742824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Event Subscriptions</source>
@@ -4728,31 +4753,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 2379455676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Enter Based On</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>F&amp;unctions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action F&amp;unctions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 3954252683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Archive Problem Document</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ArchiveProblemDoc - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Copy Document</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CopyDocument - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 1848810545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Payment Invoice</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CreatePaymentInvoice - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4787,6 +4787,31 @@
           <source>Statistics</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3954252683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Problem Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ArchiveProblemDoc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CopyDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1848810545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Payment Invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action CreatePaymentInvoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 2379455676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter Based On</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documents View</source>
@@ -4933,21 +4958,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>F&amp;unctions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action F&amp;unctions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 3304622623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Archi&amp;ve Document</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Archive Document - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Copy Document</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action CopyDocument - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3790301120 - Action 146219450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4972,6 +4982,26 @@
           <source>Statistics</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 3304622623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archi&amp;ve Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Archive Document - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1359316502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action CopyDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3187706650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>
@@ -6558,6 +6588,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2325658151 - Field 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Status App - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 476953720 - Field 3485708687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
           <source>Allow Diff in Check</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6647,6 +6682,16 @@
           <source>Approver</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Approver - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3086258489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Archiving Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Archiving Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3086258489 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source> ,Problem Act,Payment Invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Archiving Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Controller</source>
@@ -7422,6 +7467,41 @@
           <source>PrevForecast</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3632148852 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Gen. Journal Approval Status - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3632148852 - EnumValue 803889193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approve</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Gen. Journal Approval Status - EnumValue Approve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3632148852 - EnumValue 4069904181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancelled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Gen. Journal Approval Status - EnumValue Cancelled - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3632148852 - EnumValue 2301147363 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Checker</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Gen. Journal Approval Status - EnumValue Checker - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3632148852 - EnumValue 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Controller</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Gen. Journal Approval Status - EnumValue Controller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3632148852 - EnumValue 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Gen. Journal Approval Status - EnumValue Payment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3632148852 - EnumValue 2512678143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reception</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Gen. Journal Approval Status - EnumValue Reception - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2122150050 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>

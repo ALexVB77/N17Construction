@@ -333,6 +333,8 @@ page 70002 "Purchase List App"
         CLEARMARKS;
         // SWC1075 DD 28.07.17 <<
 
+        SETFILTER("Status App", '<>%1&<>%2', "Status App"::Payment, "Status App"::Request);
+
         CASE Filter2 OF
             Filter2::InProc:
                 SETFILTER("Status App", '<>%1', "Status App"::Payment);
