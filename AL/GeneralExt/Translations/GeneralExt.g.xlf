@@ -3213,6 +3213,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Vendor Invoice No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 656867589 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action DocAttach - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Action 1574261460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action VendorCard - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3226742824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Event Subscriptions</source>
           <note from="Developer" annotates="general" priority="2"></note>

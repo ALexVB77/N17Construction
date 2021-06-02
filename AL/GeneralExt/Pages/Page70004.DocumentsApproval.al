@@ -196,17 +196,42 @@ page 70004 "Documents Approval"
             }
         }
         */
-        /*
         area(Navigation)
         {
+            action(VendorCard)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Vendor';
+                Image = EditLines;
+                Promoted = true;
+                PromotedCategory = Category11;
+                RunObject = Codeunit "Gen. Jnl.-Show Card";
+                ShortCutKey = 'Shift+F7';
+            }
+            action(Dimensions)
+            {
+                AccessByPermission = TableData Dimension = R;
+                ApplicationArea = Dimensions;
+                Caption = 'Dimensions';
+                Image = Dimensions;
+                Promoted = true;
+                PromotedCategory = Category10;
+                ShortCutKey = 'Alt+D';
+
+                trigger OnAction()
+                begin
+                    ShowDimensions();
+                    CurrPage.SaveRecord;
+                end;
+            }
             action("Co&mments")
             {
                 ApplicationArea = All;
                 Caption = 'Co&mments';
                 Image = ViewComments;
                 RunObject = Page "Purch. Comment Sheet";
-                RunPageLink = "Document Type" = FIELD("Document Type"),
-                                "No." = FIELD("No."),
+                RunPageLink = "Document Type" = const(Order),
+                                "No." = FIELD("Document No."),
                                 "Document Line No." = CONST(0);
             }
             action(DocAttach)
@@ -217,16 +242,17 @@ page 70004 "Documents Approval"
 
                 trigger OnAction()
                 var
+                    PurchHeader: Record "Purchase Header";
                     DocumentAttachmentDetails: Page "Document Attachment Details";
                     RecRef: RecordRef;
                 begin
-                    RecRef.GetTable(Rec);
+                    PurchHeader.Get(PurchHeader."Document Type"::Order, "Document No.");
+                    RecRef.GetTable(PurchHeader);
                     DocumentAttachmentDetails.OpenForRecRef(RecRef);
                     DocumentAttachmentDetails.RunModal;
                 end;
             }
         }
-        */
     }
 
     trigger OnOpenPage()
