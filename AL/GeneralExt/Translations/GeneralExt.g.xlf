@@ -3138,10 +3138,70 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 656867589 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Bank,Prepare,Approve,Page,Post/Print,Line,Account,Check</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Property PromotedActionCategories</note>
+        </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Documents Approval</source>
+          <source>Payment Invoices (Approval)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 2402680566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scope</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control cFilter1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 2402680566 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>My documents,Pre-Approver,All documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control cFilter1 - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 2402680566 - Method 2126772001 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot use "All documents" value if %1 %2 = %3.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control cFilter1 - Method OnValidate - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 870794884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selection</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Selection - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 870794884 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All documents,Documents in processing,Ready-to-pay documents,Paid documents,Problem documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Selection - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 1938256647 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Rejected</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control ShowCancel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 3299771246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sorting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Sorting - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 3299771246 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.,Postng Date,Buy-from Vendor Name,Status App,Process User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Sorting - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 2632124822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Order Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 4139459292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paid Date Fact</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Paid Date Fact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 3961227134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Invoice No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Vendor Invoice No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3226742824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Event Subscriptions</source>
@@ -6623,6 +6683,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2325658151 - Field 847484971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Date Status Approval</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Date Status App - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2325658151 - Field 789473408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Paid</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Paid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2325658151 - Field 3183912585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Pre-Approver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Pre-Approver - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2325658151 - Field 4289336288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Problem Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Problem Document - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2325658151 - Field 3569568710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+          <source>Process User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Process User - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2325658151 - Field 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Approval Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7162,6 +7247,16 @@
           <source>Default Payment Assignment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Default Payment Assignment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 2271846032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Payment Calendar Batch</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Calendar Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 75401463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Payment Calendar Template</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Calendar Tmpl - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3717557870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Payment Delay Period</source>
