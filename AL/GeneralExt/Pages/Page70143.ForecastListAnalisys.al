@@ -670,13 +670,15 @@ page 70143 "Forecast List Analisys"
     end;
 
     procedure DeleteSTLine(pPrBudEntry: Record "Projects Budget Entry")
+    var
+        lTextErr001: Label 'Deleting long-term entries denied!';
     begin
         if pPrBudEntry.GetFilters = '' then
             exit;
         if pPrBudEntry.FindSet() then
             repeat
                 if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
-                    exit;
+                    Error(lTextErr001);
             until pPrBudEntry.Next() = 0;
     end;
 }
