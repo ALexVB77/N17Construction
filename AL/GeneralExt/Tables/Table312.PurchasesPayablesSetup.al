@@ -20,6 +20,11 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Caption = 'Cost Place Dimension';
             Description = 'NC 51373 AB';
             TableRelation = Dimension;
+
+            trigger OnValidate()
+            begin
+                CheckCostDimension();
+            end;
         }
         field(50004; "Skip Check CF Forecast Filter"; text[100])
         {
@@ -38,6 +43,17 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Caption = 'Default Payment Assignment';
             Description = 'NC 51378 AB';
             InitValue = '1';
+        }
+        field(50007; "Cost Code Dimension"; code[20])
+        {
+            Caption = 'Cost Code Dimension';
+            Description = 'NC 51373 AB';
+            TableRelation = Dimension;
+
+            trigger OnValidate()
+            begin
+                CheckCostDimension();
+            end;
         }
         field(50030; "Vendor Agreement Template Code"; Code[250])
         {
@@ -64,4 +80,12 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Description = 'NC 51378 AB';
         }
     }
+
+    local procedure CheckCostDimension()
+    var
+        LocText001: Label 'Same values are selected for %1 and %2.';
+    begin
+        IF ("Cost Place Dimension" <> '') and ("Cost Code Dimension" <> '') and ("Cost Code Dimension" = "Cost Place Dimension") then
+            Error(LocText001, FieldCaption("Cost Code Dimension"), FieldCaption("Cost Place Dimension"));
+    end;
 }

@@ -1,4 +1,4 @@
-pageextension 80537 "Dimension Values Ext" extends "Dimension Values"
+pageextension 80560 "Dimension Value List (Ext)" extends "Dimension Value List"
 {
     layout
     {
@@ -8,11 +8,11 @@ pageextension 80537 "Dimension Values Ext" extends "Dimension Values"
             {
                 ApplicationArea = Basic, Suite;
             }
-            field("Check CF Forecast"; Rec."Check CF Forecast")
+            field("Cost Holder"; Rec."Cost Holder")
             {
                 ApplicationArea = Basic, Suite;
             }
-            field("Cost Holder"; Rec."Cost Holder")
+            field("Check CF Forecast"; Rec."Check CF Forecast")
             {
                 ApplicationArea = Basic, Suite;
             }
