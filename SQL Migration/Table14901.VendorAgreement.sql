@@ -115,34 +115,6 @@ SELECT
 	[Don_t Check CashFlow]
 FROM [dbo].[test$Vendor Agreement];
 
-/*
-INSERT INTO [Bonava-Dev].[dbo].[Bonava$Dimension Value$437dbf0e-84ff-417a-965d-ed2bb9650972]
-(
-	[Dimension Code],
-	[Code],
-	[Name],
-	[Dimension Value Type],
-	[Totaling],
-	[Blocked],
-	[Consolidation Code],
-	[Global Dimension No_],
-	[Project is Finished],
-	[Post Without Forecast]
-)
-SELECT
-	[Dimension Code],
-	[Code],
-	[Name],
-	[Dimension Value Type],
-	[Totaling],
-	[Blocked],
-	[Consolidation Code],
-	[Global Dimension No_],
-	[Project is Finished],
-	[Post Without Forecast]
-FROM [dbo].[Dimension Value] WHERE [Dimension Code] = 'CP' AND [Project is Finished] = '0' AND [Post Without Forecast] = '0';
-*/
-
 INSERT INTO [Bonava-Dev].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Table ID],
@@ -159,4 +131,4 @@ SELECT
 	[Dimension Value Code],
 	[Value Posting],
 	[Multi Selection Action]
-FROM [dbo].[test$Default Dimension] WHERE [Table ID] = '14901';
+FROM [dbo].[test$Default Dimension] WHERE [Table ID] = '14901' AND [Dimension Code] = 'CP';
