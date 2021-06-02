@@ -1,13 +1,11 @@
 page 70004 "Documents Approval"
 {
-    /*    
+    /*
         ApplicationArea = Basic, Suite;
-        AutoSplitKey = true;
         UsageCategory = Lists;
         InsertAllowed = false;
+        DeleteAllowed = false;
         SourceTable = "Gen. Journal Line";
-        SaveValues = true;
-        DelayedInsert = true;
         PageType = Worksheet;
         Caption = 'Payment Invoices (Approval)';
         PromotedActionCategories = 'New,Process,Report,Bank,Prepare,Approve,Page,Post/Print,Line,Account,Check';
@@ -431,5 +429,5 @@ page 70004 "Documents Approval"
                     SETCURRENTKEY("Process User");
             END;
         end;
-    */
+*/
 }
