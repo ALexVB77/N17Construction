@@ -3393,6 +3393,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action CreateSTEntries - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2269272589 - Action 41647728 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delete short-term planning lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action DeleteSTEntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Action 53126066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show related lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Action ShowRelatedEntries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1741419279 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
           <note from="Developer" annotates="general" priority="2"></note>
