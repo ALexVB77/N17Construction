@@ -2,7 +2,8 @@ page 70262 "Purchase List Act"
 {
     ApplicationArea = Basic, Suite;
     Caption = 'Payment Orders List';
-    Editable = false;
+    InsertAllowed = false;
+    DeleteAllowed = false;
     DataCaptionFields = "Document Type";
     PageType = Worksheet;
     RefreshOnActivate = true;
@@ -68,14 +69,13 @@ page 70262 "Purchase List Act"
 
             repeater(Repeater1237120003)
             {
+                Editable = false;
                 field("Problem Document"; Rec."Problem Document")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("No."; "No.")
                 {
-                    Editable = false;
                     ApplicationArea = All;
 
                     trigger OnAssistEdit()
@@ -85,17 +85,14 @@ page 70262 "Purchase List Act"
                 }
                 field("Act Type"; "Act Type")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field(Approver; Approver)
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Invoice No."; "Invoice No.")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                     trigger OnDrillDown()
                     var
@@ -128,91 +125,71 @@ page 70262 "Purchase List Act"
                 }
                 field("Buy-from Vendor No."; "Buy-from Vendor No.")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Vendor Invoice No."; "Vendor Invoice No.")
                 {
-                    Visible = true;
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Buy-from Vendor Name"; "Buy-from Vendor Name")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Document Date"; "Document Date")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Order Date"; "Order Date")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Paid Date Fact"; "Paid Date Fact")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Invoice Amount Incl. VAT"; "Invoice Amount Incl. VAT")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Статус утверждения"; "Status App Act")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Date Status App"; "Date Status App")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Process User"; "Process User")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Agreement No."; "Agreement No.")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
-                    Visible = true;
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
-                    Visible = true;
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Exists Comment"; Comment)
                 {
                     Caption = 'Exists Comment';
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Exists Attachment"; "Exists Attachment")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Receive Account"; "Receive Account")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
                 field("Location Document"; "Location Document")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
             }

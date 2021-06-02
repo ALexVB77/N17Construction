@@ -53,6 +53,14 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("Payment Calendar Tmpl"; "Payment Calendar Tmpl")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Payment Calendar Batch"; "Payment Calendar Batch")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
             }
         }
     }

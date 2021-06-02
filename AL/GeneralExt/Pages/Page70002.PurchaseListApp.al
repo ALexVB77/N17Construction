@@ -1,16 +1,14 @@
 page 70002 "Purchase List App"
 {
     ApplicationArea = Basic, Suite;
-    UsageCategory = Lists;
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    ModifyAllowed = false;
-    SourceTable = "Purchase Header";
-    DataCaptionFields = "Document Type";
-    PageType = Worksheet;
     Caption = 'Payment Invoices (Checking)';
+    DataCaptionFields = "Document Type";
+    DeleteAllowed = false;
+    InsertAllowed = false;
+    PageType = Worksheet;
     RefreshOnActivate = true;
-    CardPageId = "Purchase Order App";
+    SourceTable = "Purchase Header";
+    UsageCategory = Lists;
     layout
     {
         area(content)
@@ -81,86 +79,6 @@ page 70002 "Purchase List App"
                 }
                 field("Buy-from Vendor Name"; Rec."Buy-from Vendor Name")
                 {
-                    ApplicationArea = All;
-                }
-                field("Buy-from Post Code"; Rec."Buy-from Post Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Buy-from Country/Region Code"; Rec."Buy-from Country/Region Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Buy-from Contact"; Rec."Buy-from Contact")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Pay-to Vendor No."; Rec."Pay-to Vendor No.")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Pay-to Name"; Rec."Pay-to Name")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Pay-to Post Code"; Rec."Pay-to Post Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Pay-to Country/Region Code"; Rec."Pay-to Country/Region Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Pay-to Contact"; Rec."Pay-to Contact")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Ship-to Code"; Rec."Ship-to Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Ship-to Name"; Rec."Ship-to Name")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Ship-to Post Code"; Rec."Ship-to Post Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Ship-to Country/Region Code"; Rec."Ship-to Country/Region Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Ship-to Contact"; Rec."Ship-to Contact")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Posting Date"; Rec."Posting Date")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Purchaser Code"; Rec."Purchaser Code")
-                {
-                    Visible = false;
-                    ApplicationArea = All;
-                }
-                field("Currency Code"; Rec."Currency Code")
-                {
-                    Visible = false;
                     ApplicationArea = All;
                 }
                 field("Document Date"; Rec."Document Date")
