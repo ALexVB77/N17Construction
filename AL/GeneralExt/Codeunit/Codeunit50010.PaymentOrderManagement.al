@@ -461,6 +461,7 @@ codeunit 50010 "Payment Order Management"
         ForecastListAnalisys: page "Forecast List Analisys";
     begin
         // debug see later
+        message('Вызов DisconnectFromAgreement');
         exit;
 
         //NC 44684 > KGT
