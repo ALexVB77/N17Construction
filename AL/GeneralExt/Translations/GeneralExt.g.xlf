@@ -3293,6 +3293,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
         </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1820841161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filters</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control FilterGr2 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Control 2608293804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>COST CODE</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3322,6 +3327,11 @@
           <source>Overdue</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Overdue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1749114713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control FiltersGr1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>

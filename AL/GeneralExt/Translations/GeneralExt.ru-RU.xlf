@@ -3951,6 +3951,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
         </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1820841161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filters</source>
+          <target>Параметры</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control FilterGr2 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Control 2608293804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>COST CODE</source>
           <target>COST CODE</target>
@@ -3986,6 +3993,13 @@
           <target>Просроченные</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Overdue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - Control 1749114713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Filter</source>
+          <target>Проект</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control FiltersGr1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
@@ -7856,7 +7870,6 @@
         <trans-unit id="TableExtension 1546208205 - Field 3565928873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Admin Cost Place Holder</source>
           <target>Ответств. Admin (Cost Place)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Admin Cost Place Holder - Property Caption</note>
         </trans-unit>
@@ -7869,14 +7882,12 @@
         <trans-unit id="TableExtension 1546208205 - Field 3901819418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Cost Code Type</source>
           <target>Тип Cost Code</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Cost Code Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 3901819418 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source> ,Production,Development,Admin</source>
           <target> ,Production,Development,Admin</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Cost Code Type - Property OptionCaption</note>
         </trans-unit>
@@ -7889,14 +7900,12 @@
         <trans-unit id="TableExtension 1546208205 - Field 3684895597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Development Cost Place Holder</source>
           <target>Ответств. за Development (Cost Place)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Development Cost Place Holder - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 135933677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Production Cost Place Holder</source>
           <target>Ответств. за Production (COst Place)</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Dimension Value (Ext) - Field Production Cost Place Holder - Property Caption</note>
         </trans-unit>
@@ -8552,7 +8561,6 @@
         <trans-unit id="TableExtension 2307367824 - Method 212421167 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2307367824">
           <source>Same values are selected for %1 and %2.</source>
           <target>Выбраны одинаковые значения для %1 и %2.</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Method CheckCostDimension - NamedType LocText001</note>
         </trans-unit>
@@ -8571,7 +8579,6 @@
         <trans-unit id="TableExtension 2307367824 - Field 3014112906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Cost Code Dimension</source>
           <target>Измерение Cost Code</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Cost Code Dimension - Property Caption</note>
         </trans-unit>
