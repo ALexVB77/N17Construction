@@ -10,7 +10,7 @@ pageextension 80539 "MyDim Value Comb Ext" extends "MyDim Value Combinations"
         // Add changes to page actions here
         addlast(processing)
         {
-            /*action(Tetbutton)
+            /*action( Tetbutton)
             {
                 ApplicationArea = All;
 
