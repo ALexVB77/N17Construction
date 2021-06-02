@@ -511,6 +511,21 @@ page 70143 "Forecast List Analisys"
                     CreateSTPrBEntPage.RunModal();
                 end;
             }
+            action(DeleteSTEntries)
+            {
+                Caption = 'Delete short-term planning lines';
+                ApplicationArea = All;
+            }
+            action(ShowRelatedEntries)
+            {
+                Caption = 'Show related lines';
+                ApplicationArea = All;
+                trigger OnAction()
+                begin
+                    Rec.Reset;
+                    Rec.SetRange("Parent Entry", Rec."Parent Entry");
+                end;
+            }
         }
     }
 
@@ -641,7 +656,7 @@ page 70143 "Forecast List Analisys"
     local procedure GetLineStyle(pPrBudEnt: Record "Projects Budget Entry")
     begin
         LineStyletxt := '';
-        if pPrBudEnt."Parent Entry" = 0 then
+        if (pPrBudEnt."Parent Entry" = 0) or (pPrBudEnt."Entry No." = pPrBudEnt."Parent Entry") then
             LineStyletxt := 'StandardAccent';
     end;
 }
