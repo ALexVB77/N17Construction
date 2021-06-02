@@ -185,7 +185,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
             Error(Text12402, FieldCaption("Check Limit Ending Date"), FieldCaption("Check Limit Starting Date"));
     end;
 
-    procedure GetLimitDateFilter(): Text
+    procedure CheckLimitDateFilter(): Text
     begin
         if ("Check Limit Starting Date" = 0D) and ("Check Limit Ending Date" = 0D) then
             exit('');
