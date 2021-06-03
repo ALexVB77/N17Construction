@@ -19,6 +19,17 @@ page 70005 "Payment Request Card"
                     Caption = 'RECEIVED (DATE)';
                     Editable = false;
                 }
+                field(DueDate; PaymentInvHdr."Due Date")
+                {
+                    ApplicationArea = All;
+                    Caption = 'DUE DATE';
+                    Editable = false;
+
+                    trigger OnValidate()
+                    begin
+                        PaymentInvHdr.Modify(true);
+                    end;
+                }
                 group(Checked)
                 {
                     Caption = 'CHECKED';
@@ -29,6 +40,22 @@ page 70005 "Payment Request Card"
                         Editable = false;
                     }
                     field(CHUser; 'chuser')
+                    {
+                        ApplicationArea = All;
+                        Caption = 'NAME';
+                        Editable = false;
+                    }
+                }
+                group(Approved)
+                {
+                    Caption = 'APPROVED';
+                    field(ApprDate; 'GetApprDate')
+                    {
+                        ApplicationArea = All;
+                        Caption = 'DATE';
+                        Editable = false;
+                    }
+                    field(ApprUser; 'GetApprUser')
                     {
                         ApplicationArea = All;
                         Caption = 'NAME';
@@ -46,33 +73,6 @@ page 70005 "Payment Request Card"
                     ApplicationArea = All;
                     Caption = 'PURCHASE ORDER No.';
                     Editable = false;
-                }
-                field(DueDate; PaymentInvHdr."Due Date")
-                {
-                    ApplicationArea = All;
-                    Caption = 'DUE DATE';
-                    Editable = false;
-
-                    trigger OnValidate()
-                    begin
-                        PaymentInvHdr.Modify(true);
-                    end;
-                }
-                group(Approved)
-                {
-                    Caption = 'APPROVED';
-                    field(ApprDate; 'GetApprDate')
-                    {
-                        ApplicationArea = All;
-                        Caption = 'DATE';
-                        Editable = false;
-                    }
-                    field(ApprUser; 'GetApprUser')
-                    {
-                        ApplicationArea = All;
-                        Caption = 'NAME';
-                        Editable = false;
-                    }
                 }
                 field(Contract; PaymentInvHdr."External Agreement No. (Calc)")
                 {
