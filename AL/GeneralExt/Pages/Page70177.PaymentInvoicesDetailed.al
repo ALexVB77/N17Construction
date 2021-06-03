@@ -7,6 +7,7 @@ page 70177 "Payment Invoices Detailed"
     PageType = Worksheet;
     RefreshOnActivate = true;
     SourceTable = "Purchase Line";
+    SourceTableView = SORTING("Document Type", "Document No.", "Line No.") WHERE(Type = FILTER(<> ' '));
     UsageCategory = Lists;
     layout
     {
