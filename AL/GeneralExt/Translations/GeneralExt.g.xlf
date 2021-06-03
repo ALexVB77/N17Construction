@@ -2648,11 +2648,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
         </trans-unit>
-<<<<<<< HEAD
         <trans-unit id="Codeunit 1852166102 - Method 831439578" size-unit="char" translate="yes" xml:space="preserve">
-=======
-        <trans-unit id="Codeunit 1852166102 - Method 493242633" size-unit="char" translate="yes" xml:space="preserve">
->>>>>>> 309b0306f3f61f513d904d2244f9fb168bc9093b
           <source>ImportObject</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Integration API - Method ImportObject</note>
@@ -4923,7 +4919,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Action NewOrderApp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate</source>
+          <source>New,Process,Report,Act,Function</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
         </trans-unit>
@@ -5037,6 +5033,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Statistics - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents View</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ViewAttachDoc - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>F&amp;unctions</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5061,11 +5062,6 @@
           <source>Enter Based On</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Documents View</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ViewAttachDoc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>
