@@ -202,8 +202,6 @@ page 70004 "Documents Approval"
                 Caption = 'Vendor';
                 Enabled = VendorCardEnabled;
                 Image = EditLines;
-                Promoted = true;
-                PromotedCategory = Category11;
                 RunObject = Codeunit "Gen. Jnl.-Show Card";
                 ShortCutKey = 'Shift+F7';
             }
@@ -213,8 +211,6 @@ page 70004 "Documents Approval"
                 ApplicationArea = Dimensions;
                 Caption = 'Dimensions';
                 Image = Dimensions;
-                Promoted = true;
-                PromotedCategory = Category10;
                 ShortCutKey = 'Alt+D';
 
                 trigger OnAction()

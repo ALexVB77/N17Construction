@@ -135,9 +135,6 @@ page 70005 "Payment Request Card"
                 Caption = 'Documents View';
                 Enabled = ShowDocEnabled;
                 Image = Export;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
 
                 trigger OnAction()
                 var
@@ -162,8 +159,6 @@ page 70005 "Payment Request Card"
                 Caption = 'Vendor';
                 Enabled = VendorCardEnabled;
                 Image = EditLines;
-                Promoted = true;
-                PromotedCategory = Category11;
                 RunObject = Codeunit "Gen. Jnl.-Show Card";
                 ShortCutKey = 'Shift+F7';
             }
@@ -173,8 +168,6 @@ page 70005 "Payment Request Card"
                 ApplicationArea = Dimensions;
                 Caption = 'Dimensions';
                 Image = Dimensions;
-                Promoted = true;
-                PromotedCategory = Category10;
                 ShortCutKey = 'Alt+D';
 
                 trigger OnAction()
