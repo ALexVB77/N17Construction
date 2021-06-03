@@ -1,0 +1,169 @@
+<ns0:NCCIntegrations xmlns:ct="http://NCC.Corporate/Types/2014/03" xmlns:ns1="http://NCC.Corporate/Routing/2014/03" xmlns:ns0="http://NCC.Construction.Sales/Objects/2014/03" xmlns:co="http://NCC.Corporate/Objects/2014/03" xmlns:ci="http://NCC.Corporate/Integration/2014/03" xmlns:cnt="http://NCC.Construction.Sales/Types/2014/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Publisher xsi:type="ct:IntegrationBaseType">
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>2021-02-07T09:59:25Z</TimeStamp>
+    <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+    <IntegrationStatus xsi:nil="true" />
+    <IntegrationOperation>Update</IntegrationOperation>
+    <IntegrationInformation>Contact</IntegrationInformation>
+  </Publisher>
+  <Subscribers>
+    <Subscriber xsi:type="ct:IntegrationBaseType">
+      <Name>This node is cretaed for NAV Routing</Name>
+      <IntegrationID />
+      <TimeStamp>2021-02-07T10:59:32.257Z</TimeStamp>
+    </Subscriber>
+  </Subscribers>
+  <MessageRouting>
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>0001-01-01T00:00:00</TimeStamp>
+    <PublisherInstance xsi:nil="true" />
+    <IntegrationStatus xsi:nil="true" />
+    <SubscribingSystem>
+      <NAV>Create</NAV>
+    </SubscribingSystem>
+  </MessageRouting>
+  <NCCObjects>
+    <NCCObject>
+      <Publisher xsi:type="ct:IntegrationBaseType">
+        <Name>HomeCRM</Name>
+        <IntegrationID>1596</IntegrationID>
+        <BusinessUnit>RU</BusinessUnit>
+        <TimeStamp>2021-02-07T09:59:25Z</TimeStamp>
+        <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+        <IntegrationObjectID xsi:nil="true" />
+        <IntegrationStatus xsi:nil="true" />
+        <IntegrationOperation>Update</IntegrationOperation>
+        <IntegrationInformation xsi:nil="true" />
+      </Publisher>
+      <Subscribers />
+      <Operation>Update</Operation>
+      <ObjectState>Active</ObjectState>
+      <Contact>
+        <BaseData xsi:type="ct:BaseMaster">
+          <ObjectID>a044301e-2b69-eb11-a812-000d3a38bd0e</ObjectID>
+          <ObjectParentID xsi:nil="true" />
+          <Name>Олеся Платонова</Name>
+          <ParentName xsi:nil="true" />
+          <ObjectStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </ObjectStatus>
+          <ObjectType xsi:nil="true" />
+          <ObjectSourceID xsi:nil="true" />
+          <ObjectSourceParentID xsi:nil="true" />
+          <CreatedByID xsi:nil="true" />
+          <ChangedDate>2021-02-07T09:59:25Z</ChangedDate>
+          <ChangedByID xsi:nil="true" />
+          <ObjectPath xsi:nil="true" />
+          <ObjectURL xsi:nil="true" />
+          <IsActive>true</IsActive>
+          <Description xsi:nil="true" />
+          <ReferenceID xsi:nil="true" />
+        </BaseData>
+        <PersonData>
+          <Salutation xsi:nil="true" />
+          <JobTitle xsi:nil="true" />
+          <FirstName>Олеся</FirstName>
+          <MiddleName xsi:nil="true" />
+          <LastName>Платонова</LastName>
+          <SocialSecurityNumber xsi:nil="true" />
+          <Password xsi:nil="true" />
+          <CompanyName>RU</CompanyName>
+          <CompanyDivision xsi:nil="true" />
+        </PersonData>
+        <PhysicalAddresses>
+          <PhysicalAddress>
+            <COName xsi:nil="true" />
+            <AddressLine1 xsi:nil="true" />
+            <AddressLine2 xsi:nil="true" />
+            <AddressLine3 xsi:nil="true" />
+            <PostalCode xsi:nil="true" />
+            <PostalCity xsi:nil="true" />
+            <Province xsi:nil="true" />
+            <CountryCode xsi:nil="true" />
+            <AddressType>778210001</AddressType>
+            <ValidFrom>2021-02-06T21:00:00Z</ValidFrom>
+            <Primary>true</Primary>
+            <ObjectID>b8cbb328-2b69-eb11-b0b1-000d3a3a1be9</ObjectID>
+          </PhysicalAddress>
+        </PhysicalAddresses>
+        <ElectronicAddresses>
+          <ElectronicAddress>
+            <Protocol>Phone</Protocol>
+            <AddressLine1 xsi:nil="true" />
+            <AddressLine2 xsi:nil="true" />
+            <UserName xsi:nil="true" />
+            <PassWord xsi:nil="true" />
+            <AddressType xsi:nil="true" />
+          </ElectronicAddress>
+          <ElectronicAddress>
+            <Protocol>Phone</Protocol>
+            <AddressLine1 xsi:nil="true" />
+            <AddressLine2 xsi:nil="true" />
+            <UserName xsi:nil="true" />
+            <PassWord xsi:nil="true" />
+            <AddressType xsi:nil="true" />
+          </ElectronicAddress>
+          <ElectronicAddress>
+            <Protocol>Phone</Protocol>
+            <AddressLine1 xsi:nil="true" />
+            <AddressLine2 xsi:nil="true" />
+            <UserName xsi:nil="true" />
+            <PassWord xsi:nil="true" />
+            <AddressType xsi:nil="true" />
+          </ElectronicAddress>
+          <ElectronicAddress>
+            <Protocol>Email</Protocol>
+            <AddressLine1>olesyaevgenevna@yandex.ru</AddressLine1>
+            <AddressLine2 xsi:nil="true" />
+            <UserName xsi:nil="true" />
+            <PassWord xsi:nil="true" />
+            <AddressType xsi:nil="true" />
+          </ElectronicAddress>
+          <ElectronicAddress>
+            <Protocol>Email</Protocol>
+            <AddressLine1 xsi:nil="true" />
+            <AddressLine2 xsi:nil="true" />
+            <UserName xsi:nil="true" />
+            <PassWord xsi:nil="true" />
+            <AddressType xsi:nil="true" />
+          </ElectronicAddress>
+          <ElectronicAddress>
+            <Protocol>Email</Protocol>
+            <AddressLine1>****</AddressLine1>
+            <AddressLine2 xsi:nil="true" />
+            <UserName xsi:nil="true" />
+            <PassWord xsi:nil="true" />
+            <AddressType>Social</AddressType>
+          </ElectronicAddress>
+        </ElectronicAddresses>
+        <ObjectAttributes xsi:type="cnt:ObjectAttributesMaster">
+          <Attributes>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>WebUser</KeyName>
+              <ObjectValue>0</ObjectValue>
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>ContactByEmail</KeyName>
+              <ObjectValue>1</ObjectValue>
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>ContactByPhone</KeyName>
+              <ObjectValue>1</ObjectValue>
+            </Attribute>
+          </Attributes>
+        </ObjectAttributes>
+        <Documents />
+      </Contact>
+    </NCCObject>
+  </NCCObjects>
+</ns0:NCCIntegrations>

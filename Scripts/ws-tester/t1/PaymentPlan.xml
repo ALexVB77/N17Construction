@@ -1,0 +1,90 @@
+<ns0:NCCIntegrations xmlns:ct="http://NCC.Corporate/Types/2014/03" xmlns:ns1="http://NCC.Corporate/Routing/2014/03" xmlns:ns0="http://NCC.Construction.Sales/Objects/2014/03" xmlns:co="http://NCC.Corporate/Objects/2014/03" xmlns:ci="http://NCC.Corporate/Integration/2014/03" xmlns:cnt="http://NCC.Construction.Sales/Types/2014/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Publisher xsi:type="ct:IntegrationBaseType">
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>2021-02-04T13:51:17Z</TimeStamp>
+    <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+    <IntegrationStatus xsi:nil="true" />
+    <IntegrationOperation>Create</IntegrationOperation>
+    <IntegrationInformation>PaymentPlan</IntegrationInformation>
+  </Publisher>
+  <Subscribers>
+    <Subscriber xsi:type="ct:IntegrationBaseType">
+      <Name>This node is cretaed for NAV Routing</Name>
+      <IntegrationID />
+      <TimeStamp>2021-02-04T14:51:19.099Z</TimeStamp>
+    </Subscriber>
+  </Subscribers>
+  <MessageRouting>
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>0001-01-01T00:00:00</TimeStamp>
+    <PublisherInstance xsi:nil="true" />
+    <IntegrationStatus xsi:nil="true" />
+    <SubscribingSystem>
+      <NAV>Create</NAV>
+    </SubscribingSystem>
+  </MessageRouting>
+  <NCCObjects>
+    <NCCObject>
+      <Publisher xsi:type="ct:IntegrationBaseType">
+        <Name>HomeCRM</Name>
+        <IntegrationID>1596</IntegrationID>
+        <BusinessUnit>RU</BusinessUnit>
+        <TimeStamp>2021-02-04T13:51:17Z</TimeStamp>
+        <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+        <IntegrationObjectID xsi:nil="true" />
+        <IntegrationStatus xsi:nil="true" />
+        <IntegrationOperation>Create</IntegrationOperation>
+        <IntegrationInformation xsi:nil="true" />
+      </Publisher>
+      <Subscribers />
+      <Operation>Create</Operation>
+      <ObjectState>Active</ObjectState>
+      <PaymentPlan>
+        <BaseData>
+          <ObjectID>f25f340a-f066-eb11-a812-000d3ac22492</ObjectID>
+          <ObjectParentID>0d529301-4a7c-e811-80ec-001dd8b72ec3</ObjectParentID>
+          <Name>Наталья Михайловна Костянецкая - 2021-02-04</Name>
+          <ParentName>Наталья Михайловна Костянецкая</ParentName>
+          <ObjectStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </ObjectStatus>
+          <ObjectType>Regular</ObjectType>
+          <ObjectSourceID xsi:nil="true" />
+          <ObjectSourceParentID xsi:nil="true" />
+          <CreatedDate>2021-02-04T13:51:17Z</CreatedDate>
+          <CreatedByID>aa905a25-20ec-ea11-a817-000d3a38a16c</CreatedByID>
+          <ChangedDate>2021-02-04T13:51:17Z</ChangedDate>
+          <ChangedByID>aa905a25-20ec-ea11-a817-000d3a38a16c</ChangedByID>
+          <ObjectPath xsi:nil="true" />
+          <ObjectURL xsi:nil="true" />
+          <IsActive>true</IsActive>
+          <Description xsi:nil="true" />
+          <ReferenceID xsi:nil="true" />
+          <OwnerID xsi:nil="true" />
+          <ObjectNumber xsi:nil="true" />
+          <CancelStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </CancelStatus>
+          <UnitID>d0558c19-dae1-4771-aa02-b61654288a51</UnitID>
+          <BuyerID xsi:nil="true" />
+          <ContractID>3c40bd2b-887b-e811-80ec-001dd8b72ec3</ContractID>
+          <ProjectERPID xsi:nil="true" />
+        </BaseData>
+        <FinanceData>
+          <MarketPrice>469000.0000</MarketPrice>
+          <ContractPrice>469000.0000</ContractPrice>
+        </FinanceData>
+        <KeyDates />
+        <PaymentsList />
+      </PaymentPlan>
+    </NCCObject>
+  </NCCObjects>
+</ns0:NCCIntegrations>

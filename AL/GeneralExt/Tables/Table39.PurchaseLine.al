@@ -48,12 +48,70 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
             FieldClass = FlowField;
             CalcFormula = lookup("Purchase Header"."IW Documents" where("Document Type" = field("Document Type"), "No." = field("Document No.")));
         }
+        field(70006; "Buy-from Vendor Name"; Text[100])
+        {
+            CalcFormula = Lookup("Purchase Header"."Buy-from Vendor Name" WHERE("Document Type" = FIELD("Document Type"), "No." = FIELD("Document No.")));
+            Caption = 'Buy-from Vendor Name';
+            Description = 'NC 51378 AB';
+            FieldClass = FlowField;
+            Editable = false;
+        }
+        field(70007; "Vendor Invoice No."; Code[35])
+        {
+            CalcFormula = Lookup("Purchase Header"."Vendor Invoice No." WHERE("Document Type" = FIELD("Document Type"), "No." = FIELD("Document No.")));
+            Caption = 'Vendor Invoice No.';
+            Description = 'NC 51378 AB';
+            FieldClass = FlowField;
+            Editable = false;
+        }
+        field(70008; "Document Date"; Date)
+        {
+            CalcFormula = Lookup("Purchase Header"."Document Date" WHERE("Document Type" = FIELD("Document Type"), "No." = FIELD("Document No.")));
+            Caption = 'Document Date';
+            Description = 'NC 51378 AB';
+            FieldClass = FlowField;
+            Editable = false;
+        }
+        field(70009; "External Agreement No."; Text[30])
+        {
+            CalcFormula = Lookup("Purchase Header"."External Agreement No." WHERE("Document Type" = FIELD("Document Type"), "No." = FIELD("Document No.")));
+            Caption = 'External Agreement No.';
+            Description = 'NC 51378 AB';
+            FieldClass = FlowField;
+            Editable = false;
+        }
+        field(70010; "Status App"; Option)
+        {
+            CalcFormula = Lookup("Purchase Header"."Status App" WHERE("Document Type" = FIELD("Document Type"), "No." = FIELD("Document No.")));
+            Caption = 'Approval Status';
+            Description = 'NC 51378 AB';
+            FieldClass = FlowField;
+            OptionCaption = ' ,Reception,Сontroller,Checker,Approve,Payment,Request';
+            OptionMembers = " ",Reception,Сontroller,Checker,Approve,Payment,Request;
+            Editable = false;
+        }
         field(70011; Paid; Boolean)
         {
             Caption = 'Paid';
             Description = '50085';
             FieldClass = FlowField;
             CalcFormula = lookup("Purchase Header".Paid where("Document Type" = field("Document Type"), "No." = field("Document No.")));
+            Editable = false;
+        }
+        field(70012; "Due Date"; Date)
+        {
+            CalcFormula = Lookup("Purchase Header"."Due Date" WHERE("Document Type" = FIELD("Document Type"), "No." = FIELD("Document No.")));
+            Caption = 'Due Date';
+            Description = 'NC 51378 AB';
+            Editable = false;
+            FieldClass = FlowField;
+        }
+
+        field(70013; "Paid Date Fact"; Date)
+        {
+            Caption = 'Paid Date (Fact)';
+            Description = 'NC 51378 AB';
+            Editable = false;
         }
         field(70016; "Cost Type"; Code[20])
         {
@@ -89,10 +147,22 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
                 end;
             end;
         }
+        field(70017; "Process User"; Code[20])
+        {
+            Caption = 'Process User';
+            Description = 'NC 51378 AB';
+            TableRelation = "User Setup";
+        }
+        field(70018; "Purchaser Code"; Code[20])
+        {
+            Caption = 'Purchaser Code';
+            Description = 'NC 51378 AB';
+            TableRelation = "Salesperson/Purchaser";
+        }
         field(70021; Approver; Code[50])
         {
-            Description = 'NC 51373 AB';
             Caption = 'Approver';
+            Description = 'NC 51373 AB';
             TableRelation = "User Setup";
         }
     }

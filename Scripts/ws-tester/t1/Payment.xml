@@ -1,0 +1,92 @@
+<ns0:NCCIntegrations xmlns:ct="http://NCC.Corporate/Types/2014/03" xmlns:ns1="http://NCC.Corporate/Routing/2014/03" xmlns:ns0="http://NCC.Construction.Sales/Objects/2014/03" xmlns:co="http://NCC.Corporate/Objects/2014/03" xmlns:ci="http://NCC.Corporate/Integration/2014/03" xmlns:cnt="http://NCC.Construction.Sales/Types/2014/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Publisher xsi:type="ct:IntegrationBaseType">
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>2021-02-02T07:02:26Z</TimeStamp>
+    <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+    <IntegrationStatus xsi:nil="true" />
+    <IntegrationOperation>Update</IntegrationOperation>
+    <IntegrationInformation>Payment</IntegrationInformation>
+  </Publisher>
+  <Subscribers>
+    <Subscriber xsi:type="ct:IntegrationBaseType">
+      <Name>This node is cretaed for NAV Routing</Name>
+      <IntegrationID />
+      <TimeStamp>2021-02-02T08:02:29.995Z</TimeStamp>
+    </Subscriber>
+  </Subscribers>
+  <MessageRouting>
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>0001-01-01T00:00:00</TimeStamp>
+    <PublisherInstance xsi:nil="true" />
+    <IntegrationStatus xsi:nil="true" />
+    <SubscribingSystem>
+      <NAV>Create</NAV>
+      <NAV>Create</NAV>
+    </SubscribingSystem>
+  </MessageRouting>
+  <NCCObjects>
+    <NCCObject>
+      <Publisher xsi:type="ct:IntegrationBaseType">
+        <Name>HomeCRM</Name>
+        <IntegrationID>1596</IntegrationID>
+        <BusinessUnit>RU</BusinessUnit>
+        <TimeStamp>2021-02-02T07:02:26Z</TimeStamp>
+        <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+        <IntegrationObjectID xsi:nil="true" />
+        <IntegrationStatus xsi:nil="true" />
+        <IntegrationOperation>Update</IntegrationOperation>
+        <IntegrationInformation xsi:nil="true" />
+      </Publisher>
+      <Subscribers />
+      <Operation>Update</Operation>
+      <ObjectState>Inactive</ObjectState>
+      <Payment>
+        <BaseData>
+          <ObjectID>b521bff3-3861-eb11-a812-0022487f8656</ObjectID>
+          <ObjectParentID>1904c3e1-3861-eb11-a812-0022487f8656</ObjectParentID>
+          <Name>1</Name>
+          <ParentName>ДДУ/28012-105/00011697 - 2021-01-28</ParentName>
+          <ObjectStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName>NotPaid</KeyName>
+            <ObjectValue>778210000</ObjectValue>
+          </ObjectStatus>
+          <ObjectType>DownPayment</ObjectType>
+          <ObjectSourceID xsi:nil="true" />
+          <ObjectSourceParentID xsi:nil="true" />
+          <CreatedDate>2021-01-28T07:18:09Z</CreatedDate>
+          <CreatedByID>d64f90a5-4eb8-e411-bf08-005056b6017d</CreatedByID>
+          <ChangedDate>2021-02-02T07:02:26Z</ChangedDate>
+          <ChangedByID>d64f90a5-4eb8-e411-bf08-005056b6017d</ChangedByID>
+          <ObjectPath xsi:nil="true" />
+          <ObjectURL xsi:nil="true" />
+          <IsActive>false</IsActive>
+          <Description>Сбербанк</Description>
+          <ReferenceID xsi:nil="true" />
+          <OwnerID xsi:nil="true" />
+          <ObjectNumber xsi:nil="true" />
+          <CancelStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </CancelStatus>
+          <UnitID>939b3a2c-5bb0-4b3e-927c-e110399ab532</UnitID>
+          <BuyerID xsi:nil="true" />
+          <ContractID>2ae5319b-975c-eb11-a812-000d3a4a7462</ContractID>
+          <ProjectERPID>RU28012-105D</ProjectERPID>
+        </BaseData>
+        <FinanceData>
+          <PaymentAmount>1700000.0000</PaymentAmount>
+          <PaymentNumber>1</PaymentNumber>
+        </FinanceData>
+        <KeyDates>
+          <DueDate>2021-02-14T21:00:00Z</DueDate>
+        </KeyDates>
+      </Payment>
+    </NCCObject>
+  </NCCObjects>
+</ns0:NCCIntegrations>
