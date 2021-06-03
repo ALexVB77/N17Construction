@@ -151,6 +151,13 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
                 END;
             end;
         }
+        field(70017; "External Agreement No. (Calc)"; Text[30])
+        {
+            CalcFormula = Lookup("Vendor Agreement"."External Agreement No." WHERE("Vendor No." = FIELD("Buy-from Vendor No."), "No." = FIELD("Agreement No.")));
+            Caption = 'External Agreement No.';
+            Description = 'NC 51378 AB';
+            FieldClass = FlowField;
+        }
         field(70018; "Paid Date Fact"; Date)
         {
             Caption = 'Paid Date Fact';

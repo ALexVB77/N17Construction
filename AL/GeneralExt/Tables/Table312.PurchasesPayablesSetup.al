@@ -60,12 +60,29 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Caption = 'Vendor Agreement Template Code';
             TableRelation = "Excel Template";
         }
+        field(70000; "Payment Calendar Tmpl"; Code[10])
+        {
+            TableRelation = "Gen. Journal Template".Name;
+            Caption = 'Payment Calendar Template';
+            Description = 'NC 51378 AB';
+
+            trigger OnValidate()
+            begin
+                if Rec."Payment Calendar Tmpl" <> xRec."Payment Calendar Tmpl" then
+                    "Payment Calendar Batch" := '';
+            end;
+        }
+        field(70001; "Payment Calendar Batch"; Code[10])
+        {
+            TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Payment Calendar Tmpl"));
+            Caption = 'Payment Calendar Batch';
+            Description = 'NC 51378 AB';
+        }
         field(70002; "Payment Delay Period"; DateFormula)
         {
             Description = 'NC 51373 AB';
             Caption = 'Payment Delay Period';
         }
-
         field(75007; "Payment Request Nos."; Code[10])
         {
             TableRelation = "No. Series";

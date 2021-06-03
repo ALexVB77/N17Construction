@@ -92,4 +92,38 @@ tableextension 80023 "Vendor (Ext)" extends Vendor
 
         // NC 51411 < EP
     end;
+
+    procedure GetLineColor(): Text
+    var
+        VendAgr: Record "Vendor Agreement";
+        CheckLimitDateFilter: Text[250];
+        CompanyInfo: Record "Company Information";
+    begin
+        CompanyInfo.Get;
+        if not CompanyInfo."Use RedFlags in Agreements" then
+            exit('None');
+        VendAgr.Reset();
+        VendAgr.SetRange("Vendor No.", "No.");
+        if not VendAgr.IsEmpty then begin
+            VendAgr.FindSet();
+            repeat
+                CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
+                if CheckLimitDateFilter <> '' then
+                    VendAgr.SetFilter("Check Limit Date Filter", CheckLimitDateFilter)
+                else
+                    VendAgr.SetRange("Check Limit Date Filter");
+                VendAgr.CalcFields("Purch. Original Amt. (LCY)");
+
+                if ((VendAgr."Check Limit Amount (LCY)" - VendAgr."Purch. Original Amt. (LCY)" < 0) or (VendAgr."Check Limit Amount (LCY)" = 0)) and
+                   VendAgr.Active and
+                   (VendAgr."Expire Date" >= WorkDate()) and
+                   not ("Vendor Type" = "Vendor Type"::"Resp. Employee") and
+                   not ("Vendor Type" = "Vendor Type"::"Tax Authority") and
+                   ((VendAgr."Agreement Group" IN ['РАМОЧНЫЙ']) OR (VendAgr."Agreement Group" IN ['РАМОЧНЫЙ ПОЗАКАЗНЫЙ'])) then
+                    exit('Attention');
+            until VendAgr.Next() = 0;
+        end;
+
+        exit('None');
+    end;
 }

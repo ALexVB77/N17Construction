@@ -515,6 +515,13 @@ page 70143 "Forecast List Analisys"
             {
                 Caption = 'Delete short-term planning lines';
                 ApplicationArea = All;
+                trigger OnAction()
+                var
+                    lPrBudEntry: Record "Projects Budget Entry";
+                begin
+                    CurrPage.SetSelectionFilter(lPrBudEntry);
+                    DeleteSTLine(lPrBudEntry);
+                end;
             }
             action(ShowRelatedEntries)
             {
@@ -522,8 +529,10 @@ page 70143 "Forecast List Analisys"
                 ApplicationArea = All;
                 trigger OnAction()
                 begin
-                    Rec.Reset;
-                    Rec.SetRange("Parent Entry", Rec."Parent Entry");
+                    if Rec.GetFilter("Parent Entry") <> '' then
+                        Rec.SetRange("Parent Entry")
+                    else
+                        Rec.SetRange("Parent Entry", Rec."Parent Entry");
                 end;
             }
         }
@@ -658,5 +667,18 @@ page 70143 "Forecast List Analisys"
         LineStyletxt := '';
         if (pPrBudEnt."Parent Entry" = 0) or (pPrBudEnt."Entry No." = pPrBudEnt."Parent Entry") then
             LineStyletxt := 'StandardAccent';
+    end;
+
+    procedure DeleteSTLine(pPrBudEntry: Record "Projects Budget Entry")
+    var
+        lTextErr001: Label 'Deleting long-term entries denied!';
+    begin
+        if pPrBudEntry.GetFilters = '' then
+            exit;
+        if pPrBudEntry.FindSet() then
+            repeat
+                if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
+                    Error(lTextErr001);
+            until pPrBudEntry.Next() = 0;
     end;
 }
