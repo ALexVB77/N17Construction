@@ -3777,12 +3777,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 656867589 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Bank,Prepare,Approve,Page,Post/Print,Line,Account,Check</source>
-          <target>Новый,Процесс,Отчет,Банк,Подготовить,Утвердить,Страница,Учет/печать,Строка,Счет,Платежный документ</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Property PromotedActionCategories</note>
-        </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Approval)</source>
           <target>Счета на оплату (Утверждение)</target>
@@ -5500,8 +5494,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2388192425 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Approve,Invoice,Posting,View,Request Approval,Incoming Document,Release,Navigate</source>
-          <target>Новый,Процесс,Отчет,Утвердить,Счет,Учет,Просмотр,Запросить утверждение,Входящий документ,Выпустить,Навигатор</target>
+          <source>New,Process,Report,Payment Request</source>
+          <target>Новый,Процесс,Отчет,Заявка на Платеж</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Property PromotedActionCategories</note>
         </trans-unit>
@@ -5601,6 +5596,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control Supplier - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 8421549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Request</source>
+          <target>Заявка на платеж</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action PaymentRequest - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2388192425 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <target>Ко&amp;мментарии</target>
@@ -5619,17 +5621,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocAttach - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order</source>
+          <target>Заказ</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocCard - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2388192425 - Action 1574261460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor</source>
           <target>Поставщик</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action VendorCard - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2388192425 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Edit</source>
-          <target>Изменить</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocCard - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2388192425 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documents View</source>
@@ -5904,7 +5907,6 @@
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Act,Function</source>
           <target>Новый,Процесс,Отчет,Акт,Функции</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
         </trans-unit>
@@ -6149,8 +6151,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Dimensions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate</source>
-          <target>Новый,Процесс,Отчет,Утвердить,Выпустить,Учет,Подготовить,Акт,Запросить утверждение,Печать/отправить,Навигатор</target>
+          <source>New,Process,Report,Order,Function,Print</source>
+          <target>Новый,Процесс,Отчет,Заказ,Функции,Печать</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Property PromotedActionCategories</note>
         </trans-unit>
@@ -6274,12 +6276,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Statistics - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Print</source>
-          <target>&amp;Печать</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action &amp;Print - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3790301120 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>F&amp;unctions</source>
           <target>Ф&amp;ункции</target>
@@ -6297,6 +6293,19 @@
           <target>Копировать Документ</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action CopyDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print</source>
+          <target>Печать</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Print</source>
+          <target>&amp;Печать</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action &amp;Print - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3187706650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>

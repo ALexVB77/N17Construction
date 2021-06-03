@@ -493,7 +493,7 @@ page 70260 "Purchase Order Act"
             group("F&unctions")
             {
                 Caption = 'F&unctions';
-                Image = "Action";
+                Image = Action;
                 action(CreatePaymentInvoice)
                 {
                     ApplicationArea = Suite;

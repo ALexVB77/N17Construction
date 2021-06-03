@@ -2,7 +2,7 @@ page 70000 "Purchase Order App"
 {
     Caption = 'Purchase Order App';
     PageType = Document;
-    PromotedActionCategories = 'New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate';
+    PromotedActionCategories = 'New,Process,Report,Order,Function,Print';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -373,7 +373,7 @@ page 70000 "Purchase Order App"
                     Caption = 'Statistics';
                     Image = Statistics;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
                     ShortCutKey = 'F7';
 
@@ -391,7 +391,7 @@ page 70000 "Purchase Order App"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
                     RunObject = Page "Purch. Comment Sheet";
                     RunPageLink = "Document Type" = FIELD("Document Type"),
@@ -404,7 +404,7 @@ page 70000 "Purchase Order App"
                     Caption = 'Attachments';
                     Image = Attach;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -423,7 +423,7 @@ page 70000 "Purchase Order App"
                     Caption = 'Change Log';
                     Image = ChangeLog;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -453,7 +453,8 @@ page 70000 "Purchase Order App"
                     Enabled = "No." <> '';
                     Image = CopyDocument;
                     Promoted = true;
-                    PromotedCategory = Process;
+                    PromotedCategory = Category5;
+                    PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
@@ -469,7 +470,8 @@ page 70000 "Purchase Order App"
                     Enabled = "No." <> '';
                     Image = Archive;
                     Promoted = true;
-                    PromotedCategory = Process;
+                    PromotedCategory = Category5;
+                    PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
@@ -478,19 +480,24 @@ page 70000 "Purchase Order App"
                     end;
                 }
             }
-            action("&Print")
+            group(Print)
             {
-                ApplicationArea = Basic, Suite;
-                Caption = '&Print';
-                Ellipsis = true;
-                Image = Print;
-                Promoted = true;
-                PromotedCategory = Process;
+                Caption = 'Print';
+                action("&Print")
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = '&Print';
+                    Ellipsis = true;
+                    Image = Print;
+                    Promoted = true;
+                    PromotedCategory = Category6;
+                    PromotedIsBig = true;
 
-                trigger OnAction()
-                begin
-                    Message('Нажата кнопка Печать');
-                end;
+                    trigger OnAction()
+                    begin
+                        Message('Нажата кнопка Печать');
+                    end;
+                }
             }
         }
 

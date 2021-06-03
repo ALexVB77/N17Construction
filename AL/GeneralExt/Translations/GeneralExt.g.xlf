@@ -3148,11 +3148,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 656867589 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Bank,Prepare,Approve,Page,Post/Print,Line,Account,Check</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Property PromotedActionCategories</note>
-        </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Approval)</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4584,7 +4579,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Invoice Detail - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2388192425 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Approve,Invoice,Posting,View,Request Approval,Incoming Document,Release,Navigate</source>
+          <source>New,Process,Report,Payment Request</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Property PromotedActionCategories</note>
         </trans-unit>
@@ -4668,6 +4663,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control Supplier - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 8421549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Request</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action PaymentRequest - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2388192425 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4683,15 +4683,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocAttach - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocCard - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2388192425 - Action 1574261460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action VendorCard - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2388192425 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Edit</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocCard - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2388192425 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documents View</source>
@@ -5124,7 +5124,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Action Dimensions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate</source>
+          <source>New,Process,Report,Order,Function,Print</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Property PromotedActionCategories</note>
         </trans-unit>
@@ -5228,11 +5228,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Statistics - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3790301120 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Print</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action &amp;Print - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3790301120 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>F&amp;unctions</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5247,6 +5242,16 @@
           <source>Copy Document</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action CopyDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action &amp;Print - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3187706650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>

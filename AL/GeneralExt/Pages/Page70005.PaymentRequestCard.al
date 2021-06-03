@@ -4,7 +4,7 @@ page 70005 "Payment Request Card"
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Document;
-    PromotedActionCategories = 'New,Process,Report,Approve,Invoice,Posting,View,Request Approval,Incoming Document,Release,Navigate';
+    PromotedActionCategories = 'New,Process,Report,Payment Request';
     RefreshOnActivate = true;
     SourceTable = "Gen. Journal Line";
     layout
@@ -115,94 +115,116 @@ page 70005 "Payment Request Card"
 
     actions
     {
-        area(Processing)
-        {
-            action(DocCard)
-            {
-                ApplicationArea = All;
-                Caption = 'Edit';
-                Image = Edit;
-
-                trigger OnAction()
-                begin
-                    page.Runmodal(Page::"Purchase Order App", Rec);
-                    CurrPage.Update(false);
-                end;
-            }
-            action(ViewAttachDoc)
-            {
-                ApplicationArea = All;
-                Caption = 'Documents View';
-                Enabled = ShowDocEnabled;
-                Image = Export;
-
-                trigger OnAction()
-                var
-                    DocumentAttachment: Record "Document Attachment";
-                    RecRef: RecordRef;
-                begin
-                    PaymentInvHdr.CalcFields("Exists Attachment");
-                    PaymentInvHdr.TestField("Exists Attachment");
-                    DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
-                    DocumentAttachment.SetRange("Document Type", PaymentInvHdr."Document Type");
-                    DocumentAttachment.SetRange("No.", PaymentInvHdr."No.");
-                    DocumentAttachment.FindFirst();
-                    DocumentAttachment.Export(true);
-                end;
-            }
-        }
         area(Navigation)
         {
-            action(VendorCard)
+            group(PaymentRequest)
             {
-                ApplicationArea = Basic, Suite;
-                Caption = 'Vendor';
-                Enabled = VendorCardEnabled;
-                Image = EditLines;
-                RunObject = Codeunit "Gen. Jnl.-Show Card";
-                ShortCutKey = 'Shift+F7';
-            }
-            action(Dimensions)
-            {
-                AccessByPermission = TableData Dimension = R;
-                ApplicationArea = Dimensions;
-                Caption = 'Dimensions';
-                Image = Dimensions;
-                ShortCutKey = 'Alt+D';
+                Caption = 'Payment Request';
+                Image = Payment;
+                action(DocCard)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Order';
+                    Image = Order;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
 
-                trigger OnAction()
-                begin
-                    ShowDimensions();
-                    CurrPage.SaveRecord;
-                end;
-            }
-            action("Co&mments")
-            {
-                ApplicationArea = All;
-                Caption = 'Co&mments';
-                Image = ViewComments;
-                RunObject = Page "Purch. Comment Sheet";
-                RunPageLink = "Document Type" = const(Order),
+                    trigger OnAction()
+                    begin
+                        page.Runmodal(Page::"Purchase Order App", Rec);
+                        CurrPage.Update(false);
+                    end;
+                }
+                action(ViewAttachDoc)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Documents View';
+                    Enabled = ShowDocEnabled;
+                    Image = Export;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    var
+                        DocumentAttachment: Record "Document Attachment";
+                        RecRef: RecordRef;
+                    begin
+                        PaymentInvHdr.CalcFields("Exists Attachment");
+                        PaymentInvHdr.TestField("Exists Attachment");
+                        DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
+                        DocumentAttachment.SetRange("Document Type", PaymentInvHdr."Document Type");
+                        DocumentAttachment.SetRange("No.", PaymentInvHdr."No.");
+                        DocumentAttachment.FindFirst();
+                        DocumentAttachment.Export(true);
+                    end;
+                }
+                action(VendorCard)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Vendor';
+                    Enabled = VendorCardEnabled;
+                    Image = EditLines;
+                    RunObject = Codeunit "Gen. Jnl.-Show Card";
+                    ShortCutKey = 'Shift+F7';
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+
+                }
+                action(Dimensions)
+                {
+                    AccessByPermission = TableData Dimension = R;
+                    ApplicationArea = Dimensions;
+                    Caption = 'Dimensions';
+                    Image = Dimensions;
+                    ShortCutKey = 'Alt+D';
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    begin
+                        ShowDimensions();
+                        CurrPage.SaveRecord;
+                    end;
+                }
+                action("Co&mments")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Co&mments';
+                    Image = ViewComments;
+                    RunObject = Page "Purch. Comment Sheet";
+                    RunPageLink = "Document Type" = const(Order),
                                 "No." = FIELD("Document No."),
                                 "Document Line No." = CONST(0);
-            }
-            action(DocAttach)
-            {
-                ApplicationArea = All;
-                Caption = 'Attachments';
-                Image = Attach;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
 
-                trigger OnAction()
-                var
-                    PurchHeader: Record "Purchase Header";
-                    DocumentAttachmentDetails: Page "Document Attachment Details";
-                    RecRef: RecordRef;
-                begin
-                    PurchHeader.Get(PurchHeader."Document Type"::Order, "Document No.");
-                    RecRef.GetTable(PurchHeader);
-                    DocumentAttachmentDetails.OpenForRecRef(RecRef);
-                    DocumentAttachmentDetails.RunModal;
-                end;
+                }
+                action(DocAttach)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Attachments';
+                    Image = Attach;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    var
+                        PurchHeader: Record "Purchase Header";
+                        DocumentAttachmentDetails: Page "Document Attachment Details";
+                        RecRef: RecordRef;
+                    begin
+                        PurchHeader.Get(PurchHeader."Document Type"::Order, "Document No.");
+                        RecRef.GetTable(PurchHeader);
+                        DocumentAttachmentDetails.OpenForRecRef(RecRef);
+                        DocumentAttachmentDetails.RunModal;
+                    end;
+                }
             }
         }
     }

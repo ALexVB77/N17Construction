@@ -5,7 +5,6 @@ page 70004 "Documents Approval"
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Worksheet;
-    PromotedActionCategories = 'New,Process,Report,Bank,Prepare,Approve,Page,Post/Print,Line,Account,Check';
     RefreshOnActivate = true;
     SourceTable = "Gen. Journal Line";
     UsageCategory = Lists;
