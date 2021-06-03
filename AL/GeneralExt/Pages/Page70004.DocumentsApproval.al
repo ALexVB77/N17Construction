@@ -304,7 +304,6 @@ page 70004 "Documents Approval"
                     SETFILTER("Status App", '<>%1&<>%2', "Status App"::Payment, "Status App"::Cancelled)
                 ELSE
                     SETFILTER("Status App", '<>%1', "Status App"::Payment);
-
             Filter2::Ready:
                 BEGIN
                     SETRANGE("Status App", "Status App"::Payment);
