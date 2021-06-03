@@ -105,7 +105,7 @@ report 50005 "Payment Report"
             MaxCnt := tBA.COUNT;
             IF tBA.FIND('-') THEN BEGIN
                 ShowHeader;
-                FirstFormulaItem := '';
+                FirstFormulaItem := 0;
 
                 REPEAT
                     Wind.UPDATE(1, tBA.Name);
@@ -169,13 +169,13 @@ report 50005 "Payment Report"
         MaxCnt: Integer;
         Ps: Integer;
         tL: integer; //Text[30];
-        OldtL: Text[30];
+        OldtL: integer; //Text[30];
         txtNumberFormat: Text[30];
         tCustomer: Record Customer;
         tVendor: Record Vendor;
         tBankAcc: Record "Bank Account";
         tBA: Record "Bank Account";
-        FirstFormulaItem: Text[30];
+        FirstFormulaItem: integer;//Text[30];
         tCustLedgEntry: Record "Cust. Ledger Entry";
         tVendLedgEntry: Record "Vendor Ledger Entry";
         txtPayment: Text[30];
@@ -190,6 +190,8 @@ report 50005 "Payment Report"
         DimName1: Text[50];
         DimName2: Text[50];
         xlsBufTmp: Record "Excel Buffer Mod" temporary;
+        setWidth: Boolean;
+        width: Integer;
 
     local procedure ShowBorder(Pos: Text[50]; Num: integer; W: integer)
     begin
@@ -209,10 +211,90 @@ report 50005 "Payment Report"
     end;
 
     local procedure ShowHeader()
-
+    var
+        col: Integer;
     begin
+        /*
+                xlWorksheet.Range('A:A').ColumnWidth := 15;
+                xlWorksheet.Range('B:B').ColumnWidth := 11;
+                xlWorksheet.Range('C:C').ColumnWidth := 10;
+                xlWorksheet.Range('D:D').ColumnWidth := 15;
+                xlWorksheet.Range('E:E').ColumnWidth := 15;
+                xlWorksheet.Range('F:F').ColumnWidth := 15;
+                xlWorksheet.Range('G:G').ColumnWidth := 15;
+                xlWorksheet.Range('H:H').ColumnWidth := 15;
+                xlWorksheet.Range('I:I').ColumnWidth := 30.14;
+                xlWorksheet.Range('J:J').ColumnWidth := 40;
+                // SWC1134 DD 15.11.17 >>
+                xlWorksheet.Range('K:K').ColumnWidth := 20;
+                // SWC1134 DD 15.11.17 <<
+                xlWorksheet.Range('L:L').ColumnWidth := 10;
+                xlWorksheet.Range('M:M').ColumnWidth := 15;
+                xlWorksheet.Range('N:N').ColumnWidth := 15;
+                xlWorksheet.Range('O:O').ColumnWidth := 15;
+                xlWorksheet.Range('P:P').ColumnWidth := 15;
+                xlWorksheet.Range('Q:Q').ColumnWidth := 11;
+                xlWorksheet.Range('R:R').ColumnWidth := 15;
+                xlWorksheet.Range('S:S').ColumnWidth := 11;
+                xlWorksheet.Range('T:T').ColumnWidth := 15;
+                xlWorksheet.Range('U:U').ColumnWidth := 11;
+                */
+
+
+
         AddString;
-        EnterCell(tL, 1, 'Банковский счет', true, xlsBufTmp."Cell Type"::Text, false)
+        setWidth := true;
+        width := 15;
+        col := 1;
+        EnterCell(tL, col, 'Банковский счет', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Дата документа', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Дата учета', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Тип документа', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Номер документа', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Номер договора', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Тип контрагента', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Номер контрагента', true, xlsBufTmp."Cell Type"::Text, true);
+        width := 40;
+        col += 1;
+        EnterCell(tL, col, 'Наименование контрагента', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Цель платежа', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Код причины платежа', true, xlsBufTmp."Cell Type"::Text, true);
+        width := 15;
+        col += 1;
+        EnterCell(tL, col, 'Аванс', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Сумма', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Сумма (руб.)', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+
+        width := 0;
+        EnterCell(tL, col, 'Дб. (руб.)', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Кр. (руб.)', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Cost place', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Description', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Cost code', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Description', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, 'Учет', true, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        setWidth := false;
+
+        OldtL := tL; //Запомнить для линовки
         /* 
         AddString;
         xlWorksheet.Range('A' + tL).Value := 'Банковский счет';
@@ -262,10 +344,11 @@ report 50005 "Payment Report"
     var
         txtAType: text[30];
         txtAName: text[250];
+        col: integer;
     begin
-        /*
+
         AddString;
-        IF FirstFormulaItem = '' THEN
+        IF FirstFormulaItem = 0 THEN
             FirstFormulaItem := tL;
 
         txtAType := '';
@@ -303,7 +386,7 @@ report 50005 "Payment Report"
                     ELSE
                         txtAName := tUnPost."Account No.";
                 END;
-            tUnPost."Account Type"::"Bank Account":
+            tUnPost."Account Type"::"Fixed Asset":
                 BEGIN
                     txtAType := txtFA;
                     IF tFA.GET(tUnPost."Account No.") THEN
@@ -323,7 +406,56 @@ report 50005 "Payment Report"
         ELSE
             DimName2 := '';
         // MC IK 20120605 <<
+        //SWC551 KAE 080615 KAE >>
+        IF (txtAName = '') AND //(tPost."Payment Purpose" = '') AND
+            (STRPOS(tPost.Description, 'Аннулирование') <> 0) THEN
+            txtAName := tPost.Description;
+        //SWC551 KAE 080615 KAE <<
 
+        col += 1;
+        EnterCell(tL, col, tUnPost."Bal. Account No.", false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Document Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Posting Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Document Type"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Document No."), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Agreement No."), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(txtAType), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Account No."), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(txtAName), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Payment Purpose"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Reason Code"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(BoolText(tUnPost.Prepayment)), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost.Amount), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Debit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Credit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Shortcut Dimension 1 Code"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(DimName1), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tUnPost."Shortcut Dimension 2 Code"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(DimName2), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(''), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        /*
         xlWorksheet.Range('M' + tL + ':N' + tL).NumberFormat := txtNumberFormat;
         xlWorksheet.Range('A' + tL + ':U' + tL).VerticalAlignment := -4160;
         xlWorksheet.Range('A' + tL + ':U' + tL).HorizontalAlignment := -4131;
@@ -385,10 +517,11 @@ report 50005 "Payment Report"
     var
         txtAType: text[30];
         txtAName: text[250];
+        col: integer;
     begin
-        /*
+
         AddString;
-        IF FirstFormulaItem = '' THEN
+        IF FirstFormulaItem = 0 THEN
             FirstFormulaItem := tL;
 
         txtAType := '';
@@ -452,7 +585,7 @@ report 50005 "Payment Report"
                     ELSE
                         txtAName := tPost."Bal. Account No.";
                 END;
-            tPost."Bal. Account Type"::"Bank Account":
+            tPost."Bal. Account Type"::"Fixed Asset":
                 BEGIN
                     txtAType := txtFA;
                     IF tFA.GET(tPost."Bal. Account No.") THEN
@@ -472,7 +605,55 @@ report 50005 "Payment Report"
         ELSE
             DimName2 := '';
         // MC IK 20120605 <<
+        //SWC551 KAE 080615 KAE >>
+        IF (txtAName = '') AND //(tPost."Payment Purpose" = '') AND
+            (STRPOS(tPost.Description, 'Аннулирование') <> 0) THEN
+            txtAName := tPost.Description;
+        //SWC551 KAE 080615 KAE <<
 
+        col += 1;
+        EnterCell(tL, col, format(tPost."Bank Account No."), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Document Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Posting Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Document Type"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Document No."), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Agreement No."), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(txtAType), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Bal. Account No."), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(txtAName), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost.Description /*tPost."Payment Purpose"*/), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Reason Code"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(txtPayment), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(-tPost.Amount), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(-tPost."Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Debit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Credit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Global Dimension 1 Code"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(DimName1), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(tPost."Global Dimension 2 Code"), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format(DimName2), false, xlsBufTmp."Cell Type"::Text, true);
+        col += 1;
+        EnterCell(tL, col, format('Да'), false, xlsBufTmp."Cell Type"::Text, true);
+        /*
         xlWorksheet.Range('M' + tL + ':P' + tL).NumberFormat := txtNumberFormat;
         xlWorksheet.Range('A' + tL + ':U' + tL).VerticalAlignment := -4160;
         xlWorksheet.Range('A' + tL + ':U' + tL).HorizontalAlignment := -4131;
@@ -528,6 +709,14 @@ report 50005 "Payment Report"
     local procedure ShowFooter()
 
     begin
+        AddString;
+        EnterCell(tL, 3, format('Итого:'), true, xlsBufTmp."Cell Type"::Text, false);
+        IF FirstFormulaItem <> 0 THEN BEGIN
+            EnterCell(7, 13, strsubstno('=SUM(M%1:M%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
+            EnterCell(tl, 14, strsubstno('=SUM(N%1:N%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
+            EnterCell(tl, 15, strsubstno('=SUM(O%1:O%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
+            EnterCell(tl, 16, strsubstno('=SUM(P%1:P%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
+        END;
         /*
         ShowBorders('A' + OldtL + ':U' + tL);
         AddString;
@@ -575,6 +764,19 @@ report 50005 "Payment Report"
     local procedure ShowGlobalHeader()
 
     begin
+        AddString;
+        EnterCell(tl, 4, format('Отчет по платежам'), true, xlsBufTmp."Cell Type"::Text, false);
+        AddString;
+        AddString;
+        EnterCell(tl, 3, format('Тип счета'), true, xlsBufTmp."Cell Type"::Text, false);
+        EnterCell(tl, 4, format(FBA.GETFILTER("Account Type")), true, xlsBufTmp."Cell Type"::Text, false);
+        AddString;
+        EnterCell(tl, 3, format('Номер счета'), true, xlsBufTmp."Cell Type"::Text, false);
+        EnterCell(tl, 4, format(FBA.GETFILTER("No.")), true, xlsBufTmp."Cell Type"::Text, false);
+        AddString;
+        EnterCell(tl, 3, format('Период'), true, xlsBufTmp."Cell Type"::Text, false);
+        EnterCell(tl, 4, 'с ' + FORMAT(StartDate) + ' по ' + FORMAT(EndDate), true, xlsBufTmp."Cell Type"::Text, false);
+        AddString;
         /*
         AddString;
         xlWorksheet.Range('D' + tL).Value := 'Отчет по платежам';
@@ -616,9 +818,14 @@ report 50005 "Payment Report"
         xlsBufTmp.Formula := '';
         xlsBufTmp.Bold := Bold;
         xlsBufTmp."Cell Type" := CellType;
-        xlsBufTmp.SetColumnWidth();
+
+
         if IsBorder then
             xlsBufTmp.SetBorder(true, true, true, true, false, "Border Style"::Thin);
         xlsBufTmp.Insert();
+
+        if (setWidth) then begin
+            xlsBufTmp.SetColumnWidth(xlsBufTmp.xlColID, width);
+        end;
     end;
 }
