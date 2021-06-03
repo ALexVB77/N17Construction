@@ -3177,9 +3177,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
         </trans-unit>
+<<<<<<< HEAD
+        <trans-unit id="Codeunit 1852166102 - Method 831439578" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ImportObject</source>
+          <target>ImportObject</target>
+=======
         <trans-unit id="Codeunit 1852166102 - Method 493242633" size-unit="char" translate="yes" xml:space="preserve">
           <source>ImportObject</source>
           <target>[NAB: NOT TRANSLATED]</target>
+>>>>>>> 309b0306f3f61f513d904d2244f9fb168bc9093b
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Integration API - Method ImportObject</note>
@@ -5426,7 +5432,7 @@
         </trans-unit>
         <trans-unit id="Page 4280988192 - Action 1695989207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Action1210023</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target></target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Investment Agreements - Action Action1210023 - Property Caption</note>
@@ -7413,7 +7419,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
           <source>Open customer card</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Открыть карточку договора</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Agreements (Ext) - Action AgreementCard - Property ToolTip</note>

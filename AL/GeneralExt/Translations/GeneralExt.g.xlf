@@ -2648,7 +2648,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
         </trans-unit>
+<<<<<<< HEAD
+        <trans-unit id="Codeunit 1852166102 - Method 831439578" size-unit="char" translate="yes" xml:space="preserve">
+=======
         <trans-unit id="Codeunit 1852166102 - Method 493242633" size-unit="char" translate="yes" xml:space="preserve">
+>>>>>>> 309b0306f3f61f513d904d2244f9fb168bc9093b
           <source>ImportObject</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Integration API - Method ImportObject</note>

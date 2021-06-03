@@ -8,11 +8,10 @@ codeunit 99930 "CRM Integration API"
     var
         myInt: Integer;
 
-    procedure ImportObject(crmObjects: XmlDocument)
+    procedure ImportObject(crmObjects: Text): Text
     var
         content: Text;
     begin
-        crmObjects.WriteTo(content);
-        Message(content);
+        exit(crmObjects);
     end;
 }
