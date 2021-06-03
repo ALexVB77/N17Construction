@@ -85,7 +85,7 @@ page 70004 "Documents Approval"
 
                     trigger OnAssistEdit()
                     begin
-                        //page.Runmodal(Page::"Purchase Order App", Rec);
+                        page.Runmodal(Page::"Payment Request Card", Rec);
                         CurrPage.Update(false);
                     end;
                 }
@@ -167,18 +167,17 @@ page 70004 "Documents Approval"
 
     actions
     {
-        /*
         area(Processing)
         {
-            action(NewOrderApp)
+            action(ViewDoc)
             {
                 ApplicationArea = Basic, Suite;
-                Caption = 'New';
-                Image = NewDocument;
+                Caption = 'View';
+                Image = View;
 
                 trigger OnAction()
                 begin
-                    PaymentOrderMgt.NewOrderApp(Rec);
+                    page.Runmodal(Page::"Payment Request Card", Rec);
                     CurrPage.Update(false);
                 end;
             }
@@ -195,7 +194,6 @@ page 70004 "Documents Approval"
                 end;
             }
         }
-        */
         area(Navigation)
         {
             action(VendorCard)

@@ -3233,6 +3233,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action VendorCard - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 656867589 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action DocCard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Action 540515815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action ViewDoc - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3226742824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Event Subscriptions</source>
           <note from="Developer" annotates="general" priority="2"></note>
