@@ -1099,6 +1099,7 @@ table 99940 "Excel Buffer Mod"
 
     procedure CreateRange(RangeName: Text[250])
     begin
+
         XlWrkShtWriter.AddRange(
           RangeName,
           GetExcelReference(4) + RangeStartXlCol + GetExcelReference(4) + RangeStartXlRow +
