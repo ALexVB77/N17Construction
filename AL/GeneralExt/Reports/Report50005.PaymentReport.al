@@ -136,6 +136,9 @@ report 50005 "Payment Report"
                 ShowFooter;
             END;
         END;
+        xlsbufTmp.WriteSheet('', CompanyName, UserId);
+        xlsBufTmp.CloseBook();
+        xlsBufTmp.OpenExcel();
 
         Wind.CLOSE;
 
@@ -165,7 +168,7 @@ report 50005 "Payment Report"
         Cnt: Integer;
         MaxCnt: Integer;
         Ps: Integer;
-        tL: Text[30];
+        tL: integer; //Text[30];
         OldtL: Text[30];
         txtNumberFormat: Text[30];
         tCustomer: Record Customer;
@@ -201,12 +204,15 @@ report 50005 "Payment Report"
     local procedure AddString()
     begin
         Ps += 1;
-        tL := FORMAT(Ps);
+        //tL := FORMAT(Ps);
+        tl := ps;
     end;
 
     local procedure ShowHeader()
 
     begin
+        AddString;
+        EnterCell(tL, 1, 'Банковский счет', true, xlsBufTmp."Cell Type"::Text, false)
         /* 
         AddString;
         xlWorksheet.Range('A' + tL).Value := 'Банковский счет';
@@ -610,6 +616,7 @@ report 50005 "Payment Report"
         xlsBufTmp.Formula := '';
         xlsBufTmp.Bold := Bold;
         xlsBufTmp."Cell Type" := CellType;
+        xlsBufTmp.SetColumnWidth();
         if IsBorder then
             xlsBufTmp.SetBorder(true, true, true, true, false, "Border Style"::Thin);
         xlsBufTmp.Insert();
