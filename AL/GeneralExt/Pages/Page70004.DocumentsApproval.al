@@ -173,24 +173,18 @@ page 70004 "Documents Approval"
                 ApplicationArea = Basic, Suite;
                 Caption = 'View';
                 Image = View;
-
-                trigger OnAction()
-                begin
-                    page.Runmodal(Page::"Payment Request Card", Rec);
-                    CurrPage.Update(false);
-                end;
+                RunObject = Page "Payment Request Card";
+                RunPageLink = "Journal Template Name" = FIELD("Journal Template Name"),
+                                "Journal Batch Name" = FIELD("Journal Batch Name"),
+                                "Line No." = FIELD("Line No.");
             }
             action(DocCard)
             {
                 ApplicationArea = All;
                 Caption = 'Edit';
                 Image = Edit;
-
-                trigger OnAction()
-                begin
-                    page.Runmodal(Page::"Purchase Order App", Rec);
-                    CurrPage.Update(false);
-                end;
+                RunObject = Page "Purchase Order App";
+                RunPageLink = "No." = FIELD("Document No.");
             }
         }
         area(Navigation)

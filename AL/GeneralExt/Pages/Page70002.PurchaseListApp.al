@@ -159,12 +159,8 @@ page 70002 "Purchase List App"
                 ApplicationArea = All;
                 Caption = 'Edit';
                 Image = Edit;
-
-                trigger OnAction()
-                begin
-                    page.Runmodal(Page::"Purchase Order App", Rec);
-                    CurrPage.Update(false);
-                end;
+                RunObject = Page "Purchase Order App";
+                RunPageLink = "No." = field("No.");
             }
         }
         area(Navigation)

@@ -129,12 +129,8 @@ page 70005 "Payment Request Card"
                     Promoted = true;
                     PromotedCategory = Category4;
                     PromotedIsBig = true;
-
-                    trigger OnAction()
-                    begin
-                        page.Runmodal(Page::"Purchase Order App", Rec);
-                        CurrPage.Update(false);
-                    end;
+                    RunObject = Page "Purchase Order App";
+                    RunPageLink = "No." = field("Document No.");
                 }
                 action(ViewAttachDoc)
                 {
