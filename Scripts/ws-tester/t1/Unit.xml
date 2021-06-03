@@ -1,0 +1,320 @@
+<ns0:NCCIntegrations xmlns:ct="http://NCC.Corporate/Types/2014/03" xmlns:ns1="http://NCC.Corporate/Routing/2014/03" xmlns:ns0="http://NCC.Construction.Sales/Objects/2014/03" xmlns:co="http://NCC.Corporate/Objects/2014/03" xmlns:ci="http://NCC.Corporate/Integration/2014/03" xmlns:cnt="http://NCC.Construction.Sales/Types/2014/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Publisher xsi:type="ct:IntegrationBaseType">
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>2021-02-04T02:05:56Z</TimeStamp>
+    <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+    <IntegrationObjectID>fd42d88b-f49b-4469-bff1-df7232f8b1fb</IntegrationObjectID>
+    <IntegrationStatus xsi:nil="true" />
+    <IntegrationOperation>Update</IntegrationOperation>
+    <IntegrationInformation>Unit</IntegrationInformation>
+  </Publisher>
+  <Subscribers>
+    <Subscriber xsi:type="ct:IntegrationBaseType">
+      <Name>NCC_Web</Name>
+      <IntegrationID>1596</IntegrationID>
+      <BusinessUnit>RU</BusinessUnit>
+      <TimeStamp>2021-02-04T02:06:00.0047545Z</TimeStamp>
+      <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+      <IntegrationObjectID>fd42d88b-f49b-4469-bff1-df7232f8b1fb</IntegrationObjectID>
+      <IntegrationStatus>778210001</IntegrationStatus>
+      <IntegrationInformation xsi:nil="true" />
+    </Subscriber>
+  </Subscribers>
+  <MessageRouting>
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>0001-01-01T00:00:00</TimeStamp>
+    <PublisherInstance xsi:nil="true" />
+    <IntegrationObjectID>fd42d88b-f49b-4469-bff1-df7232f8b1fb</IntegrationObjectID>
+    <IntegrationStatus xsi:nil="true" />
+    <IntegrationInformation xsi:nil="true" />
+    <SubscribingSystem>
+      <WEB>None</WEB>
+      <NAV>Create</NAV>
+    </SubscribingSystem>
+  </MessageRouting>
+  <NCCObjects>
+    <NCCObject>
+      <Publisher xsi:type="ct:IntegrationBaseType">
+        <Name>HomeCRM</Name>
+        <IntegrationID>1596</IntegrationID>
+        <BusinessUnit>RU</BusinessUnit>
+        <TimeStamp>2021-02-04T02:05:56Z</TimeStamp>
+        <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+        <IntegrationObjectID xsi:nil="true" />
+        <IntegrationStatus xsi:nil="true" />
+        <IntegrationOperation>Update</IntegrationOperation>
+        <IntegrationInformation xsi:nil="true" />
+      </Publisher>
+      <Subscribers />
+      <Operation>Update</Operation>
+      <ObjectState>Active</ObjectState>
+      <Unit>
+        <BaseData>
+          <ObjectID>fd42d88b-f49b-4469-bff1-df7232f8b1fb</ObjectID>
+          <ObjectParentID>d07a99be-2741-4b12-8255-92725f1d6c06</ObjectParentID>
+          <Name>TN_056</Name>
+          <ParentName>Meltzer Håll General Development</ParentName>
+          <ObjectStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName>Unitwithheld</KeyName>
+            <ObjectValue>778210005</ObjectValue>
+          </ObjectStatus>
+          <ObjectType xsi:nil="true" />
+          <ObjectSourceID>LVU0112502</ObjectSourceID>
+          <ObjectSourceParentID>PRJ0001340</ObjectSourceParentID>
+          <CreatedDate>2017-03-29T11:56:48Z</CreatedDate>
+          <CreatedByID>f6ccfaa4-40b8-e411-bf08-005056b6017d</CreatedByID>
+          <ChangedDate>2021-02-04T02:05:56Z</ChangedDate>
+          <ChangedByID>08f53a19-75e6-e311-b351-005056b60181</ChangedByID>
+          <ObjectPath xsi:nil="true" />
+          <ObjectURL xsi:nil="true" />
+          <IsActive>true</IsActive>
+          <Description xsi:nil="true" />
+          <ReferenceID xsi:nil="true" />
+          <ERPID>RU28010-000D</ERPID>
+          <ERPCompany xsi:nil="true" />
+          <CreatedByEmail xsi:nil="true" />
+          <CreatedByPhone xsi:nil="true" />
+          <CurrencyCode>RUB</CurrencyCode>
+          <MarketStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName>Planned</KeyName>
+            <ObjectValue>778210000</ObjectValue>
+          </MarketStatus>
+          <InternalName xsi:nil="true" />
+          <SalesStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName>Withheld</KeyName>
+            <ObjectValue>778210006</ObjectValue>
+          </SalesStatus>
+          <ReadyToVacateText xsi:nil="true" />
+          <UnitType>LU</UnitType>
+          <Unit_ID>LVU0112502</Unit_ID>
+          <ApartmentNumber xsi:nil="true" />
+          <BlockNumber xsi:nil="true" />
+          <StairCaseNumber xsi:nil="true" />
+          <SalesSection xsi:nil="true" />
+          <SegmentClassification xsi:nil="true" />
+          <ContactID xsi:nil="true" />
+          <ShareNumber />
+        </BaseData>
+        <ObjectAttributes>
+          <VIP>false</VIP>
+          <Attributes>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Balcony</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Barrierfree</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Basement</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Garden</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Roofterrace</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Terrace</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>BalconyInfo</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Elevator</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>FloorLevel</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>HeatingInfo</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Proom</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>TotalFloors</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>TVSupplierInfo</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Parkingtype</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Holidayhome</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>RoomType</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>MigrationID</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>Sauna</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>AdditionalArea</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>ColourCoding</KeyName>
+              <ObjectValue>Red</ObjectValue>
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>NoteNoShowing</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>ShowHouseOpeningHours</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+            <Attribute>
+              <DisplayName xsi:nil="true" />
+              <KeyName>MigrationID</KeyName>
+              <ObjectValue xsi:nil="true" />
+            </Attribute>
+          </Attributes>
+          <TypeOfBuildings>
+            <TypeOfBuilding>
+              <DisplayName xsi:nil="true" />
+              <KeyName>BlockOfFlats</KeyName>
+              <ObjectValue>778210003</ObjectValue>
+            </TypeOfBuilding>
+          </TypeOfBuildings>
+          <SubTypeOfBuilding>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </SubTypeOfBuilding>
+          <TypeOfContract>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </TypeOfContract>
+          <TypeOfRevenueRec xsi:nil="true" />
+          <SearchTag>NCC dsfkjng</SearchTag>
+        </ObjectAttributes>
+        <FinanceData>
+          <UnitPrice>
+            <InitialValue>5454545.0000</InitialValue>
+            <ForecastValue>5454545.0000</ForecastValue>
+          </UnitPrice>
+          <ExtraOrderAmount />
+          <LoanAmount xsi:type="cnt:UnitPriceType" />
+          <DiscountPriceM2>0.0000</DiscountPriceM2>
+        </FinanceData>
+        <Measurements>
+          <UnitAreaM2 xsi:type="cnt:UnitPriceType" />
+          <LivingAreaM2 xsi:type="cnt:UnitPriceType" />
+          <UnitLandLotAreaM2 xsi:type="cnt:UnitPriceType" />
+          <UnitTotalAreaM2 xsi:type="cnt:UnitPriceType" />
+        </Measurements>
+        <KeyDates>
+          <BuildingStart />
+          <BuildingComplete>
+            <ExpectedDate>2017-09-29T21:00:00Z</ExpectedDate>
+            <ActualDate>2017-09-29T21:00:00Z</ActualDate>
+          </BuildingComplete>
+          <SalesStart />
+          <Sales>
+            <DefaultDate>2017-09-29T21:00:00Z</DefaultDate>
+            <InitialDate>2017-09-29T21:00:00Z</InitialDate>
+            <ExpectedDate>2017-09-29T21:00:00Z</ExpectedDate>
+            <DateLocked>false</DateLocked>
+          </Sales>
+          <HandedOver>
+            <DefaultDate>2017-09-29T21:00:00Z</DefaultDate>
+            <InitialDate>2017-09-29T21:00:00Z</InitialDate>
+            <DateLocked>false</DateLocked>
+          </HandedOver>
+          <Registration />
+          <Receival />
+        </KeyDates>
+        <GISData>
+          <Area xsi:nil="true" />
+          <CountryCode>RU</CountryCode>
+          <Region1>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </Region1>
+          <Region2>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </Region2>
+          <GeoLevel1 />
+          <GeoLevel2 />
+          <GeoLevel3 />
+        </GISData>
+        <Integrations>
+          <Integration xsi:type="ct:IntegrationBaseType">
+            <Name>NCC_Web</Name>
+            <IntegrationID>1596</IntegrationID>
+            <BusinessUnit>RU</BusinessUnit>
+            <TimeStamp>2021-02-04T02:06:00.0047545Z</TimeStamp>
+            <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+            <IntegrationObjectID>fd42d88b-f49b-4469-bff1-df7232f8b1fb</IntegrationObjectID>
+            <IntegrationStatus>778210001</IntegrationStatus>
+            <IntegrationInformation xsi:nil="true" />
+          </Integration>
+        </Integrations>
+        <Documents />
+        <Images />
+        <Addresses />
+        <Campaigns />
+        <TeamResponsibles />
+        <SalesDescriptions />
+        <Buyers />
+        <ContractList />
+      </Unit>
+    </NCCObject>
+  </NCCObjects>
+</ns0:NCCIntegrations>

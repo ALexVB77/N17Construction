@@ -1,0 +1,301 @@
+<ns0:NCCIntegrations xmlns:ct="http://NCC.Corporate/Types/2014/03" xmlns:ns1="http://NCC.Corporate/Routing/2014/03" xmlns:ns0="http://NCC.Construction.Sales/Objects/2014/03" xmlns:co="http://NCC.Corporate/Objects/2014/03" xmlns:ci="http://NCC.Corporate/Integration/2014/03" xmlns:cnt="http://NCC.Construction.Sales/Types/2014/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Publisher xsi:type="ct:IntegrationBaseType">
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>2021-02-03T12:26:58Z</TimeStamp>
+    <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+    <IntegrationStatus xsi:nil="true" />
+    <IntegrationOperation>Update</IntegrationOperation>
+    <IntegrationInformation>Contract</IntegrationInformation>
+  </Publisher>
+  <Subscribers>
+    <Subscriber xsi:type="ct:IntegrationBaseType">
+      <Name>This node is cretaed for NAV Routing</Name>
+      <IntegrationID />
+      <TimeStamp>2021-02-03T13:27:00.732Z</TimeStamp>
+    </Subscriber>
+  </Subscribers>
+  <MessageRouting>
+    <Name>HomeCRM</Name>
+    <IntegrationID>1596</IntegrationID>
+    <BusinessUnit>RU</BusinessUnit>
+    <TimeStamp>0001-01-01T00:00:00</TimeStamp>
+    <PublisherInstance xsi:nil="true" />
+    <IntegrationStatus xsi:nil="true" />
+    <SubscribingSystem>
+      <NAV>Create</NAV>
+    </SubscribingSystem>
+  </MessageRouting>
+  <NCCObjects>
+    <NCCObject>
+      <Publisher xsi:type="ct:IntegrationBaseType">
+        <Name>HomeCRM</Name>
+        <IntegrationID>1596</IntegrationID>
+        <BusinessUnit>RU</BusinessUnit>
+        <TimeStamp>2021-02-03T12:26:58Z</TimeStamp>
+        <PublisherInstance>HOMECRMPRODRU</PublisherInstance>
+        <IntegrationObjectID xsi:nil="true" />
+        <IntegrationStatus xsi:nil="true" />
+        <IntegrationOperation>Update</IntegrationOperation>
+        <IntegrationInformation xsi:nil="true" />
+      </Publisher>
+      <Subscribers />
+      <Operation>Update</Operation>
+      <ObjectState>Active</ObjectState>
+      <Contract>
+        <BaseData>
+          <ObjectID>1032f6b6-b25b-eb11-a812-000d3a4a7462</ObjectID>
+          <ObjectParentID>60b2528a-087b-4315-a79a-179184d8e4ce</ObjectParentID>
+          <Name>ДДУ/28012-105/00011693/НК</Name>
+          <ParentName>NLU0052588</ParentName>
+          <ObjectStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName>Submittedforregistration_RU</KeyName>
+            <ObjectValue>778210009</ObjectValue>
+          </ObjectStatus>
+          <ObjectType>Investmentcontract</ObjectType>
+          <ObjectSourceID xsi:nil="true" />
+          <ObjectSourceParentID xsi:nil="true" />
+          <CreatedDate>2021-01-21T06:34:40Z</CreatedDate>
+          <CreatedByID>ae7124e9-d5bf-e711-80e3-001dd8b72ec3</CreatedByID>
+          <ChangedDate>2021-02-03T12:26:58Z</ChangedDate>
+          <ChangedByID>2c9c51e6-e68f-e811-80ec-001dd8b72ec3</ChangedByID>
+          <ObjectPath xsi:nil="true" />
+          <ObjectURL xsi:nil="true" />
+          <IsActive>true</IsActive>
+          <Description xsi:nil="true" />
+          <ReferenceID xsi:nil="true" />
+          <OwnerID>Anastasia.Mishina@bonava.com</OwnerID>
+          <ObjectNumber>ДДУ/28012-105/00011693/НК</ObjectNumber>
+          <CancelStatus>
+            <DisplayName xsi:nil="true" />
+            <KeyName xsi:nil="true" />
+            <ObjectValue xsi:nil="true" />
+          </CancelStatus>
+          <UnitID xsi:nil="true" />
+          <BuyerID xsi:nil="true" />
+          <ContractID xsi:nil="true" />
+          <ProjectERPID>RU28012-105D</ProjectERPID>
+        </BaseData>
+        <FinanceData>
+          <MarketPrice>549000.0000</MarketPrice>
+          <ContractPrice>549000.0000</ContractPrice>
+        </FinanceData>
+        <KeyDates>
+          <BuildingCompletionDate>2021-07-01T09:00:00Z</BuildingCompletionDate>
+        </KeyDates>
+        <Buyers>
+          <Buyer>
+            <BaseData>
+              <ObjectID>cfbacf19-1060-eb11-a812-0022487f8b4d</ObjectID>
+              <ObjectParentID xsi:nil="true" />
+              <Name>Никита Викторович Eфимов</Name>
+              <ParentName xsi:nil="true" />
+              <ObjectStatus>
+                <DisplayName xsi:nil="true" />
+                <KeyName xsi:nil="true" />
+                <ObjectValue xsi:nil="true" />
+              </ObjectStatus>
+              <ObjectType xsi:nil="true" />
+              <ObjectSourceID xsi:nil="true" />
+              <ObjectSourceParentID xsi:nil="true" />
+              <CreatedByID xsi:nil="true" />
+              <ChangedByID xsi:nil="true" />
+              <ObjectPath xsi:nil="true" />
+              <ObjectURL xsi:nil="true" />
+              <IsActive>true</IsActive>
+              <Description xsi:nil="true" />
+              <ReferenceID xsi:nil="true" />
+              <ContractID xsi:nil="true" />
+              <ContactID xsi:nil="true" />
+            </BaseData>
+            <KeyDates />
+            <Contact>
+              <BaseData xsi:type="cnt:ContractBaseType">
+                <ObjectID />
+                <ObjectParentID xsi:nil="true" />
+                <Name />
+                <ParentName xsi:nil="true" />
+                <ObjectStatus>
+                  <DisplayName xsi:nil="true" />
+                  <KeyName xsi:nil="true" />
+                  <ObjectValue xsi:nil="true" />
+                </ObjectStatus>
+                <ObjectType xsi:nil="true" />
+                <ObjectSourceID xsi:nil="true" />
+                <ObjectSourceParentID xsi:nil="true" />
+                <CreatedByID xsi:nil="true" />
+                <ChangedByID xsi:nil="true" />
+                <ObjectPath xsi:nil="true" />
+                <ObjectURL xsi:nil="true" />
+                <Description xsi:nil="true" />
+                <ReferenceID xsi:nil="true" />
+              </BaseData>
+              <PersonData>
+                <Salutation xsi:nil="true" />
+                <JobTitle xsi:nil="true" />
+                <FirstName xsi:nil="true" />
+                <MiddleName xsi:nil="true" />
+                <LastName xsi:nil="true" />
+                <SocialSecurityNumber xsi:nil="true" />
+                <Password xsi:nil="true" />
+                <CompanyName xsi:nil="true" />
+                <CompanyDivision xsi:nil="true" />
+              </PersonData>
+              <PhysicalAddresses />
+              <ElectronicAddresses />
+              <ObjectAttributes xsi:type="cnt:ObjectAttributesMaster">
+                <Attributes />
+                <Attributes />
+              </ObjectAttributes>
+              <Documents />
+            </Contact>
+          </Buyer>
+          <Buyer>
+            <BaseData>
+              <ObjectID>b923f0a4-1060-eb11-a812-0022487f8b4d</ObjectID>
+              <ObjectParentID xsi:nil="true" />
+              <Name>Любовь Николаевна Ефимова</Name>
+              <ParentName xsi:nil="true" />
+              <ObjectStatus>
+                <DisplayName xsi:nil="true" />
+                <KeyName xsi:nil="true" />
+                <ObjectValue xsi:nil="true" />
+              </ObjectStatus>
+              <ObjectType xsi:nil="true" />
+              <ObjectSourceID xsi:nil="true" />
+              <ObjectSourceParentID xsi:nil="true" />
+              <CreatedByID xsi:nil="true" />
+              <ChangedByID xsi:nil="true" />
+              <ObjectPath xsi:nil="true" />
+              <ObjectURL xsi:nil="true" />
+              <IsActive>true</IsActive>
+              <Description xsi:nil="true" />
+              <ReferenceID xsi:nil="true" />
+              <ContractID xsi:nil="true" />
+              <ContactID xsi:nil="true" />
+            </BaseData>
+            <KeyDates />
+            <Contact>
+              <BaseData xsi:type="cnt:ContractBaseType">
+                <ObjectID />
+                <ObjectParentID xsi:nil="true" />
+                <Name />
+                <ParentName xsi:nil="true" />
+                <ObjectStatus>
+                  <DisplayName xsi:nil="true" />
+                  <KeyName xsi:nil="true" />
+                  <ObjectValue xsi:nil="true" />
+                </ObjectStatus>
+                <ObjectType xsi:nil="true" />
+                <ObjectSourceID xsi:nil="true" />
+                <ObjectSourceParentID xsi:nil="true" />
+                <CreatedByID xsi:nil="true" />
+                <ChangedByID xsi:nil="true" />
+                <ObjectPath xsi:nil="true" />
+                <ObjectURL xsi:nil="true" />
+                <Description xsi:nil="true" />
+                <ReferenceID xsi:nil="true" />
+              </BaseData>
+              <PersonData>
+                <Salutation xsi:nil="true" />
+                <JobTitle xsi:nil="true" />
+                <FirstName xsi:nil="true" />
+                <MiddleName xsi:nil="true" />
+                <LastName xsi:nil="true" />
+                <SocialSecurityNumber xsi:nil="true" />
+                <Password xsi:nil="true" />
+                <CompanyName xsi:nil="true" />
+                <CompanyDivision xsi:nil="true" />
+              </PersonData>
+              <PhysicalAddresses />
+              <ElectronicAddresses />
+              <ObjectAttributes xsi:type="cnt:ObjectAttributesMaster">
+                <Attributes />
+                <Attributes />
+              </ObjectAttributes>
+              <Documents />
+            </Contact>
+          </Buyer>
+        </Buyers>
+        <PaymentPlans>
+          <PaymentPlan>
+            <BaseData>
+              <ObjectID>cc7f8b20-1060-eb11-a812-0022487f8b4d</ObjectID>
+              <ObjectParentID xsi:nil="true" />
+              <Name>Никита Викторович Eфимов - 2021-01-26</Name>
+              <ParentName xsi:nil="true" />
+              <ObjectStatus>
+                <DisplayName xsi:nil="true" />
+                <KeyName xsi:nil="true" />
+                <ObjectValue xsi:nil="true" />
+              </ObjectStatus>
+              <ObjectType xsi:nil="true" />
+              <ObjectSourceID xsi:nil="true" />
+              <ObjectSourceParentID xsi:nil="true" />
+              <CreatedByID xsi:nil="true" />
+              <ChangedByID xsi:nil="true" />
+              <ObjectPath xsi:nil="true" />
+              <ObjectURL xsi:nil="true" />
+              <IsActive>true</IsActive>
+              <Description xsi:nil="true" />
+              <ReferenceID xsi:nil="true" />
+              <OwnerID xsi:nil="true" />
+              <ObjectNumber xsi:nil="true" />
+              <CancelStatus>
+                <DisplayName xsi:nil="true" />
+                <KeyName xsi:nil="true" />
+                <ObjectValue xsi:nil="true" />
+              </CancelStatus>
+              <UnitID xsi:nil="true" />
+              <BuyerID xsi:nil="true" />
+              <ContractID xsi:nil="true" />
+              <ProjectERPID xsi:nil="true" />
+            </BaseData>
+            <FinanceData />
+            <KeyDates />
+            <PaymentsList />
+          </PaymentPlan>
+          <PaymentPlan>
+            <BaseData>
+              <ObjectID>d8caeaaa-1060-eb11-a812-0022487f8b4d</ObjectID>
+              <ObjectParentID xsi:nil="true" />
+              <Name>Любовь Николаевна Ефимова - 2021-01-26</Name>
+              <ParentName xsi:nil="true" />
+              <ObjectStatus>
+                <DisplayName xsi:nil="true" />
+                <KeyName xsi:nil="true" />
+                <ObjectValue xsi:nil="true" />
+              </ObjectStatus>
+              <ObjectType xsi:nil="true" />
+              <ObjectSourceID xsi:nil="true" />
+              <ObjectSourceParentID xsi:nil="true" />
+              <CreatedByID xsi:nil="true" />
+              <ChangedByID xsi:nil="true" />
+              <ObjectPath xsi:nil="true" />
+              <ObjectURL xsi:nil="true" />
+              <IsActive>true</IsActive>
+              <Description xsi:nil="true" />
+              <ReferenceID xsi:nil="true" />
+              <OwnerID xsi:nil="true" />
+              <ObjectNumber xsi:nil="true" />
+              <CancelStatus>
+                <DisplayName xsi:nil="true" />
+                <KeyName xsi:nil="true" />
+                <ObjectValue xsi:nil="true" />
+              </CancelStatus>
+              <UnitID xsi:nil="true" />
+              <BuyerID xsi:nil="true" />
+              <ContractID xsi:nil="true" />
+              <ProjectERPID xsi:nil="true" />
+            </BaseData>
+            <FinanceData />
+            <KeyDates />
+            <PaymentsList />
+          </PaymentPlan>
+        </PaymentPlans>
+      </Contract>
+    </NCCObject>
+  </NCCObjects>
+</ns0:NCCIntegrations>

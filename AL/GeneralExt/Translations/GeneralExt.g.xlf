@@ -3393,6 +3393,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Method DeleteSTLine - NamedType lTextErr001</note>
         </trans-unit>
+        <trans-unit id="Page 2269272589 - Method 877441836 - NamedType 4177230530" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry %1 is linked to payment document %2. Deleting denied!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Method DeleteSTLine - NamedType lTextErr002</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Control 1820841161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Filters</source>
           <note from="Developer" annotates="general" priority="2"></note>

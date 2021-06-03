@@ -671,7 +671,9 @@ page 70143 "Forecast List Analisys"
 
     procedure DeleteSTLine(pPrBudEntry: Record "Projects Budget Entry")
     var
+        lPrBudEntry: Record "Projects Budget Entry";
         lTextErr001: Label 'Deleting long-term entries denied!';
+        lTextErr002: Label 'Entry %1 is linked to payment document %2. Deleting denied!';
     begin
         if pPrBudEntry.GetFilters = '' then
             exit;
@@ -679,6 +681,13 @@ page 70143 "Forecast List Analisys"
             repeat
                 if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
                     Error(lTextErr001);
+                pPrBudEntry.CalcFields("Payment Doc. No.");
+                if pPrBudEntry."Payment Doc. No." <> '' then
+                    Error(lTextErr002);
+                lPrBudEntry.Get(pPrBudEntry."Parent Entry");
+                lPrBudEntry."Without VAT (LCY)" := lPrBudEntry."Without VAT (LCY)" + pPrBudEntry."Without VAT (LCY)";
+                lPrBudEntry.Modify(false);
+                pPrBudEntry.Delete(true);
             until pPrBudEntry.Next() = 0;
     end;
 }
