@@ -202,6 +202,7 @@ page 70004 "Documents Approval"
             {
                 ApplicationArea = Basic, Suite;
                 Caption = 'Vendor';
+                Enabled = VendorCardEnabled;
                 Image = EditLines;
                 Promoted = true;
                 PromotedCategory = Category11;
@@ -279,6 +280,7 @@ page 70004 "Documents Approval"
     begin
         if not PaymentInvoiceHeader.Get(PaymentInvoiceHeader."Document Type"::Order, "Document No.") then
             PaymentInvoiceHeader.Init();
+        VendorCardEnabled := (Rec."Account Type" = Rec."Account Type"::Vendor) AND (Rec."Account No." <> '')
     end;
 
     var
@@ -291,6 +293,7 @@ page 70004 "Documents Approval"
         Filter2: option All,InProc,Ready,Pay,Problem;
         SortType: option DocNo,PostDate,Vendor,StatusApp,UserProc;
         ShowCancel: Boolean;
+        VendorCardEnabled: Boolean;
 
 
     local procedure SetRecFilters()

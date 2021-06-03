@@ -4573,6 +4573,121 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Invoice Detail - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2388192425 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Approve,Invoice,Posting,View,Request Approval,Incoming Document,Release,Navigate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Property PromotedActionCategories</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Request Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 1692197337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control Amounts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 1909429794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TOTAL INVOICE AMOUNT, RUB</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control InvoiceAmtIncVAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 2761091966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TOTAL VAT AMOUNT, RUB</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control InvoiceVATAmt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 2913119229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>APPROVED</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control Approved - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 3384455329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DATE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control ApprDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 2275261038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAME</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control ApprUser - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 2638965409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CHECKED</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control Checked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 3885869225 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DATE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control CHDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 583270006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAME</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control CHUser - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 389783846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CONTRACT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control Contract - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 1402313444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DUE DATE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control DueDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 1966382748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INVOICE No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control InvoiceNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 681009761 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PURCHASE ORDER No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control OrderNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 517091965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RECEIVED (DATE)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control ReceivedDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Control 55222080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUPPLIER</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Control Supplier - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 2173385693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 1062429549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocAttach - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 1574261460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action VendorCard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocCard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2388192425 - Action 3249535890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents View</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action ViewAttachDoc - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5182,6 +5297,11 @@
           <source>Dimensions</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 51120936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Req Subform - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
@@ -6887,6 +7007,11 @@
           <source>Exists Attachment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Exists Attachment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 2913158084 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>External Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field External Agreement No. (Calc) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 678730876 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Invoice Amount Incl. VAT</source>
