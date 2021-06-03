@@ -5496,7 +5496,6 @@
         <trans-unit id="Page 2388192425 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Payment Request</source>
           <target>Новый,Процесс,Отчет,Заявка на Платеж</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Property PromotedActionCategories</note>
         </trans-unit>
@@ -5599,7 +5598,6 @@
         <trans-unit id="Page 2388192425 - Action 8421549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Request</source>
           <target>Заявка на платеж</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action PaymentRequest - Property Caption</note>
         </trans-unit>
@@ -5624,7 +5622,6 @@
         <trans-unit id="Page 2388192425 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order</source>
           <target>Заказ</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action DocCard - Property Caption</note>
         </trans-unit>
@@ -5705,6 +5702,13 @@
           <target>Вложения</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Action DocAttach - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2655527564 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target>Изменить</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Action DocCard - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2655527564 - Action 3694299429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Link Payment Invoice</source>
@@ -6297,7 +6301,6 @@
         <trans-unit id="Page 3790301120 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Print</source>
           <target>Печать</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Action Print - Property Caption</note>
         </trans-unit>

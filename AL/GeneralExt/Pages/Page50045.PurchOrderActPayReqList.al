@@ -183,6 +183,18 @@ page 50045 "Purch. Order Act PayReq. List"
     {
         area(Processing)
         {
+            action(DocCard)
+            {
+                ApplicationArea = All;
+                Caption = 'Edit';
+                Image = Edit;
+
+                trigger OnAction()
+                begin
+                    page.Runmodal(Page::"Purchase Order App", Rec);
+                    CurrPage.Update(false);
+                end;
+            }
             action(LinkPaymentInvoice)
             {
                 ApplicationArea = All;

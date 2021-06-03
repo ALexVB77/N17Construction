@@ -4753,6 +4753,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Action DocAttach - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2655527564 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purch. Order Act PayReq. List - Action DocCard - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2655527564 - Action 3694299429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Link Payment Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>
