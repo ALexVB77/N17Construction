@@ -2,7 +2,7 @@ page 70260 "Purchase Order Act"
 {
     Caption = 'Purchase Order Act';
     PageType = Document;
-    PromotedActionCategories = 'New,Process,Report,Approve,Release,Posting,Prepare,Act,Request Approval,Print/Send,Navigate';
+    PromotedActionCategories = 'New,Process,Report,Act,Function';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -361,13 +361,37 @@ page 70260 "Purchase Order Act"
             {
                 Caption = 'O&rder Act';
                 Image = "Order";
+                action(ViewAttachDoc)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Documents View';
+                    Enabled = ShowDocEnabled;
+                    Image = Export;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    var
+                        DocumentAttachment: Record "Document Attachment";
+                        RecRef: RecordRef;
+                    begin
+                        CalcFields("Exists Attachment");
+                        TestField("Exists Attachment");
+                        DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
+                        DocumentAttachment.SetRange("Document Type", rec."Document Type");
+                        DocumentAttachment.SetRange("No.", Rec."No.");
+                        DocumentAttachment.FindFirst();
+                        DocumentAttachment.Export(true);
+                    end;
+                }
                 action(Statistics)
                 {
                     ApplicationArea = All;
                     Caption = 'Statistics';
                     Image = Statistics;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
                     ShortCutKey = 'F7';
 
@@ -387,7 +411,7 @@ page 70260 "Purchase Order Act"
                     Enabled = "No." <> '';
                     Image = Dimensions;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
                     ShortCutKey = 'Alt+D';
 
@@ -403,7 +427,7 @@ page 70260 "Purchase Order Act"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
                     RunObject = Page "Purch. Comment Sheet";
                     RunPageLink = "Document Type" = FIELD("Document Type"),
@@ -416,7 +440,7 @@ page 70260 "Purchase Order Act"
                     Caption = 'Attachments';
                     Image = Attach;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -435,7 +459,7 @@ page 70260 "Purchase Order Act"
                     Caption = 'Change Log';
                     Image = ChangeLog;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -455,7 +479,7 @@ page 70260 "Purchase Order Act"
                     Caption = 'Payment Invoices';
                     Image = Payment;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category4;
                     PromotedIsBig = true;
                     RunObject = Page "Purch. Order Act PayReq. List";
                     RunPageLink = "Document Type" = CONST(Order),
@@ -477,7 +501,8 @@ page 70260 "Purchase Order Act"
                     Enabled = "No." <> '';
                     Image = CreateDocument;
                     Promoted = true;
-                    PromotedCategory = Process;
+                    PromotedCategory = Category5;
+                    PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
@@ -495,7 +520,8 @@ page 70260 "Purchase Order Act"
                     Enabled = "No." <> '';
                     Image = CopyDocument;
                     Promoted = true;
-                    PromotedCategory = Process;
+                    PromotedCategory = Category5;
+                    PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
@@ -510,7 +536,8 @@ page 70260 "Purchase Order Act"
                     Enabled = "No." <> '';
                     Image = Archive;
                     Promoted = true;
-                    PromotedCategory = Process;
+                    PromotedCategory = Category5;
+                    PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
@@ -518,14 +545,13 @@ page 70260 "Purchase Order Act"
                             CurrPage.Close();
                     end;
                 }
-
                 action(EnterBasedOn)
                 {
                     ApplicationArea = All;
                     Caption = 'Enter Based On';
                     Image = Filed;
                     Promoted = true;
-                    PromotedCategory = Process;
+                    PromotedCategory = Category5;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -534,30 +560,7 @@ page 70260 "Purchase Order Act"
                     end;
                 }
             }
-            action(ViewAttachDoc)
-            {
-                ApplicationArea = All;
-                Caption = 'Documents View';
-                Enabled = ShowDocEnabled;
-                Image = Export;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
 
-                trigger OnAction()
-                var
-                    DocumentAttachment: Record "Document Attachment";
-                    RecRef: RecordRef;
-                begin
-                    CalcFields("Exists Attachment");
-                    TestField("Exists Attachment");
-                    DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
-                    DocumentAttachment.SetRange("Document Type", rec."Document Type");
-                    DocumentAttachment.SetRange("No.", Rec."No.");
-                    DocumentAttachment.FindFirst();
-                    DocumentAttachment.Export(true);
-                end;
-            }
         }
     }
 
