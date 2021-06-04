@@ -1,6 +1,7 @@
 report 50005 "Payment Report"
 {
     UsageCategory = ReportsAndAnalysis;
+    Caption = 'Payment report';
     ApplicationArea = All;
     ProcessingOnly = true;
     dataset
