@@ -2628,6 +2628,71 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Vendor No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3928263244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2719951820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime creating</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Datetime creating - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2807638094 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime processing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Datetime processing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2852966117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error Message</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Error Message - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 415504711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2463770763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Request Body</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Request Body - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Complete,Processing Error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 1567263157 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Worker Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Worker Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> Web Request Worker</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 529863810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Codeunit Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field CodeunitId - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 341439298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failure Codeunit Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field FailureCodeunitId - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5517,6 +5582,21 @@
           <source>Other combinations of Actuals</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Action ActionName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3928263244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Queue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3928263244 - Action 3476074718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ShowRequestBody</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Queue - Action ShowRequestBody - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1885162812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Worker Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Worker Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>

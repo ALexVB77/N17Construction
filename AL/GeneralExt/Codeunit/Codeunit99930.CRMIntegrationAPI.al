@@ -37,7 +37,7 @@ codeunit 99930 "CRM Integration API"
 
         end;
         //c := XmlNodes.Count;
-        exit(StrSubstNo('Ok %1', Tmp));
+        exit(StrSubstNo('Result: %1', Tmp));
     end;
 
 
