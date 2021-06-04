@@ -265,7 +265,7 @@ table 5600 "Fixed Asset"
         {
             Caption = 'Inventory Number';
         }
-        field(12401; "Depreciation Code"; Code[10])
+        field(12401; "Depreciation Code"; Code[20]) // NC 53282 GG 10->20
         {
             Caption = 'Depreciation Code';
             TableRelation = "Depreciation Code";

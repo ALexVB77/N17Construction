@@ -140,7 +140,6 @@ report 50005 "Payment Report"
         xlsbufTmp.WriteSheet('', CompanyName, UserId);
         xlsBufTmp.CloseBook();
         xlsBufTmp.OpenExcel();
-
         Wind.CLOSE;
 
     end;

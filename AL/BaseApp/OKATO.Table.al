@@ -2,6 +2,7 @@ table 12427 OKATO
 {
     Caption = 'OKATO';
     LookupPageID = "OKATO Codes";
+    DataPerCompany = False;// NC 53282 GG
 
     fields
     {
@@ -9,7 +10,7 @@ table 12427 OKATO
         {
             Caption = 'Code';
         }
-        field(2; Name; Text[50])
+        field(2; Name; Text[250]) // NC 53282 GG 50->250
         {
             Caption = 'Name';
         }

@@ -441,6 +441,14 @@ table 70076 "Projects Budget Entry"
             MaintainSiftIndex = true;
         }
     }
+    trigger OnInsert()
+    begin
+        "Create Date" := Today;
+        "Create Time" := Time;
+        "Create User" := UserId;
+        "Entry No." := GetNextEntryNo();
+    end;
+
     var
         gvCreateRepeat: Boolean;
         WriteOffAmount: Decimal;
@@ -452,6 +460,18 @@ table 70076 "Projects Budget Entry"
         grProjectsStructureLines1: Record "Projects Structure Lines";
         lrProjectsBudgetEntryLink: Record "Projects Budget Entry Link";
         Text50000: Label 'The amount cannot be more than indicated in the "% 1" agreement card in the breakdown by letter!';
+
+    procedure GetNextEntryNo(): Integer
+    var
+        GLBudgetEntry: Record "Projects Budget Entry";
+    begin
+
+        GLBudgetEntry.SETCURRENTKEY("Entry No.");
+        IF GLBudgetEntry.FINDLAST THEN
+            EXIT(GLBudgetEntry."Entry No." + 1)
+        ELSE
+            EXIT(1);
+    end;
 
     local procedure UpdateCurrencyFactor()
     var
