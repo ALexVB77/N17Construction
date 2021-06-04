@@ -3143,6 +3143,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Create ST Proj Budget Entries - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2675196445 - Method 1811360274 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parent Entry amount %1 exeeded by %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Create ST Proj Budget Entries - Method CreateSTLines - NamedType lTextErr001</note>
+        </trans-unit>
         <trans-unit id="Page 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Copmany</source>
           <note from="Developer" annotates="general" priority="2"></note>
