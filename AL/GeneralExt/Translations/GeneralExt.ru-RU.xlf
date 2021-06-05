@@ -843,6 +843,118 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Credit-Memo Reason - Field Reason - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2155285002 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Buyers</source>
+          <target>CRM Buyers</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 672423731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement End</source>
+          <target>Дата окончания действия договора</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Agreement End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3451161282 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Start</source>
+          <target>Дата начала действия договора</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Agreement Start - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3596917418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buyer Guid</source>
+          <target>Buer guid</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Buyer Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 4211456377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buyer Is Active</source>
+          <target>Buyer Is Active</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Buyer Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3975668529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact Guid</source>
+          <target>Contact Guid</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contact Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 38901719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract Guid</source>
+          <target>Contract Guid</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contract Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 176771102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expected Registration Period</source>
+          <target>Expected Registration Period</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Expected Registration Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2824587825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Object</source>
+          <target>Object of Investing</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Object of Investing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 275983325 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ownership Percentage</source>
+          <target>Ownership Percentage</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Ownership Percentage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3784613596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment List Exists</source>
+          <target>Payment List Exists</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Payment List Exists - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3143559429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Plan Changed</source>
+          <target>Payment Plan Changed</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Payment Plan Changed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2561047306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Plan Guid</source>
+          <target>Payment Plan Guid</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Payment Plan Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2981630534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserving Contact Guid</source>
+          <target>Reserving Contact Guid</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Reserving Contact Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2474290292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserving Contract Guid</source>
+          <target>Reserving Contract Guid</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Reserving Contract Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3763785019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Guid</source>
+          <target>Unit Guid</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Unit Guid - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Company</source>
           <target>CRM Компания</target>
@@ -3153,6 +3265,97 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Vendor No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3928263244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue</source>
+          <target>Очередь веб-запросов</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2719951820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime creating</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Datetime creating - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2807638094 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime processing</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Datetime processing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2852966117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error Message</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Error Message - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 415504711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2463770763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Request Body</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Request Body - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>[NAB: SUGGESTION]Статус</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Complete,Processing Error</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 1567263157 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Worker Code</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Worker Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> Web Request Worker</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target>[NAB: SUGGESTION]Код</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 529863810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Codeunit Id</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field CodeunitId - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 341439298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failure Codeunit Id</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field FailureCodeunitId - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <target>%1 = %2 для %5 (%3 = %4) уже существует.</target>
@@ -3774,7 +3977,6 @@
         <trans-unit id="Page 2675196445 - Method 1811360274 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parent Entry amount %1 exeeded by %2</source>
           <target>Сумма долгосрочного планирования %1 превышена на %2. Сохранение операций невозможно!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Create ST Proj Budget Entries - Method CreateSTLines - NamedType lTextErr001</note>
         </trans-unit>
@@ -6627,6 +6829,27 @@
           <target>Остальные комбинации Actuals</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Action ActionName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3928263244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue</source>
+          <target>Очередь веб-запросов</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Queue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3928263244 - Action 3476074718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ShowRequestBody</source>
+          <target>Показать веб-запрос</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Queue - Action ShowRequestBody - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1885162812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Worker Setup</source>
+          <target>Настройка обработчиков веб-запросов</target>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Worker Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
