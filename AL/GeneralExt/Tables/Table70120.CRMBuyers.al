@@ -1,6 +1,8 @@
 table 70120 "CRM Buyers"
 {
     Caption = 'CRM Buyers';
+    LookupPageId = "CRM Units and Buyers";
+    DrillDownPageId = "CRM Units and Buyers";
 
     fields
     {

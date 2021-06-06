@@ -803,6 +803,111 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Company - Field Project Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Log</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2279323338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Action</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Action - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2279323338 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create,Update,Remove</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Action - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2257603235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Datetime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2851544074 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details Text 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Details Text 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 938454223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details Text 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Details Text 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 484818196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 1085746399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 1459641232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Xml</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 4134709003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Xml Checksum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml Checksum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Done,Error,Prefetched,Skip</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Web Request Queue Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Prefetched Object</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 3343464511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Xml Checksum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Checksum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 999613564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Company name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 415504711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 3923380478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prefetch Datetime</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Prefetch Datetime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 429697219 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Xml</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Xml - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3861211528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Development Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3297,6 +3402,16 @@
           <source>CRM Copmany</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Log</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3572564204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Prefetched Objects</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Prefetched Objects - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 954180772 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Units and Buyers</source>
@@ -7758,6 +7873,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receiv. Setup (Ext) - Field Building Act Nos. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2733905579 - Field 1652488761 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4145206282">
+          <source>CRM Worker Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receiv. Setup (Ext) - Field CRM Worker Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2820792494 - Field 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 552782286">
           <source>Credit-Memo Reason</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8082,6 +8202,21 @@
           <source>PrevForecast</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2849517163 - EnumValue 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Object Type - EnumValue Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2849517163 - EnumValue 389783846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Object Type - EnumValue Contract - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2849517163 - EnumValue 1354222690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Object Type - EnumValue Unit - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3632148852 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>
