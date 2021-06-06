@@ -979,7 +979,7 @@
         </trans-unit>
         <trans-unit id="Table 1501946700 - Field 2279323338 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create,Update,Remove</source>
-          <target>Создание,Обновление,Удаление/target>
+          <target>Создание,Обновление,Удаление</target>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Action - Property OptionCaption</note>
@@ -6995,7 +6995,7 @@
         </trans-unit>
         <trans-unit id="Page 1885162812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Web Request Worker Setup</source>
-          <target>Настройка обработчиков веб-запросов</target>
+          <target>Обработчики веб-запросов</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Worker Setup - Property Caption</note>
         </trans-unit>

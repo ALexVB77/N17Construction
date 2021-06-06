@@ -5,6 +5,8 @@ page 99931 "Web Request Queue"
     UsageCategory = Lists;
     SourceTable = "Web Request Queue";
     SourceTableView = sorting("Datetime creating") order(descending);
+    Caption = 'Web Request Queue';
+    InsertAllowed = false;
 
     layout
     {

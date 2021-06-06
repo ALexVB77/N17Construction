@@ -4,6 +4,8 @@ page 99932 "CRM Prefetched Objects"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "CRM Prefetched Object";
+    Caption = 'CRM Prefetched Objects';
+    InsertAllowed = false;
 
     layout
     {
