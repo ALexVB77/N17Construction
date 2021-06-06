@@ -62,4 +62,32 @@ codeunit 50004 "Cen. Jnl. -Post Line (Ext)"
             end;
         end;
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
+    local procedure SendVendorAgreementMail(sender: Codeunit "Purch.-Post")
+    begin
+        // if ("Buy-" <> '') AND (AgreementNo <> '') then begin
+        //         //SWC003 SM 100414 >>
+        //         CompanyInfo.GET;
+        //         LocVend.GET(VendorNo);
+        //         IF CompanyInfo."Use RedFlags in Agreements" THEN
+        //         //IF NOT (LocVend."Vendor Type" IN [Vend."Vendor Type"::"Resp. Employee",
+        //         //                                 Vend."Vendor Type"::"Tax Authority"]) THEN
+        //         IF LocVend.GetLineColor = 255 THEN //SWC003 SM 200514
+        //         BEGIN
+        //         //SWC003 SM 100414 <<
+        //          VendAgr.GET(VendorNo, AgreementNo);
+        //          CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
+        //          IF CheckLimitDateFilter <> '' THEN
+        //            VendAgr.SETFILTER("Check Limit Date Filter", CheckLimitDateFilter)
+        //          ELSE
+        //            VendAgr.SETRANGE("Check Limit Date Filter");
+        //          VendAgr.CALCFIELDS("Purch. Original Amt. (LCY)");
+        //          IF PurchHeader."Original Company" = '' THEN //NCS-980
+        //          IF (VendAgr."Check Limit Amount (LCY)"-VendAgr."Purch. Original Amt. (LCY)" < 0) THEN
+        //            MgtNotif.SendVendAgrMail(VendAgr,1);
+        //         END; //SWC003
+        //       END;
+        //       // SWC001 AK 20131212 <<
+    end;
 }
