@@ -13,6 +13,7 @@ codeunit 99930 "CRM Integration API"
     begin
         SalesSetup.Get();
         CreateQueueTask(Wrq, SalesSetup."CRM Worker Code", crmObjects);
+        Commit();
         if not IsNullGuid(Wrq.Id) then begin
             ClearLastError();
             if not WrqDispatcher.Run(Wrq) then

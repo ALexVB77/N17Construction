@@ -4,6 +4,7 @@ page 99930 "Web Request Worker Setup"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "Web Request Worker Setup";
+    Caption = 'Web Request Worker Setup';
 
     layout
     {

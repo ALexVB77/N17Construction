@@ -62,6 +62,7 @@ codeunit 99932 "CRM Worker"
         XmlNode: XmlNode;
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
+        Error('oooooooooookk');
         if not TryLoadXml(ObjectXmlText, XmlDoc) then
             Error('bad object xml');
 
