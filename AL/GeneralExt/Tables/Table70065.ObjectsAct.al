@@ -192,5 +192,3 @@ table 70065 "Objects Act"
         grActLine: record "Act Lines";
         LastNo1: integer;
 }
-
-

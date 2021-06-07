@@ -64,4 +64,27 @@ page 70227 "CRM Log"
         }
     }
 
+    actions
+    {
+        area(processing)
+        {
+            action(Preview)
+            {
+                ApplicationArea = All;
+                Caption = 'Object Xml Preview';
+                Image = Export;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Scope = Repeater;
+
+                trigger OnAction()
+                begin
+                    //if "File Name" <> '' then
+                    //    Export(true);
+                end;
+            }
+        }
+    }
+
 }

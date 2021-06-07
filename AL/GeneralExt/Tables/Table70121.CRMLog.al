@@ -9,6 +9,7 @@ table 70121 "CRM Log"
         field(1; "Entry No."; BigInteger)
         {
             Caption = 'Entry No.';
+            //AutoIncrement = true;
 
         }
 
@@ -85,6 +86,7 @@ table 70121 "CRM Log"
         key(Key1; "Entry No.")
         {
             Clustered = true;
+
         }
 
         key(Key2; "Datetime")
@@ -115,6 +117,29 @@ table 70121 "CRM Log"
     trigger OnRename()
     begin
 
+    end;
+
+    procedure Export(ShowFileDialog: Boolean): Text
+    var
+        TempBlob: Codeunit "Temp Blob";
+        FileManagement: Codeunit "File Management";
+        OutStrm: OutStream;
+        InStrm: InStream;
+        FullFileName: Text;
+    begin
+        if "Entry No." = 0 then
+            exit;
+        CalcFields("Object Xml");
+        if not "Object Xml".HasValue then
+            exit;
+        if IsNullGuid("Object Id") then
+            FullFileName := Format(CreateGuid()) + '.xml'
+        else
+            FullFileName := Format("Object Id") + '.xml';
+        TempBlob.CreateOutStream(OutStrm);
+        "Object Xml".CreateInStream(InStrm);
+        CopyStream(OutStrm, InStrm);
+        exit(FileManagement.BLOBExport(TempBlob, FullFileName, ShowFileDialog));
     end;
 
 }
