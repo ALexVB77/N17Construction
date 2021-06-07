@@ -119,13 +119,14 @@ table 70121 "CRM Log"
 
     end;
 
-    procedure Export(ShowFileDialog: Boolean): Text
+    procedure ExportObjectXml(ShowFileDialog: Boolean): Text
     var
         TempBlob: Codeunit "Temp Blob";
         FileManagement: Codeunit "File Management";
         OutStrm: OutStream;
         InStrm: InStream;
         FullFileName: Text;
+        FilenameGuid: Guid;
     begin
         if "Entry No." = 0 then
             exit;
@@ -133,9 +134,10 @@ table 70121 "CRM Log"
         if not "Object Xml".HasValue then
             exit;
         if IsNullGuid("Object Id") then
-            FullFileName := Format(CreateGuid()) + '.xml'
+            FilenameGuid := CreateGuid()
         else
-            FullFileName := Format("Object Id") + '.xml';
+            FilenameGuid := "Object Id";
+        FullFileName := Format(FilenameGuid) + '.txt';
         TempBlob.CreateOutStream(OutStrm);
         "Object Xml".CreateInStream(InStrm);
         CopyStream(OutStrm, InStrm);

@@ -15,19 +15,16 @@ $SoapEnv = @"
 </soap:Envelope>
 "@
 
-$XmlContent = Get-Content -Path .\Scripts\ws-tester\t1\Unit.xml -Encoding utf8
-$Bytes = [System.Text.Encoding]::Unicode.GetBytes($XmlContent)
-$Base64XmlContent =[Convert]::ToBase64String($Bytes)
+$XmlContent = Get-Content -Path .\t1\Unit.xml -Encoding utf8
+$Base64XmlContent = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($XmlContent))
 $SoapEnv = $SoapEnv.Replace("__BASE64_ENCODED_OBJECT_XML_1__", $Base64XmlContent)
 
-$XmlContent = Get-Content -Path .\Scripts\ws-tester\t1\Contact.xml -Encoding utf8
-$Bytes = [System.Text.Encoding]::Unicode.GetBytes($XmlContent)
-$Base64XmlContent =[Convert]::ToBase64String($Bytes)
+$XmlContent = Get-Content -Path .\t1\Contact.xml -Encoding utf8
+$Base64XmlContent = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($XmlContent))
 $SoapEnv = $SoapEnv.Replace("__BASE64_ENCODED_OBJECT_XML_2__", $Base64XmlContent)
 
-$XmlContent = Get-Content -Path .\Scripts\ws-tester\t1\Contract.xml -Encoding utf8
-$Bytes = [System.Text.Encoding]::Unicode.GetBytes($XmlContent)
-$Base64XmlContent =[Convert]::ToBase64String($Bytes)
+$XmlContent = Get-Content -Path .\t1\Contract.xml -Encoding utf8
+$Base64XmlContent = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($XmlContent))
 $SoapEnv = $SoapEnv.Replace("__BASE64_ENCODED_OBJECT_XML_3__", $Base64XmlContent)
 
 $null = Set-Content -path "C:\Temp\out.xml" -Value $SoapEnv

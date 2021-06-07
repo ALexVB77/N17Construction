@@ -1071,6 +1071,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Id - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 2393058227 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ParentId</source>
+          <target>ParentId</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field ParentId - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3279116693 - Field 3923380478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prefetch Datetime</source>
           <target>Дата и время загрузки</target>
@@ -4093,18 +4100,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1501946700 - Action 3270216659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object Xml Download</source>
+        <trans-unit id="Page 1501946700 - Action 2802726692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Object Xml</source>
           <target>Выгрузить Xml</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Action ObjectXmlDownaload - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Action DownloadObjectXml - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3572564204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Prefetched Objects</source>
           <target>Необработанные CRM объекты</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Prefetched Objects - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3572564204 - Action 2802726692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Object Xml</source>
+          <target>Выгрузить Xml</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Prefetched Objects - Action DownloadObjectXml - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 954180772 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Units and Buyers</source>

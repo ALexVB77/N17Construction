@@ -63,11 +63,9 @@ codeunit 99932 "CRM Worker"
 
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
-        DebugPrint(ObjectXmlText, 'Encoded Xml');
-        DebugPrint(ObjectXmlText, 'Xml Base64');
 
         if not TryLoadXml(ObjectXmlText, XmlDoc) then
-            Error('bad object xml');
+            Error('Bad object xml');
 
         if not XmlDoc.GetRoot(RootXmlElement) then
             Error('Root element of object is not found');
@@ -89,7 +87,7 @@ codeunit 99932 "CRM Worker"
         OutStrm: OutStream;
     begin
         Log.Init();
-        if Log.FindLast() then
+        if not Log.FindLast() then
             Log."Entry No." := 1L
         else
             Log."Entry No." += 1;

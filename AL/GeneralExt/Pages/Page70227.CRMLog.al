@@ -69,10 +69,10 @@ page 70227 "CRM Log"
     {
         area(processing)
         {
-            action(ObjectXmlDownaload)
+            action(DownloadObjectXml)
             {
                 ApplicationArea = All;
-                Caption = 'Object Xml Download';
+                Caption = 'Download Object Xml';
                 Image = Export;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -81,7 +81,7 @@ page 70227 "CRM Log"
 
                 trigger OnAction()
                 begin
-                    Export(true);
+                    Rec.ExportObjectXml(true);
                 end;
             }
         }
