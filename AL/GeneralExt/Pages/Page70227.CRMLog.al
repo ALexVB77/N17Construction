@@ -68,10 +68,10 @@ page 70227 "CRM Log"
     {
         area(processing)
         {
-            action(Preview)
+            action(ObjectXmlDownaload)
             {
                 ApplicationArea = All;
-                Caption = 'Object Xml Preview';
+                Caption = 'Object Xml Download';
                 Image = Export;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -80,8 +80,7 @@ page 70227 "CRM Log"
 
                 trigger OnAction()
                 begin
-                    //if "File Name" <> '' then
-                    //    Export(true);
+                    Export(true);
                 end;
             }
         }
