@@ -6493,6 +6493,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Method BoolText - NamedType txtYes</note>
         </trans-unit>
+        <trans-unit id="Report 2923491568 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control General - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2923491568 - Control 1260915842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted</source>
           <note from="Developer" annotates="general" priority="2"></note>

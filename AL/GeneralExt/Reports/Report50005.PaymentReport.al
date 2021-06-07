@@ -25,6 +25,8 @@ report 50005 "Payment Report"
             {
                 group(General)
                 {
+                    Caption='General';
+                    
                     field(boolUnPost; boolUnPost)
                     {
                         ApplicationArea = All;
