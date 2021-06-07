@@ -54,6 +54,12 @@ page 50101 "Create ST Proj Budget Entries"
         end;
     end;
 
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    begin
+        if CloseAction = Action::LookupOK then
+            CreateSTLines();
+    end;
+
     var
         gProjBudEntry: Record "Projects Budget Entry";
         gAmount: decimal;
