@@ -23,7 +23,7 @@ report 50005 "Payment Report"
         {
             area(Content)
             {
-                group(GroupName)
+                group(General)
                 {
                     field(boolUnPost; boolUnPost)
                     {
@@ -415,9 +415,9 @@ report 50005 "Payment Report"
         col += 1;
         EnterCell(tL, col, tUnPost."Bal. Account No.", false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
-        EnterCell(tL, col, format(tUnPost."Document Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tUnPost."Document Date"), false, xlsBufTmp."Cell Type"::Date, true);
         col += 1;
-        EnterCell(tL, col, format(tUnPost."Posting Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tUnPost."Posting Date"), false, xlsBufTmp."Cell Type"::date, true);
         col += 1;
         EnterCell(tL, col, format(tUnPost."Document Type"), false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
@@ -437,13 +437,13 @@ report 50005 "Payment Report"
         col += 1;
         EnterCell(tL, col, format(BoolText(tUnPost.Prepayment)), false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
-        EnterCell(tL, col, format(tUnPost.Amount), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tUnPost.Amount), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
-        EnterCell(tL, col, format(tUnPost."Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tUnPost."Amount (LCY)"), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
-        EnterCell(tL, col, format(tUnPost."Debit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tUnPost."Debit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
-        EnterCell(tL, col, format(tUnPost."Credit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tUnPost."Credit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
         EnterCell(tL, col, format(tUnPost."Shortcut Dimension 1 Code"), false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
@@ -614,9 +614,9 @@ report 50005 "Payment Report"
         col += 1;
         EnterCell(tL, col, format(tPost."Bank Account No."), false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
-        EnterCell(tL, col, format(tPost."Document Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tPost."Document Date"), false, xlsBufTmp."Cell Type"::date, true);
         col += 1;
-        EnterCell(tL, col, format(tPost."Posting Date"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tPost."Posting Date"), false, xlsBufTmp."Cell Type"::date, true);
         col += 1;
         EnterCell(tL, col, format(tPost."Document Type"), false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
@@ -636,13 +636,13 @@ report 50005 "Payment Report"
         col += 1;
         EnterCell(tL, col, format(txtPayment), false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
-        EnterCell(tL, col, format(-tPost.Amount), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(-tPost.Amount), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
-        EnterCell(tL, col, format(-tPost."Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(-tPost."Amount (LCY)"), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
-        EnterCell(tL, col, format(tPost."Debit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tPost."Debit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
-        EnterCell(tL, col, format(tPost."Credit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Text, true);
+        EnterCell(tL, col, format(tPost."Credit Amount (LCY)"), false, xlsBufTmp."Cell Type"::Number, true);
         col += 1;
         EnterCell(tL, col, format(tPost."Global Dimension 1 Code"), false, xlsBufTmp."Cell Type"::Text, true);
         col += 1;
@@ -710,12 +710,12 @@ report 50005 "Payment Report"
 
     begin
         AddString;
-        EnterCell(tL, 3, format('Итого:'), true, xlsBufTmp."Cell Type"::Text, false);
+        EnterCell(tL, 3, format('Итого:'), true, xlsBufTmp."Cell Type"::Number, false);
         IF FirstFormulaItem <> 0 THEN BEGIN
-            EnterCell(7, 13, strsubstno('=SUM(M%1:M%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
-            EnterCell(tl, 14, strsubstno('=SUM(N%1:N%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
-            EnterCell(tl, 15, strsubstno('=SUM(O%1:O%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
-            EnterCell(tl, 16, strsubstno('=SUM(P%1:P%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Text, false);
+            EnterCell(7, 13, strsubstno('=SUM(M%1:M%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
+            EnterCell(tl, 14, strsubstno('=SUM(N%1:N%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
+            EnterCell(tl, 15, strsubstno('=SUM(O%1:O%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
+            EnterCell(tl, 16, strsubstno('=SUM(P%1:P%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
         END;
         /*
         ShowBorders('A' + OldtL + ':U' + tL);
