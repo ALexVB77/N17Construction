@@ -11,6 +11,7 @@ codeunit 99932 "CRM Worker"
     local procedure Code(var WebRequestQueue: Record "Web Request Queue")
     var
         FetchedObjectBuff: Record "CRM Prefetched Object" temporary;
+        PrefetchedObj: Record "CRM Prefetched Object";
         InStrm: InStream;
         RequestBodyXmlText: Text;
     begin
@@ -20,6 +21,12 @@ codeunit 99932 "CRM Worker"
         WebRequestQueue."Request Body".CreateInStream(InStrm);
         InStrm.Read(RequestBodyXmlText);
         FetchObjects(FetchedObjectBuff, RequestBodyXmlText);
+
+        if PrefetchedObj.FindSet() then
+            repeat
+                FetchedObjectBuff := PrefetchedObj;
+                if FetchedObjectBuff.Insert() then;
+            until PrefetchedObj.Next() = 0;
     end;
 
     local procedure FetchObjects(var FetchedObjectsTemp: Record "CRM Prefetched Object"; RequestBodyXmlText: Text): Text
@@ -35,22 +42,17 @@ codeunit 99932 "CRM Worker"
     begin
         if not TryLoadXml(RequestBodyXmlText, XmlDoc) then
             Error('bad content body');
-
         if not XmlDoc.GetRoot(RootXmlElement) then
             Error('Root element of envelope is not found');
-
         if not RootXmlElement.SelectNodes('//crm_objects/object', XmlNodes) then
             Error('Wrong soap envelope structure');
-
         if XmlNodes.Count = 0 then
             Error('There are no CRM objects in request');
-
         foreach ObjXmlNode in XmlNodes do begin
             XmlElem := ObjXmlNode.AsXmlElement();
             ObjXmlBase64 := XmlElem.InnerText;
             GetObjectMeta(FetchedObjectsTemp, ObjXmlBase64);
         end;
-
     end;
 
     local procedure GetObjectMeta(var FetchedObjectsTemp: Record "CRM Prefetched Object"; Base64EncodedObjectXml: Text)
@@ -109,7 +111,8 @@ codeunit 99932 "CRM Worker"
         if ParentObjectIdText <> '' then
             Evaluate(FetchedObjectsTemp.ParentId, ParentObjectIdText);
         FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
-        OutStrm.Write(ObjectIdText);
+        OutStrm.Write(ObjectXmlText);
+        FetchedObjectsTemp.Checksum := GenerateHash(ObjectXmlText);
         if not FetchedObjectsTemp.Insert() then
             FetchedObjectsTemp.Modify();
     end;

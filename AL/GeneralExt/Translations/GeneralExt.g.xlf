@@ -738,6 +738,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contract Guid - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Checksum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field CRM Checksum - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2155285002 - Field 176771102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Expected Registration Period</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6783,6 +6788,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Registration - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1049217136 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>CRM Checksum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM Checksum - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1049217136 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>CRM GUID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7052,6 +7062,11 @@
           <source>Owner 5</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>CRM Checksum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field CRM Checksum - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>CRM GUID</source>

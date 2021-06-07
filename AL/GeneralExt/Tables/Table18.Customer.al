@@ -7,6 +7,13 @@ tableextension 80018 "Customer (Ext)" extends Customer
             Description = 'NCS-441';
 
         }
+
+        field(80010; "CRM Checksum"; Text[40])
+        {
+            Caption = 'CRM Checksum';
+
+        }
+
     }
 
     keys

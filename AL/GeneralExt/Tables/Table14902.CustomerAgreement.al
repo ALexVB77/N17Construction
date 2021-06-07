@@ -837,6 +837,12 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
             Caption = 'Birthdate and palce';
         }
 
+        field(80010; "CRM Checksum"; Text[40])
+        {
+            Caption = 'CRM Checksum';
+        }
+
+
     }
 
     keys
