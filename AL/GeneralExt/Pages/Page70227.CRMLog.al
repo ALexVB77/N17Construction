@@ -5,6 +5,7 @@ page 70227 "CRM Log"
     UsageCategory = Lists;
     SourceTable = "CRM Log";
     SourceTableView = sorting("Datetime") order(descending);
+    Caption = 'CRM Log';
 
     layout
     {

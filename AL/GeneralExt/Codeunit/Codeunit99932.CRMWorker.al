@@ -63,7 +63,9 @@ codeunit 99932 "CRM Worker"
 
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
-        DebugPrint(ObjectXmlText);
+        DebugPrint(ObjectXmlText, 'Encoded Xml');
+        DebugPrint(ObjectXmlText, 'Xml Base64');
+
         if not TryLoadXml(ObjectXmlText, XmlDoc) then
             Error('bad object xml');
 
@@ -81,7 +83,7 @@ codeunit 99932 "CRM Worker"
         XmlDocument.ReadFrom(XmlText, XmlDoc);
     end;
 
-    local procedure DebugPrint(XmlText: Text)
+    local procedure DebugPrint(XmlText: Text; Tag: Text)
     var
         Log: Record "CRM Log";
         OutStrm: OutStream;
@@ -92,7 +94,7 @@ codeunit 99932 "CRM Worker"
         else
             Log."Entry No." += 1;
         Log.Datetime := CurrentDateTime;
-        Log."Details Text 1" := 'Debug';
+        Log."Details Text 1" := Tag;
         Log."Object Xml".CreateOutStream(OutStrm);
         OutStrm.Write(XmlText);
         Log.Insert(true);

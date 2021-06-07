@@ -4093,12 +4093,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1501946700 - Action 3535604714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object Xml Preview</source>
+        <trans-unit id="Page 1501946700 - Action 3270216659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Xml Download</source>
           <target>Выгрузить Xml</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Action ObjectXmlPreview - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Action ObjectXmlDownaload - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3572564204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Prefetched Objects</source>
