@@ -5,47 +5,34 @@ codeunit 99930 "CRM Integration API"
 
     end;
 
-    var
-        myInt: Integer;
-
     procedure ImportObject(crmObjects: Text): Text
     var
-        XmlDoc: XmlDocument;
-        XmlNodes: XmlNodeList;
-        RootXmlElement: XmlElement;
-        ObjXmlNode: XmlNode;
-        XmlElem: XmlElement;
-        c: Integer;
-        tmp: Text;
+        SalesSetup: Record "Sales & Receivables Setup";
+        Wrq: Record "Web Request Queue";
+        WrqDispatcher: Codeunit "Web Request Queue Dispatcher";
     begin
-        if not TryLoadXml(crmObjects, XmlDoc) then
-            Error('bad content body');
-
-        if not XmlDoc.GetRoot(RootXmlElement) then
-            Error('There is not root');
-
-        if not RootXmlElement.SelectNodes('//crm_objects/object', XmlNodes) then
-            Error('Wrong xpath');
-
-        if XmlNodes.Count = 0 then
-            Error('There are no Objects xml');
-
-        foreach ObjXmlNode in XmlNodes do begin
-            XmlElem := ObjXmlNode.AsXmlElement();
-
-            Tmp += CopyStr(XmlElem.InnerText, 14744, 10) + '----';
-
+        SalesSetup.Get();
+        CreateQueueTask(Wrq, SalesSetup."CRM Worker Code", crmObjects);
+        Commit();
+        if not IsNullGuid(Wrq.Id) then begin
+            ClearLastError();
+            if not WrqDispatcher.Run(Wrq) then
+                Error(GetLastErrorText());
         end;
-        //c := XmlNodes.Count;
-        exit(StrSubstNo('Ok %1', Tmp));
     end;
 
-
-    [TryFunction]
-    local procedure TryLoadXml(XmlText: Text; var XmlDoc: XmlDocument)
+    local procedure CreateQueueTask(var NewWrq: record "Web Request Queue"; WorkerCode: Code[20]; RequestBodyText: Text)
+    var
+        OutStream: OutStream;
     begin
-        XmlDocument.ReadFrom(XmlText, XmlDoc);
+        NewWrq.Init();
+        NewWrq.Id := CreateGuid();
+        NewWrq.Validate("Worker Code", WorkerCode);
+        NewWrq."Request Body".CreateOutStream(OutStream);
+        OutStream.Write(RequestBodyText);
+        NewWrq."Datetime creating" := CurrentDateTime;
+        NewWrq.Status := NewWrq.Status::New;
+        NewWrq.Insert(True);
     end;
-
 
 }

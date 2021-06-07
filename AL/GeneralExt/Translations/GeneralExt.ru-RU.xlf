@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="GeneralExt">
+  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="GeneralExt.g.xlf">
     <body>
       <group id="body">
         <trans-unit id="Table 1598473093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -843,6 +843,102 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Credit-Memo Reason - Field Reason - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2155285002 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Buyers</source>
+          <target>CRM Buyers</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 672423731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement End</source>
+          <target>Дата окончания действия договора</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Agreement End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3451161282 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement Start</source>
+          <target>Дата начала действия договора</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Agreement Start - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3596917418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buyer Guid</source>
+          <target>Buer guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Buyer Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 4211456377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buyer Is Active</source>
+          <target>Buyer Is Active</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Buyer Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3975668529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact Guid</source>
+          <target>Contact Guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contact Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 38901719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract Guid</source>
+          <target>Contract Guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contract Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 176771102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expected Registration Period</source>
+          <target>Expected Registration Period</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Expected Registration Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2824587825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Object</source>
+          <target>Object of Investing</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Object of Investing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 275983325 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ownership Percentage</source>
+          <target>Ownership Percentage</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Ownership Percentage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3784613596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment List Exists</source>
+          <target>Payment List Exists</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Payment List Exists - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3143559429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Plan Changed</source>
+          <target>Payment Plan Changed</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Payment Plan Changed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2561047306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Plan Guid</source>
+          <target>Payment Plan Guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Payment Plan Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2981630534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserving Contact Guid</source>
+          <target>Reserving Contact Guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Reserving Contact Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2474290292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reserving Contract Guid</source>
+          <target>Reserving Contract Guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Reserving Contract Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 3763785019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Guid</source>
+          <target>Unit Guid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Unit Guid - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Company</source>
           <target>CRM Компания</target>
@@ -866,6 +962,132 @@
           <target>Наименование Проекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Company - Field Project Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Log</source>
+          <target>CRM Лог</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2279323338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Action</source>
+          <target>Действие</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Action - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2279323338 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create,Update,Remove</source>
+          <target>Создание,Обновление,Удаление</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Action - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2257603235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime</source>
+          <target>Дата и время</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Datetime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 2851544074 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details Text 1</source>
+          <target>Доп. инф. 1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Details Text 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 938454223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details Text 2</source>
+          <target>Доп. инф. 2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Details Text 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <target>Операция Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 484818196 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Id</source>
+          <target>Объект Id </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 1085746399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Type</source>
+          <target>Тип объекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 1459641232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Xml</source>
+          <target>XML объекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 4134709003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Xml Checksum</source>
+          <target>Контрольная сумма XML объекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml Checksum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Статус</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Done,Error,Prefetched,Skip</source>
+          <target>Обработано,Ошибка,Загружен,Пропущен</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue Id</source>
+          <target>Id Очереди веб-запросов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Web Request Queue Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Prefetched Object</source>
+          <target>Необработанные CRM объекты</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 3343464511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Xml Checksum</source>
+          <target>Контрольная сумма XML</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Checksum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 999613564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company name</source>
+          <target>Компания</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Company name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 415504711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <target>Id</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 3923380478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prefetch Datetime</source>
+          <target>Дата и время загрузки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Prefetch Datetime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target>Тип</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 429697219 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Xml</source>
+          <target>Xml</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Xml - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3861211528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Development Setup</source>
@@ -1795,6 +2017,7 @@
           <source>The amount cannot be more than indicated in the "% 1" agreement card in the breakdown by letter!</source>
           <target>Сумма не может быть больше, чем указано в карточке Договора "%1" в Разбивке по Литерам!</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2977,18 +3200,21 @@
           <source>No article% 2 found for construction object% 1</source>
           <target>Для объекта строительства %1 не найдена статья %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%2" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0002</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>For the project% 1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!</source>
           <target>У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace% 1!</source>
           <target>Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - Method 4254886844 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
@@ -3152,6 +3378,84 @@
           <target>Поставщик</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - Field Vendor No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue</source>
+          <target>Очередь веб-запросов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2719951820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime creating</source>
+          <target>Дата и время создания</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Datetime creating - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2807638094 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datetime processing</source>
+          <target>Дата и время обработки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Datetime processing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2852966117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error Message</source>
+          <target>Сообщение об ошибке</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Error Message - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 415504711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <target>Id</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 2463770763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Request Body</source>
+          <target>Содержимое веб-запроса</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Request Body - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Статус</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Complete,Processing Error</source>
+          <target>Новый,Выполен,Ошибка обработки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3928263244 - Field 1567263157 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Worker Code</source>
+          <target>Код обработчика</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Queue - Field Worker Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> Web Request Worker</source>
+          <target>Настройка обработчиков веб-запросов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target>Код</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 529863810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Codeunit Id</source>
+          <target>Кодеюнит обработчик</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field CodeunitId - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1885162812 - Field 341439298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failure Codeunit Id</source>
+          <target>Кодеюнит обработчик ошибок</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field FailureCodeunitId - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
@@ -3774,7 +4078,6 @@
         <trans-unit id="Page 2675196445 - Method 1811360274 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parent Entry amount %1 exeeded by %2</source>
           <target>Сумма долгосрочного планирования %1 превышена на %2. Сохранение операций невозможно!</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Create ST Proj Budget Entries - Method CreateSTLines - NamedType lTextErr001</note>
         </trans-unit>
@@ -3783,6 +4086,24 @@
           <target>CRM Компания</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Log</source>
+          <target>CRM Лог</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Log - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3572564204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Prefetched Objects</source>
+          <target>Необработанные CRM объекты</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Prefetched Objects - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 954180772 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRM Units and Buyers</source>
+          <target>CRM Units and Buyers</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Units and Buyers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Approval)</source>
@@ -4058,12 +4379,14 @@
           <source>Operation is bound to document IW \ Amount available for transfer to 1st level =% 1 \ Continue?</source>
           <target>Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень =%1\ Продолжить?</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0012</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 2706109417" size-unit="char" translate="yes" xml:space="preserve">
           <source>Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible!</source>
           <target>Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень =%1\ Перевод невозможен!</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0013</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 324231972" size-unit="char" translate="yes" xml:space="preserve">
@@ -6628,6 +6951,24 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vendor Agreement Details - Action ActionName - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3928263244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Queue</source>
+          <target>Очередь веб-запросов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Queue - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3928263244 - Action 3476074718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ShowRequestBody</source>
+          <target>Показать веб-запрос</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Queue - Action ShowRequestBody - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1885162812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Web Request Worker Setup</source>
+          <target>Обработчики веб-запросов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Worker Setup - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <target>Создать гарантийное удержание</target>
@@ -7808,6 +8149,7 @@
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
           <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1397166390 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
@@ -8234,6 +8576,7 @@
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
           <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 3565928873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
@@ -8407,8 +8750,8 @@
         <trans-unit id="TableExtension 2040759808 - Field 3174111411 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>User ID from value</source>
           <target>[NAB: NOT TRANSLATED]</target>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Ledger Entry (Ext) - Field User ID from Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2317248895 - Field 3543129988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3891454143">
@@ -8560,6 +8903,13 @@
           <target>Код ОКАТО</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field OKATO Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Original Company</source>
+          <target>Оригинальная Фирма</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Original Company - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 789473408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Paid</source>
@@ -9113,6 +9463,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receiv. Setup (Ext) - Field Building Act Nos. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2733905579 - Field 1652488761 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4145206282">
+          <source>CRM Worker Code</source>
+          <target>Код обработчика CRM интеграции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receiv. Setup (Ext) - Field CRM Worker Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2820792494 - Field 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 552782286">
           <source>Credit-Memo Reason</source>
           <target>Причина Кредит-Ноты</target>
@@ -9502,6 +9858,24 @@
           <target>PrevForecast</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2849517163 - EnumValue 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact</source>
+          <target>Контакт</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Object Type - EnumValue Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2849517163 - EnumValue 389783846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract</source>
+          <target>Контракт</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Object Type - EnumValue Contract - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2849517163 - EnumValue 1354222690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <target>Юнит</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Object Type - EnumValue Unit - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3632148852 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>

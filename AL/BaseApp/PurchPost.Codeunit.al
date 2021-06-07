@@ -6066,7 +6066,7 @@
 
             if PurchHeader."Document Type" = PurchHeader."Document Type"::Invoice then
                 PurchInvHeader."Draft Invoice SystemId" := PurchHeader.SystemId;
-            
+
             PurchInvHeader.Insert(true);
             OnAfterPurchInvHeaderInsert(PurchInvHeader, PurchHeader);
 
@@ -7888,7 +7888,7 @@
                         "Return Qty. Shipped (Base)" += "Return Qty. to Ship (Base)";
                     end;
                     if PurchHeader.Invoice then begin
-                        if "Document Type" = "Document Type"::Order then 
+                        if "Document Type" = "Document Type"::Order then
                             UpdateQtyToInvoiceForOrder(PurchHeader, TempPurchLine)
                         else
                             UpdateQtyToInvoiceForReturnOrder(PurchHeader, TempPurchLine);
@@ -8447,10 +8447,13 @@
     begin
     end;
 
-    [IntegrationEvent(false, false)]
+    //NC 51432 > PA
+    //[IntegrationEvent(false, false)]
+    [IntegrationEvent(true, false)]
     local procedure OnAfterFinalizePosting(var PurchHeader: Record "Purchase Header"; var PurchRcptHeader: Record "Purch. Rcpt. Header"; var PurchInvHeader: Record "Purch. Inv. Header"; var PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
     begin
     end;
+    //NC 51432 < PA
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterFinalizePostingOnBeforeCommit(var PurchHeader: Record "Purchase Header"; var PurchRcptHeader: Record "Purch. Rcpt. Header"; var PurchInvHeader: Record "Purch. Inv. Header"; var PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr."; var ReturnShptHeader: Record "Return Shipment Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
