@@ -37,7 +37,7 @@ table 70121 "CRM Log"
 
         }
 
-        field(14; "Object Xml Checksum"; Text[32])
+        field(14; "Object Xml Checksum"; Text[40])
         {
             Caption = 'Object Xml Checksum';
 

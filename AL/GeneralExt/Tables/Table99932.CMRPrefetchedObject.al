@@ -30,7 +30,7 @@ table 99932 "CRM Prefetched Object"
 
         }
 
-        field(12; "Checksum"; Text[32])
+        field(12; "Checksum"; Text[40])
         {
             Caption = 'Xml Checksum';
 
@@ -48,6 +48,12 @@ table 99932 "CRM Prefetched Object"
 
         }
 
+        field(40; "Web Request Queue Id"; Guid)
+        {
+            Caption = 'Web Request Queue Id';
+            TableRelation = "Web Request Queue";
+
+        }
 
     }
 

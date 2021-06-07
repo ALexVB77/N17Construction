@@ -56,29 +56,75 @@ codeunit 99932 "CRM Worker"
     local procedure GetObjectMeta(var FetchedObjectsTemp: Record "CRM Prefetched Object"; Base64EncodedObjectXml: Text)
     var
         Base64Convert: Codeunit "Base64 Convert";
-        ObjectXmlText: Text;
         XmlDoc: XmlDocument;
         RootXmlElement, XmlElem : XmlElement;
         XmlNode: XmlNode;
+        ObjectXmlText: Text;
+        ObjectType: Text;
+        ObjectIdText: Text;
+        ParentObjectIdText: Text;
+        OutStrm: OutStream;
 
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
-
         if not TryLoadXml(ObjectXmlText, XmlDoc) then
             Error('Bad object xml');
-
         if not XmlDoc.GetRoot(RootXmlElement) then
             Error('Root element of object is not found');
-
         RootXmlElement.SelectSingleNode('Publisher/IntegrationInformation', XmlNode);
         XmlElem := XmlNode.AsXmlElement();
-        Error('Object Type is %1', XmlElem.InnerText);
+        ObjectType := XmlElem.InnerText;
+        case UpperCase(ObjectType) of
+            'UNIT':
+                begin
+                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Unit/BaseData/ObjectID', XmlNode);
+                    XmlElem := XmlNode.AsXmlElement();
+                    ObjectIdText := XmlElem.InnerText;
+                end;
+            'CONTACT':
+                begin
+                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Contact/BaseData/ObjectID', XmlNode);
+                    XmlElem := XmlNode.AsXmlElement();
+                    ObjectIdText := XmlElem.InnerText;
+                end;
+            'CONTRACT':
+                begin
+                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Contract/BaseData/ObjectID', XmlNode);
+                    XmlElem := XmlNode.AsXmlElement();
+                    ObjectIdText := XmlElem.InnerText;
+                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Contract/BaseData/ObjectParentID', XmlNode);
+                    XmlElem := XmlNode.AsXmlElement();
+                    ParentObjectIdText := XmlElem.InnerText;
+                end;
+            else
+                Error('Unknown Object Type %1', ObjectType);
+        end;
+        if ObjectIdText = '' then
+            Error('No Object Id');
+        if (UpperCase(ObjectType) = 'CONTRACT') and (ParentObjectIdText = '') then
+            Error('No ParentObjectId for contract');
+        FetchedObjectsTemp.Init();
+        Evaluate(FetchedObjectsTemp.Id, ObjectIdText);
+        Evaluate(FetchedObjectsTemp.Type, ObjectType);
+        if ParentObjectIdText <> '' then
+            Evaluate(FetchedObjectsTemp.ParentId, ParentObjectIdText);
+        FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
+        OutStrm.Write(ObjectIdText);
+        if not FetchedObjectsTemp.Insert() then
+            FetchedObjectsTemp.Modify();
     end;
 
     [TryFunction]
     local procedure TryLoadXml(XmlText: Text; var XmlDoc: XmlDocument)
     begin
         XmlDocument.ReadFrom(XmlText, XmlDoc);
+    end;
+
+    local procedure GenerateHash(InputText: Text) Hash: Text[40]
+    var
+        CM: Codeunit "Cryptography Management";
+    begin
+        exit(CopyStr(CM.GenerateHash(InputText, 1), 1, 40)); //SHA1
     end;
 
     local procedure DebugPrint(XmlText: Text; Tag: Text)

@@ -36,7 +36,8 @@ table 99931 "Web Request Queue"
             OptionMembers = New,Complete,"Processing Error";
             OptionCaption = 'New,Complete,Processing Error';
         }
-        field(31; "Error Message"; Text[1024])
+
+        field(31; "Error Message"; Text[2024])
         {
             Caption = 'Error Message';
         }
