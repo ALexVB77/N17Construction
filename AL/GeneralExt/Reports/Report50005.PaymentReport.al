@@ -25,8 +25,8 @@ report 50005 "Payment Report"
             {
                 group(General)
                 {
-                    Caption='General';
-                    
+                    Caption = 'General';
+
                     field(boolUnPost; boolUnPost)
                     {
                         ApplicationArea = All;
@@ -194,6 +194,7 @@ report 50005 "Payment Report"
         xlsBufTmp: Record "Excel Buffer Mod" temporary;
         setWidth: Boolean;
         width: Integer;
+        valueIsFormula: Boolean;
 
     local procedure ShowBorder(Pos: Text[50]; Num: integer; W: integer)
     begin
@@ -712,6 +713,7 @@ report 50005 "Payment Report"
 
     begin
         AddString;
+        valueIsFormula := true;
         EnterCell(tL, 3, format('Итого:'), true, xlsBufTmp."Cell Type"::Number, false);
         IF FirstFormulaItem <> 0 THEN BEGIN
             EnterCell(7, 13, strsubstno('=SUM(M%1:M%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
@@ -719,6 +721,7 @@ report 50005 "Payment Report"
             EnterCell(tl, 15, strsubstno('=SUM(O%1:O%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
             EnterCell(tl, 16, strsubstno('=SUM(P%1:P%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
         END;
+        valueIsFormula := false;
         /*
         ShowBorders('A' + OldtL + ':U' + tL);
         AddString;
@@ -816,8 +819,14 @@ report 50005 "Payment Report"
         xlsBufTmp.Init();
         xlsBufTmp.Validate("Row No.", RowNo);
         xlsBufTmp.Validate("Column No.", ColumnNo);
-        xlsBufTmp."Cell Value as Text" := CellValue;
-        xlsBufTmp.Formula := '';
+        if (valueIsFormula) then begin
+            xlsBufTmp."Cell Value as Text" := '';
+            xlsBufTmp.Formula := CellValue;
+        end
+        else begin
+            xlsBufTmp."Cell Value as Text" := CellValue;
+            xlsBufTmp.Formula := '';
+        end;
         xlsBufTmp.Bold := Bold;
         xlsBufTmp."Cell Type" := CellType;
 
