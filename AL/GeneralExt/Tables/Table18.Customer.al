@@ -8,4 +8,10 @@ tableextension 80018 "Customer (Ext)" extends Customer
 
         }
     }
+
+    keys
+    {
+        key(key70000; "CRM GUID") { }
+
+    }
 }
