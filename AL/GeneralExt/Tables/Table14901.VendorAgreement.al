@@ -230,4 +230,9 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         else
             exit('None');
     end;
+
+    procedure SendVendAgrMail(VendAgr: Record "Vendor Agreement"; RecipintType: Option)
+    begin
+
+    end;
 }

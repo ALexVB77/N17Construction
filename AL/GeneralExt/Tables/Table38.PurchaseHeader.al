@@ -20,6 +20,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             OptionCaption = ' ,Problem Act,Payment Invoice';
             OptionMembers = " ","Problem Act","Payment Invoice";
         }
+        field(60088; "Original Company"; Code[2])
+        {
+            Description = 'NC 51432 AB';
+            Caption = 'Original Company';
+        }
         field(70002; "Process User"; Code[50])
         {
             TableRelation = "User Setup";

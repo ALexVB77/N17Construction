@@ -364,4 +364,35 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
+    local procedure SendVendorAgreementMail(sender: Codeunit "Purch.-Post"; var PurchHeader: Record "Purchase Header")
+    var
+        CompanyInfo: Record "Company Information";
+        LocVend: Record Vendor;
+        VendAgr: Record "Vendor Agreement";
+        CheckLimitDateFilter: Text;
+        VendorAgreement: Record "Vendor Agreement";
+    begin
+        if (PurchHeader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
+            CompanyInfo.Get;
+            LocVend.GET(PurchHeader."Buy-from Address");
+
+            if CompanyInfo."Use RedFlags in Agreements" then
+                if LocVend.GetLineColor = 'Attention' then begin
+                    VendAgr.Get(PurchHeader."Buy-from Address", PurchHeader."Agreement No.");
+                    CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
+
+                    if CheckLimitDateFilter <> '' then
+                        VendAgr.SetFilter("Check Limit Date Filter", CheckLimitDateFilter)
+                    else
+                        VendAgr.SetRange("Check Limit Date Filter");
+
+                    VendAgr.CalcFields("Purch. Original Amt. (LCY)");
+
+                    if PurchHeader."Original Company" = '' then
+                        if (VendAgr."Check Limit Amount (LCY)" - VendAgr."Purch. Original Amt. (LCY)" < 0) then
+                            VendorAgreement.SendVendAgrMail(VendAgr, 1);
+                end;
+        end;
+    end;
 }

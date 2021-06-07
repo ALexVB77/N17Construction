@@ -7413,6 +7413,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field OKATO Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Original Company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Original Company - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 789473408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Paid</source>
           <note from="Developer" annotates="general" priority="2"></note>
