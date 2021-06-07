@@ -820,17 +820,13 @@ report 50005 "Payment Report"
         xlsBufTmp.Validate("Row No.", RowNo);
         xlsBufTmp.Validate("Column No.", ColumnNo);
         if (valueIsFormula) then begin
-            xlsBufTmp."Cell Value as Text" := '';
-            xlsBufTmp.Formula := CellValue;
+            xlsBufTmp.SetFormula(CellValue);
         end
         else begin
             xlsBufTmp."Cell Value as Text" := CellValue;
-            xlsBufTmp.Formula := '';
         end;
         xlsBufTmp.Bold := Bold;
         xlsBufTmp."Cell Type" := CellType;
-
-
         if IsBorder then
             xlsBufTmp.SetBorder(true, true, true, true, false, "Border Style"::Thin);
         xlsBufTmp.Insert();
