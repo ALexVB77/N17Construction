@@ -145,22 +145,46 @@ codeunit 99932 "CRM Worker"
         XmlElem: XmlElement;
         XmlNode: XmlNode;
         XmlNodeList: XmlNodeList;
-        ElemText: Text;
+        ElemText, ElemText2 : Text;
         BaseDataNode, UnitNode : Text;
         BuyerNo: Integer;
         ExpectedRegDate, ActualDate, ExpectedDate : Text;
+        Res: Dictionary of [Text, Text];
+        CMRBuyes: Record "CRM Buyers";
     begin
+        CMRBuyes.Reset();
+        CMRBuyes.SetRange("Unit Guid", FetchedObject.Id);
+        CMRBuyes.SetRange("CRM Checksum", FetchedObject.Checksum);
+        if not CMRBuyes.IsEmpty() then begin
+            ParsingResult := Res;
+            exit;
+        end;
+
         UnitNode := 'NCCObjects/NCCObject/Unit/';
         BaseDataNode := 'NCCObjects/NCCObject/Unit/BaseData/';
 
         GetRootXmlElement(FetchedObject, XmlElem);
         if GetValue(XmlElem, BaseDataNode + 'ContactID', ElemText) then
             Error('ContactID is not found');
-        ParsingResult.Add('ReservingContactGuid', ElemText);
+        Res.Add('ReservingContactGuid', ElemText);
 
         if GetValue(XmlElem, BaseDataNode + 'Name', ElemText) then
             Error('Object Of Investing is not found');
-        ParsingResult.Add('ObjectOfInvesting', ElemText);
+        Res.Add('ObjectOfInvesting', ElemText);
+        ElemText := '';
+        ElemText2 := '';
+        GetValue(XmlElem, BaseDataNode + 'BlockNumber', ElemText);
+        GetValue(XmlElem, BaseDataNode + 'ApartmentNumber', ElemText2);
+        if (ElemText + ElemText2) <> '' then
+            res.Add('ApartmentDescription', ElemText + ' ' + ElemText2);
+        if GetValue(XmlElem, UnitNode + 'ObjectAttributes/TypeOfBuildings/TypeOfBuilding/KeyName', ElemText) then begin
+            if ElemText <> '' then
+                Res.Add('ApartmentOriginType', ElemText);
+        end;
+        if GetValue(XmlElem, UnitNode + 'Measurements/UnitAreaM2/ActualValue', ElemText) then begin
+            if ElemText <> '' then
+                Res.Add('ApartmentUnitAreaM2', ElemText);
+        end;
 
         if GetValue(XmlElem, UnitNode + 'KeyDates/ExpectedRegistrationPeriod', ElemText) then
             ExpectedRegDate := ElemText;
@@ -178,31 +202,31 @@ codeunit 99932 "CRM Worker"
             XmlElem := XmlNode.AsXmlElement();
             if not GetValue(XmlElem, 'BaseData/ObjectID', ElemText) then
                 Error('Buyer has not BaseData/ObjectID');
-            ParsingResult.Add(StrSubstNo('BuyerGuid%1', BuyerNo), ElemText);
+            Res.Add(StrSubstNo('BuyerGuid%1', BuyerNo), ElemText);
 
             if not GetValue(XmlElem, 'BaseData/ContactID', ElemText) then
                 Error('Buyer has not BaseData/ContactID');
-            ParsingResult.Add(StrSubstNo('ContactGuid%1', BuyerNo), ElemText);
+            Res.Add(StrSubstNo('ContactGuid%1', BuyerNo), ElemText);
 
             if not GetValue(XmlElem, 'BaseData/ContractID', ElemText) then
                 Error('Buyer has not BaseData/ContractID');
-            ParsingResult.Add(StrSubstNo('ContractGuid%1', BuyerNo), ElemText);
+            Res.Add(StrSubstNo('ContractGuid%1', BuyerNo), ElemText);
 
             if GetValue(XmlElem, 'BaseData/OwnershipPercentage', ElemText) then
-                ParsingResult.Add(StrSubstNo('OwnershipPercentage%1', BuyerNo), ElemText);
+                Res.Add(StrSubstNo('OwnershipPercentage%1', BuyerNo), ElemText);
 
             ElemText := '';
             if GetValue(XmlElem, 'BaseData/IsActive', ElemText) then
-                ParsingResult.Add(StrSubstNo('BuyerIsActive%1', BuyerNo), ElemText);
+                Res.Add(StrSubstNo('BuyerIsActive%1', BuyerNo), ElemText);
             if ElemText <> 'false' then begin
-                ParsingResult.Add(StrSubstNo('ExpectedRegDate%1', BuyerNo), ExpectedRegDate);
-                ParsingResult.Add(StrSubstNo('ActualDate%1', BuyerNo), ActualDate);
-                ParsingResult.Add(StrSubstNo('ExpectedDate%1', BuyerNo), ExpectedDate);
+                Res.Add(StrSubstNo('ExpectedRegDate%1', BuyerNo), ExpectedRegDate);
+                Res.Add(StrSubstNo('ActualDate%1', BuyerNo), ActualDate);
+                Res.Add(StrSubstNo('ExpectedDate%1', BuyerNo), ExpectedDate);
             end;
 
             BuyerNo += 1;
         end;
-
+        ParsingResult := Res;
     end;
 
 
@@ -218,8 +242,73 @@ codeunit 99932 "CRM Worker"
     end;
 
     local procedure ImportUnit(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
+    var
+        CRMBuyer: Record "CRM Buyers";
+        Apartments: Record Apartments;
+        Value: Text;
+        BuyerNo: Integer;
+        TempDT: DateTime;
     begin
+        if ParsingResult.Count = 0 then
+            exit;
 
+        CRMBuyer.SetRange("Unit Guid", FetchedObject.Id);
+        CRMBuyer.DeleteAll(true);
+
+        CRMBuyer.Init();
+        CRMBuyer."Unit Guid" := FetchedObject.Id;
+        CRMBuyer."CRM Checksum" := FetchedObject.Checksum;
+        if ParsingResult.Get('ReservingContactGuid', Value) then
+            Evaluate(CRMBuyer."Reserving Contact Guid", Value);
+
+        if ParsingResult.Get('ObjectOfInvesting', Value) then begin
+            CRMBuyer."Object of Investing" := Value;
+            Apartments."Object No." := CRMBuyer."Object of Investing";
+            if ParsingResult.Get('ApartmentDescription', Value) then
+                Apartments.Description := Value;
+            if ParsingResult.Get('ApartmentOriginType', Value) then
+                Apartments."Origin Type" := CopyStr(Format(Value), 1, MaxStrLen(Apartments."Origin Type"));
+            if ParsingResult.Get('ApartmentUnitAreaM2', Value) then
+                if Evaluate(Apartments."Total Area (Project)", Value, 9) then;
+            if not Apartments.Insert(True) then
+                Apartments.Modify(True);
+        end;
+
+        BuyerNo := 1;
+        repeat
+            if ParsingResult.Get(StrSubstNo('BuyerGuid%1', BuyerNo), Value) then
+                BuyerNo := 999
+            else begin
+                Evaluate(CRMBuyer."Buyer Guid", Value);
+                if ParsingResult.Get(StrSubstNo('ContactGuid%1', BuyerNo), Value) then
+                    Evaluate(CRMBuyer."Contact Guid", Value);
+                if ParsingResult.Get(StrSubstNo('ContractGuid%1', BuyerNo), Value) then
+                    Evaluate(CRMBuyer."Contract Guid", Value);
+                if ParsingResult.Get(StrSubstNo('OwnershipPercentage%1', BuyerNo), Value) then
+                    Evaluate(CRMBuyer."Ownership Percentage", Value, 9)
+                Else
+                    CRMBuyer."Ownership Percentage" := 100;
+                CRMBuyer."Buyer Is Active" := true;
+                if ParsingResult.Get(StrSubstNo('BuyerIsActive%1', BuyerNo), Value) then begin
+                    if Value = 'false' then
+                        CRMBuyer."Buyer Is Active" := false;
+                end;
+                if CRMBuyer."Buyer Is Active" then begin
+                    CRMBuyer."Expected Registration Period" := 0;
+                    if ParsingResult.Get(StrSubstNo('ExpectedRegDate%1', BuyerNo), Value) then
+                        Evaluate(CRMBuyer."Expected Registration Period", Value, 9);
+                    CRMBuyer."Agreement Start" := 0D;
+                    if ParsingResult.Get(StrSubstNo('ActualDate%1', BuyerNo), Value) then
+                        if Evaluate(TempDT, Value, 9) then
+                            CRMBuyer."Agreement Start" := DT2Date(TempDT) - CRMBuyer."Expected Registration Period";
+                    CRMBuyer."Agreement End" := 0D;
+                    if ParsingResult.Get(StrSubstNo('ExpectedDate%1', BuyerNo), Value) then
+                        if Evaluate(TempDT, Value, 9) then
+                            CRMBuyer."Agreement End" := DT2Date(TempDT);
+                end;
+            end;
+            BuyerNo += 1;
+        until BuyerNo > 5
     end;
 
     local procedure ImportContact(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])

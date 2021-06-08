@@ -113,6 +113,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Object No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 938572801 - Field 2778745256 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Origin Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Origin Type - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 938572801 - Field 2565249915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Area (Projected)</source>
           <note from="Developer" annotates="general" priority="2"></note>

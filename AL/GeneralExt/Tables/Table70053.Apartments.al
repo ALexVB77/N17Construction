@@ -27,6 +27,11 @@ table 70053 "Apartments"
             OptionMembers = ВПП,МОП,apartment,garage,parking,pantry;
         }
 
+        field(27; "Origin Type"; Text[60])
+        {
+            Caption = 'Origin Type';
+        }
+
     }
 
     keys
@@ -42,4 +47,3 @@ table 70053 "Apartments"
     }
 
 }
-
