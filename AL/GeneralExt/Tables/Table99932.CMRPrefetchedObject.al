@@ -12,6 +12,12 @@ table 99932 "CRM Prefetched Object"
 
         }
 
+        field(5; ParentId; Guid)
+        {
+            Caption = 'ParentId';
+
+        }
+
         field(10; "Type"; enum "CRM Object Type")
         {
             Caption = 'Type';
@@ -24,7 +30,7 @@ table 99932 "CRM Prefetched Object"
 
         }
 
-        field(12; "Checksum"; Text[32])
+        field(12; "Checksum"; Text[40])
         {
             Caption = 'Xml Checksum';
 
@@ -42,6 +48,12 @@ table 99932 "CRM Prefetched Object"
 
         }
 
+        field(40; "Web Request Queue Id"; Guid)
+        {
+            Caption = 'Web Request Queue Id';
+            TableRelation = "Web Request Queue";
+
+        }
 
     }
 
@@ -77,5 +89,26 @@ table 99932 "CRM Prefetched Object"
     begin
 
     end;
+
+    procedure ExportObjectXml(ShowFileDialog: Boolean): Text
+    var
+        TempBlob: Codeunit "Temp Blob";
+        FileManagement: Codeunit "File Management";
+        OutStrm: OutStream;
+        InStrm: InStream;
+        FullFileName: Text;
+    begin
+        if IsNullGuid(Id) then
+            exit;
+        CalcFields(Xml);
+        if not Xml.HasValue then
+            exit;
+        FullFileName := Format(Id) + '.txt';
+        TempBlob.CreateOutStream(OutStrm);
+        Xml.CreateInStream(InStrm);
+        CopyStream(OutStrm, InStrm);
+        exit(FileManagement.BLOBExport(TempBlob, FullFileName, ShowFileDialog));
+    end;
+
 
 }

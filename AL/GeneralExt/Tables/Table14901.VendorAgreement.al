@@ -231,8 +231,144 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
             exit('None');
     end;
 
-    procedure SendVendAgrMail(VendAgr: Record "Vendor Agreement"; RecipintType: Option)
+    procedure SendVendAgrMail(VendAgr: Record "Vendor Agreement"; RecipientType: Option Creator,Controller)
+    var
+        CompanyInfo: Record "Company Information";
+        UserSetupRecip: Record "User Setup";
+        UserSetupSend: Record "User Setup";
+        TempPath: Text;
+        TemplateFile: File;
+        InStreamTemplate: InStream;
+        SenderAddress: Text;
+        Purchaser: Record "Salesperson/Purchaser";
+        UserDesc: Text;
+        RecipList: Text;
+        Subject: Text;
+        Body: Text;
+        InSReadChar: Text;
+        CharNo: Text;
+        EmailMessage: Codeunit "Email Message";
+        Email: Codeunit Email;
+        MessageBody: Text;
+        i: Integer;
+        ExcelTemplate: Record "Excel Template";
+        PurchasesPayablesSetup: Record "Purchases & Payables Setup";
+        Text091: Label 'Check vendor agreements';
+        Text092: Label 'MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL';
     begin
+        CompanyInfo.GET;
+        if not CompanyInfo."Use RedFlags in Agreements" then
+            exit;
 
+        UserSetupRecip.Reset();
+        if RecipientType = RecipientType::Creator then
+            UserSetupRecip.SetRange("Vend. Agr. Creator Notif.", true)
+        else
+            UserSetupRecip.SetRange("Vend. Agr. Controller Notif.", true);
+
+        if UserSetupRecip.IsEmpty then
+            exit;
+
+        PurchasesPayablesSetup.Get();
+        PurchasesPayablesSetup.TestField("Check Vend. Agr. Template Code");
+        TempPath := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Check Vend. Agr. Template Code");
+
+        TemplateFile.TextMode(true);
+        TemplateFile.Open(TempPath);
+        TemplateFile.CreateInStream(InStreamTemplate);
+
+        UserSetupSend.Get(UserId);
+        UserSetupSend.TestField("E-Mail");
+        UserSetupSend.TestField("Salespers./Purch. Code");
+        SenderAddress := UserSetupSend."E-Mail";
+
+        Purchaser.Get(UserSetupSend."Salespers./Purch. Code");
+        UserDesc := Purchaser.Code + ' (' + Purchaser.Name + ')';
+
+        RecipList := '';
+        UserSetupRecip.FindSet();
+        repeat
+            UserSetupRecip.TestField("E-Mail");
+            if StrPos(RecipList, UserSetupRecip."E-Mail") = 0 then begin
+                if RecipList <> '' then
+                    RecipList += ';' + UserSetupRecip."E-Mail"
+                else
+                    RecipList := UserSetupRecip."E-Mail"
+            end;
+        until
+          UserSetupRecip.Next() = 0;
+
+        Subject := Text091;
+        Body := StrSubstNo(Text092, CompanyName);
+
+        Body := '';
+
+        while InStreamTemplate.Read(InSReadChar, 1) <> 0 do begin
+            if InSReadChar = '%' then begin
+                MessageBody := Body;
+                Body := InSReadChar;
+                if InStreamTemplate.Read(InSReadChar, 1) <> 0 then;
+                if (InSReadChar >= '0') and (InSReadChar <= '9') then begin
+                    Body := Body + '1';
+                    CharNo := InSReadChar;
+                    while (InSReadChar >= '0') and (InSReadChar <= '9') do begin
+                        if InStreamTemplate.Read(InSReadChar, 1) <> 0 then;
+                        if (InSReadChar >= '0') and (InSReadChar <= '9') then
+                            CharNo := CharNo + InSReadChar;
+                    end;
+                end else
+                    Body := Body + InSReadChar;
+
+                FillCheckVendAgrTemplate(Body, CharNo, UserDesc, VendAgr, RecipientType);
+                MessageBody := MessageBody + Body;
+                Body := InSReadChar;
+            end else begin
+                Body := Body + InSReadChar;
+                i := i + 1;
+                IF i = 500 then begin
+                    MessageBody := MessageBody + Body;
+                    Body := '';
+                    i := 0;
+                end;
+            end;
+        end;
+
+        MessageBody := MessageBody + Body;
+        EmailMessage.Create(RecipList, Subject, Body);
+        Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
+        TemplateFile.Close();
+    end;
+
+    local procedure FillCheckVendAgrTemplate(var Body: Text; TextNo: Text; UserDesc: Text; VendAgr: Record "Vendor Agreement"; RecipientType: Option Creator,Controller)
+    var
+        Vend: Record "Vendor";
+        Text093: Label 'User %1 created a new agreement with number %2 for vendor% 3';
+        Text094: Label 'It is necessary to fill in the information on the control of the purchase limit';
+        Text095: Label 'Click this link to open document';
+        Text096: Label 'For the agreement with number %1 for the vendor %2, the purchase limit has been exceeded';
+        Text097: Label 'Control is needed';
+        locText001: Label 'RUS="&target=Form 14902%1view=SORTING(Field1,Field2)%2WHERE(Field1=1(%3))%1position=Field1=0(%3),Field2=0(%4)"';
+    begin
+        case TextNo of
+            '1':
+                begin
+                    Vend.GET(VendAgr."Vendor No.");
+                    if RecipientType = RecipientType::Creator then
+                        Body := StrSubstNo(Body, StrSubstNo(Text093, UserDesc, VendAgr."No.", Vend."No." + ' ' + Vend."Full Name"))
+                    else
+                        Body := StrSubstNo(Body, StrSubstNo(Text096, VendAgr."No.", Vend."No." + ' ' + Vend."Full Name"));
+                end;
+            '2':
+                begin
+                    if RecipientType = RecipientType::Creator then
+                        Body := StrSubstNo(Body, Text094)
+                    else
+                        Body := StrSubstNo(Body, Text097);
+                end;
+            '253':
+                Body := StrSubstNo(Body, GetUrl(ClientType::Current) + StrSubstNo(locText001, '%26', '%20', VendAgr."Vendor No.", VendAgr."No."));
+            '4':
+                Body := StrSubstNo(Body, Text095);
+        end;
     end;
 }

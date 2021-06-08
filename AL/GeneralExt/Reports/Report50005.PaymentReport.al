@@ -713,15 +713,17 @@ report 50005 "Payment Report"
 
     begin
         AddString;
-        valueIsFormula := true;
+
         EnterCell(tL, 3, format('Итого:'), true, xlsBufTmp."Cell Type"::Number, false);
         IF FirstFormulaItem <> 0 THEN BEGIN
+            valueIsFormula := true;
             EnterCell(7, 13, strsubstno('=SUM(M%1:M%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
             EnterCell(tl, 14, strsubstno('=SUM(N%1:N%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
             EnterCell(tl, 15, strsubstno('=SUM(O%1:O%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
             EnterCell(tl, 16, strsubstno('=SUM(P%1:P%2)', FirstFormulaItem, ps - 1), true, xlsBufTmp."Cell Type"::Number, false);
+            valueIsFormula := false;
         END;
-        valueIsFormula := false;
+
         /*
         ShowBorders('A' + OldtL + ':U' + tL);
         AddString;

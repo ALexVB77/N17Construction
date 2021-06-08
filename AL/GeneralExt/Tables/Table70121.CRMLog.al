@@ -9,6 +9,7 @@ table 70121 "CRM Log"
         field(1; "Entry No."; BigInteger)
         {
             Caption = 'Entry No.';
+            //AutoIncrement = true;
 
         }
 
@@ -36,7 +37,7 @@ table 70121 "CRM Log"
 
         }
 
-        field(14; "Object Xml Checksum"; Text[32])
+        field(14; "Object Xml Checksum"; Text[40])
         {
             Caption = 'Object Xml Checksum';
 
@@ -85,6 +86,7 @@ table 70121 "CRM Log"
         key(Key1; "Entry No.")
         {
             Clustered = true;
+
         }
 
         key(Key2; "Datetime")
@@ -115,6 +117,31 @@ table 70121 "CRM Log"
     trigger OnRename()
     begin
 
+    end;
+
+    procedure ExportObjectXml(ShowFileDialog: Boolean): Text
+    var
+        TempBlob: Codeunit "Temp Blob";
+        FileManagement: Codeunit "File Management";
+        OutStrm: OutStream;
+        InStrm: InStream;
+        FullFileName: Text;
+        FilenameGuid: Guid;
+    begin
+        if "Entry No." = 0 then
+            exit;
+        CalcFields("Object Xml");
+        if not "Object Xml".HasValue then
+            exit;
+        if IsNullGuid("Object Id") then
+            FilenameGuid := CreateGuid()
+        else
+            FilenameGuid := "Object Id";
+        FullFileName := Format(FilenameGuid) + '.txt';
+        TempBlob.CreateOutStream(OutStrm);
+        "Object Xml".CreateInStream(InStrm);
+        CopyStream(OutStrm, InStrm);
+        exit(FileManagement.BLOBExport(TempBlob, FullFileName, ShowFileDialog));
     end;
 
 }

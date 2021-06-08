@@ -94,6 +94,11 @@ table 70120 "CRM Buyers"
 
         }
 
+        field(80010; "CRM Checksum"; Text[40])
+        {
+            Caption = 'CRM Checksum';
+        }
+
 
     }
 

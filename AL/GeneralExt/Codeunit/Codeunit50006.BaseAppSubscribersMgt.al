@@ -365,7 +365,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
-    local procedure SendVendorAgreementMail(sender: Codeunit "Purch.-Post"; var PurchHeader: Record "Purchase Header")
+    local procedure SendVendorAgreementMail(var PurchHeader: Record "Purchase Header")
     var
         CompanyInfo: Record "Company Information";
         LocVend: Record Vendor;

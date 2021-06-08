@@ -5,6 +5,7 @@ page 70227 "CRM Log"
     UsageCategory = Lists;
     SourceTable = "CRM Log";
     SourceTableView = sorting("Datetime") order(descending);
+    Caption = 'CRM Log';
 
     layout
     {
@@ -60,6 +61,28 @@ page 70227 "CRM Log"
 
                 }
 
+            }
+        }
+    }
+
+    actions
+    {
+        area(processing)
+        {
+            action(DownloadObjectXml)
+            {
+                ApplicationArea = All;
+                Caption = 'Download Object Xml';
+                Image = Export;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Scope = Repeater;
+
+                trigger OnAction()
+                begin
+                    Rec.ExportObjectXml(true);
+                end;
             }
         }
     }

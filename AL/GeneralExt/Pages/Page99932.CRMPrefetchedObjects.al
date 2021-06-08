@@ -31,6 +31,12 @@ page 99932 "CRM Prefetched Objects"
 
                 }
 
+                field(ParentId; rec.ParentId)
+                {
+                    ApplicationArea = All;
+
+                }
+
                 field("Prefetch Datetime"; Rec."Prefetch Datetime")
                 {
                     ApplicationArea = All;
@@ -42,5 +48,26 @@ page 99932 "CRM Prefetched Objects"
         }
     }
 
+    actions
+    {
+        area(processing)
+        {
+            action(DownloadObjectXml)
+            {
+                ApplicationArea = All;
+                Caption = 'Download Object Xml';
+                Image = Export;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Scope = Repeater;
+
+                trigger OnAction()
+                begin
+                    Rec.ExportObjectXml(true);
+                end;
+            }
+        }
+    }
 
 }
