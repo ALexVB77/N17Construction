@@ -9437,6 +9437,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Base Vendor No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 835434450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Check Vend. Agr. Template Code</source>
+          <target>Код шаблона сообщения о контроле</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Check Vend. Agr. Template Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3014112906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Cost Code Dimension</source>
           <target>Измерение Cost Code</target>
@@ -9669,7 +9676,6 @@
           <source>Vend. Agr. Controller Notif.</source>
           <target>Уведомление о Контроле Договора Поставщика</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Vend. Agr. Controller Notif. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 3235246815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">

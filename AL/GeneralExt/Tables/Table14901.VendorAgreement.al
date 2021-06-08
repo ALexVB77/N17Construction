@@ -258,14 +258,14 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         if not CompanyInfo."Use RedFlags in Agreements" then
             exit;
 
-        //UserSetupRecip.Reset();
-        //if RecipientType = RecipientType::Creator then
-        //    UserSetupRecip.SetRange("Vend. Agr. Creator Notif.", true)
-        //else
-        //    UserSetupRecip.SetRange("Vend. Agr. Controller Notif.", true);
-        //
-        //if UserSetupRecip.IsEmpty then
-        //    exit;
+        UserSetupRecip.Reset();
+        if RecipientType = RecipientType::Creator then
+            UserSetupRecip.SetRange("Vend. Agr. Creator Notif.", true)
+        else
+            UserSetupRecip.SetRange("Vend. Agr. Controller Notif.", true);
+
+        if UserSetupRecip.IsEmpty then
+            exit;
 
         //AppSetup.Get;
         //AppSetup.CalcFields("Check Vend. Agr. Template");

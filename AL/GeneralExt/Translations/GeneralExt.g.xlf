@@ -7858,6 +7858,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Base Vendor No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 835434450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Check Vend. Agr. Template Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Check Vend. Agr. Template Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3014112906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Cost Code Dimension</source>
           <note from="Developer" annotates="general" priority="2"></note>

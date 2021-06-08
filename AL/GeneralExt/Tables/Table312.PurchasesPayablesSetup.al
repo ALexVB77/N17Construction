@@ -60,6 +60,11 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Caption = 'Vendor Agreement Template Code';
             TableRelation = "Excel Template";
         }
+        field(50031; "Check Vend. Agr. Template Code"; Code[250])
+        {
+            Caption = 'Check Vend. Agr. Template Code';
+            TableRelation = "Excel Template";
+        }
         field(70000; "Payment Calendar Tmpl"; Code[10])
         {
             TableRelation = "Gen. Journal Template".Name;
