@@ -22,6 +22,16 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
             Description = 'NC 50086 PA';
             Caption = 'Administrator PRJ';
         }
+        field(70010; "Vend. Agr. Creator Notif."; Boolean)
+        {
+            Description = 'NC 51432 PA';
+            Caption = 'Vend. Agr. Creator Notif.';
+        }
+        field(70011; "Vend. Agr. Controller Notif."; Boolean)
+        {
+            Description = 'NC 51432 PA';
+            Caption = 'Vend. Agr. Controller Notif.';
+        }
         field(70015; "Status App Act"; enum "User Setup Act Approval Status")
         {
             Description = 'NC 51373 AB';
