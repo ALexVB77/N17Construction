@@ -8,6 +8,10 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
             {
                 ApplicationArea = All;
             }
+            field("Check Vend. Agr. Template Code"; Rec."Check Vend. Agr. Template Code")
+            {
+                ApplicationArea = All;
+            }
         }
         addlast("Number Series")
         {
@@ -49,15 +53,15 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Default Payment Assignment"; "Default Payment Assignment")
+                field("Default Payment Assignment"; Rec."Default Payment Assignment")
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Payment Calendar Tmpl"; "Payment Calendar Tmpl")
+                field("Payment Calendar Tmpl"; Rec."Payment Calendar Tmpl")
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Payment Calendar Batch"; "Payment Calendar Batch")
+                field("Payment Calendar Batch"; Rec."Payment Calendar Batch")
                 {
                     ApplicationArea = Basic, Suite;
                 }

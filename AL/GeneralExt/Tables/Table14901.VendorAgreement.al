@@ -251,6 +251,8 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         Email: Codeunit Email;
         MessageBody: Text;
         i: Integer;
+        ExcelTemplate: Record "Excel Template";
+        PurchasesPayablesSetup: Record "Purchases & Payables Setup";
         Text091: Label 'Check vendor agreements';
         Text092: Label 'MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL';
     begin
@@ -258,23 +260,18 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         if not CompanyInfo."Use RedFlags in Agreements" then
             exit;
 
-        //UserSetupRecip.Reset();
-        //if RecipientType = RecipientType::Creator then
-        //    UserSetupRecip.SetRange("Vend. Agr. Creator Notif.", true)
-        //else
-        //    UserSetupRecip.SetRange("Vend. Agr. Controller Notif.", true);
-        //
-        //if UserSetupRecip.IsEmpty then
-        //    exit;
+        UserSetupRecip.Reset();
+        if RecipientType = RecipientType::Creator then
+            UserSetupRecip.SetRange("Vend. Agr. Creator Notif.", true)
+        else
+            UserSetupRecip.SetRange("Vend. Agr. Controller Notif.", true);
 
-        //AppSetup.Get;
-        //AppSetup.CalcFields("Check Vend. Agr. Template");
-        //if not AppSetup."Check Vend. Agr. Template".HasValue THEN
-        //    Error(Text090)
-        //else begin
-        //    TempPath := TemporaryPath + 'CheckVendAgrTemplate.htm';
-        //    AppSetup."Check Vend. Agr. Template".Export(TempPath, false);
-        //end;
+        if UserSetupRecip.IsEmpty then
+            exit;
+
+        PurchasesPayablesSetup.Get();
+        PurchasesPayablesSetup.TestField("Check Vend. Agr. Template Code");
+        TempPath := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Check Vend. Agr. Template Code");
 
         TemplateFile.TextMode(true);
         TemplateFile.Open(TempPath);
@@ -369,7 +366,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
                         Body := StrSubstNo(Body, Text097);
                 end;
             '253':
-                Body := StrSubstNo(Body, GetUrl(ClientType::Windows) + StrSubstNo(locText001, '%26', '%20', VendAgr."Vendor No.", VendAgr."No.")); //?
+                Body := StrSubstNo(Body, GetUrl(ClientType::Current) + StrSubstNo(locText001, '%26', '%20', VendAgr."Vendor No.", VendAgr."No."));
             '4':
                 Body := StrSubstNo(Body, Text095);
         end;
