@@ -276,7 +276,7 @@ codeunit 99932 "CRM Worker"
 
         BuyerNo := 1;
         repeat
-            if ParsingResult.Get(StrSubstNo('BuyerGuid%1', BuyerNo), Value) then
+            if not ParsingResult.Get(StrSubstNo('BuyerGuid%1', BuyerNo), Value) then
                 BuyerNo := 999
             else begin
                 Evaluate(CRMBuyer."Buyer Guid", Value);
@@ -306,9 +306,13 @@ codeunit 99932 "CRM Worker"
                         if Evaluate(TempDT, Value, 9) then
                             CRMBuyer."Agreement End" := DT2Date(TempDT);
                 end;
+                CRMBuyer.Insert(true);
+                BuyerNo += 1;
             end;
-            BuyerNo += 1;
-        until BuyerNo > 5
+        until BuyerNo > 5;
+
+        if BuyerNo = 1 then
+            CRMBuyer.Insert(true);
     end;
 
     local procedure ImportContact(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
