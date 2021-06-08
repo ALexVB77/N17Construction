@@ -1,7 +1,4 @@
-USE [Bonava Objects]
-GO
-
-INSERT INTO [Bonava-Dev].[dbo].[Bonava$Vendor Agreement$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Test].[dbo].[Bonava$Vendor Agreement$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Vendor No_],
 	[No_],
@@ -71,9 +68,9 @@ SELECT
 	[VAT Agent Prod_ Posting Group],
 	[VAT Payment Source Type],
 	[Tax Authority No_]
-FROM [dbo].[test$Vendor Agreement];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Vendor Agreement];
 
-INSERT INTO [Bonava-Dev].[dbo].[Bonava$Comment Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Test].[dbo].[Bonava$Comment Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Table Name],
 	[No_],
@@ -83,9 +80,9 @@ SELECT
 	[Table Name],
 	[No_],
 	[Line No_]
-FROM [dbo].[test$Comment Line];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Comment Line];
 
-INSERT INTO [Bonava-Dev].[dbo].[Bonava$Vendor Agreement$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
+INSERT INTO [Bonava-Test].[dbo].[Bonava$Vendor Agreement$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
 (
 	[Vendor No_],
 	[No_],
@@ -113,9 +110,9 @@ SELECT
 	[WithOut],
 	[Unbound Cost],
 	[Don_t Check CashFlow]
-FROM [dbo].[test$Vendor Agreement];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Vendor Agreement];
 
-INSERT INTO [Bonava-Dev].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Test].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Table ID],
 	[No_],
@@ -131,4 +128,4 @@ SELECT
 	[Dimension Value Code],
 	[Value Posting],
 	[Multi Selection Action]
-FROM [dbo].[test$Default Dimension] WHERE [Table ID] = '14901' AND [Dimension Code] = 'CP';
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Default Dimension] WHERE [Table ID] = '14901' AND [Dimension Code] = 'CP';

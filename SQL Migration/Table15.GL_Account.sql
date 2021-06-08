@@ -1,14 +1,11 @@
-USE [Bonava Objects]
-GO
-
-INSERT INTO [Bonava-Dev].[dbo].[Bonava$G_L Account$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Test].[dbo].[Bonava$G_L Account$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[No_],
 	[Name],
+	[Search Name],
 	[Account Type],
 	[Global Dimension 1 Code],
 	[Global Dimension 2 Code],
-	[Account Category],
 	[Income_Balance],
 	[Debit_Credit],
 	[No_ 2],
@@ -79,6 +76,6 @@ SELECT
 	[Balance in Currency],
 	[Adjust Debit Acc_],
 	[Adjust Credit Acc_]
-FROM [dbo].[test$G_L Account]
-INNER JOIN [Bonava-Dev].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
-ON GLAccMapping.[Old No_] = [No_];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$G_L Account]
+INNER JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
+ON GLAccMapping.[Old No_] = [No_] collate Cyrillic_General_100_CI_AS;
