@@ -22,7 +22,6 @@ codeunit 50006 "Base App. Subscribers Mgt."
         LText001: Label 'Advance %1';
         Text50000: label 'Create sales invoice?';
     begin
-
         //NC 23904 HR beg
         IF NOT CONFIRM(Text50000, FALSE) THEN
             EXIT;
@@ -442,7 +441,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         CheckLimitDateFilter: Text;
         VendorAgreement: Record "Vendor Agreement";
     begin
-        if (PurchHeader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
+        if (PurchHjreader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
             CompanyInfo.Get;
             LocVend.GET(PurchHeader."Buy-from Address");
 
