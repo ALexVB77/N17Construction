@@ -441,7 +441,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         CheckLimitDateFilter: Text;
         VendorAgreement: Record "Vendor Agreement";
     begin
-        if (PurchHjreader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
+        if (PurchHeader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
             CompanyInfo.Get;
             LocVend.GET(PurchHeader."Buy-from Address");
 
