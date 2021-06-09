@@ -2,6 +2,11 @@ tableextension 80311 "Sales & Receiv. Setup (Ext)" extends "Sales & Receivables 
 {
     fields
     {
+        field(50020; "Prepay. Inv. G/L Acc. No. (ac)"; code[20])
+        {
+            Caption = 'Prepay. Inv. G/L Acc. No. (ac)';
+            TableRelation = "G/L Account";
+        }
         field(70000; "Building Act Nos."; Code[10])
         {
             TableRelation = "No. Series";
