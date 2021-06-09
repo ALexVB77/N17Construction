@@ -7,7 +7,7 @@
 
     fields
     {
-        field(1; "Code"; Code[10])
+        field(1; "Code"; Code[20]) //NC Data Migtation PA Code[10] -> Code[20]
         {
             Caption = 'Code';
             NotBlank = true;
