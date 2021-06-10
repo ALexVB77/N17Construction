@@ -1,3 +1,4 @@
+-- Vendor Agreement Table
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Vendor Agreement$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Vendor No_],
@@ -9,27 +10,18 @@ INSERT INTO [Bonava-Test].[dbo].[Bonava$Vendor Agreement$437dbf0e-84ff-417a-965d
 	[Active],
 	[Starting Date],
 	[Expire Date],
-	[Contact],
 	[Phone No_],
 	[Global Dimension 1 Code],
 	[Global Dimension 2 Code],
-	[Vendor Posting Group],
+	--[Vendor Posting Group],
 	[Currency Code],
-	[Language Code],
-	[Payment Terms Code],
 	[Purchaser Code],
-	[Prices Including VAT],
 	[Blocked],
-	[Priority],
-	[Payment Method Code],
 	[Gen_ Bus_ Posting Group],
-	[Order Address Code],
 	[E-Mail],
 	[No_ Series],
 	[VAT Bus_ Posting Group],
-	[Responsibility Center],
 	[Location Code],
-	[Default Bank Code],
 	[VAT Agent Prod_ Posting Group],
 	[VAT Payment Source Type],
 	[Tax Authority No_]
@@ -44,80 +36,80 @@ SELECT
 	[Active],
 	[Starting Date],
 	[Expire Date],
-	[Contact],
 	[Phone No_],
 	[Global Dimension 1 Code],
 	[Global Dimension 2 Code],
-	[Vendor Posting Group],
+	--[Vendor Posting Group],
 	[Currency Code],
-	[Language Code],
-	[Payment Terms Code],
 	[Purchaser Code],
-	[Prices Including VAT],
 	[Blocked],
-	[Priority],
-	[Payment Method Code],
 	[Gen_ Bus_ Posting Group],
-	[Order Address Code],
 	[E-Mail],
 	[No_ Series],
 	[VAT Bus_ Posting Group],
-	[Responsibility Center],
 	[Location Code],
-	[Default Bank Code],
 	[VAT Agent Prod_ Posting Group],
 	[VAT Payment Source Type],
 	[Tax Authority No_]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Vendor Agreement];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Vendor Agreement]
+WHERE [Blocked] <> '2';
 
-INSERT INTO [Bonava-Test].[dbo].[Bonava$Comment Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
-(
-	[Table Name],
-	[No_],
-	[Line No_]
-)
-SELECT
-	[Table Name],
-	[No_],
-	[Line No_]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Comment Line];
-
+-- Vendor Agreement Table Extension
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Vendor Agreement$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
 (
 	[Vendor No_],
 	[No_],
 	[Vat Agent Posting Group],
-	[Original No_],
-	[Original Company],
 	[Agreement Amount],
-	[Project Dimension Code],
 	[VAT Amount],
 	[Amount Without VAT],
-	[WithOut], 
+	[WithOut],
 	[Unbound Cost],
+	[Check Limit Starting Date],
+	[Check Limit Ending Date],
+	[Check Limit Amount (LCY)],
 	[Don_t Check CashFlow]
 )
 SELECT
 	[Vendor No_],
 	[No_],
 	[Vat Agent Posting Group],
-	[Original No_],
-	[Original Company],
 	[Agreement Amount],
-	[Project Dimension Code],
 	[VAT Amount],
 	[Amount Without VAT],
 	[WithOut],
 	[Unbound Cost],
+	[Check Limit Starting Date],
+	[Check Limit Ending Date],
+	[Check Limit Amount (LCY)],
 	[Don_t Check CashFlow]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Vendor Agreement];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Vendor Agreement]
+WHERE [Blocked] <> '2';
 
+-- Comment Line
+INSERT INTO [Bonava-Test].[dbo].[Bonava$Comment Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
+(
+	[Table Name],
+	[No_],
+	[Line No_],
+	[Date],
+	[Comment]
+)
+SELECT
+	[Table Name],
+	[No_],
+	[Line No_],
+	[Date],
+	[Comment]
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Comment Line];
+
+-- Default Dimension
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Table ID],
 	[No_],
 	[Dimension Code],
-	[Dimension Value Code],
+	--[Dimension Value Code],
 	[Value Posting],
 	[Multi Selection Action]
 )
@@ -125,7 +117,15 @@ SELECT
 	[Table ID],
 	[No_],
 	[Dimension Code],
-	[Dimension Value Code],
+	--[Dimension Value Code],
 	[Value Posting],
 	[Multi Selection Action]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Default Dimension] WHERE [Table ID] = '14901' AND [Dimension Code] = 'CP';
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Default Dimension]
+WHERE [Table ID] = '14901'
+AND ([Dimension Code] = 'CC' OR 
+	 [Dimension Code] = 'CP' OR
+	 [Dimension Code] = 'НП' OR
+	 [Dimension Code] = 'НУ-ВИД' OR
+	 [Dimension Code] = 'НУ-ОБЪЕКТ' OR
+	 [Dimension Code] = 'НУ-РАЗНИЦА' OR
+	 [Dimension Code] = 'ПРИБ_УБ_ПРОШ_ЛЕТ');

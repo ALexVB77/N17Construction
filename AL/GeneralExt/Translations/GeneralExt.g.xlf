@@ -2903,6 +2903,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method CheckFADocNo - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 2087724425 - NamedType 470711900" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Advance %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SetPrepaymentDoc - NamedType LText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 2087724425 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create sales invoice?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SetPrepaymentDoc - NamedType Text50000</note>
+        </trans-unit>
         <trans-unit id="Codeunit 848050111 - Method 3304731564" size-unit="char" translate="yes" xml:space="preserve">
           <source>ConstOther</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7932,6 +7942,11 @@
           <source>CRM Worker Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receiv. Setup (Ext) - Field CRM Worker Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2733905579 - Field 1307183859 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4145206282">
+          <source>Prepay. Inv. G/L Acc. No. (ac)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receiv. Setup (Ext) - Field Prepay. Inv. G/L Acc. No. (ac) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2820792494 - Field 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 552782286">
           <source>Credit-Memo Reason</source>
