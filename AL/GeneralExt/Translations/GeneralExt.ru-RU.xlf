@@ -1147,21 +1147,18 @@
           <source>Dimension Code</source>
           <target>Код измерения</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field Dimension Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2519642008 - Field 2329601638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>New Dimension Value Code</source>
           <target>Новое значение измерения</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field New Dimension Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2519642008 - Field 3084686051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Old Dimension Value Code</source>
           <target>Текущее значение измерения</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field Old Dimension Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3834907272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2065,10 +2062,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The amount cannot be more than indicated in the "% 1" agreement card in the breakdown by letter!</source>
-          <target>[NAB: REVIEW]Сумма не может быть больше, чем указано в карточке Договора "%1" в Разбивке по Литерам!</target>
+          <source>The amount cannot be more than indicated in the "%1" agreement card in the breakdown by letter!</source>
+          <target>Сумма не может быть больше, чем указано в карточке Договора "%1" в Разбивке по Литерам!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3248,24 +3244,21 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0001</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 4156606849" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No article% 2 found for construction object% 1</source>
-          <target>[NAB: REVIEW]Для объекта строительства %1 не найдена статья %2</target>
+          <source>No article %2 found for construction object %1</source>
+          <target>Для объекта строительства %1 не найдена статья %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%2" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0002</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>For the project% 1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!</source>
-          <target>[NAB: REVIEW]У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!</target>
+          <source>For the project %1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!</source>
+          <target>У проекта %1 с типом Production поля Сумма с НДС и Сумма без НДС д.б. оба заполнены, либо оба равны 0!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace% 1!</source>
-          <target>[NAB: REVIEW]Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</target>
+          <source>Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace %1!</source>
+          <target>Сумма с НДС и Сумма без НДС не должны быть равны 0 для CostPlace %1!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - Method 4254886844 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
@@ -4182,16 +4175,14 @@
         </trans-unit>
         <trans-unit id="Page 2519642008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimension Mapping</source>
-          <target>[NAB: SUGGESTION]Соответствие измерений</target>
+          <target>Соответствие измерений</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2519642008 - Action 3492634373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import G\L Account Mapping</source>
-          <target>[NAB: SUGGESTION]Импорт соответствия итогового плана счетов</target>
+          <target>Импорт соответствия итогового плана счетов</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Action ImportGLAccountMapping - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -4465,17 +4456,15 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0011</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 3343806034" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operation is bound to document IW \ Amount available for transfer to 1st level =% 1 \ Continue?</source>
-          <target>[NAB: REVIEW]Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень =%1\ Продолжить?</target>
+          <source>Operation is bound to document IW \ Amount available for transfer to 1st level = %1 \ Continue?</source>
+          <target>Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень = %1\ Продолжить?</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0012</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 2706109417" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible!</source>
-          <target>[NAB: REVIEW]Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень =%1\ Перевод невозможен!</target>
+          <source>Operation is bound to document IW \ Amount available for transfer to 1st level= %1 \ Transfer is not possible!</source>
+          <target>Операция привязана к документу IW\Сумма доступная для перевода на 1-й уровень = %1\ Перевод невозможен!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0013</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 324231972" size-unit="char" translate="yes" xml:space="preserve">
@@ -8248,7 +8237,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -8681,7 +8670,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -9779,10 +9768,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 1266883841" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>User %1 created a new agreement with number %2 for vendor% 3</source>
-          <target>[NAB: REVIEW]Пользователь %1 создал новый договор с номером %2 по поставщику %3</target>
+          <source>User %1 created a new agreement with number %2 for vendor %3</source>
+          <target>Пользователь %1 создал новый договор с номером %2 по поставщику %3</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%3" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text093</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 3179973692" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
@@ -9823,7 +9811,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 1828299548 - NamedType 1904580458" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
           <source>MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL</source>
-          <target>[NAB: REVIEW]СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ NAV (%1)</target>
+          <target>СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ NAV (%1)</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method SendVendAgrMail - NamedType Text092</note>

@@ -342,7 +342,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
     local procedure FillCheckVendAgrTemplate(var Body: Text; TextNo: Text; UserDesc: Text; VendAgr: Record "Vendor Agreement"; RecipientType: Option Creator,Controller)
     var
         Vend: Record "Vendor";
-        Text093: Label 'User %1 created a new agreement with number %2 for vendor% 3';
+        Text093: Label 'User %1 created a new agreement with number %2 for vendor %3';
         Text094: Label 'It is necessary to fill in the information on the control of the purchase limit';
         Text095: Label 'Click this link to open document';
         Text096: Label 'For the agreement with number %1 for the vendor %2, the purchase limit has been exceeded';

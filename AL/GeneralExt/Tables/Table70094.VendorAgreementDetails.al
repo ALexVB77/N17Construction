@@ -281,10 +281,10 @@ table 70094 "Vendor Agreement Details"
         BuildingProject: Record "Building Project";
         SkipChekEmptyAmount: Boolean;
         TEXT0001: Label 'It is necessary to determine the construction object';
-        TEXT0002: Label 'No article% 2 found for construction object% 1';
+        TEXT0002: Label 'No article %2 found for construction object %1';
         FRAME: Label 'FRAME';
-        Text50000: Label 'For the project% 1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!';
-        Text50001: Label 'Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace% 1!';
+        Text50000: Label 'For the project %1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!';
+        Text50001: Label 'Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace %1!';
 
     trigger OnInsert()
     begin

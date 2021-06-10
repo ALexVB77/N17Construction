@@ -1719,7 +1719,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The amount cannot be more than indicated in the "% 1" agreement card in the breakdown by letter!</source>
+          <source>The amount cannot be more than indicated in the "%1" agreement card in the breakdown by letter!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - NamedType Text50000</note>
         </trans-unit>
@@ -2704,17 +2704,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0001</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 4156606849" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No article% 2 found for construction object% 1</source>
+          <source>No article %2 found for construction object %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType TEXT0002</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
-          <source>For the project% 1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!</source>
+          <source>For the project %1 with the Production type, the fields Amount with VAT and Amount without VAT, etc. both are filled, or both are 0!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Table 1535144756 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace% 1!</source>
+          <source>Amount with VAT and Amount without VAT must not be equal to 0 for CostPlace %1!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Vendor Agreement Details - NamedType Text50001</note>
         </trans-unit>
@@ -3714,12 +3714,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0011</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 3343806034" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operation is bound to document IW \ Amount available for transfer to 1st level =% 1 \ Continue?</source>
+          <source>Operation is bound to document IW \ Amount available for transfer to 1st level = %1 \ Continue?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0012</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - NamedType 2706109417" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible!</source>
+          <source>Operation is bound to document IW \ Amount available for transfer to 1st level= %1 \ Transfer is not possible!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0013</note>
         </trans-unit>
@@ -8139,7 +8139,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 1266883841" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>User %1 created a new agreement with number %2 for vendor% 3</source>
+          <source>User %1 created a new agreement with number %2 for vendor %3</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text093</note>
         </trans-unit>

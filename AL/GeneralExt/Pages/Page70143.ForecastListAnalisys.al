@@ -616,8 +616,8 @@ page 70143 "Forecast List Analisys"
         grVendorAgreement: record "Vendor Agreement";
         OldAgreement: code[20];
         US: record "User Setup";
-        TEXT0012: Label 'Operation is bound to document IW \ Amount available for transfer to 1st level =% 1 \ Continue?';
-        TEXT0013: Label 'Operation is bound to document IW \ Amount available for transfer to 1st level=% 1 \ Transfer is not possible!';
+        TEXT0012: Label 'Operation is bound to document IW \ Amount available for transfer to 1st level = %1 \ Continue?';
+        TEXT0013: Label 'Operation is bound to document IW \ Amount available for transfer to 1st level= %1 \ Transfer is not possible!';
         TEXT0004: Label 'You must set the Project Code!';
         TEXT0005: Label 'You must set CC!';
         TEXT0006: Label 'The amount of the transaction must be determined!';

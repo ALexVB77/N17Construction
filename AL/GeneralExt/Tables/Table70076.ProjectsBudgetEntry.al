@@ -459,7 +459,7 @@ table 70076 "Projects Budget Entry"
         CurrExchRate: Record "Currency Exchange Rate";
         grProjectsStructureLines1: Record "Projects Structure Lines";
         lrProjectsBudgetEntryLink: Record "Projects Budget Entry Link";
-        Text50000: Label 'The amount cannot be more than indicated in the "% 1" agreement card in the breakdown by letter!';
+        Text50000: Label 'The amount cannot be more than indicated in the "%1" agreement card in the breakdown by letter!';
 
     procedure GetNextEntryNo(): Integer
     var
