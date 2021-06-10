@@ -606,10 +606,13 @@ report 80322 "Aged Accounts Payable Ext"
                         Caption = 'Use External Document No.';
                         ToolTip = 'Specifies if you want to print the vendor''s document numbers, such as the invoice number, on all transactions. Clear this check box to print only internal document numbers.';
                     }
+
+
                     field(ExportExcel; ExportExcel)
                     {
                         ApplicationArea = Basic, Suite;
                         Caption = 'Export Excel';
+
                     }
                 }
             }
@@ -652,9 +655,14 @@ report 80322 "Aged Accounts Payable Ext"
             DocNoCaption := DocumentNoCaptionLbl;
 
         //NC 50517>>
-        //if ExportExcel then begin
-        //Filename := ExcelTemplate.OpenTemplate(())
-        //end;
+        PurchAndPyableSetup.Get();
+        if ExportExcel then begin
+            Filename := ExcelTemplate.OpenTemplate((PurchAndPyableSetup."Aged Acc. Payable Tmplt Code"));
+            XL.OpenBook(Filename, 'Sheet1');
+            FontSize := 11;
+            RowNoBegin := 5;
+            RowNo := 5;
+        end;
         //NC 50517<<
     end;
 
@@ -716,6 +724,8 @@ report 80322 "Aged Accounts Payable Ext"
         DocNoCaption: Text;
         DocumentNo: Code[35];
 
+
+        //NC 50517 >>
         ExportExcel: Boolean;
         ExcelTemplate: Record "Excel Template";
         XL: Record "Excel Buffer Mod" temporary;
@@ -727,7 +737,8 @@ report 80322 "Aged Accounts Payable Ext"
         EnterTxt: Text[2];
         HeaderTextExcel: Text[30];
         UseComma: Boolean;
-
+        PurchAndPyableSetup: Record "Purchases & Payables Setup";
+    //NC 50517 <<
 
 
 
