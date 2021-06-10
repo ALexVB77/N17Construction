@@ -49,7 +49,11 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Skip Check CF Forecast Filter"; Rec."Skip Check CF Forecast Filter")
+                field("Act CP Dimension Filter"; Rec."Act CP Dimension Filter")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Prod. Act CP Dimension Filter"; Rec."Prod. Act CP Dimension Filter")
                 {
                     ApplicationArea = Basic, Suite;
                 }
@@ -66,6 +70,10 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                     ApplicationArea = Basic, Suite;
                 }
                 field("Payment Calendar Batch"; Rec."Payment Calendar Batch")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Frame Agreement Group"; "Frame Agreement Group")
                 {
                     ApplicationArea = Basic, Suite;
                 }
