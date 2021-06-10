@@ -12,7 +12,9 @@ report 99998 TransferExcelTemplates
         etsSrc: Record "Excel Template Sheet";
         etsdst: Record "Excel Template Sheet";
 
+
     begin
+
         etSrc.ChangeCompany('CRONUS Россия ЗАО');
         if (etsrc.FindSet()) then begin
             repeat
@@ -23,6 +25,7 @@ report 99998 TransferExcelTemplates
 
             until (etsrc.Next() = 0);
         end;
+
         etsSrc.ChangeCompany('CRONUS Россия ЗАО');
         if (etssrc.FindSet()) then begin
             repeat
