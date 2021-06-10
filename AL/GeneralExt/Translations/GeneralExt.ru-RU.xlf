@@ -1137,6 +1137,33 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Project Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2519642008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Mapping</source>
+          <target>Соответствие измерений</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2519642008 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Code</source>
+          <target>Код измерения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2519642008 - Field 2329601638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Dimension Value Code</source>
+          <target>Новое значение измерения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field New Dimension Value Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2519642008 - Field 3084686051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Old Dimension Value Code</source>
+          <target>Текущее значение измерения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field Old Dimension Value Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3834907272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Attachment Archive</source>
           <target>Вложение документа</target>
@@ -3491,14 +3518,12 @@
           <source>Advance %1</source>
           <target>Аванс %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SetPrepaymentDoc - NamedType LText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2087724425 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create sales invoice?</source>
           <target>Создать счет продажи?</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SetPrepaymentDoc - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Codeunit 848050111 - Method 3304731564" size-unit="char" translate="yes" xml:space="preserve">
@@ -4154,6 +4179,20 @@
           <target>CRM Units and Buyers</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Units and Buyers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2519642008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Mapping</source>
+          <target>[NAB: SUGGESTION]Соответствие измерений</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2519642008 - Action 3492634373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import G\L Account Mapping</source>
+          <target>[NAB: SUGGESTION]Импорт соответствия итогового плана счетов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Action ImportGLAccountMapping - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Approval)</source>
@@ -9545,7 +9584,6 @@
           <source>Prepay. Inv. G/L Acc. No. (ac)</source>
           <target>Номер счета ГК док-та предоплаты (авто)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales &amp; Receiv. Setup (Ext) - Field Prepay. Inv. G/L Acc. No. (ac) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2820792494 - Field 2993483370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 552782286">
