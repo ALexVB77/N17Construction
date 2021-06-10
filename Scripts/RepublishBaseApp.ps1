@@ -5,7 +5,7 @@
 # $GeneralExtPath = "C:\Users\alpopov\AL\N17Construction\AL\GeneralExt\Default publisher_GeneralExt_1.0.0.5.app"
 
 $ServerInstance = "BonavaDev"
-$ApplicationPath = "C:\Users\alpopov\AL\N17Construction\AL\BaseApp\Microsoft_Base Application_17.4.21491.21533.app"
+$ApplicationPath = "C:\Users\alpopov\AL\N17Construction\AL\BaseApp\Microsoft_Base Application_17.4.21491.21534.app"
 
 $quietExecution = $null
 
