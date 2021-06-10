@@ -241,4 +241,686 @@ codeunit 70000 "ERPC Funtions"
         END;
     end;
 
+    procedure CheckShortCutDim1(PurchHeader: Record "Purchase Header")
+    var
+        PurchSetup: Record "Purchases & Payables Setup";
+        DimSetEntry: Record "Dimension Set Entry";
+        LocText001: Label 'You must specify %1 and %2 for %3.';
+    begin
+        PurchSetup.Get();
+        PurchSetup.TestField("Cost Place Dimension");
+        PurchSetup.TestField("Cost Code Dimension");
+
+        if PurchHeader."Dimension Set ID" = 0 then
+            Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.");
+
+        DimSetEntry.SetRange("Dimension Set ID", PurchHeader."Dimension Set ID");
+        DimSetEntry.SetFilter("Dimension Code", '%1|%2', PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension");
+        if DimSetEntry.Count <> 2 then
+            Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.");
+    end;
+
+    procedure CheckLineShortCutDim1(PurchLine: Record "Purchase Line"; CheckCode: Boolean; PurchSetup: Record "Purchases & Payables Setup"; ActType: enum "Purchase Act Type")
+    var
+        DimSetEntry: Record "Dimension Set Entry";
+        LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
+        LocText50010: Label 'Line %1 specifies COST PLACE %2 that does not match the document type %3.';
+    begin
+        if PurchLine."Dimension Set ID" = 0 then
+            Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchLine."Document No.", PurchLine."Line No.");
+
+        DimSetEntry.SetRange("Dimension Set ID", PurchLine."Dimension Set ID");
+        DimSetEntry.SetFilter("Dimension Code", '%1|%2', PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension");
+        if DimSetEntry.Count <> 2 then
+            Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchLine."Document No.", PurchLine."Line No.");
+
+        if not CheckCode then
+            exit;
+
+        if (ActType = ActType::Act) and (PurchSetup."Prod. Act CP Dimension Filter" <> '') then begin
+            DimSetEntry.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
+            DimSetEntry.SetFilter("Dimension Value Code", PurchSetup."Prod. Act CP Dimension Filter");
+            if not DimSetEntry.IsEmpty then
+                ERROR(LocText50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", ActType);
+        end;
+        if (ActType = ActType::"Act (Production)") and (PurchSetup."Act CP Dimension Filter" <> '') then begin
+            DimSetEntry.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
+            DimSetEntry.SetFilter("Dimension Value Code", PurchSetup."Act CP Dimension Filter");
+            if not DimSetEntry.IsEmpty then
+                ERROR(LocText50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", ActType);
+        end;
+    end;
+
+    local procedure CheckCT(PurchHeader: Record "Purchase Header")
+    var
+        PurchLine: Record "Purchase Line";
+    begin
+        // SWC1001 DD 12.02.17 <<
+        IF (PurchHeader."Act Type" IN [PurchHeader."Act Type"::"Act (Production)", PurchHeader."Act Type"::"KC-2 (Production)"]) AND
+            (PurchHeader."Status App" = PurchHeader."Status App"::Checker)
+        THEN BEGIN
+            PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+            PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+            IF PurchLine.FINDSET THEN
+                REPEAT
+                    PurchLine.TESTFIELD("Cost Type");
+                UNTIL PurchLine.NEXT = 0;
+        END;
+        // SWC1001 DD 12.02.17 <<
+    end;
+
+    local procedure CheckDimensionComb(PurchHeader: Record "Purchase Header")
+    var
+        PurchLine: Record "Purchase Line";
+        DimMgt: Codeunit DimensionManagement;
+        DimCausedErr: label 'A dimension used in line %1 has caused an error. %2.';
+    begin
+        PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+        PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+        IF PurchLine.FINDSET THEN
+            REPEAT
+                // NC AB : переделываем на стандарт
+                // DimensionValueCombination.SETRANGE("Dimension 1 Code", 'CP');
+                // DimensionValueCombination.SETRANGE("Dimension 1 Value Code", lrPL."Shortcut Dimension 1 Code");
+                // DimensionValueCombination.SETRANGE("Dimension 2 Code", 'CC');
+                // DimensionValueCombination.SETRANGE("Dimension 2 Value Code", lrPL."Shortcut Dimension 2 Code");
+                // IF DimensionValueCombination.FINDFIRST THEN
+                //     ERROR(TEST0001, 'CP', lrPL."Shortcut Dimension 1 Code", 'CC', lrPL."Shortcut Dimension 2 Code");
+                // DimensionValueCombination.SETRANGE("Dimension 2 Code", 'CP');
+                // DimensionValueCombination.SETRANGE("Dimension 2 Value Code", lrPL."Shortcut Dimension 1 Code");
+                // DimensionValueCombination.SETRANGE("Dimension 1 Code", 'CC');
+                // DimensionValueCombination.SETRANGE("Dimension 1 Value Code", lrPL."Shortcut Dimension 2 Code");
+                // IF DimensionValueCombination.FINDFIRST THEN
+                //     ERROR(TEST0001, 'CP', lrPL."Shortcut Dimension 1 Code", 'CC', lrPL."Shortcut Dimension 2 Code");
+                IF NOT DimMgt.CheckDimIDComb(PurchLine."Dimension Set ID") THEN
+                    ERROR(DimCausedErr, PurchLine."Line No.", DimMgt.GetDimValuePostingErr);
+            UNTIL PurchLine.NEXT = 0;
+    end;
+
+    local procedure CheckDocSum(PurchHeader: Record "Purchase Header")
+    var
+        TempPurchLine: Record "Purchase Line" temporary;
+        TempVATAmountLine: Record "VAT Amount Line" temporary;
+        TotalPurchLine: Record "Purchase Line";
+        TotalPurchLineLCY: Record "Purchase Line";
+        PurchPost: Codeunit "Purch.-Post";
+        VATAmount: Decimal;
+        VATAmountText: Text[30];
+        ErrText001: label 'The invoice Amount including VAT in the header does not match the amount including VAT by lines!';
+        ErrText002: label 'The VAT amount in the header does not match the VAT amount by lines!';
+    begin
+        // NC AB: переделываем на стандарт
+        // InvAmountInclVAT := gcERPC.GetTotalsActAmount(pPH, 3);
+        // InvVATAmount := gcERPC.GetTotalsActAmount(pPH, 2);
+        // InvAmount := gcERPC.GetTotalsActAmount(pPH, 1);
+        // IF pPH."Invoice Amount Incl. VAT" <> InvAmountInclVAT THEN
+        //   ERROR('Сумма счета с НДС в шапке не совпадает с Суммой включая НДС по строкам!');
+        // IF pPH."Invoice VAT Amount" <> InvVATAmount THEN
+        //   ERROR('Сумма НДС в шапке не совпадает с Суммой НДС по строкам!');
+        // IF pPH."Invoice Amount" <> InvAmount THEN
+        //   ERROR('Сумма счета без НДС в шапке не совпадает с Суммой без НДС по строкам!');
+        PurchPost.GetPurchLines(PurchHeader, TempPurchLine, 0);
+        TempPurchLine.CalcVATAmountLines(0, PurchHeader, TempPurchLine, TempVATAmountLine);
+        PurchPost.SumPurchLinesTemp(PurchHeader, TempPurchLine, 0, TotalPurchLine, TotalPurchLineLCY, VATAmount, VATAmountText);
+        IF PurchHeader."Invoice Amount Incl. VAT" <> TotalPurchLine."Amount Including VAT" THEN
+            ERROR(ErrText001);
+        IF PurchHeader."Invoice VAT Amount" <> (TotalPurchLine."Amount Including VAT" - TotalPurchLine."VAT Base Amount") THEN
+            ERROR(ErrText002);
+    end;
+
+    local procedure CheckAgrDetRemain(PurchHeader: Record "Purchase Header")
+    var
+        VAgreement: Record "Vendor Agreement";
+        VAgrDet: Record "Vendor Agreement Details";
+        PurchSetup: Record "Purchases & Payables Setup";
+        PurchLine: Record "Purchase Line";
+        GLSetup: Record "General Ledger Setup";
+        Text1000: Label 'For the line with the dimensions combination %1 and %2, the Agreement card Remaining Amount has been exceeded!';
+        Text1001: Label 'The line with the  dimensions combination %1 and %2 does not exist in the Breakdown by Letter of the Agreement card!';
+    begin
+        PurchSetup.GET;
+        IF PurchSetup."Frame Agreement Group" = VAgreement."Agreement Group" THEN
+            EXIT;
+
+        IF PurchHeader."Act Type" IN [PurchHeader."Act Type"::"Act (Production)", PurchHeader."Act Type"::"KC-2 (Production)"] THEN
+            IF VAgreement.GET(PurchHeader."Buy-from Vendor No.", PurchHeader."Agreement No.") AND NOT VAgreement.WithOut THEN BEGIN
+                PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+                PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+                IF PurchLine.FINDSET THEN
+                    REPEAT
+                        VAgrDet.SETRANGE("Vendor No.", PurchLine."Buy-from Vendor No.");
+                        VAgrDet.SETRANGE("Agreement No.", PurchLine."Agreement No.");
+                        VAgrDet.SETRANGE("Global Dimension 1 Code", PurchLine."Shortcut Dimension 1 Code");
+                        VAgrDet.SETRANGE("Global Dimension 2 Code", PurchLine."Shortcut Dimension 2 Code");
+                        IF VAgrDet.FINDSET THEN BEGIN
+                            GLSetup.GET;
+                            IF VAgrDet.GetRemainAmt < -GLSetup."Allow Diff in Check" THEN
+                                ERROR(Text1000, PurchLine."Shortcut Dimension 1 Code", PurchLine."Shortcut Dimension 2 Code");
+                        END ELSE
+                            ERROR(Text1001, PurchLine."Shortcut Dimension 1 Code", PurchLine."Shortcut Dimension 2 Code");
+                    UNTIL PurchLine.NEXT = 0;
+            END;
+    end;
+
+
+    local procedure CreatePurchOrder(VAR PurchaseHeader: Record "Purchase Header"; CheckOnly: Boolean)
+    var
+        InvSetup: Record "Inventory Setup";
+        WhseEmpl: Record "Warehouse Employee";
+        PurchLine: Record "Purchase Line";
+        PHeader: Record "Purchase Header";
+        PLine: Record "Purchase Line";
+        ReleasePurchDoc: Codeunit "Release Purchase Document";
+        PurchPost: Codeunit "Purch.-Post";
+        Text50016: label 'You must select the real item before document posting.';
+    begin
+        InvSetup.GET();
+        // DEBUG check later
+        /*
+        InvSetup.TESTFIELD(InvSetup."Warehouse RoleID");
+        IF NOT ExistRoles(USERID,InvSetup."Warehouse RoleID") THEN ERROR(Text50020);
+        */
+        // NC AB: пока просто проверяем что пользователь - сотрудник склада
+        WhseEmpl.SetRange("User ID", UserId);
+        WhseEmpl.FindFirst();
+
+        PurchLine.SETRANGE("Document Type", PurchaseHeader."Document Type");
+        PurchLine.SETRANGE("Document No.", PurchaseHeader."No.");
+        PurchLine.SETRANGE("No.", InvSetup."Temp Item Code");
+        IF not PurchLine.IsEmpty THEN
+            ERROR(Text50016);
+        PurchLine.SETRANGE("No.");
+
+        if CheckOnly then
+            exit;
+
+        PHeader.INIT;
+        PHeader.TRANSFERFIELDS(PurchaseHeader);
+        PHeader."Document Type" := PHeader."Document Type"::Order;
+        PHeader."No." := '';
+        PHeader.Status := PHeader.Status::Open;
+        PHeader."Act Type" := PHeader."Act Type"::" ";
+        PHeader.INSERT(TRUE);
+
+        PHeader."Document Date" := PurchaseHeader."Document Date";
+        PHeader.VALIDATE("Location Code", PurchaseHeader."Location Code");
+        PHeader.MODIFY();
+
+        IF PurchLine.FINDSET THEN
+            REPEAT
+                WITH PLine DO BEGIN
+                    INIT;
+                    TRANSFERFIELDS(PurchLine);
+                    "Document Type" := PHeader."Document Type";
+                    "Document No." := PHeader."No.";
+                    VALIDATE(Amount, PurchLine."Line Amount");
+                    VALIDATE("Cost Type");
+                    INSERT;
+                END
+            UNTIL PurchLine.NEXT = 0;
+
+        ReleasePurchDoc.RUN(PHeader);
+        PHeader.Receive := TRUE;
+        PHeader.MODIFY;
+
+        // NC AB:
+        // PurchPost.SetPreviewMode(FALSE, TRUE);
+        // PurchPost.ForceSwitchOffTracert();
+        PurchPost.SetSuppressCommit(true);
+        PurchPost.RUN(PHeader);
+
+        PurchaseHeader."Invoice No." := PHeader."No.";
+        PurchaseHeader.Modify();
+    end;
+
+    local procedure UpdateActHeaderDimByMaxLine(var PurchHeader: Record "Purchase Header"; var PurchSetup: record "Purchases & Payables Setup"; HardCheck: Boolean)
+    var
+        PurchLine: Record "Purchase Line";
+        PurchLineMax: Record "Purchase Line";
+        DimSetEntryFrom: Record "Dimension Set Entry";
+        DimMgtExt: Codeunit "Dimension Management (Ext)";
+        MaxAmount: Decimal;
+        UpdateHeader: Boolean;
+        Text50015: Label 'Lines are not filled.';
+    begin
+
+        PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+        PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+        IF PurchLine.ISEMPTY and HardCheck THEN
+            ERROR(Text50015);
+        IF PurchLine.FINDSET THEN BEGIN
+            PurchLineMax := PurchLine;
+            MaxAmount := PurchLine."Line Amount";
+            REPEAT
+                // NC AB :
+                // PurchLine.TESTFIELD("Shortcut Dimension 1 Code");
+                // PurchLine.TESTFIELD("Shortcut Dimension 2 Code");
+                // IF STRLEN(PurchLine."Shortcut Dimension 1 Code") >= 10 THEN BEGIN
+                //     IF grPurchHeader."Act Type" = grPurchHeader."Act Type"::Act THEN
+                //         IF PurchLine."Shortcut Dimension 1 Code"[10] = 'P' THEN
+                //             ERROR(Text50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", grPurchHeader."Act Type");
+                //     IF grPurchHeader."Act Type" = grPurchHeader."Act Type"::"Act (Production)" THEN
+                //         IF PurchLine."Shortcut Dimension 1 Code"[10] = 'D' THEN
+                //             ERROR(Text50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", grPurchHeader."Act Type");
+                // END;
+                CheckLineShortCutDim1(PurchLine, true, PurchSetup, PurchHeader."Act Type");
+
+                IF MaxAmount < PurchLine."Line Amount" THEN BEGIN
+                    PurchLineMax := PurchLine;
+                    MaxAmount := PurchLine."Line Amount";
+                END;
+            UNTIL PurchLine.NEXT = 0;
+            // NC AB:
+            // IF (PLmax."Shortcut Dimension 1 Code" <> '') AND
+            //   (grPurchHeader."Shortcut Dimension 1 Code" <> PLmax."Shortcut Dimension 1 Code") THEN BEGIN
+            //     grPurchHeader.VALIDATE("Shortcut Dimension 1 Code", PLmax."Shortcut Dimension 1 Code");
+            //     grPurchHeader.MODIFY;
+            // END;
+            // IF (PLmax."Shortcut Dimension 2 Code" <> '') AND
+            //   (grPurchHeader."Shortcut Dimension 2 Code" <> PLmax."Shortcut Dimension 2 Code") THEN BEGIN
+            //     grPurchHeader.VALIDATE("Shortcut Dimension 2 Code", PLmax."Shortcut Dimension 2 Code");
+            //     grPurchHeader.MODIFY;
+            // END;
+            if PurchHeader."Dimension Set ID" <> 0 then begin
+                if DimSetEntryFrom.Get(PurchLineMax."Dimension Set ID", PurchSetup."Cost Place Dimension") then
+                    UpdateHeader := DimMgtExt.valDimValueWithUpdGlobalDim(
+                        DimSetEntryFrom."Dimension Code", DimSetEntryFrom."Dimension Value Code",
+                        PurchHeader."Dimension Set ID", PurchHeader."Shortcut Dimension 1 Code", PurchHeader."Shortcut Dimension 2 Code");
+                if DimSetEntryFrom.Get(PurchLineMax."Dimension Set ID", PurchSetup."Cost Code Dimension") then
+                    UpdateHeader := DimMgtExt.valDimValueWithUpdGlobalDim(
+                        DimSetEntryFrom."Dimension Code", DimSetEntryFrom."Dimension Value Code",
+                        PurchHeader."Dimension Set ID", PurchHeader."Shortcut Dimension 1 Code", PurchHeader."Shortcut Dimension 2 Code");
+                IF UpdateHeader then
+                    PurchHeader.MODIFY;
+            end
+        END;
+
+    end;
+
+    local procedure SetDefLocation(VAR lrPurchHeader: Record "Purchase Header")
+    var
+        InvSetup: Record "Inventory Setup";
+        lrPurchLine: Record "Purchase Line";
+    begin
+        InvSetup.Get();
+        InvSetup.TestField("Default Location Code");
+        lrPurchLine.SETRANGE("Document Type", lrPurchHeader."Document Type");
+        lrPurchLine.SETRANGE("Document No.", lrPurchHeader."No.");
+        IF lrPurchLine.FINDset(true) THEN BEGIN
+            REPEAT
+                IF lrPurchLine."Location Code" = '' THEN BEGIN
+                    lrPurchLine.validate("Location Code", InvSetup."Default Location Code");
+                    lrPurchLine.MODIFY(true);
+                END;
+            UNTIL lrPurchLine.NEXT = 0;
+        END;
+    end;
+
+    local procedure CheckActByVendAgreementDates(PurchHeader: Record "Purchase Header")
+    var
+        lrVendorAgreem: Record "Vendor Agreement";
+        TEXT70006: Label 'The agreement Starting Date must not be later than the Order Date.';
+        TEXT70007: Label 'The agreement Expire Date must not be earlier than the Order Date.';
+        TEXT70008: Label 'The agreement Start Date must not be later than the Document Date.';
+        TEXT70009: Label 'The agreement Expire Date must not be earlier than the Document Date.';
+    begin
+        if PurchHeader."Agreement No." = '' then
+            exit;
+        lrVendorAgreem.GET(PurchHeader."Buy-from Vendor No.", PurchHeader."Agreement No.");
+        IF PurchHeader."Order Date" < lrVendorAgreem."Starting Date" THEN
+            ERROR(TEXT70006);
+        IF PurchHeader."Order Date" > lrVendorAgreem."Expire Date" THEN
+            ERROR(TEXT70007);
+        IF PurchHeader."Document Date" < lrVendorAgreem."Starting Date" THEN
+            ERROR(TEXT70008);
+        IF PurchHeader."Document Date" > lrVendorAgreem."Expire Date" THEN
+            ERROR(TEXT70009);
+    end;
+
+    local procedure CreatePurchInvoice(VAR PurchaseHeader: Record "Purchase Header")
+    var
+        PHeader: Record "Purchase Header";
+        PurchLine: Record "Purchase Line";
+        PLine: Record "Purchase Line";
+    begin
+        PHeader.INIT;
+        PHeader.TRANSFERFIELDS(PurchaseHeader);
+        PHeader."Document Type" := PHeader."Document Type"::Invoice;
+        PHeader."No." := '';
+        PHeader."Act Type" := PHeader."Act Type"::" ";
+        PHeader.INSERT(TRUE);
+
+        PHeader."Document Date" := PurchaseHeader."Document Date";
+        IF PurchaseHeader."Act Type" = PurchaseHeader."Act Type"::Advance THEN
+            PHeader."Posting No." := PHeader."No.";
+        PHeader.MODIFY();
+
+        PurchaseHeader."Invoice No." := PHeader."No.";
+        PurchaseHeader.Modify();
+
+        PurchLine.SETRANGE("Document Type", PurchaseHeader."Document Type");
+        PurchLine.SETRANGE("Document No.", PurchaseHeader."No.");
+        IF PurchLine.FINDSET THEN
+            REPEAT
+                WITH PLine DO BEGIN
+                    INIT;
+                    TRANSFERFIELDS(PurchLine);
+                    "Document Type" := PHeader."Document Type";
+                    "Document No." := PHeader."No.";
+                    VALIDATE(Amount, PurchLine."Line Amount");
+                    VALIDATE("Cost Type");
+                    VALIDATE("Full Description");
+                    INSERT;
+                END
+            UNTIL PurchLine.NEXT = 0;
+    end;
+
+    procedure ChangeActStatus(VAR grPurchHeader: Record "Purchase Header")
+    var
+        PurchSetup: Record "Purchases & Payables Setup";
+        Location: Record Location;
+        lrUserSetup: Record "User Setup";
+        PurchLine: Record "Purchase Line";
+        DocumentAttachment: Record "Document Attachment";
+        lrVendor: Record Vendor;
+        DimSetEntry: Record "Dimension Set Entry";
+        DimValue: Record "Dimension Value";
+        NextAppr: Code[50];
+        TEXT70001: label 'There is no attachment!';
+        TEXT70002: Label 'The document has been approved!';
+        TEXT70004: Label 'Vendor does not have to be basic!';
+        TEXT70005: Label 'You must specify the Agreement!';
+        TEXT70016: Label 'The document has been sent for approval!';
+        TEXT70032: Label 'The document is ready to be sent to user %1 for approval.\Send?';
+        TEXT70034: Label 'Canceled by user!';
+        TEXT70044: Label 'The document has been sent for verification to the Checker!';
+        TEXT70045: label 'The document is signed by the Approver!';
+        TEXT70046: Label 'The document has passed all approvals! A purchase invoice for accounting has been generated!';
+        Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
+        Text1002: label 'Pre-Approver %1 is missing!\The request is being transferred to the Approver: %2';
+        Text132: label 'Approving employee %1 is missing!\The request is being transferred to the Substitute: %2';
+    begin
+
+        IF grPurchHeader."Location Document" THEN BEGIN
+            grPurchHeader.TESTFIELD("Location Code");
+            Location.GET(grPurchHeader."Location Code");
+            Location.TESTFIELD("Bin Mandatory", FALSE);
+        END;
+
+        CheckCT(grPurchHeader);
+
+        lrUserSetup.GET(USERID);
+
+        IF grPurchHeader."Status App Act" = grPurchHeader."Status App Act"::Accountant THEN
+            ERROR(TEXT70002);
+
+        PurchSetup.Get();
+        PurchSetup.TestField("Cost Place Dimension");
+        PurchSetup.TestField("Cost Code Dimension");
+
+        // ------- Сontroller -> Checker -------------- >>>>
+        IF (grPurchHeader."Status App Act" = grPurchHeader."Status App Act"::Controller) AND
+            (grPurchHeader.Check IN [grPurchHeader.Check::" ", grPurchHeader.Check::"Checker rej"])
+        THEN BEGIN
+
+            lrUserSetup.RESET;
+            lrUserSetup.SETRANGE("Salespers./Purch. Code", grPurchHeader."Purchaser Code");
+            lrUserSetup.FINDFIRST;
+
+            IF grPurchHeader."Location Document" AND (grPurchHeader."Invoice No." = '') THEN begin
+                IF NOT CONFIRM(Text50013, FALSE) THEN
+                    ERROR('');
+                CreatePurchOrder(grPurchHeader, true);
+            end;
+
+            IF grPurchHeader."Location Document" THEN BEGIN
+                // NC AB:
+                // Table 70143 Tracert User Setupis not used. 
+                // IF TracertUserSetup.GET(USERID) THEN
+                //    IF TracertUserSetup."Ask For Tracing" THEN ERROR(Text50014);
+
+                // NC AB: update dimension code moved to UpdateActHeaderDimByMaxLine()
+                UpdateActHeaderDimByMaxLine(grPurchHeader, PurchSetup, true);
+            END;
+
+            DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
+            DocumentAttachment.SetRange("Document Type", grPurchHeader."Document Type");
+            DocumentAttachment.SetRange("No.", grPurchHeader."No.");
+            if DocumentAttachment.IsEmpty then
+                ERROR(TEXT70001);
+
+            if grPurchHeader."Buy-from Vendor No." = PurchSetup."Base Vendor No." then
+                ERROR(TEXT70004);
+            lrVendor.GET(grPurchHeader."Buy-from Vendor No.");
+            IF lrVendor."Agreement Posting" = lrVendor."Agreement Posting"::Mandatory then
+                grPurchHeader.Testfield("Agreement No.");
+
+            CheckDimensionComb(grPurchHeader);
+
+            IF grPurchHeader."Location Document" THEN
+                CheckDocSum(grPurchHeader);
+
+            IF grPurchHeader."Agreement No." <> '' THEN BEGIN
+                CheckActByVendAgreementDates(grPurchHeader);
+                CheckAgrDetRemain(grPurchHeader);
+            END;
+            grPurchHeader.TESTFIELD("Purchaser Code");
+            grPurchHeader.TESTFIELD("Vendor Invoice No.");
+
+            // DEBUG check later!
+            /*
+            IF grPurchHeader."Location Document" THEN BEGIN
+                GetPurchDocAmount(grPurchHeader, TRUE);
+                NextAppr := ApprovalMgt.InsertApproverNCC_FromDocLines(grPurchHeader."Invoice Amount", grPurchHeader);
+                NextAppr := '';
+            END;
+            */
+
+            grPurchHeader."Status App Act" := grPurchHeader."Status App Act"::Checker;
+            grPurchHeader.Check := grPurchHeader.Check::"Controler app";
+
+            // DEBUG check later!
+            //CreateStatusLogAct(grPurchHeader, StatusAppAct::Checker);
+
+            grPurchHeader.VALIDATE("Status App", grPurchHeader."Status App"::Checker);
+            grPurchHeader.VALIDATE("Process User", lrUserSetup."User ID");
+            grPurchHeader."Date Status App" := TODAY;
+            grPurchHeader."Problem Document" := FALSE;
+            grPurchHeader."Problem Type" := grPurchHeader."Problem Type"::" ";
+            grPurchHeader.MODIFY;
+
+            IF grPurchHeader."Location Document" AND (grPurchHeader."Invoice No." = '') THEN
+                CreatePurchOrder(grPurchHeader, false);
+
+            // DEBUG check later!    
+            // gcduANM.SendPurchaseMailFromDocAct(grPurchHeader, 0, '');
+
+            MESSAGE(TEXT70044);
+            EXIT;
+        END;
+        // ------- Controller -> Checker -------------- <<<<
+
+        IF grPurchHeader."Status App Act" = grPurchHeader."Status App Act"::Checker THEN
+            UpdateActHeaderDimByMaxLine(grPurchHeader, PurchSetup, false);
+
+        // ------- Checker -> App   -------------- >>>>
+        IF (grPurchHeader."Status App Act" = grPurchHeader."Status App Act"::Checker) AND
+            (grPurchHeader.Check in [grPurchHeader.Check::"Approver rej", grPurchHeader.Check::"Controler app"])
+        THEN BEGIN
+
+            grPurchHeader.TESTFIELD("Purchaser Code");
+            SetDefLocation(grPurchHeader);
+            CheckDimensionComb(grPurchHeader);
+            CheckDocSum(grPurchHeader);
+
+            IF grPurchHeader."Agreement No." <> '' THEN BEGIN
+                CheckActByVendAgreementDates(grPurchHeader);
+                CheckAgrDetRemain(grPurchHeader);
+            END;
+
+            // NC AB 
+            // GetPurchDocAmount(grPurchHeader, TRUE);
+            CheckDocSum(grPurchHeader);
+
+            grPurchHeader."Date Status App" := TODAY;
+            grPurchHeader."Status App Act" := grPurchHeader."Status App Act"::Approve;
+            grPurchHeader.Check := grPurchHeader.Check::"Checker app";
+            grPurchHeader.VALIDATE("Status App", grPurchHeader."Status App"::Approve);
+            grPurchHeader."Problem Document" := FALSE;
+            grPurchHeader."Problem Type" := grPurchHeader."Problem Type"::" ";
+
+            // DEBUG check later
+            // CreateStatusLogAct(grPurchHeader, StatusAppAct::Approve);
+
+            grPurchHeader.Status := grPurchHeader.Status::Open;
+            grPurchHeader.MODIFY;
+
+            SetDefLocation(grPurchHeader);
+
+            // DEBUG check later
+            /*
+            lrPurchHeader.RESET;
+            lrPurchHeader.SETRANGE("Document Type", grPurchHeader."Document Type");
+            lrPurchHeader.SETRANGE("No.", grPurchHeader."No.");
+            IF lrPurchHeader.FIND('-') THEN;
+
+            NextAppr := ApprovalMgt.InsertApproverNCC_FromDocLines(grPurchHeader."Invoice Amount", grPurchHeader);
+            */
+
+            grPurchHeader."Next Approver" := NextAppr;
+            grPurchHeader.Approver := NextAppr;
+            grPurchHeader.MODIFY;
+
+            if grPurchHeader."Pre-Approver" <> '' then
+                if lrUserSetup.GET(grPurchHeader."Pre-Approver") THEN BEGIN
+                    IF lrUserSetup.Absents THEN BEGIN
+                        MESSAGE(Text1002, grPurchHeader."Pre-Approver", NextAppr)
+                    END ELSE
+                        NextAppr := grPurchHeader."Pre-Approver";
+                END;
+
+            IF NextAppr <> '' THEN
+                IF lrUserSetup.GET(NextAppr) then
+                    if lrUserSetup.Absents AND (lrUserSetup.Substitute <> '') THEN BEGIN
+                        MESSAGE(Text132, lrUserSetup."User ID", lrUserSetup.Substitute);
+                        IF NOT CONFIRM(STRSUBSTNO(TEXT70032, lrUserSetup.Substitute)) THEN
+                            ERROR(TEXT70034);
+                    END ELSE BEGIN
+                        IF NOT CONFIRM(STRSUBSTNO(TEXT70032, NextAppr)) THEN
+                            ERROR(TEXT70034);
+                    END;
+
+            // NC AB: не понял зачем еще переменная
+            // lrPurchHeader.RESET;
+            // lrPurchHeader.SETRANGE("Document Type", grPurchHeader."Document Type");
+            // lrPurchHeader.SETRANGE("No.", grPurchHeader."No.");
+            // IF lrPurchHeader.FIND('-') THEN
+
+            // DEBUG check later
+            /*
+            CLEAR(ApprovalMgt);
+            ApprovalMgt.SendPurchaseApprovalRequestAct(lrPurchHeader);
+            */
+
+            MESSAGE(TEXT70016);
+
+            EXIT;
+        END;
+        // ------- Checker -> App  -------------- <<<<
+
+        //// ------- Approver -> Сhecker -------------- >>>>
+        // ------- Approver -> Signing -------------- >>>>
+        IF (grPurchHeader."Status App Act" = grPurchHeader."Status App Act"::Approve) AND
+            (grPurchHeader.Check = grPurchHeader.Check::"Checker app")
+        THEN BEGIN
+            PurchSetup.TestField("Base Vendor No.");
+            if grPurchHeader."Buy-from Vendor No." = PurchSetup."Base Vendor No." then
+                ERROR(TEXT70004);
+            IF (lrVendor."Agreement Posting" = lrVendor."Agreement Posting"::Mandatory) AND (grPurchHeader."Agreement No." = '') THEN
+                ERROR(TEXT70005);
+
+            CheckDimensionComb(grPurchHeader);
+            IF grPurchHeader."Agreement No." <> '' THEN
+                CheckActByVendAgreementDates(grPurchHeader);
+            grPurchHeader.TESTFIELD("Purchaser Code");
+            grPurchHeader.TESTFIELD("Vendor Invoice No.");
+
+            grPurchHeader."Status App Act" := grPurchHeader."Status App Act"::Signing;
+            grPurchHeader.Check := grPurchHeader.Check::"Approver app";
+            grPurchHeader.VALIDATE("Status App", grPurchHeader."Status App"::Checker);
+
+            // DEBUG check later
+            // CreateStatusLogAct(grPurchHeader, StatusAppAct::Signing);
+
+            lrUserSetup.RESET;
+            lrUserSetup.SETRANGE("Salespers./Purch. Code", grPurchHeader."Purchaser Code");
+            IF lrUserSetup.FindFirst() THEN
+                grPurchHeader.VALIDATE("Process User", lrUserSetup."User ID");
+
+            grPurchHeader."Date Status App" := TODAY;
+            grPurchHeader."Problem Document" := FALSE;
+            grPurchHeader."Problem Type" := grPurchHeader."Problem Type"::" ";
+            grPurchHeader.MODIFY;
+
+            // NC AB: Act (Production) - не используется
+            // IF grPurchHeader."Act Type" = grPurchHeader."Act Type"::"Act (Production)" THEN
+            //     CreateBCPreBookingAct(grPurchHeader);       
+
+            // DEBUG check later               
+            // gcduANM.SendPurchaseMailFromDocAct(grPurchHeader, 0, '');
+            // ApprovalMgt.CancelPurchaseApprovals(grPurchHeader);
+
+            MESSAGE(TEXT70045);
+
+            IF NOT grPurchHeader."Location Document" THEN
+                EXIT
+            ELSE
+                grPurchHeader."Status App Act" := grPurchHeader."Status App Act"::Signing;
+
+        END;
+        //// ------- Approver -> Сhecker -------------- <<<<
+        // ------- Approver -> Signing -------------- <<<<
+
+        IF grPurchHeader."Status App Act" = grPurchHeader."Status App Act"::Checker THEN BEGIN
+            PurchSetup.TestField("Cost Code Dimension");
+            PurchLine.RESET;
+            PurchLine.SETRANGE("Document Type", grPurchHeader."Document Type");
+            PurchLine.SETRANGE("Document No.", grPurchHeader."No.");
+            PurchLine.SetFilter("Dimension Set ID", '<>0');
+            IF PurchLine.FindFirst() THEN
+                if DimSetEntry.GET(PurchLine."Dimension Set ID", PurchSetup."Cost Code Dimension") then
+                    if DimValue.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
+                        if DimValue."Cost Holder" <> '' then begin
+                            grPurchHeader.TESTFIELD(PreApprover);
+                            grPurchHeader.TESTFIELD("Pre-Approver");
+                        end;
+        END;
+
+        //// ------- Checker -> Payment   -------------- >>>>
+        // ------- Signing -> Payment   -------------- >>>>
+        IF (grPurchHeader."Status App Act" = grPurchHeader."Status App Act"::Signing) AND
+            (grPurchHeader.Check = grPurchHeader.Check::"Approver app")
+        THEN BEGIN
+            grPurchHeader.Status := grPurchHeader.Status::Open;
+            grPurchHeader."Date Status App" := TODAY;
+            grPurchHeader."Status App Act" := grPurchHeader."Status App Act"::Accountant;
+
+            // DEBUG check later    
+            // CreateStatusLogAct(grPurchHeader, StatusAppAct::Accountant);
+
+            grPurchHeader.VALIDATE("Status App", grPurchHeader."Status App"::Payment);
+            grPurchHeader."Pre-booking Accept" := FALSE;
+            grPurchHeader.MODIFY;
+
+            //NC 22512 > DP
+            IF NOT grPurchHeader."Location Document" THEN BEGIN
+                CreatePurchInvoice(grPurchHeader);
+                MESSAGE(TEXT70046);
+            END;
+            EXIT;
+        END;
+        // ------- App -> Payment  -------------- <<<<
+
+    end;
+
 }

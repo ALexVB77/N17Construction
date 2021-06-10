@@ -33,6 +33,10 @@ pageextension 80461 "Inventory Setup (Ext)" extends "Inventory Setup"
                 ApplicationArea = All;
                 Description = 'NC 51411 EP';
             }
+            field("Default Location Code"; Rec."Default Location Code")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }

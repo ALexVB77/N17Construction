@@ -215,6 +215,14 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Pre-Approver';
             TableRelation = "User Setup";
         }
+
+        field(70025; "Next Approver"; Code[50])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Next Approver';
+            TableRelation = "User Setup";
+        }
+
         field(70026; PreApprover; Boolean)
         {
             Description = 'NC 51373 AB';
@@ -247,6 +255,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             Caption = 'Pre-booking Document';
         }
+        field(70039; "Pre-booking Accept"; Boolean)
+        {
+            Caption = 'Pre-booking Accept';
+            Description = 'NC 51373 AB';
+        }
         field(70045; "Act Type"; enum "Purchase Act Type")
         {
             Caption = 'Act Type';
@@ -269,6 +282,16 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             TableRelation = "User Setup"."User ID" WHERE("Status App Act" = CONST(Estimator));
             ValidateTableRelation = false;
+        }
+        field(90005; Check; Option)
+        {
+            Caption = 'Check Status';
+            Description = 'NC 51373 AB';
+            //Caption = 'Проверека статус';
+            //OptionCaption = ' ,Контролер утвердил,Сметчик одобрил,Сметчик отклонил,Проверяющий одобрил,Проверяющий отклонил,Утверждающий одобрил,Утверждающий отклонил';
+            OptionCaption = ' ,Controler app,Estimator app,Estimator rej,Checker app,Checker rej,Approver app,Approver rej';
+            OptionMembers = " ","Controler app","Estimator app","Estimator rej","Checker app","Checker rej","Approver app","Approver rej";
+
         }
         field(90006; "Invoice No."; Code[20])
         {
