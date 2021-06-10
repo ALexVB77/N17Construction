@@ -12,6 +12,10 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
             {
                 ApplicationArea = All;
             }
+            field("Aged Accounts Payable Template Code"; Rec."Aged Acc. Payable Tmplt Code")
+            {
+                ApplicationArea = All;
+            }
         }
         addlast("Number Series")
         {
