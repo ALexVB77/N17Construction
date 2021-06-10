@@ -948,6 +948,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Project Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2519642008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2519642008 - Field 2623957639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field Dimension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2519642008 - Field 2329601638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field New Dimension Value Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2519642008 - Field 3084686051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Old Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dimension Mapping - Field Old Dimension Value Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3834907272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Attachment Archive</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3457,6 +3477,16 @@
           <source>CRM Units and Buyers</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Units and Buyers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2519642008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2519642008 - Action 3492634373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import G\L Account Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Action ImportGLAccountMapping - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Approval)</source>
