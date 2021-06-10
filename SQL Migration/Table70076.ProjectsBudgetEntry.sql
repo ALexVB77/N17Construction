@@ -91,3 +91,4 @@ SELECT
     [Problem Pmt_ Document],
     [Currency Rate]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Projects Budget Entry]
+WHERE [Close] = '0' AND [Problem Pmt_ Document] = '0';
