@@ -28,7 +28,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                 BEGIN
                   IF grObjects."Sales Status" <> grObjects."Sales Status"::Freely THEN
                     ERROR(STRSUBSTNO(Text010,"Object of Investing"));
-                
+
                   IF grObjects."Sales Status"<>grObjects."Sales Status"::Booked THEN
                   BEGIN
                     grObjects.VALIDATE("Sales Status",grObjects."Sales Status"::"In registration");
@@ -40,14 +40,14 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                   END
                   ELSE
                   BEGIN
-                
+
                     grObjects.VALIDATE("Sales Status",grObjects."Sales Status"::"In registration");
                     IF grObjects.GET("Object of Investing") THEN
                     BEGIN
                       grObjects."Sales Status":=grObjects."Sales Status"::"In registration";
                       grObjects.MODIFY;
                     END;
-                
+
                     grCustAgr.SETRANGE("Object of Investing","Object of Investing");
                     grCustAgr.SETRANGE(Status,grCustAgr.Status::Signed);
                     IF grCustAgr.FIND('-') THEN
@@ -57,7 +57,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                     END;
                   END;
                   "Project Dimension Code":=grObjects."Project Dimension Code";
-                
+
                   "Building project Code":=grObjects."Building project Code";
                   "Building turn Code":=grObjects."Building turn Code";
                   "House Code":=grObjects."House Code";
@@ -81,11 +81,11 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                   "Global Dimension 1 Code":='';
                   "Rooms Count":='';
                   "Total Area":=0;
-                
+
                 END;
-                
+
                 UpdateLines(4);
-                
+
                 IF ("Object of Investing" <> xRec."Object of Investing") THEN
                   IF grObjects.GET(xRec."Object of Investing") THEN
                   BEGIN
@@ -96,9 +96,9 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                       grObjects.MODIFY;
                     END;
                   END;
-                
+
                 CalcAmount;
-                
+
                 IF grObjects.GET("Object of Investing") THEN
                 BEGIN
                   grDevelopmentSetup.GET;
@@ -109,7 +109,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                   BEGIN
                     grDefDim.DELETE;
                   END;
-                
+
                   grDefDim.SETRANGE("Table ID",14902);
                   grDefDim.SETRANGE("No.","No.");
                   grDefDim.SETRANGE("Dimension Code",grDevelopmentSetup."Project Turn Dimension Code");
@@ -117,7 +117,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                   BEGIN
                     grDefDim.DELETE;
                   END;
-                
+
                   grBuildingturn.GET(grObjects."Building turn Code");
                   IF grBuildingturn."Turn Dimension Code"<>'' THEN
                   BEGIN
@@ -128,8 +128,8 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                     grDefDim."Dimension Value Code":=grBuildingturn."Turn Dimension Code";
                     IF grDefDim.INSERT THEN;
                   END;
-                
-                
+
+
                   grBuildingProect.GET(grObjects."Building project Code");
                   IF grBuildingProect."Project Dimension Code"<>'' THEN
                   BEGIN
@@ -151,7 +151,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
                   BEGIN
                     grDefDim.DELETE;
                   END;
-                
+
                   grDefDim.SETRANGE("Table ID",14902);
                   grDefDim.SETRANGE("No.","No.");
                   grDefDim.SETRANGE("Dimension Code",grDevelopmentSetup."Project Turn Dimension Code");
@@ -837,9 +837,18 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
             Caption = 'Birthdate and palce';
         }
 
+        field(80010; "CRM Checksum"; Text[40])
+        {
+            Caption = 'CRM Checksum';
+        }
+
+
     }
 
+    keys
+    {
+        key(key70000; "CRM GUID") { }
 
-    var
-        myInt: Integer;
+    }
+
 }

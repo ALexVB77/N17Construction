@@ -1,5 +1,73 @@
 codeunit 50006 "Base App. Subscribers Mgt."
 {
+    // t 81 >>
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Prepayment', false, false)]
+    local procedure onAfterValidatePrepayment(Rec: Record "Gen. Journal Line"; xRec: Record "Gen. Journal Line"; CurrFieldNo: Integer)
+    begin
+        if Rec.Prepayment then begin
+            if (xRec."Prepayment Document No." = '') then begin
+                Rec."Prepayment Document No." := '';
+                SetPrepaymentDoc(Rec);
+            end;
+        end;
+
+    end;
+
+    local procedure SetPrepaymentDoc(var GenJnlLine2: Record "Gen. Journal Line")
+    var
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        SalesSetup: Record "Sales & Receivables Setup";
+        ReleaseDoc: Codeunit "Release Sales Document";
+        LText001: Label 'Advance %1';
+        Text50000: label 'Create sales invoice?';
+    begin
+        //NC 23904 HR beg
+        IF NOT CONFIRM(Text50000, FALSE) THEN
+            EXIT;
+
+        SalesSetup.GET;
+        SalesSetup.TESTFIELD("Invoice Nos.");
+        SalesSetup.TESTFIELD("Prepay. Inv. G/L Acc. No. (ac)");
+
+        SalesHeader.INIT;
+        SalesHeader.VALIDATE("No. Series", SalesSetup."Invoice Nos.");
+        SalesHeader."Document Type" := SalesHeader."Document Type"::Invoice;
+        SalesHeader.VALIDATE("Posting Date", GenJnlLine2."Posting Date");
+        SalesHeader."No." := '';
+        SalesHeader.INSERT(TRUE);
+
+        SalesHeader."External Document No." := GenJnlLine2."Document No.";
+        SalesHeader.VALIDATE("Sell-to Customer No.", GenJnlLine2."Account No.");
+        SalesHeader.VALIDATE("Agreement No.", GenJnlLine2."Agreement No.");
+        SalesHeader."Posting Description" :=
+          COPYSTR(STRSUBSTNO(LText001, GenJnlLine2.Description), 1, MAXSTRLEN(SalesHeader."Posting Description"));
+        SalesHeader.VALIDATE("Shortcut Dimension 1 Code", GenJnlLine2."Shortcut Dimension 1 Code");
+        SalesHeader.VALIDATE("Shortcut Dimension 2 Code", GenJnlLine2."Shortcut Dimension 2 Code");
+        SalesHeader.MODIFY(TRUE);
+
+        SalesLine.INIT;
+        SalesLine.VALIDATE("Document Type", SalesHeader."Document Type");
+        SalesLine.VALIDATE("Document No.", SalesHeader."No.");
+        SalesLine."Line No." := 10000;
+        SalesLine.VALIDATE("Sell-to Customer No.", SalesHeader."Sell-to Customer No.");
+        //SalesLine.VALIDATE("Bill-to Customer No.", SalesHeader."Bill-to Customer No.");
+        SalesLine.VALIDATE(Type, SalesLine.Type::"G/L Account");
+        SalesLine.VALIDATE("No.", SalesSetup."Prepay. Inv. G/L Acc. No. (ac)"); //'901034110'
+        SalesLine.VALIDATE(Quantity, 1);
+        SalesLine.VALIDATE("Unit of Measure Code", 'УСЛ');
+        SalesLine.VALIDATE("Unit Price", ABS(GenJnlLine2.Amount));
+        SalesLine.INSERT(TRUE);
+
+        ReleaseDoc.RUN(SalesHeader);
+
+        GenJnlLine2.VALIDATE("Prepayment Document No.", SalesHeader."No.");
+
+        Page.RUN(page::"Sales Invoice", SalesHeader);
+
+        //NC 23904 HR end
+    end;
+    // t 81 <<
 
     // t 5740 >>
     [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnUpdateTransLines', '', false, false)]
@@ -364,4 +432,35 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
+    local procedure SendVendorAgreementMail(var PurchHeader: Record "Purchase Header")
+    var
+        CompanyInfo: Record "Company Information";
+        LocVend: Record Vendor;
+        VendAgr: Record "Vendor Agreement";
+        CheckLimitDateFilter: Text;
+        VendorAgreement: Record "Vendor Agreement";
+    begin
+        if (PurchHeader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
+            CompanyInfo.Get;
+            LocVend.GET(PurchHeader."Buy-from Address");
+
+            if CompanyInfo."Use RedFlags in Agreements" then
+                if LocVend.GetLineColor = 'Attention' then begin
+                    VendAgr.Get(PurchHeader."Buy-from Address", PurchHeader."Agreement No.");
+                    CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
+
+                    if CheckLimitDateFilter <> '' then
+                        VendAgr.SetFilter("Check Limit Date Filter", CheckLimitDateFilter)
+                    else
+                        VendAgr.SetRange("Check Limit Date Filter");
+
+                    VendAgr.CalcFields("Purch. Original Amt. (LCY)");
+
+                    if PurchHeader."Original Company" = '' then
+                        if (VendAgr."Check Limit Amount (LCY)" - VendAgr."Purch. Original Amt. (LCY)" < 0) then
+                            VendorAgreement.SendVendAgrMail(VendAgr, 1);
+                end;
+        end;
+    end;
 }

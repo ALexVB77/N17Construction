@@ -3,10 +3,11 @@ table 12473 "Depreciation Code"
     Caption = 'Depreciation Code';
     DrillDownPageID = "Depreciation Code List";
     LookupPageID = "Depreciation Code List";
+    DataPerCompany = False; // NC 53282 GG
 
     fields
     {
-        field(1; "Code"; Code[10])
+        field(1; "Code"; Code[20]) // NC 53282 GG 10->20
         {
             Caption = 'Code';
         }
@@ -27,7 +28,7 @@ table 12473 "Depreciation Code"
             Caption = 'Indentation';
             MinValue = 0;
         }
-        field(6; Parent; Code[10])
+        field(6; Parent; Code[20]) // NC 53282 GG 10->20
         {
             Caption = 'Parent';
             TableRelation = "Depreciation Code";

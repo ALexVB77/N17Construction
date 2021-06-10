@@ -6066,7 +6066,7 @@
 
             if PurchHeader."Document Type" = PurchHeader."Document Type"::Invoice then
                 PurchInvHeader."Draft Invoice SystemId" := PurchHeader.SystemId;
-            
+
             PurchInvHeader.Insert(true);
             OnAfterPurchInvHeaderInsert(PurchInvHeader, PurchHeader);
 
@@ -7888,7 +7888,7 @@
                         "Return Qty. Shipped (Base)" += "Return Qty. to Ship (Base)";
                     end;
                     if PurchHeader.Invoice then begin
-                        if "Document Type" = "Document Type"::Order then 
+                        if "Document Type" = "Document Type"::Order then
                             UpdateQtyToInvoiceForOrder(PurchHeader, TempPurchLine)
                         else
                             UpdateQtyToInvoiceForReturnOrder(PurchHeader, TempPurchLine);

@@ -1,7 +1,4 @@
-USE [Bonava Objects]
-GO
-
-INSERT INTO [Bonava-Dev].[dbo].[Bonava$Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Test].[dbo].[Bonava$Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Code],
 	[Name],
@@ -13,6 +10,7 @@ INSERT INTO [Bonava-Dev].[dbo].[Bonava$Dimension$437dbf0e-84ff-417a-965d-ed2bb96
 	[Map-to IC Dimension Code]
 )
 SELECT
+	[Code],
 	[Name],
 	[Code Caption],
 	[Filter Caption],
@@ -20,7 +18,7 @@ SELECT
 	[Blocked],
 	[Consolidation Code],
 	[Map-to IC Dimension Code]
-FROM [dbo].[Dimension]
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Dimension]
 WHERE [Code] = 'CC' OR 
 	  [Code] = 'CP' OR
 	  [Code] = 'НП' OR
