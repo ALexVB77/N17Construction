@@ -1,3 +1,4 @@
+-- Salesperson\Purchaser
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Salesperson_Purchaser$437dbf0e-84ff-417a-965d-ed2bb9650972] 
 (
 	[Code],
@@ -19,3 +20,23 @@ SELECT
 	[Search E-Mail],
 	[E-Mail 2]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Salesperson_Purchaser];
+
+-- Default Dimension
+INSERT INTO [Bonava-Test].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
+(
+	[Table ID],
+	[No_],
+	[Dimension Code],
+	[Dimension Value Code],
+	[Value Posting],
+	[Multi Selection Action]
+)
+SELECT
+	[Table ID],
+	[No_],
+	[Dimension Code],
+	[Dimension Value Code],
+	[Value Posting],
+	[Multi Selection Action]
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Default Dimension]
+WHERE [Table ID] = '13'

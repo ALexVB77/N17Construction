@@ -127,11 +127,4 @@ SELECT
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Default Dimension]
 WHERE [Table ID] = '14901'
 AND [Dimension Value Code] <> '28012-107D'
-AND [Dimension Value Code] <> '28012-106D'
-AND ([Dimension Code] = 'CP' OR
-	 [Dimension Code] = 'CC' OR
-	 [Dimension Code] = 'НП' OR
-	 [Dimension Code] = 'НУ-ВИД' OR
-	 [Dimension Code] = 'НУ-ОБЪЕКТ' OR
-	 [Dimension Code] = 'НУ-РАЗНИЦА' OR
-	 [Dimension Code] = 'ПРИБ_УБ_ПРОШ_ЛЕТ');
+AND [Dimension Value Code] <> '28012-106D';
