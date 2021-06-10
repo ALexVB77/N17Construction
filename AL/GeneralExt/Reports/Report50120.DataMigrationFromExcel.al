@@ -23,6 +23,7 @@ report 50120 "Data Migration From Excel"
         VATBusinessPostingGroup: Record "VAT Business Posting Group";
         GeneralPostingSetup: Record "General Posting Setup";
         DimensionValue: Record "Dimension Value";
+        DimensionMapping: Record "Dimension Mapping";
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -168,6 +169,17 @@ report 50120 "Data Migration From Excel"
                             GeneralPostingSetup."Overhead Applied Account" := GetValueAtCell(RowNo, 29);
                             GeneralPostingSetup."Purchase Variance Account" := GetValueAtCell(RowNo, 30);
                             GeneralPostingSetup.Insert(true);
+                        end;
+                end;
+            'CC - Список значений измерения':
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not DimensionMapping.Get('CC', GetValueAtCell(RowNo, 2)) then begin
+                            DimensionMapping.Init();
+                            DimensionMapping."Dimension Code" := 'CC';
+                            DimensionMapping."Old Dimension Value Code" := GetValueAtCell(RowNo, 1);
+                            DimensionMapping."New Dimension Value Code" := GetValueAtCell(RowNo, 2);
+                            DimensionMapping.Insert(true);
                         end;
                 end;
         end;

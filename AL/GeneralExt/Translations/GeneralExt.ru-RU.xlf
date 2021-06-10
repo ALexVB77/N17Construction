@@ -3553,7 +3553,6 @@
           <source>valDimValueWithUpdGlobalDim</source>
           <target>valDimValueWithUpdGlobalDim</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dimension Management (Ext) - Method valDimValueWithUpdGlobalDim</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 2945192868" size-unit="char" translate="yes" xml:space="preserve">
@@ -3614,203 +3613,174 @@
           <source>CheckShortCutDim1</source>
           <target>CheckShortCutDim1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckShortCutDim1</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 3046154110" size-unit="char" translate="yes" xml:space="preserve">
           <source>CheckLineShortCutDim1</source>
           <target>CheckLineShortCutDim1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1375700104" size-unit="char" translate="yes" xml:space="preserve">
           <source>ChangeActStatus</source>
           <target>ChangeActStatus</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1454544725" size-unit="char" translate="yes" xml:space="preserve">
           <source>There is no attachment!</source>
           <target>Отсутствует вложение!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70001</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 816848108" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document has been approved!</source>
           <target>Документ утвержден!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70002</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3836422170" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor does not have to be basic!</source>
           <target>Поставщик не должен быть базовым!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70004</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3198725553" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify the Agreement!</source>
           <target>Необходимо задать договор!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70005</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document has been sent for approval!</source>
           <target>Документ отправлен на утверждение!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70016</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3627370845" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document is ready to be sent to user %1 for approval.\Send?</source>
           <target>Документ готов к отправке на утверждение пользователю %1\Отправить?</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70032</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 4096158439" size-unit="char" translate="yes" xml:space="preserve">
           <source>Canceled by user!</source>
           <target>Отменено пользователем!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70034</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document has been sent for verification to the Checker!</source>
           <target>Документ отправлен на проверку Проверяющему!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70044</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 762112629" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document is signed by the Approver!</source>
           <target>Документ подписан Утверждающим!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70045</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 124416012" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document has passed all approvals! A purchase invoice for accounting has been generated!</source>
           <target>Документ прошел все утверждения! Сформирован Счет-покупки для бухгалтерии!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70046</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
           <target>Документ будет учтен количественно и будет создан документ Учт. Прих. Накладная Но. Продолжить?</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType Text50013</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1590263106" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pre-Approver %1 is missing!\The request is being transferred to the Approver: %2</source>
           <target>Предв. Утверждающий %1 отсутствует!\Заявка переходит Утверждающему: %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType Text1002</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1602187639" size-unit="char" translate="yes" xml:space="preserve">
           <source>Approving employee %1 is missing!\The request is being transferred to the Substitute: %2</source>
           <target>Утверждающий сотрудник %1 отсутствует!\Заявка переводится заместителю: %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType Text132</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 2561028936" size-unit="char" translate="yes" xml:space="preserve">
           <source>The agreement Starting Date must not be later than the Order Date.</source>
           <target>Дата Начала в договоре не должна быть позже чем Дата Заказа.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70006</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 1923332319" size-unit="char" translate="yes" xml:space="preserve">
           <source>The agreement Expire Date must not be earlier than the Order Date.</source>
           <target>Дата Действия в договоре не должна быть раньше Дата Заказа.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70007</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 2898846982" size-unit="char" translate="yes" xml:space="preserve">
           <source>The agreement Start Date must not be later than the Document Date.</source>
           <target>Дата Начала в договоре не должна быть позже чем Дата Документа.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70008</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 2261150365" size-unit="char" translate="yes" xml:space="preserve">
           <source>The agreement Expire Date must not be earlier than the Document Date.</source>
           <target>Дата Действия в договоре не должна быть раньше Дата Документа.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70009</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 3774229605 - NamedType 314869872" size-unit="char" translate="yes" xml:space="preserve">
           <source>For the line with the dimensions combination %1 and %2, the Agreement card Remaining Amount has been exceeded!</source>
           <target>По строке с комбинацией измерений %1 и %2 превышена сумма Остатка в карточке Договора!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckAgrDetRemain - NamedType Text1000</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 3774229605 - NamedType 3972140551" size-unit="char" translate="yes" xml:space="preserve">
           <source>The line with the  dimensions combination %1 and %2 does not exist in the Breakdown by Letter of the Agreement card!</source>
           <target>По строке с комбинацией измерений %1 и %2 не существует строки в Разбивке по Литерам карточки Договора!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckAgrDetRemain - NamedType Text1001</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1181972351 - NamedType 4210713468" size-unit="char" translate="yes" xml:space="preserve">
           <source>A dimension used in line %1 has caused an error. %2.</source>
           <target>Измерение, использованное в строке %1 вызвало ошибку. %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckDimensionComb - NamedType DimCausedErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1375976439 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>The invoice Amount including VAT in the header does not match the amount including VAT by lines!</source>
           <target>Сумма счета с НДС в шапке не совпадает с Суммой включая НДС по строкам!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckDocSum - NamedType ErrText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1375976439 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
           <source>The VAT amount in the header does not match the VAT amount by lines!</source>
           <target>Сумма НДС в шапке не совпадает с Суммой НДС по строкам!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckDocSum - NamedType ErrText002</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1048492819 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify %1 and %2 for %3 line %4.</source>
           <target>Укажите %1 и %2 для %3 строка %4.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1 - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1048492819 - NamedType 4133353355" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line %1 specifies COST PLACE %2 that does not match the document type %3.</source>
           <target>В строке %1 указан COST PLACE %2 не соответствующий типу документа %3.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1 - NamedType LocText50010</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 2139979417 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify %1 and %2 for %3.</source>
           <target>Укажите %1 и %2 для %3.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckShortCutDim1 - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 129654010 - NamedType 3416294985" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must select the real item before document posting.</source>
           <target>Перед учетом документа необходимо выбрать реальный товар.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CreatePurchOrder - NamedType Text50016</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1598329628 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
@@ -3835,7 +3805,6 @@
           <source>Lines are not filled.</source>
           <target>Не заполнены строки.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method UpdateActHeaderDimByMaxLine - NamedType Text50015</note>
         </trans-unit>
         <trans-unit id="Codeunit 4047442064 - Method 2815313400" size-unit="char" translate="yes" xml:space="preserve">
@@ -4058,7 +4027,6 @@
           <source>ApprovePurchaseOrderAct</source>
           <target>ApprovePurchaseOrderAct</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ApprovePurchaseOrderAct</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
@@ -4403,11 +4371,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2519642008 - Action 3492634373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import G\L Account Mapping</source>
-          <target>Импорт соответствия итогового плана счетов</target>
+        <trans-unit id="Page 2519642008 - Action 2145436059 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Dimension Mapping</source>
+          <target>Импорт соответствия измерений</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Action ImportGLAccountMapping - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Action ImportDimensionMapping - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Approval)</source>
@@ -6603,7 +6572,6 @@
           <source>New,Process,Report,Act,Function,Request Approval,Approve</source>
           <target>Новый,Процесс,Отчет,Акт,Функции,Запросить утверждение,Утвердить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6748,35 +6716,30 @@
           <source>Approval</source>
           <target>Утверждение</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Approval - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 803889193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Approve</source>
           <target>Утвердить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Approve - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comments</source>
           <target>Комментарии</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Comment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 1013253961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Delegate</source>
           <target>Делегировать</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Delegate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reject</source>
           <target>Отклонить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Reject - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8821,7 +8784,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -9254,7 +9217,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -9401,7 +9364,6 @@
           <source>Default Location Code</source>
           <target>Код склада по умолчанию</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Default Location Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 3717217199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
@@ -9510,14 +9472,12 @@
           <source>Check Status</source>
           <target>Проверка статуса</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1417232546 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source> ,Controler app,Estimator app,Estimator rej,Checker app,Checker rej,Approver app,Approver rej</source>
           <target> ,Контролер утвердил,Сметчик одобрил,Сметчик отклонил,Проверяющий одобрил,Проверяющий отклонил,Утверждающий одобрил,Утверждающий отклонил</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
@@ -9602,7 +9562,6 @@
           <source>Next Approver</source>
           <target>Next Approver</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Next Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1203376573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
@@ -9687,7 +9646,6 @@
           <source>Pre-booking Accept</source>
           <target>Pre-booking Accept</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Pre-booking Accept - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3630883352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
@@ -10096,7 +10054,6 @@
           <source>Act CP Dimension Filter</source>
           <target>Акт - фильтр измерения Cost Place</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Act CP Dimension Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2622566760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
@@ -10152,7 +10109,6 @@
           <source>Frame Agreement Group</source>
           <target>Рамочная группа договоров</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Frame Agreement Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2271846032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
@@ -10183,7 +10139,6 @@
           <source>Prod. Act CP Dimension Filter</source>
           <target>Произв. Акт - фильтр измерения Cost Place</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Prod. Act CP Dimension Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3907382913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">

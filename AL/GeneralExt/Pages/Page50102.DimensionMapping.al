@@ -27,22 +27,21 @@ page 50102 "Dimension Mapping"
             }
         }
     }
-
     actions
     {
         area(Processing)
         {
-            action(ImportGLAccountMapping)
+            action(ImportDimensionMapping)
             {
                 ApplicationArea = All;
-                Caption = 'Import G\L Account Mapping';
+                Caption = 'Import Dimension Mapping';
                 Image = ImportExcel;
 
                 trigger OnAction()
                 var
-                    GLAccountMappingMigration: Codeunit "G/L Account Mapping Migration";
+                    DataMigration: Report "Data Migration From Excel";
                 begin
-                    GLAccountMappingMigration.Run();
+                    DataMigration.RunModal();
                 end;
             }
         }

@@ -3643,10 +3643,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2519642008 - Action 3492634373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import G\L Account Mapping</source>
+        <trans-unit id="Page 2519642008 - Action 2145436059 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Dimension Mapping</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Action ImportGLAccountMapping - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dimension Mapping - Action ImportDimensionMapping - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Approval)</source>
