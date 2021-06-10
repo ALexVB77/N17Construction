@@ -3,25 +3,29 @@ page 50102 "Dimension Mapping"
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    //SourceTable = "Dimension Mapping;
+    SourceTable = "Dimension Mapping";
     Caption = 'Dimension Mapping';
 
     layout
     {
-        //   area(Content)
-        //   {
-        // repeater(RepeaterName)
-        //{
-        //    field("New No."; Rec."New No.")
-        //   {
-        //       ApplicationArea = All;
-        //   }
-        //                field("Old No."; Rec."Old No.")
-        //    {
-        //       ApplicationArea = All;
-        //    }
-        //  }
-        // }
+        area(Content)
+        {
+            repeater(RepeaterName)
+            {
+                field("Dimension Code"; Rec."Dimension Code")
+                {
+                    ApplicationArea = All;
+                }
+                field("New Dimension Value Code"; Rec."New Dimension Value Code")
+                {
+                    ApplicationArea = All;
+                }
+                field("Old Dimension Value Code"; Rec."Old Dimension Value Code")
+                {
+                    ApplicationArea = All;
+                }
+            }
+        }
     }
 
     actions
