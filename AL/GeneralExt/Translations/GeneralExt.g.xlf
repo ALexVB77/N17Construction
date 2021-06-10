@@ -2958,6 +2958,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dimension Management (Ext) - Method valDimValue</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1747097237 - Method 4071141186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>valDimValueWithUpdGlobalDim</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dimension Management (Ext) - Method valDimValueWithUpdGlobalDim</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 2945192868" size-unit="char" translate="yes" xml:space="preserve">
           <source>PostForecastEntry</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3003,6 +3008,151 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 4136945084" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CheckShortCutDim1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckShortCutDim1</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3046154110" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CheckLineShortCutDim1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1375700104" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ChangeActStatus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1454544725" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no attachment!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 816848108" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been approved!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3836422170" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor does not have to be basic!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3198725553" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify the Agreement!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70005</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for approval!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70016</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3627370845" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document is ready to be sent to user %1 for approval.\Send?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70032</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 4096158439" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Canceled by user!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70034</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for verification to the Checker!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70044</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 762112629" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document is signed by the Approver!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70045</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 124416012" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has passed all approvals! A purchase invoice for accounting has been generated!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70046</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType Text50013</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1590263106" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pre-Approver %1 is missing!\The request is being transferred to the Approver: %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType Text1002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1602187639" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approving employee %1 is missing!\The request is being transferred to the Substitute: %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType Text132</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 2561028936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The agreement Starting Date must not be later than the Order Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70006</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 1923332319" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The agreement Expire Date must not be earlier than the Order Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70007</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 2898846982" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The agreement Start Date must not be later than the Document Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70008</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 4097093 - NamedType 2261150365" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The agreement Expire Date must not be earlier than the Document Date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70009</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3774229605 - NamedType 314869872" size-unit="char" translate="yes" xml:space="preserve">
+          <source>For the line with the dimensions combination %1 and %2, the Agreement card Remaining Amount has been exceeded!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckAgrDetRemain - NamedType Text1000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3774229605 - NamedType 3972140551" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The line with the  dimensions combination %1 and %2 does not exist in the Breakdown by Letter of the Agreement card!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckAgrDetRemain - NamedType Text1001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1181972351 - NamedType 4210713468" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A dimension used in line %1 has caused an error. %2.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckDimensionComb - NamedType DimCausedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1375976439 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The invoice Amount including VAT in the header does not match the amount including VAT by lines!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckDocSum - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1375976439 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The VAT amount in the header does not match the VAT amount by lines!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckDocSum - NamedType ErrText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1048492819 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify %1 and %2 for %3 line %4.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1 - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1048492819 - NamedType 4133353355" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line %1 specifies COST PLACE %2 that does not match the document type %3.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1 - NamedType LocText50010</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 2139979417 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify %1 and %2 for %3.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckShortCutDim1 - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 129654010 - NamedType 3416294985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must select the real item before document posting.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CreatePurchOrder - NamedType Text50016</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1598329628 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to delete Payment Invoice %1 for %2?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3017,6 +3167,11 @@
           <source>Request %1 in the "Payment" approval status. Unable to delete.\Use the archiving function.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice - NamedType LocText50021</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 1810542939 - NamedType 2778598368" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lines are not filled.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method UpdateActHeaderDimByMaxLine - NamedType Text50015</note>
         </trans-unit>
         <trans-unit id="Codeunit 4047442064 - Method 2815313400" size-unit="char" translate="yes" xml:space="preserve">
           <source>FAReclassLine</source>
@@ -3197,6 +3352,11 @@
           <source>DisconnectFromAgreement</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method DisconnectFromAgreement</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1058071811" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ApprovePurchaseOrderAct</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ApprovePurchaseOrderAct</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nothing selected!</source>
@@ -5314,7 +5474,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Action NewOrderApp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Act,Function</source>
+          <source>New,Process,Report,Act,Function,Request Approval,Approve</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
         </trans-unit>
@@ -5432,6 +5592,31 @@
           <source>Documents View</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ViewAttachDoc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 227370865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Approval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 803889193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approve</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Approve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1013253961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delegate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Delegate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Reject - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>F&amp;unctions</source>
@@ -5872,6 +6057,236 @@
           <source>Web Request Worker Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Web Request Worker Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged Accounts Payable Ext</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 1262567392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged Accounts Payable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType AgedAcctPayableCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2742537738" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged Overdue Amounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType AgedOverdueAmsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 1641887945" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All Amounts in LCY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType AllAmtsinLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 1874362034" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType AmountLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 1350921099" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Before</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType BeforeTok</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 4257318669" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType CurrencyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2046958930" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Specification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType CurrencySpecificationCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 684809554" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType CurrReportPageNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 3558753334" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType DocumentNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2869310181" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType DocumentTypeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 4092352280" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType DueDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 82002553" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter a date formula in the Period Length field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType EnterDateFormulaErr</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 3496992241" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType ExternalDocumentNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2321068018" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType GrandTotalVLE5RemAmtLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 443421780" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType PostingDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Due</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>days</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged by %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total for %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged as of %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged by %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date,Posting Date,Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text009</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Date Formula %1 cannot be used. Try to restate it, for example, by using 1M+CM instead of CM+1M.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text010</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 3853762076" size-unit="char" translate="yes" xml:space="preserve">
+          <source>-%1</source>
+          <note from="Developer" annotates="general" priority="2">Negating the period length: %1 is the period length</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text027</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2679186772" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType TotalLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 2060407144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date that you want the aging calculated for.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control AgedAsOf - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 2060407144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aged As Of</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control AgedAsOf - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 1209092943 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the aging will be calculated from the due date, the posting date, or the document date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control AgingBy - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 1209092943 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aging by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control AgingBy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 1209092943 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date,Posting Date,Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control AgingBy - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 2857238821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export Excel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control ExportExcel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 336339332 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the column heading for the three periods will indicate a date interval or the number of days overdue.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control HeadingType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 336339332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Heading Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control HeadingType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 336339332 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Interval,Number of Days</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control HeadingType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 3947413408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if each vendor's information is printed on a new page if you have chosen two or more vendors to be included in the report.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control NewPagePerVendor - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 3947413408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Page per Vendor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control NewPagePerVendor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 2740290379 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the period for which data is shown in the report. For example, enter "1M" for one month, "30D" for thirty days, "3Q" for three quarters, or "5Y" for five years.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control PeriodLength - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 2740290379 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period Length</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control PeriodLength - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 3287144200 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want the report to specify the aging per vendor ledger entry.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control PrintAmountInLCY - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 3287144200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Amounts in LCY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control PrintAmountInLCY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 568987109 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want the report to show the detailed entries that add up the total balance for each vendor.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control PrintDetails - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 568987109 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control PrintDetails - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 376036809 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to print the vendor's document numbers, such as the invoice number, on all transactions. Clear this check box to print only internal document numbers.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control UseExternalDocNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - Control 376036809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use External Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control UseExternalDocNo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
@@ -7343,6 +7758,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Utilities Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3887120495 - Field 2477103885 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
+          <source>Default Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Default Location Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 3717217199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Giv. Materials Loc. Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7428,6 +7848,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Archiving Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 1417232546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Check Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 1417232546 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source> ,Controler app,Estimator app,Estimator rej,Checker app,Checker rej,Approver app,Approver rej</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Controller</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7493,6 +7923,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Location Document - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3865866614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Next Approver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Next Approver - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1203376573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>OKATO Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7557,6 +7992,11 @@
           <source>Pre-Approver</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Pre-Approver - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 2028092477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Pre-booking Accept</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Pre-booking Accept - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3630883352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Pre-booking Document</source>
@@ -7893,10 +8333,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Method CheckCostDimension - NamedType LocText001</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 984279183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Act CP Dimension Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Act CP Dimension Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2622566760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Act Order Nos.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Act Order Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 799338482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Aged Accounts Payable Template</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Aged Acc. Payable Tmplt Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 1911997122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Base Vendor No.</source>
@@ -7928,6 +8378,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Default Payment Assignment - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 2542747840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Frame Agreement Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Frame Agreement Group - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2271846032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Payment Calendar Batch</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7948,10 +8403,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Request Nos. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2307367824 - Field 3186547235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
-          <source>Skip Check CF Forecast Filter</source>
+        <trans-unit id="TableExtension 2307367824 - Field 924059950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Prod. Act CP Dimension Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Skip Check CF Forecast Filter - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Prod. Act CP Dimension Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3907382913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Vendor Agreement Template Code</source>

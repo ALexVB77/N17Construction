@@ -2,7 +2,7 @@ page 70260 "Purchase Order Act"
 {
     Caption = 'Purchase Order Act';
     PageType = Document;
-    PromotedActionCategories = 'New,Process,Report,Act,Function';
+    PromotedActionCategories = 'New,Process,Report,Act,Function,Request Approval,Approve';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -511,7 +511,6 @@ page 70260 "Purchase Order Act"
                         if Get("Document Type", "No.") then;
                     end;
                 }
-
                 action(CopyDocument)
                 {
                     ApplicationArea = Suite;
@@ -560,7 +559,84 @@ page 70260 "Purchase Order Act"
                     end;
                 }
             }
+            group(Approval)
+            {
+                Caption = 'Approval';
+                action(Approve)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Approve';
+                    Image = Approve;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+                    //PromotedOnly = true;
+                    //Visible = OpenApprovalEntriesExistForCurrUser;
 
+                    trigger OnAction()
+                    begin
+                        PaymentOrderMgt.ApprovePurchaseOrderAct(Rec);
+                    end;
+                }
+                action(Reject)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Reject';
+                    Image = Reject;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+                    //PromotedOnly = true;
+                    //ToolTip = 'Reject the requested changes.';
+                    //Visible = OpenApprovalEntriesExistForCurrUser;
+
+                    trigger OnAction()
+                    var
+                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+                    begin
+                        // ApprovalsMgmt.RejectRecordApprovalRequest(RecordId);
+                        Message('Pressed Reject');
+                    end;
+                }
+                action(Delegate)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Delegate';
+                    Image = Delegate;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    //PromotedOnly = true;
+                    //ToolTip = 'Delegate the requested changes to the substitute approver.';
+                    //Visible = OpenApprovalEntriesExistForCurrUser;
+
+                    trigger OnAction()
+                    var
+                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+                    begin
+                        //ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
+                        Message('Pressed Delegate');
+                    end;
+                }
+                action(Comment)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Comments';
+                    Image = ViewComments;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    //PromotedOnly = true;
+                    //ToolTip = 'View or add comments for the record.';
+                    //Visible = OpenApprovalEntriesExistForCurrUser;
+
+                    trigger OnAction()
+                    var
+                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+                    begin
+                        // ApprovalsMgmt.GetApprovalComment(Rec);
+                        Message('Pressed Comment');
+                    end;
+                }
+            }
         }
     }
 

@@ -126,7 +126,11 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
             begin
                 if "Line No." <> 0 then begin
                     GLS.Get;
-                    DimensionManagement.valDimValue(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID");
+                    // NC AB >>
+                    // DimensionManagement.valDimValue(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID");
+                    GLS.TestField("Cost Type Dimension Code");
+                    DimensionManagement.valDimValueWithUpdGlobalDim(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
+                    // NC AB <<
                 end;
             end;
 
@@ -137,12 +141,18 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
                 DimensionManagement: Codeunit "Dimension Management (Ext)";
             begin
                 GLS.Get;
+                // NC AB >>
+                GLS.TestField("Cost Type Dimension Code");
+                // NC AB <<
                 DimensionValue.SetRange("Dimension Code", GLS."Cost Type Dimension Code");
                 if DimensionValue.FindFirst() then begin
                     if DimensionValue.Get(GLS."Cost Type Dimension Code", "Cost Type") then;
                     if Page.RUNMODAL(Page::"Dimension Value List", DimensionValue) = Action::LookupOK then begin
                         "Cost Type" := DimensionValue.Code;
-                        DimensionManagement.valDimValue(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID");
+                        // NC AB >>
+                        // DimensionManagement.valDimValue(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID");
+                        DimensionManagement.valDimValueWithUpdGlobalDim(GLS."Cost Type Dimension Code", "Cost Type", "Dimension Set ID", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
+                        // NC AB <<
                     end;
                 end;
             end;
@@ -181,12 +191,12 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
             exit;
         PurchSetup.GET;
         PurchSetup.TESTFIELD("Cost Place Dimension");
-        IF PurchSetup."Skip Check CF Forecast Filter" <> '' THEN begin
+        IF PurchSetup."Prod. Act CP Dimension Filter" <> '' THEN begin
             DimSetEntry.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
             DimSetEntry.SetRange("Dimension Set ID", xDimSetID);
             IF DimSetEntry.FindSet() then begin
                 DimValue.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
-                DimValue.SetFilter(Code, PurchSetup."Skip Check CF Forecast Filter");
+                DimValue.SetFilter(Code, PurchSetup."Prod. Act CP Dimension Filter");
                 DimValue.FilterGroup(2);
                 DimValue.Setrange(Code, DimSetEntry."Dimension Value Code");
                 DimValue.FilterGroup(0);

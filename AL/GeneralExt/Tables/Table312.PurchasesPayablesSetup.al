@@ -26,10 +26,10 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
                 CheckCostDimension();
             end;
         }
-        field(50004; "Skip Check CF Forecast Filter"; text[100])
+        field(50004; "Prod. Act CP Dimension Filter"; text[100])
         {
             InitValue = '?????????P*';
-            Caption = 'Skip Check CF Forecast Filter';
+            Caption = 'Prod. Act CP Dimension Filter';
             Description = 'NC 51373 AB';
         }
         field(50005; "Zero VAT Prod. Posting Group"; code[20])
@@ -55,6 +55,18 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
                 CheckCostDimension();
             end;
         }
+        field(50008; "Act CP Dimension Filter"; text[100])
+        {
+            InitValue = '?????????D*';
+            Caption = 'Act CP Dimension Filter';
+            Description = 'NC 51373 AB';
+        }
+        field(50020; "Frame Agreement Group"; Code[20])
+        {
+            Caption = 'Frame Agreement Group';
+            Description = 'NC 51373 AB';
+            TableRelation = "Agreement Group".Code WHERE(Type = CONST(Purchases));
+        }
         field(50030; "Vendor Agreement Template Code"; Code[250])
         {
             Caption = 'Vendor Agreement Template Code';
@@ -63,6 +75,11 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
         field(50031; "Check Vend. Agr. Template Code"; Code[250])
         {
             Caption = 'Check Vend. Agr. Template Code';
+            TableRelation = "Excel Template";
+        }
+        field(50032; "Aged Acc. Payable Tmplt Code"; Code[250])
+        {
+            Caption = 'Aged Accounts Payable Template';
             TableRelation = "Excel Template";
         }
         field(70000; "Payment Calendar Tmpl"; Code[10])
