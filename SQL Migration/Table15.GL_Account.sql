@@ -80,23 +80,3 @@ SELECT
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$G_L Account]
 INNER JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
 ON GLAccMapping.[Old No_] = [No_] collate Cyrillic_General_100_CI_AS;
-
--- Default Dimension
-INSERT INTO [Bonava-Test].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
-(
-	[Table ID],
-	[No_],
-	[Dimension Code],
-	[Dimension Value Code],
-	[Value Posting],
-	[Multi Selection Action]
-)
-SELECT
-	[Table ID],
-	[No_],
-	[Dimension Code],
-	[Dimension Value Code],
-	[Value Posting],
-	[Multi Selection Action]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Default Dimension]
-WHERE [Table ID] = '15'
