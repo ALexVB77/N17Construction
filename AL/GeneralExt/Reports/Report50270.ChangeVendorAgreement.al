@@ -15,9 +15,8 @@ report 50270 "Change Vendor Agreement"
             trigger OnPreDataItem()
             begin
                 VendorAgrRAS.ChangeCompany(CompName);
+                ExcellBuffer.DeleteAll();
                 if TestRegim then begin
-                    ServerFileName := FileManagement.ServerTempFileName(Text001);
-                    ExcellBuffer.CreateBookAndOpenExcel(ServerFileName, Format(Today), '', Format(CompanyName), Format(UserId));
                     RowNo := 0;
                 end;
             end;
@@ -87,6 +86,12 @@ report 50270 "Change Vendor Agreement"
             }
         }
     }
+
+    trigger OnPostReport()
+    begin
+        ServerFileName := FileManagement.ServerTempFileName(Text001);
+        ExcellBuffer.CreateBookAndOpenExcel(ServerFileName, Format(Today), '', Format(CompanyName), Format(UserId));
+    end;
 
     var
         CompName: Text[30];
