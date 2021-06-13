@@ -891,12 +891,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contract Guid - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2155285002 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CRM Checksum</source>
-          <target>Контрольная сумма</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2155285002 - Field 176771102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Expected Registration Period</source>
           <target>Expected Registration Period</target>
@@ -950,6 +944,13 @@
           <target>Unit Guid</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Unit Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Id</source>
+          <target>Id версии</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Company</source>
@@ -1029,17 +1030,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 3632177014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Version Id</source>
+          <target>Id версии объекта </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Version Id - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1501946700 - Field 1459641232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Xml</source>
           <target>XML объекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1501946700 - Field 4134709003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object Xml Checksum</source>
-          <target>Контрольная сумма XML объекта</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml Checksum - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1501946700 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Status</source>
@@ -1058,12 +1060,6 @@
           <target>Необработанные CRM объекты</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3279116693 - Field 3343464511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Xml Checksum</source>
-          <target>Контрольная сумма XML</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Checksum - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 999613564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company name</source>
@@ -1094,6 +1090,13 @@
           <target>Тип</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Id</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Web Request Queue Id</source>
@@ -8791,7 +8794,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -9224,7 +9227,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -10639,28 +10642,24 @@
           <source>Done</source>
           <target>Выполнено</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Done - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2960129384 - EnumValue 2248886284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error</source>
           <target>Ошибка</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Error - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2960129384 - EnumValue 2124445262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prefetched</source>
           <target>Предв. загружен</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Prefetched - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2960129384 - EnumValue 2791901420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Skipped</source>
           <target>Пропущен</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Skipped - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2849517163 - EnumValue 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

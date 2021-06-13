@@ -112,7 +112,7 @@ codeunit 99932 "CRM Worker"
             Evaluate(FetchedObjectsTemp.ParentId, ParentObjectIdText);
         FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
         OutStrm.Write(ObjectXmlText);
-        FetchedObjectsTemp.Checksum := GenerateHash(ObjectXmlText);
+        FetchedObjectsTemp."Version Id" := GenerateHash(ObjectXmlText);
         if not FetchedObjectsTemp.Insert() then
             FetchedObjectsTemp.Modify();
     end;
@@ -182,7 +182,7 @@ codeunit 99932 "CRM Worker"
 
         CMRBuyes.Reset();
         CMRBuyes.SetRange("Unit Guid", FetchedObject.Id);
-        CMRBuyes.SetRange("CRM Checksum", FetchedObject.Checksum);
+        CMRBuyes.SetRange("Version Id", FetchedObject."Version Id");
         if not CMRBuyes.IsEmpty() then
             exit;
 
@@ -273,7 +273,7 @@ codeunit 99932 "CRM Worker"
 
         CRMBuyer.Init();
         CRMBuyer."Unit Guid" := FetchedObject.Id;
-        CRMBuyer."CRM Checksum" := FetchedObject.Checksum;
+        CRMBuyer."Version Id" := FetchedObject."Version Id";
         if ParsingResult.Get('ReservingContactGuid', Value) then
             Evaluate(CRMBuyer."Reserving Contact Guid", Value);
 
@@ -402,6 +402,26 @@ codeunit 99932 "CRM Worker"
     begin
         XmlElem.SelectSingleNode(xpath, XmlNode);
         Value := GetXmlElementText(XmlNode);
+    end;
+
+    local procedure LogEvent(var FetchedObject: Record "CRM Prefetched Object"; LogStatus: Enum "CRM Log Status"; MsgText: Text)
+    var
+        Log: Record "CRM Log";
+    begin
+        if not Log.FindLast() then
+            Log."Entry No." := 1L
+        else
+            Log."Entry No." += 1;
+        Log."Object Id" := FetchedObject.Id;
+        Log."Object Type" := FetchedObject.Type;
+        Log."Object Xml" := FetchedObject.Xml;
+        Log."Object Version Id" := FetchedObject."Version Id";
+        Log."Web Request Queue Id" := FetchedObject."Web Request Queue Id";
+        Log.Datetime := CurrentDateTime;
+        Log.Status := LogStatus;
+        Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));
+        Log."Details Text 2" := CopyStr(MsgText, MaxStrLen(Log."Details Text 1") + 1, MaxStrLen(Log."Details Text 2"));
+        Log.Insert();
     end;
 
     local procedure DebugPrint(XmlText: Text; Tag: Text)

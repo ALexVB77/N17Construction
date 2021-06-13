@@ -30,9 +30,9 @@ table 99932 "CRM Prefetched Object"
 
         }
 
-        field(12; "Checksum"; Text[40])
+        field(12; "Version Id"; Text[40])
         {
-            Caption = 'Xml Checksum';
+            Caption = 'Version Id';
 
         }
 

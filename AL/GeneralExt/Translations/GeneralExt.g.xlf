@@ -743,11 +743,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contract Guid - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2155285002 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CRM Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2155285002 - Field 176771102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Expected Registration Period</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -792,6 +787,11 @@
           <source>Unit Guid</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Unit Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Company</source>
@@ -858,15 +858,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 3632177014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Version Id - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1501946700 - Field 1459641232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Xml</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1501946700 - Field 4134709003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object Xml Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml Checksum - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1501946700 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Status</source>
@@ -882,11 +882,6 @@
           <source>CRM Prefetched Object</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3279116693 - Field 3343464511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Xml Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Checksum - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 999613564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company name</source>
@@ -912,6 +907,11 @@
           <source>Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Web Request Queue Id</source>
