@@ -6293,6 +6293,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control UseExternalDocNo - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 850119152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Change Vendor Agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>.xlsx</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Several lines with a agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - NamedType Text002</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>
