@@ -7148,6 +7148,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Transfer Order (Ext) - Action GetItemLedgerEntryLines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2153774770">
+          <source>Set Agreememt Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - NamedType Text003</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Action 3640084062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Change Log</source>
           <note from="Developer" annotates="general" priority="2"></note>

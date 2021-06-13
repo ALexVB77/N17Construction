@@ -2,6 +2,21 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
 {
     layout
     {
+        modify("No.")
+        {
+            StyleExpr = LineColor;
+
+            trigger OnAssistEdit()
+            begin
+                if Rec.AssistEdit(xRec) then
+                    CurrPage.Update();
+            end;
+        }
+        modify(Description)
+        {
+            StyleExpr = LineColor;
+        }
+
         addafter("Tax Authority No.")
         {
             field("Vat Agent Posting Group"; Rec."Vat Agent Posting Group")
@@ -75,6 +90,7 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             group("Purchase Limit Control")
             {
                 Caption = 'Purchase Limit Control';
+                Visible = PLCVisible;
 
                 field("Check Limit Starting Date"; Rec."Check Limit Starting Date")
                 {
@@ -97,11 +113,10 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 field("Check Limit Amount (LCY)"; Rec."Check Limit Amount (LCY)")
                 {
                     ApplicationArea = Basic, Suite;
-                    StyleExpr = CheckLimitAmountColor;
+                    StyleExpr = LineColor;
 
                     trigger OnValidate()
                     begin
-                        SetCheckLimitAmountColor(CheckLimitAmountColor);
                         CurrPage.Update();
                     end;
                 }
@@ -114,10 +129,10 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Deviation';
+                    StyleExpr = LineColor;
 
                     trigger OnValidate()
                     begin
-                        SetCheckLimitAmountColor(CheckLimitAmountColor);
                         CurrPage.Update();
                     end;
                 }
@@ -187,6 +202,23 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             PaidWithVATVisiable := true;
             PaidWithVATREstateTestVisiable := false;
         end;
+
+        CompanyInfo.Get();
+        PLCVisible := CompanyInfo."Use RedFlags in Agreements";
+    end;
+
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    var
+        myInt: Integer;
+    begin
+        if CompanyInfo."Use RedFlags in Agreements" then
+            if not (Rec."Agreement Group" in ['', 'РАМОЧНЫЙ']) and (Rec."Agreement Amount" = 0) then
+                Error(Text003);
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        LineColor := Rec.GetLineColor();
     end;
 
     trigger OnAfterGetCurrRecord()
@@ -321,7 +353,10 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         PaidWithVATVisiable: Boolean;
         PaidWithVATREstateTestVisiable: Boolean;
         Monkey: Codeunit "Code Monkey Translation";
-        CheckLimitAmountColor: Text;
+        CompanyInfo: Record "Company Information";
+        PLCVisible: Boolean;
+        LineColor: Text;
+        Text003: Label 'Set Agreememt Amount';
 
     local procedure DublicateOperationExists(var dvle: Record "Detailed Vendor Ledg. Entry"; var dvleTMP: Record "Detailed Vendor Ledg. Entry" temporary): Boolean
     var
@@ -344,12 +379,5 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         END ELSE BEGIN
             EXIT(TRUE);
         END;
-    end;
-
-    local procedure SetCheckLimitAmountColor(var CheckLimitAmountColor: Text)
-    begin
-        CheckLimitAmountColor := 'None';
-        if Rec."Check Limit Amount (LCY)" = 0 then
-            CheckLimitAmountColor := 'Attention';
     end;
 }
