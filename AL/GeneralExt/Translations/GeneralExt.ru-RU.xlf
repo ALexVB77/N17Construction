@@ -7605,22 +7605,33 @@
           <source>Change Vendor Agreement</source>
           <target>Изменить соглашение с поставщиком</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 850119152 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>.xlsx</source>
           <target>.xlsx</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Report 850119152 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>Several lines with a agreement</source>
           <target>Несколько строк с договором</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - Control 1085466177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company RAS</source>
+          <target>Компания RAS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control CompanyRAS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - Control 279176902 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test mode</source>
+          <target>Тестовый режим</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control TestRegim - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>

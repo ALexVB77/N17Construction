@@ -6308,6 +6308,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - NamedType Text002</note>
         </trans-unit>
+        <trans-unit id="Report 850119152 - Control 1085466177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company RAS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control CompanyRAS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - Control 279176902 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test mode</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control TestRegim - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>

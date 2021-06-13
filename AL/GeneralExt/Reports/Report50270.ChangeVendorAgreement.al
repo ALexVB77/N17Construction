@@ -4,7 +4,7 @@ report 50270 "Change Vendor Agreement"
     ApplicationArea = All;
     Description = 'NC 51432 PA';
     Caption = 'Change Vendor Agreement';
-    ProcessingOnly = false;
+    ProcessingOnly = true;
 
     dataset
     {
@@ -71,13 +71,17 @@ report 50270 "Change Vendor Agreement"
             {
                 group(GroupName)
                 {
+                    ShowCaption = false;
                     field(CompanyRAS; CompName)
                     {
                         ApplicationArea = All;
+                        Caption = 'Company RAS';
+                        TableRelation = Company;
                     }
                     field(TestRegim; TestRegim)
                     {
                         ApplicationArea = All;
+                        Caption = 'Test mode';
                     }
                 }
             }
