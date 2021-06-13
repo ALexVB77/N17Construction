@@ -873,11 +873,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1501946700 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Done,Error,Prefetched,Skip</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property OptionCaption</note>
-        </trans-unit>
         <trans-unit id="Table 1501946700 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Web Request Queue Id</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3612,6 +3607,16 @@
           <source>CRM Copmany</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4148916677 - Action 3732224266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Action Test - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4148916677 - Action 63677024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Action Test2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Log</source>
@@ -8807,6 +8812,31 @@
           <source>PrevForecast</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 1178809860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Done</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Done - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 2248886284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 2124445262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prefetched</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Prefetched - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 2791901420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Skipped</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Skipped - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2849517163 - EnumValue 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contact</source>

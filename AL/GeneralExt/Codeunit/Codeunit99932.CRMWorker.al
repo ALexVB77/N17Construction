@@ -11,7 +11,6 @@ codeunit 99932 "CRM Worker"
     local procedure Code(var WebRequestQueue: Record "Web Request Queue")
     var
         FetchedObjectBuff: Record "CRM Prefetched Object" temporary;
-        PrefetchedObj: Record "CRM Prefetched Object";
         InStrm: InStream;
         RequestBodyXmlText: Text;
         ParsingResult: Dictionary of [Text, Text];
@@ -23,11 +22,8 @@ codeunit 99932 "CRM Worker"
         InStrm.Read(RequestBodyXmlText);
         FetchObjects(FetchedObjectBuff, RequestBodyXmlText);
 
-        if PrefetchedObj.FindSet() then
-            repeat
-                FetchedObjectBuff := PrefetchedObj;
-                if FetchedObjectBuff.Insert() then;
-            until PrefetchedObj.Next() = 0;
+
+        PickupPrefetchedObjects(FetchedObjectBuff);
 
         FetchedObjectBuff.Reset();
         FetchedObjectBuff.FindSet();
@@ -40,11 +36,8 @@ codeunit 99932 "CRM Worker"
     local procedure FetchObjects(var FetchedObjectsTemp: Record "CRM Prefetched Object"; RequestBodyXmlText: Text): Text
     var
         XmlNodes: XmlNodeList;
-        RootXmlElement: XmlElement;
+        RootXmlElement, XmlElem : XmlElement;
         ObjXmlNode: XmlNode;
-        XmlElem: XmlElement;
-        c: Integer;
-        tmp: Text;
         ObjXmlBase64: text;
     begin
         GetRootXmlElement(RequestBodyXmlText, RootXmlElement);
@@ -57,6 +50,18 @@ codeunit 99932 "CRM Worker"
             ObjXmlBase64 := XmlElem.InnerText;
             GetObjectMeta(FetchedObjectsTemp, ObjXmlBase64);
         end;
+    end;
+
+    local procedure PickupPrefetchedObjects(var FetchedObjectsTemp: Record "CRM Prefetched Object")
+    var
+        PrefetchedObj: Record "CRM Prefetched Object";
+    begin
+        PrefetchedObj.Reset();
+        if PrefetchedObj.FindSet() then
+            repeat
+                FetchedObjectsTemp := PrefetchedObj;
+                if FetchedObjectsTemp.Insert() then;
+            until PrefetchedObj.Next() = 0;
     end;
 
     local procedure GetObjectMeta(var FetchedObjectsTemp: Record "CRM Prefetched Object"; Base64EncodedObjectXml: Text)
@@ -115,17 +120,18 @@ codeunit 99932 "CRM Worker"
 
     local procedure ParseObject(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
     var
-        ParsingRes: Dictionary of [Text, Text];
+        HasError: Boolean;
     begin
         case FetchedObject.Type of
             FetchedObject.Type::Unit:
-                ParseUnitXml(FetchedObject, ParsingRes);
+                hasError := not ParseUnitXml(FetchedObject, ParsingResult);
             FetchedObject.Type::Contact:
-                ParseContactXml(FetchedObject, ParsingRes);
+                hasError := not ParseContactXml(FetchedObject, ParsingResult);
             FetchedObject.Type::Contract:
-                ParseContractXml(FetchedObject, ParsingRes);
+                hasError := not ParseContractXml(FetchedObject, ParsingResult);
         end;
-        ParsingResult := ParsingRes;
+        if HasError then;
+
     end;
 
     local procedure ImportObject(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
@@ -140,102 +146,112 @@ codeunit 99932 "CRM Worker"
         end;
     end;
 
+    [TryFunction]
     local procedure ParseUnitXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
     var
         XmlElem: XmlElement;
         XmlNode: XmlNode;
         XmlNodeList: XmlNodeList;
         ElemText, ElemText2 : Text;
-        BaseDataNode, UnitNode : Text;
         BuyerNo: Integer;
         ExpectedRegDate, ActualDate, ExpectedDate : Text;
         Res: Dictionary of [Text, Text];
         CMRBuyes: Record "CRM Buyers";
+        CRMCompany: Record "CRM Company";
+
+        UnitX: Label 'NCCObjects/NCCObject/Unit/', Locked = true;
+        BuyerX: label 'Buyers/Buyer', Locked = true;
+        BaseDataX: Label 'NCCObjects/NCCObject/Unit/BaseData/', Locked = true;
+        ObjectParentIdX: Label 'ObjectParentID', Locked = true;
+        ContactIdX: Label 'ContactID', Locked = true;
+        NameX: Label 'Name', Locked = true;
+        BlockNumberX: Label 'BlockNumber', Locked = True;
+        ApartmentNumberX: Label 'ApartmentNumber', Locked = true;
+        ApartmentOriginTypeX: Label 'ObjectAttributes/TypeOfBuildings/TypeOfBuilding/KeyName', Locked = true;
+        ApartmentUnitAreaM2X: Label 'Measurements/UnitAreaM2/ActualValue', Locked = true;
+        ExpectedRegDateX: Label 'KeyDates/ExpectedRegistrationPeriod', Locked = true;
+        ActualDateX: Label 'KeyDates/Sales/ActualDate', Locked = true;
+        ExpectedDateX: Label 'KeyDates/HandedOver/ExpectedDate', Locked = true;
+        BuyerObjectIdX: Label 'BaseData/ObjectID', Locked = true;
+        BuyerContactIdX: Label 'BaseData/ContactID', Locked = true;
+        BuyerContractIdX: Label 'BaseData/ContractID', Locked = true;
+        BuyerOwnPrcX: Label 'BaseData/OwnershipPercentage', Locked = true;
+        BuyerIsActiveX: Label 'BaseData/IsActive', Locked = true;
     begin
+        Clear(ParsingResult);
+
         CMRBuyes.Reset();
         CMRBuyes.SetRange("Unit Guid", FetchedObject.Id);
         CMRBuyes.SetRange("CRM Checksum", FetchedObject.Checksum);
-        if not CMRBuyes.IsEmpty() then begin
-            ParsingResult := Res;
+        if not CMRBuyes.IsEmpty() then
             exit;
-        end;
-
-        UnitNode := 'NCCObjects/NCCObject/Unit/';
-        BaseDataNode := 'NCCObjects/NCCObject/Unit/BaseData/';
 
         GetRootXmlElement(FetchedObject, XmlElem);
-        if GetValue(XmlElem, BaseDataNode + 'ContactID', ElemText) then
-            Error('ContactID is not found');
-        Res.Add('ReservingContactGuid', ElemText);
+        GetValue(XmlElem, BaseDataX + ObjectParentIdX, ElemText);
+        EVALUATE(CRMCompany."Project Guid", ElemText);
+        CRMCompany.Find('=');
+        if CRMCompany."Company Name" <> CompanyName() then
+            exit;
 
-        if GetValue(XmlElem, BaseDataNode + 'Name', ElemText) then
-            Error('Object Of Investing is not found');
-        Res.Add('ObjectOfInvesting', ElemText);
+        GetValue(XmlElem, BaseDataX + ContactIdX, ElemText);
+        ParsingResult.Add('ReservingContactGuid', ElemText);
+        GetValue(XmlElem, BaseDataX + NameX, ElemText);
+        ParsingResult.Add('ObjectOfInvesting', ElemText);
         ElemText := '';
         ElemText2 := '';
-        GetValue(XmlElem, BaseDataNode + 'BlockNumber', ElemText);
-        GetValue(XmlElem, BaseDataNode + 'ApartmentNumber', ElemText2);
+        GetValue(XmlElem, BaseDataX + BlockNumberX, ElemText);
+        GetValue(XmlElem, BaseDataX + ApartmentNumberX, ElemText2);
         if (ElemText + ElemText2) <> '' then
-            res.Add('ApartmentDescription', ElemText + ' ' + ElemText2);
-        if GetValue(XmlElem, UnitNode + 'ObjectAttributes/TypeOfBuildings/TypeOfBuilding/KeyName', ElemText) then begin
+            ParsingResult.Add('ApartmentDescription', ElemText + ' ' + ElemText2);
+        if GetValue(XmlElem, UnitX + ApartmentOriginTypeX, ElemText) then begin
             if ElemText <> '' then
-                Res.Add('ApartmentOriginType', ElemText);
+                ParsingResult.Add('ApartmentOriginType', ElemText);
         end;
-        if GetValue(XmlElem, UnitNode + 'Measurements/UnitAreaM2/ActualValue', ElemText) then begin
+        if GetValue(XmlElem, UnitX + ApartmentUnitAreaM2X, ElemText) then begin
             if ElemText <> '' then
-                Res.Add('ApartmentUnitAreaM2', ElemText);
+                ParsingResult.Add('ApartmentUnitAreaM2', ElemText);
         end;
-
-        if GetValue(XmlElem, UnitNode + 'KeyDates/ExpectedRegistrationPeriod', ElemText) then
+        if GetValue(XmlElem, UnitX + ExpectedRegDateX, ElemText) then
             ExpectedRegDate := ElemText;
-        if GetValue(XmlElem, UnitNode + 'KeyDates/Sales/ActualDate', ElemText) then
+        if GetValue(XmlElem, UnitX + ActualDateX, ElemText) then
             ActualDate := ElemText;
-        if GetValue(XmlElem, UnitNode + 'KeyDates/HandedOver/ExpectedDate', ElemText) then
+        if GetValue(XmlElem, UnitX + ExpectedDateX, ElemText) then
             ExpectedDate := ElemText;
 
-        if not XmlElem.SelectNodes(UnitNode + 'Buyers/Buyer', XmlNodeList) then
+        if not XmlElem.SelectNodes(UnitX + BuyerX, XmlNodeList) then
             exit;
         if XmlNodeList.Count = 0 then
-            Error('No Buyers');
+            exit;
         BuyerNo := 1;
         foreach XmlNode in XmlNodeList do begin
             XmlElem := XmlNode.AsXmlElement();
-            if not GetValue(XmlElem, 'BaseData/ObjectID', ElemText) then
-                Error('Buyer has not BaseData/ObjectID');
-            Res.Add(StrSubstNo('BuyerGuid%1', BuyerNo), ElemText);
-
-            if not GetValue(XmlElem, 'BaseData/ContactID', ElemText) then
-                Error('Buyer has not BaseData/ContactID');
-            Res.Add(StrSubstNo('ContactGuid%1', BuyerNo), ElemText);
-
-            if not GetValue(XmlElem, 'BaseData/ContractID', ElemText) then
-                Error('Buyer has not BaseData/ContractID');
-            Res.Add(StrSubstNo('ContractGuid%1', BuyerNo), ElemText);
-
-            if GetValue(XmlElem, 'BaseData/OwnershipPercentage', ElemText) then
-                Res.Add(StrSubstNo('OwnershipPercentage%1', BuyerNo), ElemText);
-
+            GetValue(XmlElem, BuyerObjectIdX, ElemText);
+            ParsingResult.Add(StrSubstNo('BuyerGuid%1', BuyerNo), ElemText);
+            GetValue(XmlElem, BuyerContactIdX, ElemText);
+            ParsingResult.Add(StrSubstNo('ContactGuid%1', BuyerNo), ElemText);
+            GetValue(XmlElem, BuyerContractIdX, ElemText);
+            ParsingResult.Add(StrSubstNo('ContractGuid%1', BuyerNo), ElemText);
+            if GetValue(XmlElem, BuyerOwnPrcX, ElemText) then
+                ParsingResult.Add(StrSubstNo('OwnershipPercentage%1', BuyerNo), ElemText);
             ElemText := '';
-            if GetValue(XmlElem, 'BaseData/IsActive', ElemText) then
-                Res.Add(StrSubstNo('BuyerIsActive%1', BuyerNo), ElemText);
+            if GetValue(XmlElem, BuyerIsActiveX, ElemText) then
+                ParsingResult.Add(StrSubstNo('BuyerIsActive%1', BuyerNo), ElemText);
             if ElemText <> 'false' then begin
-                Res.Add(StrSubstNo('ExpectedRegDate%1', BuyerNo), ExpectedRegDate);
-                Res.Add(StrSubstNo('ActualDate%1', BuyerNo), ActualDate);
-                Res.Add(StrSubstNo('ExpectedDate%1', BuyerNo), ExpectedDate);
+                ParsingResult.Add(StrSubstNo('ExpectedRegDate%1', BuyerNo), ExpectedRegDate);
+                ParsingResult.Add(StrSubstNo('ActualDate%1', BuyerNo), ActualDate);
+                ParsingResult.Add(StrSubstNo('ExpectedDate%1', BuyerNo), ExpectedDate);
             end;
-
             BuyerNo += 1;
         end;
-        ParsingResult := Res;
     end;
 
-
+    [TryFunction]
     local procedure ParseContactXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
     begin
 
     end;
 
-
+    [TryFunction]
     local procedure ParseContractXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
     begin
 
@@ -354,40 +370,38 @@ codeunit 99932 "CRM Worker"
     end;
 
 
+    [TryFunction]
     local procedure GetRootXmlElement(var FetchedObject: record "CRM Prefetched Object"; var RootXmlElement: XmlElement)
     var
         InStrm: InStream;
         XmlDoc: XmlDocument;
     begin
         FetchedObject.CalcFields(Xml);
-        if not FetchedObject.xml.HasValue() then
-            Error('There is no xml of object in CRM Prefetched Object');
+        FetchedObject.Testfield(xml);
         FetchedObject.Xml.CreateInStream(InStrm);
         if not TryLoadXml(InStrm, XmlDoc) then
-            Error('Bad object xml');
-        if not XmlDoc.GetRoot(RootXmlElement) then
-            Error('Root element of object is not found');
+            Error(GetLastErrorText());
+        XmlDoc.GetRoot(RootXmlElement);
     end;
 
+
+    [TryFunction]
     local procedure GetRootXmlElement(InputXmlText: Text; var RootXmlElement: XmlElement)
     var
         XmlDoc: XmlDocument;
     begin
         if not TryLoadXml(InputXmlText, XmlDoc) then
-            Error('Bad object xml');
-        if not XmlDoc.GetRoot(RootXmlElement) then
-            Error('Root element of object is not found');
+            Error(GetLastErrorText());
+        XmlDoc.GetRoot(RootXmlElement);
     end;
 
-    local procedure GetValue(Root: XmlElement; xpath: Text; var Value: Text) result: Boolean
+    [TryFunction]
+    local procedure GetValue(XmlElem: XmlElement; xpath: Text; var Value: Text)
     var
         XmlNode: XmlNode;
     begin
-        result := false;
-        if not Root.SelectSingleNode(xpath, XmlNode) then
-            exit;
+        XmlElem.SelectSingleNode(xpath, XmlNode);
         Value := GetXmlElementText(XmlNode);
-        result := true;
     end;
 
     local procedure DebugPrint(XmlText: Text; Tag: Text)
