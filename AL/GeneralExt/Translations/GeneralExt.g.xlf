@@ -7283,15 +7283,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Registration - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1049217136 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
-          <source>CRM Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 1049217136 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>CRM GUID</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM GUID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1049217136 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Agreement amount</source>
@@ -7558,11 +7558,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 5 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2936356446 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>CRM Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>CRM GUID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7677,6 +7672,11 @@
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Change 410940989 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2936356446">
           <source>You cannot change %1 till you set up %2 of %3</source>

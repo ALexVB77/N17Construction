@@ -946,7 +946,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Unit Guid - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2155285002 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Version Id</source>
+          <source>Id версии</source>
           <target>Id версии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Version Id - Property Caption</note>
@@ -1030,7 +1030,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1501946700 - Field 3632177014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object Version Id</source>
+          <source>Id версии объекта</source>
           <target>Id версии объекта </target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Version Id - Property Caption</note>
@@ -1090,7 +1090,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Version Id</source>
+          <source>Id версии</source>
           <target>Id версии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Version Id - Property Caption</note>
@@ -4331,14 +4331,14 @@
         </trans-unit>
         <trans-unit id="Page 4148916677 - Action 3732224266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Test</source>
-          <target>[NAB: SUGGESTION]Тест</target>
+          <target>Тест</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Action Test - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4148916677 - Action 63677024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Test2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Тест2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Action Test2 - Property Caption</note>
@@ -8789,17 +8789,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Registration - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1049217136 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
-          <source>CRM Checksum</source>
-          <target>Контрольная сумма</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 1049217136 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>CRM GUID</source>
           <target>CRM Guid</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM GUID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1049217136 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Version Id</source>
+          <target>Id версии</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Agreement amount</source>
@@ -9120,12 +9121,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 5 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2936356446 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>CRM Checksum</source>
-          <target>Контрольная сумма</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>CRM GUID</source>
           <target>CRM Guid</target>
@@ -9265,11 +9260,17 @@
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Version Id</source>
+          <target>Id версии</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Version Id - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Change 410940989 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2936356446">
           <source>You cannot change %1 till you set up %2 of %3</source>
           <target>Вы не можете изменить %1 пока не отметите %2 в %3.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Change Customer Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
         </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 3565928873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
@@ -10351,7 +10352,6 @@
           <source>Allow changing agr. posting group</source>
           <target>Разрешить изменять учетную группу в договоре</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
@@ -10587,7 +10587,6 @@
           <source>You cannot change %1 till you set up %2 of %3</source>
           <target>Вы не можете изменить %1 пока не отметите %2 в %3.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Change Vendor Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
         </trans-unit>
         <trans-unit id="TableExtension 1524380135 - Field 559372978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">

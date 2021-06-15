@@ -837,9 +837,9 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
             Caption = 'Birthdate and palce';
         }
 
-        field(80010; "CRM Checksum"; Text[40])
+        field(80010; "Version Id"; Text[40])
         {
-            Caption = 'CRM Checksum';
+            Caption = 'Version Id';
         }
 
         modify("Customer Posting Group")
