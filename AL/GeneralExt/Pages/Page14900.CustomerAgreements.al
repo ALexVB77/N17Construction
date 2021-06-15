@@ -17,6 +17,7 @@ pageextension 84900 "Customer Agreements (Ext)" extends "Customer Agreements"
                 ApplicationArea = All;
             }
         }
+
     }
 
     actions
@@ -49,7 +50,4 @@ pageextension 84900 "Customer Agreements (Ext)" extends "Customer Agreements"
         }
 
     }
-
-    var
-        myInt: Integer;
 }

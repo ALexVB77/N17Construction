@@ -7678,6 +7678,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Change 410940989 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2936356446">
+          <source>You cannot change %1 till you set up %2 of %3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Change Customer Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 3565928873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Admin Cost Place Holder</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8573,6 +8578,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field CF Allow Short Entries Edit - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 2668186690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allow changing agr. posting group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Show All Acts KC-2</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8762,6 +8772,11 @@
           <source>With Out</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field WithOut - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Change 3194161445 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>You cannot change %1 till you set up %2 of %3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Change Vendor Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
         </trans-unit>
         <trans-unit id="TableExtension 1524380135 - Field 559372978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">
           <source>Include in Paid With VAT</source>

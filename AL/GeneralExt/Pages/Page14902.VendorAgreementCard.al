@@ -150,6 +150,11 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             }
         }
 
+        modify("Vendor Posting Group")
+        {
+            Editable = HasntOpenLedgerEntries;
+        }
+
     }
     actions
     {
@@ -219,6 +224,8 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
     trigger OnAfterGetRecord()
     begin
         LineColor := Rec.GetLineColor();
+
+        OnFormat();
     end;
 
     trigger OnAfterGetCurrRecord()
@@ -357,6 +364,18 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
         PLCVisible: Boolean;
         LineColor: Text;
         Text003: Label 'Set Agreememt Amount';
+        HasntOpenLedgerEntries: Boolean;
+
+    local procedure OnFormat()
+    var
+        VendLedgerEntry: Record "Vendor Ledger Entry";
+    begin
+        VendLedgerEntry.SETRANGE("Vendor No.", Rec."Vendor No.");
+        VendLedgerEntry.SETRANGE("Agreement No.", Rec."No.");
+        VendLedgerEntry.SETRANGE(Open, TRUE);
+        HasntOpenLedgerEntries := VendLedgerEntry.ISEMPTY;
+    end;
+
 
     local procedure DublicateOperationExists(var dvle: Record "Detailed Vendor Ledg. Entry"; var dvleTMP: Record "Detailed Vendor Ledg. Entry" temporary): Boolean
     var

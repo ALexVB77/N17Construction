@@ -7623,14 +7623,12 @@
           <source>Company RAS</source>
           <target>Компания RAS</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control CompanyRAS - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 850119152 - Control 279176902 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Test mode</source>
           <target>Тестовый режим</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control TestRegim - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9267,6 +9265,13 @@
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Change 410940989 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2936356446">
+          <source>You cannot change %1 till you set up %2 of %3</source>
+          <target>Вы не можете изменить %1 пока не отметите %2 в %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Change Customer Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 3565928873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Admin Cost Place Holder</source>
           <target>Ответств. Admin (Cost Place)</target>
@@ -10342,6 +10347,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field CF Allow Short Entries Edit - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 2668186690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allow changing agr. posting group</source>
+          <target>Разрешить изменять учетную группу в договоре</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Show All Acts KC-2</source>
           <target>Показать все Акты и КС-2</target>
@@ -10570,6 +10582,13 @@
           <target>По заказам</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field WithOut - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Change 3194161445 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>You cannot change %1 till you set up %2 of %3</source>
+          <target>Вы не можете изменить %1 пока не отметите %2 в %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Change Vendor Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
         </trans-unit>
         <trans-unit id="TableExtension 1524380135 - Field 559372978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">
           <source>Include in Paid With VAT</source>
