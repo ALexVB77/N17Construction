@@ -43,7 +43,7 @@ pageextension 94913 "Vendor Agreements (Ext)" extends "Vendor Agreements"
             StyleExpr = LineColor;
         }
 
-        addlast(content)
+        addlast(Control1210002)
         {
             field("Check Limit Starting Date"; Rec."Check Limit Starting Date")
             {
