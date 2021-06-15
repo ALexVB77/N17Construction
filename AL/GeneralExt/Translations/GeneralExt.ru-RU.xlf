@@ -8250,6 +8250,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Cash Account Card (Ext) - Property PromotedActionCategories</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1214534909 - Control 3364076239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3469146285">
+          <source>Use RedFlags in Agreements</source>
+          <target>Использовать RedFlags в договорах</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Company Information (Ext) - Control Use RedFlags in Agreements - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
           <source>Open customer card</source>
           <target>Открыть карточку договора</target>
@@ -8476,7 +8483,6 @@
           <source>Deviation (LCY)</source>
           <target>Отклонение (руб.)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreements (Ext) - Control Deviation (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1726891836 - Action 279309469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
