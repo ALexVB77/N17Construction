@@ -7034,7 +7034,7 @@
         </trans-unit>
         <trans-unit id="Report 4024062002 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aged Accounts Payable Ext</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Кредиторская задолженность по срокам давности</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Property Caption</note>
@@ -7090,7 +7090,7 @@
         </trans-unit>
         <trans-unit id="Report 4024062002 - NamedType 684809554" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page</source>
-          <target>Страница</target>
+          <target>Стр.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType CurrReportPageNoCaptionLbl</note>
@@ -7258,14 +7258,14 @@
         </trans-unit>
         <trans-unit id="Report 4024062002 - Control 2857238821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Excel</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Выгрузить в  Excel</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control ExportExcel - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4024062002 - Control 336339332 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if the column heading for the three periods will indicate a date interval or the number of days overdue.</source>
-          <target>[NAB: SUGGESTION]Определяет, что будет указано в заголовке столбца для трех периодов — интервал дат или количество дней просрочки.</target>
+          <target>Определяет, что будет указано в заголовке столбца для трех периодов — интервал дат или количество дней просрочки.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control HeadingType - Property ToolTip</note>
@@ -9878,7 +9878,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 799338482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Aged Accounts Payable Template</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Кредиторская задолженность по срокам давности Шаблон</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Aged Acc. Payable Tmplt Code - Property Caption</note>
