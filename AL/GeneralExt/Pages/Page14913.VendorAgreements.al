@@ -68,6 +68,7 @@ pageextension 94913 "Vendor Agreements (Ext)" extends "Vendor Agreements"
             field("Deviation (LCY)"; Rec."Check Limit Amount (LCY)" - Rec."Purch. Original Amt. (LCY)")
             {
                 ApplicationArea = Basic, Suite;
+                Caption = 'Deviation (LCY)';
                 StyleExpr = LineColor;
             }
         }
