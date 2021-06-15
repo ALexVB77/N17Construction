@@ -6,39 +6,7 @@ pageextension 94913 "Vendor Agreements (Ext)" extends "Vendor Agreements"
         {
             StyleExpr = LineColor;
         }
-        modify("External Agreement No.")
-        {
-            StyleExpr = LineColor;
-        }
-        modify(Active)
-        {
-            StyleExpr = LineColor;
-        }
-        modify("Currency Code")
-        {
-            StyleExpr = LineColor;
-        }
         modify(Description)
-        {
-            StyleExpr = LineColor;
-        }
-        modify(Priority)
-        {
-            StyleExpr = LineColor;
-        }
-        modify("Agreement Date")
-        {
-            StyleExpr = LineColor;
-        }
-        modify("Starting Date")
-        {
-            StyleExpr = LineColor;
-        }
-        modify("Expire Date")
-        {
-            StyleExpr = LineColor;
-        }
-        modify(Blocked)
         {
             StyleExpr = LineColor;
         }
