@@ -540,8 +540,7 @@ codeunit 50010 "Payment Order Management"
                 ELSE
                     MESSAGE('Утверждающий %1 отсутствует в таблице утверждения!', USERID);
             END;
-        END
-        ELSE BEGIN
+        END ELSE BEGIN
             IF PurchaseHeader."Act Type" in [PurchaseHeader."Act Type"::Act, PurchaseHeader."Act Type"::"Act (Production)"] THEN
                 gcERPC.ChangeActStatus(PurchaseHeader);
             IF PurchaseHeader."Act Type" in [PurchaseHeader."Act Type"::"KC-2", PurchaseHeader."Act Type"::"KC-2 (Production)"] THEN

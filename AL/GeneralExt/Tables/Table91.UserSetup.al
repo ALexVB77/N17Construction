@@ -43,6 +43,46 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
             Description = 'NC 51373 AB';
             Caption = 'Act Approval Status';
         }
+        field(70024; "Master Approver (Development)"; Boolean)
+        {
+            Description = 'NC 51374 AB';
+            Caption = 'Master Approver (Development)';
+
+            trigger OnValidate()
+            begin
+                if "Master Approver (Development)" then begin
+                    UserSetup.Reset();
+                    UserSetup.SetFilter("User ID", '<>%1', Rec."User ID");
+                    UserSetup.SetRange("Master Approver (Development)", true);
+                    if UserSetup.FindFirst() then begin
+                        if not Confirm(ConfText001, false, UserSetup."User ID", Rec.FieldCaption("Master Approver (Development)"), Rec."User ID") then
+                            error('');
+                        UserSetup."Master Approver (Development)" := false;
+                        UserSetup.Modify();
+                    end;
+                end;
+            end;
+        }
+        field(70025; "Master Approver (Production)"; Boolean)
+        {
+            Description = 'NC 51374 AB';
+            Caption = 'Master Approver (Production)';
+
+            trigger OnValidate()
+            begin
+                if "Master Approver (Production)" then begin
+                    UserSetup.Reset();
+                    UserSetup.SetFilter("User ID", '<>%1', Rec."User ID");
+                    UserSetup.SetRange("Master Approver (Production)", true);
+                    if UserSetup.FindFirst() then begin
+                        if not Confirm(ConfText001, false, UserSetup."User ID", Rec.FieldCaption("Master Approver (Production)"), Rec."User ID") then
+                            error('');
+                        UserSetup."Master Approver (Production)" := false;
+                        UserSetup.Modify();
+                    end;
+                end;
+            end;
+        }
         field(70023; "Allow Edit DenDoc Dimension"; Boolean)
         {
             Description = 'NC 51676';
@@ -69,4 +109,8 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
             Caption = 'CF Allow Short Term Entries Edit';
         }
     }
+
+    var
+        UserSetup: Record "User Setup";
+        ConfText001: Label 'User %1 has status %2 now. Do you want to change to %3?';
 }

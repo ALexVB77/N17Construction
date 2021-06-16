@@ -53,14 +53,6 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Act CP Dimension Filter"; Rec."Act CP Dimension Filter")
-                {
-                    ApplicationArea = Basic, Suite;
-                }
-                field("Prod. Act CP Dimension Filter"; Rec."Prod. Act CP Dimension Filter")
-                {
-                    ApplicationArea = Basic, Suite;
-                }
                 field("Zero VAT Prod. Posting Group"; Rec."Zero VAT Prod. Posting Group")
                 {
                     ApplicationArea = Basic, Suite;

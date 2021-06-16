@@ -8,7 +8,7 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Description = 'NC 51373 AB';
             TableRelation = Vendor."No." where("Vendor Type" = CONST(Vendor));
         }
-        field(50001; "Default Estimator"; code[20])
+        field(50001; "Default Estimator"; code[50])
         {
             Caption = 'Default Estimator';
             Description = 'NC 51373 AB';
@@ -25,12 +25,6 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             begin
                 CheckCostDimension();
             end;
-        }
-        field(50004; "Prod. Act CP Dimension Filter"; text[100])
-        {
-            InitValue = '?????????P*';
-            Caption = 'Prod. Act CP Dimension Filter';
-            Description = 'NC 51373 AB';
         }
         field(50005; "Zero VAT Prod. Posting Group"; code[20])
         {
@@ -54,12 +48,6 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             begin
                 CheckCostDimension();
             end;
-        }
-        field(50008; "Act CP Dimension Filter"; text[100])
-        {
-            InitValue = '?????????D*';
-            Caption = 'Act CP Dimension Filter';
-            Description = 'NC 51373 AB';
         }
         field(50020; "Frame Agreement Group"; Code[20])
         {

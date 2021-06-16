@@ -3693,6 +3693,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice - NamedType LocText50021</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 714932620 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empty Approver on line!</source>
+          <target>Не заполнен Утверждающий в строке!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method InsertApproverNCC_FromDocLines - NamedType LocText001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1810542939 - NamedType 2778598368" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines are not filled.</source>
           <target>Не заполнены строки.</target>
@@ -9719,6 +9726,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field IW - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 2952511931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Linked Dimension Filter</source>
+          <target>Связ. измерений фильтр</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Linked Dimension Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 3546390417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Linked Dimension Value Code</source>
+          <target>Связ. измерение код значения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Linked Dimension Value Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 363487199 - Field 3747039418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Without VAT</source>
           <target>Без НДС</target>
@@ -9815,12 +9836,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Method CheckCostDimension - NamedType LocText001</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2307367824 - Field 984279183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
-          <source>Act CP Dimension Filter</source>
-          <target>Акт - фильтр измерения Cost Place</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Act CP Dimension Filter - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2622566760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Act Order Nos.</source>
           <target>Серия номеров актов</target>
@@ -9898,12 +9913,6 @@
           <target>Серия номеров заявок на платеж</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Request Nos. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2307367824 - Field 924059950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
-          <source>Prod. Act CP Dimension Filter</source>
-          <target>Произв. Акт - фильтр измерения Cost Place</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Prod. Act CP Dimension Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3907382913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Vendor Agreement Template Code</source>
@@ -10031,6 +10040,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Line (Ext) - Field New Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - NamedType 1646004004" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3550601874">
+          <source>User %1 has status %2 now. Do you want to change to %3?</source>
+          <target>Статус %2 сейчас у пользователя %1. Вы хотите изменить на %3?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - NamedType ConfText001</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1443314568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Absents</source>
           <target>Отсутствует</target>
@@ -10067,6 +10083,19 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field CF Allow Short Entries Edit - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 948176061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Master Approver (Development)</source>
+          <target>Master Approver (Development)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master Approver (Development) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 744705365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Master Approver (Production)</source>
+          <target>Master Approver (Production)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master Approver (Production) - Property Caption</note>
         <trans-unit id="TableExtension 3550601874 - Field 2668186690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Allow changing agr. posting group</source>
           <target>Разрешить изменять учетную группу в договоре</target>
