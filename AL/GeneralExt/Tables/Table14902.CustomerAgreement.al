@@ -837,9 +837,38 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
             Caption = 'Birthdate and palce';
         }
 
-        field(80010; "CRM Checksum"; Text[40])
+        field(80010; "Version Id"; Text[40])
         {
-            Caption = 'CRM Checksum';
+            Caption = 'Version Id';
+        }
+
+        modify("Customer Posting Group")
+        {
+            trigger OnAfterValidate()
+            var
+                CustLedgEntry: Record "Cust. Ledger Entry";
+                UserSetup: Record "User Setup";
+                SalesSetup: Record "Sales & Receivables Setup";
+                LabelPstGrChanging: Label 'You cannot change %1 till you set up %2 of %3';
+            begin
+
+                IF ("Customer Posting Group" <> xRec."Customer Posting Group") THEN BEGIN
+                    CustLedgEntry.RESET;
+                    CustLedgEntry.SETCURRENTKEY("Posting Date", "Customer No.", "Agreement No.");
+                    CustLedgEntry.SETRANGE("Customer No.", "Customer No.");
+                    CustLedgEntry.SETRANGE("Agreement No.", "No.");
+                    IF NOT CustLedgEntry.ISEMPTY THEN BEGIN
+                        SalesSetup.GET;
+                        IF NOT SalesSetup."Allow Alter Posting Groups" THEN
+                            ERROR(LabelPstGrChanging, FIELDCAPTION("Customer Posting Group"),
+                              SalesSetup.FIELDCAPTION("Allow Alter Posting Groups"), SalesSetup.TABLECAPTION);
+                        UserSetup.GET(USERID);
+                        IF NOT UserSetup."Change Agreem. Posting Group" THEN
+                            ERROR(LabelPstGrChanging, FIELDCAPTION("Customer Posting Group"),
+                              UserSetup.FIELDCAPTION("Change Agreem. Posting Group"), UserSetup.TABLECAPTION);
+                    END;
+                END;
+            end;
         }
 
 

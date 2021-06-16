@@ -37,9 +37,9 @@ table 70121 "CRM Log"
 
         }
 
-        field(14; "Object Xml Checksum"; Text[40])
+        field(14; "Object Version Id"; Text[40])
         {
-            Caption = 'Object Xml Checksum';
+            Caption = 'Object Version Id';
 
         }
 
@@ -51,11 +51,9 @@ table 70121 "CRM Log"
             OptionMembers = Create,Update,Remove;
         }
 
-        field(21; Status; Option)
+        field(21; Status; Enum "CRM Log Status")
         {
             Caption = 'Status';
-            OptionMembers = Done,Error,Prefetched,Skip;
-            OptionCaption = 'Done,Error,Prefetched,Skip';
 
         }
 

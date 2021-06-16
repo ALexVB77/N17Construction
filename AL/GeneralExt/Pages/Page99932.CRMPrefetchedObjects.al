@@ -25,7 +25,7 @@ page 99932 "CRM Prefetched Objects"
 
                 }
 
-                field(Checksum; Rec.Checksum)
+                field("Version Id"; Rec."Version Id")
                 {
                     ApplicationArea = All;
 

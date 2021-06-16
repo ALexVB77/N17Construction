@@ -323,6 +323,13 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
     end;
 
+    [EventSubscriber(ObjectType::Table, DATABASE::"Document Attachment", 'OnBeforeSaveAttachment', '', true, true)]
+    local procedure OnBeforeSaveAttachmentDocAtt(var DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef; FileName: Text; var TempBlob: Codeunit "Temp Blob")
+    begin
+        if DocumentAttachment.GetFilter("PK Key 2") <> '' then
+            DocumentAttachment."PK Key 2" := DocumentAttachment.GetFilter("PK Key 2");
+    end;
+
     // Codeunit 5063 ArchiveManagement 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::ArchiveManagement, 'OnAfterStorePurchDocument', '', false, false)]
     local procedure OnAfterStorePurchDocument(var PurchaseHeader: Record "Purchase Header"; var PurchaseHeaderArchive: Record "Purchase Header Archive");

@@ -31,7 +31,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         field(70002; "Exists Comment"; Boolean)
         {
             FieldClass = FlowField;
-            CalcFormula = Exist("Comment Line" WHERE("Table Name" = CONST(14901),
+            CalcFormula = Exist("Comment Line" WHERE("Table Name" = CONST("Vendor Agreement"),
                                                       "No." = FIELD("No.")));
             Caption = 'Exists Comment';
             Description = '50085';
@@ -156,6 +156,34 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         {
             Caption = 'Don''t Check CashFlow';
             Description = '50085';
+        }
+
+        modify("Vendor Posting Group")
+        {
+            trigger OnAfterValidate()
+            var
+                VendLedgEntry: Record "Vendor Ledger Entry";
+                UserSetup: Record "User Setup";
+                PurchSetup: Record "Purchases & Payables Setup";
+                LabelPstGrChanging: Label 'You cannot change %1 till you set up %2 of %3';
+            begin
+                IF "Vendor Posting Group" <> xRec."Vendor Posting Group" THEN BEGIN
+                    VendLedgEntry.RESET;
+                    VendLedgEntry.SETCURRENTKEY("Vendor No.", "Agreement No.");
+                    VendLedgEntry.SETRANGE("Vendor No.", "Vendor No.");
+                    VendLedgEntry.SETRANGE("Agreement No.", "No.");
+                    IF NOT VendLedgEntry.ISEMPTY THEN BEGIN
+                        PurchSetup.GET;
+                        IF NOT PurchSetup."Allow Alter Posting Groups" THEN
+                            ERROR(LabelPstGrChanging, FIELDCAPTION("Vendor Posting Group"),
+                              PurchSetup.FIELDCAPTION("Allow Alter Posting Groups"), PurchSetup.TABLECAPTION);
+                        UserSetup.GET(USERID);
+                        IF NOT UserSetup."Change Agreem. Posting Group" THEN
+                            ERROR(LabelPstGrChanging, FIELDCAPTION("Vendor Posting Group"),
+                              UserSetup.FIELDCAPTION("Change Agreem. Posting Group"), UserSetup.TABLECAPTION);
+                    END;
+                END;
+            end;
         }
     }
     var

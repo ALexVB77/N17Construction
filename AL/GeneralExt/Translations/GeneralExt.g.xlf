@@ -743,11 +743,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Contract Guid - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2155285002 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CRM Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2155285002 - Field 176771102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Expected Registration Period</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -792,6 +787,11 @@
           <source>Unit Guid</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Unit Guid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4148916677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Company</source>
@@ -858,25 +858,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 3632177014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Version Id - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1501946700 - Field 1459641232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Xml</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1501946700 - Field 4134709003 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object Xml Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Object Xml Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1501946700 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1501946700 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Done,Error,Prefetched,Skip</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 1501946700 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Web Request Queue Id</source>
@@ -887,11 +882,6 @@
           <source>CRM Prefetched Object</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3279116693 - Field 3343464511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Xml Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Checksum - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 999613564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company name</source>
@@ -917,6 +907,11 @@
           <source>Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3279116693 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Web Request Queue Id</source>
@@ -2933,95 +2928,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SetPrepaymentDoc - NamedType Text50000</note>
         </trans-unit>
-        <trans-unit id="Codeunit 848050111 - Method 3304731564" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ConstOther</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstOther</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 848050111 - Method 910530893" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ConstCompany</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - Method ConstCompany</note>
-        </trans-unit>
         <trans-unit id="Codeunit 848050111 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unknown text constant - "%1".</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1852166102 - Method 831439578" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ImportObject</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Integration API - Method ImportObject</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1747097237 - Method 3899360893" size-unit="char" translate="yes" xml:space="preserve">
-          <source>valDimValue</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dimension Management (Ext) - Method valDimValue</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1747097237 - Method 4071141186" size-unit="char" translate="yes" xml:space="preserve">
-          <source>valDimValueWithUpdGlobalDim</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dimension Management (Ext) - Method valDimValueWithUpdGlobalDim</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 2945192868" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PostForecastEntry</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method PostForecastEntry</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 1210384063" size-unit="char" translate="yes" xml:space="preserve">
-          <source>UnpostForecastEntry</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method UnpostForecastEntry</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 4117584933" size-unit="char" translate="yes" xml:space="preserve">
-          <source>GetActStatus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatus</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 1653568887" size-unit="char" translate="yes" xml:space="preserve">
-          <source>GetAgreementActStatus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetAgreementActStatus</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 1993672826" size-unit="char" translate="yes" xml:space="preserve">
-          <source>GetCommited</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetCommited</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3381789034" size-unit="char" translate="yes" xml:space="preserve">
-          <source>GetLinesDocumentsAmount</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetLinesDocumentsAmount</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 2553358273" size-unit="char" translate="yes" xml:space="preserve">
-          <source>LookUpLocationCode</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method LookUpLocationCode</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3075462550" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DeleteBCPreBooking</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteBCPreBooking</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3841817176" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DeleteInvoice</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 4136945084" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CheckShortCutDim1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckShortCutDim1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3046154110" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CheckLineShortCutDim1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 1375700104" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ChangeActStatus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1454544725" size-unit="char" translate="yes" xml:space="preserve">
           <source>There is no attachment!</source>
@@ -3178,11 +3088,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method UpdateActHeaderDimByMaxLine - NamedType Text50015</note>
         </trans-unit>
-        <trans-unit id="Codeunit 4047442064 - Method 2815313400" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FAReclassLine</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit FA Reclass. Transfer Line Ext - Method FAReclassLine</note>
-        </trans-unit>
         <trans-unit id="Codeunit 4047442064 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
           <source>is a %1 and %2 is not a %1.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3247,121 +3152,6 @@
           <source>*.xlsx</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Account Mapping Migration - Method OnRun - NamedType ExcelExt</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3792856986 - Method 4036785280" size-unit="char" translate="yes" xml:space="preserve">
-          <source>RunCalc</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method RunCalc</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3792856986 - Method 893580893" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FuncCalcRec</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method FuncCalcRec</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3792856986 - Method 172175140" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CalcRec</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CalcRec</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3792856986 - Method 3105205295" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CopyDocument</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit G/L Calculation Management - Method CopyDocument</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1175723943 - Method 892542324" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CreateItemDocumentLines</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method CreateItemDocumentLines</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1175723943 - Method 1284526640" size-unit="char" translate="yes" xml:space="preserve">
-          <source>SetItemDocumentHeader</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method SetItemDocumentHeader</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1175723943 - Method 805467299" size-unit="char" translate="yes" xml:space="preserve">
-          <source>GetInventoryLines</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method GetInventoryLines</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1175723943 - Method 2974941077" size-unit="char" translate="yes" xml:space="preserve">
-          <source>_GetBinContent</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _GetBinContent</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1175723943 - Method 3581596261" size-unit="char" translate="yes" xml:space="preserve">
-          <source>_GetInitBinFromWHSE</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _GetInitBinFromWHSE</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1175723943 - Method 3329998866" size-unit="char" translate="yes" xml:space="preserve">
-          <source>_CheckLocBinCombiantion</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method _CheckLocBinCombiantion</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1175723943 - Method 874884802" size-unit="char" translate="yes" xml:space="preserve">
-          <source>AvailableBinQty</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inven.-Get Inventory - Method AvailableBinQty</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 205468244" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FuncNewRec</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 169949175" size-unit="char" translate="yes" xml:space="preserve">
-          <source>NewOrderApp</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method NewOrderApp</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1537043917" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CreatePurchaseOrderAppFromAct</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CreatePurchaseOrderAppFromAct</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 3858743014" size-unit="char" translate="yes" xml:space="preserve">
-          <source>LinkActAndPaymentInvoice</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 2873201457" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActInterBasedOn</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ActInterBasedOn</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1099450924" size-unit="char" translate="yes" xml:space="preserve">
-          <source>SetPurchLineApprover</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetPurchLineApprover</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 3893420175" size-unit="char" translate="yes" xml:space="preserve">
-          <source>FillPurchLineApproverFromGlobalDim</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FillPurchLineApproverFromGlobalDim</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 4105173375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PurchOrderActArchiveQst</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchOrderActArchiveQst</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1175984865" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DeleteRelatedInvoiceDoc</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method DeleteRelatedInvoiceDoc</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1182923536" size-unit="char" translate="yes" xml:space="preserve">
-          <source>PurchPaymentInvoiceArchive</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 2233398926" size-unit="char" translate="yes" xml:space="preserve">
-          <source>DisconnectFromAgreement</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method DisconnectFromAgreement</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 1058071811" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ApprovePurchaseOrderAct</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ApprovePurchaseOrderAct</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nothing selected!</source>
@@ -3617,6 +3407,16 @@
           <source>CRM Copmany</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4148916677 - Action 3732224266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Action Test - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4148916677 - Action 63677024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CRM Company - Action Test2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Log</source>
@@ -6293,6 +6093,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - Control UseExternalDocNo - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 850119152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Change Vendor Agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>.xlsx</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Several lines with a agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - Control 1085466177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company RAS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control CompanyRAS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 850119152 - Control 279176902 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test mode</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control TestRegim - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7013,6 +6838,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Cash Account Card (Ext) - Property PromotedActionCategories</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1214534909 - Control 3364076239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3469146285">
+          <source>Use RedFlags in Agreements</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Company Information (Ext) - Control Use RedFlags in Agreements - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
           <source>Open customer card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7148,6 +6978,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Transfer Order (Ext) - Action GetItemLedgerEntryLines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2153774770">
+          <source>Set Agreememt Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - NamedType Text003</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Action 3640084062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Change Log</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7192,6 +7027,11 @@
           <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Attached Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1592470163 - Control 3060609304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3623928019">
+          <source>Deviation (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreements (Ext) - Control Deviation (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1726891836 - Action 279309469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
           <source>Create Giv. Bin</source>
@@ -7253,15 +7093,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Contact (Ext) - Field Registration - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1049217136 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
-          <source>CRM Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 1049217136 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>CRM GUID</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field CRM GUID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1049217136 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer (Ext) - Field Version Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Agreement amount</source>
@@ -7528,11 +7368,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Contact 5 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2936356446 - Field 475626923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>CRM Checksum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field CRM Checksum - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1777789181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>CRM GUID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7647,6 +7482,16 @@
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
+          <source>Version Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Version Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2936356446 - Change 410940989 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2936356446">
+          <source>You cannot change %1 till you set up %2 of %3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Change Customer Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
         </trans-unit>
         <trans-unit id="TableExtension 1546208205 - Field 3565928873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1468132285">
           <source>Admin Cost Place Holder</source>
@@ -8557,6 +8402,10 @@
           <source>Master Approver (Production)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master Approver (Production) - Property Caption</note>
+        <trans-unit id="TableExtension 3550601874 - Field 2668186690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allow changing agr. posting group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Show All Acts KC-2</source>
@@ -8748,6 +8597,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field WithOut - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Change 3194161445 - Method 3059879501 - NamedType 3324643265" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>You cannot change %1 till you set up %2 of %3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Change Vendor Posting Group - Method OnAfterValidate - NamedType LabelPstGrChanging</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1524380135 - Field 559372978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">
           <source>Include in Paid With VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8827,6 +8681,31 @@
           <source>PrevForecast</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Analysis Type - EnumValue PrevForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 1178809860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Done</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Done - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 2248886284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 2124445262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prefetched</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Prefetched - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 2791901420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Skipped</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Skipped - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2849517163 - EnumValue 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contact</source>
