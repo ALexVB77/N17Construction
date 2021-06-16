@@ -113,7 +113,6 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 field("Check Limit Amount (LCY)"; Rec."Check Limit Amount (LCY)")
                 {
                     ApplicationArea = Basic, Suite;
-                    StyleExpr = LineColor;
 
                     trigger OnValidate()
                     begin
@@ -129,7 +128,6 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Deviation';
-                    StyleExpr = LineColor;
 
                     trigger OnValidate()
                     begin

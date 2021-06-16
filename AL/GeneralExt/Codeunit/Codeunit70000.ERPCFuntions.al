@@ -263,6 +263,7 @@ codeunit 70000 "ERPC Funtions"
     procedure CheckLineShortCutDim1(PurchLine: Record "Purchase Line"; CheckCode: Boolean; PurchSetup: Record "Purchases & Payables Setup"; ActType: enum "Purchase Act Type")
     var
         DimSetEntry: Record "Dimension Set Entry";
+        DimValue: Record "Dimension Value";
         LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
         LocText50010: Label 'Line %1 specifies COST PLACE %2 that does not match the document type %3.';
     begin
@@ -277,16 +278,11 @@ codeunit 70000 "ERPC Funtions"
         if not CheckCode then
             exit;
 
-        if (ActType = ActType::Act) and (PurchSetup."Prod. Act CP Dimension Filter" <> '') then begin
-            DimSetEntry.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
-            DimSetEntry.SetFilter("Dimension Value Code", PurchSetup."Prod. Act CP Dimension Filter");
-            if not DimSetEntry.IsEmpty then
-                ERROR(LocText50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", ActType);
-        end;
-        if (ActType = ActType::"Act (Production)") and (PurchSetup."Act CP Dimension Filter" <> '') then begin
-            DimSetEntry.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
-            DimSetEntry.SetFilter("Dimension Value Code", PurchSetup."Act CP Dimension Filter");
-            if not DimSetEntry.IsEmpty then
+        if DimSetEntry.Get(PurchLine."Dimension Set ID", PurchSetup."Cost Code Dimension") then begin
+            DimValue.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code");
+            if ((ActType in [ActType::Act, ActType::"KC-2"]) and (DimValue."Cost Code Type" = DimValue."Cost Code Type"::Production)) or
+                ((ActType in [ActType::"Act (Production)", ActType::"KC-2 (Production)"]) and (DimValue."Cost Code Type" = DimValue."Cost Code Type"::Development))
+            then
                 ERROR(LocText50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", ActType);
         end;
     end;
@@ -615,6 +611,93 @@ codeunit 70000 "ERPC Funtions"
             UNTIL PurchLine.NEXT = 0;
     end;
 
+    local procedure CheckDiffApprover(PurchHeader: Record "Purchase Header"): Boolean
+    var
+        PurchLineLoc: Record "Purchase Line";
+    begin
+        PurchLineLoc.RESET;
+        PurchLineLoc.SETRANGE("Document Type", PurchHeader."Document Type");
+        PurchLineLoc.SETRANGE("Document No.", PurchHeader."No.");
+        if not PurchLineLoc.FindFirst() then
+            exit(false);
+        PurchLineLoc.SetFilter(Approver, '<>%1', PurchLineLoc.Approver);
+        exit(not PurchLineLoc.IsEmpty);
+    end;
+
+    local procedure CheckMasterApproverProduction(PurchHeader: Record "Purchase Header"): Boolean
+    var
+        PurchSetup: Record "Purchases & Payables Setup";
+        PurchLineLoc: Record "Purchase Line";
+        DimValue: Record "Dimension Value";
+    begin
+        PurchSetup.Get();
+        PurchLineLoc.RESET;
+        PurchLineLoc.SETRANGE("Document Type", PurchHeader."Document Type");
+        PurchLineLoc.SETRANGE("Document No.", PurchHeader."No.");
+        PurchLineLoc.SetRange("Linked Dimension Filter", PurchSetup."Cost Code Dimension");
+        PurchLineLoc.SetAutoCalcFields("Linked Dimension Value Code");
+        if PurchLineLoc.FindSet() then
+            repeat
+                if PurchLineLoc."Linked Dimension Value Code" = '' then
+                    exit(false);
+                DimValue.get(PurchSetup."Cost Code Dimension", PurchLineLoc."Linked Dimension Value Code");
+                IF DimValue."Cost Code Type" <> DimValue."Cost Code Type"::Production then
+                    exit(false);
+            until PurchLineLoc.Next = 0;
+        exit(true);
+    end;
+
+    local procedure InsertApproverNCC_FromDocLines(PurchHeader: Record "Purchase Header"): Code[20]
+    var
+        lrUserSetup: Record "User Setup";
+        PurchLineLoc: Record "Purchase Line";
+        LocText001: label 'Empty Approver on line!';
+    begin
+        IF CheckDiffApprover(PurchHeader) THEN BEGIN
+            IF CheckMasterApproverProduction(PurchHeader) THEN BEGIN
+                lrUserSetup.RESET;
+                lrUserSetup.SETRANGE("Master Approver (Production)", TRUE);
+                lrUserSetup.FINDFIRST;
+                exit(lrUserSetup."User ID");
+            END ELSE BEGIN
+                lrUserSetup.RESET;
+                lrUserSetup.SETRANGE("Master Approver (Development)", TRUE);
+                lrUserSetup.FINDFIRST;
+                exit(lrUserSetup."User ID");
+            END;
+        END ELSE BEGIN
+            PurchLineLoc.RESET;
+            PurchLineLoc.SETRANGE("Document Type", PurchHeader."Document Type");
+            PurchLineLoc.SETRANGE("Document No.", PurchHeader."No.");
+            PurchLineLoc.SetFilter(Type, '<>%1', PurchLineLoc.Type::" ");
+            PurchLineLoc.FINDFIRST;
+
+            if PurchLineLoc.Approver = '' then
+                Error(LocText001);
+            lrUserSetup.GET(PurchLineLoc.Approver);
+
+            lrUserSetup.RESET;
+            lrUserSetup.SETCURRENTKEY("Salespers./Purch. Code");
+            lrUserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
+            lrUserSetup.FINDFIRST;
+            IF PurchLineLoc.Approver <> lrUserSetup."User ID" THEN
+                exit(PurchLineLoc.Approver)
+            ELSE BEGIN
+                IF CheckMasterApproverProduction(PurchHeader) THEN BEGIN
+                    lrUserSetup.RESET;
+                    lrUserSetup.SETRANGE("Master Approver (Production)", TRUE);
+                    lrUserSetup.FINDFIRST;
+                    exit(lrUserSetup."User ID");
+                END ELSE BEGIN
+                    lrUserSetup.RESET;
+                    lrUserSetup.SETRANGE("Master Approver (Development)", TRUE);
+                    lrUserSetup.FINDFIRST;
+                    exit(lrUserSetup."User ID");
+                END;
+            END;
+        END;
+    end;
+
     procedure ChangeActStatus(VAR grPurchHeader: Record "Purchase Header")
     var
         PurchSetup: Record "Purchases & Payables Setup";
@@ -663,10 +746,6 @@ codeunit 70000 "ERPC Funtions"
             (grPurchHeader.Check IN [grPurchHeader.Check::" ", grPurchHeader.Check::"Checker rej"])
         THEN BEGIN
 
-            lrUserSetup.RESET;
-            lrUserSetup.SETRANGE("Salespers./Purch. Code", grPurchHeader."Purchaser Code");
-            lrUserSetup.FINDFIRST;
-
             IF grPurchHeader."Location Document" AND (grPurchHeader."Invoice No." = '') THEN begin
                 IF NOT CONFIRM(Text50013, FALSE) THEN
                     ERROR('');
@@ -707,14 +786,19 @@ codeunit 70000 "ERPC Funtions"
             grPurchHeader.TESTFIELD("Purchaser Code");
             grPurchHeader.TESTFIELD("Vendor Invoice No.");
 
-            // DEBUG check later!
-            /*
             IF grPurchHeader."Location Document" THEN BEGIN
-                GetPurchDocAmount(grPurchHeader, TRUE);
-                NextAppr := ApprovalMgt.InsertApproverNCC_FromDocLines(grPurchHeader."Invoice Amount", grPurchHeader);
-                NextAppr := '';
+                // NC AB:
+                // GetPurchDocAmount(grPurchHeader, TRUE);
+                CheckDocSum(grPurchHeader);
+
+                // NC AB: непонятен смысл, ведь процесс переходит к закупщику
+                // NextAppr := InsertApproverNCC_FromDocLines(grPurchHeader);
+                // NextAppr := '';
             END;
-            */
+
+            lrUserSetup.RESET;
+            lrUserSetup.SETRANGE("Salespers./Purch. Code", grPurchHeader."Purchaser Code");
+            lrUserSetup.FINDFIRST;
 
             grPurchHeader."Status App Act" := grPurchHeader."Status App Act"::Checker;
             grPurchHeader.Check := grPurchHeader.Check::"Controler app";

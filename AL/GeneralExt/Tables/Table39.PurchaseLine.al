@@ -2,6 +2,22 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
 {
     fields
     {
+        field(50000; "Linked Dimension Value Code"; code[20])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Linked Dimension Value Code';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup("Dimension Set Entry"."Dimension Value Code" where("Dimension Set ID" = field("Dimension Set ID"),
+                                                                                    "Dimension Code" = field("Linked Dimension Filter")));
+        }
+        field(50001; "Linked Dimension Filter"; code[20])
+        {
+            Description = 'NC 51373 AB';
+            Caption = 'Linked Dimension Filter';
+            FieldClass = FlowFilter;
+            TableRelation = Dimension;
+        }
         field(70000; "Full Description"; Text[250])
         {
             Description = 'NC 51373 AB';
@@ -190,24 +206,12 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
         IF xDimSetID = 0 then
             exit;
         PurchSetup.GET;
-        PurchSetup.TESTFIELD("Cost Place Dimension");
-        IF PurchSetup."Prod. Act CP Dimension Filter" <> '' THEN begin
-            DimSetEntry.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
-            DimSetEntry.SetRange("Dimension Set ID", xDimSetID);
-            IF DimSetEntry.FindSet() then begin
-                DimValue.SetRange("Dimension Code", PurchSetup."Cost Place Dimension");
-                DimValue.SetFilter(Code, PurchSetup."Prod. Act CP Dimension Filter");
-                DimValue.FilterGroup(2);
-                DimValue.Setrange(Code, DimSetEntry."Dimension Value Code");
-                DimValue.FilterGroup(0);
-                if not DimValue.IsEmpty then
-                    exit;
-                DimValue.GET(PurchSetup."Cost Place Dimension", DimSetEntry."Dimension Value Code");
-                if not DimValue."Check CF Forecast" then
-                    exit;
-            end else
-                exit;
-        end;
+        PurchSetup.TESTFIELD("Cost Code Dimension");
+        if not DimSetEntry.Get(xDimSetID, PurchSetup."Cost Code Dimension") then
+            exit;
+        DimValue.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code");
+        IF (DimValue."Cost Code Type" <> DimValue."Cost Code Type"::Production) or (not DimValue."Check CF Forecast") then
+            exit;
         TESTFIELD("Forecast Entry", 0);
     end;
 

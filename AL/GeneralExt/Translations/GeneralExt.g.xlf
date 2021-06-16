@@ -3078,6 +3078,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice - NamedType LocText50021</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 714932620 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empty Approver on line!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method InsertApproverNCC_FromDocLines - NamedType LocText001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1810542939 - NamedType 2778598368" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines are not filled.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5943,6 +5948,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text000</note>
         </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text0001</note>
+        </trans-unit>
+        <trans-unit id="Report 4024062002 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>.xlsx</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text0002</note>
+        </trans-unit>
         <trans-unit id="Report 4024062002 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>days</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6833,6 +6848,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Cash Account Card (Ext) - Property PromotedActionCategories</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1214534909 - Control 3364076239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3469146285">
+          <source>Use RedFlags in Agreements</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Company Information (Ext) - Control Use RedFlags in Agreements - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1740848379 - Action 2292011166 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3557129067">
           <source>Open customer card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7017,6 +7037,11 @@
           <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control Attached Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1592470163 - Control 3060609304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3623928019">
+          <source>Deviation (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreements (Ext) - Control Deviation (LCY) - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1726891836 - Action 279309469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
           <source>Create Giv. Bin</source>
@@ -8088,6 +8113,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field IW - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 2952511931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Linked Dimension Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Linked Dimension Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 363487199 - Field 3546390417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Linked Dimension Value Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Linked Dimension Value Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 363487199 - Field 3747039418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Without VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8168,11 +8203,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Method CheckCostDimension - NamedType LocText001</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2307367824 - Field 984279183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
-          <source>Act CP Dimension Filter</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Act CP Dimension Filter - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2622566760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Act Order Nos.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8237,11 +8267,6 @@
           <source>Payment Request Nos.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Payment Request Nos. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2307367824 - Field 924059950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
-          <source>Prod. Act CP Dimension Filter</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Prod. Act CP Dimension Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 3907382913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Vendor Agreement Template Code</source>
@@ -8348,6 +8373,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Line (Ext) - Field New Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - NamedType 1646004004" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3550601874">
+          <source>User %1 has status %2 now. Do you want to change to %3?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - NamedType ConfText001</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1443314568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Absents</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8363,6 +8393,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Administrator PRJ - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 4193532014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allow Edit DenDoc Dimension</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Allow Edit DenDoc Dimension - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 2762481236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>CF Allow Long Term Entries Edit</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8377,6 +8412,16 @@
           <source>Allow changing agr. posting group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 948176061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Master Approver (Development)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master Approver (Development) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 744705365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Master Approver (Production)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master Approver (Production) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Show All Acts KC-2</source>
