@@ -3,6 +3,7 @@ tableextension 85740 "Transfer Header (Ext)" extends "Transfer Header"
     // Подписки в cu 50006 
     fields
     {
+
         modify("In-Transit Code")
         {
             trigger OnAfterValidate()

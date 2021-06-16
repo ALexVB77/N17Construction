@@ -182,6 +182,62 @@ report 80322 "Aged Accounts Payable Ext"
                 begin
                     SetRange("Posting Date", EndingDate + 1, DMY2Date(31, 12, 9999));
                     CopyDimFiltersFromVendor("Vendor Ledger Entry");
+
+
+                    //NC 50517 >>
+                    GlobalDimension1Filter := Vendor.GETFILTER(Vendor."Global Dimension 1 Filter");
+                    EnterTxt[1] := 13;
+                    EnterTxt[2] := 10;
+                    IF ExportExcel THEN BEGIN
+                        //AddCell(1, 5, FORMAT(EndingDate, 0, 4), false, xl."Cell Type"::Date, false);
+                        //AddCell(2, 2, VendorFilter, false, xl."Cell Type"::Text, false);
+                        //AddCell(4, 12, STRSUBSTNO(Text007, SELECTSTR(AgingBy + 1, Text009)), false, xl."Cell Type"::Text, false);
+
+                        //AddCell(RowNoBegin, 11, HeaderTextExcel[1], false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNoBegin, 12, HeaderTextExcel[2], false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNoBegin, 13, HeaderTextExcel[3], false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNoBegin, 14, HeaderTextExcel[4], false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNoBegin, 15, HeaderTextExcel[5], false, xl."Cell Type"::Number, false);
+                        //RowNo += 1;
+                    END;
+                    //NC 50517 <<
+                end;
+
+                trigger OnPostDataItem()
+                var
+                    myInt: Integer;
+                begin
+
+                    if ExportExcel then begin
+                        ;
+                        RowNo += 1;
+                        //AddCell(RowNo, 1, Text0001, false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 10, ReportFormat(GrandTotalVLEAmtLCY), false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 11, ReportFormat(GrandTotalVLERemaingAmtLCY[1]), false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 12, ReportFormat(GrandTotalVLERemaingAmtLCY[2]), false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 13, ReportFormat(GrandTotalVLERemaingAmtLCY[3]), false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 14, ReportFormat(GrandTotalVLERemaingAmtLCY[4]), false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 15, ReportFormat(GrandTotalVLERemaingAmtLCY[5]), false, xl."Cell Type"::Number, false);
+
+                        RowNo += 1;
+
+                        //AddCell(RowNo, 11,
+                        //Pct(GrandTotalVLERemaingAmtLCY[1], GrandTotalVLEAmtLCY),
+                        // false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 12,
+                        //  Pct(GrandTotalVLERemaingAmtLCY[2], GrandTotalVLEAmtLCY),
+                        //  false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 13,
+                        // Pct(GrandTotalVLERemaingAmtLCY[3], GrandTotalVLEAmtLCY),
+                        //  false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 14,
+                        // Pct(GrandTotalVLERemaingAmtLCY[4], GrandTotalVLEAmtLCY),
+                        // false, xl."Cell Type"::Number, false);
+                        //AddCell(RowNo, 15,
+                        //Pct(GrandTotalVLERemaingAmtLCY[5], GrandTotalVLEAmtLCY),
+                        // false, xl."Cell Type"::Number, false);
+                    end;
+
                 end;
             }
             dataitem(OpenVendorLedgEntry; "Vendor Ledger Entry")
@@ -656,14 +712,32 @@ report 80322 "Aged Accounts Payable Ext"
 
         //NC 50517>>
         PurchAndPyableSetup.Get();
+        xl.DeleteAll();
+        Clear(XL);
         if ExportExcel then begin
             Filename := ExcelTemplate.OpenTemplate((PurchAndPyableSetup."Aged Acc. Payable Tmplt Code"));
-            XL.OpenBook(Filename, 'Sheet1');
+            //XL.OpenBook(Filename, 'Sheet1');
+            //xl.OpenBookForUpdate(Filename);
+            //xl.SetActiveWriterSheet('Sheet1');
             FontSize := 11;
             RowNoBegin := 5;
             RowNo := 5;
         end;
         //NC 50517<<
+    end;
+
+    trigger OnPostReport()
+
+    begin
+        //NC 50517 >>
+        if ExportExcel then begin
+            xl.UpdateBook(Filename, 'Sheet1');
+            xl.WriteSheet('', CompanyName, UserId);
+            xl.CloseBook();
+            xl.OpenExcel();
+        end;
+        //NC 50517 << 
+
     end;
 
     var
@@ -738,6 +812,11 @@ report 80322 "Aged Accounts Payable Ext"
         HeaderTextExcel: Text[30];
         UseComma: Boolean;
         PurchAndPyableSetup: Record "Purchases & Payables Setup";
+        FileManagement: Codeunit "File Management";
+        Text0002: Label '.xlsx';
+        Text0001: Label 'Total (LCY)';
+
+        ServerFileName: Text;
     //NC 50517 <<
 
 
@@ -882,4 +961,38 @@ report 80322 "Aged Accounts Payable Ext"
         if Vendor.GetFilter("Global Dimension 2 Filter") <> '' then
             VendorLedgerEntry.SetFilter("Global Dimension 2 Code", Vendor.GetFilter("Global Dimension 2 Filter"));
     end;
+
+    local procedure ReportFormat(dec: Decimal) ResultText: text[250]
+    var
+    begin
+        ResultText := Format(Dec, 0, 2);
+        if UseComma then
+            if StrPos(ResultText, '.') <> 0 then
+                ResultText := ConvertStr(ResultText, '.', ',');
+
+    end;
+
+    local procedure AddCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text; Bold: Boolean; CellType: Integer; IsBorder: Boolean)
+    begin
+        XL.Init();
+        XL.Validate("Row No.", RowNo);
+        XL.Validate("Column No.", ColumnNo);
+        XL."Cell Value as Text" := CellValue;
+        XL.Formula := '';
+        XL.Bold := Bold;
+        XL."Cell Type" := CellType;
+        if IsBorder then
+            XL.SetBorder(true, true, true, true, false, "Border Style"::Thin);
+        XL.Insert();
+    end;
+
+
+    local procedure Pct(a: Decimal; b: Decimal): Text[30]
+    var
+
+    begin
+        if b <> 0 then
+            exit(Format(Round(100 * a / b, 0.1), 0, '<Sign><Integer><Decimals,2>') + '%');
+    end;
+
 }
