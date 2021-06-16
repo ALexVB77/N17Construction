@@ -44,6 +44,10 @@ pageextension 80119 "User Setup (Ext)" extends "User Setup"
             {
                 ApplicationArea = Basic, Suite;
             }
+            field("Allow Edit DenDoc Dimension"; Rec."Allow Edit DenDoc Dimension")
+            {
+                ApplicationArea = Basic, Suite;
+            }
         }
     }
 }
