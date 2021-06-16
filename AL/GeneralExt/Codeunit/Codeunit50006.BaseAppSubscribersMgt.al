@@ -115,7 +115,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         // NC 51144 GG <<
         end
     end;
-
+    /*
     [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'onLookupTransferFromCode', '', false, false)]
     local procedure onLookupTransferFromCode(var TransHeader: Record "Transfer Header");
     var
@@ -125,6 +125,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         IF ERPCFuntions.LookUpLocationCode(TransHeader."Transfer-from Code") THEN TransHeader.VALIDATE("Transfer-from Code");
         //NC 22512 < DP
     end;
+    */
     // t 5740 <<
 
     // t 12450 >>
@@ -144,7 +145,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
         //NC 22512 < DP
     end;
-
+    /*
     [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'onLookupLocationCode', '', false, false)]
     local procedure onLookupLocationCode(var ItemDocumentHeader: Record "Item Document Header");
     var
@@ -154,6 +155,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         IF ERPCFuntions.LookUpLocationCode(ItemDocumentHeader."Location Code") THEN ItemDocumentHeader.VALIDATE("Location Code");
         //NC 22512 < DP
     end;
+    */
     // t 12450 <<
     // cu 367 >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::CheckManagement, 'OnBeforeVoidCheckGenJnlLine2Modify', '', false, false)]
