@@ -10348,6 +10348,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Administrator PRJ - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 4193532014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Allow Edit DenDoc Dimension</source>
+          <target>Разрешить изменять ДЕНДОК измерение</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Allow Edit DenDoc Dimension - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 2762481236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>CF Allow Long Term Entries Edit</source>
           <target>CF Создание долгосрочных операций</target>

@@ -83,11 +83,11 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
                 end;
             end;
         }
-        /*field(70023; "Allow Edit DenDoc Dimension"; Boolean)
+        field(70023; "Allow Edit DenDoc Dimension"; Boolean)
         {
             Description = 'NC 51676';
             Caption = 'Allow Edit DenDoc Dimension';
-        }*/
+        }
         field(70030; "Show All Pay Inv"; Boolean)
         {
             Description = 'NC 51378 AB';

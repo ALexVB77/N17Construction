@@ -34,7 +34,7 @@ pageextension 80560 "Dimension Value List (Ext)" extends "Dimension Value List"
             }
         }
     }
-    /*trigger OnOpenPage()
+    trigger OnOpenPage()
     var
         UserSetup: Record "User Setup";
         GenLedgerSetup: Record "General Ledger Setup";
@@ -43,5 +43,5 @@ pageextension 80560 "Dimension Value List (Ext)" extends "Dimension Value List"
         if UserSetup.Get(UserId) and UserSetup."Allow Edit DenDoc Dimension" then
             if Rec."Dimension Code" = GenLedgerSetup."Shortcut Dimension 8 Code" then
                 CurrPage.Editable(true);
-    end;*/
+    end;
 }
