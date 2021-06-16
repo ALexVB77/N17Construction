@@ -31,7 +31,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         field(70002; "Exists Comment"; Boolean)
         {
             FieldClass = FlowField;
-            CalcFormula = Exist("Comment Line" WHERE("Table Name" = CONST(14901),
+            CalcFormula = Exist("Comment Line" WHERE("Table Name" = CONST("Vendor Agreement"),
                                                       "No." = FIELD("No.")));
             Caption = 'Exists Comment';
             Description = '50085';
