@@ -8,7 +8,7 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Description = 'NC 51373 AB';
             TableRelation = Vendor."No." where("Vendor Type" = CONST(Vendor));
         }
-        field(50001; "Default Estimator"; code[20])
+        field(50001; "Default Estimator"; code[50])
         {
             Caption = 'Default Estimator';
             Description = 'NC 51373 AB';
