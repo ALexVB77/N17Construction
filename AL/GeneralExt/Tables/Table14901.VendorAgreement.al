@@ -179,8 +179,10 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
                               PurchSetup.FIELDCAPTION("Allow Alter Posting Groups"), PurchSetup.TABLECAPTION);
                         UserSetup.GET(USERID);
                         IF NOT UserSetup."Change Agreem. Posting Group" THEN
-                            ERROR(LabelPstGrChanging + '->>%4; %5', FIELDCAPTION("Vendor Posting Group"),
-                              UserSetup.FIELDCAPTION("Change Agreem. Posting Group"), UserSetup.TABLECAPTION, UserSetup."User ID", UserId());
+                            ERROR(LabelPstGrChanging + '->>%4; %5; %6', FIELDCAPTION("Vendor Posting Group"),
+                              UserSetup.FIELDCAPTION("Change Agreem. Posting Group"), UserSetup.TABLECAPTION,
+                              UserSetup."User ID", UserId(),
+                              UserSetup."Change Agreem. Posting Group");
                     END;
                 END;
             end;
