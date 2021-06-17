@@ -30,12 +30,6 @@ page 70164 "Vendor Agreement Details"
             }
             repeater(MainRep)
             {
-                field("Building Turn All"; Rec."Building Turn All")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-
                 field("Project Code"; Rec."Project Code")
                 {
                     ApplicationArea = All;
@@ -44,18 +38,16 @@ page 70164 "Vendor Agreement Details"
                 field("Cost Code"; Rec."Cost Code")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                 }
 
                 field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
 
                 field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
-                    Visible = false;
-                    Editable = false;
                     ApplicationArea = All;
                 }
 
