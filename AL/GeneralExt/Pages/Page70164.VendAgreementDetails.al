@@ -38,7 +38,6 @@ page 70164 "Vendor Agreement Details"
 
                 field("Project Code"; Rec."Project Code")
                 {
-                    Editable = false;
                     ApplicationArea = All;
                 }
 
