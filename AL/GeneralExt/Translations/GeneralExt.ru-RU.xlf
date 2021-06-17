@@ -10102,7 +10102,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 2668186690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Allow changing agr. posting group</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Разрешить изменять учетную группу в договоре</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
