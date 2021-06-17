@@ -51,18 +51,19 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         {
             Caption = 'Project Dimension Code';
             Description = '50085';
+            TableRelation = "Dimension Value".Code where("Dimension Code" = const('ПРОЕКТ'));
 
-            trigger OnLookup()
-            begin
-                grDevSetup.GET;
-                grDevSetup.TESTFIELD("Project Dimension Code");
+            //trigger OnLookup()
+            //begin
+            //grDevSetup.GET;
+            //grDevSetup.TESTFIELD("Project Dimension Code");
 
-                grDimValue.SETRANGE("Dimension Code", grDevSetup."Project Dimension Code");
-                IF grDimValue.FindFirst() THEN BEGIN
-                    IF PAGE.RUNMODAL(PAGE::"Dimension Values", grDimValue) = ACTION::LookupOK THEN
-                        "Project Dimension Code" := grDimValue.Code;
-                END
-            end;
+            //grDimValue.SETRANGE("Dimension Code", grDevSetup."Project Dimension Code");
+            //IF grDimValue.FindFirst() THEN BEGIN
+            //    IF PAGE.RUNMODAL(PAGE::"Dimension Values", grDimValue) = ACTION::LookupOK THEN
+            //        "Project Dimension Code" := grDimValue.Code;
+            //END
+            //end;
         }
         field(70008; "VAT Amount"; Decimal)
         {
@@ -395,7 +396,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
                     else
                         Body := StrSubstNo(Body, Text097);
                 end;
-            '253':
+            '3':
                 Body := StrSubstNo(Body, GetUrl(ClientType::Current) + StrSubstNo(locText001, '%26', '%20', VendAgr."Vendor No.", VendAgr."No."));
             '4':
                 Body := StrSubstNo(Body, Text095);

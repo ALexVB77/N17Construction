@@ -175,6 +175,7 @@ page 70164 "Vendor Agreement Details"
                             vAgreement.MODIFY;
                         end;
                         // SWC1004 DD 18.02.17 <<
+                        CurrPage.Update();
                     end;
 
                     trigger OnAssistEdit()
@@ -190,6 +191,11 @@ page 70164 "Vendor Agreement Details"
                 field("Amount Without VAT"; Rec."Amount Without VAT")
                 {
                     ApplicationArea = All;
+
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update();
+                    end;
                 }
 
                 field(AmountLCY; Rec.AmountLCY)
