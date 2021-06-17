@@ -508,13 +508,13 @@ codeunit 50006 "Base App. Subscribers Mgt."
         CheckLimitDateFilter: Text;
         VendorAgreement: Record "Vendor Agreement";
     begin
-        if (PurchHeader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
+        if (PurchHeader."Buy-from Vendor No." <> '') AND (PurchHeader."Agreement No." <> '') then begin
             CompanyInfo.Get;
-            LocVend.GET(PurchHeader."Buy-from Address");
+            LocVend.GET(PurchHeader."Buy-from Vendor No.");
 
             if CompanyInfo."Use RedFlags in Agreements" then
                 if LocVend.GetLineColor = 'Attention' then begin
-                    VendAgr.Get(PurchHeader."Buy-from Address", PurchHeader."Agreement No.");
+                    VendAgr.Get(PurchHeader."Buy-from Vendor No.", PurchHeader."Agreement No.");
                     CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
 
                     if CheckLimitDateFilter <> '' then
