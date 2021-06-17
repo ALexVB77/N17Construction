@@ -124,7 +124,7 @@ report 50082 ExportSubform
         Text001: Label 'Breakdown by Letter';
         Text002: Label 'Payment Schedule';
 
-    procedure SetDocNo(DocNo: Code[10]; VendNo: Code[10])
+    procedure SetDocNo(DocNo: Code[30]; VendNo: Code[30])
     begin
         DocumentNo := DocNo;
         VendorNo := VendNo;
