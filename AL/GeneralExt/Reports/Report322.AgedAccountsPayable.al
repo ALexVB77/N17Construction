@@ -14,6 +14,7 @@ report 80322 "Aged Accounts Payable Ext"
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.";
+
             column(TodayFormatted; TodayFormatted)
             {
             }
@@ -182,62 +183,6 @@ report 80322 "Aged Accounts Payable Ext"
                 begin
                     SetRange("Posting Date", EndingDate + 1, DMY2Date(31, 12, 9999));
                     CopyDimFiltersFromVendor("Vendor Ledger Entry");
-
-
-                    //NC 50517 >>
-                    GlobalDimension1Filter := Vendor.GETFILTER(Vendor."Global Dimension 1 Filter");
-                    EnterTxt[1] := 13;
-                    EnterTxt[2] := 10;
-                    IF ExportExcel THEN BEGIN
-                        //AddCell(1, 5, FORMAT(EndingDate, 0, 4), false, xl."Cell Type"::Date, false);
-                        //AddCell(2, 2, VendorFilter, false, xl."Cell Type"::Text, false);
-                        //AddCell(4, 12, STRSUBSTNO(Text007, SELECTSTR(AgingBy + 1, Text009)), false, xl."Cell Type"::Text, false);
-
-                        //AddCell(RowNoBegin, 11, HeaderTextExcel[1], false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNoBegin, 12, HeaderTextExcel[2], false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNoBegin, 13, HeaderTextExcel[3], false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNoBegin, 14, HeaderTextExcel[4], false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNoBegin, 15, HeaderTextExcel[5], false, xl."Cell Type"::Number, false);
-                        //RowNo += 1;
-                    END;
-                    //NC 50517 <<
-                end;
-
-                trigger OnPostDataItem()
-                var
-                    myInt: Integer;
-                begin
-
-                    if ExportExcel then begin
-                        ;
-                        RowNo += 1;
-                        //AddCell(RowNo, 1, Text0001, false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 10, ReportFormat(GrandTotalVLEAmtLCY), false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 11, ReportFormat(GrandTotalVLERemaingAmtLCY[1]), false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 12, ReportFormat(GrandTotalVLERemaingAmtLCY[2]), false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 13, ReportFormat(GrandTotalVLERemaingAmtLCY[3]), false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 14, ReportFormat(GrandTotalVLERemaingAmtLCY[4]), false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 15, ReportFormat(GrandTotalVLERemaingAmtLCY[5]), false, xl."Cell Type"::Number, false);
-
-                        RowNo += 1;
-
-                        //AddCell(RowNo, 11,
-                        //Pct(GrandTotalVLERemaingAmtLCY[1], GrandTotalVLEAmtLCY),
-                        // false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 12,
-                        //  Pct(GrandTotalVLERemaingAmtLCY[2], GrandTotalVLEAmtLCY),
-                        //  false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 13,
-                        // Pct(GrandTotalVLERemaingAmtLCY[3], GrandTotalVLEAmtLCY),
-                        //  false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 14,
-                        // Pct(GrandTotalVLERemaingAmtLCY[4], GrandTotalVLEAmtLCY),
-                        // false, xl."Cell Type"::Number, false);
-                        //AddCell(RowNo, 15,
-                        //Pct(GrandTotalVLERemaingAmtLCY[5], GrandTotalVLEAmtLCY),
-                        // false, xl."Cell Type"::Number, false);
-                    end;
-
                 end;
             }
             dataitem(OpenVendorLedgEntry; "Vendor Ledger Entry")
@@ -506,6 +451,42 @@ report 80322 "Aged Accounts Payable Ext"
                     NumberOfCurrencies := 0;
                 end;
             }
+            trigger OnPostDataItem()
+            var
+                myInt: Integer;
+            begin
+
+                if ExportExcel then begin
+                    ;
+                    RowNo += 1;
+                    AddCell(RowNo, 1, Text0001, false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 10, ReportFormat(GrandTotalVLEAmtLCY), false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 11, ReportFormat(GrandTotalVLERemaingAmtLCY[1]), false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 12, ReportFormat(GrandTotalVLERemaingAmtLCY[2]), false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 13, ReportFormat(GrandTotalVLERemaingAmtLCY[3]), false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 14, ReportFormat(GrandTotalVLERemaingAmtLCY[4]), false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 15, ReportFormat(GrandTotalVLERemaingAmtLCY[5]), false, xl."Cell Type"::Number, false);
+
+                    RowNo += 1;
+
+                    AddCell(RowNo, 11,
+                    Pct(GrandTotalVLERemaingAmtLCY[1], GrandTotalVLEAmtLCY),
+                     false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 12,
+                      Pct(GrandTotalVLERemaingAmtLCY[2], GrandTotalVLEAmtLCY),
+                      false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 13,
+                     Pct(GrandTotalVLERemaingAmtLCY[3], GrandTotalVLEAmtLCY),
+                      false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 14,
+                     Pct(GrandTotalVLERemaingAmtLCY[4], GrandTotalVLEAmtLCY),
+                     false, xl."Cell Type"::Number, false);
+                    AddCell(RowNo, 15,
+                    Pct(GrandTotalVLERemaingAmtLCY[5], GrandTotalVLEAmtLCY),
+                     false, xl."Cell Type"::Number, false);
+                end;
+
+            end;
 
             trigger OnAfterGetRecord()
             begin
@@ -523,6 +504,24 @@ report 80322 "Aged Accounts Payable Ext"
             trigger OnPreDataItem()
             begin
                 PageGroupNo := 1;
+
+                //NC 50517 >>
+                GlobalDimension1Filter := Vendor.GETFILTER(Vendor."Global Dimension 1 Filter");
+                EnterTxt[1] := 13;
+                EnterTxt[2] := 10;
+                IF ExportExcel THEN BEGIN
+                    AddCell(1, 4, FORMAT(EndingDate, 0, 4), false, xl."Cell Type"::Date, false);
+                    AddCell(2, 2, VendorFilter, false, xl."Cell Type"::Text, false);
+                    AddCell(4, 12, STRSUBSTNO(Text007, SELECTSTR(AgingBy + 1, Text009)), false, xl."Cell Type"::Text, false);
+                    AddCell(RowNoBegin, 11, HeaderTextExcel[1], false, xl."Cell Type"::Number, false);
+                    AddCell(RowNoBegin, 12, HeaderTextExcel[2], false, xl."Cell Type"::Number, false);
+                    AddCell(RowNoBegin, 13, HeaderTextExcel[3], false, xl."Cell Type"::Number, false);
+                    AddCell(RowNoBegin, 14, HeaderTextExcel[4], false, xl."Cell Type"::Number, false);
+                    AddCell(RowNoBegin, 15, HeaderTextExcel[5], false, xl."Cell Type"::Number, false);
+
+                END;
+                //NC 50517 <<
+
             end;
         }
         dataitem(CurrencyTotals; "Integer")

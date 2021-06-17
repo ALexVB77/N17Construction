@@ -7048,6 +7048,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control StartDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1809404285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TempStarter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report TempStarter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
           <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
           <note from="Developer" annotates="general" priority="2"></note>

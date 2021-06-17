@@ -115,8 +115,17 @@ codeunit 50006 "Base App. Subscribers Mgt."
         // NC 51144 GG <<
         end
     end;
-
-
+    /*
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'onLookupTransferFromCode', '', false, false)]
+    local procedure onLookupTransferFromCode(var TransHeader: Record "Transfer Header");
+    var
+        ERPCFuntions: Codeunit "ERPC Funtions";
+    begin
+        //NC 22512 > DP
+        IF ERPCFuntions.LookUpLocationCode(TransHeader."Transfer-from Code") THEN TransHeader.VALIDATE("Transfer-from Code");
+        //NC 22512 < DP
+    end;
+    */
     // t 5740 <<
 
     // t 12450 >>
@@ -136,6 +145,17 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
         //NC 22512 < DP
     end;
+    /*
+    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'onLookupLocationCode', '', false, false)]
+    local procedure onLookupLocationCode(var ItemDocumentHeader: Record "Item Document Header");
+    var
+        ERPCFuntions: Codeunit "ERPC Funtions";
+    begin
+        //NC 22512 > DP
+        IF ERPCFuntions.LookUpLocationCode(ItemDocumentHeader."Location Code") THEN ItemDocumentHeader.VALIDATE("Location Code");
+        //NC 22512 < DP
+    end;
+    */
     // t 12450 <<
     // cu 367 >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::CheckManagement, 'OnBeforeVoidCheckGenJnlLine2Modify', '', false, false)]
@@ -488,13 +508,13 @@ codeunit 50006 "Base App. Subscribers Mgt."
         CheckLimitDateFilter: Text;
         VendorAgreement: Record "Vendor Agreement";
     begin
-        if (PurchHeader."Buy-from Address" <> '') AND (PurchHeader."Agreement No." <> '') then begin
+        if (PurchHeader."Buy-from Vendor No." <> '') AND (PurchHeader."Agreement No." <> '') then begin
             CompanyInfo.Get;
-            LocVend.GET(PurchHeader."Buy-from Address");
+            LocVend.GET(PurchHeader."Buy-from Vendor No.");
 
             if CompanyInfo."Use RedFlags in Agreements" then
                 if LocVend.GetLineColor = 'Attention' then begin
-                    VendAgr.Get(PurchHeader."Buy-from Address", PurchHeader."Agreement No.");
+                    VendAgr.Get(PurchHeader."Buy-from Vendor No.", PurchHeader."Agreement No.");
                     CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
 
                     if CheckLimitDateFilter <> '' then
