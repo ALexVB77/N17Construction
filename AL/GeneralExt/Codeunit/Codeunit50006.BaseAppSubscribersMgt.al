@@ -70,6 +70,26 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // t 81 <<
 
     // t 5740 >>
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInsertEvent', '', false, false)]
+    local procedure onAfterInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
+    var
+        StorekeeperLocation: Record "Warehouse Employee";
+        DefaultLocation: Code[20];
+    begin
+        if not RunTrigger then exit;
+
+        //NC 22512 > DP
+        DefaultLocation := StorekeeperLocation.GetDefaultLocation('', false);
+        IF DefaultLocation <> '' THEN BEGIN
+            // xRec."Transfer-from Code" := '';
+            Rec.SetHideValidationDialog(TRUE);
+            Rec.VALIDATE("Transfer-from Code", DefaultLocation);
+            Rec.SetHideValidationDialog(FALSE);
+            REc.modify();
+        END;
+        //NC 22512 < DP
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnUpdateTransLines', '', false, false)]
     local procedure OnUpdateTransLines(var TransferLine: Record "Transfer Line"; TransferHeader: Record "Transfer Header"; FieldID: Integer);
     var
@@ -95,8 +115,48 @@ codeunit 50006 "Base App. Subscribers Mgt."
         // NC 51144 GG <<
         end
     end;
-
+    /*
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'onLookupTransferFromCode', '', false, false)]
+    local procedure onLookupTransferFromCode(var TransHeader: Record "Transfer Header");
+    var
+        ERPCFuntions: Codeunit "ERPC Funtions";
+    begin
+        //NC 22512 > DP
+        IF ERPCFuntions.LookUpLocationCode(TransHeader."Transfer-from Code") THEN TransHeader.VALIDATE("Transfer-from Code");
+        //NC 22512 < DP
+    end;
+    */
     // t 5740 <<
+
+    // t 12450 >>
+    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'OnAfterInsertEvent', '', false, false)]
+    local procedure onAfterInsertItemDocumentHeader(Rec: Record "Item Document Header"; RunTrigger: Boolean)
+    var
+        StorekeeperLocation: Record "Warehouse Employee";
+        DefaultLocation: Code[20];
+    begin
+        if not RunTrigger then exit;
+
+        //NC 22512 > DP
+        DefaultLocation := StorekeeperLocation.GetDefaultLocation('', false);
+        IF DefaultLocation <> '' THEN begin
+            Rec.VALIDATE("Location Code", DefaultLocation);
+            Rec.modify();
+        end;
+        //NC 22512 < DP
+    end;
+    /*
+    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'onLookupLocationCode', '', false, false)]
+    local procedure onLookupLocationCode(var ItemDocumentHeader: Record "Item Document Header");
+    var
+        ERPCFuntions: Codeunit "ERPC Funtions";
+    begin
+        //NC 22512 > DP
+        IF ERPCFuntions.LookUpLocationCode(ItemDocumentHeader."Location Code") THEN ItemDocumentHeader.VALIDATE("Location Code");
+        //NC 22512 < DP
+    end;
+    */
+    // t 12450 <<
     // cu 367 >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::CheckManagement, 'OnBeforeVoidCheckGenJnlLine2Modify', '', false, false)]
     local procedure OnBeforeVoidCheckGenJnlLine2Modify(var GenJournalLine2: Record "Gen. Journal Line"; GenJournalLine: Record "Gen. Journal Line");

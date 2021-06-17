@@ -196,6 +196,7 @@ report 50120 "Data Migration From Excel"
                             //DimensionValue."Project is Finished" := GetValueAtBool(RowNo, 3);
                             DimensionValue."Check CF Forecast" := GetValueAtBool(RowNo, 5);
                             //DimensionValue."Post Without Forecast" := GetValueAtBool(RowNo, 6);
+                            DimensionValue."Global Dimension No." := 1;
                             DimensionValue.Insert(true);
                         end;
                 end;
@@ -209,6 +210,7 @@ report 50120 "Data Migration From Excel"
                             DimensionValue.Name := GetValueAtCell(RowNo, 2);
                             Evaluate(DimensionValue."Dimension Value Type", GetValueAtCell(RowNo, 3));
                             DimensionValue.Totaling := GetValueAtCell(RowNo, 4);
+                            DimensionValue."Global Dimension No." := 2;
                             DimensionValue.Insert(true);
                         end;
                 end;

@@ -62,6 +62,12 @@ table 12450 "Item Document Header"
 
                 UpdateItemDocLines(FieldNo("Location Code"));
             end;
+            // NC 51413 GG >>
+            trigger OnLookup()
+            begin
+                onLookupLocationCode(Rec);
+            end;
+            // NC 51413 GG <<
         }
         field(8; "Shortcut Dimension 1 Code"; Code[20])
         {
@@ -103,7 +109,7 @@ table 12450 "Item Document Header"
         }
         field(12; "Receipt Comment"; Boolean)
         {
-            CalcFormula = Exist ("Inventory Comment Line" WHERE("Document Type" = CONST("Item Receipt"),
+            CalcFormula = Exist("Inventory Comment Line" WHERE("Document Type" = CONST("Item Receipt"),
                                                                 "No." = FIELD("No.")));
             Caption = 'Receipt Comment';
             Editable = false;
@@ -111,7 +117,7 @@ table 12450 "Item Document Header"
         }
         field(13; "Shipment Comment"; Boolean)
         {
-            CalcFormula = Exist ("Inventory Comment Line" WHERE("Document Type" = CONST("Item Shipment"),
+            CalcFormula = Exist("Inventory Comment Line" WHERE("Document Type" = CONST("Item Shipment"),
                                                                 "No." = FIELD("No.")));
             Caption = 'Shipment Comment';
             Editable = false;
@@ -475,5 +481,11 @@ table 12450 "Item Document Header"
                 end;
             until ItemDocLine.Next = 0;
     end;
+    // NC 51413 GG >>
+    [IntegrationEvent(false, false)]
+    local procedure onLookupLocationCode(var ItemDocumentHeader: Record "Item Document Header")
+    begin
+    end;
+    // NC 51423 GG <<     
 }
 
