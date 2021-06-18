@@ -339,8 +339,9 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         else
             MessageBody := CreateMessageBodyController(VendAgr);
         OutStr.WriteText(MessageBody);
-        TempBlob.CreateInStream(InStr);
-        InStr.ReadText(Body);
+        CopyStream(OutStr, InStr);
+        //TempBlob.CreateInStream(InStr);
+        //InStr.ReadText(Body);
         Body := '';
 
         //Body := StrSubstNo(Text092, CompanyName);
