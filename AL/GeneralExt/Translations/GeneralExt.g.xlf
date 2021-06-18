@@ -8493,45 +8493,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
         </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 1266883841" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>User %1 created a new agreement with number %2 for vendor %3</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text093</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 3179973692" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>It is necessary to fill in the information on the control of the purchase limit</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text094</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 2542277075" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>Click this link to open document</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text095</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 160399630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>For the agreement with number %1 for the vendor %2, the purchase limit has been exceeded</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text096</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 3817670309" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>Control is needed</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text097</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 1090077784" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>RUS="&amp;target=Form 14902%1view=SORTING(Field1,Field2)%2WHERE(Field1=1(%3))%1position=Field1=0(%3),Field2=0(%4)"</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType locText001</note>
-        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 1828299548 - NamedType 4286457903" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
           <source>Check vendor agreements</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method SendVendAgrMail - NamedType Text091</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 1828299548 - NamedType 1904580458" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method SendVendAgrMail - NamedType Text092</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Agreement Amount</source>

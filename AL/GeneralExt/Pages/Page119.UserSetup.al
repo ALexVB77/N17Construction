@@ -48,11 +48,19 @@ pageextension 80119 "User Setup (Ext)" extends "User Setup"
             {
                 ApplicationArea = Basic, Suite;
             }
-            field(ddd; Rec."Change Agreem. Posting Group")
+            field("Change Agreem. Posting Group"; Rec."Change Agreem. Posting Group")
             {
                 ApplicationArea = Basic, Suite;
             }
             field("Allow Edit DenDoc Dimension"; Rec."Allow Edit DenDoc Dimension")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+            field("Vend. Agr. Creator Notif."; Rec."Vend. Agr. Creator Notif.")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+            field("Vend. Agr. Controller Notif."; Rec."Vend. Agr. Controller Notif.")
             {
                 ApplicationArea = Basic, Suite;
             }

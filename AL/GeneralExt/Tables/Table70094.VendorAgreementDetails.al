@@ -196,7 +196,7 @@ table 70094 "Vendor Agreement Details"
         }
         field(70012; "Project Code"; Code[20])
         {
-            TableRelation = "Building Project";
+            TableRelation = "Dimension Value".Code where("Dimension Code" = const('ПРОЕКТ'));
         }
         field(70015; "Project Line No."; Integer)
         {
