@@ -2913,6 +2913,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Web Request Worker Setup - Field FailureCodeunitId - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - NamedType 624028080" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is nothing to approve.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType NothingToApproveErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - NamedType 4005917478" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No approval workflow for this record type is enabled.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType NoWorkflowEnabledErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <note from="Developer" annotates="general" priority="2"></note>
