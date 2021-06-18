@@ -334,15 +334,13 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
 
         Subject := Text091;
         TempBlob.CreateOutStream(OutStr);
-        TempBlob.CreateInStream(InStr);
         if RecipientType = RecipientType::Creator then
             MessageBody := CreateMessageBodyCreator(UserDesc, VendAgr)
         else
             MessageBody := CreateMessageBodyController(VendAgr);
         OutStr.WriteText(MessageBody);
-        CopyStream(OutStr, InStr);
-        //InStr.ReadText(Body);
-        Body := '';
+        TempBlob.CreateInStream(InStr);
+        InStr.ReadText(Body);
 
         //Body := StrSubstNo(Text092, CompanyName);
         //Body := '';
@@ -376,10 +374,12 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         //end;
 
         //MessageBody := MessageBody + Body;
+        EmailMessage.IsBodyHTMLFormatted();
         EmailMessage.Create(RecipList, Subject, Body);
+        EmailMessage.IsBodyHTMLFormatted();
         EmailMessage.AddAttachment('HtmlBody.html', 'HTML', InStr);
         EmailMessage.Attachments_GetContent(InStr);
-        //EmailMessage.IsBodyHTMLFormatted();
+        EmailMessage.IsBodyHTMLFormatted();
         Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
         //TemplateFile.Close();
     end;
