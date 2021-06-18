@@ -277,10 +277,16 @@ page 70262 "Purchase List Act"
                 Enabled = ApproveButtonEnabled;
                 Image = Approve;
                 trigger OnAction()
+                var
+                    ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
                 begin
 
 
+                    // if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
+                    //     ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
+
                     Message('Pressed ApproveButton');
+
                     /*
 
                     //SWC380 AKA 200115

@@ -574,8 +574,12 @@ page 70260 "Purchase Order Act"
                     //Visible = OpenApprovalEntriesExistForCurrUser;
 
                     trigger OnAction()
+                    var
+                        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
                     begin
-                        PaymentOrderMgt.ApprovePurchaseOrderAct(Rec);
+                        // PaymentOrderMgt.ApprovePurchaseOrderAct(Rec);
+                        if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
+                            ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
                     end;
                 }
                 action(Reject)
