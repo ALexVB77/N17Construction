@@ -282,9 +282,10 @@ page 70262 "Purchase List Act"
                 begin
 
 
-                    if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
-                        ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
+                    // if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
+                    //     ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
 
+                    Message('Pressed ApproveButton');
 
                     /*
 
