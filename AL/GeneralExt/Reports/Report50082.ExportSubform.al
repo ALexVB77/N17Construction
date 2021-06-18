@@ -44,11 +44,7 @@ report 50082 ExportSubform
                                                         "Global Dimension 2 Code",
                                                         "Cost Type", true), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
                 EnterCell(RowNo, 6, DelChr(Format(Amount, 0, '<Precision,2:2><Standard Format,1>')), false, ExcelBufferTmp."Cell Type"::Number, true);
-                EnterCell(RowNo, 7, Format(CalcPostedInvoice2("Vendor No.",
-                                                              "Agreement No.",
-                                                              "Global Dimension 1 Code",
-                                                              "Global Dimension 2 Code",
-                                                              "Cost Type"), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
+                EnterCell(RowNo, 7, Format(CalcPostedInvoice(true), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
                 EnterCell(RowNo, 8, Format(GetCommited("Agreement No.",
                                                        "Global Dimension 1 Code",
                                                        "Global Dimension 2 Code"), 0, '<Precision,2:2><Standard Format,1>'), false, ExcelBufferTmp."Cell Type"::Number, true);
@@ -97,7 +93,7 @@ report 50082 ExportSubform
                 EnterCell(RowNo, 10, Format(Description), false, ExcelBufferTmp."Cell Type"::Text, true);
                 EnterCell(RowNo, 11, Format("Description 2"), false, ExcelBufferTmp."Cell Type"::Text, true);
                 EnterCell(RowNo, 12, Format(GetInvoiceNo), false, ExcelBufferTmp."Cell Type"::Text, true);
-                EnterCell(RowNo, 12, Format(GetInvoiceDate), false, ExcelBufferTmp."Cell Type"::Date, true);
+                EnterCell(RowNo, 13, Format(GetInvoiceDate), false, ExcelBufferTmp."Cell Type"::Date, true);
                 EnterCell(RowNo, 14, Format("Payment Doc. No."), false, ExcelBufferTmp."Cell Type"::Text, true);
             end;
 

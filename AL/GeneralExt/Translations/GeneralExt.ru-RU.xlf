@@ -7139,14 +7139,14 @@
         </trans-unit>
         <trans-unit id="Report 4024062002 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total (LCY)</source>
-          <target>[NAB: SUGGESTION]Всего (руб.)</target>
+          <target>Всего (руб.)</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text0001</note>
         </trans-unit>
         <trans-unit id="Report 4024062002 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
           <source>.xlsx</source>
-          <target>[NAB: SUGGESTION].xlsx</target>
+          <target>.xlsx</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text0002</note>
@@ -8217,7 +8217,6 @@
           <source>TempStarter</source>
           <target>TempStarter</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report TempStarter - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
@@ -8444,7 +8443,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Control 2379059534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Deviation</source>
-          <target>Отклонение (руб.)</target>
+          <target>Остаток лимита закупок</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Control CtrlDeviation - Property Caption</note>
         </trans-unit>
@@ -8456,7 +8455,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1592470163 - Control 3060609304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3623928019">
           <source>Deviation (LCY)</source>
-          <target>Отклонение (руб.)</target>
+          <target>Остаток лимита закупок</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreements (Ext) - Control Deviation (LCY) - Property Caption</note>
         </trans-unit>
@@ -8570,7 +8569,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -8997,7 +8996,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -10104,7 +10103,6 @@
           <source>Allow changing agr. posting group</source>
           <target>Разрешить изменять учетную группу в договоре</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 948176061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
@@ -10185,54 +10183,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
         </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 1266883841" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>User %1 created a new agreement with number %2 for vendor %3</source>
-          <target>Пользователь %1 создал новый договор с номером %2 по поставщику %3</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text093</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 3179973692" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>It is necessary to fill in the information on the control of the purchase limit</source>
-          <target>Необходимо заполнить информацию по контролю лимита закупки</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text094</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 2542277075" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>Click this link to open document</source>
-          <target>Нажмите на ссылку чтобы открыть документ</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text095</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 160399630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>For the agreement with number %1 for the vendor %2, the purchase limit has been exceeded</source>
-          <target>По договору с номером %1 по поставщику %2 превышен лимит закупки</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text096</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 3817670309" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>Control is needed</source>
-          <target>Необходим контроль</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType Text097</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 395768576 - NamedType 1090077784" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>RUS="&amp;target=Form 14902%1view=SORTING(Field1,Field2)%2WHERE(Field1=1(%3))%1position=Field1=0(%3),Field2=0(%4)"</source>
-          <target>RUS="&amp;target=Form 14902%1view=SORTING(Field1,Field2)%2WHERE(Field1=1(%3))%1position=Field1=0(%3),Field2=0(%4)"</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method FillCheckVendAgrTemplate - NamedType locText001</note>
-        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 1828299548 - NamedType 4286457903" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
           <source>Check vendor agreements</source>
           <target>Контроль договоров поставщика</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method SendVendAgrMail - NamedType Text091</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 594576918 - Method 1828299548 - NamedType 1904580458" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
-          <source>MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL</source>
-          <target>[NAB: REVIEW]СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ NAV (%1)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in target 1 times, but was not found in source.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method SendVendAgrMail - NamedType Text092</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 4100241750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Agreement Amount</source>
@@ -10248,7 +10203,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Field 624138068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
           <source>Check Limit Amount (LCY)</source>
-          <target>Контроль Лимита Сумма с НДС (руб.)</target>
+          <target>Лимит Сумма с НДС (руб.)</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Field Check Limit Amount (LCY) - Property Caption</note>
         </trans-unit>
