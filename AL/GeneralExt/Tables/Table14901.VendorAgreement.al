@@ -341,6 +341,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         OutStr.WriteText(MessageBody);
         TempBlob.CreateInStream(InStr);
         InStr.ReadText(Body);
+        Body := '';
 
         //Body := StrSubstNo(Text092, CompanyName);
         //Body := '';
@@ -375,6 +376,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
 
         //MessageBody := MessageBody + Body;
         EmailMessage.Create(RecipList, Subject, Body);
+        EmailMessage.AddAttachment('', 'HTML', InStr);
         Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
         //TemplateFile.Close();
     end;
