@@ -280,15 +280,15 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         //CharNo: Text;
         EmailMessage: Codeunit "Email Message";
         Email: Codeunit Email;
-        MessageBody: Text;
+        //MessageBody: Text;
         //i: Integer;
         //ExcelTemplate: Record "Excel Template";
         //PurchasesPayablesSetup: Record "Purchases & Payables Setup";
         Text091: Label 'Check vendor agreements';
-        //Text092: Label 'MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL';
-        TempBlob: Codeunit "Temp Blob";
-        OutStr: OutStream;
-        InStr: InStream;
+    //Text092: Label 'MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL';
+    //TempBlob: Codeunit "Temp Blob";
+    //OutStr: OutStream;
+    //InStr: InStream;
     begin
         CompanyInfo.GET;
         if not CompanyInfo."Use RedFlags in Agreements" then
@@ -333,14 +333,10 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
           UserSetupRecip.Next() = 0;
 
         Subject := Text091;
-        TempBlob.CreateOutStream(OutStr);
         if RecipientType = RecipientType::Creator then
-            MessageBody := CreateMessageBodyCreator(UserDesc, VendAgr)
+            Body := CreateMessageBodyCreator(UserDesc, VendAgr)
         else
-            MessageBody := CreateMessageBodyController(VendAgr);
-        OutStr.WriteText(MessageBody);
-        TempBlob.CreateInStream(InStr);
-        InStr.ReadText(Body);
+            Body := CreateMessageBodyController(VendAgr);
 
         //Body := StrSubstNo(Text092, CompanyName);
         //Body := '';
@@ -374,12 +370,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         //end;
 
         //MessageBody := MessageBody + Body;
-        EmailMessage.IsBodyHTMLFormatted();
         EmailMessage.Create(RecipList, Subject, Body);
-        EmailMessage.IsBodyHTMLFormatted();
-        EmailMessage.AddAttachment('HtmlBody.html', 'HTML', InStr);
-        EmailMessage.Attachments_GetContent(InStr);
-        EmailMessage.IsBodyHTMLFormatted();
         Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
         //TemplateFile.Close();
     end;
@@ -420,78 +411,31 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
     local procedure CreateMessageBodyCreator(UserDesc: Text; var VendAgr: Record "Vendor Agreement") MessageBody: Text
     var
         Vend: Record "Vendor";
-        Reference: Text;
+        CRLF: Text[2];
     begin
-        MessageBody := '<html>';
-        MessageBody := MessageBody + '<head>';
-        MessageBody := MessageBody + '<style>';
-        MessageBody := MessageBody + 'h1 {';
-        MessageBody := MessageBody + 'font-family: arial;';
-        MessageBody := MessageBody + 'font-size: 100%;';
-        MessageBody := MessageBody + 'text-align:center;';
-        MessageBody := MessageBody + '}';
-        MessageBody := MessageBody + 'h2 {';
-        MessageBody := MessageBody + 'color: MediumAquamarine;';
-        MessageBody := MessageBody + 'font-family: arial;';
-        MessageBody := MessageBody + 'font-size: 120%;';
-        MessageBody := MessageBody + 'text-align:center;';
-        MessageBody := MessageBody + '}';
-        MessageBody := MessageBody + 'p {';
-        MessageBody := MessageBody + 'font-family: arial;';
-        MessageBody := MessageBody + 'font-size: 90%;';
-        MessageBody := MessageBody + '}';
-        MessageBody := MessageBody + '</style>';
-        MessageBody := MessageBody + '</head>';
-        MessageBody := MessageBody + '<body>';
-        MessageBody := MessageBody + '<br><h1>СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL</h1>';
-        MessageBody := MessageBody + '<h2>' + Format(CompanyName) + '<br>';
-        MessageBody := MessageBody + '<p>< Пользователь <b>' + Format(UserDesc) + '</b> создал новый договор с номером <b>' + Format(VendAgr."No.") + '</b>';
+        CRLF[1] := 13;
+        CRLF[2] := 10;
+        MessageBody := '  СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL' + CRLF;
+        MessageBody := MessageBody + '  (' + Format(CompanyName) + ')' + CRLF + CRLF;
+        MessageBody := MessageBody + '  Пользователь ' + Format(UserDesc) + ' создал новый договор с номером ' + Format(VendAgr."No.");
         Vend.GET(VendAgr."Vendor No.");
-        MessageBody := MessageBody + 'по поставщику <b>' + Format(Vend."No." + ' ' + Vend."Full Name") + '</b>.';
-        MessageBody := MessageBody + '<br><br> Необходимо заполнить информацию по контролю лимита закупки.';
-        Reference := GetUrl(ClientType::Current, CompanyName, ObjectType::Page, 14902, VendAgr);
-        MessageBody := MessageBody + '<br><p><a href="' + Format(Reference) + '">';
-        MessageBody := MessageBody + ' Нажмите на эту ссылку, чтобы открыть документ</a></p>';
-        MessageBody := MessageBody + '</body>';
-        MessageBody := MessageBody + '</html>';
+        MessageBody := MessageBody + ' по поставщику ' + Format(Vend."No." + ' ' + Vend."Full Name") + CRLF;
+        MessageBody := MessageBody + '  Необходимо заполнить информацию по контролю лимита закупки.';
     end;
 
     local procedure CreateMessageBodyController(var VendAgr: Record "Vendor Agreement") MessageBody: Text
     var
         Vend: Record "Vendor";
-        Reference: Text;
+        CRLF: Text[2];
     begin
-        MessageBody := '<html>';
-        MessageBody := MessageBody + '<head>';
-        MessageBody := MessageBody + '<style>';
-        MessageBody := MessageBody + 'h1 {';
-        MessageBody := MessageBody + 'font-family: arial;';
-        MessageBody := MessageBody + 'font-size: 100%;';
-        MessageBody := MessageBody + 'text-align:center;';
-        MessageBody := MessageBody + '}';
-        MessageBody := MessageBody + 'h2 {';
-        MessageBody := MessageBody + 'color: MediumAquamarine;';
-        MessageBody := MessageBody + 'font-family: arial;';
-        MessageBody := MessageBody + 'font-size: 120%;';
-        MessageBody := MessageBody + 'text-align:center;';
-        MessageBody := MessageBody + '}';
-        MessageBody := MessageBody + 'p {';
-        MessageBody := MessageBody + 'font-family: arial;';
-        MessageBody := MessageBody + 'font-size: 90%;';
-        MessageBody := MessageBody + '}';
-        MessageBody := MessageBody + '</style>';
-        MessageBody := MessageBody + '</head>';
-        MessageBody := MessageBody + '<body>';
-        MessageBody := MessageBody + '<br><h1>СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL</h1>';
-        MessageBody := MessageBody + '<h2>' + Format(CompanyName) + '<br>';
-        MessageBody := MessageBody + '<p> По договору с номером <b>' + Format(VendAgr."No.") + '</b> по поставщику ';
+        CRLF[1] := 13;
+        CRLF[2] := 10;
+        MessageBody := '  СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL' + CRLF;
+        MessageBody := MessageBody + '  (' + Format(CompanyName) + ')' + CRLF + CRLF;
+        MessageBody := MessageBody + '  По договору с номером ' + Format(VendAgr."No.") + ' по поставщику ';
         Vend.GET(VendAgr."Vendor No.");
-        MessageBody := MessageBody + '<b>' + Format(Vend."No." + ' ' + Vend."Full Name") + '</b>';
-        MessageBody := MessageBody + 'превышен лимит закупки.<br><br> Необходим контроль.<p>';
-        Reference := GetUrl(ClientType::Current, CompanyName, ObjectType::Page, 14902, VendAgr);
-        MessageBody := MessageBody + '<br><p><a href="' + Format(Reference) + '">';
-        MessageBody := MessageBody + ' Нажмите на эту ссылку, чтобы открыть документ</a></p>';
-        MessageBody := MessageBody + '</body>';
-        MessageBody := MessageBody + '</html>';
+        MessageBody := MessageBody + Format(Vend."No." + ' ' + Vend."Full Name");
+        MessageBody := MessageBody + ' превышен лимит закупки.' + CRLF;
+        MessageBody := MessageBody + ' Необходим контроль.';
     end;
 }
