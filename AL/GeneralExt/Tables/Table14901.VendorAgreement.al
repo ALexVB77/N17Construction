@@ -267,25 +267,28 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         CompanyInfo: Record "Company Information";
         UserSetupRecip: Record "User Setup";
         UserSetupSend: Record "User Setup";
-        TempPath: Text;
-        TemplateFile: File;
-        InStreamTemplate: InStream;
+        //TempPath: Text;
+        //TemplateFile: File;
+        //InStreamTemplate: InStream;
         SenderAddress: Text;
         Purchaser: Record "Salesperson/Purchaser";
         UserDesc: Text;
         RecipList: Text;
         Subject: Text;
         Body: Text;
-        InSReadChar: Text;
-        CharNo: Text;
+        //InSReadChar: Text;
+        //CharNo: Text;
         EmailMessage: Codeunit "Email Message";
         Email: Codeunit Email;
         MessageBody: Text;
-        i: Integer;
-        ExcelTemplate: Record "Excel Template";
-        PurchasesPayablesSetup: Record "Purchases & Payables Setup";
+        //i: Integer;
+        //ExcelTemplate: Record "Excel Template";
+        //PurchasesPayablesSetup: Record "Purchases & Payables Setup";
         Text091: Label 'Check vendor agreements';
-        Text092: Label 'MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL';
+        //Text092: Label 'MESSAGE FROM NAV AGREEMENT SYSTEM CONTROL';
+        TempBlob: Codeunit "Temp Blob";
+        OutStr: OutStream;
+        InStr: InStream;
     begin
         CompanyInfo.GET;
         if not CompanyInfo."Use RedFlags in Agreements" then
@@ -300,13 +303,13 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         if UserSetupRecip.IsEmpty then
             exit;
 
-        PurchasesPayablesSetup.Get();
-        PurchasesPayablesSetup.TestField("Check Vend. Agr. Template Code");
-        TempPath := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Check Vend. Agr. Template Code");
+        //PurchasesPayablesSetup.Get();
+        //PurchasesPayablesSetup.TestField("Check Vend. Agr. Template Code");
+        //TempPath := ExcelTemplate.OpenTemplate(PurchasesPayablesSetup."Check Vend. Agr. Template Code");
 
-        TemplateFile.TextMode(true);
-        TemplateFile.Open(TempPath);
-        TemplateFile.CreateInStream(InStreamTemplate);
+        //TemplateFile.TextMode(true);
+        //TemplateFile.Open(TempPath);
+        //TemplateFile.CreateInStream(InStreamTemplate);
 
         UserSetupSend.Get(UserId);
         UserSetupSend.TestField("E-Mail");
@@ -330,76 +333,160 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
           UserSetupRecip.Next() = 0;
 
         Subject := Text091;
-        Body := StrSubstNo(Text092, CompanyName);
+        TempBlob.CreateOutStream(OutStr);
+        if RecipientType = RecipientType::Creator then
+            MessageBody := CreateMessageBodyCreator(UserDesc, VendAgr)
+        else
+            MessageBody := CreateMessageBodyController(VendAgr);
+        OutStr.WriteText(MessageBody);
+        TempBlob.CreateInStream(InStr);
+        InStr.ReadText(Body);
 
-        Body := '';
+        //Body := StrSubstNo(Text092, CompanyName);
+        //Body := '';
+        //while InStreamTemplate.Read(InSReadChar, 1) <> 0 do begin
+        //    if InSReadChar = '%' then begin
+        //        MessageBody := Body;
+        //        Body := InSReadChar;
+        //        if InStreamTemplate.Read(InSReadChar, 1) <> 0 then;
+        //        if (InSReadChar >= '0') and (InSReadChar <= '9') then begin
+        //           Body := Body + '1';
+        //           CharNo := InSReadChar;
+        //           while (InSReadChar >= '0') and (InSReadChar <= '9') do begin
+        //               if InStreamTemplate.Read(InSReadChar, 1) <> 0 then;
+        //               if (InSReadChar >= '0') and (InSReadChar <= '9') then
+        //                   CharNo := CharNo + InSReadChar;
+        //           end;
+        //       end else
+        //           Body := Body + InSReadChar;
+        //      FillCheckVendAgrTemplate(Body, CharNo, UserDesc, VendAgr, RecipientType);
+        //     MessageBody := MessageBody + Body;
+        //      Body := InSReadChar;
+        //   end else begin
+        //       Body := Body + InSReadChar;
+        //       i := i + 1;
+        //       IF i = 500 then begin
+        //           MessageBody := MessageBody + Body;
+        //           Body := '';
+        //           i := 0;
+        //       end;
+        //   end;
+        //end;
 
-        while InStreamTemplate.Read(InSReadChar, 1) <> 0 do begin
-            if InSReadChar = '%' then begin
-                MessageBody := Body;
-                Body := InSReadChar;
-                if InStreamTemplate.Read(InSReadChar, 1) <> 0 then;
-                if (InSReadChar >= '0') and (InSReadChar <= '9') then begin
-                    Body := Body + '1';
-                    CharNo := InSReadChar;
-                    while (InSReadChar >= '0') and (InSReadChar <= '9') do begin
-                        if InStreamTemplate.Read(InSReadChar, 1) <> 0 then;
-                        if (InSReadChar >= '0') and (InSReadChar <= '9') then
-                            CharNo := CharNo + InSReadChar;
-                    end;
-                end else
-                    Body := Body + InSReadChar;
-
-                FillCheckVendAgrTemplate(Body, CharNo, UserDesc, VendAgr, RecipientType);
-                MessageBody := MessageBody + Body;
-                Body := InSReadChar;
-            end else begin
-                Body := Body + InSReadChar;
-                i := i + 1;
-                IF i = 500 then begin
-                    MessageBody := MessageBody + Body;
-                    Body := '';
-                    i := 0;
-                end;
-            end;
-        end;
-
-        MessageBody := MessageBody + Body;
+        //MessageBody := MessageBody + Body;
         EmailMessage.Create(RecipList, Subject, Body);
         Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
-        TemplateFile.Close();
+        //TemplateFile.Close();
     end;
 
-    local procedure FillCheckVendAgrTemplate(var Body: Text; TextNo: Text; UserDesc: Text; VendAgr: Record "Vendor Agreement"; RecipientType: Option Creator,Controller)
+    // local procedure FillCheckVendAgrTemplate(var Body: Text; TextNo: Text; UserDesc: Text; VendAgr: Record "Vendor Agreement"; RecipientType: Option Creator,Controller)
+    // var
+    //     Vend: Record "Vendor";
+    //     Text093: Label 'User %1 created a new agreement with number %2 for vendor %3';
+    //     Text094: Label 'It is necessary to fill in the information on the control of the purchase limit';
+    //     Text095: Label 'Click this link to open document';
+    //     Text096: Label 'For the agreement with number %1 for the vendor %2, the purchase limit has been exceeded';
+    //     Text097: Label 'Control is needed';
+    //     locText001: Label 'RUS="&target=Form 14902%1view=SORTING(Field1,Field2)%2WHERE(Field1=1(%3))%1position=Field1=0(%3),Field2=0(%4)"';
+    // begin
+    //     case TextNo of
+    //         '1':
+    //             begin
+    //                 Vend.GET(VendAgr."Vendor No.");
+    //                 if RecipientType = RecipientType::Creator then
+    //                     Body := StrSubstNo(Body, StrSubstNo(Text093, UserDesc, VendAgr."No.", Vend."No." + ' ' + Vend."Full Name"))
+    //                 else
+    //                     Body := StrSubstNo(Body, StrSubstNo(Text096, VendAgr."No.", Vend."No." + ' ' + Vend."Full Name"));
+    //             end;
+    //         '2':
+    //             begin
+    //                 if RecipientType = RecipientType::Creator then
+    //                     Body := StrSubstNo(Body, Text094)
+    //                 else
+    //                     Body := StrSubstNo(Body, Text097);
+    //             end;
+    //         '3':
+    //             Body := StrSubstNo(Body, GetUrl(ClientType::Current) + StrSubstNo(locText001, '%26', '%20', VendAgr."Vendor No.", VendAgr."No."));
+    //         '4':
+    //             Body := StrSubstNo(Body, Text095);
+    //     end;
+    // end;
+
+    local procedure CreateMessageBodyCreator(UserDesc: Text; var VendAgr: Record "Vendor Agreement") MessageBody: Text
     var
         Vend: Record "Vendor";
-        Text093: Label 'User %1 created a new agreement with number %2 for vendor %3';
-        Text094: Label 'It is necessary to fill in the information on the control of the purchase limit';
-        Text095: Label 'Click this link to open document';
-        Text096: Label 'For the agreement with number %1 for the vendor %2, the purchase limit has been exceeded';
-        Text097: Label 'Control is needed';
-        locText001: Label 'RUS="&target=Form 14902%1view=SORTING(Field1,Field2)%2WHERE(Field1=1(%3))%1position=Field1=0(%3),Field2=0(%4)"';
+        Reference: Text;
     begin
-        case TextNo of
-            '1':
-                begin
-                    Vend.GET(VendAgr."Vendor No.");
-                    if RecipientType = RecipientType::Creator then
-                        Body := StrSubstNo(Body, StrSubstNo(Text093, UserDesc, VendAgr."No.", Vend."No." + ' ' + Vend."Full Name"))
-                    else
-                        Body := StrSubstNo(Body, StrSubstNo(Text096, VendAgr."No.", Vend."No." + ' ' + Vend."Full Name"));
-                end;
-            '2':
-                begin
-                    if RecipientType = RecipientType::Creator then
-                        Body := StrSubstNo(Body, Text094)
-                    else
-                        Body := StrSubstNo(Body, Text097);
-                end;
-            '3':
-                Body := StrSubstNo(Body, GetUrl(ClientType::Current) + StrSubstNo(locText001, '%26', '%20', VendAgr."Vendor No.", VendAgr."No."));
-            '4':
-                Body := StrSubstNo(Body, Text095);
-        end;
+        MessageBody := '<html>';
+        MessageBody := MessageBody + '<head>';
+        MessageBody := MessageBody + '<style>';
+        MessageBody := MessageBody + 'h1 {';
+        MessageBody := MessageBody + 'font-family: arial;';
+        MessageBody := MessageBody + 'font-size: 100%;';
+        MessageBody := MessageBody + 'text-align:center;';
+        MessageBody := MessageBody + '}';
+        MessageBody := MessageBody + 'h2 {';
+        MessageBody := MessageBody + 'color: MediumAquamarine;';
+        MessageBody := MessageBody + 'font-family: arial;';
+        MessageBody := MessageBody + 'font-size: 120%;';
+        MessageBody := MessageBody + 'text-align:center;';
+        MessageBody := MessageBody + '}';
+        MessageBody := MessageBody + 'p {';
+        MessageBody := MessageBody + 'font-family: arial;';
+        MessageBody := MessageBody + 'font-size: 90%;';
+        MessageBody := MessageBody + '}';
+        MessageBody := MessageBody + '</style>';
+        MessageBody := MessageBody + '</head>';
+        MessageBody := MessageBody + '<body>';
+        MessageBody := MessageBody + '<br><h1>СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL</h1>';
+        MessageBody := MessageBody + '<h2>' + Format(CompanyName) + '<br>';
+        MessageBody := MessageBody + '<p>< Пользователь <b>' + Format(UserDesc) + '</b> создал новый договор с номером <b>' + Format(VendAgr."No.") + '</b>';
+        Vend.GET(VendAgr."Vendor No.");
+        MessageBody := MessageBody + 'по поставщику <b>' + Format(Vend."No." + ' ' + Vend."Full Name") + '</b>.';
+        MessageBody := MessageBody + '<br><br> Необходимо заполнить информацию по контролю лимита закупки.';
+        Reference := GetUrl(ClientType::Current, CompanyName, ObjectType::Page, 14902, VendAgr);
+        MessageBody := MessageBody + '<br><p><a href="' + Format(Reference) + '">';
+        MessageBody := MessageBody + ' Нажмите на эту ссылку, чтобы открыть документ</a></p>';
+        MessageBody := MessageBody + '</body>';
+        MessageBody := MessageBody + '</html>';
+    end;
+
+    local procedure CreateMessageBodyController(var VendAgr: Record "Vendor Agreement") MessageBody: Text
+    var
+        Vend: Record "Vendor";
+        Reference: Text;
+    begin
+        MessageBody := '<html>';
+        MessageBody := MessageBody + '<head>';
+        MessageBody := MessageBody + '<style>';
+        MessageBody := MessageBody + 'h1 {';
+        MessageBody := MessageBody + 'font-family: arial;';
+        MessageBody := MessageBody + 'font-size: 100%;';
+        MessageBody := MessageBody + 'text-align:center;';
+        MessageBody := MessageBody + '}';
+        MessageBody := MessageBody + 'h2 {';
+        MessageBody := MessageBody + 'color: MediumAquamarine;';
+        MessageBody := MessageBody + 'font-family: arial;';
+        MessageBody := MessageBody + 'font-size: 120%;';
+        MessageBody := MessageBody + 'text-align:center;';
+        MessageBody := MessageBody + '}';
+        MessageBody := MessageBody + 'p {';
+        MessageBody := MessageBody + 'font-family: arial;';
+        MessageBody := MessageBody + 'font-size: 90%;';
+        MessageBody := MessageBody + '}';
+        MessageBody := MessageBody + '</style>';
+        MessageBody := MessageBody + '</head>';
+        MessageBody := MessageBody + '<body>';
+        MessageBody := MessageBody + '<br><h1>СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL</h1>';
+        MessageBody := MessageBody + '<h2>' + Format(CompanyName) + '<br>';
+        MessageBody := MessageBody + '<p> По договору с номером <b>' + Format(VendAgr."No.") + '</b> по поставщику ';
+        Vend.GET(VendAgr."Vendor No.");
+        MessageBody := MessageBody + '<b>' + Format(Vend."No." + ' ' + Vend."Full Name") + '</b>';
+        MessageBody := MessageBody + 'превышен лимит закупки.<br><br> Необходим контроль.<p>';
+        Reference := GetUrl(ClientType::Current, CompanyName, ObjectType::Page, 14902, VendAgr);
+        MessageBody := MessageBody + '<br><p><a href="' + Format(Reference) + '">';
+        MessageBody := MessageBody + ' Нажмите на эту ссылку, чтобы открыть документ</a></p>';
+        MessageBody := MessageBody + '</body>';
+        MessageBody := MessageBody + '</html>';
     end;
 }
