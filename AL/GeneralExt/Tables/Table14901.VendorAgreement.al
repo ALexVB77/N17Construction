@@ -334,13 +334,13 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
 
         Subject := Text091;
         TempBlob.CreateOutStream(OutStr);
+        TempBlob.CreateInStream(InStr);
         if RecipientType = RecipientType::Creator then
             MessageBody := CreateMessageBodyCreator(UserDesc, VendAgr)
         else
             MessageBody := CreateMessageBodyController(VendAgr);
         OutStr.WriteText(MessageBody);
         CopyStream(OutStr, InStr);
-        //TempBlob.CreateInStream(InStr);
         //InStr.ReadText(Body);
         Body := '';
 
