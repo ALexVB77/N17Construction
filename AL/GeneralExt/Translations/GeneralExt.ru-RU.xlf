@@ -3499,14 +3499,12 @@
           <source>There is nothing to approve.</source>
           <target>Утверждать ничего не требуется.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType NothingToApproveErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3129098179 - NamedType 4005917478" size-unit="char" translate="yes" xml:space="preserve">
           <source>No approval workflow for this record type is enabled.</source>
           <target>Для этого типа записей не включен рабочий процесс утверждения.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType NoWorkflowEnabledErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
@@ -3574,12 +3572,6 @@
           <target>Отменено пользователем!</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70034</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for verification to the Checker!</source>
-          <target>Документ отправлен на проверку Проверяющему!</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70044</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 762112629" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document is signed by the Approver!</source>
@@ -3706,6 +3698,13 @@
           <target>Заявка %1 в статусе утверждения "Платеж". Удаление невозможно.\Воспользуйтесь функцией архивирования.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice - NamedType LocText50021</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3487476121 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for verification to the Checker!</source>
+          <target>Документ отправлен на проверку Проверяющему!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70044</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 714932620 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Empty Approver on line!</source>
@@ -7155,14 +7154,12 @@
           <source>Total (LCY)</source>
           <target>Всего (руб.)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text0001</note>
         </trans-unit>
         <trans-unit id="Report 4024062002 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
           <source>.xlsx</source>
           <target>.xlsx</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Aged Accounts Payable Ext - NamedType Text0002</note>
         </trans-unit>
         <trans-unit id="Report 4024062002 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
@@ -8583,7 +8580,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -9010,7 +9007,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>

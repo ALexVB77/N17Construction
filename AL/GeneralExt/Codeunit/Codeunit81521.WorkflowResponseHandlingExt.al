@@ -34,6 +34,8 @@ codeunit 81521 "Workflow Response Handling Ext"
         case WorkflowResponse."Function Name" of
             CreateApprovalRequestsActCode:
                 CreateApprovalRequests(Variant, ResponseWorkflowStepInstance);
+            ShowPurchActApproveMessageCode:
+                ShowPurchActApproveMessage(Variant, ResponseWorkflowStepInstance);
             else
                 exit;
         end;
@@ -49,10 +51,26 @@ codeunit 81521 "Workflow Response Handling Ext"
         ApprovalsMgmt.CreateApprovalRequests(RecRef, WorkflowStepInstance);
     end;
 
+    local procedure ShowPurchActApproveMessage(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        PurchaseHeader: Record "Purchase Header";
+        ERPCFunction: Codeunit "ERPC Funtions";
+        RecRef: RecordRef;
+        MessageText: Text;
+    begin
+        RecRef.SetTable(PurchaseHeader);
+        MessageText := ERPCFunction.GetActStatusMessage(PurchaseHeader);
+        Message(MessageText);
+    end;
+
     procedure CreateApprovalRequestsActCode(): Code[128]
     begin
         exit(UpperCase('CreateApprovalRequestsAct'));
     end;
 
+    procedure ShowPurchActApproveMessageCode(): Code[128]
+    begin
+        exit(UpperCase('ShowPurchActApproveMessage'));
+    end;
 
 }

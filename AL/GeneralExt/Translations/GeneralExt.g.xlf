@@ -2978,11 +2978,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70034</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for verification to the Checker!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70044</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 762112629" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document is signed by the Approver!</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3087,6 +3082,11 @@
           <source>Request %1 in the "Payment" approval status. Unable to delete.\Use the archiving function.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice - NamedType LocText50021</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3487476121 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for verification to the Checker!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70044</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 714932620 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Empty Approver on line!</source>

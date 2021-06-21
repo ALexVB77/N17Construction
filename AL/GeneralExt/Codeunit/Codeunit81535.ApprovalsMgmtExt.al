@@ -14,6 +14,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     var
         WorkflowManagement: Codeunit "Workflow Management";
         WorkflowEventHandlingExt: Codeunit "Workflow Event Handling (Ext)";
+        WorkflowResponceHandling: Codeunit "Workflow Response Handling Ext";
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
 
         NoWorkflowEnabledErr: Label 'No approval workflow for this record type is enabled.';
@@ -22,6 +23,20 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     [IntegrationEvent(false, false)]
     procedure OnSendPurchOrderActForApproval(var PurchaseHeader: Record "Purchase Header")
     begin
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, 1535, 'OnAfterPopulateApprovalEntryArgument', '', false, false)]
+    local procedure OnAfterPopulateApprovalEntryArgument(WorkflowStepInstance: Record "Workflow Step Instance"; var ApprovalEntryArgument: Record "Approval Entry"; var IsHandled: Boolean)
+    var
+        PurchHeader: Record "Purchase Header";
+        ERPCFunction: Codeunit "ERPC Funtions";
+    begin
+        if (ApprovalEntryArgument."Table ID" = DATABASE::"Purchase Header") and
+            (WorkflowStepInstance."Function Name" = WorkflowResponceHandling.CreateApprovalRequestsActCode)
+        then begin
+            PurchHeader.Get(ApprovalEntryArgument."Document Type", ApprovalEntryArgument."Document No.");
+            ApprovalEntryArgument."Approver ID" := ERPCFunction.GetActApprover(PurchHeader);
+        end;
     end;
 
     procedure CheckPurchOrderActApprovalPossible(var PurchaseHeader: Record "Purchase Header"): Boolean
