@@ -14,10 +14,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     var
         WorkflowManagement: Codeunit "Workflow Management";
         WorkflowEventHandlingExt: Codeunit "Workflow Event Handling (Ext)";
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
 
         NoWorkflowEnabledErr: Label 'No approval workflow for this record type is enabled.';
         NothingToApproveErr: Label 'There is nothing to approve.';
-
 
     [IntegrationEvent(false, false)]
     procedure OnSendPurchOrderActForApproval(var PurchaseHeader: Record "Purchase Header")
@@ -39,7 +39,5 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     begin
         exit(WorkflowManagement.CanExecuteWorkflow(PurchaseHeader, WorkflowEventHandlingExt.RunWorkflowOnSendPurchOrderActForApprovalCode));
     end;
-
-
 
 }
