@@ -12,6 +12,8 @@ report 50999 "TempStarter"
         WRPH: Codeunit "Workflow Request Page Handling";
         WRH: Codeunit "Workflow Response Handling";
         WRHExt: Codeunit "Workflow Response Handling Ext";
+
+        WSA: Record "Workflow Step Argument";
     begin
         //Codeunit.run(Codeunit::"Notification Entry Dispatcher");
 
@@ -26,9 +28,16 @@ report 50999 "TempStarter"
         WRPH.AssignEntitiesToWorkflowEvents();
 
         WRH.AddResponseToLibrary(
-            WRHExt.CreateApprovalRequestsCodeAct(),
+            WRHExt.CreateApprovalRequestsActCode(),
             0,
             'Создать запрос утверждения для Акта, КС-2', 'GROUP 10');
+
+        WSA.SetRange("Response Function Name", WRHExt.CreateApprovalRequestsActCode);
+        WSA.ModifyAll("Approver Type", WSA."Approver Type"::Approver);
+        WSA.ModifyAll("Approver Limit Type", WSA."Approver Limit Type"::"Specific Approver");
+
+        WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+
     end;
 }
 
