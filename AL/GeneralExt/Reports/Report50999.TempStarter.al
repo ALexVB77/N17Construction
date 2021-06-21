@@ -36,7 +36,7 @@ report 50999 "TempStarter"
         WSA.ModifyAll("Approver Type", WSA."Approver Type"::Approver);
         WSA.ModifyAll("Approver Limit Type", WSA."Approver Limit Type"::"Specific Approver");
 
-        WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
 
     end;
 }
