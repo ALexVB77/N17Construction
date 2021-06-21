@@ -9,7 +9,7 @@ codeunit 81520 "Workflow Event Handling (Ext)"
         WorkflowManagement: Codeunit "Workflow Management";
 
     [EventSubscriber(ObjectType::Codeunit, 81535, 'OnSendPurchOrderActForApproval', '', false, false)]
-    procedure RunWorkflowOnSendPurchaseDocForApproval(var PurchaseHeader: Record "Purchase Header")
+    procedure RunWorkflowOnSendPurchOrderActForApproval(var PurchaseHeader: Record "Purchase Header")
     begin
         WorkflowManagement.HandleEvent(RunWorkflowOnSendPurchOrderActForApprovalCode, PurchaseHeader);
     end;

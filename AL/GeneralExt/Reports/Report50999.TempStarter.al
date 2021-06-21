@@ -10,6 +10,8 @@ report 50999 "TempStarter"
         WEH: Codeunit "Workflow Event Handling";
         WEHExt: Codeunit "Workflow Event Handling (Ext)";
         WRPH: Codeunit "Workflow Request Page Handling";
+        WRH: Codeunit "Workflow Response Handling";
+        WRHExt: Codeunit "Workflow Response Handling Ext";
     begin
         //Codeunit.run(Codeunit::"Notification Entry Dispatcher");
 
@@ -22,6 +24,11 @@ report 50999 "TempStarter"
 
         WRPH.CreateEntitiesAndFields();
         WRPH.AssignEntitiesToWorkflowEvents();
+
+        WRH.AddResponseToLibrary(
+            WRHExt.CreateApprovalRequestsCodeAct(),
+            0,
+            'Создать запрос утверждения для Акта, КС-2', 'GROUP 10');
     end;
 }
 
