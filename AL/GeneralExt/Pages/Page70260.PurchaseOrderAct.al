@@ -364,7 +364,7 @@ page 70260 "Purchase Order Act"
             part(ApprovalFactBox; "Approval FactBox")
             {
                 ApplicationArea = All;
-                Visible = false;
+                Visible = true;
             }
         }
     }
