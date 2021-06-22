@@ -67,6 +67,17 @@ codeunit 81521 "Workflow Response Handling Ext"
         Message(MessageText);
     end;
 
+    local procedure ChangePurchActStatus(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        PurchaseHeader: Record "Purchase Header";
+        ERPCFunction: Codeunit "ERPC Funtions";
+        RecRef: RecordRef;
+    begin
+        RecRef.GetTable(Variant);
+        RecRef.SetTable(PurchaseHeader);
+        ERPCFunction.ChangeActStatus(PurchaseHeader);
+    end;
+
     procedure CreateApprovalRequestsActCode(): Code[128]
     begin
         exit(UpperCase('CreateApprovalRequestsAct'));
@@ -77,4 +88,8 @@ codeunit 81521 "Workflow Response Handling Ext"
         exit(UpperCase('ShowPurchActApproveMessage'));
     end;
 
+    procedure ChangePurchActStatusCode(): Code[128]
+    begin
+        exit(UpperCase('ChangePurchActStatus'));
+    end;
 }
