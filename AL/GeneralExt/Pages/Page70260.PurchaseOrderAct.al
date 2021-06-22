@@ -355,7 +355,7 @@ page 70260 "Purchase Order Act"
         {
             part(Control23; "Pending Approval FactBox")
             {
-                ApplicationArea = Suite;
+                ApplicationArea = All;
                 SubPageLink = "Table ID" = CONST(38),
                               "Document Type" = FIELD("Document Type"),
                               "Document No." = FIELD("No.");
@@ -363,7 +363,7 @@ page 70260 "Purchase Order Act"
             }
             part(ApprovalFactBox; "Approval FactBox")
             {
-                ApplicationArea = Suite;
+                ApplicationArea = All;
                 Visible = false;
             }
         }
