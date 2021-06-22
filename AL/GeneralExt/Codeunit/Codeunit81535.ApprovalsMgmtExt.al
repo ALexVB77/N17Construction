@@ -74,8 +74,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
         end;
 
-        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, ERPCFunction.GetActApprover(PurchHeader));
-
+        // DEBUG
+        // CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, ERPCFunction.GetActApprover(PurchHeader));
+        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, 'NAV-BONAVA\TESTUSER');
+51374
         if WorkflowStepArgument."Show Confirmation Message" then
             ApprovalsMgmt.InformUserOnStatusChange(RecRef, WorkflowStepInstance.ID);
     end;
