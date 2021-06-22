@@ -69,15 +69,13 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
 
         PurchHeader.Get(ApprovalEntryArgument."Document Type", ApprovalEntryArgument."Document No.");
-        // DEBUG
-        //if PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker then begin
-        PurchHeader.TestField(Controller);
-        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
-        //end;
+        if PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker then begin
+            PurchHeader.TestField(Controller);
+            CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
+        end;
 
-        // DEBUG
-        // CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, ERPCFunction.GetActApprover(PurchHeader));
-        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, 'NAV-BONAVA\TESTUSER');
+        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, ERPCFunction.GetActApprover(PurchHeader));
+
         if WorkflowStepArgument."Show Confirmation Message" then
             ApprovalsMgmt.InformUserOnStatusChange(RecRef, WorkflowStepInstance.ID);
     end;
