@@ -453,6 +453,7 @@ page 70260 "Purchase Order Act"
                         DocumentAttachmentDetails.RunModal;
                     end;
                 }
+                /*
                 action(ChangeLog)
                 {
                     ApplicationArea = All;
@@ -471,6 +472,25 @@ page 70260 "Purchase Order Act"
                         lrChangeLE.SETRANGE("Primary Key Field 2 Value", Rec."No.");
                         IF NOT lrChangeLE.IsEmpty THEN
                             Page.RUNMODAL(Page::"Change Log Entries", lrChangeLE);
+                    end;
+                }
+                */
+                action(Approvals)
+                {
+                    AccessByPermission = TableData "Approval Entry" = R;
+                    ApplicationArea = Suite;
+                    Caption = 'Approvals';
+                    Image = Approvals;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    var
+                        WorkflowsEntriesBuffer: Record "Workflows Entries Buffer";
+                    begin
+                        WorkflowsEntriesBuffer.RunWorkflowEntriesPage(
+                            RecordId, DATABASE::"Purchase Header", "Document Type".AsInteger(), "No.");
                     end;
                 }
                 action(PaymentInvoices)
@@ -621,6 +641,7 @@ page 70260 "Purchase Order Act"
                         Message('Pressed Delegate');
                     end;
                 }
+
                 action(Comment)
                 {
                     ApplicationArea = Suite;

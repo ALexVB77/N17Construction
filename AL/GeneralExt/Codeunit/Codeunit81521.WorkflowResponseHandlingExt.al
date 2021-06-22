@@ -8,6 +8,8 @@ codeunit 81521 "Workflow Response Handling Ext"
     begin
     end;
 
+    /*
+    // NC AB - не нужно, пока агументы не используем
     [EventSubscriber(ObjectType::Table, 1502, 'OnAfterValidateEvent', 'Function Name', false, false)]
     local procedure OnWorkflowStepAfterValidateFunctionName(Rec: Record "Workflow Step"; xRec: Record "Workflow Step"; CurrFieldNo: Integer)
     var
@@ -23,6 +25,7 @@ codeunit 81521 "Workflow Response Handling Ext"
                     WorkflowStepArgument.Modify();
                 end;
     end;
+    */
 
     [EventSubscriber(ObjectType::Codeunit, 1521, 'OnExecuteWorkflowResponse', '', false, false)]
     local procedure OnExecuteWorkflowResponse(var ResponseExecuted: Boolean; var Variant: Variant; xVariant: Variant; ResponseWorkflowStepInstance: Record "Workflow Step Instance")
@@ -44,11 +47,11 @@ codeunit 81521 "Workflow Response Handling Ext"
 
     local procedure CreateApprovalRequests(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
     var
-        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        ApprovalsMgmt.CreateApprovalRequests(RecRef, WorkflowStepInstance);
+        ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
     end;
 
     local procedure ShowPurchActApproveMessage(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")

@@ -1012,7 +1012,10 @@ codeunit 70000 "ERPC Funtions"
         PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Checker:
-                EXIT(PurchHeader."Purchaser Code");
+                begin
+                    PurchHeader.testfield("Process User");
+                    EXIT(PurchHeader."Process User");
+                end;
         end;
     end;
 
