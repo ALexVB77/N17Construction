@@ -22,18 +22,17 @@ page 70143 "Forecast List Analisys"
                     ApplicationArea = All;
                     Caption = 'Code';
                     trigger OnLookup(var Text: text): boolean
+                    var
+                        lDimVal: Record "Dimension Value";
                     begin
-                        // //NC 27251 HR beg
-                        // ProjectStructure.RESET;
-                        // ProjectStructure.FILTERGROUP(2);
-                        // ProjectStructure.SETRANGE(Template, FALSE);
-                        // ProjectStructure.SETFILTER("Development/Production", gcduERPC.GetBldPrjTypeFilter);
-                        // ProjectStructure.FILTERGROUP(0);
-                        // IF PAGE.RUNMODAL(0, ProjectStructure) = ACTION::LookupOK THEN BEGIN
-                        //   TemplateCode := ProjectStructure.Code;
-                        //   ValidateProject;
-                        // END;
-                        // //NC 27251 HR end
+                        GLSetup.Get();
+                        GLSetup.TestField("Project Dimension Code");
+                        lDimVal.Reset();
+                        lDimVal.SetRange("Dimension Code", GLSetup."Project Dimension Code");
+                        if Page.RunModal(0, lDimVal) = Action::LookupOK then begin
+                            TemplateCode := lDimVal.Code;
+                            ValidateProject();
+                        end;
                     end;
 
                     trigger OnValidate()
@@ -509,6 +508,7 @@ page 70143 "Forecast List Analisys"
                     Clear(CreateSTPrBEntPage);
                     CreateSTPrBEntPage.SetProjBudEntry(Rec);
                     CreateSTPrBEntPage.RunModal();
+                    CurrPage.update(false);
                 end;
             }
             action(DeleteSTEntries)
@@ -637,6 +637,8 @@ page 70143 "Forecast List Analisys"
     end;
 
     procedure ValidateProject()
+    var
+        lDimVal: Record "Dimension Value";
     begin
         //NC 27251 HR beg
         // IF TemplateCode = '' THEN
@@ -650,15 +652,19 @@ page 70143 "Forecast List Analisys"
         //   TemplateDescription:='';
         //   CalcType:=0;
         // END;
+        GLSetup.Get();
+        GLSetup.TestField("Project Dimension Code");
+        if lDimVal.Get(GLSetup."Project Dimension Code", TemplateCode) then
+            TemplateDescription := lDimVal.Name;
 
         // //SETRANGE("Project Code");
         // //FILTERGROUP(2);
-        // Rec.SETFILTER("Project Code", TemplateCode);
+        Rec.SETFILTER("Project Code", TemplateCode);
         // //FILTERGROUP(0);
 
 
-        // IF Rec.FIND('-') THEN;
-        // CurrPage.UPDATE(FALSE); 
+        IF Rec.FIND('-') THEN;
+        CurrPage.UPDATE(FALSE);
         //NC 27251 HR end
     end;
 
