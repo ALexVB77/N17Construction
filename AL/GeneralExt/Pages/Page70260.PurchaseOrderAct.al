@@ -351,6 +351,22 @@ page 70260 "Purchase Order Act"
                 }
             }
         }
+        area(factboxes)
+        {
+            part(Control23; "Pending Approval FactBox")
+            {
+                ApplicationArea = Suite;
+                SubPageLink = "Table ID" = CONST(38),
+                              "Document Type" = FIELD("Document Type"),
+                              "Document No." = FIELD("No.");
+                Visible = OpenApprovalEntriesExistForCurrUser;
+            }
+            part(ApprovalFactBox; "Approval FactBox")
+            {
+                ApplicationArea = Suite;
+                Visible = false;
+            }
+        }
     }
 
     actions
@@ -680,7 +696,12 @@ page 70260 "Purchase Order Act"
     end;
 
     trigger OnAfterGetCurrRecord()
+    var
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
     begin
+
+        OpenApprovalEntriesExistForCurrUser := ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId);
+
         UserSetup.GET(UserId);
 
         ActTypeEditable := Rec."Problem Document" AND (Rec."Status App Act" = Rec."Status App Act"::Controller);
@@ -750,6 +771,7 @@ page 70260 "Purchase Order Act"
         ShowDocEnabled: Boolean;
         ProblemTypeEnabled: Boolean;
         LocationCodeShowMandatory: Boolean;
+        OpenApprovalEntriesExistForCurrUser: Boolean;
         CreateAppConfText: Label 'Do you want to create a payment invoice from Act %1?';
 
     local procedure SaveInvoiceDiscountAmount()
