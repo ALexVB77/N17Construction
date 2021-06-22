@@ -50,6 +50,9 @@ report 50999 "TempStarter"
         WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRHExt.ShowPurchActApproveMessageCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRHExt.ChangePurchActStatusCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+
+        WEH.AddEventPredecessor(WEH.RunWorkflowOnApproveApprovalRequestCode(), WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+
     end;
 }
 
