@@ -716,7 +716,6 @@ codeunit 70000 "ERPC Funtions"
         TEXT70016: Label 'The document has been sent for approval!';
         TEXT70032: Label 'The document is ready to be sent to user %1 for approval.\Send?';
         TEXT70034: Label 'Canceled by user!';
-        TEXT70044: Label 'The document has been sent for verification to the Checker!';
         TEXT70045: label 'The document is signed by the Approver!';
         TEXT70046: Label 'The document has passed all approvals! A purchase invoice for accounting has been generated!';
         Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
@@ -803,8 +802,8 @@ codeunit 70000 "ERPC Funtions"
             grPurchHeader."Status App Act" := grPurchHeader."Status App Act"::Checker;
             grPurchHeader.Check := grPurchHeader.Check::"Controler app";
 
-            // DEBUG check later!
-            //CreateStatusLogAct(grPurchHeader, StatusAppAct::Checker);
+            // Логи не создаем, будет операция утверждения
+            // CreateStatusLogAct(grPurchHeader, StatusAppAct::Checker);
 
             grPurchHeader.VALIDATE("Status App", grPurchHeader."Status App"::Checker);
             grPurchHeader.VALIDATE("Process User", lrUserSetup."User ID");
@@ -816,10 +815,11 @@ codeunit 70000 "ERPC Funtions"
             IF grPurchHeader."Location Document" AND (grPurchHeader."Invoice No." = '') THEN
                 CreatePurchOrder(grPurchHeader, false);
 
-            // DEBUG check later!    
+            // Уведомления отправляем через шаг рабочего процесса   
             // gcduANM.SendPurchaseMailFromDocAct(grPurchHeader, 0, '');
 
-            MESSAGE(TEXT70044);
+            // Сообщение шлем через шаг рабочего процесса
+            // MESSAGE(TEXT70044);
             EXIT;
         END;
         // ------- Controller -> Checker -------------- <<<<
@@ -1005,6 +1005,35 @@ codeunit 70000 "ERPC Funtions"
         END;
         // ------- App -> Payment  -------------- <<<<
 
+    end;
+
+    procedure GetActApprover(PurchHeader: Record "Purchase Header"): code[50];
+    var
+        LocText001: label 'Unable to identify an approver for %1 status.';
+    begin
+        PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
+        case PurchHeader."Status App Act" of
+            PurchHeader."Status App Act"::Checker:
+                begin
+                    PurchHeader.TestField("Process User");
+                    EXIT(PurchHeader."Process User");
+                end;
+
+
+            else
+                Error(LocText001, PurchHeader."Status App Act");
+        end;
+    end;
+
+    procedure GetActStatusMessage(PurchHeader: Record "Purchase Header"): text;
+    var
+        TEXT70044: Label 'The document has been sent for verification to the Checker!';
+    begin
+        PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
+        case PurchHeader."Status App Act" of
+            PurchHeader."Status App Act"::Checker:
+                EXIT(TEXT70044);
+        end;
     end;
 
 }

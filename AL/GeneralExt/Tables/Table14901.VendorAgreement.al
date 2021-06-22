@@ -370,6 +370,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         //end;
 
         //MessageBody := MessageBody + Body;
+        Error(Body); // потом причешу код
         EmailMessage.Create(RecipList, Subject, Body);
         Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
         //TemplateFile.Close();

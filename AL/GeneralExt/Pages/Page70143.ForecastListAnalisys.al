@@ -22,18 +22,17 @@ page 70143 "Forecast List Analisys"
                     ApplicationArea = All;
                     Caption = 'Code';
                     trigger OnLookup(var Text: text): boolean
+                    var
+                        lDimVal: Record "Dimension Value";
                     begin
-                        // //NC 27251 HR beg
-                        // ProjectStructure.RESET;
-                        // ProjectStructure.FILTERGROUP(2);
-                        // ProjectStructure.SETRANGE(Template, FALSE);
-                        // ProjectStructure.SETFILTER("Development/Production", gcduERPC.GetBldPrjTypeFilter);
-                        // ProjectStructure.FILTERGROUP(0);
-                        // IF PAGE.RUNMODAL(0, ProjectStructure) = ACTION::LookupOK THEN BEGIN
-                        //   TemplateCode := ProjectStructure.Code;
-                        //   ValidateProject;
-                        // END;
-                        // //NC 27251 HR end
+                        GLSetup.Get();
+                        GLSetup.TestField("Project Dimension Code");
+                        lDimVal.Reset();
+                        lDimVal.SetRange("Dimension Code", GLSetup."Project Dimension Code");
+                        if Page.RunModal(PAGE::"Dimension Values", lDimVal) = Action::LookupOK then begin
+                            TemplateCode := lDimVal.Code;
+                            ValidateProject();
+                        end;
                     end;
 
                     trigger OnValidate()
@@ -57,16 +56,16 @@ page 70143 "Forecast List Analisys"
                 {
                     ApplicationArea = All;
                     Caption = 'Date Filter';
-                    // trigger OnValidate()
-                    // var 
-                    //     ApplicationManagement: codeunit ApplicationManagement;
-                    // begin
-                    //     DateFilter1OnAfterValidate; //navnav;
-
-                    //     IF ApplicationManagement.MakeDateFilter(DateFilter1) = 0 THEN;
-                    //     GLAccBudgetBuf.SETFILTER("Date Filter",DateFilter1);
-                    //     DateFilter1 := GLAccBudgetBuf.GETFILTER("Date Filter");
-                    // end;
+                    trigger OnValidate()
+                    var
+                        FltHelpTrigs: codeunit "Filter Helper Triggers";
+                    begin
+                        FltHelpTrigs.MakeDateFilter(DateFilter1);
+                        GLAccBudgetBuf.SETFILTER("Date Filter", DateFilter1);
+                        DateFilter1 := GLAccBudgetBuf.GETFILTER("Date Filter");
+                        Rec.SetFilter(Date, DateFilter1);
+                        CurrPage.Update(false);
+                    end;
 
 
                 }
@@ -76,22 +75,23 @@ page 70143 "Forecast List Analisys"
                     ApplicationArea = All;
                     Caption = 'COST PLACE';
                     trigger OnLookup(var Text: text): boolean
+                    var
+                        lDimVal: Record "Dimension Value";
                     begin
-                        // gvBuildingTurn.SETRANGE("Building project Code", "Project Code");
-                        // IF gvBuildingTurn.FINDFIRST THEN BEGIN
-                        //     IF PAGE.RUNMODAL(PAGE::"Dev Building turn", gvBuildingTurn) = ACTION::LookupOK THEN BEGIN
-                        //         CostPlaceFlt := gvBuildingTurn.Code;
-                        //         SETFILTER("Building Turn", CostPlaceFlt);
-                        //         CurrPage.UPDATE;
-                        //         CurrPage.UPDATECONTROLS;
-                        //     END;
-                        // END;
+                        lDimVal.Reset();
+                        lDimVal.SetRange("Global Dimension No.", 1);
+                        lDimVal.SetFilter("Project Code", TemplateCode);
+                        if Page.RunModal(PAGE::"Dimension Values", lDimVal) = Action::LookupOK then begin
+                            CostPlaceFlt := lDimVal.Code;
+                            Rec.SetFilter("Shortcut Dimension 1 Code", CostPlaceFlt);
+                            CurrPage.Update(false);
+                        end;
                     end;
 
                     trigger OnValidate()
                     begin
-                        // CostPlaceFltOnAfterValidate; //navnav;
-
+                        Rec.SetFilter("Shortcut Dimension 1 Code", CostPlaceFlt);
+                        CurrPage.Update(false);
                     end;
 
 
@@ -102,36 +102,21 @@ page 70143 "Forecast List Analisys"
                     ApplicationArea = All;
                     Caption = 'COST CODE';
                     trigger OnValidate()
-                    var
-                        _PSL: record "Projects Structure Lines";
                     begin
-                        // CostCodeFltOnAfterValidate; //navnav;
-
-                        // //NC 37278 17-09-2019 HR beg
-                        // IF CostCodeFlt <> '' THEN BEGIN
-                        //     _PSL.SETRANGE("Project Code", "Project Code");
-                        //     _PSL.SETRANGE(Version, GetDefVersion1(TemplateCode));
-                        //     _PSL.SETRANGE("Structure Post Type", _PSL."Structure Post Type"::Posting);
-                        //     _PSL.SETFILTER(Code, CostCodeFlt);
-                        //     IF _PSL.ISEMPTY THEN
-                        //         ERROR('Статья бюджета %1 не существует', CostCodeFlt);
-                        // END;
-                        // //NC 37278 17-09-2019 HR end
+                        Rec.SetFilter("Shortcut Dimension 2 Code", CostCodeFlt);
+                        CurrPage.Update(false);
                     end;
 
                     trigger OnLookup(var Text: text): boolean
+                    var
+                        lDimVal: Record "Dimension Value";
                     begin
-                        grProjectsStructureLines1.SETRANGE("Project Code", "Project Code");
-                        grProjectsStructureLines1.SETRANGE(Version, GetDefVersion1(TemplateCode));
-                        grProjectsStructureLines1.SETRANGE("Structure Post Type", grProjectsStructureLines1."Structure Post Type"::Posting);
-                        IF grProjectsStructureLines1.FINDFIRST THEN BEGIN
-                            IF grProjectsStructureLines1.GET("Project Code", "Analysis Type", "Version Code", "Line No.") THEN;
-
-                            IF PAGE.RUNMODAL(PAGE::"Projects Article List", grProjectsStructureLines1) = ACTION::LookupOK THEN BEGIN
-                                CostCodeFlt := grProjectsStructureLines1.Code;
-                                SETFILTER("Shortcut Dimension 2 Code", CostCodeFlt);
-                                CurrPage.UPDATE;
-                            END;
+                        lDimVal.Reset();
+                        lDimVal.SetRange("Global Dimension No.", 2);
+                        IF PAGE.RUNMODAL(PAGE::"Dimension Values", lDimVal) = ACTION::LookupOK THEN BEGIN
+                            CostCodeFlt := lDimVal.Code;
+                            Rec.SETFILTER("Shortcut Dimension 2 Code", CostCodeFlt);
+                            CurrPage.UPDATE;
                         END;
                     end;
 
@@ -144,8 +129,7 @@ page 70143 "Forecast List Analisys"
                     Caption = 'Overdue';
                     trigger OnValidate()
                     begin
-                        // OverdueOnAfterValidate; //navnav;
-
+                        setOverdueFlt();
                     end;
 
 
@@ -157,8 +141,7 @@ page 70143 "Forecast List Analisys"
                     Caption = 'Overdue on Date';
                     trigger OnValidate()
                     begin
-                        // gDateOnAfterValidate; //navnav;
-
+                        setOverdueFlt();
                     end;
 
 
@@ -171,8 +154,7 @@ page 70143 "Forecast List Analisys"
                     Caption = 'Don''t show zero amount lines';
                     trigger OnValidate()
                     begin
-                        // HideZeroAmountLineOnAfterValidate; //navnav;
-
+                        BuildView();
                     end;
 
 
@@ -509,6 +491,7 @@ page 70143 "Forecast List Analisys"
                     Clear(CreateSTPrBEntPage);
                     CreateSTPrBEntPage.SetProjBudEntry(Rec);
                     CreateSTPrBEntPage.RunModal();
+                    CurrPage.update(false);
                 end;
             }
             action(DeleteSTEntries)
@@ -630,6 +613,35 @@ page 70143 "Forecast List Analisys"
         TEXT0014: Label 'You are not allowed to copy actual operations.';
         HideZeroAmountLine: boolean;
 
+    trigger OnOpenPage()
+    begin
+        HideZeroAmountLine := true;
+        BuildView();
+        if gDate = 0D then
+            gDate := Today;
+        setOverdueFlt();
+    end;
+
+    local procedure setOverdueFlt()
+    begin
+        if Overdue then begin
+            Rec.SetFilter(Date, '<%1', gDate);
+            Rec.SetRange(Close, false);
+        end else begin
+            Rec.SetRange(Date);
+            Rec.SetRange(Close);
+        end;
+        CurrPage.Update(false);
+    end;
+
+    local procedure BuildView();
+    begin
+        if HideZeroAmountLine then
+            Rec.SetFilter(Amount, '<>0')
+        else
+            Rec.SetRange(Amount);
+    end;
+
     local procedure TemplateCodeOnAfterValidate()
     begin
         ValidateProject;
@@ -637,6 +649,8 @@ page 70143 "Forecast List Analisys"
     end;
 
     procedure ValidateProject()
+    var
+        lDimVal: Record "Dimension Value";
     begin
         //NC 27251 HR beg
         // IF TemplateCode = '' THEN
@@ -650,15 +664,19 @@ page 70143 "Forecast List Analisys"
         //   TemplateDescription:='';
         //   CalcType:=0;
         // END;
+        GLSetup.Get();
+        GLSetup.TestField("Project Dimension Code");
+        if lDimVal.Get(GLSetup."Project Dimension Code", TemplateCode) then
+            TemplateDescription := lDimVal.Name;
 
         // //SETRANGE("Project Code");
         // //FILTERGROUP(2);
-        // Rec.SETFILTER("Project Code", TemplateCode);
+        Rec.SETFILTER("Project Code", TemplateCode);
         // //FILTERGROUP(0);
 
 
-        // IF Rec.FIND('-') THEN;
-        // CurrPage.UPDATE(FALSE); 
+        IF Rec.FIND('-') THEN;
+        CurrPage.UPDATE(FALSE);
         //NC 27251 HR end
     end;
 

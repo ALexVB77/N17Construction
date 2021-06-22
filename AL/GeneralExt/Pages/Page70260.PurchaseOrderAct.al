@@ -351,6 +351,22 @@ page 70260 "Purchase Order Act"
                 }
             }
         }
+        area(factboxes)
+        {
+            part(Control23; "Pending Approval FactBox")
+            {
+                ApplicationArea = All;
+                SubPageLink = "Table ID" = CONST(38),
+                              "Document Type" = FIELD("Document Type"),
+                              "Document No." = FIELD("No.");
+                Visible = OpenApprovalEntriesExistForCurrUser;
+            }
+            part(ApprovalFactBox; "Approval FactBox")
+            {
+                ApplicationArea = All;
+                Visible = true;
+            }
+        }
     }
 
     actions
@@ -453,6 +469,7 @@ page 70260 "Purchase Order Act"
                         DocumentAttachmentDetails.RunModal;
                     end;
                 }
+                /*
                 action(ChangeLog)
                 {
                     ApplicationArea = All;
@@ -471,6 +488,25 @@ page 70260 "Purchase Order Act"
                         lrChangeLE.SETRANGE("Primary Key Field 2 Value", Rec."No.");
                         IF NOT lrChangeLE.IsEmpty THEN
                             Page.RUNMODAL(Page::"Change Log Entries", lrChangeLE);
+                    end;
+                }
+                */
+                action(Approvals)
+                {
+                    AccessByPermission = TableData "Approval Entry" = R;
+                    ApplicationArea = Suite;
+                    Caption = 'Approvals';
+                    Image = Approvals;
+                    Promoted = true;
+                    PromotedCategory = Category4;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    var
+                        WorkflowsEntriesBuffer: Record "Workflows Entries Buffer";
+                    begin
+                        WorkflowsEntriesBuffer.RunWorkflowEntriesPage(
+                            RecordId, DATABASE::"Purchase Header", "Document Type".AsInteger(), "No.");
                     end;
                 }
                 action(PaymentInvoices)
@@ -574,8 +610,12 @@ page 70260 "Purchase Order Act"
                     //Visible = OpenApprovalEntriesExistForCurrUser;
 
                     trigger OnAction()
+                    var
+                        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
                     begin
-                        PaymentOrderMgt.ApprovePurchaseOrderAct(Rec);
+                        // PaymentOrderMgt.ApprovePurchaseOrderAct(Rec);
+                        if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
+                            ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
                     end;
                 }
                 action(Reject)
@@ -617,6 +657,7 @@ page 70260 "Purchase Order Act"
                         Message('Pressed Delegate');
                     end;
                 }
+
                 action(Comment)
                 {
                     ApplicationArea = Suite;
@@ -655,7 +696,12 @@ page 70260 "Purchase Order Act"
     end;
 
     trigger OnAfterGetCurrRecord()
+    var
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
     begin
+
+        OpenApprovalEntriesExistForCurrUser := ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId);
+
         UserSetup.GET(UserId);
 
         ActTypeEditable := Rec."Problem Document" AND (Rec."Status App Act" = Rec."Status App Act"::Controller);
@@ -725,6 +771,7 @@ page 70260 "Purchase Order Act"
         ShowDocEnabled: Boolean;
         ProblemTypeEnabled: Boolean;
         LocationCodeShowMandatory: Boolean;
+        OpenApprovalEntriesExistForCurrUser: Boolean;
         CreateAppConfText: Label 'Do you want to create a payment invoice from Act %1?';
 
     local procedure SaveInvoiceDiscountAmount()
