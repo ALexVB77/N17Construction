@@ -39,6 +39,8 @@ codeunit 81521 "Workflow Response Handling Ext"
                 CreateApprovalRequests(Variant, ResponseWorkflowStepInstance);
             ShowPurchActApproveMessageCode:
                 ShowPurchActApproveMessage(Variant, ResponseWorkflowStepInstance);
+            ChangePurchActStatusCode:
+                ChangePurchActStatus(Variant, ResponseWorkflowStepInstance);
             else
                 exit;
         end;
