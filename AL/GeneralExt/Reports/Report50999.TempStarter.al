@@ -37,13 +37,21 @@ report 50999 "TempStarter"
             0,
             'Вывод сообщения о изменении статуса для Акта, КС-2', 'GROUP 0');
 
-        WSA.SetRange("Response Function Name", WRHExt.CreateApprovalRequestsActCode);
-        WSA.ModifyAll("Approver Type", WSA."Approver Type"::Approver);
-        WSA.ModifyAll("Approver Limit Type", WSA."Approver Limit Type"::"Specific Approver");
+        WRH.AddResponseToLibrary(
+            WRHExt.ChangePurchActStatusCode(),
+            0,
+            'Проверка и изменение статуса для Акта, КС-2', 'GROUP 0');
+
+        // WSA.SetRange("Response Function Name", WRHExt.CreateApprovalRequestsActCode);
+        // WSA.ModifyAll("Approver Type", WSA."Approver Type"::Approver);
+        // WSA.ModifyAll("Approver Limit Type", WSA."Approver Limit Type"::"Specific Approver");
 
         WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRHExt.ShowPurchActApproveMessageCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRHExt.ChangePurchActStatusCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+
+        //WEH.AddEventPredecessor(WEH.RunWorkflowOnApproveApprovalRequestCode(), WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
 
     end;
 }
