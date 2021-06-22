@@ -62,6 +62,7 @@ codeunit 81521 "Workflow Response Handling Ext"
         MessageText: Text;
     begin
         RecRef.GetTable(Variant);
+        RecRef.SetTable(PurchaseHeader);
         MessageText := ERPCFunction.GetActStatusMessage(PurchaseHeader);
         Message(MessageText);
     end;
