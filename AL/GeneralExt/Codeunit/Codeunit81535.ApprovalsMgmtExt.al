@@ -69,10 +69,11 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
 
         PurchHeader.Get(ApprovalEntryArgument."Document Type", ApprovalEntryArgument."Document No.");
-        if PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker then begin
-            PurchHeader.TestField(Controller);
-            CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
-        end;
+        // DEBUG
+        //if PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker then begin
+        PurchHeader.TestField(Controller);
+        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
+        //end;
 
         // DEBUG
         // CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, ERPCFunction.GetActApprover(PurchHeader));
