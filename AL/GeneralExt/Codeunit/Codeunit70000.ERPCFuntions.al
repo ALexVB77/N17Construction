@@ -1008,14 +1008,20 @@ codeunit 70000 "ERPC Funtions"
     end;
 
     procedure GetActApprover(PurchHeader: Record "Purchase Header"): code[50];
+    var
+        LocText001: label 'Unable to identify an approver for %1 status.';
     begin
         PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Checker:
                 begin
-                    PurchHeader.testfield("Process User");
+                    PurchHeader.TestField("Process User");
                     EXIT(PurchHeader."Process User");
                 end;
+
+
+            else
+                Error(LocText001, PurchHeader."Status App Act");
         end;
     end;
 
