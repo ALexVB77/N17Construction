@@ -4455,6 +4455,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
         </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 3981502651" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have sufficient rights to perform the action!</source>
+          <target>Недостаточно прав для выполнения действия!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0015</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Method 877441836 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deleting long-term entries denied!</source>
           <target>Нельзя удалять долгосрочные операции!</target>

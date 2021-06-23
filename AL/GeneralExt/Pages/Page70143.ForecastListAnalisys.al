@@ -488,6 +488,9 @@ page 70143 "Forecast List Analisys"
                 var
                     CreateSTPrBEntPage: Page "Create ST Proj Budget Entries";
                 begin
+                    US.Get(UserId);
+                    if not (US."CF Allow Short Entries Edit") then
+                        Error(TEXT0015);
                     Clear(CreateSTPrBEntPage);
                     CreateSTPrBEntPage.SetProjBudEntry(Rec);
                     CreateSTPrBEntPage.RunModal();
@@ -611,6 +614,7 @@ page 70143 "Forecast List Analisys"
         TEXT0010: Label 'Unlink payment from supplier and contract (move to level 1)?';
         TEXT0011: Label 'Operations cannot be deleted!';
         TEXT0014: Label 'You are not allowed to copy actual operations.';
+        TEXT0015: Label 'You do not have sufficient rights to perform the action!';
         HideZeroAmountLine: boolean;
 
     trigger OnOpenPage()
@@ -692,7 +696,12 @@ page 70143 "Forecast List Analisys"
         lPrBudEntry: Record "Projects Budget Entry";
         lTextErr001: Label 'Deleting long-term entries denied!';
         lTextErr002: Label 'Entry %1 is linked to payment document %2. Deleting denied!';
+
     begin
+        US.Get(UserId);
+        if not (US."CF Allow Long Entries Edit" or US."CF Allow Short Entries Edit") then
+            Error(TEXT0015);
+
         if pPrBudEntry.GetFilters = '' then
             exit;
         if pPrBudEntry.FindSet() then
