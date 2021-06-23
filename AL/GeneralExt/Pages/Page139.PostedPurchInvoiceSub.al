@@ -1,15 +1,7 @@
-pageextension 92451 "Item Receipt Subform (Ext)" extends "Item Receipt Subform"
+pageextension 80139 "Posted Purch. Invoice Sub. GE" extends "Posted Purch. Invoice Subform"
 {
     layout
     {
-        addafter(Quantity)
-        {
-            field("Qty. per Unit of Measure"; Rec."Qty. per Unit of Measure")
-            {
-                ApplicationArea = All;
-                Description = 'NC 50113 EP';
-            }
-        }
         addLast(Content)
         {
             group(UserControlTimer)
@@ -20,13 +12,13 @@ pageextension 92451 "Item Receipt Subform (Ext)" extends "Item Receipt Subform"
                     trigger TimerElapsed()
                     var
                         docNo: text;
-                        postedRcpt: Boolean;
+                        corr: Boolean;
                     begin
                         currpage.D365BCPingPong.StopTimer();
-                        if ism.getBool('p50030_PostedRcpt', postedRcpt, false) then begin
-                            if not postedRcpt then begin
-                                ism.delValue('p50030_PostedRcpt');
-                                ism.getString('p50030_DocNo', docNo, true);
+                        if ism.getBool('p50031_Corr', corr, false) then begin
+                            if not corr then begin
+                                ism.delValue('p50031_Corr');
+                                ism.getString('p50031_DocNo', docNo, true);
                                 filterRecords(docNo);
                             end;
                         end;
@@ -42,6 +34,7 @@ pageextension 92451 "Item Receipt Subform (Ext)" extends "Item Receipt Subform"
         if (listenEvents) then begin
             CurrPage.D365BCPingPong.SetTimerInterval(500);
             CurrPage.D365BCPingPong.StartTimer();
+
             filterRecords('~!@!~');
         end;
 

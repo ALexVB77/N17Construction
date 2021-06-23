@@ -1,4 +1,4 @@
-tableextension 80124 "Purch. Cr. Memo Hdr. (Ext)" extends "Purch. Cr. Memo Hdr."
+tableextension 80122 "Purch. Inv. Header (Ext)" extends "Purch. Inv. Header"
 {
     fields
     {
@@ -8,12 +8,6 @@ tableextension 80124 "Purch. Cr. Memo Hdr. (Ext)" extends "Purch. Cr. Memo Hdr."
             DataClassification = CustomerContent;
             TableRelation = "Giv. Prod. Order";
         }
-        field(70012; "Credit-Memo Reason"; Text[100])
-        {
-            Caption = 'Credit-Memo Reason';
-            TableRelation = "Credit-Memo Reason";
-            Description = '51462';
-        }
     }
     procedure GivProdOrderCheckDocDim(RcptActNo: code[20]; RcptActPosted: boolean)
     var
@@ -22,18 +16,17 @@ tableextension 80124 "Purch. Cr. Memo Hdr. (Ext)" extends "Purch. Cr. Memo Hdr."
         DocDimHdrActPosted: Record "Dimension Set Entry";
         DocDimHdr: Record "Dimension Set Entry";
         DocDimLine: Record "Dimension Set Entry";
-        DocLine: Record "Purch. Cr. Memo Line";
+        DocLine: Record "Purch. Inv. Line";
         i: Integer;
         DimCode: Code[20];
         IsError: Boolean;
         Dimension: Record Dimension;
         irh: Record "Item Receipt Header";
         idh: Record "Item Document Header";
-        pcmh: Record "Purch. Cr. Memo Hdr.";
-        pcml: Record "Purch. Cr. Memo Line";
+        pih: Record "Purch. Inv. Header";
+        pil: Record "Purch. Inv. Line";
         locLabel001: label 'Измерение "%1" в заголовке и в строке %2 счета %3 отличается';
         locLabel002: label 'Измерение "%1" в акте оприходования %2 и в счете %3 отличается';
-
     begin
 
         // SWC816 AK 120516 >>
@@ -55,7 +48,7 @@ tableextension 80124 "Purch. Cr. Memo Hdr. (Ext)" extends "Purch. Cr. Memo Hdr."
             DocDimHdrActUnposted.SETRANGE("Document No.", RcptActNo);
             */
         END;
-        pcmh.get("No.");
+        pih.get("No.");
         /*
         DocDimHdr.RESET;
         DocDimHdr.SETRANGE("Table ID", DATABASE::"Purch. Inv. Header");
@@ -83,7 +76,7 @@ tableextension 80124 "Purch. Cr. Memo Hdr. (Ext)" extends "Purch. Cr. Memo Hdr."
 
                     Dimension.GET(DimCode);
 
-                    if (not DocDimHdr.get(pcmh."Dimension Set ID", DimCode)) then DocDimHdr."Dimension Value Code" := '';
+                    if (not DocDimHdr.get(pih."Dimension Set ID", DimCode)) then DocDimHdr."Dimension Value Code" := '';
                     IF NOT DocDimLine.get(DocLine."Dimension Set ID", DimCode) THEN
                         DocDimLine."Dimension Value Code" := '';
 
@@ -130,5 +123,4 @@ tableextension 80124 "Purch. Cr. Memo Hdr. (Ext)" extends "Purch. Cr. Memo Hdr."
               DocLine.NEXT = 0;
         // SWC816 AK 120516 <<
     end;
-
 }

@@ -157,6 +157,17 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
 
     // t 12450 <<
+    // cu 241 >>
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post", 'OnBeforeCode', '', false, false)]
+    local procedure OnBeforeCode(var ItemJournalLine: Record "Item Journal Line"; var HideDialog: Boolean; var SuppressCommit: Boolean; var IsHandled: Boolean);
+    var
+        ism: Codeunit "Isolated Storage Management GE";
+    begin
+        ism.getBool('NotAsk', HideDialog, true);
+    end;
+
+    // cu 241 <<
+
     // cu 367 >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::CheckManagement, 'OnBeforeVoidCheckGenJnlLine2Modify', '', false, false)]
     local procedure OnBeforeVoidCheckGenJnlLine2Modify(var GenJournalLine2: Record "Gen. Journal Line"; GenJournalLine: Record "Gen. Journal Line");
