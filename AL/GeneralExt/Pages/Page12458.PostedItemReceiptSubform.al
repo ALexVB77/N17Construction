@@ -1,15 +1,7 @@
-pageextension 92451 "Item Receipt Subform (Ext)" extends "Item Receipt Subform"
+pageextension 92458 "Posted Item Receipt Sub. GE" extends "Posted Item Receipt Subform"
 {
     layout
     {
-        addafter(Quantity)
-        {
-            field("Qty. per Unit of Measure"; Rec."Qty. per Unit of Measure")
-            {
-                ApplicationArea = All;
-                Description = 'NC 50113 EP';
-            }
-        }
         addLast(Content)
         {
             group(UserControlTimer)
@@ -24,7 +16,7 @@ pageextension 92451 "Item Receipt Subform (Ext)" extends "Item Receipt Subform"
                     begin
                         currpage.D365BCPingPong.StopTimer();
                         if ism.getBool('p50030_PostedRcpt', postedRcpt, false) then begin
-                            if not postedRcpt then begin
+                            if postedRcpt then begin
                                 ism.delValue('p50030_PostedRcpt');
                                 ism.getString('p50030_DocNo', docNo, true);
                                 filterRecords(docNo);

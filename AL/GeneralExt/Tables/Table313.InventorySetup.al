@@ -16,6 +16,36 @@ tableextension 80313 "Inventory Setup (Ext)" extends "Inventory Setup"
             Description = 'SWC816, NC 51411 EP';
             TableRelation = Location;
         }
+        field(50002; "Manuf. Gen. Bus. Posting Gr."; code[10])
+        {
+            Caption = 'Manuf. Gen. Bus. Posting Gr.';
+            TableRelation = "Gen. Business Posting Group";
+
+        }
+        field(50003; "Manuf. Document Nos."; Code[10])
+        {
+            Caption = 'Manuf. Document Nos.';
+            DataClassification = CustomerContent;
+            TableRelation = "No. Series";
+        }
+        field(50004; "Manuf. Alloc. Source Code"; code[10])
+        {
+            Caption = 'Manuf. Alloc. Source Code';
+            DataClassification = CustomerContent;
+            TableRelation = "Source Code";
+        }
+        field(50005; "Manuf. Adjmt Source Code"; code[10])
+        {
+            Caption = 'Manuf. Adjmt Source Code';
+            DataClassification = CustomerContent;
+            TableRelation = "Source Code";
+        }
+        field(50006; "Manuf. Alloc. Reverse SC"; code[10])
+        {
+            Caption = 'Manuf. Alloc. Reverse SC';
+            DataClassification = CustomerContent;
+            TableRelation = "Source Code";
+        }
         field(50007; "Use Giv. Production Func."; Boolean)
         {
             // TODO: перенести зависимости в t12450, t12453, t12454, cu12453 @eapomazkov

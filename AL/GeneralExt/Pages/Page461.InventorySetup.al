@@ -38,5 +38,31 @@ pageextension 80461 "Inventory Setup (Ext)" extends "Inventory Setup"
                 ApplicationArea = All;
             }
         }
+        addafter("Posted Invt. Pick Nos.")
+        {
+            field("Manuf. Document Nos."; Rec."Manuf. Document Nos.")
+            {
+                ApplicationArea = All;
+            }
+        }
+        addafter("Inbound Whse. Handling Time")
+        {
+            field("Manuf. Gen. Bus. Posting Gr."; "Manuf. Gen. Bus. Posting Gr.")
+            {
+                ApplicationArea = all;
+            }
+            field("Manuf. Alloc. Source Code"; rec."Manuf. Alloc. Source Code")
+            {
+                ApplicationArea = all;
+            }
+            field("Manuf. Alloc. Reverse SC"; rec."Manuf. Alloc. Reverse SC")
+            {
+                ApplicationArea = all;
+            }
+            field("Manuf. Adjmt Source Code"; rec."Manuf. Adjmt Source Code")
+            {
+                ApplicationArea = all;
+            }
+        }
     }
 }
