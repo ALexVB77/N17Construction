@@ -1,3 +1,8 @@
+/*
+
+GG: Переносить через учет остатков!
+
+
 delete from [dbo].[Bonava$FA Ledger Entry$437dbf0e-84ff-417a-965d-ed2bb9650972]
 
 insert into [dbo].[Bonava$FA Ledger Entry$437dbf0e-84ff-417a-965d-ed2bb9650972]
@@ -195,3 +200,5 @@ insert into [dbo].[Bonava$FA Ledger Entry$437dbf0e-84ff-417a-965d-ed2bb9650972]
       ,[Depreciation Group]
       ,[Depr_ Bonus Recovery Date]
  FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$FA Ledger Entry]
+
+ */
