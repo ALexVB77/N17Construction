@@ -158,21 +158,11 @@ page 70001 "Purchase Order Subform App"
                 {
                     ApplicationArea = All;
                     ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
-
-                    trigger OnValidate()
-                    begin
-                        PaymentOrderMgt.FillPurchLineApproverFromGlobalDim(1, "Shortcut Dimension 1 Code", Rec, false);
-                    end;
                 }
                 field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
                     ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
-
-                    trigger OnValidate()
-                    begin
-                        PaymentOrderMgt.FillPurchLineApproverFromGlobalDim(2, "Shortcut Dimension 2 Code", Rec, false);
-                    end;
                 }
                 field("Forecast Entry"; Rec."Forecast Entry")
                 {
@@ -362,7 +352,6 @@ page 70001 "Purchase Order Subform App"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
         UpdateTypeText();
-        PaymentOrderMgt.SetPurchLineApprover(Rec, false);
     end;
 
     trigger OnModifyRecord(): Boolean
@@ -390,7 +379,6 @@ page 70001 "Purchase Order Subform App"
                 grInventorySetup.TESTFIELD("Temp Item Code");
                 VALIDATE("No.", grInventorySetup."Temp Item Code");
             END;
-            PaymentOrderMgt.SetPurchLineApprover(Rec, true);
         END;
     end;
 

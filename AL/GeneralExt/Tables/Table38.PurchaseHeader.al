@@ -22,7 +22,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         }
         field(60088; "Original Company"; Code[2])
         {
-            Description = 'NC 51432 AB';
+            Description = 'NC 51432 AP';
             Caption = 'Original Company';
         }
         field(70002; "Process User"; Code[50])
@@ -30,15 +30,18 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             TableRelation = "User Setup";
             Description = 'NC 51373 AB';
             Caption = 'Process User';
-            trigger OnValidate()
-            begin
-                UpdatePurchLinesByFieldNo(FIELDNO("Process User"), CurrFieldNo <> 0);
-            end;
+            Editable = false;
+
+            // trigger OnValidate()
+            // begin
+            //     UpdatePurchLinesByFieldNo(FIELDNO("Process User"), CurrFieldNo <> 0);
+            // end;
         }
         field(70003; "Date Status App"; Date)
         {
             Description = 'NC 51373 AB';
             Caption = 'Date Status Approval';
+            Editable = false;
         }
         field(70005; "Exists Attachment"; Boolean)
         {
@@ -46,6 +49,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             CalcFormula = Exist("Document Attachment" WHERE("Table ID" = CONST(38), "Document Type" = FIELD("Document Type"), "No." = FIELD("No.")));
             Description = 'NC 51373 AB';
             Caption = 'Exists Attachment';
+            Editable = false;
         }
         field(70007; "Payments Amount"; Decimal)
         {
@@ -139,6 +143,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             TableRelation = "User Setup"."User ID" WHERE("Status App Act" = CONST(1));
             ValidateTableRelation = false;
+            Editable = false;
         }
         field(70016; Paid; Boolean)
         {
@@ -207,38 +212,36 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             Caption = 'KBK Code';
         }
-        field(70023; Approver; Code[50])
-        {
-            Description = 'NC 51373 AB';
-            Caption = 'Approver';
-            TableRelation = "User Setup";
-        }
 
-        field(70024; "Pre-Approver"; Code[50])
-        {
-            Description = 'NC 51373 AB';
-            Caption = 'Pre-Approver';
-            TableRelation = "User Setup";
-        }
+        // NC AB:
+        // поля Approver и Pre-Approver реализуем через функции
+        // field(70023; Approver; Code[50])
+        // {
+        //     Description = 'NC 51373 AB';
+        //     Caption = 'Approver';
+        //     TableRelation = "User Setup";
+        //     Editable = false;
+        // }
+        // field(70024; "Pre-Approver"; Code[50])
+        // {
+        //     Description = 'NC 51373 AB';
+        //     Caption = 'Pre-Approver';
+        //     TableRelation = "User Setup";
+        // }
+        // Next Approver - не нужен
+        // field(70025; "Next Approver"; Code[50])
+        // {
+        //     Description = 'NC 51373 AB';
+        //     Caption = 'Next Approver';
+        //     TableRelation = "User Setup";
+        // }
+        // поле Approver реализуем через функцию
+        // field(70026; PreApprover; Boolean)
+        // {
+        //    Description = 'NC 51373 AB';
+        //    Caption = 'Exist Pre-Approver';
+        // }
 
-        field(70025; "Next Approver"; Code[50])
-        {
-            Description = 'NC 51373 AB';
-            Caption = 'Next Approver';
-            TableRelation = "User Setup";
-        }
-
-        field(70026; PreApprover; Boolean)
-        {
-            Description = 'NC 51373 AB';
-            Caption = 'Exist Pre-Approver';
-
-            trigger OnValidate()
-            begin
-                IF NOT PreApprover THEN
-                    "Pre-Approver" := '';
-            end;
-        }
         field(70027; "IW Planned Repayment Date"; Date)
         {
             Description = 'NC 51378 AB';
@@ -288,26 +291,28 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             TableRelation = "User Setup"."User ID" WHERE("Status App Act" = CONST(Estimator));
             ValidateTableRelation = false;
         }
-        field(90005; Check; Option)
-        {
-            Caption = 'Check Status';
-            Description = 'NC 51373 AB';
-            //Caption = 'Проверека статус';
-            //OptionCaption = ' ,Контролер утвердил,Сметчик одобрил,Сметчик отклонил,Проверяющий одобрил,Проверяющий отклонил,Утверждающий одобрил,Утверждающий отклонил';
-            OptionCaption = ' ,Controler app,Estimator app,Estimator rej,Checker app,Checker rej,Approver app,Approver rej';
-            OptionMembers = " ","Controler app","Estimator app","Estimator rej","Checker app","Checker rej","Approver app","Approver rej";
 
-        }
+        // NC AB: не будем использовать
+        // field(90005; Check; Option)
+        // {
+        //     Caption = 'Check Status';
+        //     Description = 'NC 51373 AB';
+        //     OptionCaption = ' ,Controler app,Estimator app,Estimator rej,Checker app,Checker rej,Approver app,Approver rej';
+        //     OptionMembers = " ","Controler app","Estimator app","Estimator rej","Checker app","Checker rej","Approver app","Approver rej";
+        // }
+
         field(90006; "Invoice No."; Code[20])
         {
             Caption = 'Invoice No.';
             Description = 'NC 51373 AB';
         }
-        field(90008; "Check Approver"; Boolean)
-        {
-            Caption = 'Checked by Approver';
-            Description = 'NC 51374 AB';
-        }
+
+        // NC AB: не будем использовать
+        // field(90008; "Check Approver"; Boolean)
+        // {
+        //     Caption = 'Checked by Approver';
+        //     Description = 'NC 51374 AB';
+        // }
 
         field(90009; "Receive Account"; Boolean)
         {

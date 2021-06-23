@@ -176,30 +176,17 @@ page 70000 "Purchase Order App"
                         CurrPage.PurchaseOrderAppLines.PAGE.UpdateForm(true);
                     end;
                 }
-                field("PreApprover"; Rec."PreApprover")
+                field("Pre-Approver"; PaymentOrderMgt.GetPurchActPreApproverFromDim("Dimension Set ID"))
                 {
                     ApplicationArea = All;
-                    Editable = AllApproverEditable;
+                    Caption = 'Pre-Approver';
+                    Editable = false;
                 }
-                field("Pre-Approver"; Rec."Pre-Approver")
+                field("Approver"; PaymentOrderMgt.GetPurchActApproverFromDim("Dimension Set ID"))
                 {
                     ApplicationArea = All;
-                    Editable = Rec.PreApprover AND AllApproverEditable;
-
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        PreApproveOnLookup();
-                    end;
-                }
-                field("Approver"; Rec."Approver")
-                {
-                    ApplicationArea = All;
-                    Editable = AllApproverEditable;
-
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        ApproveOnLookup();
-                    end;
+                    Caption = 'Approver';
+                    Editable = false;
                 }
                 field("Agreement No."; Rec."Agreement No.")
                 {
@@ -552,8 +539,6 @@ page 70000 "Purchase Order App"
         END;
         IF "Status App" = "Status App"::Request THEN
             AppButtonEnabled := TRUE;
-
-        AllApproverEditable := "Status App" = "Status App"::Checker;
     end;
 
     trigger OnDeleteRecord(): Boolean
@@ -577,7 +562,6 @@ page 70000 "Purchase Order App"
         gcERPC: Codeunit "ERPC Funtions";
         UserMgt: Codeunit "User Setup Management";
         PaymentOrderMgt: Codeunit "Payment Order Management";
-        AllApproverEditable: Boolean;
         TextDelError: Label 'You cannot delete Purchase Order Act %1';
         ProblemType: text;
         PaymentTypeEditable: Boolean;
@@ -601,107 +585,5 @@ page 70000 "Purchase Order App"
         if Rec."Vendor Bank Account No." <> '' then
             if VendorBankAccount.get("Vendor Bank Account No.") then
                 exit(VendorBankAccount.Name + VendorBankAccount."Name 2");
-    end;
-
-    local procedure PreApproveOnLookup()
-    begin
-
-        Message('Вызов PreApproveOnLookup');
-
-        /*
-        AT.RESET;
-        AT.SETRANGE("Document Type",AT."Document Type"::Order);
-        AT.SETRANGE("Table ID",DATABASE::"Purchase Header");
-        AT.SETRANGE(Enabled,TRUE);
-        IF AT.FINDFIRST THEN
-        BEGIN
-        AddApp.RESET;
-        AddApp.SETCURRENTKEY("Approver ID","Shortcut Dimension 1 Code");
-        AddApp.SETRANGE("Approval Code",AT."Approval Code");
-        AddApp.SETRANGE("Approval Type",AT."Approval Type");
-        AddApp.SETRANGE("Document Type",AT."Document Type");
-        AddApp.SETRANGE("Limit Type",AT."Limit Type");
-        IF AddApp.FIND('-') THEN
-        REPEAT
-        IF TempApp<>AddApp."Approver ID" THEN
-        AddApp.MARK(TRUE);
-        TempApp:=AddApp."Approver ID";
-        UNTIL AddApp.NEXT=0;
-
-        AddApp.MARKEDONLY(TRUE);
-        AddApp.SETFILTER("Approver ID",'<>%1',USERID);
-        IF AddApp.FINDFIRST THEN;
-
-        IF FORM.RUNMODAL(70067,AddApp)=ACTION::LookupOK THEN
-        BEGIN
-        IF CurrForm.EDITABLE AND ("Status App"="Status App"::Checker) THEN
-        BEGIN
-        IF (Approver<>'') AND (Approver=AddApp."Approver ID") THEN ERROR(Text003);
-
-        "Pre-Approver":=AddApp."Approver ID";
-        CurrForm.UPDATECONTROLS;
-        END;
-        END;
-        END;
-
-        */
-    end;
-
-    local procedure ApproveOnLookup()
-    begin
-
-        Message('Вызов ApproveOnLookup');
-
-        /*
-    AT.RESET;
-    AT.SETRANGE("Document Type",AT."Document Type"::Order);
-    AT.SETRANGE("Table ID",DATABASE::"Purchase Header");
-    AT.SETRANGE(Enabled,TRUE);
-    IF AT.FINDFIRST THEN
-    BEGIN
-
-    TempApp:='';
-    AddApp.RESET;
-    AddApp.SETCURRENTKEY("Approver ID","Shortcut Dimension 1 Code");
-    AddApp.SETRANGE("Approval Code",AT."Approval Code");
-    AddApp.SETRANGE("Approval Type",AT."Approval Type");
-    AddApp.SETRANGE("Document Type",AT."Document Type");
-    AddApp.SETRANGE("Limit Type",AT."Limit Type");
-    IF AddApp.FIND('-') THEN
-    REPEAT
-    IF TempApp<>AddApp."Approver ID" THEN
-    AddApp.MARK(TRUE);
-    TempApp:=AddApp."Approver ID";
-    UNTIL AddApp.NEXT=0;
-
-
-    AddApp.MARKEDONLY(TRUE);
-
-    // SWC1002 DD 13.02.17 >>
-    AddApp.SETRANGE("Approver ID",Approver);
-    IF AddApp.FINDFIRST THEN;
-    // SWC1002 DD 13.02.17 <<
-    AddApp.SETFILTER("Approver ID",'<>%1',USERID);
-    // SWC1002 DD 13.02.17 >>
-    //IF AddApp.FINDFIRST THEN;
-    // SWC1002 DD 13.02.17 <<
-
-    IF FORM.RUNMODAL(70067,AddApp)=ACTION::LookupOK THEN
-    BEGIN
-    IF CurrForm.EDITABLE AND ("Status App"="Status App"::Checker) THEN
-    BEGIN
-    IF ("Pre-Approver"<>'') AND ("Pre-Approver"=AddApp."Approver ID") THEN ERROR(Text003);
-    // SWC1002 DD 13.02.17 >>
-    //IF CheckLinesCostPlace(AddApp."Shortcut Dimension 1 Code") THEN
-    IF CheckLinesApprover(AddApp."Approver ID") THEN
-    // SWC1002 DD 13.02.17 <<
-        Approver:=AddApp."Approver ID";
-
-    CurrForm.UPDATECONTROLS;
-    END;
-    END;
-    END;
-    */
-
     end;
 }

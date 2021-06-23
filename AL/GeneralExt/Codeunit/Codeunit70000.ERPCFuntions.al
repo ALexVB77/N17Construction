@@ -719,6 +719,8 @@ codeunit 70000 "ERPC Funtions"
         Text132: label 'Approving employee %1 is missing!\The request is being transferred to the Substitute: %2';
     begin
 
+        /*    
+
         IF grPurchHeader."Location Document" THEN BEGIN
             grPurchHeader.TESTFIELD("Location Code");
             Location.GET(grPurchHeader."Location Code");
@@ -994,6 +996,7 @@ codeunit 70000 "ERPC Funtions"
             EXIT;
         END;
         // ------- App -> Payment  -------------- <<<<
+        */
 
     end;
 
@@ -1005,13 +1008,13 @@ codeunit 70000 "ERPC Funtions"
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Checker:
                 begin
-                    PurchHeader.TestField("Process User");
-                    exit(PurchHeader."Process User");
+                    // PurchHeader.TestField("Process User");
+                    // exit(PurchHeader."Process User");
                 end;
             PurchHeader."Status App Act"::Approve:
                 begin
-                    PurchHeader.TestField(Approver);
-                    exit(PurchHeader.Approver);
+                    // PurchHeader.TestField(Approver);
+                    // exit(PurchHeader.Approver);
                 end;
 
             else
