@@ -337,11 +337,7 @@ codeunit 70000 "ERPC Funtions"
     var
         TempPurchLine: Record "Purchase Line" temporary;
         TempVATAmountLine: Record "VAT Amount Line" temporary;
-        TotalPurchLine: Record "Purchase Line";
-        TotalPurchLineLCY: Record "Purchase Line";
         PurchPost: Codeunit "Purch.-Post";
-        VATAmount: Decimal;
-        VATAmountText: Text[30];
         ErrText001: label 'The invoice Amount including VAT in the header does not match the amount including VAT by lines!';
         ErrText002: label 'The VAT amount in the header does not match the VAT amount by lines!';
     begin
@@ -357,10 +353,10 @@ codeunit 70000 "ERPC Funtions"
         //   ERROR('Сумма счета без НДС в шапке не совпадает с Суммой без НДС по строкам!');
         PurchPost.GetPurchLines(PurchHeader, TempPurchLine, 0);
         TempPurchLine.CalcVATAmountLines(0, PurchHeader, TempPurchLine, TempVATAmountLine);
-        PurchPost.SumPurchLinesTemp(PurchHeader, TempPurchLine, 0, TotalPurchLine, TotalPurchLineLCY, VATAmount, VATAmountText);
-        IF PurchHeader."Invoice Amount Incl. VAT" <> TotalPurchLine."Amount Including VAT" THEN
+        TempPurchLine.UpdateVATOnLines(0, PurchHeader, TempPurchLine, TempVATAmountLine);
+        IF PurchHeader."Invoice Amount Incl. VAT" <> TempVATAmountLine.GetTotalAmountInclVAT() THEN
             ERROR(ErrText001);
-        IF PurchHeader."Invoice VAT Amount" <> (TotalPurchLine."Amount Including VAT" - TotalPurchLine."VAT Base Amount") THEN
+        IF PurchHeader."Invoice VAT Amount" <> TempVATAmountLine.GetTotalVATAmount() THEN
             ERROR(ErrText002);
     end;
 
