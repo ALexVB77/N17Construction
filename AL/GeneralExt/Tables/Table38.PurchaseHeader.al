@@ -303,6 +303,12 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Invoice No.';
             Description = 'NC 51373 AB';
         }
+        field(90008; "Check Approver"; Boolean)
+        {
+            Caption = 'Checked by Approver';
+            Description = 'NC 51374 AB';
+        }
+
         field(90009; "Receive Account"; Boolean)
         {
             Caption = 'Receive Account';

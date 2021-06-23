@@ -498,48 +498,46 @@ codeunit 50010 "Payment Order Management"
             gcERPC.CheckShortCutDim1(PurchaseHeader);
         //NC 40142 < DP
 
-        /*
-        // SWC1041 DD 27.04.2017 >>
-        Wnd.OPEN('Утверждение акта или кс-2...');
-        grPurchHeader.LOCKTABLE;
-        grAttachment.LOCKTABLE;
-        ApprovalEntry.LOCKTABLE;
-        PurchHeaderAdd.LOCKTABLE;
-        PL.LOCKTABLE;
-        // SWC1041 DD 27.04.2017 <<
-        */
+        // NC AB: пока отключим, назначение непонятно
+        // // SWC1041 DD 27.04.2017 >>
+        // Wnd.OPEN('Утверждение акта или кс-2...');
+        // grPurchHeader.LOCKTABLE;
+        // grAttachment.LOCKTABLE;
+        // ApprovalEntry.LOCKTABLE;
+        // PurchHeaderAdd.LOCKTABLE;
+        // PL.LOCKTABLE;
+        // // SWC1041 DD 27.04.2017 <<
 
         CheckEmptyLines(PurchaseHeader); //SWC380 AKA 290115
 
         IF PurchaseHeader."Status App Act" = PurchaseHeader."Status App Act"::Approve THEN BEGIN
-            ApprovalEntry.SETRANGE("Table ID", 38);
-            ApprovalEntry.SETRANGE("Document Type", ApprovalEntry."Document Type"::Order);
-            ApprovalEntry.SETRANGE("Document No.", PurchaseHeader."No.");
-            ApprovalEntry.SETRANGE("Approver ID", USERID);
-            ApprovalEntry.SETRANGE(Status, ApprovalEntry.Status::Open);
-            IF ApprovalEntry.FINDFIRST THEN BEGIN
-                /*
-                // DEBUG check later
-                    ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
-                    IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
-                        IF PurchaseHeader.GET(ApprovalEntry."Document Type", ApprovalEntry."Document No.") THEN BEGIN
-                            ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
-                            IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
-                            BEGIN                                                                     //SWC380 AKA 190115
-                                PurchaseHeader."Process User" := gcERPC.GetCurrentAppr(PurchaseHeader);
-                                PurchaseHeader."Date Status App" := TODAY;
-                                PurchaseHeader.MODIFY;
-                            END;                                                                      //SWC380 AKA 190115
-                        END;
-                    END;
-                */
-            END ELSE BEGIN
-                ApprovalEntry.SETFILTER(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Approved);
-                IF ApprovalEntry.FINDSET THEN
-                    MESSAGE('Вы уже утвердили заявку ранее', USERID)
-                ELSE
-                    MESSAGE('Утверждающий %1 отсутствует в таблице утверждения!', USERID);
-            END;
+            // NC AB: используем стандарт, этого больше не надо, кроме одного момента ниже (set "Process User")
+            // ApprovalEntry.SETRANGE("Table ID", 38);
+            // ApprovalEntry.SETRANGE("Document Type", ApprovalEntry."Document Type"::Order);
+            // ApprovalEntry.SETRANGE("Document No.", PurchaseHeader."No.");
+            // // ApprovalEntry.SETRANGE("Approver ID", USERID);
+            // ApprovalEntry.SETRANGE(Status, ApprovalEntry.Status::Open);
+            // IF ApprovalEntry.FINDFIRST THEN BEGIN
+            //     ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
+            //     IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
+            //         IF PurchaseHeader.GET(ApprovalEntry."Document Type", ApprovalEntry."Document No.") THEN BEGIN
+            //             ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
+            //             IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
+            //             BEGIN                                                                     //SWC380 AKA 190115
+            //                PurchaseHeader."Process User" := gcERPC.GetCurrentAppr(PurchaseHeader);
+            //                PurchaseHeader."Date Status App" := TODAY;
+            //                PurchaseHeader.MODIFY;
+            //            END;                                                                      //SWC380 AKA 190115
+            //        END;
+            //    END;
+            //END ELSE BEGIN
+            //    ApprovalEntry.SETFILTER(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Approved);
+            //    IF ApprovalEntry.FINDSET THEN
+            //        MESSAGE('Вы уже утвердили заявку ранее', USERID)
+            //    ELSE
+            //        MESSAGE('Утверждающий %1 отсутствует в таблице утверждения!', USERID);
+            //END;
+            ERROR('Дошли до статуса Approve!')
         END ELSE BEGIN
             IF PurchaseHeader."Act Type" in [PurchaseHeader."Act Type"::Act, PurchaseHeader."Act Type"::"Act (Production)"] THEN
                 gcERPC.ChangeActStatus(PurchaseHeader);

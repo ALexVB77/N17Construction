@@ -708,12 +708,12 @@ codeunit 70000 "ERPC Funtions"
         lrVendor: Record Vendor;
         DimSetEntry: Record "Dimension Set Entry";
         DimValue: Record "Dimension Value";
+        ApprovalMgtExt: Codeunit "Approvals Mgmt. (Ext)";
         NextAppr: Code[50];
         TEXT70001: label 'There is no attachment!';
         TEXT70002: Label 'The document has been approved!';
         TEXT70004: Label 'Vendor does not have to be basic!';
         TEXT70005: Label 'You must specify the Agreement!';
-        TEXT70016: Label 'The document has been sent for approval!';
         TEXT70032: Label 'The document is ready to be sent to user %1 for approval.\Send?';
         TEXT70034: Label 'Canceled by user!';
         TEXT70045: label 'The document is signed by the Approver!';
@@ -842,7 +842,7 @@ codeunit 70000 "ERPC Funtions"
                 CheckAgrDetRemain(grPurchHeader);
             END;
 
-            // NC AB 
+            // NC AB: 
             // GetPurchDocAmount(grPurchHeader, TRUE);
             CheckDocSum(grPurchHeader);
 
@@ -853,7 +853,7 @@ codeunit 70000 "ERPC Funtions"
             grPurchHeader."Problem Document" := FALSE;
             grPurchHeader."Problem Type" := grPurchHeader."Problem Type"::" ";
 
-            // DEBUG check later
+            // Логи не создаем, будет операция утверждения
             // CreateStatusLogAct(grPurchHeader, StatusAppAct::Approve);
 
             grPurchHeader.Status := grPurchHeader.Status::Open;
@@ -861,15 +861,13 @@ codeunit 70000 "ERPC Funtions"
 
             SetDefLocation(grPurchHeader);
 
-            // DEBUG check later
-            /*
-            lrPurchHeader.RESET;
-            lrPurchHeader.SETRANGE("Document Type", grPurchHeader."Document Type");
-            lrPurchHeader.SETRANGE("No.", grPurchHeader."No.");
-            IF lrPurchHeader.FIND('-') THEN;
+            // NC AB: не понял зачем еще переменная
+            // lrPurchHeader.RESET;
+            // lrPurchHeader.SETRANGE("Document Type", grPurchHeader."Document Type");
+            // lrPurchHeader.SETRANGE("No.", grPurchHeader."No.");
+            // IF lrPurchHeader.FIND('-') THEN;
 
-            NextAppr := ApprovalMgt.InsertApproverNCC_FromDocLines(grPurchHeader."Invoice Amount", grPurchHeader);
-            */
+            NextAppr := InsertApproverNCC_FromDocLines(grPurchHeader);
 
             grPurchHeader."Next Approver" := NextAppr;
             grPurchHeader.Approver := NextAppr;
@@ -900,13 +898,9 @@ codeunit 70000 "ERPC Funtions"
             // lrPurchHeader.SETRANGE("No.", grPurchHeader."No.");
             // IF lrPurchHeader.FIND('-') THEN
 
-            // DEBUG check later
-            /*
-            CLEAR(ApprovalMgt);
-            ApprovalMgt.SendPurchaseApprovalRequestAct(lrPurchHeader);
-            */
-
-            MESSAGE(TEXT70016);
+            // NC AB: не повоторяем существующий функционал создания операций утверждения и проверки по лимитам 
+            // CLEAR(ApprovalMgt);
+            // ApprovalMgt.SendPurchaseApprovalRequestAct(lrPurchHeader);
 
             EXIT;
         END;
@@ -1016,9 +1010,13 @@ codeunit 70000 "ERPC Funtions"
             PurchHeader."Status App Act"::Checker:
                 begin
                     PurchHeader.TestField("Process User");
-                    EXIT(PurchHeader."Process User");
+                    exit(PurchHeader."Process User");
                 end;
-
+            PurchHeader."Status App Act"::Approve:
+                begin
+                    PurchHeader.TestField(Approver);
+                    exit(PurchHeader.Approver);
+                end;
 
             else
                 Error(LocText001, PurchHeader."Status App Act");
@@ -1028,11 +1026,14 @@ codeunit 70000 "ERPC Funtions"
     procedure GetActStatusMessage(PurchHeader: Record "Purchase Header"): text;
     var
         TEXT70044: Label 'The document has been sent for verification to the Checker!';
+        TEXT70016: Label 'The document has been sent for approval!';
     begin
         PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Checker:
-                EXIT(TEXT70044);
+                exit(TEXT70044);
+            PurchHeader."Status App Act"::Approve:
+                exit(TEXT70016);
         end;
     end;
 

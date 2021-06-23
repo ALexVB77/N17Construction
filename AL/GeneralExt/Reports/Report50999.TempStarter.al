@@ -42,9 +42,10 @@ report 50999 "TempStarter"
             0,
             'Проверка и изменение статуса для Акта, КС-2', 'GROUP 0');
 
-        // WSA.SetRange("Response Function Name", WRHExt.CreateApprovalRequestsActCode);
-        // WSA.ModifyAll("Approver Type", WSA."Approver Type"::Approver);
-        // WSA.ModifyAll("Approver Limit Type", WSA."Approver Limit Type"::"Specific Approver");
+        WRH.AddResponseToLibrary(
+            WRHExt.ApprovePurchActApprovalRequestCode(),
+            0,
+            'Утвердить запрос на утверждение для Акта, КС-2', 'GROUP 0');
 
         WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);

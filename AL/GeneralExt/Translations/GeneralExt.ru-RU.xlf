@@ -3561,12 +3561,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70005</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for approval!</source>
-          <target>Документ отправлен на утверждение!</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70016</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3627370845" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document is ready to be sent to user %1 for approval.\Send?</source>
           <target>Документ готов к отправке на утверждение пользователю %1\Отправить?</target>
@@ -3716,6 +3710,13 @@
           <target>Документ отправлен на проверку Проверяющему!</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70044</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3487476121 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for approval!</source>
+          <target>Документ отправлен на утверждение!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70016</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 714932620 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Empty Approver on line!</source>
@@ -9298,6 +9299,13 @@
           <target> ,Контролер утвердил,Сметчик одобрил,Сметчик отклонил,Проверяющий одобрил,Проверяющий отклонил,Утверждающий одобрил,Утверждающий отклонил</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 1920339941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Checked by Approver</source>
+          <target>Проверено Утверждающим</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Controller</source>
