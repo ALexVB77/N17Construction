@@ -6219,6 +6219,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Sorting - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Page 2825229705 - Control 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approver</source>
+          <target>Утверждающий</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control Approver - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2825229705 - Control 1136693549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Exists Comment</source>
           <target>Содержит Комментарий</target>
@@ -6387,6 +6394,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Control 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approver</source>
+          <target>Утверждающий</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Approver - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Control 38210337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amounts</source>
           <target>Суммы</target>
@@ -6422,6 +6436,13 @@
           <target>План</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Paid Date Plan - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Control 3183912585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pre-Approver</source>
+          <target>Предв. Утверждающий</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Pre-Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Control 710925405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Problem Type</source>
@@ -6663,6 +6684,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control General - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3790301120 - Control 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approver</source>
+          <target>Утверждающий</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Approver - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3790301120 - Control 38210337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amounts</source>
           <target>Суммы</target>
@@ -6698,6 +6726,13 @@
           <target>План</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Paid Date Plan - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Control 3183912585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pre-Approver</source>
+          <target>Предв. Утверждающий</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Pre-Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 710925405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Problem Type</source>
@@ -9269,12 +9304,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Act Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Approver</source>
-          <target>Утверждающий</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Approver - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3086258489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Archiving Type</source>
           <target>Тип архивации</target>
@@ -9286,24 +9315,6 @@
           <target> ,Проблемный Акт,Заявка на Оплату</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Archiving Type - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 1417232546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Check Status</source>
-          <target>Проверка статуса</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 1417232546 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source> ,Controler app,Estimator app,Estimator rej,Checker app,Checker rej,Approver app,Approver rej</source>
-          <target> ,Контролер утвердил,Сметчик одобрил,Сметчик отклонил,Проверяющий одобрил,Проверяющий отклонил,Утверждающий одобрил,Утверждающий отклонил</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 1920339941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Checked by Approver</source>
-          <target>Проверено Утверждающим</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Controller</source>
@@ -9383,12 +9394,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Location Document - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 3865866614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Next Approver</source>
-          <target>Next Approver</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Next Approver - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1203376573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>OKATO Code</source>
           <target>Код ОКАТО</target>
@@ -9461,12 +9466,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Payments Amount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 3183912585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Pre-Approver</source>
-          <target>Предв. Утверждающий]</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Pre-Approver - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 2028092477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Pre-booking Accept</source>
           <target>Pre-booking Accept</target>
@@ -9478,12 +9477,6 @@
           <target>Pre-booking Document</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Pre-booking Document - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 621741646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Exist Pre-Approver</source>
-          <target>Есть Предв. Утверждающий</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field PreApprover - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 4289336288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Problem Document</source>

@@ -87,9 +87,11 @@ page 70262 "Purchase List Act"
                 {
                     ApplicationArea = All;
                 }
-                field(Approver; Approver)
+                field("Approver"; PaymentOrderMgt.GetPurchActApproverFromDim("Dimension Set ID"))
                 {
                     ApplicationArea = All;
+                    Caption = 'Approver';
+                    Editable = false;
                 }
                 field("Invoice No."; "Invoice No.")
                 {

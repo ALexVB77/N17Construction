@@ -5,6 +5,21 @@ codeunit 50010 "Payment Order Management"
 
     end;
 
+    var
+        PurchSetup: record "Purchases & Payables Setup";
+        PurchSetupFound: Boolean;
+
+    local procedure GetPurchSetupWithTestDim()
+    begin
+        if not PurchSetupFound then begin
+            PurchSetupFound := true;
+            PurchSetup.Get();
+            PurchSetup.TestField("Cost Place Dimension");
+            PurchSetup.TestField("Cost Code Dimension");
+        end;
+    end;
+
+
     procedure FuncNewRec(PurchHeader: Record "Purchase Header"; ActTypeOption: enum "Purchase Act Type")
     var
         grUS: record "User Setup";
@@ -281,7 +296,7 @@ codeunit 50010 "Payment Order Management"
                         PurchLine.VALIDATE("VAT Prod. Posting Group");
                         PurchLine.MODIFY(TRUE);
 
-                        SetPurchLineApprover(PurchLine, true);
+                        // SetPurchLineApprover(PurchLine, true);
                         PurchLine.MODIFY;
                     END;
                 UNTIL VendArgDtld2.NEXT = 0;
@@ -290,63 +305,64 @@ codeunit 50010 "Payment Order Management"
 
     end;
 
-    procedure SetPurchLineApprover(var PurchLine: Record "Purchase Line"; CheckSubstitute: Boolean)
-    var
-        DimSetEntry: Record "Dimension Set Entry";
-        DimValue: Record "Dimension Value";
-        UserSetup: Record "User Setup";
-        PurchasesSetup: Record "Purchases & Payables Setup";
-    begin
-        with PurchLine do begin
-            IF ("Dimension Set ID" = 0) or (Approver <> '') then
-                EXIT;
-            IF "Dimension Set ID" <> 0 THEN begin
-                PurchasesSetup.GET;
-                PurchasesSetup.TestField("Cost Place Dimension");
-                IF DimSetEntry.GET("Dimension Set ID", PurchasesSetup."Cost Place Dimension") THEN
-                    IF DimValue.GET(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
-                        if not CheckSubstitute THEN
-                            Approver := DimValue."Cost Holder"
-                        else
-                            if DimValue."Cost Holder" <> '' THEN BEGIN
-                                UserSetup.GET(DimValue."Cost Holder");
-                                IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
-                                    Approver := UserSetup.Substitute
-                                ELSE
-                                    Approver := UserSetup."User ID";
-                            END;
-            END;
-        end;
-    end;
+    // NC AB: не используем, Approver заполяем на лету через функцию 
+    // procedure SetPurchLineApprover(var PurchLine: Record "Purchase Line"; CheckSubstitute: Boolean)
+    // var
+    //     DimSetEntry: Record "Dimension Set Entry";
+    //     DimValue: Record "Dimension Value";
+    //      UserSetup: Record "User Setup";
+    //     PurchasesSetup: Record "Purchases & Payables Setup";
+    // begin
+    //     with PurchLine do begin
+    //         IF ("Dimension Set ID" = 0) or (Approver <> '') then
+    //             EXIT;
+    //         IF "Dimension Set ID" <> 0 THEN begin
+    //             PurchasesSetup.GET;
+    //             PurchasesSetup.TestField("Cost Place Dimension");
+    //             IF DimSetEntry.GET("Dimension Set ID", PurchasesSetup."Cost Place Dimension") THEN
+    //                 IF DimValue.GET(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
+    //                     if not CheckSubstitute THEN
+    //                         Approver := DimValue."Cost Holder"
+    //                     else
+    //                         if DimValue."Cost Holder" <> '' THEN BEGIN
+    //                             UserSetup.GET(DimValue."Cost Holder");
+    //                             IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
+    //                                 Approver := UserSetup.Substitute
+    //                             ELSE
+    //                                 Approver := UserSetup."User ID";
+    //                         END;
+    //         END;
+    //     end;
+    // end;
 
-    procedure FillPurchLineApproverFromGlobalDim(GlobalDimNo: Integer; DimValueCode: code[20]; var PurchLine: Record "Purchase Line"; CheckSubstitute: Boolean)
-    var
-        DimValue: Record "Dimension Value";
-        UserSetup: Record "User Setup";
-        PurchasesSetup: Record "Purchases & Payables Setup";
-    begin
-        if DimValueCode = '' then
-            exit;
-        DimValue.SetRange(Code, DimValueCode);
-        DimValue.SetRange("Global Dimension No.", GlobalDimNo);
-        if not DimValue.FindFirst() then
-            exit;
-        PurchasesSetup.GET;
-        PurchasesSetup.TestField("Cost Place Dimension");
-        if PurchasesSetup."Cost Place Dimension" <> DimValue."Dimension Code" then
-            exit;
-
-        if not CheckSubstitute THEN
-            PurchLine.Approver := DimValue."Cost Holder"
-        else
-            if DimValue."Cost Holder" <> '' THEN BEGIN
-                UserSetup.GET(DimValue."Cost Holder");
-                IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
-                    PurchLine.Approver := UserSetup.Substitute
-                ELSE
-                    PurchLine.Approver := UserSetup."User ID";
-            END;
-    end;
+    // NC AB: не используем, Approver заполяем на лету через функцию 
+    // procedure FillPurchLineApproverFromGlobalDim(GlobalDimNo: Integer; DimValueCode: code[20]; var PurchLine: Record "Purchase Line"; CheckSubstitute: Boolean)
+    // var
+    //     DimValue: Record "Dimension Value";
+    //     UserSetup: Record "User Setup";
+    //     PurchasesSetup: Record "Purchases & Payables Setup";
+    // begin
+    //     if DimValueCode = '' then
+    //         exit;
+    //     DimValue.SetRange(Code, DimValueCode);
+    //     DimValue.SetRange("Global Dimension No.", GlobalDimNo);
+    //     if not DimValue.FindFirst() then
+    //         exit;
+    //      PurchasesSetup.GET;
+    //     PurchasesSetup.TestField("Cost Place Dimension");
+    //     if PurchasesSetup."Cost Place Dimension" <> DimValue."Dimension Code" then
+    //         exit;
+    //     if not CheckSubstitute THEN
+    //         PurchLine.Approver := DimValue."Cost Holder"
+    //     else
+    //         if DimValue."Cost Holder" <> '' THEN BEGIN
+    //             UserSetup.GET(DimValue."Cost Holder");
+    //             IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
+    //                 PurchLine.Approver := UserSetup.Substitute
+    //             ELSE
+    //                 PurchLine.Approver := UserSetup."User ID";
+    //         END;
+    // end;
 
     procedure PurchOrderActArchiveQst(PurchHeader: Record "Purchase Header"): Boolean;
     var
@@ -561,4 +577,58 @@ codeunit 50010 "Payment Order Management"
                 PurchLineLoc.TESTFIELD(Quantity);
             UNTIL PurchLineLoc.NEXT = 0;
     end;
+
+    procedure GetPurchActApproverFromDim(DimSetID: Integer): Code[50]
+    var
+        DimSetEntry: Record "Dimension Set Entry";
+        DimValueCC: Record "Dimension Value";
+        DimValueCP: Record "Dimension Value";
+    begin
+        if DimSetID = 0 then
+            exit('');
+        GetPurchSetupWithTestDim();
+        if not DimSetEntry.Get(DimSetID, PurchSetup."Cost Code Dimension") then
+            exit('');
+        if not DimValueCC.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
+            exit('');
+        if not DimSetEntry.Get(DimSetID, PurchSetup."Cost Place Dimension") then
+            exit('');
+        if not DimValueCP.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
+            exit('');
+        case DimValueCC."Cost Code Type" of
+            DimValueCC."Cost Code Type"::Development:
+                exit(GetApproverSubstitute(DimValueCP."Development Cost Place Holder"));
+            DimValueCC."Cost Code Type"::Production:
+                exit(GetApproverSubstitute(DimValueCP."Production Cost Place Holder"));
+            DimValueCC."Cost Code Type"::Admin:
+                exit(GetApproverSubstitute(DimValueCP."Admin Cost Place Holder"));
+        end;
+    end;
+
+    procedure GetPurchActPreApproverFromDim(DimSetID: Integer): Code[50]
+    var
+        DimSetEntry: Record "Dimension Set Entry";
+        DimValueCC: Record "Dimension Value";
+    begin
+        if DimSetID = 0 then
+            exit('');
+        GetPurchSetupWithTestDim();
+        if not DimSetEntry.Get(DimSetID, PurchSetup."Cost Code Dimension") then
+            exit('');
+        if not DimValueCC.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
+            exit('');
+        exit(GetApproverSubstitute(DimValueCC."Cost Holder"));
+    end;
+
+    local procedure GetApproverSubstitute(ApproverCode: Code[50]): Code[50]
+    var
+        UserSetup: Record "User Setup";
+    begin
+        UserSetup.GET(ApproverCode);
+        IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
+            exit(UserSetup.Substitute)
+        ELSE
+            exit(UserSetup."User ID");
+    end;
+
 }
