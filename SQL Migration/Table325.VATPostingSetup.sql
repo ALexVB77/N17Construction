@@ -50,12 +50,12 @@ ON GLAccMapping.[Old No_] = [Sales VAT Account] collate Cyrillic_General_100_CI_
 LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping2
 ON GLAccMapping2.[Old No_] = [Sales VAT Unreal_ Account] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping3
-ON GLAccMapping3.[Old No_] = [Sales VAT Unreal_ Account] collate Cyrillic_General_100_CI_AS
+ON GLAccMapping3.[Old No_] = [Purchase VAT Account] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping4
-ON GLAccMapping4.[Old No_] = [Sales VAT Unreal_ Account] collate Cyrillic_General_100_CI_AS
+ON GLAccMapping4.[Old No_] = [Purch_ VAT Unreal_ Account] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping5
-ON GLAccMapping5.[Old No_] = [Sales VAT Unreal_ Account] collate Cyrillic_General_100_CI_AS
+ON GLAccMapping5.[Old No_] = [Trans_ VAT Account] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping6
-ON GLAccMapping6.[Old No_] = [Sales VAT Unreal_ Account] collate Cyrillic_General_100_CI_AS
+ON GLAccMapping6.[Old No_] = [Write-Off VAT Account] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping7
-ON GLAccMapping7.[Old No_] = [Sales VAT Unreal_ Account] collate Cyrillic_General_100_CI_AS
+ON GLAccMapping7.[Old No_] = [VAT Charge No_] collate Cyrillic_General_100_CI_AS
