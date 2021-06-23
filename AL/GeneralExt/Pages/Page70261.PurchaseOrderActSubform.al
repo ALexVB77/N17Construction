@@ -222,6 +222,7 @@ page 70261 "Purchase Order Act Subform"
                 }
                 field(Approver; Approver)
                 {
+                    ApplicationArea = All;
                     Editable = NOT IsBlankNumber;
                     Enabled = NOT IsBlankNumber;
                 }
