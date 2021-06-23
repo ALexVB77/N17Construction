@@ -9448,6 +9448,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">EnumExtension Attachment Document Type (Ext) - EnumValue Vendor - Property Caption</note>
         </trans-unit>
+        <trans-unit id="EnumExtension 125115314 - EnumValue 4270328817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 3848749696">
+          <source>816</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">EnumExtension Item Journal Template Type GE - EnumValue 816 - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
