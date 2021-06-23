@@ -2923,6 +2923,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType NoWorkflowEnabledErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - NamedType 2138144800" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User ID %1 does not exist in the Approval User Setup window.</source>
+          <note from="Developer" annotates="general" priority="2">User ID NAVUser does not exist in the Approval User Setup window.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType UserIdNotInSetupErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2963,11 +2968,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70005</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for approval!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70016</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 3627370845" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document is ready to be sent to user %1 for approval.\Send?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2977,11 +2977,6 @@
           <source>Canceled by user!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70034</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for verification to the Checker!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method ChangeActStatus - NamedType TEXT70044</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 762112629" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document is signed by the Approver!</source>
@@ -3087,6 +3082,21 @@
           <source>Request %1 in the "Payment" approval status. Unable to delete.\Use the archiving function.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice - NamedType LocText50021</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3833877207 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unable to identify an approver for %1 status.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActApprover - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3487476121 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for verification to the Checker!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70044</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1524225914 - Method 3487476121 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for approval!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70016</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 714932620 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Empty Approver on line!</source>
@@ -3702,6 +3712,11 @@
           <source>You are not allowed to copy actual operations.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0014</note>
+        </trans-unit>
+        <trans-unit id="Page 2269272589 - NamedType 3981502651" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have sufficient rights to perform the action!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0015</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Method 877441836 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deleting long-term entries denied!</source>
@@ -5373,10 +5388,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action OrderAct - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 3640084062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Change Log</source>
+        <trans-unit id="Page 3437592965 - Action 3860314472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approvals</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ChangeLog - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Approvals - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
@@ -7628,6 +7643,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Cost Type Dimension Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 476953720 - Field 329847988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
+          <source>Project Dim. Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension General Ledger Setup (Ext) - Field Project Dimension Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 476953720 - Field 2267463381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
           <source>UTILITIES Dim. Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7747,6 +7767,11 @@
           <source> ,Controler app,Estimator app,Estimator rej,Checker app,Checker rej,Approver app,Approver rej</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 1920339941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Checked by Approver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Check Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1010040168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Controller</source>

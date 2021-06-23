@@ -5,7 +5,6 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
         field(50000; "Change Agreem. Posting Group"; Boolean)
         {
             Caption = 'Allow changing agr. posting group';
-
         }
 
         field(70001; "Status App"; enum "User Setup Approval Status")

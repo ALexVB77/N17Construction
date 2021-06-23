@@ -10,6 +10,10 @@ report 50999 "TempStarter"
         WEH: Codeunit "Workflow Event Handling";
         WEHExt: Codeunit "Workflow Event Handling (Ext)";
         WRPH: Codeunit "Workflow Request Page Handling";
+        WRH: Codeunit "Workflow Response Handling";
+        WRHExt: Codeunit "Workflow Response Handling Ext";
+
+        WSA: Record "Workflow Step Argument";
     begin
         //Codeunit.run(Codeunit::"Notification Entry Dispatcher");
 
@@ -22,6 +26,35 @@ report 50999 "TempStarter"
 
         WRPH.CreateEntitiesAndFields();
         WRPH.AssignEntitiesToWorkflowEvents();
+
+        WRH.AddResponseToLibrary(
+            WRHExt.CreateApprovalRequestsActCode(),
+            0,
+            'Создать запрос утверждения для Акта, КС-2', 'GROUP 10');
+
+        WRH.AddResponseToLibrary(
+            WRHExt.ShowPurchActApproveMessageCode(),
+            0,
+            'Вывод сообщения о изменении статуса для Акта, КС-2', 'GROUP 0');
+
+        WRH.AddResponseToLibrary(
+            WRHExt.ChangePurchActStatusCode(),
+            0,
+            'Проверка и изменение статуса для Акта, КС-2', 'GROUP 0');
+
+        WRH.AddResponseToLibrary(
+            WRHExt.ApprovePurchActApprovalRequestCode(),
+            0,
+            'Утвердить запрос на утверждение для Акта, КС-2', 'GROUP 0');
+
+        WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRHExt.ShowPurchActApproveMessageCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRHExt.ChangePurchActStatusCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRHExt.ApprovePurchActApprovalRequestCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+
+        //WEH.AddEventPredecessor(WEH.RunWorkflowOnApproveApprovalRequestCode(), WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+
     end;
 }
 
