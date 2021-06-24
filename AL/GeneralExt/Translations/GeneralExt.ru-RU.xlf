@@ -1783,20 +1783,19 @@
           <source>Select File</source>
           <target>Выберите файл</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType DialogCaption</note>
         </trans-unit>
         <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 3556479000" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls</source>
           <target>Файлы Excel (*.xlsx;*.xls)|*.xlsx;*.xls</target>
           <note from="Developer" annotates="general" priority="2">{Split=r'\|'}{Locked=s'1'}</note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType Excel2007FileType</note>
         </trans-unit>
         <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 4106791379" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nothing to import!</source>
           <target>Нечего загружать!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType ImpErr</note>
         </trans-unit>
         <trans-unit id="Table 2528781168 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7319,6 +7318,27 @@
           <target>Details</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Req Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Summary Cash Flow Control</source>
+          <target>Summary Cash Flow Control</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1734268175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Set</source>
+          <target>След. набор</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 3697385181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Set</source>
+          <target>Пред. набор</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>

@@ -6098,6 +6098,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Req Subform - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 510141852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Summary Cash Flow Control</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1734268175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Set</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 3697385181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Set</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
           <note from="Developer" annotates="general" priority="2"></note>
