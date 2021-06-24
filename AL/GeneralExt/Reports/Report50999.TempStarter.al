@@ -36,15 +36,13 @@ report 50999 "TempStarter"
 
 
 
-
-
+        /*
         WR.SetFilter("Function Name", '%1|%2|%3',
             WRHExt.ShowPurchActApproveMessageCode(),
             WRHExt.ChangePurchActStatusCode(),
             WRHExt.ApprovePurchActApprovalRequestCode());
         WR.DeleteAll(true);
 
-        /*
         WRH.AddResponseToLibrary(
             WRHExt.ShowPurchActApproveMessageCode(),
             0,

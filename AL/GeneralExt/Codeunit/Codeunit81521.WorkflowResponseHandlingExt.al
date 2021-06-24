@@ -18,6 +18,8 @@ codeunit 81521 "Workflow Response Handling Ext"
         case WorkflowResponse."Function Name" of
             CreateApprovalRequestsActCode:
                 CreateApprovalRequests(Variant, ResponseWorkflowStepInstance);
+            ApproveApprovalRequestsActCode:
+                ApproveApprovalRequests(Variant, ResponseWorkflowStepInstance);
             else
                 exit;
         end;
@@ -33,40 +35,9 @@ codeunit 81521 "Workflow Response Handling Ext"
         //ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
     end;
 
-    local procedure ShowPurchActApproveMessage(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
-    var
-        PurchaseHeader: Record "Purchase Header";
-        ERPCFunction: Codeunit "ERPC Funtions";
-        RecRef: RecordRef;
-        MessageText: Text;
+    local procedure ApproveApprovalRequests(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
     begin
-        RecRef.GetTable(Variant);
-        RecRef.SetTable(PurchaseHeader);
-        MessageText := ERPCFunction.GetActStatusMessage(PurchaseHeader);
-        Message(MessageText);
-    end;
-
-    local procedure ChangePurchActStatus(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
-    var
-        PurchaseHeader: Record "Purchase Header";
-        PayOrderMgt: Codeunit "Payment Order Management";
-        RecRef: RecordRef;
-    begin
-        RecRef.GetTable(Variant);
-        RecRef.SetTable(PurchaseHeader);
-        PayOrderMgt.ApprovePurchaseOrderAct(PurchaseHeader);
-    end;
-
-    local procedure ApprovePurchActApprovalRequest(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
-    var
-        PurchaseHeader: Record "Purchase Header";
-        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
-        RecRef: RecordRef;
-    begin
-        RecRef.GetTable(Variant);
-        RecRef.SetTable(PurchaseHeader);
-        IF PurchaseHeader."Status App Act" IN [PurchaseHeader."Status App Act"::Checker] then
-            ApprovalsMgmt.ApproveRecordApprovalRequest(RecRef.RecordId);
+        error('Вызов ApproveApprovalRequests()');
     end;
 
     procedure CreateApprovalRequestsActCode(): Code[128]
@@ -74,19 +45,9 @@ codeunit 81521 "Workflow Response Handling Ext"
         exit(UpperCase('CreateApprovalRequestsAct'));
     end;
 
-    procedure ShowPurchActApproveMessageCode(): Code[128]
+    procedure ApproveApprovalRequestsActCode(): Code[128]
     begin
-        exit(UpperCase('ShowPurchActApproveMessage'));
-    end;
-
-    procedure ChangePurchActStatusCode(): Code[128]
-    begin
-        exit(UpperCase('ChangePurchActStatus'));
-    end;
-
-    procedure ApprovePurchActApprovalRequestCode(): Code[128]
-    begin
-        exit(UpperCase('ApprovePurchActApprovalRequestCode'));
+        exit(UpperCase('ApproveApprovalRequestsAct'));
     end;
 
 }
