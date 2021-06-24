@@ -14,6 +14,7 @@ report 50999 "TempStarter"
         WRHExt: Codeunit "Workflow Response Handling Ext";
 
         WSA: Record "Workflow Step Argument";
+        WR: Record "Workflow Response";
     begin
         //Codeunit.run(Codeunit::"Notification Entry Dispatcher");
 
@@ -31,7 +32,19 @@ report 50999 "TempStarter"
             WRHExt.CreateApprovalRequestsActCode(),
             0,
             'Создать запрос утверждения для Акта, КС-2', 'GROUP 10');
+        WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
 
+
+
+
+
+        WR.SetFilter("Function Name", '%1|%2|%3',
+            WRHExt.ShowPurchActApproveMessageCode(),
+            WRHExt.ChangePurchActStatusCode(),
+            WRHExt.ApprovePurchActApprovalRequestCode());
+        WR.DeleteAll(true);
+
+        /*
         WRH.AddResponseToLibrary(
             WRHExt.ShowPurchActApproveMessageCode(),
             0,
@@ -47,13 +60,14 @@ report 50999 "TempStarter"
             0,
             'Утвердить запрос на утверждение для Акта, КС-2', 'GROUP 0');
 
-        WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRHExt.ShowPurchActApproveMessageCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRHExt.ChangePurchActStatusCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
         WRH.AddResponsePredecessor(WRHExt.ApprovePurchActApprovalRequestCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
 
         //WEH.AddEventPredecessor(WEH.RunWorkflowOnApproveApprovalRequestCode(), WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        */
+
 
     end;
 }
