@@ -1283,405 +1283,392 @@
         </trans-unit>
         <trans-unit id="Table 109439281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Method 1598767683 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Здесь нечего распределять</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Здесь нечего распределять</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Method AllocateJobs - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Method 1598767683 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve">
           <source>Здесь нечего отменять</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Здесь нечего отменять</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Method AllocateJobs - NamedType locLabel002</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Method 1598767683 - NamedType 1156692727" size-unit="char" translate="yes" xml:space="preserve">
           <source>Не учтен приход готовой продукции</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Не учтен приход готовой продукции</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Method AllocateJobs - NamedType locLabel003</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Method 1598767683 - NamedType 1325601750" size-unit="char" translate="yes" xml:space="preserve">
           <source>816_TEMP</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>816_TEMP</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Method AllocateJobs - NamedType locLabel004</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target>[NAB: SUGGESTION]Описание</target>
+          <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Date</source>
-          <target>[NAB: SUGGESTION]Дата документа</target>
+          <target>Дата документа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Field Document Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Field 293070022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Finished</source>
-          <target>[NAB: SUGGESTION]Завершен</target>
-          <target>[NAB: SUGGESTION]Завершенные</target>
-          <target>[NAB: SUGGESTION]Завершено</target>
+          <target>Завершен</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Field Finished - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target>[NAB: SUGGESTION]Но.</target>
+          <target>Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 109439281 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
-          <target>[NAB: SUGGESTION]Серия номеров</target>
+          <target>Серия номеров</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order - Field No. Series - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order Job</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Работа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Method 36341020 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Заказ %1 уже завершен</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Заказ %1 уже завершен]</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Method CheckLine - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Method 36341020 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve">
           <source>Изменение строки работы %1 по заказу %2 запрещено\По строке сделано распределение</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Изменение строки работы %1 по заказу %2 запрещено\По строке сделано распределение</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Method CheckLine - NamedType locLabel002</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 3936638391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allocated Amount</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Распределенная сумма</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Allocated Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
-          <target>[NAB: SUGGESTION]Сумма</target>
-          <target>[NAB: SUGGESTION]Сумма платежей</target>
+          <target>Сумма</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 3083748138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Correction</source>
-          <target>[NAB: SUGGESTION]Корректировка</target>
+          <target>Коррекция</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Correction - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target>[NAB: SUGGESTION]Описание</target>
+          <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
-          <target>[NAB: SUGGESTION]Документ Но.</target>
-          <target>[NAB: SUGGESTION]Номер документа</target>
+          <target>Документ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Document No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 486908828 - Method 2126772001 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Сначала учтите выпуск</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Сначала учтите выпуск</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Document No. - Method OnValidate - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 486908828 - Method 2126772001 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve">
           <source>Счет %1 уже был распределен в произв. заказе %2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Счет %1 уже был распределен в произв. заказе %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Document No. - Method OnValidate - NamedType locLabel002</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 486908828 - Method 2126772001 - NamedType 1156692727" size-unit="char" translate="yes" xml:space="preserve">
           <source>Счет %1 не может быть выбран в качестве работы, т.к. содержит строку с типом %2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Счет %1 не может быть выбран в качестве работы, т.к. содержит строку с типом %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Document No. - Method OnValidate - NamedType locLabel003</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 486908828 - Method 2126772001 - NamedType 1325601750" size-unit="char" translate="yes" xml:space="preserve">
           <source>Кредит-нота %1 уже была распределена в произв. заказе %2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Кредит-нота %1 уже была распределена в произв. заказе %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Document No. - Method OnValidate - NamedType locLabel004</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 486908828 - Method 2126772001 - NamedType 687905133" size-unit="char" translate="yes" xml:space="preserve">
           <source>Кредит-нота %1 не может быть выбрана в качестве работы, т.к. содержит строку с типом %2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Кредит-нота %1 не может быть выбрана в качестве работы, т.к. содержит строку с типом %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Document No. - Method OnValidate - NamedType locLabel005</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
-          <target>[NAB: SUGGESTION]Строка Но.</target>
-          <target>[NAB: SUGGESTION]Номер строки</target>
+          <target>Строка Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order No.</source>
-          <target>[NAB: SUGGESTION]Номер заказа</target>
-          <target>[NAB: SUGGESTION]Номер приказа</target>
+          <target>Заказ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target>[NAB: SUGGESTION]Дата Учета</target>
+          <target>Дата Учета</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Posting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3389023108 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reversed</source>
-          <target>[NAB: SUGGESTION]Сторнировано</target>
+          <target>Отменено</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Job - Field Reversed - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order Receipt</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Оприходование</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Method 36341020 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Заказ %1 уже завершен</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Заказ %1 уже завершен</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Method CheckLine - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Method 36341020 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve">
           <source>Изменение строки выпуска %1 по заказу %2 запрещено\Строка учтена</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Изменение строки выпуска %1 по заказу %2 запрещено\Строка учтена</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Method CheckLine - NamedType locLabel002</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 3083748138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Correction</source>
-          <target>[NAB: SUGGESTION]Корректировка</target>
+          <target>Коррекция</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Correction - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target>[NAB: SUGGESTION]Описание</target>
+          <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 3322554545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimension Set ID</source>
-          <target>[NAB: SUGGESTION]Код набора измерений</target>
-          <target>[NAB: SUGGESTION]ИД набора измерений</target>
+          <target>Код набора измерений</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Dimension Set ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
-          <target>[NAB: SUGGESTION]Документ Но.</target>
-          <target>[NAB: SUGGESTION]Номер документа</target>
+          <target>Документ Но.</target>   
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Document No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 486908828 - Method 2126772001 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Строка коррекции выпуска уже заведена</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Строка коррекции выпуска уже заведена</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Document No. - Method OnValidate - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 486908828 - Method 2126772001 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve">
           <source>Строка выпуска уже заведена</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Строка выпуска уже заведена</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Document No. - Method OnValidate - NamedType locLabel002</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 486908828 - Method 2126772001 - NamedType 1156692727" size-unit="char" translate="yes" xml:space="preserve">
           <source>Коррекция выпуска %1 должна быть применена к выпуску %2</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Коррекция выпуска %1 должна быть применена к выпуску %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Document No. - Method OnValidate - NamedType locLabel003</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 486908828 - Method 2126772001 - NamedType 1325601750" size-unit="char" translate="yes" xml:space="preserve">
           <source>Сначала отмените распределение</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Сначала отмените распределение</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Document No. - Method OnValidate - NamedType locLabel004</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 1527563463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Document No.</source>
-          <target>[NAB: SUGGESTION]Номер внешнего документа</target>
+          <target>Номер внешнего документа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field External Document No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Gen. Bus. Posting Group</source>
-          <target>[NAB: SUGGESTION]Общая бизнес-группа</target>
+          <target>Общая бизнес-группа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Gen. Bus. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
-          <target>[NAB: SUGGESTION]Строка Но.</target>
-          <target>[NAB: SUGGESTION]Номер строки</target>
+          <target>Строка Но.</target>    
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 2161572060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Code</source>
-          <target>[NAB: SUGGESTION]Код склада</target>
+          <target>Код склада</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Location Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order No.</source>
-          <target>[NAB: SUGGESTION]Номер заказа</target>
-          <target>[NAB: SUGGESTION]Номер приказа</target>
+          <target>Заказ Но.</target>  
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 35450067 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted</source>
-          <target>[NAB: SUGGESTION]Учтенные</target>
+          <target>Учтена</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Posted - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target>[NAB: SUGGESTION]Дата Учета</target>
+          <target>Дата Учета</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Posting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchaser Code</source>
-          <target>[NAB: SUGGESTION]Код закупщика</target>
+          <target>Код менеджера</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Purchaser Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reversed</source>
-          <target>[NAB: SUGGESTION]Сторнировано</target>
+          <target>Отменено</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Reversed - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
-          <target>[NAB: SUGGESTION]Ярлык Измерение 1 Код</target>
+          <target>Ярлык Измерение 1 Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Shortcut Dimension 1 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2373493661 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
-          <target>[NAB: SUGGESTION]Ярлык Измерение 2 Код</target>
+          <target>Ярлык Измерение 2 Код</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Receipt - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 414949993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order Shipment</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Списание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Shipment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 414949993 - Field 3083748138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Correction</source>
-          <target>[NAB: SUGGESTION]Корректировка</target>
+          <target>Коррекция</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Shipment - Field Correction - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 414949993 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target>[NAB: SUGGESTION]Описание</target>
+          <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Shipment - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 414949993 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
-          <target>[NAB: SUGGESTION]Документ Но.</target>
-          <target>[NAB: SUGGESTION]Номер документа</target>
+          <target>Документ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Shipment - Field Document No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 414949993 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
-          <target>[NAB: SUGGESTION]Строка Но.</target>
-          <target>[NAB: SUGGESTION]Номер строки</target>
+          <target>Строка Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Shipment - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 414949993 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order No.</source>
-          <target>[NAB: SUGGESTION]Номер заказа</target>
-          <target>[NAB: SUGGESTION]Номер приказа</target>
+          <target>Заказ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Shipment - Field Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 414949993 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target>[NAB: SUGGESTION]Дата Учета</target>
+          <target>Дата Учета</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Giv. Prod. Order Shipment - Field Posting Date - Property Caption</note>
@@ -4214,7 +4201,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 2172969975 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Ошибка пойманная в isolated storage</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
@@ -5055,35 +5042,35 @@
         </trans-unit>
         <trans-unit id="Page 109439281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Prod. Order - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3389023108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order Job</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Работа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Prod. Order Job - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4204329447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order List</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Список</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Prod. Order List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2373493661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order Receipt</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Оприходование</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Prod. Order Receipt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 414949993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giv. Prod. Order Shipment</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Списание</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Giv. Prod. Order Shipment - Property Caption</note>
@@ -9074,7 +9061,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -9501,7 +9488,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -9682,35 +9669,35 @@
         </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 484993259 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Manuf. Adjmt Source Code</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Производство Коррекция Код Причины</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Manuf. Adjmt Source Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 2976105352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Manuf. Alloc. Reverse SC</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Производство Отмена Распределения Код Причины</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Manuf. Alloc. Reverse SC - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 2818780696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Manuf. Alloc. Source Code</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Производство Распределение Код Причины</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Manuf. Alloc. Source Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 604735008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Manuf. Document Nos.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Серия номеров для документов производства</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Manuf. Document Nos. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 522086992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Manuf. Gen. Bus. Posting Gr.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Производство Общая Бизнес Группа</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Manuf. Gen. Bus. Posting Gr. - Property Caption</note>
@@ -9729,14 +9716,14 @@
         </trans-unit>
         <trans-unit id="TableExtension 1457299967 - Method 1676486036 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1457299967">
           <source>Акт оприходования %1 создан из произв. заказа %2\</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Акт оприходования %1 создан из произв. заказа %2\</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Document Header (Ext) - Method CheckOnGivProdOrder - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="TableExtension 1457299967 - Method 1676486036 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1457299967">
           <source>Вы можете изменить/учесть его только оттуда</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Вы можете изменить/учесть его только оттуда</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Document Header (Ext) - Method CheckOnGivProdOrder - NamedType locLabel002</note>
@@ -9749,14 +9736,14 @@
         </trans-unit>
         <trans-unit id="TableExtension 1457299967 - Field 1136281660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1215496511">
           <source>Giv. Prod. Order No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Document Header (Ext) - Field Giv. Prod. Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1457299967 - Field 790831195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1215496511">
           <source>Shipment Act No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Создан на основании Акта списания</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Document Header (Ext) - Field Shipment Act No. - Property Caption</note>
@@ -9769,7 +9756,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 793958346 - Field 466277057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4088681816">
           <source>Change From Giv. Prod. Order</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Change From Giv. Prod. Order</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Document Line GE - Field Change From Giv. Prod. Order - Property Caption</note>
@@ -9788,65 +9775,63 @@
         </trans-unit>
         <trans-unit id="TableExtension 860735264 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 759472962">
           <source>Agreement No.</source>
-          <target>[NAB: SUGGESTION]Договор Но.</target>
+          <target>Договор Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Recept Header (GE) - Field Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 860735264 - Field 1136281660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 759472962">
           <source>Giv. Prod. Order No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Recept Header (GE) - Field Giv. Prod. Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 860735264 - Field 790831195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 759472962">
           <source>Shipment Act No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Создан на основании Акта списания</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Recept Header (GE) - Field Shipment Act No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 860735264 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 759472962">
           <source>Vendor No.</source>
-          <target>[NAB: SUGGESTION]Поставщик Но.</target>
-          <target>[NAB: SUGGESTION]Поставщик</target>
+          <target>Поставщик Но.</target>       
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Recept Header (GE) - Field Vendor No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3821142868 - Method 1060567493 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3821142868">
           <source>Выпуск ГП по отгрузке %1</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Выпуск ГП по отгрузке %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Shipment Header GE - Method CreateGivProdOrder - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="TableExtension 3821142868 - Method 4199405249 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3821142868">
           <source>Выпуск ГП по отгрузке %1</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Выпуск ГП по отгрузке %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Shipment Header GE - Method CreateRcptAct - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="TableExtension 3821142868 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2730272470">
           <source>Agreement No.</source>
-          <target>[NAB: SUGGESTION]Договор Но.</target>
+          <target>Договор Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Shipment Header GE - Field Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3821142868 - Field 1136281660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2730272470">
           <source>Giv. Prod. Order No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Shipment Header GE - Field Giv. Prod. Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3821142868 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2730272470">
           <source>Vendor No.</source>
-          <target>[NAB: SUGGESTION]Поставщик Но.</target>
-          <target>[NAB: SUGGESTION]Поставщик</target>
+          <target>Поставщик Но.</target>      
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Shipment Header GE - Field Vendor No. - Property Caption</note>
@@ -9871,14 +9856,14 @@
         </trans-unit>
         <trans-unit id="TableExtension 1246840681 - Method 2759385843 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1246840681">
           <source>Измерение "%1" в заголовке и в строке %2 счета %3 отличается</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Измерение "%1" в заголовке и в строке %2 счета %3 отличается</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr. (Ext) - Method GivProdOrderCheckDocDim - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="TableExtension 1246840681 - Method 2759385843 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1246840681">
           <source>Измерение "%1" в акте оприходования %2 и в счете %3 отличается</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Измерение "%1" в акте оприходования %2 и в счете %3 отличается</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr. (Ext) - Method GivProdOrderCheckDocDim - NamedType locLabel002</note>
@@ -9891,7 +9876,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 1246840681 - Field 1136281660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271228953">
           <source>Giv. Prod. Order No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Cr. Memo Hdr. (Ext) - Field Giv. Prod. Order No. - Property Caption</note>
@@ -9904,21 +9889,21 @@
         </trans-unit>
         <trans-unit id="TableExtension 1338405014 - Method 2759385843 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1338405014">
           <source>Измерение "%1" в заголовке и в строке %2 счета %3 отличается</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Измерение "%1" в заголовке и в строке %2 счета %3 отличается</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Header (Ext) - Method GivProdOrderCheckDocDim - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="TableExtension 1338405014 - Method 2759385843 - NamedType 1794389344" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1338405014">
           <source>Измерение "%1" в акте оприходования %2 и в счете %3 отличается</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Измерение "%1" в акте оприходования %2 и в счете %3 отличается</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Header (Ext) - Method GivProdOrderCheckDocDim - NamedType locLabel002</note>
         </trans-unit>
         <trans-unit id="TableExtension 1338405014 - Field 1136281660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1592379974">
           <source>Giv. Prod. Order No.</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Произв. Заказ Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Header (Ext) - Field Giv. Prod. Order No. - Property Caption</note>

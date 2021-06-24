@@ -201,7 +201,8 @@ table 70048 "Giv. Prod. Order"
                 IF NOT IJT.GET(JnlTemplName) THEN BEGIN
                     IJT.INIT;
                     IJT.Name := JnlTemplName;
-                    IJT.Type := JnlType;
+                    //IJT.Type := JnlType;
+                    ijt.type := ijt.type::"816"; // NC 51414 GG
                     IJT.INSERT;
                 END;
 
