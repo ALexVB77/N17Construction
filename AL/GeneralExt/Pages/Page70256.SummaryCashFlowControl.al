@@ -22,7 +22,26 @@ page 70256 "Summary Cash Flow Control"
                 {
                     ApplicationArea = All;
                     Caption = 'Project Code';
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        DimVal: Record "Dimension Value";
+                    begin
+                        GLSetup.Get;
+                        GLSetup.TestField("Project Dimension Code");
+                        DimVal.Reset();
+                        DimVal.SetRange("Dimension Code", GLSetup."Project Dimension Code");
+                        DimVal.SetRange(Blocked, false);
+                        if Page.RunModal(Page::"Dimension Values", DimVal) = Action::LookupOK then begin
+                            ProjectCode := DimVal.Code;
+                            ValidatePrjCode();
+                        end;
 
+                    end;
+
+                    trigger OnValidate()
+                    begin
+                        ValidatePrjCode();
+                    end;
                 }
                 field(CPflt; CPflt)
                 {
@@ -123,4 +142,9 @@ page 70256 "Summary Cash Flow Control"
         NotShowBlankAmounts: boolean;
         UserSetup: Record "User Setup";
         GLSetup: Record "General Ledger Setup";
+
+    local procedure ValidatePrjCode()
+    begin
+        Rec.SetRange("Project Code", ProjectCode);
+    end;
 }

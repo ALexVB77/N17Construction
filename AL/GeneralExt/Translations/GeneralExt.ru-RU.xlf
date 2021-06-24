@@ -7364,7 +7364,6 @@
           <source>Go to the next set of data.</source>
           <target>Переход к следующему набору данных.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Action 1734268175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7377,7 +7376,6 @@
           <source>Go to the previous set of data.</source>
           <target>Переход к предыдущему набору данных.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Action 3697385181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7391,6 +7389,27 @@
           <target>Summary CF Control Matrix</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 3558207393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CF Total</source>
+          <target>CF Total</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control CFTotal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 631396668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CF Future (Unpaid)</source>
+          <target>CF Future (Unpaid)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control CFTotalUnpaid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 122295728 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Budget</source>
+          <target>Original Budget</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control OriginalBudget - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
