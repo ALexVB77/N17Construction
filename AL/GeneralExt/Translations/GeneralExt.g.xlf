@@ -1483,6 +1483,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 2723898874" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType DialogCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 3556479000" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls</source>
+          <note from="Developer" annotates="general" priority="2">{Split=r'\|'}{Locked=s'1'}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType Excel2007FileType</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 4106791379" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nothing to import!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType ImpErr</note>
+        </trans-unit>
         <trans-unit id="Table 2528781168 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
