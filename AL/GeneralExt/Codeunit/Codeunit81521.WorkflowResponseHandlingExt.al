@@ -18,12 +18,6 @@ codeunit 81521 "Workflow Response Handling Ext"
         case WorkflowResponse."Function Name" of
             CreateApprovalRequestsActCode:
                 CreateApprovalRequests(Variant, ResponseWorkflowStepInstance);
-            ShowPurchActApproveMessageCode:
-                ShowPurchActApproveMessage(Variant, ResponseWorkflowStepInstance);
-            ChangePurchActStatusCode:
-                ChangePurchActStatus(Variant, ResponseWorkflowStepInstance);
-            ApprovePurchActApprovalRequestCode:
-                ApprovePurchActApprovalRequest(Variant, ResponseWorkflowStepInstance);
             else
                 exit;
         end;
@@ -36,7 +30,7 @@ codeunit 81521 "Workflow Response Handling Ext"
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
+        //ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
     end;
 
     local procedure ShowPurchActApproveMessage(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")

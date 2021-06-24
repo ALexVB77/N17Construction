@@ -26,6 +26,12 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     begin
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, 1535, 'OnBeforeApprovalEntryInsert', '', false, false)]
+    local procedure OnBeforeApprovalEntryInsert(var ApprovalEntry: Record "Approval Entry"; ApprovalEntryArgument: Record "Approval Entry")
+    begin
+        ApprovalEntry."Status App Act" := ApprovalEntryArgument."Status App Act";
+    end;
+
     procedure CheckPurchOrderActApprovalPossible(var PurchaseHeader: Record "Purchase Header"): Boolean
     begin
         if not IsPurchOrderActApprovalsWorkflowEnabled(PurchaseHeader) then
@@ -42,7 +48,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         exit(WorkflowManagement.CanExecuteWorkflow(PurchaseHeader, WorkflowEventHandlingExt.RunWorkflowOnSendPurchOrderActForApprovalCode));
     end;
 
-    procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
+    procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; StatusAppAct: Enum "Purchase Act Approval Status")
     var
         WorkflowStepArgument: Record "Workflow Step Argument";
         ApprovalEntryArgument: Record "Approval Entry";
@@ -50,6 +56,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ERPCFunction: Codeunit "ERPC Funtions";
     begin
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
+        ApprovalEntryArgument."Status App Act" := StatusAppAct;
 
         PurchHeader.Get(ApprovalEntryArgument."Document Type", ApprovalEntryArgument."Document No.");
         if PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker then begin

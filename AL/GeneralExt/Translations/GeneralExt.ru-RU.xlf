@@ -4145,7 +4145,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 2172969975 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
-          <target>Ошибка пойманная в isolated storage</target>
+          <target>[NAB: REVIEW]Ошибка пойманная в isolated storage</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
@@ -8902,6 +8902,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries (Ext) - Action TransferToGD - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1414959925 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
+          <source>Act Approval Status</source>
+          <target>Статус утверждения для актов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field Status App Act - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1850888649 - Field 2188116433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
           <source>Max Len. Pmt Purpose Text</source>
           <target>Макс. длина выгр. назначение платежа</target>
@@ -9694,7 +9701,6 @@
           <source>Utilities Dim. Value Code</source>
           <target>ИНЖ. СЕТЬ</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Document Line GE - Field Utilities Dim. Value Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2040759808 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
@@ -11351,7 +11357,6 @@
           <source>816</source>
           <target>816</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">EnumExtension Item Journal Template Type GE - EnumValue 816 - Property Caption</note>
         </trans-unit>
       </group>
