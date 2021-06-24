@@ -18,10 +18,30 @@ page 70256 "Summary Cash Flow Control"
         {
             group(Options)
             {
-                field(Code; Rec.Code)
+                field(PrjCode; ProjectCode)
                 {
                     ApplicationArea = All;
-
+                    Caption = 'Project Code';
+                }
+                field(CPflt; CPflt)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Cost Place';
+                }
+                field(CCflt; CCflt)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Cost Code';
+                }
+                field(StDate; StartingDate)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Starting Date';
+                }
+                field(sba; NotShowBlankAmounts)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Don''t show blank amounts';
                 }
             }
         }
@@ -67,5 +87,9 @@ page 70256 "Summary Cash Flow Control"
     }
 
     var
-        myInt: Integer;
+        ProjectCode: code[20];
+        CPflt: Code[250];
+        CCflt: Code[250];
+        StartingDate: Date;
+        NotShowBlankAmounts: boolean;
 }
