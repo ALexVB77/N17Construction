@@ -6128,15 +6128,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control StDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1079676756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Original Budget</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action ImportOB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1734268175 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the next set of data.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 510141852 - Action 1734268175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Next Set</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 510141852 - Action 3697385181 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the previous set of data.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 510141852 - Action 3697385181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Previous Set</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Summary CF Control Matrix</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>

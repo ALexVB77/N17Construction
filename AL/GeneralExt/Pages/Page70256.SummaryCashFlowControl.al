@@ -22,6 +22,7 @@ page 70256 "Summary Cash Flow Control"
                 {
                     ApplicationArea = All;
                     Caption = 'Project Code';
+
                 }
                 field(CPflt; CPflt)
                 {
@@ -44,6 +45,12 @@ page 70256 "Summary Cash Flow Control"
                     Caption = 'Don''t show blank amounts';
                 }
             }
+            part(SCFCMatrix; "Summary CF Control Matrix")
+            {
+                ApplicationArea = All;
+                ShowFilter = false;
+            }
+
         }
     }
 
@@ -53,38 +60,60 @@ page 70256 "Summary Cash Flow Control"
         {
             action("Previous Set")
             {
-                // ApplicationArea = Location;
-                // Caption = 'Previous Set';
-                // Image = PreviousSet;
-                // Promoted = true;
-                // PromotedCategory = Process;
-                // PromotedIsBig = true;
-                // PromotedOnly = true;
-                // ToolTip = 'Go to the previous set of data.';
+                ApplicationArea = Location;
+                Caption = 'Previous Set';
+                Image = PreviousSet;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                ToolTip = 'Go to the previous set of data.';
 
-                // trigger OnAction()
-                // begin
-                //     SetColumns(MATRIX_SetWanted::Previous);
-                // end;
+                trigger OnAction()
+                begin
+                    // SetColumns(MATRIX_SetWanted::Previous);
+                    Message('KKK');
+                end;
             }
             action("Next Set")
             {
-                // ApplicationArea = Location;
-                // Caption = 'Next Set';
-                // Image = NextSet;
-                // Promoted = true;
-                // PromotedCategory = Process;
-                // PromotedIsBig = true;
-                // PromotedOnly = true;
-                // ToolTip = 'Go to the next set of data.';
+                ApplicationArea = Location;
+                Caption = 'Next Set';
+                Image = NextSet;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                ToolTip = 'Go to the next set of data.';
 
-                // trigger OnAction()
-                // begin
-                //     SetColumns(MATRIX_SetWanted::Next);
-                // end;
+                trigger OnAction()
+                begin
+                    // SetColumns(MATRIX_SetWanted::Next);
+                    Message('LLL');
+                end;
+            }
+            action(ImportOB)
+            {
+                Caption = 'Import Original Budget';
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    lOrBud: Record "Original Budget";
+                begin
+                    lOrBud.ImportExcel();
+                end;
             }
         }
     }
+
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    begin
+        if UserSetup.get(UserId) then begin
+            UserSetup."Last Project Code" := ProjectCode;
+            UserSetup.Modify(false);
+        end;
+    end;
 
     var
         ProjectCode: code[20];
@@ -92,4 +121,6 @@ page 70256 "Summary Cash Flow Control"
         CCflt: Code[250];
         StartingDate: Date;
         NotShowBlankAmounts: boolean;
+        UserSetup: Record "User Setup";
+        GLSetup: Record "General Ledger Setup";
 }

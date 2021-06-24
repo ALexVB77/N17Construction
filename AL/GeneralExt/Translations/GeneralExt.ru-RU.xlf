@@ -7328,36 +7328,44 @@
           <source>Cost Code</source>
           <target>Cost Code</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control CCflt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 4144696007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cost Place</source>
           <target>Cost Place</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control CPflt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 4211356407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Код проекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PrjCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 2159146764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Don't show blank amounts</source>
           <target>Скрыть нулевые строки</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control sba - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 3262087013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Starting Date</source>
           <target>Начальная дата</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control StDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1079676756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Original Budget</source>
+          <target>Загрузить Original Budget</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action ImportOB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1734268175 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the next set of data.</source>
+          <target>Переход к следующему набору данных.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Action 1734268175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Next Set</source>
@@ -7365,11 +7373,24 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 510141852 - Action 3697385181 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the previous set of data.</source>
+          <target>Переход к предыдущему набору данных.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 510141852 - Action 3697385181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Previous Set</source>
           <target>Пред. набор</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Summary CF Control Matrix</source>
+          <target>Summary CF Control Matrix</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
