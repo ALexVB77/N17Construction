@@ -600,9 +600,13 @@ page 70260 "Purchase Order Act"
                     var
                         ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
                     begin
-                        // PaymentOrderMgt.ApprovePurchaseOrderAct(Rec);
-                        if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
-                            ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
+                        if "Status App Act" = "Status App Act"::" " then
+                            FieldError("Status App Act");
+                        if "Status App Act" = "Status App Act"::Controller then begin
+                            if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
+                                ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
+                        end else
+                            ApprovalsMgmtExt.ApprovePurchActApprovalRequest(Rec);
                     end;
                 }
                 action(Reject)

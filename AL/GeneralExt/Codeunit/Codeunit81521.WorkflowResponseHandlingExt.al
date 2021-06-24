@@ -32,7 +32,7 @@ codeunit 81521 "Workflow Response Handling Ext"
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        //ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
+        ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
     end;
 
     local procedure ApproveApprovalRequests(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
