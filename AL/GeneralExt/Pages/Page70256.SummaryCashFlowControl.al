@@ -212,7 +212,7 @@ page 70256 "Summary Cash Flow Control"
     local procedure UpdateMatrixSubpage();
     begin
         CurrPage.MatrixPage.PAGE.Load(MatrixColumnCaptions, MatrixRecords, CurrSetLength, CPflt,
-          CCflt, ProjectCode, StartingDate, NotShowBlankAmounts);
+          CCflt, ProjectCode, StartingDate, NotShowBlankAmounts, 1);
     end;
 
     local procedure ValidatePrjCode()
