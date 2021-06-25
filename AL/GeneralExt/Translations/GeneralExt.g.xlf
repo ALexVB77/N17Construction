@@ -3263,11 +3263,6 @@
           <note from="Developer" annotates="general" priority="2">User ID NAVUser does not exist in the Approval User Setup window.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType UserIdNotInSetupErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3129098179 - Method 914998581 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You are not the approver for status %1 of document %2.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method ApprovePurchActApprovalRequest - NamedType NoReqToApproveErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <note from="Developer" annotates="general" priority="2"></note>
