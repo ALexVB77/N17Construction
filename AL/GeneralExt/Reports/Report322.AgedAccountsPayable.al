@@ -412,6 +412,29 @@ report 80322 "Aged Accounts Payable Ext"
                         TotalVendorLedgEntry[1].Amount += VendorLedgEntryEndingDate."Remaining Amount";
                         TotalVendorLedgEntry[1]."Amount (LCY)" += VendorLedgEntryEndingDate."Remaining Amt. (LCY)";
                         GrandTotalVLEAmtLCY += VendorLedgEntryEndingDate."Remaining Amt. (LCY)";
+
+
+                        //NC 50335 DP >
+                        IF ExportExcel THEN BEGIN
+                            RowNo += 1;
+                            AddCell(RowNo, 1, Vendor."No.", false, xl."Cell Type"::Text, false);
+                            AddCell(RowNo, 2, Vendor.Name, false, xl."Cell Type"::Text, false);
+                            AddCell(RowNo, 3, FORMAT(VendorLedgEntryEndingDate."Posting Date"), false, xl."Cell Type"::Date, false);
+                            AddCell(RowNo, 4, FORMAT(VendorLedgEntryEndingDate."Document Type"), false, xl."Cell Type"::Text, false);
+                            AddCell(RowNo, 5, Vendor."Vendor Posting Group", false, xl."Cell Type"::Text, false);
+                            AddCell(RowNo, 6, VendorLedgEntryEndingDate."Document No.", false, xl."Cell Type"::Text, false);
+                            AddCell(RowNo, 7, VendorLedgEntryEndingDate."Agreement No.", false, xl."Cell Type"::Text, false);
+                            AddCell(RowNo, 8, VendorLedgEntryEndingDate."Global Dimension 1 Code", false, xl."Cell Type"::Text, false);
+                            AddCell(RowNo, 9, ReportFormat(VendorLedgEntryEndingDate."Amount (LCY)"), false, xl."Cell Type"::Number, false);
+                            AddCell(RowNo, 10, ReportFormat(VendorLedgEntryEndingDate."Remaining Amt. (LCY)"), false, xl."Cell Type"::Number, false);
+                            AddCell(RowNo, 11, ReportFormat(AgedVendorLedgEntry[1]."Remaining Amt. (LCY)"), false, xl."Cell Type"::Number, false);
+                            AddCell(RowNo, 12, ReportFormat(AgedVendorLedgEntry[2]."Remaining Amt. (LCY)"), false, xl."Cell Type"::Number, false);
+                            AddCell(RowNo, 13, ReportFormat(AgedVendorLedgEntry[3]."Remaining Amt. (LCY)"), false, xl."Cell Type"::Number, false);
+                            AddCell(RowNo, 14, ReportFormat(AgedVendorLedgEntry[4]."Remaining Amt. (LCY)"), false, xl."Cell Type"::Number, false);
+                            AddCell(RowNo, 15, ReportFormat(AgedVendorLedgEntry[5]."Remaining Amt. (LCY)"), false, xl."Cell Type"::Number, false);
+
+                        END;
+                        //NC 50335 DP <
                     end;
 
                     trigger OnPostDataItem()
