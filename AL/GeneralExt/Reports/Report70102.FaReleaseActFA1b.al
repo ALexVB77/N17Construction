@@ -43,7 +43,7 @@ report 70102 "Fa Release Act FA-1b"
                         CALCFIELDS("Acquisition Cost", Depreciation, "Book Value", "Acquisition Cost", "Initial Acquisition Cost");
                         //ZNS-087 DP <<
                         if (not manufacturerSet) then begin
-                            ExcelReportBuilderManager.SetSheet('стр2');
+                            ExcelReportBuilderManager.SetSheet('стр1');
                             ExcelReportBuilderManager.AddDataToSection('Make', fa.Manufacturer);
                             manufacturerSet := true;
                         end;
