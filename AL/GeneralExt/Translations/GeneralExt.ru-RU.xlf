@@ -4358,21 +4358,18 @@
           <source>The previous column set could not be found.</source>
           <target>Не найден предыдущий набор столбцов.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Codeunit 2488893537 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>The period could not be found.</source>
           <target>Не удалось найти период.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text002</note>
         </trans-unit>
         <trans-unit id="Codeunit 2488893537 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>There are no Calendar entries within the filter.</source>
           <target> фильтре отсутствуют объекты календаря.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -6619,6 +6616,27 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects Article List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Budget Entry</source>
+          <target>График платежей</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2332267737 - Control 1453909612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CC Description</source>
+          <target>Описание СС</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Control Dim2CodeDescF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2332267737 - Control 2493014818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CC Description</source>
+          <target>Описание СС</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Control Dim2CodeDesc - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects CC Entry Constr 2</source>
           <target>Projects CC Entry Constr 2</target>
@@ -7427,7 +7445,6 @@
           <source>Day,Week,Month,Quarter,Year,Accounting Period,Year3</source>
           <target>День,Неделя,Месяц,Квартал,Год,Учетный период,3 года</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 4211356407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

@@ -5513,6 +5513,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects Article List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Budget Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2332267737 - Control 1453909612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CC Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Control Dim2CodeDescF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2332267737 - Control 2493014818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CC Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Control Dim2CodeDesc - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects CC Entry Constr 2</source>
           <note from="Developer" annotates="general" priority="2"></note>
