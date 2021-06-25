@@ -8522,91 +8522,106 @@
           <source>Fa Release Act FA-1b</source>
           <target>Акт приема-передачи ОС-1б</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - NamedType 3994261301" size-unit="char" translate="yes" xml:space="preserve">
           <source>Подлежит вводу в эксплуатацию с %1</source>
           <target>Подлежит вводу в эксплуатацию с %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - NamedType Text_001</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target>Параметры</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 2394554344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attorney</source>
+          <target>Доверенность</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control Attrorney - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 1683208766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attorney Date</source>
           <target>Дата доверенности</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control AttorneyDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 3625549732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Issued By</source>
           <target>Кем выпущена</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control AttorneyIssuedBy - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 2399248705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attorney No</source>
           <target>Номер доверенности</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control AttorneyNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Общее</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 3871408456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Depreciation Code</source>
           <target>Код амортизации</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control DepreciationCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 858343146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Depreciation Group</source>
           <target>Группа амортизации</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control DepreciationGroup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 1607295407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transferor No.</source>
           <target>Код сдатчика</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control VendorNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 42754125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Organization</source>
+          <target>Организация</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control Organization - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 2704334202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Name</source>
           <target>Название</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control CompDirectorName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 1135655911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Position</source>
           <target>Позиция</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control CompDirectorPos - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 870987117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Department Name</source>
           <target>Наименование структурного подразделения</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control DepartmentName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 2491067343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transfer Purpose</source>
           <target>Цель передачи</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control TransferPurpose - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 3478516414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transfer Statement Reason</source>
           <target>Основание для составления акта</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control TransferStatementReason - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9103,9 +9118,8 @@
         </trans-unit>
         <trans-unit id="PageExtension 3985706558 - Action 2698216203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
           <source>FA Posted Release Act FA-1B</source>
-          <target>Субформа учт. акта ввода в эксплуатацию ОС</target>
+          <target>Акт приема-передачи ОС-1б</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action FA Release Act FA-1b - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 119182345 - Action 2378163730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2625649796">
