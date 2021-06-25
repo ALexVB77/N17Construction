@@ -17,6 +17,15 @@ report 50999 "TempStarter"
         WR: Record "Workflow Response";
     begin
 
+
+        WRH.AddResponseToLibrary(
+            WRHExt.CreateApprovalRequestsActCode(),
+            0,
+            'Создать запрос утверждения для Акта, КС-2', 'GROUP 10');
+        WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode(), WEH.RunWorkflowOnSendPurchaseDocForApprovalCode());
+
+
+
         /*
 
         WEH.AddEventToLibrary(
