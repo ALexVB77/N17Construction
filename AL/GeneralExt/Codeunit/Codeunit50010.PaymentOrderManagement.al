@@ -766,7 +766,10 @@ codeunit 50010 "Payment Order Management"
     var
         UserSetup: Record "User Setup";
     begin
-        UserSetup.GET(ApproverCode);
+        if ApproverCode = '' then
+            exit('');
+        if not UserSetup.GET(ApproverCode) then
+            exit(ApproverCode);
         IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
             exit(UserSetup.Substitute)
         ELSE
