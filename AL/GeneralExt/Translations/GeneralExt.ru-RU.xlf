@@ -4211,7 +4211,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 2172969975 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
-          <target>Ошибка пойманная в isolated storage</target>
+          <target>[NAB: REVIEW]Ошибка пойманная в isolated storage</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
@@ -4353,6 +4353,27 @@
           <target>Архивировать %1 с номером: %2?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText007</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The previous column set could not be found.</source>
+          <target>Не найден предыдущий набор столбцов.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The period could not be found.</source>
+          <target>Не удалось найти период.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no Calendar entries within the filter.</source>
+          <target> фильтре отсутствуют объекты календаря.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Act Stage</source>
@@ -7403,9 +7424,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 43593927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Day,Week,Month,Quarter,Year,Accounting Period</source>
-          <target>День,Неделя,Месяц,Квартал,Год,Учетный период</target>
+          <source>Day,Week,Month,Quarter,Year,Accounting Period,Year3</source>
+          <target>День,Неделя,Месяц,Квартал,Год,Учетный период,3 года</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 4211356407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8534,14 +8556,12 @@
           <source>Options</source>
           <target>Параметры</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control Options - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 2394554344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attorney</source>
           <target>Доверенность</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control Attrorney - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 1683208766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8566,7 +8586,6 @@
           <source>General</source>
           <target>Общее</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 3871408456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8591,7 +8610,6 @@
           <source>Organization</source>
           <target>Организация</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control Organization - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 2704334202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9322,7 +9340,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -9749,7 +9767,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
