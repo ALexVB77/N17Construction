@@ -18,8 +18,8 @@ codeunit 81521 "Workflow Response Handling Ext"
         case WorkflowResponse."Function Name" of
             CreateApprovalRequestsActCode:
                 CreateApprovalRequests(Variant, ResponseWorkflowStepInstance);
-            ApproveApprovalRequestsActCode:
-                ApproveApprovalRequests(Variant, ResponseWorkflowStepInstance);
+            MoveToNextActStatusCode:
+                MoveToNextActStatus(Variant, ResponseWorkflowStepInstance);
             else
                 exit;
         end;
@@ -35,9 +35,13 @@ codeunit 81521 "Workflow Response Handling Ext"
         ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
     end;
 
-    local procedure ApproveApprovalRequests(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
+    local procedure MoveToNextActStatus(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
+        RecRef: RecordRef;
     begin
-        error('Вызов ApproveApprovalRequests()');
+        RecRef.GetTable(Variant);
+        ApprovalsMgmtExt.MoveToNextActStatus(RecRef, WorkflowStepInstance);
     end;
 
     procedure CreateApprovalRequestsActCode(): Code[128]
@@ -45,7 +49,7 @@ codeunit 81521 "Workflow Response Handling Ext"
         exit(UpperCase('CreateApprovalRequestsAct'));
     end;
 
-    procedure ApproveApprovalRequestsActCode(): Code[128]
+    procedure MoveToNextActStatusCode(): Code[128]
     begin
         exit(UpperCase('ApproveApprovalRequestsAct'));
     end;

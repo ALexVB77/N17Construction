@@ -36,6 +36,11 @@ report 50999 "TempStarter"
             'Создать запрос утверждения для Акта, КС-2', 'GROUP 10');
         WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
 
+        WRH.AddResponseToLibrary(
+            WRHExt.MoveToNextActStatusCode(),
+            0,
+            'Утвердить текущий статус Акта, КС-2 и перейти к следующему', 'GROUP 11');
+        WRH.AddResponsePredecessor(WRHExt.MoveToNextActStatusCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
 
         /*
          WRH.AddResponseToLibrary(

@@ -116,4 +116,14 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalsMgmt.ApproveApprovalRequests(ApprovalEntry);
     end;
 
+    procedure MoveToNextActStatus(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        WorkflowStepArgument: Record "Workflow Step Argument";
+        ApprovalEntryArgument: Record "Approval Entry";
+        PurchHeader: Record "Purchase Header";
+        PayOrderMgt: Codeunit "Payment Order Management";
+    begin
+        Error('Call MoveToNextActStatus for %1', RecRef.Number);
+    end;
+
 }
