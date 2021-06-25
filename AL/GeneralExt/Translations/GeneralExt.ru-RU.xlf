@@ -2617,7 +2617,6 @@
           <source>ID</source>
           <target>ID</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 1815700606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2696,21 +2695,18 @@
           <source>Reversed</source>
           <target>Отменено</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reversed - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 534261515 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reversed ID</source>
           <target>Отменено ID</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reversed ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 1445432576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reversed Without Entry</source>
           <target>Отменено без операции</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reversed Without Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3918,12 +3914,6 @@
           <target>Код пользователя %1 не указан в окне таблице «Настройка утверждения».</target>
           <note from="Developer" annotates="general" priority="2">User ID NAVUser does not exist in the Approval User Setup window.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType UserIdNotInSetupErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3129098179 - Method 914998581 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You are not the approver for status %1 of document %2.</source>
-          <target>Вы не являетесь утверждающим для статуса %1 документа %2.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method ApprovePurchActApprovalRequest - NamedType NoReqToApproveErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
@@ -7399,6 +7389,27 @@
           <target>Cost Place</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control CPflt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 43593927 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies by which period amounts are displayed.</source>
+          <target>Определяет период, суммы за который должны отображаться.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 43593927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View by</source>
+          <target>Просмотр по</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 43593927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Week,Month,Quarter,Year,Accounting Period</source>
+          <target>День,Неделя,Месяц,Квартал,Год,Учетный период</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 4211356407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>

@@ -167,12 +167,12 @@ page 50103 "Summary CF Control Matrix"
         StartingDate: Date;
         NotShowBlankAmount: Boolean;
         RoundingFactorFormatString: Text;
-        RoundingFactor: Option "None","1","1000","1000000";
+        // RoundingFactor: Option "None","1","1000","1000000";
         MATRIX_CurrentNoOfMatrixColumn: Integer;
         PrjBudEntries: Record "Projects Budget Entry";
 
 
-    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record Date; CurrentNoOfMatrixColumns: Integer; CPFilter1: Code[250]; CCFilter1: Code[250]; PrjFilter1: Code[20]; RoundingFactor1: Option "None","1","1000","1000000"; StartingDate1: Date; NotShowBlank1: Boolean)
+    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record Date; CurrentNoOfMatrixColumns: Integer; CPFilter1: Code[250]; CCFilter1: Code[250]; PrjFilter1: Code[20]; StartingDate1: Date; NotShowBlank1: Boolean)
     var
         i: Integer;
     begin
@@ -192,10 +192,10 @@ page 50103 "Summary CF Control Matrix"
         CPFilter := CPFilter1;
         CCFilter := CCFilter1;
         PrjFilter := PrjFilter1;
-        RoundingFactor := RoundingFactor1;
+        // RoundingFactor := RoundingFactor1;
         StartingDate := StartingDate1;
         NotShowBlankAmount := NotShowBlank1;
-        RoundingFactorFormatString := MatrixMgt.GetFormatString(RoundingFactor, false);
+        // RoundingFactorFormatString := MatrixMgt.GetFormatString(RoundingFactor, false);
 
         CurrPage.Update(false);
     end;
@@ -229,7 +229,8 @@ page 50103 "Summary CF Control Matrix"
     begin
         SetFilters(ColumnID, 2);
         PrjBudEntries.CalcSums("Without VAT (LCY)");
-        MATRIX_CellData[ColumnID] := MatrixMgt.RoundValue(PrjBudEntries."Without VAT (LCY)", RoundingFactor);
+        // MATRIX_CellData[ColumnID] := MatrixMgt.RoundValue(PrjBudEntries."Without VAT (LCY)", RoundingFactor);
+        MATRIX_CellData[ColumnID] := PrjBudEntries."Without VAT (LCY)";
     end;
 
     local procedure SetFilters(ColumnID: Integer; pAmtType: Option All,Actuals,Unpaid)
