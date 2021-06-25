@@ -42,6 +42,7 @@ page 70127 "Projects Budget Entry"
                 {
                     Caption = 'CC Description';
                     ApplicationArea = All;
+                    Editable = false;
                 }
                 field("Payment Description"; Rec."Payment Description")
                 {
@@ -106,6 +107,7 @@ page 70127 "Projects Budget Entry"
                 {
                     Caption = 'CC Description';
                     ApplicationArea = All;
+                    Editable = false;
                 }
                 field("Payment DescriptionF"; Rec."Payment Description")
                 {
