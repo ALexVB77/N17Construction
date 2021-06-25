@@ -3628,6 +3628,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText007</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The previous column set could not be found.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The period could not be found.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no Calendar entries within the filter.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text003</note>
+        </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Act Stage</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6169,7 +6184,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 43593927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Day,Week,Month,Quarter,Year,Accounting Period</source>
+          <source>Day,Week,Month,Quarter,Year,Accounting Period,Year3</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property OptionCaption</note>
         </trans-unit>

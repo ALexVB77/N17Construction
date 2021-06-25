@@ -67,13 +67,15 @@ page 70256 "Summary Cash Flow Control"
                 {
                     ApplicationArea = All;
                     Caption = 'View by';
-                    OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
+                    OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period,Year3';
                     ToolTip = 'Specifies by which period amounts are displayed.';
 
                     trigger OnValidate()
                     begin
+                        DateFilter := Format(StartingDate) + '..' + Format(CalcDate('<+20Y>', StartingDate));
                         SetColumns(SetWanted::First);
                         UpdateMatrixSubpage();
+                        DateFilter := '';
                     end;
                 }
                 field(StDate; StartingDate)
@@ -185,7 +187,7 @@ page 70256 "Summary Cash Flow Control"
         NotShowBlankAmounts: boolean;
         UserSetup: Record "User Setup";
         GLSetup: Record "General Ledger Setup";
-        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
+        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period",Year3;
         SetWanted: Option First,Previous,Same,Next,PreviousColumn,NextColumn;
         MatrixRecords: array[32] of Record Date;
         MatrixColumnCaptions: array[32] of Text[80];
@@ -197,9 +199,14 @@ page 70256 "Summary Cash Flow Control"
     procedure SetColumns(SetWanted: Option First,Previous,Same,Next,PreviousColumn,NextColumn)
     var
         MatrixMgt: Codeunit "Matrix Management";
+        PeriodMgtExt: Codeunit "Period Management Ext";
     begin
-        MatrixMgt.GeneratePeriodMatrixData(SetWanted, 6, false, PeriodType, DateFilter,
-          PKFirstRecInCurrSet, MatrixColumnCaptions, ColumnSet, CurrSetLength, MatrixRecords);
+        if PeriodType <> PeriodType::Year3 then
+            MatrixMgt.GeneratePeriodMatrixData(SetWanted, 6, false, PeriodType, DateFilter,
+              PKFirstRecInCurrSet, MatrixColumnCaptions, ColumnSet, CurrSetLength, MatrixRecords)
+        else
+            PeriodMgtExt.GeneratePeriodMatrixData(SetWanted, 6, false, PeriodType, DateFilter,
+              PKFirstRecInCurrSet, MatrixColumnCaptions, ColumnSet, CurrSetLength, MatrixRecords);
     end;
 
     local procedure UpdateMatrixSubpage();
