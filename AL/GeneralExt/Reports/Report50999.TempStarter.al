@@ -25,6 +25,7 @@ report 50999 "TempStarter"
             false);
 
         WEH.AddEventPredecessor(WEH.RunWorkflowOnApproveApprovalRequestCode(), WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRH.SendApprovalRequestForApprovalCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
 
         WRPH.CreateEntitiesAndFields();
         WRPH.AssignEntitiesToWorkflowEvents();

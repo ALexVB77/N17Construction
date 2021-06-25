@@ -333,7 +333,7 @@ codeunit 70000 "ERPC Funtions"
             UNTIL PurchLine.NEXT = 0;
     end;
 
-    local procedure CheckDocSum(PurchHeader: Record "Purchase Header")
+    procedure CheckDocSum(PurchHeader: Record "Purchase Header")
     var
         TempPurchLine: Record "Purchase Line" temporary;
         TempVATAmountLine: Record "VAT Amount Line" temporary;
@@ -393,7 +393,6 @@ codeunit 70000 "ERPC Funtions"
                     UNTIL PurchLine.NEXT = 0;
             END;
     end;
-
 
     local procedure CreatePurchOrder(VAR PurchaseHeader: Record "Purchase Header"; CheckOnly: Boolean)
     var
@@ -526,10 +525,9 @@ codeunit 70000 "ERPC Funtions"
                     PurchHeader.MODIFY;
             end
         END;
-
     end;
 
-    local procedure SetDefLocation(VAR lrPurchHeader: Record "Purchase Header")
+    procedure SetDefLocation(VAR lrPurchHeader: Record "Purchase Header")
     var
         InvSetup: Record "Inventory Setup";
         lrPurchLine: Record "Purchase Line";

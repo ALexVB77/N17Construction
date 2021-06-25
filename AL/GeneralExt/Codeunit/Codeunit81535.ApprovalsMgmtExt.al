@@ -48,26 +48,22 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         exit(WorkflowManagement.CanExecuteWorkflow(PurchaseHeader, WorkflowEventHandlingExt.RunWorkflowOnSendPurchOrderActForApprovalCode));
     end;
 
-    procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; StatusAppAct: Enum "Purchase Act Approval Status")
+    procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
     var
         WorkflowStepArgument: Record "Workflow Step Argument";
         ApprovalEntryArgument: Record "Approval Entry";
         PurchHeader: Record "Purchase Header";
-        ERPCFunction: Codeunit "ERPC Funtions";
+        PayOrderMgt: Codeunit "Payment Order Management";
     begin
-        PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
-        ApprovalEntryArgument."Status App Act" := StatusAppAct;
-
         PurchHeader.Get(ApprovalEntryArgument."Document Type", ApprovalEntryArgument."Document No.");
-        if PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker then begin
-            PurchHeader.TestField(Controller);
-            CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
-        end;
+        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false);
 
-        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, ERPCFunction.GetActApprover(PurchHeader));
+        PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
+        ApprovalEntryArgument."Status App Act" := ApprovalEntryArgument."Status App Act"::Controller;
+        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
 
-        if WorkflowStepArgument."Show Confirmation Message" then
-            ApprovalsMgmt.InformUserOnStatusChange(RecRef, WorkflowStepInstance.ID);
+        ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
     end;
 
     local procedure PopulateApprovalEntryArgumentPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; var ApprovalEntryArgument: Record "Approval Entry")
@@ -106,6 +102,18 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
 
         SequenceNo += 1;
         ApprovalsMgmt.MakeApprovalEntry(ApprovalEntryArgument, SequenceNo, ApprovalUserID, WorkflowStepArgument);
+    end;
+
+    procedure ApprovePurchActApprovalRequest(PurchHeader: Record "Purchase Header")
+    var
+        ApprovalEntry: Record "Approval Entry";
+        NoReqToApproveErr: Label 'You are not the approver for status %1 of document %2.';
+    begin
+        if not ApprovalsMgmt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, PurchHeader.RecordId) then
+            Error(NoReqToApproveErr, PurchHeader."Status App Act", PurchHeader."No.");
+
+        ApprovalEntry.SetRecFilter;
+        ApprovalsMgmt.ApproveApprovalRequests(ApprovalEntry);
     end;
 
 }

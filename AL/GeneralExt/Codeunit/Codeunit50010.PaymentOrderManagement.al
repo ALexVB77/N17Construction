@@ -6,8 +6,18 @@ codeunit 50010 "Payment Order Management"
     end;
 
     var
+        InvtSetup: Record "Inventory Setup";
         PurchSetup: record "Purchases & Payables Setup";
         PurchSetupFound: Boolean;
+        InvtSetupFound: Boolean;
+
+    local procedure GetInventorySetup()
+    begin
+        if not InvtSetupFound then begin
+            InvtSetupFound := true;
+            InvtSetup.Get();
+        end;
+    end;
 
     local procedure GetPurchSetupWithTestDim()
     begin
@@ -18,7 +28,6 @@ codeunit 50010 "Payment Order Management"
             PurchSetup.TestField("Cost Code Dimension");
         end;
     end;
-
 
     procedure FuncNewRec(PurchHeader: Record "Purchase Header"; ActTypeOption: enum "Purchase Act Type")
     var
@@ -502,64 +511,197 @@ codeunit 50010 "Payment Order Management"
         //NC 44684 < KGT
     end;
 
-    procedure ApprovePurchaseOrderAct(PurchaseHeader: Record "Purchase Header")
+    local procedure CheckCostDimExists(DimSetID: Integer): Boolean
     var
-        ApprovalEntry: Record "Approval Entry";
-        gcERPC: Codeunit "ERPC Funtions";
-        ApprovalMgt: Codeunit "Approvals Mgmt.";
+        DimSetEntry: Record "Dimension Set Entry";
     begin
+        if DimSetID = 0 then
+            exit(false);
 
-        //NC 40142 > DP
-        IF PurchaseHeader."Location Document" THEN
-            gcERPC.CheckShortCutDim1(PurchaseHeader);
-        //NC 40142 < DP
+        GetPurchSetupWithTestDim();
+        DimSetEntry.SetRange("Dimension Set ID", DimSetID);
+        DimSetEntry.SetFilter("Dimension Code", '%1|%2', PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension");
+        exit(DimSetEntry.Count = 2);
+    end;
 
-        // NC AB: пока отключим, назначение непонятно
-        // // SWC1041 DD 27.04.2017 >>
-        // Wnd.OPEN('Утверждение акта или кс-2...');
-        // grPurchHeader.LOCKTABLE;
-        // grAttachment.LOCKTABLE;
-        // ApprovalEntry.LOCKTABLE;
-        // PurchHeaderAdd.LOCKTABLE;
-        // PL.LOCKTABLE;
-        // // SWC1041 DD 27.04.2017 <<
+    local procedure AllocPurchActReceive(PurchHeader: Record "Purchase Header"): Boolean
+    var
+        PurchLine: Record "Purchase Line";
+    begin
+        PurchLine.SetRange("Document Type", PurchHeader."Document Type");
+        PurchLine.SetRange("Document No.", PurchHeader."No.");
+        PurchLine.SetRange(Type, PurchLine.Type::Item);
+        PurchLine.SetFilter("No.", '<>%1', '');
+        PurchLine.SetFilter("Qty. to Receive", '<>%1', 0);
+        exit(not PurchLine.IsEmpty);
+    end;
 
-        CheckEmptyLines(PurchaseHeader); //SWC380 AKA 290115
+    procedure ChangePurchaseOrderAct(var PurchHeader: Record "Purchase Header"; Reject: Boolean)
+    var
+        DocumentAttachment: Record "Document Attachment";
+        PurchSetup: Record "Purchases & Payables Setup";
+        Vendor: Record Vendor;
+        PurchLine: Record "Purchase Line";
+        UserSetup: Record "User Setup";
+        ERPCFunc: Codeunit "ERPC Funtions";
 
-        IF PurchaseHeader."Status App Act" = PurchaseHeader."Status App Act"::Approve THEN BEGIN
-            // NC AB: используем стандарт, этого больше не надо, кроме одного момента ниже (set "Process User")
-            // ApprovalEntry.SETRANGE("Table ID", 38);
-            // ApprovalEntry.SETRANGE("Document Type", ApprovalEntry."Document Type"::Order);
-            // ApprovalEntry.SETRANGE("Document No.", PurchaseHeader."No.");
-            // // ApprovalEntry.SETRANGE("Approver ID", USERID);
-            // ApprovalEntry.SETRANGE(Status, ApprovalEntry.Status::Open);
-            // IF ApprovalEntry.FINDFIRST THEN BEGIN
-            //     ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
-            //     IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
-            //         IF PurchaseHeader.GET(ApprovalEntry."Document Type", ApprovalEntry."Document No.") THEN BEGIN
-            //             ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
-            //             IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
-            //             BEGIN                                                                     //SWC380 AKA 190115
-            //                PurchaseHeader."Process User" := gcERPC.GetCurrentAppr(PurchaseHeader);
-            //                PurchaseHeader."Date Status App" := TODAY;
-            //                PurchaseHeader.MODIFY;
-            //            END;                                                                      //SWC380 AKA 190115
-            //        END;
-            //    END;
-            //END ELSE BEGIN
-            //    ApprovalEntry.SETFILTER(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Approved);
-            //    IF ApprovalEntry.FINDSET THEN
-            //        MESSAGE('Вы уже утвердили заявку ранее', USERID)
-            //    ELSE
-            //        MESSAGE('Утверждающий %1 отсутствует в таблице утверждения!', USERID);
-            //END;
-            ERROR('Дошли до статуса Approve!')
-        END ELSE BEGIN
-            IF PurchaseHeader."Act Type" in [PurchaseHeader."Act Type"::Act, PurchaseHeader."Act Type"::"Act (Production)"] THEN
-                gcERPC.ChangeActStatus(PurchaseHeader);
-            IF PurchaseHeader."Act Type" in [PurchaseHeader."Act Type"::"KC-2", PurchaseHeader."Act Type"::"KC-2 (Production)"] THEN
-                ERROR('gcERPC.ChangeKC2Status(Rec);');
-        END;
+        LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
+
+        Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
+        Text50016: label 'You must select the real item before document posting.';
+
+        TEXT70001: label 'There is no attachment!';
+        TEXT70004: Label 'Vendor does not have to be basic!';
+    begin
+        PurchHeader.TestField("Status App Act");
+        PurchHeader.TestField(Controller);
+
+        // проверки и дозаполнение
+
+        if PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Controller.AsInteger() then begin
+            PurchSetup.TestField("Base Vendor No.");
+            if PurchHeader."Buy-from Vendor No." = PurchSetup."Base Vendor No." then
+                ERROR(TEXT70004);
+            Vendor.Get(PurchHeader."Buy-from Vendor No.");
+            IF Vendor."Agreement Posting" = Vendor."Agreement Posting"::Mandatory then
+                PurchHeader.Testfield("Agreement No.");
+
+            DocumentAttachment.SetRange("Table ID", DATABASE::"Purchase Header");
+            DocumentAttachment.SetRange("Document Type", PurchHeader."Document Type");
+            DocumentAttachment.SetRange("No.", PurchHeader."No.");
+            if DocumentAttachment.IsEmpty then
+                ERROR(TEXT70001);
+
+            PurchHeader.Testfield("Purchaser Code");
+            PurchHeader.TESTFIELD("Vendor Invoice No.");
+
+            IF PurchHeader."Location Document" THEN begin
+                PurchHeader.TESTFIELD("Location Code");
+
+                GetInventorySetup;
+                PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+                PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+                PurchLine.SETRANGE(Type, PurchLine.Type::Item);
+                PurchLine.SETRANGE("No.", InvtSetup."Temp Item Code");
+                IF not PurchLine.IsEmpty THEN
+                    ERROR(Text50016);
+                PurchLine.SETRANGE("No.");
+                PurchLine.FindSet();
+                repeat
+                    PurchLine.TestField("No.");
+                    PurchLine.TestField(Quantity);
+                    PurchLine.TestField("Location Code");
+                    if not CheckCostDimExists(PurchLine."Dimension Set ID") then
+                        Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.", PurchLine."Line No.");
+                until PurchLine.Next() = 0;
+            end;
+        end;
+
+        if PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Checker.AsInteger() then begin
+            GetInventorySetup;
+            PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+            PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+            PurchLine.SETRANGE(Type, PurchLine.Type::Item);
+            PurchLine.FindSet();
+            repeat
+                PurchLine.TestField("No.");
+                PurchLine.TestField(Quantity);
+                if not CheckCostDimExists(PurchLine."Dimension Set ID") then
+                    Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.", PurchLine."Line No.");
+                PurchLine.CalcFields(Approver);
+                PurchLine.TestField(Approver);
+            until PurchLine.Next() = 0;
+
+            ERPCFunc.SetDefLocation(PurchHeader);
+            PurchHeader.TestField("Invoice Amount Incl. VAT");
+            ERPCFunc.CheckDocSum(PurchHeader);
+        end;
+
+        // изменение статусов
+
+        case PurchHeader."Status App Act" of
+            PurchHeader."Status App Act"::Controller:
+                begin
+                    if PurchHeader."Location Document" and AllocPurchActReceive(PurchHeader) then begin
+                        IF NOT CONFIRM(Text50013, FALSE) THEN
+                            ERROR('');
+                        COMMIT;
+                        PurchHeader.Receive := true;
+                        PurchHeader.Invoice := false;
+                        PurchHeader."Print Posted Documents" := false;
+                        CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
+                        COMMIT;
+                    end;
+
+                    UserSetup.RESET;
+                    UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
+                    UserSetup.FINDFIRST;
+
+                    PurchHeader."Status App Act" := PurchHeader."Status App Act"::Checker;
+                    PurchHeader."Status App" := PurchHeader."Status App"::Checker;
+                    PurchHeader."Process User" := UserSetup."User ID";
+                    PurchHeader."Date Status App" := TODAY;
+                    PurchHeader.Modify;
+                end;
+
+
+        end
+
+
+        /*
+       //NC 40142 > DP
+       IF PurchaseHeader."Location Document" THEN
+           gcERPC.CheckShortCutDim1(PurchaseHeader);
+       //NC 40142 < DP
+
+       // NC AB: пока отключим, назначение непонятно
+       // // SWC1041 DD 27.04.2017 >>
+       // Wnd.OPEN('Утверждение акта или кс-2...');
+       // grPurchHeader.LOCKTABLE;
+       // grAttachment.LOCKTABLE;
+       // ApprovalEntry.LOCKTABLE;
+       // PurchHeaderAdd.LOCKTABLE;
+       // PL.LOCKTABLE;
+       // // SWC1041 DD 27.04.2017 <<
+
+       CheckEmptyLines(PurchaseHeader); //SWC380 AKA 290115
+
+       IF PurchaseHeader."Status App Act" = PurchaseHeader."Status App Act"::Approve THEN BEGIN
+           // NC AB: используем стандарт, этого больше не надо, кроме одного момента ниже (set "Process User")
+           // ApprovalEntry.SETRANGE("Table ID", 38);
+           // ApprovalEntry.SETRANGE("Document Type", ApprovalEntry."Document Type"::Order);
+           // ApprovalEntry.SETRANGE("Document No.", PurchaseHeader."No.");
+           // // ApprovalEntry.SETRANGE("Approver ID", USERID);
+           // ApprovalEntry.SETRANGE(Status, ApprovalEntry.Status::Open);
+           // IF ApprovalEntry.FINDFIRST THEN BEGIN
+           //     ApprovalMgt.ApproveApprovalRequest(ApprovalEntry);
+           //     IF ApprovalEntry."Table ID" = DATABASE::"Purchase Header" THEN BEGIN
+           //         IF PurchaseHeader.GET(ApprovalEntry."Document Type", ApprovalEntry."Document No.") THEN BEGIN
+           //             ApproverCheck := PurchHeaderAdd.GetCheckApprover("Document Type", "No."); //SWC380 AKA 190115
+           //             IF NOT ApproverCheck THEN                                                 //SWC380 AKA 190115
+           //             BEGIN                                                                     //SWC380 AKA 190115
+           //                PurchaseHeader."Process User" := gcERPC.GetCurrentAppr(PurchaseHeader);
+           //                PurchaseHeader."Date Status App" := TODAY;
+           //                PurchaseHeader.MODIFY;
+           //            END;                                                                      //SWC380 AKA 190115
+           //        END;
+           //    END;
+           //END ELSE BEGIN
+           //    ApprovalEntry.SETFILTER(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Approved);
+           //    IF ApprovalEntry.FINDSET THEN
+           //        MESSAGE('Вы уже утвердили заявку ранее', USERID)
+           //    ELSE
+           //        MESSAGE('Утверждающий %1 отсутствует в таблице утверждения!', USERID);
+           //END;
+           ERROR('Дошли до статуса Approve!')
+       END ELSE BEGIN
+           IF PurchaseHeader."Act Type" in [PurchaseHeader."Act Type"::Act, PurchaseHeader."Act Type"::"Act (Production)"] THEN
+               gcERPC.ChangeActStatus(PurchaseHeader);
+           IF PurchaseHeader."Act Type" in [PurchaseHeader."Act Type"::"KC-2", PurchaseHeader."Act Type"::"KC-2 (Production)"] THEN
+               ERROR('gcERPC.ChangeKC2Status(Rec);');
+       END;
+       */
+
     end;
 
     local procedure CheckEmptyLines(PurchaseHeader: Record "Purchase Header")

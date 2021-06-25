@@ -1773,6 +1773,48 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Objects Act - Field Status - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 2528781168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Budget</source>
+          <target>Original Budget</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 2723898874" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select File</source>
+          <target>Выберите файл</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType DialogCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 3556479000" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls</source>
+          <target>Файлы Excel (*.xlsx;*.xls)|*.xlsx;*.xls</target>
+          <note from="Developer" annotates="general" priority="2">{Split=r'\|'}{Locked=s'1'}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType Excel2007FileType</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Method 1147532894 - NamedType 4106791379" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nothing to import!</source>
+          <target>Нечего загружать!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Method ImportExcel - NamedType ImpErr</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target>Сумма</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Field 2443924682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Code</source>
+          <target>Cost Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Field Cost Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2528781168 - Field 112553004 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Place</source>
+          <target>Cost Place</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Original Budget - Field Cost Place - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
           <target>Проект. Операции контроля стоимости Буф.</target>
@@ -2571,6 +2613,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field External Agreement No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <target>ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Field 1815700606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Including VAT</source>
           <target>НДС включен</target>
@@ -2642,6 +2691,27 @@
           <target>Резерв</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reserve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed</source>
+          <target>Отменено</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reversed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 534261515 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed ID</source>
+          <target>Отменено ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reversed ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2332267737 - Field 1445432576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed Without Entry</source>
+          <target>Отменено без операции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Reversed Without Entry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
@@ -3849,6 +3919,12 @@
           <note from="Developer" annotates="general" priority="2">User ID NAVUser does not exist in the Approval User Setup window.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType UserIdNotInSetupErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - Method 914998581 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You are not the approver for status %1 of document %2.</source>
+          <target>Вы не являетесь утверждающим для статуса %1 документа %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method ApprovePurchActApprovalRequest - NamedType NoReqToApproveErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <target>%1 = %2 для %5 (%3 = %4) уже существует.</target>
@@ -4161,6 +4237,36 @@
           <target>Общая сумма привязанных заявок на оплату превышает сумму акта %1.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CalcActRemaingAmount - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify %1 and %2 for %3 line %4.</source>
+          <target>Укажите %1 и %2 для %3 строка %4.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
+          <target>Документ будет учтен количественно и будет создан документ Учт. Прих. Накладная Но. Продолжить?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType Text50013</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 3416294985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must select the real item before document posting.</source>
+          <target>Перед учетом документа необходимо выбрать реальный товар.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType Text50016</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1454544725" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no attachment!</source>
+          <target>Отсутствует вложение!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 3836422170" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor does not have to be basic!</source>
+          <target>Поставщик не должен быть базовым!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70004</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to create the document. The controller has these rights.</source>
@@ -7276,6 +7382,96 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Req Subform - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 510141852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Summary Cash Flow Control</source>
+          <target>Summary Cash Flow Control</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 3611811290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Code</source>
+          <target>Cost Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control CCflt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 4144696007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Place</source>
+          <target>Cost Place</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control CPflt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 4211356407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <target>Код проекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PrjCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 2159146764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Don't show blank amounts</source>
+          <target>Скрыть нулевые строки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control sba - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 3262087013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <target>Начальная дата</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control StDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1079676756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Original Budget</source>
+          <target>Загрузить Original Budget</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action ImportOB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1734268175 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the next set of data.</source>
+          <target>Переход к следующему набору данных.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 1734268175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Set</source>
+          <target>След. набор</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Next Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 3697385181 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the previous set of data.</source>
+          <target>Переход к предыдущему набору данных.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Action 3697385181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Set</source>
+          <target>Пред. набор</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Action Previous Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Summary CF Control Matrix</source>
+          <target>Summary CF Control Matrix</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 3558207393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CF Total</source>
+          <target>CF Total</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control CFTotal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 631396668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CF Future (Unpaid)</source>
+          <target>CF Future (Unpaid)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control CFTotalUnpaid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 122295728 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Budget</source>
+          <target>Original Budget</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control OriginalBudget - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2884131641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast List</source>
           <target>Список прогнозов</target>
@@ -8906,7 +9102,6 @@
           <source>Act Approval Status</source>
           <target>Статус утверждения для актов</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field Status App Act - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1850888649 - Field 2188116433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
@@ -10680,6 +10875,12 @@
           <target>Разрешить изменять учетную группу в договоре</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Change Agreem. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 1932331726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Last Project Code</source>
+          <target>Last Project Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Last Project Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 948176061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Master Approver (Development)</source>
