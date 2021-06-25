@@ -33,7 +33,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader: Record "Purchase Header";
         PayOrderMgt: Codeunit "Payment Order Management";
     begin
-        PurchHeader.Get(ApprovalEntryArgument."Document Type", ApprovalEntryArgument."Document No.");
+        RecRef.SetTable(PurchHeader);
         PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false);
 
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
