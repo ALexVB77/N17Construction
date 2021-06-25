@@ -397,6 +397,22 @@ table 70076 "Projects Budget Entry"
             Caption = 'Not Visible';
             Description = 'NC 50085 PA';
         }
+        field(66; Reversed; Boolean)
+        {
+
+        }
+        field(67; ID; Integer)
+        {
+
+        }
+        field(69; "Reversed Without Entry"; Boolean)
+        {
+
+        }
+        field(70; "Reversed ID"; Integer)
+        {
+
+        }
         field(71; "Without VAT (LCY)"; Decimal)
         {
             Caption = 'Without VAT (LCY)';
