@@ -598,15 +598,15 @@ page 70260 "Purchase Order Act"
 
                     trigger OnAction()
                     var
-                        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
+                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
                         if "Status App Act" = "Status App Act"::" " then
                             FieldError("Status App Act");
                         if "Status App Act" = "Status App Act"::Controller then begin
-                            if ApprovalsMgmtExt.CheckPurchOrderActApprovalPossible(Rec) then
-                                ApprovalsMgmtExt.OnSendPurchOrderActForApproval(Rec);
+                            IF ApprovalsMgmt.CheckPurchaseApprovalPossible(Rec) THEN
+                                ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
                         end else
-                            ApprovalsMgmtExt.ApprovePurchActApprovalRequest(Rec);
+                            ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
                     end;
                 }
                 action(Reject)

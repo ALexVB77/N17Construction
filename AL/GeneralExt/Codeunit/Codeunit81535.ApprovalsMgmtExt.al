@@ -13,7 +13,6 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
 
     var
         WorkflowManagement: Codeunit "Workflow Management";
-        WorkflowEventHandlingExt: Codeunit "Workflow Event Handling (Ext)";
         WorkflowResponceHandling: Codeunit "Workflow Response Handling Ext";
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
 
@@ -21,31 +20,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         NothingToApproveErr: Label 'There is nothing to approve.';
         UserIdNotInSetupErr: Label 'User ID %1 does not exist in the Approval User Setup window.', Comment = 'User ID NAVUser does not exist in the Approval User Setup window.';
 
-    [IntegrationEvent(false, false)]
-    procedure OnSendPurchOrderActForApproval(var PurchaseHeader: Record "Purchase Header")
-    begin
-    end;
-
     [EventSubscriber(ObjectType::Codeunit, 1535, 'OnBeforeApprovalEntryInsert', '', false, false)]
     local procedure OnBeforeApprovalEntryInsert(var ApprovalEntry: Record "Approval Entry"; ApprovalEntryArgument: Record "Approval Entry")
     begin
         ApprovalEntry."Status App Act" := ApprovalEntryArgument."Status App Act";
-    end;
-
-    procedure CheckPurchOrderActApprovalPossible(var PurchaseHeader: Record "Purchase Header"): Boolean
-    begin
-        if not IsPurchOrderActApprovalsWorkflowEnabled(PurchaseHeader) then
-            Error(NoWorkflowEnabledErr);
-
-        if not PurchaseHeader.PurchLinesExist then
-            Error(NothingToApproveErr);
-
-        exit(true);
-    end;
-
-    procedure IsPurchOrderActApprovalsWorkflowEnabled(var PurchaseHeader: Record "Purchase Header"): Boolean
-    begin
-        exit(WorkflowManagement.CanExecuteWorkflow(PurchaseHeader, WorkflowEventHandlingExt.RunWorkflowOnSendPurchOrderActForApprovalCode));
     end;
 
     procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
@@ -104,18 +82,6 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalsMgmt.MakeApprovalEntry(ApprovalEntryArgument, SequenceNo, ApprovalUserID, WorkflowStepArgument);
     end;
 
-    procedure ApprovePurchActApprovalRequest(PurchHeader: Record "Purchase Header")
-    var
-        ApprovalEntry: Record "Approval Entry";
-        NoReqToApproveErr: Label 'You are not the approver for status %1 of document %2.';
-    begin
-        if not ApprovalsMgmt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, PurchHeader.RecordId) then
-            Error(NoReqToApproveErr, PurchHeader."Status App Act", PurchHeader."No.");
-
-        ApprovalEntry.SetRecFilter;
-        ApprovalsMgmt.ApproveApprovalRequests(ApprovalEntry);
-    end;
-
     procedure MoveToNextActStatus(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
     var
         WorkflowStepArgument: Record "Workflow Step Argument";
@@ -123,7 +89,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader: Record "Purchase Header";
         PayOrderMgt: Codeunit "Payment Order Management";
     begin
-        Error('Call MoveToNextActStatus for %1', RecRef.Number);
+        Error('Call MoveToNextActStatus for %1', RecRef.Number)
     end;
 
 }

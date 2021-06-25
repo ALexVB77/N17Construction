@@ -8,7 +8,7 @@ report 50999 "TempStarter"
     trigger OnPreReport()
     var
         WEH: Codeunit "Workflow Event Handling";
-        WEHExt: Codeunit "Workflow Event Handling (Ext)";
+        //WEHExt: Codeunit "Workflow Event Handling (Ext)";
         WRPH: Codeunit "Workflow Request Page Handling";
         WRH: Codeunit "Workflow Response Handling";
         WRHExt: Codeunit "Workflow Response Handling Ext";
@@ -16,6 +16,8 @@ report 50999 "TempStarter"
         WSA: Record "Workflow Step Argument";
         WR: Record "Workflow Response";
     begin
+
+        /*
 
         WEH.AddEventToLibrary(
             WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode(),
@@ -41,6 +43,8 @@ report 50999 "TempStarter"
             0,
             'Утвердить текущий статус Акта, КС-2 и перейти к следующему', 'GROUP 11');
         WRH.AddResponsePredecessor(WRHExt.MoveToNextActStatusCode, WEH.RunWorkflowOnApproveApprovalRequestCode());
+
+        */
 
         /*
          WRH.AddResponseToLibrary(
