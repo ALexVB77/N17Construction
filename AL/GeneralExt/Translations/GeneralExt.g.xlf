@@ -7098,6 +7098,71 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report FA Release Act FA-1a - Control SupplementalInformation2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3828198507 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fa Release Act FA-1b</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - NamedType 3994261301" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Подлежит вводу в эксплуатацию с %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - NamedType Text_001</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 1683208766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attorney Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control AttorneyDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 3625549732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Issued By</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control AttorneyIssuedBy - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 2399248705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attorney No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control AttorneyNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 3871408456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depreciation Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control DepreciationCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 858343146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Depreciation Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control DepreciationGroup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 1607295407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transferor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control VendorNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 2704334202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control CompDirectorName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 1135655911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Position</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control CompDirectorPos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 870987117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Department Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control DepartmentName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 2491067343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transfer Purpose</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control TransferPurpose - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3828198507 - Control 3478516414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transfer Statement Reason</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - Control TransferStatementReason - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3387537526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Turnover (Excel)</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7507,6 +7572,11 @@
           <source>FA Posted Release Act FA-1A</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action FA Release Act FA-1a - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3985706558 - Action 2698216203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
+          <source>FA Posted Release Act FA-1B</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Posted FA Release Act Sub. Ext - Action FA Release Act FA-1b - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 119182345 - Action 2378163730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2625649796">
           <source>FA Posted Writeoff Act FA-4b</source>
