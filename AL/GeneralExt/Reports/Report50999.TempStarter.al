@@ -40,7 +40,7 @@ report 50999 "TempStarter"
             WRHExt.MoveToNextActStatusCode(),
             0,
             'Утвердить текущий статус Акта, КС-2 и перейти к следующему', 'GROUP 11');
-        WRH.AddResponsePredecessor(WRHExt.MoveToNextActStatusCode, WEHExt.RunWorkflowOnSendPurchOrderActForApprovalCode);
+        WRH.AddResponsePredecessor(WRHExt.MoveToNextActStatusCode, WEH.RunWorkflowOnApproveApprovalRequestCode());
 
         /*
          WRH.AddResponseToLibrary(
