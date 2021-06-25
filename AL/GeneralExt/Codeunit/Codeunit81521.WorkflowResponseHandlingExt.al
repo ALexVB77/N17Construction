@@ -51,7 +51,7 @@ codeunit 81521 "Workflow Response Handling Ext"
 
     procedure MoveToNextActStatusCode(): Code[128]
     begin
-        exit(UpperCase('ApproveApprovalRequestsAct'));
+        exit(UpperCase('MoveToNextActStatus'));
     end;
 
 }
