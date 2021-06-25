@@ -77,7 +77,8 @@ pageextension 92477 "Posted FA Release Act Sub. Ext" extends "Posted FA Release 
                         PostedFADocHeader.Get(rec."Document Type", rec."Document No.");
                         PostedFADocHeader.SetRecFilter;
                         FAPostedReleaseActRep.SetTableView(PostedFADocHeader);
-                        FAPostedReleaseActRep.Run;
+                        FAPostedReleaseActRep.UseRequestPage(true);
+                        FAPostedReleaseActRep.RunModal();
                     end;
                 }
             }
