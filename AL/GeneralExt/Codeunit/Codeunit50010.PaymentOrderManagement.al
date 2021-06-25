@@ -32,7 +32,6 @@ codeunit 50010 "Payment Order Management"
     procedure FuncNewRec(PurchHeader: Record "Purchase Header"; ActTypeOption: enum "Purchase Act Type")
     var
         grUS: record "User Setup";
-        PurchSetup: Record "Purchases & Payables Setup";
         WhseEmployee: record "Warehouse Employee";
         grPurchHeader: Record "Purchase Header";
         Location: Record Location;
@@ -54,7 +53,7 @@ codeunit 50010 "Payment Order Management"
         if (ActTypeOption in [ActTypeOption::Act, ActTypeOption::"Act (Production)"]) and (grUS."Status App Act" = grUS."Status App Act"::Estimator) then
             ERROR(LocErrorText1);
 
-        PurchSetup.GET;
+        GetPurchSetupWithTestDim;
         PurchSetup.TestField("Base Vendor No.");
 
         WhseEmployee.SetRange("User ID", UserId);
@@ -109,11 +108,10 @@ codeunit 50010 "Payment Order Management"
     procedure NewOrderApp(PurchHeader: Record "Purchase Header")
     var
         grPurchHeader: Record "Purchase Header";
-        PurchSetup: Record "Purchases & Payables Setup";
         grUS: Record "User Setup";
     begin
 
-        PurchSetup.GET;
+        GetPurchSetupWithTestDim;
         PurchSetup.TestField("Base Vendor No.");
 
         grUS.GET(USERID);
@@ -142,7 +140,6 @@ codeunit 50010 "Payment Order Management"
 
     procedure CreatePurchaseOrderAppFromAct(PurchaseHeader: Record "Purchase Header")
     var
-        PurchSetup: Record "Purchases & Payables Setup";
         InvtSetup: Record "Inventory Setup";
         PaymentInvoice: Record "Purchase Header";
         Item: Record Item;
@@ -163,7 +160,7 @@ codeunit 50010 "Payment Order Management"
         PaymentInvoice."IW Documents" := TRUE;
         PaymentInvoice.INSERT(TRUE);
 
-        PurchSetup.Get();
+        GetPurchSetupWithTestDim;
         CopyDocMgt.SetProperties(true, true, false, false, false, PurchSetup."Exact Cost Reversing Mandatory", false);
         CopyDocMgt.CopyPurchDoc(FromDocType::Order, PurchaseHeader."No.", PaymentInvoice);
 
@@ -539,7 +536,6 @@ codeunit 50010 "Payment Order Management"
     procedure ChangePurchaseOrderAct(var PurchHeader: Record "Purchase Header"; Reject: Boolean)
     var
         DocumentAttachment: Record "Document Attachment";
-        PurchSetup: Record "Purchases & Payables Setup";
         Vendor: Record Vendor;
         PurchLine: Record "Purchase Line";
         UserSetup: Record "User Setup";
@@ -553,6 +549,8 @@ codeunit 50010 "Payment Order Management"
         TEXT70001: label 'There is no attachment!';
         TEXT70004: Label 'Vendor does not have to be basic!';
     begin
+        GetPurchSetupWithTestDim;
+
         PurchHeader.TestField("Status App Act");
         PurchHeader.TestField(Controller);
 
