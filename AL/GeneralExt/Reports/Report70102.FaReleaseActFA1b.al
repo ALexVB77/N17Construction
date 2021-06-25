@@ -349,64 +349,89 @@ report 70102 "Fa Release Act FA-1b"
     {
         layout
         {
-            area(content)
+            area(Content)
             {
-                group(General)
+                group(Options)
                 {
-                    field(DepreciationGroup; DepreciationGroup)
+                    Caption = 'Options';
+                    group(General)
                     {
-                        caption = 'Depreciation Group';
-                        TableRelation = "Depreciation Group";
+                        caption = 'General';
+
+
+                        field(DepreciationGroup; DepreciationGroup)
+                        {
+                            caption = 'Depreciation Group';
+                            TableRelation = "Depreciation Group";
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(DepreciationCode; DepreciationCode)
+                        {
+                            caption = 'Depreciation Code';
+                            tablerelation = "Depreciation Code";
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(VendorNo; VendorNo)
+                        {
+                            Caption = 'Transferor No.';
+                            tablerelation = vendor;
+                            ApplicationArea = FixedAssets;
+                        }
                     }
-                    field(DepreciationCode; DepreciationCode)
+                    group(Organization)
                     {
-                        caption = 'Depreciation Code';
-                        tablerelation = "Depreciation Code";
+                        caption = 'Organization';
+
+
+                        field(CompDirectorPos; CompDirectorPos)
+                        {
+                            Caption = 'Position';
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(CompDirectorName; CompDirectorName)
+                        {
+                            Caption = 'Name';
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(DepartmentName; DepartmentName)
+                        {
+                            Caption = 'Department Name';
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(TransferStatementReason; TransferStatementReason)
+                        {
+                            Caption = 'Transfer Statement Reason';
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(TransferPurpose; TransferPurpose)
+                        {
+                            Caption = 'Transfer Purpose';
+                            ApplicationArea = FixedAssets;
+                        }
                     }
-                    field(VendorNo; VendorNo)
+                    group(Attrorney)
                     {
-                        Caption = 'Transferor No.';
-                        tablerelation = vendor;
+                        caption = 'Attorney';
+
+
+                        field(AttorneyDate; AttorneyDate)
+                        {
+                            Caption = 'Attorney Date';
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(AttorneyNo; AttorneyNo)
+                        {
+                            Caption = 'Attorney No';
+                            ApplicationArea = FixedAssets;
+                        }
+                        field(AttorneyIssuedBy; AttorneyIssuedBy)
+                        {
+                            Caption = 'Issued By';
+                            TableRelation = Employee;
+                            ApplicationArea = FixedAssets;
+                        }
                     }
-                }
-                group(Organization)
-                {
-                    field(CompDirectorPos; CompDirectorPos)
-                    {
-                        Caption = 'Position';
-                    }
-                    field(CompDirectorName; CompDirectorName)
-                    {
-                        Caption = 'Name';
-                    }
-                    field(DepartmentName; DepartmentName)
-                    {
-                        Caption = 'Department Name';
-                    }
-                    field(TransferStatementReason; TransferStatementReason)
-                    {
-                        Caption = 'Transfer Statement Reason';
-                    }
-                    field(TransferPurpose; TransferPurpose)
-                    {
-                        Caption = 'Transfer Purpose';
-                    }
-                }
-                group(Attrorney)
-                {
-                    field(AttorneyDate; AttorneyDate)
-                    {
-                        Caption = 'Attorney Date';
-                    }
-                    field(AttorneyNo; AttorneyNo)
-                    {
-                        Caption = 'Attorney No';
-                    }
-                    field(AttorneyIssuedBy; AttorneyIssuedBy)
-                    {
-                        Caption = 'Issued By';
-                        TableRelation = Employee;
-                    }
+
                 }
             }
         }
