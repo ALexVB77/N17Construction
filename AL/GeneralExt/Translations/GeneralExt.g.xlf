@@ -3263,11 +3263,6 @@
           <note from="Developer" annotates="general" priority="2">User ID NAVUser does not exist in the Approval User Setup window.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType UserIdNotInSetupErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3129098179 - Method 914998581 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You are not the approver for status %1 of document %2.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method ApprovePurchActApprovalRequest - NamedType NoReqToApproveErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6162,6 +6157,21 @@
           <source>Cost Place</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control CPflt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 43593927 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies by which period amounts are displayed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 43593927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 510141852 - Control 43593927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Week,Month,Quarter,Year,Accounting Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 4211356407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>

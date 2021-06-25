@@ -41,30 +41,64 @@ page 70256 "Summary Cash Flow Control"
                     trigger OnValidate()
                     begin
                         ValidatePrjCode();
+                        UpdateMatrixSubpage();
+
                     end;
                 }
                 field(CPflt; CPflt)
                 {
                     ApplicationArea = All;
                     Caption = 'Cost Place';
+                    trigger OnValidate()
+                    begin
+                        UpdateMatrixSubpage();
+                    end;
                 }
                 field(CCflt; CCflt)
                 {
                     ApplicationArea = All;
                     Caption = 'Cost Code';
+                    trigger OnValidate()
+                    begin
+                        UpdateMatrixSubpage();
+                    end;
+                }
+                field(PeriodType; PeriodType)
+                {
+                    ApplicationArea = All;
+                    Caption = 'View by';
+                    OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
+                    ToolTip = 'Specifies by which period amounts are displayed.';
+
+                    trigger OnValidate()
+                    begin
+                        SetColumns(SetWanted::First);
+                        UpdateMatrixSubpage();
+                    end;
                 }
                 field(StDate; StartingDate)
                 {
                     ApplicationArea = All;
                     Caption = 'Starting Date';
+                    trigger OnValidate()
+                    begin
+                        DateFilter := Format(StartingDate) + '..' + Format(CalcDate('<+20Y>', StartingDate));
+                        SetColumns(SetWanted::First);
+                        UpdateMatrixSubpage();
+                        DateFilter := '';
+                    end;
                 }
                 field(sba; NotShowBlankAmounts)
                 {
                     ApplicationArea = All;
                     Caption = 'Don''t show blank amounts';
+                    trigger OnValidate()
+                    begin
+                        UpdateMatrixSubpage();
+                    end;
                 }
             }
-            part(SCFCMatrix; "Summary CF Control Matrix")
+            part(MatrixPage; "Summary CF Control Matrix")
             {
                 ApplicationArea = All;
                 ShowFilter = false;
@@ -90,8 +124,8 @@ page 70256 "Summary Cash Flow Control"
 
                 trigger OnAction()
                 begin
-                    // SetColumns(MATRIX_SetWanted::Previous);
-                    Message('KKK');
+                    SetColumns(SetWanted::Previous);
+                    UpdateMatrixSubpage();
                 end;
             }
             action("Next Set")
@@ -107,8 +141,8 @@ page 70256 "Summary Cash Flow Control"
 
                 trigger OnAction()
                 begin
-                    // SetColumns(MATRIX_SetWanted::Next);
-                    Message('LLL');
+                    SetColumns(SetWanted::Next);
+                    UpdateMatrixSubpage();
                 end;
             }
             action(ImportOB)
@@ -126,6 +160,15 @@ page 70256 "Summary Cash Flow Control"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        StartingDate := Today;
+        DateFilter := Format(StartingDate) + '..' + Format(CalcDate('<+20Y>', StartingDate));
+        SetColumns(SetWanted::First);
+        UpdateMatrixSubpage();
+        DateFilter := '';
+    end;
+
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     begin
         if UserSetup.get(UserId) then begin
@@ -142,6 +185,28 @@ page 70256 "Summary Cash Flow Control"
         NotShowBlankAmounts: boolean;
         UserSetup: Record "User Setup";
         GLSetup: Record "General Ledger Setup";
+        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
+        SetWanted: Option First,Previous,Same,Next,PreviousColumn,NextColumn;
+        MatrixRecords: array[32] of Record Date;
+        MatrixColumnCaptions: array[32] of Text[80];
+        ColumnSet: Text[80];
+        PKFirstRecInCurrSet: Text[80];
+        CurrSetLength: Integer;
+        DateFilter: Text[1024];
+
+    procedure SetColumns(SetWanted: Option First,Previous,Same,Next,PreviousColumn,NextColumn)
+    var
+        MatrixMgt: Codeunit "Matrix Management";
+    begin
+        MatrixMgt.GeneratePeriodMatrixData(SetWanted, 6, false, PeriodType, DateFilter,
+          PKFirstRecInCurrSet, MatrixColumnCaptions, ColumnSet, CurrSetLength, MatrixRecords);
+    end;
+
+    local procedure UpdateMatrixSubpage();
+    begin
+        CurrPage.MatrixPage.PAGE.Load(MatrixColumnCaptions, MatrixRecords, CurrSetLength, CPflt,
+          CCflt, ProjectCode, StartingDate, NotShowBlankAmounts);
+    end;
 
     local procedure ValidatePrjCode()
     begin
