@@ -49,8 +49,13 @@ codeunit 50012 "Period Management Ext"
                     Calendar.SetPosition(RecordPosition);
                     FindDate('=', Calendar, PeriodType, true);
                     Steps := NextDate(-MaximumSetLength, Calendar, PeriodType);
-                    if not (Steps in [-MaximumSetLength, 0]) then
-                        Error(Text001);
+                    if PeriodType <> PeriodType::Year3 then begin
+                        if not (Steps in [-MaximumSetLength, 0]) then
+                            Error(Text001);
+                    end else begin
+                        if not (Steps in [-MaximumSetLength * 3, 0]) then
+                            Error(Text001);
+                    end;
                 end;
             SetOption::PreviousColumn:
                 begin
@@ -78,9 +83,16 @@ codeunit 50012 "Period Management Ext"
                 begin
                     Calendar.SetPosition(RecordPosition);
                     FindDate('=', Calendar, PeriodType, true);
-                    if not (NextDate(MaximumSetLength, Calendar, PeriodType) = MaximumSetLength) then begin
-                        Calendar.SetPosition(RecordPosition);
-                        FindDate('=', Calendar, PeriodType, true);
+                    if PeriodType <> PeriodType::Year3 then begin
+                        if not (NextDate(MaximumSetLength, Calendar, PeriodType) = MaximumSetLength) then begin
+                            Calendar.SetPosition(RecordPosition);
+                            FindDate('=', Calendar, PeriodType, true);
+                        end;
+                    end else begin
+                        if not (NextDate(MaximumSetLength, Calendar, PeriodType) = MaximumSetLength * 3) then begin
+                            Calendar.SetPosition(RecordPosition);
+                            FindDate('=', Calendar, PeriodType, true);
+                        end;
                     end;
                 end;
         end;
@@ -89,7 +101,7 @@ codeunit 50012 "Period Management Ext"
 
         repeat
             GeneratePeriodAndCaption(CaptionSet, PeriodRecords, CurrSetLength, Calendar, UseNameForCaption, PeriodType);
-        until (CurrSetLength = MaximumSetLength) or (NextDate(1, Calendar, PeriodType) <> 1);
+        until (CurrSetLength = MaximumSetLength) or (NextDate(1, Calendar, PeriodType) = 0);
 
         if CurrSetLength = 1 then
             CaptionRange := CaptionSet[1]
@@ -155,7 +167,7 @@ codeunit 50012 "Period Management Ext"
         if Found then
             Calendar."Period End" := NormalDate(Calendar."Period End");
         if Found and (PeriodType = PeriodType::Year3) then
-            Calendar."Period End" := CalcDate('<+3Y>', Calendar."Period Start");
+            Calendar."Period End" := CalcDate('<+2Y>', Calendar."Period Start");
         exit(Found);
     end;
 
@@ -197,7 +209,7 @@ codeunit 50012 "Period Management Ext"
             PeriodType::"Accounting Period":
                 exit(Format(Date));
             PeriodType::Year3:
-                exit(Format(Date, 0, PText003) + ' - ' + Format(calcdate('<+3Y>', Date), 0, PText003))
+                exit(Format(Date, 0, PText003) + ' - ' + Format(calcdate('<+2Y>', Date), 0, PText003))
         end;
     end;
 
