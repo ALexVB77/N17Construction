@@ -23,7 +23,7 @@ report 50999 "TempStarter"
             0,
             'Создать запрос утверждения для Акта, КС-2', 'GROUP 10');
         WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode(), WEH.RunWorkflowOnSendPurchaseDocForApprovalCode());
-        WRH.AddResponsePredecessor(WRHExt.CreateApprovalRequestsActCode(), WEH.RunWorkflowOnApproveApprovalRequestCode());
+        WRH.AddResponsePredecessor(WRHExt.MoveToNextActStatusCode(), WEH.RunWorkflowOnApproveApprovalRequestCode());
 
 
         /*
