@@ -510,8 +510,8 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
-    local procedure SendVendorAgreementMail(var PurchHeader: Record "Purchase Header")
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePostPurchaseDoc', '', false, false)]
+    local procedure SendVendorAgreementMail(var PurchaseHeader: Record "Purchase Header")
     var
         CompanyInfo: Record "Company Information";
         LocVend: Record Vendor;
@@ -520,13 +520,13 @@ codeunit 50006 "Base App. Subscribers Mgt."
         VendorAgreement: Record "Vendor Agreement";
         Text001: Label 'The amount of purchases exceeds the amount of the limit!';
     begin
-        if (PurchHeader."Buy-from Vendor No." <> '') AND (PurchHeader."Agreement No." <> '') then begin
+        if (PurchaseHeader."Buy-from Vendor No." <> '') AND (PurchaseHeader."Agreement No." <> '') then begin
             CompanyInfo.Get;
-            LocVend.GET(PurchHeader."Buy-from Vendor No.");
+            LocVend.GET(PurchaseHeader."Buy-from Vendor No.");
 
             if CompanyInfo."Use RedFlags in Agreements" then
                 if LocVend.GetLineColor = 'Attention' then begin
-                    VendAgr.Get(PurchHeader."Buy-from Vendor No.", PurchHeader."Agreement No.");
+                    VendAgr.Get(PurchaseHeader."Buy-from Vendor No.", PurchaseHeader."Agreement No.");
                     CheckLimitDateFilter := VendAgr.GetLimitDateFilter();
 
                     if CheckLimitDateFilter <> '' then
@@ -536,10 +536,11 @@ codeunit 50006 "Base App. Subscribers Mgt."
 
                     VendAgr.CalcFields("Purch. Original Amt. (LCY)");
 
-                    if PurchHeader."Original Company" = '' then
-                        if (VendAgr."Check Limit Amount (LCY)" - VendAgr."Purch. Original Amt. (LCY)" < 0) then
-                            if VendorAgreement.SendVendAgrMail(VendAgr, 1) then
-                                Error(Text001);
+                    if PurchaseHeader."Original Company" = '' then
+                        if (VendAgr."Check Limit Amount (LCY)" - VendAgr."Purch. Original Amt. (LCY)" < 0) then begin
+                            VendorAgreement.SendVendAgrMail(VendAgr, 1);
+                            Error(Text001);
+                        end;
                 end;
         end;
     end;
