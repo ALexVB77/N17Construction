@@ -3268,6 +3268,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method CheckFADocNo - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 2626234649 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The amount of purchases exceeds the amount of the limit!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SendVendorAgreementMail - NamedType Text001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2087724425 - NamedType 470711900" size-unit="char" translate="yes" xml:space="preserve">
           <source>Advance %1</source>
           <note from="Developer" annotates="general" priority="2"></note>

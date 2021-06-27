@@ -518,6 +518,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         VendAgr: Record "Vendor Agreement";
         CheckLimitDateFilter: Text;
         VendorAgreement: Record "Vendor Agreement";
+        Text001: Label 'The amount of purchases exceeds the amount of the limit!';
     begin
         if (PurchHeader."Buy-from Vendor No." <> '') AND (PurchHeader."Agreement No." <> '') then begin
             CompanyInfo.Get;
@@ -537,7 +538,8 @@ codeunit 50006 "Base App. Subscribers Mgt."
 
                     if PurchHeader."Original Company" = '' then
                         if (VendAgr."Check Limit Amount (LCY)" - VendAgr."Purch. Original Amt. (LCY)" < 0) then
-                            VendorAgreement.SendVendAgrMail(VendAgr, 1);
+                            if VendorAgreement.SendVendAgrMail(VendAgr, 1) then
+                                Error(Text001);
                 end;
         end;
     end;

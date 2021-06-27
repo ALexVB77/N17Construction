@@ -252,7 +252,7 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
             exit('None');
     end;
 
-    procedure SendVendAgrMail(VendAgr: Record "Vendor Agreement"; RecipientType: Option Creator,Controller)
+    procedure SendVendAgrMail(VendAgr: Record "Vendor Agreement"; RecipientType: Option Creator,Controller): Boolean
     var
         CompanyInfo: Record "Company Information";
         UserSetupRecip: Record "User Setup";
@@ -307,9 +307,10 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
         else
             Body := CreateMessageBodyController(VendAgr);
 
-        Error(Body); // потом причешу код
+        Message(Body);
         EmailMessage.Create(RecipList, Subject, Body);
         Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
+        exit(true);
     end;
 
     local procedure CreateMessageBodyCreator(UserDesc: Text; var VendAgr: Record "Vendor Agreement") MessageBody: Text
