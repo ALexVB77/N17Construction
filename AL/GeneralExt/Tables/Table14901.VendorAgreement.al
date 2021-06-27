@@ -316,30 +316,40 @@ tableextension 94901 "Vendor Agreement (Ext)" extends "Vendor Agreement"
     var
         Vend: Record "Vendor";
         CRLF: Text[2];
+        Text001: Label 'MESSAGE FROM BUSINESS CENTRAL AGREEMENT CONTROL SYSTEM';
+        Text002: Label 'User ';
+        Text003: Label ' created a new agreement with No. ';
+        Text004: Label ' by vendor ';
+        Text005: Label 'It is necessary to fill in the information on control of the purchase limit.';
     begin
         CRLF[1] := 13;
         CRLF[2] := 10;
-        MessageBody := 'СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL';
+        MessageBody := Text001;
         MessageBody := MessageBody + ' (' + Format(CompanyName) + ')' + CRLF + CRLF;
-        MessageBody := MessageBody + 'Пользователь ' + Format(UserDesc) + ' создал новый договор с номером ' + Format(VendAgr."No.");
+        MessageBody := MessageBody + Text002 + Format(UserDesc) + Text003 + Format(VendAgr."No.");
         Vend.GET(VendAgr."Vendor No.");
-        MessageBody := MessageBody + ' по поставщику ' + Format(Vend."No." + ' ' + Vend."Full Name") + CRLF + CRLF;
-        MessageBody := MessageBody + 'Необходимо заполнить информацию по контролю лимита закупки.';
+        MessageBody := MessageBody + Text004 + Format(Vend."No." + ' ' + Vend."Full Name") + CRLF + CRLF;
+        MessageBody := MessageBody + Text005;
     end;
 
     local procedure CreateMessageBodyController(var VendAgr: Record "Vendor Agreement") MessageBody: Text
     var
         Vend: Record "Vendor";
         CRLF: Text[2];
+        Text001: Label 'MESSAGE FROM BUSINESS CENTRAL AGREEMENT CONTROL SYSTEM';
+        Text002: Label 'According to the agreement with No. ';
+        Text003: Label ' by vendor ';
+        Text004: Label ' the purchase limit has been exceeded.';
+        Text005: Label 'Control is needed.';
     begin
         CRLF[1] := 13;
         CRLF[2] := 10;
-        MessageBody := 'СООБЩЕНИЕ ОТ СИСТЕМЫ КОНТРОЛЯ ДОГОВОРОВ BUSINESS CENTRAL';
+        MessageBody := Text001;
         MessageBody := MessageBody + ' (' + Format(CompanyName) + ')' + CRLF + CRLF;
-        MessageBody := MessageBody + 'По договору с номером ' + Format(VendAgr."No.") + ' по поставщику ';
+        MessageBody := MessageBody + Text002 + Format(VendAgr."No.") + Text003;
         Vend.GET(VendAgr."Vendor No.");
         MessageBody := MessageBody + Format(Vend."No." + ' ' + Vend."Full Name");
-        MessageBody := MessageBody + ' превышен лимит закупки.' + CRLF + CRLF;
-        MessageBody := MessageBody + 'Необходим контроль.';
+        MessageBody := MessageBody + Text004 + CRLF + CRLF;
+        MessageBody := MessageBody + Text005;
     end;
 }

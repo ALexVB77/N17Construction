@@ -9428,6 +9428,56 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
         </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>MESSAGE FROM BUSINESS CENTRAL AGREEMENT CONTROL SYSTEM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>According to the agreement with No. </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> by vendor </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> the purchase limit has been exceeded.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>Control is needed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>MESSAGE FROM BUSINESS CENTRAL AGREEMENT CONTROL SYSTEM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>User </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> created a new agreement with No. </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> by vendor </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>It is necessary to fill in the information on control of the purchase limit.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text005</note>
+        </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 1516237199 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
           <source>FRAME</source>
           <note from="Developer" annotates="general" priority="2"></note>
