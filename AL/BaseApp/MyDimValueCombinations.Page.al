@@ -189,7 +189,7 @@ page 9252 "MyDim Value Combinations"
     end;
 
     [IntegrationEvent(true, false)]
-    local procedure OnLoadDimValCombPage(var Row : Code[20]; var Col :Code[20]; var ShowCaption : bool; var DimRecord : Record "Dimension Value")
+    local procedure OnLoadDimValCombPage(var Row : Code[20]; var Col :Code[20]; var ShowCaption : Boolean; var DimRecord : Record "Dimension Value")
     begin
     end;
 }

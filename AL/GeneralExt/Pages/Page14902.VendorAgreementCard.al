@@ -213,9 +213,10 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     var
         myInt: Integer;
+        Text001: Label 'FRAME';
     begin
         if CompanyInfo."Use RedFlags in Agreements" then
-            if not (Rec."Agreement Group" in ['', 'РАМОЧНЫЙ']) and (Rec."Agreement Amount" = 0) then
+            if not (Rec."Agreement Group" in ['', Text001]) and (Rec."Agreement Amount" = 0) then
                 Error(Text003);
     end;
 

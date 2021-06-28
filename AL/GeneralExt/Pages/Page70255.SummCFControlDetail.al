@@ -1,8 +1,8 @@
-page 70256 "Summary Cash Flow Control"
+page 70255 "Summ. Cash Flow Control Detail"
 {
     UsageCategory = Lists;
     ApplicationArea = All;
-    Caption = 'Summary Cash Flow Control';
+    Caption = 'Summary Cash Flow Control Detail';
     DataCaptionExpression = '';
     DeleteAllowed = false;
     InsertAllowed = false;
@@ -10,7 +10,7 @@ page 70256 "Summary Cash Flow Control"
     PageType = ListPlus;
     SaveValues = true;
     SourceTable = "Dimension Value";
-    SourceTableView = where("Global Dimension No." = const(2));
+    SourceTableView = where("Global Dimension No." = const(1));
 
     layout
     {
@@ -151,7 +151,7 @@ page 70256 "Summary Cash Flow Control"
             {
                 Caption = 'Import Original Budget';
                 ApplicationArea = All;
-
+                Visible = false;
                 trigger OnAction()
                 var
                     lOrBud: Record "Original Budget";
@@ -212,7 +212,7 @@ page 70256 "Summary Cash Flow Control"
     local procedure UpdateMatrixSubpage();
     begin
         CurrPage.MatrixPage.PAGE.Load(MatrixColumnCaptions, MatrixRecords, CurrSetLength, CPflt,
-          CCflt, ProjectCode, StartingDate, NotShowBlankAmounts, 1);
+          CCflt, ProjectCode, StartingDate, NotShowBlankAmounts, 0);
     end;
 
     local procedure ValidatePrjCode()

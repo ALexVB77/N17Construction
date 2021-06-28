@@ -3268,6 +3268,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method CheckFADocNo - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 2626234649 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The amount of purchases exceeds the amount of the limit!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SendVendorAgreementMail - NamedType Text001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2087724425 - NamedType 470711900" size-unit="char" translate="yes" xml:space="preserve">
           <source>Advance %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3622,6 +3627,21 @@
           <source>Archive %1 no.: %2?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText007</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The previous column set could not be found.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The period could not be found.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2488893537 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no Calendar entries within the filter.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Act Stage</source>
@@ -5493,6 +5513,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects Article List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Budget Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2332267737 - Control 1453909612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CC Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Control Dim2CodeDescF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2332267737 - Control 2493014818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CC Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Budget Entry - Control Dim2CodeDesc - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1985555561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects CC Entry Constr 2</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6148,6 +6183,76 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Req Subform - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2119146127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Summary Cash Flow Control Detail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 3611811290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control CCflt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 4144696007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Place</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control CPflt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 43593927 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies by which period amounts are displayed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control PeriodType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 43593927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control PeriodType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 43593927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Week,Month,Quarter,Year,Accounting Period,Year3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control PeriodType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 4211356407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control PrjCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 2159146764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Don't show blank amounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control sba - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Control 3262087013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Control StDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Action 1079676756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Original Budget</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Action ImportOB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Action 1734268175 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the next set of data.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Action Next Set - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Action 1734268175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Set</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Action Next Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Action 3697385181 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go to the previous set of data.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Action Previous Set - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2119146127 - Action 3697385181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Set</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summ. Cash Flow Control Detail - Action Previous Set - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 510141852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Summary Cash Flow Control</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6174,7 +6279,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 510141852 - Control 43593927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Day,Week,Month,Quarter,Year,Accounting Period</source>
+          <source>Day,Week,Month,Quarter,Year,Accounting Period,Year3</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary Cash Flow Control - Control PeriodType - Property OptionCaption</note>
         </trans-unit>
@@ -6737,6 +6842,91 @@
           <source>*.xlsx</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType ExcelExt</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0001</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Pposting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0002</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0003</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 4257629171" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FA Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0004</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 600358492" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Business Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0005</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 1238055109" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Product Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0006</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 1875751726" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Product Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0007</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2513448343" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Business Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0008</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3151144960" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Posting Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0009</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 914830240" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Posting Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0010</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 277133623" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0011</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2190223474" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0012</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 1552526857" size-unit="char" translate="yes" xml:space="preserve">
+          <source>НП</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0013</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3465616708" size-unit="char" translate="yes" xml:space="preserve">
+          <source>НУ-ВИД</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0014</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2827920091" size-unit="char" translate="yes" xml:space="preserve">
+          <source>НУ-ОБЪЕКТ</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0015</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 446042646" size-unit="char" translate="yes" xml:space="preserve">
+          <source>НУ-РАЗНИЦА</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0016</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 4103313325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ПРИБ_УБ_ПРОШ_ЛЕТ</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0017</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Subform</source>
@@ -7622,6 +7812,11 @@
           <source>Set Agreememt Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2153774770 - Method 4177352842 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2153774770">
+          <source>FRAME</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card (Ext) - Method OnQueryClosePage - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="PageExtension 2153774770 - Action 3640084062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
           <source>Change Log</source>
@@ -9213,6 +9408,16 @@
           <note from="Developer" annotates="general" priority="2">%1 = Created Bin Code</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Method CreateGivenedBin - NamedType BinCreatedMsg</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Method 1516237199 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1982677864">
+          <source>FRAME</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Method GetLineColor - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1982677864 - Method 1516237199 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1982677864">
+          <source>FRAME CUSTOMIZED</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor (Ext) - Method GetLineColor - NamedType Text002</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1982677864 - Field 691798731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Giv. Manuf. Bin Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9232,6 +9437,66 @@
           <source>%1 should be later than %2.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - NamedType Text12402</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>MESSAGE FROM BUSINESS CENTRAL AGREEMENT CONTROL SYSTEM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>According to the agreement with No. </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> by vendor </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> the purchase limit has been exceeded.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 4034015213 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>Control is needed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyController - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>MESSAGE FROM BUSINESS CENTRAL AGREEMENT CONTROL SYSTEM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>User </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> created a new agreement with No. </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source> by vendor </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 3453127181 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>It is necessary to fill in the information on control of the purchase limit.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method CreateMessageBodyCreator - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 1516237199 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>FRAME</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method GetLineColor - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 594576918 - Method 1516237199 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
+          <source>FRAME CUSTOMIZED</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement (Ext) - Method GetLineColor - NamedType Text002</note>
         </trans-unit>
         <trans-unit id="TableExtension 594576918 - Method 1828299548 - NamedType 4286457903" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 594576918">
           <source>Check vendor agreements</source>
