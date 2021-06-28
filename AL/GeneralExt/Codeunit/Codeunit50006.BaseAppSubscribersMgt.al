@@ -309,7 +309,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         GlobalDimCode2 := '';
         DimSetID := DimMgt.GetDefaultDimID(TableID, No, SourceCode, GlobalDimCode1, GlobalDimCode2, 0, 0);
     end;
-
+    // cu 5600 >>
     [EventSubscriber(ObjectType::Codeunit, COdeunit::"FA Insert Ledger Entry", 'OnBeforeCheckFADocNo', '', true, true)]
     local procedure CheckFADocNo(FALedgEntry: Record "FA Ledger Entry"; var IsHandled: Boolean)
     var
@@ -339,6 +339,14 @@ codeunit 50006 "Base App. Subscribers Mgt."
 
         IsHandled := true;
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, COdeunit::"FA Insert Ledger Entry", 'OnBeforeClearTransactionNoInFALedgEntry', '', true, true)]
+    local procedure onBeforeClearTransactionNoInFALedgEntry(FALedgEntry: Record "FA Ledger Entry"; FALedgEntry2: Record "FA Ledger Entry"; var IsHandled: Boolean)
+    begin
+        IsHandled := true;
+    end;
+
+    // cu 5600 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
     local procedure OnBeforeDrillDownDocAttFackBox(DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
