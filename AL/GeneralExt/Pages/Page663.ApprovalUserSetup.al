@@ -24,14 +24,6 @@ pageextension 80663 "Approval User Setup (Ext)" extends "Approval User Setup"
             {
                 ApplicationArea = Basic, Suite;
             }
-            field("Master Approver (Development)"; "Master Approver (Development)")
-            {
-                ApplicationArea = Basic, Suite;
-            }
-            field("Master Approver (Production)"; "Master Approver (Production)")
-            {
-                ApplicationArea = Basic, Suite;
-            }
         }
     }
 }
