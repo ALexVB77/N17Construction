@@ -59,7 +59,7 @@
         {
             Caption = 'Name 2';
         }
-        field(5; Address; Text[100])
+        field(5; Address; Text[150]) //NC PA >> Text[100] > Text[150]
         {
             Caption = 'Address';
         }
