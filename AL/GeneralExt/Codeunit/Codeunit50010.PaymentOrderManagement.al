@@ -542,12 +542,16 @@ codeunit 50010 "Payment Order Management"
         ERPCFunc: Codeunit "ERPC Funtions";
 
         LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
+        LocText010: Label 'No Approver specified on line %1.';
 
         Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
         Text50016: label 'You must select the real item before document posting.';
 
         TEXT70001: label 'There is no attachment!';
         TEXT70004: Label 'Vendor does not have to be basic!';
+
+        TEXT70016: Label 'The document has been sent for approval!';
+        TEXT70044: Label 'The document has been sent for verification to the Checker!';
     begin
         GetPurchSetupWithTestDim;
 
@@ -606,8 +610,8 @@ codeunit 50010 "Payment Order Management"
                 PurchLine.TestField(Quantity);
                 if not CheckCostDimExists(PurchLine."Dimension Set ID") then
                     Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.", PurchLine."Line No.");
-                PurchLine.CalcFields(Approver);
-                PurchLine.TestField(Approver);
+                if GetPurchActApproverFromDim(PurchLine."Dimension Set ID") = '' then
+                    Error(LocText010, PurchLine."Line No.");
             until PurchLine.Next() = 0;
 
             ERPCFunc.SetDefLocation(PurchHeader);
@@ -640,11 +644,10 @@ codeunit 50010 "Payment Order Management"
                     PurchHeader."Process User" := UserSetup."User ID";
                     PurchHeader."Date Status App" := TODAY;
                     PurchHeader.Modify;
+
+                    Message(TEXT70044);
                 end;
-
-
         end
-
 
         /*
        //NC 40142 > DP
@@ -745,6 +748,38 @@ codeunit 50010 "Payment Order Management"
         end;
     end;
 
+    procedure GetPurchActMasterApproverFromDim(DimSetID: Integer): Code[50]
+    var
+        DimSetEntry: Record "Dimension Set Entry";
+        DimValueCC: Record "Dimension Value";
+
+    begin
+        if DimSetID = 0 then
+            exit('');
+        GetPurchSetupWithTestDim();
+        if not DimSetEntry.Get(DimSetID, PurchSetup."Cost Code Dimension") then
+            exit('');
+        if not DimValueCC.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
+            exit('');
+        case DimValueCC."Cost Code Type" of
+            DimValueCC."Cost Code Type"::Development:
+                begin
+                    PurchSetup.TestField("Master Approver (Development)");
+                    exit(PurchSetup."Master Approver (Development)");
+                end;
+            DimValueCC."Cost Code Type"::Production:
+                begin
+                    PurchSetup.TestField("Master Approver (Production)");
+                    exit(PurchSetup."Master Approver (Production)");
+                end;
+            DimValueCC."Cost Code Type"::Admin:
+                begin
+                    PurchSetup.TestField("Master Approver (Department)");
+                    exit(PurchSetup."Master Approver (Department)");
+                end;
+        end;
+    end;
+
     procedure GetPurchActPreApproverFromDim(DimSetID: Integer): Code[50]
     var
         DimSetEntry: Record "Dimension Set Entry";
@@ -773,5 +808,51 @@ codeunit 50010 "Payment Order Management"
         ELSE
             exit(UserSetup."User ID");
     end;
+
+    procedure GetApproverFromActLines(PurchHeader: Record "Purchase Header"): Code[50]
+    var
+        PurchLine: Record "Purchase Line";
+        UserSetup: Record "User Setup";
+        LineApprover: Code[50];
+        LineMasterApprover: Code[50];
+        CurrentApprover: Code[50];
+        CurrentMasterApprover: Code[50];
+    begin
+        PurchHeader.TestField("Purchaser Code");
+        UserSetup.SetRange("Salespers./Purch. Code", PurchHeader."Purchaser Code");
+        UserSetup.FindFirst();
+
+        PurchLine.SetRange("Document Type", PurchHeader."Document Type");
+        PurchLine.SetRange("Document No.", PurchHeader."No.");
+        PurchLine.SetFilter(Type, '<>%1', PurchLine.Type::" ");
+        PurchLine.SetFilter("No.", '<>%1', '');
+        PurchLine.SetFilter(Quantity, '<>%1', 0);
+        IF PurchLine.FindSet() then
+            repeat
+                LineApprover := GetPurchActApproverFromDim(PurchLine."Dimension Set ID");
+                LineMasterApprover := GetPurchActMasterApproverFromDim(PurchLine."Dimension Set ID");
+                if CurrentApprover = '' then
+                    CurrentApprover := LineApprover
+                else
+                    if (CurrentApprover <> LineApprover) or (LineApprover = UserSetup."User ID") then begin
+                        if CurrentMasterApprover = '' then
+                            CurrentMasterApprover := LineMasterApprover
+                        else
+                            if CurrentMasterApprover <> LineMasterApprover then
+                                exit(GetPurchActApproverFromDim(PurchHeader."Dimension Set ID"));
+                    end;
+            until PurchLine.next = 0
+        else
+            exit(GetPurchActApproverFromDim(PurchHeader."Dimension Set ID"));
+
+        if CurrentMasterApprover <> '' then
+            exit(CurrentMasterApprover)
+        else
+            if CurrentApprover <> '' then
+                exit(CurrentApprover)
+            else
+                exit(GetPurchActApproverFromDim(PurchHeader."Dimension Set ID"));
+    end;
+
 
 }

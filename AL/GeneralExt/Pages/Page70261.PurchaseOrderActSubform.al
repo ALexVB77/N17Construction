@@ -211,14 +211,12 @@ page 70261 "Purchase Order Act Subform"
                     end;
 
                 }
-                field(Approver; Approver)
+                field(Approver; PaymentOrderMgt.GetPurchActApproverFromDim("Dimension Set ID"))
                 {
                     ApplicationArea = All;
-                    Editable = NOT IsBlankNumber;
-                    Enabled = NOT IsBlankNumber;
+                    Caption = 'Approver';
                 }
-
-            }  // repeater end
+            }
 
             group(LineTotals)
             {

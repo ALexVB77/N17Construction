@@ -3418,26 +3418,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method DeleteInvoice - NamedType LocText50021</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3833877207 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unable to identify an approver for %1 status.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActApprover - NamedType LocText001</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3487476121 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for verification to the Checker!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70044</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3487476121 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for approval!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method GetActStatusMessage - NamedType TEXT70016</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 714932620 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Empty Approver on line!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method InsertApproverNCC_FromDocLines - NamedType LocText001</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1810542939 - NamedType 2778598368" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines are not filled.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3528,6 +3508,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1038960544" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Approver specified on line %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText010</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3547,6 +3532,16 @@
           <source>Vendor does not have to be basic!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for approval!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70016</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for verification to the Checker!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70044</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to create the document. The controller has these rights.</source>
@@ -5908,6 +5903,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control VATTotals - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 38647611 - Control 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control Approver - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 38647611 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description/Comment</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6107,6 +6107,11 @@
           <source>VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Control VATTotals - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3187706650 - Control 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Control Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3187706650 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description/Comment</source>
@@ -8813,11 +8818,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Method ValidateUtilitiesDimValueCode - NamedType LocText003</note>
         </trans-unit>
-        <trans-unit id="TableExtension 363487199 - Field 700150807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
-          <source>Approver</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Line (Ext) - Field Approver - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 363487199 - Field 3230600482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Buy-from Vendor Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8993,6 +8993,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Frame Agreement Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 1868060176 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Master Approver (Department)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Master Approver (Department) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 948176061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Master Approver (Development)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Master Approver (Development) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2307367824 - Field 744705365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
+          <source>Master Approver (Production)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Master Approver (Production) - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2271846032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Payment Calendar Batch</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9162,16 +9177,6 @@
           <source>Last Project Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Last Project Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3550601874 - Field 948176061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
-          <source>Master Approver (Development)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master Approver (Development) - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 3550601874 - Field 744705365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
-          <source>Master Approver (Production)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master Approver (Production) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Show All Acts KC-2</source>

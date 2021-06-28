@@ -605,6 +605,8 @@ codeunit 70000 "ERPC Funtions"
             UNTIL PurchLine.NEXT = 0;
     end;
 
+    /*
+    // NC AB: не используется
     local procedure CheckDiffApprover(PurchHeader: Record "Purchase Header"): Boolean
     var
         PurchLineLoc: Record "Purchase Line";
@@ -617,6 +619,7 @@ codeunit 70000 "ERPC Funtions"
         PurchLineLoc.SetFilter(Approver, '<>%1', PurchLineLoc.Approver);
         exit(not PurchLineLoc.IsEmpty);
     end;
+    */
 
     local procedure CheckMasterApproverProduction(PurchHeader: Record "Purchase Header"): Boolean
     var
@@ -641,6 +644,8 @@ codeunit 70000 "ERPC Funtions"
         exit(true);
     end;
 
+    /*
+    // NC AB: вместо нее используем GetApproverFromActLines() CU 50010
     local procedure InsertApproverNCC_FromDocLines(PurchHeader: Record "Purchase Header"): Code[20]
     var
         lrUserSetup: Record "User Setup";
@@ -691,6 +696,7 @@ codeunit 70000 "ERPC Funtions"
             END;
         END;
     end;
+    */
 
     procedure ChangeActStatus(VAR grPurchHeader: Record "Purchase Header")
     var
@@ -996,42 +1002,6 @@ codeunit 70000 "ERPC Funtions"
         // ------- App -> Payment  -------------- <<<<
         */
 
-    end;
-
-    procedure GetActApprover(PurchHeader: Record "Purchase Header"): code[50];
-    var
-        LocText001: label 'Unable to identify an approver for %1 status.';
-    begin
-        PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
-        case PurchHeader."Status App Act" of
-            PurchHeader."Status App Act"::Checker:
-                begin
-                    // PurchHeader.TestField("Process User");
-                    // exit(PurchHeader."Process User");
-                end;
-            PurchHeader."Status App Act"::Approve:
-                begin
-                    // PurchHeader.TestField(Approver);
-                    // exit(PurchHeader.Approver);
-                end;
-
-            else
-                Error(LocText001, PurchHeader."Status App Act");
-        end;
-    end;
-
-    procedure GetActStatusMessage(PurchHeader: Record "Purchase Header"): text;
-    var
-        TEXT70044: Label 'The document has been sent for verification to the Checker!';
-        TEXT70016: Label 'The document has been sent for approval!';
-    begin
-        PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
-        case PurchHeader."Status App Act" of
-            PurchHeader."Status App Act"::Checker:
-                exit(TEXT70044);
-            PurchHeader."Status App Act"::Approve:
-                exit(TEXT70016);
-        end;
     end;
 
 }

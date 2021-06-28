@@ -49,6 +49,24 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
                 CheckCostDimension();
             end;
         }
+        field(50010; "Master Approver (Development)"; code[50])
+        {
+            Description = 'NC 51374 AB';
+            Caption = 'Master Approver (Development)';
+            TableRelation = "User Setup";
+        }
+        field(50011; "Master Approver (Production)"; code[50])
+        {
+            Description = 'NC 51374 AB';
+            Caption = 'Master Approver (Production)';
+            TableRelation = "User Setup";
+        }
+        field(50012; "Master Approver (Department)"; code[50])
+        {
+            Description = 'NC 51374 AB';
+            Caption = 'Master Approver (Department)';
+            TableRelation = "User Setup";
+        }
         field(50020; "Frame Agreement Group"; Code[20])
         {
             Caption = 'Frame Agreement Group';

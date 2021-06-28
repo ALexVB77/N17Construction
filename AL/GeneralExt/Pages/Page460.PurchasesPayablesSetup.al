@@ -41,6 +41,18 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("Master Approver (Development)"; "Master Approver (Development)")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Master Approver (Production)"; "Master Approver (Production)")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field("Master Approver (Department)"; "Master Approver (Department)")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
                 field("Payment Delay Period"; Rec."Payment Delay Period")
                 {
                     ApplicationArea = Basic, Suite;

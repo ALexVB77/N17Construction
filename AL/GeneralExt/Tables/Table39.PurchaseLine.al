@@ -185,12 +185,6 @@ tableextension 80039 "Purchase Line (Ext)" extends "Purchase Line"
             Description = 'NC 51378 AB';
             TableRelation = "Salesperson/Purchaser";
         }
-        field(70021; Approver; Code[50])
-        {
-            Caption = 'Approver';
-            Description = 'NC 51373 AB';
-            TableRelation = "User Setup";
-        }
     }
     var
         PurchSetup: Record "Purchases & Payables Setup";

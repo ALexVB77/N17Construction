@@ -149,10 +149,10 @@ page 70001 "Purchase Order Subform App"
                     Editable = false;
                     Enabled = NOT IsBlankNumber;
                 }
-                field(Approver; Approver)
+                field(Approver; PaymentOrderMgt.GetPurchActApproverFromDim("Dimension Set ID"))
                 {
-                    Editable = NOT IsBlankNumber;
-                    Enabled = NOT IsBlankNumber;
+                    ApplicationArea = All;
+                    Caption = 'Approver';
                 }
                 field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
