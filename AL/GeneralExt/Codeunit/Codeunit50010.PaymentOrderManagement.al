@@ -571,7 +571,6 @@ codeunit 50010 "Payment Order Management"
         LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
         LocText010: Label 'No Approver specified on line %1.';
 
-        Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
         Text50016: label 'You must select the real item before document posting.';
 
         TEXT70001: label 'There is no attachment!';
@@ -647,30 +646,29 @@ codeunit 50010 "Payment Order Management"
 
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Controller:
-                begin
-                    if PurchHeader."Location Document" and AllocPurchActReceive(PurchHeader) then begin
-                        IF NOT CONFIRM(Text50013, FALSE) THEN
-                            ERROR('');
-                        COMMIT;
-                        PurchHeader.Receive := true;
-                        PurchHeader.Invoice := false;
-                        PurchHeader."Print Posted Documents" := false;
-                        CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
-                        COMMIT;
-                    end;
-
+                if PurchHeader."Act Type" in [PurchHeader."Act Type"::"KC-2", PurchHeader."Act Type"::"KC-2 (Production)"] then begin
+                    PurchHeader.TestField(Estimator);
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator);
+                end else begin
+                    PurchActPostShipment(PurchHeader);
                     UserSetup.RESET;
                     UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
                     UserSetup.FINDFIRST;
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, UserSetup."User ID");
                 end;
-
+            PurchHeader."Status App Act"::Estimator:
+                begin
+                    PurchActPostShipment(PurchHeader);
+                    UserSetup.RESET;
+                    UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
+                    UserSetup.FINDFIRST;
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, UserSetup."User ID");
+                end;
             PurchHeader."Status App Act"::Checker:
                 begin
                     if not PurchHeader."Location Document" then begin
                         GetInventorySetup;
                         InvtSetup.TestField("Default Location Code");
-
                         PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
                         PurchLine.SETRANGE("Document No.", PurchHeader."No.");
                         PurchLine.SETRANGE(Type, PurchLine.Type::Item);
@@ -680,39 +678,13 @@ codeunit 50010 "Payment Order Management"
                     end;
                     PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
                     PurchHeader."Sent to pre. Approval" := false;
-                    case true of
-                        PurchHeader."Act Type" in [PurchHeader."Act Type"::"KC-2", PurchHeader."Act Type"::"KC-2 (Production)"]:
-                            begin
-                                PurchHeader.TestField(Estimator);
-                                FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator);
-                            end;
-                        PreAppover <> '':
-                            begin
-                                PurchHeader."Sent to pre. Approval" := true;
-                                FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
-                            end;
-                        else
-                            FillPurchActStatus(
-                                PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
-                    end;
+                    if PreAppover <> '' then begin
+                        PurchHeader."Sent to pre. Approval" := true;
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
+                    end else
+                        FillPurchActStatus(
+                            PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
                 end;
-
-            PurchHeader."Status App Act"::Estimator:
-                begin
-                    PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
-                    PurchHeader."Sent to pre. Approval" := false;
-                    case true of
-                        PreAppover <> '':
-                            begin
-                                PurchHeader."Sent to pre. Approval" := true;
-                                FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
-                            end;
-                        else
-                            FillPurchActStatus(
-                                PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
-                    end;
-                end;
-
             PurchHeader."Status App Act"::Approve:
                 begin
                     if PurchHeader."Sent to pre. Approval" then begin
@@ -726,7 +698,6 @@ codeunit 50010 "Payment Order Management"
                         FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, UserSetup."User ID");
                     end;
                 end;
-
             PurchHeader."Status App Act"::Signing:
                 begin
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, PurchHeader.Controller);
@@ -953,4 +924,21 @@ codeunit 50010 "Payment Order Management"
         PurchHeader."Date Status App" := TODAY;
         PurchHeader.Modify;
     end;
+
+    local procedure PurchActPostShipment(var PurchHeader: Record "Purchase Header")
+    var
+        Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
+    begin
+        if PurchHeader."Location Document" and AllocPurchActReceive(PurchHeader) then begin
+            IF NOT CONFIRM(Text50013, FALSE) THEN
+                ERROR('');
+            COMMIT;
+            PurchHeader.Receive := true;
+            PurchHeader.Invoice := false;
+            PurchHeader."Print Posted Documents" := false;
+            CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
+            COMMIT;
+        end;
+    end;
+
 }
