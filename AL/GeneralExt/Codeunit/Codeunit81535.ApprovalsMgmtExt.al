@@ -51,14 +51,20 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     var
         WorkflowStepArgument: Record "Workflow Step Argument";
         ApprovalEntryArgument: Record "Approval Entry";
+        ApprovalEntry: Record "Approval Entry";
         PurchHeader: Record "Purchase Header";
         PayOrderMgt: Codeunit "Payment Order Management";
+        RecRef2: RecordRef;
     begin
-        RecRef.SetTable(PurchHeader);
+        RecRef.SetTable(ApprovalEntry);
+        PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+        PurchHeader.TestField("Process User", USERID);
+        RecRef2.GetTable(PurchHeader);
+
         PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false);
         PurchHeader.TestField("Process User");
 
-        PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
+        PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
         ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
         CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
 
