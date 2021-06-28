@@ -214,18 +214,6 @@ table 70076 "Projects Budget Entry"
                 gvBuildingTurn.Reset();
                 if "Project Code" <> '' then
                     gvBuildingTurn.SETRANGE("Building project Code", "Project Code");
-
-                if gvBuildingTurn.FindFirst() then begin
-                    //IF FORM.RUNMODAL(Page::"Dev Building turn", gvBuildingTurn) = ACTION::LookupOK THEN BEGIN
-                    //"Building Turn" := gvBuildingTurn.Code;
-                    //VALIDATE("Shortcut Dimension 1 Code", gvBuildingTurn."Turn Dimension Code");
-                    //"Building Turn All" := "Building Turn";
-                    //"Project Turn Code" := "Building Turn";
-                    //"Project Code" := gvBuildingTurn."Building project Code";
-                    //IF "Version Code" = '' THEN
-                    //"Version Code" := GetDefVersion1("Project Code");
-                    //END;
-                end;
             end;
 
             trigger OnValidate()

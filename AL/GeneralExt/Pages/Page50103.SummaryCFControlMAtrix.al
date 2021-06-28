@@ -2,6 +2,7 @@ page 50103 "Summary CF Control Matrix"
 {
     PageType = ListPart;
     SourceTable = "Dimension Value";
+    SourceTableTemporary = true;
 
     layout
     {
@@ -146,6 +147,10 @@ page 50103 "Summary CF Control Matrix"
             MATRIX_OnAfterGetRecord(MATRIX_CurrentColumnOrdinal);
         NameIndent := Rec.Indentation;
         Emphasize := Rec.Totaling <> '';
+        if NotShowBlankAmount then
+            Rec.SetRange(Blocked, false)
+        else
+            Rec.SetRange(Blocked);
     end;
 
     var
@@ -170,9 +175,10 @@ page 50103 "Summary CF Control Matrix"
         // RoundingFactor: Option "None","1","1000","1000000";
         MATRIX_CurrentNoOfMatrixColumn: Integer;
         PrjBudEntries: Record "Projects Budget Entry";
+        gLineType: Option CP,CC;
 
 
-    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record Date; CurrentNoOfMatrixColumns: Integer; CPFilter1: Code[250]; CCFilter1: Code[250]; PrjFilter1: Code[20]; StartingDate1: Date; NotShowBlank1: Boolean)
+    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record Date; CurrentNoOfMatrixColumns: Integer; CPFilter1: Code[250]; CCFilter1: Code[250]; PrjFilter1: Code[20]; StartingDate1: Date; NotShowBlank1: Boolean; LinesType: Option CP,CC)
     var
         i: Integer;
     begin
@@ -196,7 +202,8 @@ page 50103 "Summary CF Control Matrix"
         StartingDate := StartingDate1;
         NotShowBlankAmount := NotShowBlank1;
         // RoundingFactorFormatString := MatrixMgt.GetFormatString(RoundingFactor, false);
-
+        gLineType := LinesType;
+        InitTable();
         CurrPage.Update(false);
     end;
 
@@ -237,8 +244,18 @@ page 50103 "Summary CF Control Matrix"
     begin
         PrjBudEntries.SetRange(Date, MatrixRecords[ColumnID]."Period Start", MatrixRecords[ColumnID]."Period End");
         PrjBudEntries.SetRange("Project Code", PrjFilter);
-        PrjBudEntries.SetFilter("Shortcut Dimension 1 Code", CPFilter);
-        PrjBudEntries.SetFilter("Shortcut Dimension 2 Code", CCFilter);
+        case gLineType of
+            gLineType::CP:
+                begin
+                    PrjBudEntries.SetFilter("Shortcut Dimension 1 Code", Rec.Code);
+                    PrjBudEntries.SetFilter("Shortcut Dimension 2 Code", CCFilter);
+                end;
+            gLineType::CC:
+                begin
+                    PrjBudEntries.SetFilter("Shortcut Dimension 1 Code", CPFilter);
+                    PrjBudEntries.SetFilter("Shortcut Dimension 2 Code", Rec.Code);
+                end;
+        end;
         PrjBudEntries.SetRange(Reversed, false);
         case pAmtType of
             pAmtType::All:
@@ -249,5 +266,27 @@ page 50103 "Summary CF Control Matrix"
                 PrjBudEntries.SetRange(Close, false);
         end;
 
+    end;
+
+    local procedure InitTable()
+    var
+        DimVal: Record "Dimension Value";
+    begin
+        Rec.Reset();
+        Rec.DeleteAll();
+        DimVal.Reset();
+        DimVal.SetRange(Blocked, false);
+        DimVal.SetRange("Global Dimension No.", gLineType + 1);
+        if DimVal.FindSet() then
+            repeat
+                Rec.Init();
+                Rec := DimVal;
+                SetFilters(1, 0);
+                PrjBudEntries.SetRange(Date, MatrixRecords[1]."Period Start", MatrixRecords[6]."Period End");
+                PrjBudEntries.CalcSums("Without VAT (LCY)");
+                if PrjBudEntries."Without VAT (LCY)" = 0 then
+                    Rec.Blocked := true;
+                Rec.Insert(false);
+            until DimVal.Next() = 0;
     end;
 }

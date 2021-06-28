@@ -79,7 +79,6 @@ table 70095 "Projects Cost Control Entry"
         field(40; Amount; Decimal)
         {
             Caption = 'Amount';
-            //Caption = 'Сумма';
 
             trigger OnValidate();
             begin
@@ -269,7 +268,6 @@ table 70095 "Projects Cost Control Entry"
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
-            //            RUS = 'Ярлык Измерение 1 Код';
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
 
             trigger OnValidate();
