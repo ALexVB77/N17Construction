@@ -3925,7 +3925,6 @@
           <source>The amount of purchases exceeds the amount of the limit!</source>
           <target>Сумма покупок превышает сумму лимита!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method SendVendorAgreementMail - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2087724425 - NamedType 470711900" size-unit="char" translate="yes" xml:space="preserve">
@@ -4194,7 +4193,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 2172969975 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
-          <target>[NAB: REVIEW]Ошибка пойманная в isolated storage</target>
+          <target>Ошибка пойманная в isolated storage</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
@@ -4221,7 +4220,6 @@
           <source>No Approver specified on line %1.</source>
           <target>Не указан Утверждающий в строке %1.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText010</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
@@ -4248,19 +4246,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70004</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for approval!</source>
-          <target>Документ отправлен на утверждение!</target>
+        <trans-unit id="Codeunit 47354825 - Method 452131723 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to define user for process %1!</source>
+          <target>Не определен пользователь для процесса %1!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70016</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document has been sent for verification to the Checker!</source>
-          <target>Документ отправлен на проверку Проверяющему!</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70044</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FillPurchActStatus - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1339224130 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to create the document. The controller has these rights.</source>
@@ -4291,6 +4282,48 @@
           <target>Сметчик не может создать документ с типом Аct!</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 2284496663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for approval!</source>
+          <target>Документ отправлен на утверждение!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType TEXT70016</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 3061419526" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for prev. approval!</source>
+          <target>Документ отправлен на предв. утверждение!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType TEXT70016Pre</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 3143990074" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for verification to the Estimator!</source>
+          <target>Документ отправлен на проверку Сметчику!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType TEXT70040</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 1399809246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document has been sent for verification to the Checker!</source>
+          <target>Документ отправлен на проверку Проверяющему!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType TEXT70044</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 762112629" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document is signed by the Approver!</source>
+          <target>Документ подписан Утверждающим!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType TEXT70045</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 124416012" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document passed all approvals and a Purchase Invoice for Accounting was created!</source>
+          <target>Документ прошел все утверждения и был создан Счет покупки для бухгалтерии!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType TEXT70046</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2918232106 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>There are no payment invoices to be linked to the act %1.</source>
@@ -7134,7 +7167,6 @@
           <source>Approver</source>
           <target>Утверждающий</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act Subform - Control Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7381,7 +7413,6 @@
           <source>Approver</source>
           <target>Утверждающий</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Control Approver - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3187706650 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9564,7 +9595,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -9991,7 +10022,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -10614,6 +10645,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Receive Account - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 265037819 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Sent to pre. approval</source>
+          <target>Отправлен на пред. утверждение</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Sent to pre. Approval - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Approval Status</source>
           <target>Статус утверждения для акта</target>
@@ -11038,21 +11076,18 @@
           <source>Master Approver (Department)</source>
           <target>Master Approver (Department)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Master Approver (Department) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 948176061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Master Approver (Development)</source>
           <target>Master Approver (Development)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Master Approver (Development) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 744705365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">
           <source>Master Approver (Production)</source>
           <target>Master Approver (Production)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchases &amp; Payab. Setup (Ext) - Field Master Approver (Production) - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2307367824 - Field 2271846032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3921990236">

@@ -35,6 +35,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     begin
         RecRef.SetTable(PurchHeader);
         PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false);
+        PurchHeader.TestField("Process User");
 
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
         ApprovalEntryArgument."Status App Act" := ApprovalEntryArgument."Status App Act"::Controller;
@@ -42,6 +43,26 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
 
         ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
         CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
+
+        Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader));
+    end;
+
+    procedure MoveToNextPurchActStatus(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        WorkflowStepArgument: Record "Workflow Step Argument";
+        ApprovalEntryArgument: Record "Approval Entry";
+        PurchHeader: Record "Purchase Header";
+        PayOrderMgt: Codeunit "Payment Order Management";
+    begin
+        RecRef.SetTable(PurchHeader);
+        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false);
+        PurchHeader.TestField("Process User");
+
+        PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
+        ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
+
+        Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader));
     end;
 
     local procedure PopulateApprovalEntryArgumentPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; var ApprovalEntryArgument: Record "Approval Entry")
@@ -82,14 +103,6 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalsMgmt.MakeApprovalEntry(ApprovalEntryArgument, SequenceNo, ApprovalUserID, WorkflowStepArgument);
     end;
 
-    procedure MoveToNextActStatus(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
-    var
-        WorkflowStepArgument: Record "Workflow Step Argument";
-        ApprovalEntryArgument: Record "Approval Entry";
-        PurchHeader: Record "Purchase Header";
-        PayOrderMgt: Codeunit "Payment Order Management";
-    begin
-        Error('Call MoveToNextActStatus for %1', RecRef.Number)
-    end;
+
 
 }

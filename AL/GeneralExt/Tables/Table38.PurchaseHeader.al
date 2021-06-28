@@ -20,6 +20,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             OptionCaption = ' ,Problem Act,Payment Invoice';
             OptionMembers = " ","Problem Act","Payment Invoice";
         }
+        field(50012; "Sent to pre. Approval"; Boolean)
+        {
+            Description = 'NC 51374 AB';
+            Caption = 'Sent to pre. approval';
+        }
         field(60088; "Original Company"; Code[2])
         {
             Description = 'NC 51432 AP';

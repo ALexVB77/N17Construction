@@ -533,6 +533,32 @@ codeunit 50010 "Payment Order Management"
         exit(not PurchLine.IsEmpty);
     end;
 
+    procedure GetPurchaseOrderActChangeStatusMessage(var PurchHeader: Record "Purchase Header"): Text
+    var
+        TEXT70016: Label 'The document has been sent for approval!';
+        TEXT70016Pre: Label 'The document has been sent for prev. approval!';
+        TEXT70040: Label 'The document has been sent for verification to the Estimator!';
+        TEXT70044: Label 'The document has been sent for verification to the Checker!';
+        TEXT70045: Label 'The document is signed by the Approver!';
+        TEXT70046: Label 'The document passed all approvals and a Purchase Invoice for Accounting was created!';
+    begin
+        case true of
+            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker:
+                exit(TEXT70044);
+            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Estimator:
+                exit(TEXT70040);
+            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Approve:
+                if PurchHeader."Sent to pre. Approval" then
+                    exit(TEXT70016Pre)
+                else
+                    exit(TEXT70016);
+            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Signing:
+                exit(TEXT70045);
+            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant:
+                exit(TEXT70046);
+        end;
+    end;
+
     procedure ChangePurchaseOrderAct(var PurchHeader: Record "Purchase Header"; Reject: Boolean)
     var
         DocumentAttachment: Record "Document Attachment";
@@ -540,6 +566,7 @@ codeunit 50010 "Payment Order Management"
         PurchLine: Record "Purchase Line";
         UserSetup: Record "User Setup";
         ERPCFunc: Codeunit "ERPC Funtions";
+        PreAppover: Code[50];
 
         LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
         LocText010: Label 'No Approver specified on line %1.';
@@ -549,9 +576,6 @@ codeunit 50010 "Payment Order Management"
 
         TEXT70001: label 'There is no attachment!';
         TEXT70004: Label 'Vendor does not have to be basic!';
-
-        TEXT70016: Label 'The document has been sent for approval!';
-        TEXT70044: Label 'The document has been sent for verification to the Checker!';
     begin
         GetPurchSetupWithTestDim;
 
@@ -638,14 +662,75 @@ codeunit 50010 "Payment Order Management"
                     UserSetup.RESET;
                     UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
                     UserSetup.FINDFIRST;
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, UserSetup."User ID");
+                end;
 
-                    PurchHeader."Status App Act" := PurchHeader."Status App Act"::Checker;
-                    PurchHeader."Status App" := PurchHeader."Status App"::Checker;
-                    PurchHeader."Process User" := UserSetup."User ID";
-                    PurchHeader."Date Status App" := TODAY;
-                    PurchHeader.Modify;
+            PurchHeader."Status App Act"::Checker:
+                begin
+                    if not PurchHeader."Location Document" then begin
+                        GetInventorySetup;
+                        InvtSetup.TestField("Default Location Code");
 
-                    Message(TEXT70044);
+                        PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+                        PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+                        PurchLine.SETRANGE(Type, PurchLine.Type::Item);
+                        PurchLine.SetFilter("Location Code", '%1', '');
+                        if not PurchLine.IsEmpty then
+                            PurchLine.ModifyAll("Location Code", InvtSetup."Default Location Code", true);
+                    end;
+                    PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
+                    PurchHeader."Sent to pre. Approval" := false;
+                    case true of
+                        PurchHeader."Act Type" in [PurchHeader."Act Type"::"KC-2", PurchHeader."Act Type"::"KC-2 (Production)"]:
+                            begin
+                                PurchHeader.TestField(Estimator);
+                                FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator);
+                            end;
+                        PreAppover <> '':
+                            begin
+                                PurchHeader."Sent to pre. Approval" := true;
+                                FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
+                            end;
+                        else
+                            FillPurchActStatus(
+                                PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
+                    end;
+                end;
+
+            PurchHeader."Status App Act"::Estimator:
+                begin
+                    PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
+                    PurchHeader."Sent to pre. Approval" := false;
+                    case true of
+                        PreAppover <> '':
+                            begin
+                                PurchHeader."Sent to pre. Approval" := true;
+                                FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
+                            end;
+                        else
+                            FillPurchActStatus(
+                                PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
+                    end;
+                end;
+
+            PurchHeader."Status App Act"::Approve:
+                begin
+                    if PurchHeader."Sent to pre. Approval" then begin
+                        PurchHeader."Sent to pre. Approval" := false;
+                        FillPurchActStatus(
+                            PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
+                    end else begin
+                        UserSetup.RESET;
+                        UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
+                        UserSetup.FINDFIRST;
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, UserSetup."User ID");
+                    end;
+                end;
+
+            PurchHeader."Status App Act"::Signing:
+                begin
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, PurchHeader.Controller);
+                    Error('Создание счета покупки - не реализовано!')
                 end;
         end
 
@@ -854,5 +939,18 @@ codeunit 50010 "Payment Order Management"
                 exit(GetPurchActApproverFromDim(PurchHeader."Dimension Set ID"));
     end;
 
+    local procedure FillPurchActStatus(var PurchHeader: Record "Purchase Header"; ActAppStatus: Enum "Purchase Act Approval Status"; ProcessUser: code[50])
+    var
+        UserSetup: Record "User Setup";
+        LocText001: Label 'Failed to define user for process %1!';
+    begin
+        if ProcessUser = '' then
+            Error(LocText001, ActAppStatus);
 
+        UserSetup.Get(ProcessUser);
+        PurchHeader."Status App Act" := ActAppStatus;
+        PurchHeader."Process User" := UserSetup."User ID";
+        PurchHeader."Date Status App" := TODAY;
+        PurchHeader.Modify;
+    end;
 }
