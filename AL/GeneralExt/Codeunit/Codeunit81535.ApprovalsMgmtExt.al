@@ -62,11 +62,13 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         RecRef2.GetTable(PurchHeader);
 
         PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject);
-        PurchHeader.TestField("Process User");
 
-        PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
-        ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
-        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
+        if PurchHeader."Status App Act" <> PurchHeader."Status App Act"::Accountant then begin
+            PurchHeader.TestField("Process User");
+            PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
+            ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+            CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
+        end;
 
         Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject));
     end;

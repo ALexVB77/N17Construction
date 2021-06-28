@@ -700,8 +700,8 @@ codeunit 50010 "Payment Order Management"
                 end;
             PurchHeader."Status App Act"::Signing:
                 begin
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, PurchHeader.Controller);
-                    //Error('Создание счета покупки - не реализовано!')
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Accountant, PurchHeader.Controller);
+                    Error('Создание счета покупки - не реализовано!')
                 end;
         end
     end;
