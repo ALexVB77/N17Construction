@@ -212,11 +212,21 @@ page 70255 "Summ. Cash Flow Control Detail"
     local procedure UpdateMatrixSubpage();
     begin
         CurrPage.MatrixPage.PAGE.Load(MatrixColumnCaptions, MatrixRecords, CurrSetLength, CPflt,
-          CCflt, ProjectCode, StartingDate, NotShowBlankAmounts, 0);
+          CCflt, ProjectCode, StartingDate, NotShowBlankAmounts, 0, PeriodType);
     end;
 
     local procedure ValidatePrjCode()
     begin
         Rec.SetRange("Project Code", ProjectCode);
+    end;
+
+    procedure SetFilters(pProjectCode: code[20]; pCPflt: Code[250]; pCCflt: Code[250]; pStartingDate: Date; pNotShowBlankAmounts: boolean; pPeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period",Year3)
+    begin
+        ProjectCode := pProjectCode;
+        PeriodType := pPeriodType;
+        CCflt := pCCflt;
+        CPflt := pCPflt;
+        StartingDate := pStartingDate;
+        NotShowBlankAmounts := pNotShowBlankAmounts;
     end;
 }

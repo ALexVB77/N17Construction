@@ -6353,6 +6353,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 774043124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CF Actuals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control CFActuals - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1383783815 - Control 3558207393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CF Total</source>
           <note from="Developer" annotates="general" priority="2"></note>
