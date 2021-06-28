@@ -4326,11 +4326,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2022965182 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
-<<<<<<< HEAD
           <target>Документ будет учтен количественно и будет создан документ Учт. Прих. Накладная Но. Продолжить?</target>
-=======
-          <target>[NAB: SUGGESTION]Документ будет учтен количественно и будет создан документ Учт. Прих. Накладная Но. Продолжить?</target>
->>>>>>> 39d3c2c928dc1eabc28ae01535470bda6fb8c55f
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchActPostShipment - NamedType Text50013</note>
