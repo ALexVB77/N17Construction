@@ -406,10 +406,10 @@ page 70262 "Purchase List Act"
 
     trigger OnOpenPage()
     begin
-        grUserSetup.GET(USERID);
+        UserSetup.GET(USERID);
 
         // SWC968 DD 19.12.16 >>
-        IF grUserSetup."Show All Acts KC-2" AND (Filter1 = Filter1::mydoc) THEN
+        IF UserSetup."Show All Acts KC-2" AND (Filter1 = Filter1::mydoc) THEN
             Filter1 := Filter1::all;
         // SWC968 DD 19.12.16 <<
 
@@ -417,37 +417,37 @@ page 70262 "Purchase List Act"
         SetSortType;
         SetRecFilters;
 
-        IF grUserSetup."Status App Act" = grUserSetup."Status App Act"::Checker THEN
+        IF UserSetup."Status App Act" = UserSetup."Status App Act"::Checker THEN
             Filter1Enabled := FALSE;
 
-        IF grUserSetup."Administrator IW" THEN
+        IF UserSetup."Administrator IW" THEN
             Filter1Enabled := TRUE;
         //--
 
         //SWC380 AKA 200115 >>
         ApproveButtonEnabled := FALSE;
         DelayButtonEnabled := FALSE;
-        // SWC1075 DD 28.07.17 >>
-        IF NOT MyApproved THEN
-            // SWC1075 DD 28.07.17 <<
-            IF grUserSetup."Status App Act" = grUserSetup."Status App Act"::Approve THEN BEGIN
-                ApproveButtonEnabled := TRUE;
-                DelayButtonEnabled := TRUE;
-            END;
-        //SWC380 AKA 200115 <<
 
-
-        //\\ DEBUG
-        ApproveButtonEnabled := TRUE;
-        DelayButtonEnabled := TRUE;
-
-
+        // NC AB: переделано
+        // // SWC1075 DD 28.07.17 >>
+        // IF NOT MyApproved THEN
+        //     // SWC1075 DD 28.07.17 <<
+        //     IF UserSetup."Status App Act" = UserSetup."Status App Act"::Approve THEN BEGIN
+        //         ApproveButtonEnabled := TRUE;
+        //         DelayButtonEnabled := TRUE;
+        //     END;
+        // //SWC380 AKA 200115 <<
+        if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
+            ApproveButtonEnabled := true;
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then
+            ApproveButtonEnabled := true;
     end;
 
     //\\
     var
-        grUserSetup: record "User Setup";
+        UserSetup: record "User Setup";
         PaymentOrderMgt: Codeunit "Payment Order Management";
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;

@@ -17,6 +17,7 @@ report 50999 "TempStarter"
         WR: Record "Workflow Response";
     begin
 
+        SelectLatestVersion();
 
         WRH.AddResponseToLibrary(
             WRHExt.CreateApprovalRequestsActCode(),

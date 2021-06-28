@@ -41,7 +41,7 @@ codeunit 81521 "Workflow Response Handling Ext"
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        ApprovalsMgmtExt.MoveToNextActStatus(RecRef, WorkflowStepInstance);
+        ApprovalsMgmtExt.MoveToNextPurchActStatus(RecRef, WorkflowStepInstance);
     end;
 
     procedure CreateApprovalRequestsActCode(): Code[128]
