@@ -170,6 +170,7 @@ page 50103 "Summary CF Control Matrix"
             Rec.SetRange(Blocked, false)
         else
             Rec.SetRange(Blocked);
+        CalcTotalSums();
     end;
 
     var
@@ -329,5 +330,38 @@ page 50103 "Summary CF Control Matrix"
                     Rec.Blocked := true;
                 Rec.Insert(false);
             until DimVal.Next() = 0;
+    end;
+
+    local procedure CalcTotalSums()
+    var
+        OrigBudRec: Record "Original Budget";
+    begin
+        PrjBudEntries.Reset;
+        SetFilters(0, 0);
+        PrjBudEntries.CalcSums("Without VAT (LCY)");
+        CFTotal := PrjBudEntries."Without VAT (LCY)";
+        PrjBudEntries.Reset;
+        SetFilters(0, 1);
+        PrjBudEntries.CalcSums("Without VAT (LCY)");
+        CFActuals := PrjBudEntries."Without VAT (LCY)";
+        PrjBudEntries.Reset;
+        SetFilters(0, 2);
+        PrjBudEntries.CalcSums("Without VAT (LCY)");
+        CFTotalUnpaid := PrjBudEntries."Without VAT (LCY)";
+        OrigBudRec.Reset();
+        case gLineType of
+            gLineType::CC:
+                begin
+                    OrigBudRec.SetRange("Cost Code", Rec.Code);
+                    OrigBudRec.SetFilter("Cost Place", CPFilter);
+                end;
+            gLineType::CP:
+                begin
+                    OrigBudRec.SetRange("Cost Place", Rec.Code);
+                    OrigBudRec.SetFilter("Cost Code", CCFilter);
+                end;
+        end;
+        OrigBudRec.CalcSums(Amount);
+        OriginalBudget := OrigBudRec.Amount;
     end;
 }
