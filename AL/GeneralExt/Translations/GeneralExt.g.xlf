@@ -3518,11 +3518,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText010</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType Text50013</note>
-        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 3416294985" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must select the real item before document posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3607,6 +3602,11 @@
           <source>%1 payment invoices were related to Act %2.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2022965182 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchActPostShipment - NamedType Text50013</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1701143074 - NamedType 1751475910" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document %1 has been sent to the archive.</source>
@@ -6352,6 +6352,11 @@
           <source>Summary CF Control Matrix</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1383783815 - Control 774043124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CF Actuals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Summary CF Control Matrix - Control CFActuals - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1383783815 - Control 3558207393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CF Total</source>
