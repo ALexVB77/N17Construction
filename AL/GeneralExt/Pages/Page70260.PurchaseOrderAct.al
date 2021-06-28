@@ -346,7 +346,7 @@ page 70260 "Purchase Order Act"
                 SubPageLink = "Table ID" = CONST(38),
                               "Document Type" = FIELD("Document Type"),
                               "Document No." = FIELD("No.");
-                Visible = OpenApprovalEntriesExistForCurrUser;
+                Visible = AppButtonEnabled;
             }
             part(ApprovalFactBox; "Approval FactBox")
             {
@@ -589,12 +589,11 @@ page 70260 "Purchase Order Act"
                 {
                     ApplicationArea = Suite;
                     Caption = 'Approve';
+                    Enabled = ApproveButtonEnabled;
                     Image = Approve;
                     Promoted = true;
                     PromotedCategory = Category4;
                     PromotedIsBig = true;
-                    //PromotedOnly = true;
-                    //Visible = OpenApprovalEntriesExistForCurrUser;
 
                     trigger OnAction()
                     var
@@ -613,13 +612,11 @@ page 70260 "Purchase Order Act"
                 {
                     ApplicationArea = Suite;
                     Caption = 'Reject';
+                    Enabled = RejectButtonEnabled;
                     Image = Reject;
                     Promoted = true;
                     PromotedCategory = Category4;
                     PromotedIsBig = true;
-                    //PromotedOnly = true;
-                    //ToolTip = 'Reject the requested changes.';
-                    //Visible = OpenApprovalEntriesExistForCurrUser;
 
                     trigger OnAction()
                     var
@@ -633,12 +630,11 @@ page 70260 "Purchase Order Act"
                 {
                     ApplicationArea = Suite;
                     Caption = 'Delegate';
+                    Enabled = false;
                     Image = Delegate;
                     Promoted = true;
                     PromotedCategory = Category4;
-                    //PromotedOnly = true;
-                    //ToolTip = 'Delegate the requested changes to the substitute approver.';
-                    //Visible = OpenApprovalEntriesExistForCurrUser;
+                    Visible = false;
 
                     trigger OnAction()
                     var
@@ -653,19 +649,16 @@ page 70260 "Purchase Order Act"
                 {
                     ApplicationArea = Suite;
                     Caption = 'Comments';
+                    Enabled = ApproveButtonEnabled or RejectButtonEnabled;
                     Image = ViewComments;
                     Promoted = true;
                     PromotedCategory = Category4;
-                    //PromotedOnly = true;
-                    //ToolTip = 'View or add comments for the record.';
-                    //Visible = OpenApprovalEntriesExistForCurrUser;
 
                     trigger OnAction()
                     var
                         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
-                        // ApprovalsMgmt.GetApprovalComment(Rec);
-                        Message('Pressed Comment');
+                        ApprovalsMgmt.GetApprovalComment(Rec);
                     end;
                 }
             }
@@ -691,7 +684,13 @@ page 70260 "Purchase Order Act"
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
     begin
 
-        OpenApprovalEntriesExistForCurrUser := ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId);
+        ApproveButtonEnabled := FALSE;
+        RejectButtonEnabled := FALSE;
+
+        if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
+            ApproveButtonEnabled := true;
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then
+            ApproveButtonEnabled := true;
 
         UserSetup.GET(UserId);
 
@@ -762,7 +761,8 @@ page 70260 "Purchase Order Act"
         ShowDocEnabled: Boolean;
         ProblemTypeEnabled: Boolean;
         LocationCodeShowMandatory: Boolean;
-        OpenApprovalEntriesExistForCurrUser: Boolean;
+        ApproveButtonEnabled: Boolean;
+        RejectButtonEnabled: Boolean;
         CreateAppConfText: Label 'Do you want to create a payment invoice from Act %1?';
 
     local procedure SaveInvoiceDiscountAmount()

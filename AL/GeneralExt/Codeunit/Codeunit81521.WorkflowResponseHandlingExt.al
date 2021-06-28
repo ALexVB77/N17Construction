@@ -41,7 +41,16 @@ codeunit 81521 "Workflow Response Handling Ext"
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        ApprovalsMgmtExt.MoveToNextPurchActStatus(RecRef, WorkflowStepInstance);
+        ApprovalsMgmtExt.MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, false);
+    end;
+
+    local procedure MoveToPrevActStatus(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
+        RecRef: RecordRef;
+    begin
+        RecRef.GetTable(Variant);
+        ApprovalsMgmtExt.MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, true);
     end;
 
     procedure CreateApprovalRequestsActCode(): Code[128]
@@ -52,6 +61,11 @@ codeunit 81521 "Workflow Response Handling Ext"
     procedure MoveToNextActStatusCode(): Code[128]
     begin
         exit(UpperCase('MoveToNextActStatus'));
+    end;
+
+    procedure MoveToPrevActStatusCode(): Code[128]
+    begin
+        exit(UpperCase('MoveToPrevActStatus'));
     end;
 
 }

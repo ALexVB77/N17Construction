@@ -3518,11 +3518,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText010</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType Text50013</note>
-        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 3416294985" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must select the real item before document posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3607,6 +3602,11 @@
           <source>%1 payment invoices were related to Act %2.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2022965182 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchActPostShipment - NamedType Text50013</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 1701143074 - NamedType 1751475910" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document %1 has been sent to the archive.</source>
@@ -5663,11 +5663,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action ApproveButton - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2825229705 - Action 3043750541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reject</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action DelayButton - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2825229705 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Edit</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5692,6 +5687,11 @@
           <source>KC-2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action NewKC2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2825229705 - Action 3640931267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reject</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Action RejectButton - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 758120940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices (Checking)</source>
