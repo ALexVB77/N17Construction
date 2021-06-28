@@ -24,6 +24,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     local procedure OnBeforeApprovalEntryInsert(var ApprovalEntry: Record "Approval Entry"; ApprovalEntryArgument: Record "Approval Entry")
     begin
         ApprovalEntry."Status App Act" := ApprovalEntryArgument."Status App Act";
+        ApprovalEntry."Act Type" := ApprovalEntryArgument."Act Type";
     end;
 
     procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
@@ -38,6 +39,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader.TestField("Process User");
 
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
+        ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
         ApprovalEntryArgument."Status App Act" := ApprovalEntryArgument."Status App Act"::Controller;
         CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
 
@@ -66,7 +68,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         if PurchHeader."Status App Act" <> PurchHeader."Status App Act"::Accountant then begin
             PurchHeader.TestField("Process User");
             PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
-            ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+            ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
         end;
 
@@ -110,7 +112,5 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         SequenceNo += 1;
         ApprovalsMgmt.MakeApprovalEntry(ApprovalEntryArgument, SequenceNo, ApprovalUserID, WorkflowStepArgument);
     end;
-
-
 
 }
