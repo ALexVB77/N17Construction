@@ -1,3 +1,4 @@
+-- Base Table
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Contact$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[No_],
@@ -8,21 +9,21 @@ INSERT INTO [Bonava-Test].[dbo].[Real Estate$Contact$437dbf0e-84ff-417a-965d-ed2
 	[Address 2],
 	[City],
 	[Phone No_],
-	[Telex No_], --
-	[Territory Code], --
-	[Currency Code], --
-	[Language Code], --
+	[Telex No_],
+	[Territory Code],
+	[Currency Code],
+	[Language Code],
 	[Salesperson Code],
 	[Country_Region Code],
 	[Last Date Modified],
 	[Fax No_],
-	[Telex Answer Back], --
+	[Telex Answer Back],
 	[VAT Registration No_],
-	[Picture], --
+	[Picture],
 	[Post Code],
-	[County], --
+	[County],
 	[E-Mail],
-	[Home Page], --
+	[Home Page],
 	[No_ Series],
 	[Type],
 	[Company No_],
@@ -31,15 +32,15 @@ INSERT INTO [Bonava-Test].[dbo].[Real Estate$Contact$437dbf0e-84ff-417a-965d-ed2
 	[First Name],
 	[Middle Name],
 	[Surname],
-	[Job Title], --
+	[Job Title],
 	[Initials],
-	[Extension No_], --
+	[Extension No_],
 	[Mobile Phone No_],
-	[Pager], --
-	[Organizational Level Code], --
-	[Exclude from Segment], --
-	[External ID], --
-	[Correspondence Type], --
+	[Pager],
+	[Organizational Level Code],
+	[Exclude from Segment],
+	[External ID],
+	[Correspondence Type],
 	[Salutation Code],
 	[Search E-Mail],
 	[Last Time Modified],
@@ -54,21 +55,21 @@ SELECT
 	Contact.[Address 2],
 	Contact.[City],
 	Contact.[Phone No_],
-	'' AS [Telex No_], --
-	'' AS [Territory Code], --
-	'' AS [Currency Code], --
-	'' AS [Language Code], --
+	'' AS [Telex No_],
+	'' AS [Territory Code],
+	'' AS [Currency Code],
+	'' AS [Language Code],
 	Contact.[Salesperson Code],
 	Contact.[Country_Region Code],
 	Contact.[Last Date Modified],
 	Contact.[Fax No_],
-	'' AS [Telex Answer Back], --
+	'' AS [Telex Answer Back],
 	Contact.[VAT Registration No_],
-	Contact.[Picture], --
+	Contact.[Picture],
 	Contact.[Post Code],
-	'' AS [County], --
+	'' AS [County],
 	Contact.[E-Mail],
-	'' AS [Home Page], --
+	'' AS [Home Page],
 	Contact.[No_ Series],
 	Contact.[Type],
 	Contact.[Company No_],
@@ -77,19 +78,38 @@ SELECT
 	Contact.[First Name],
 	Contact.[Middle Name],
 	Contact.[Surname],
-	'' AS [Job Title], --
+	'' AS [Job Title],
 	Contact.[Initials],
-	'' AS [Extension No_], --
+	'' AS [Extension No_],
 	Contact.[Mobile Phone No_],
-	Contact.[Pager], --
-	'' AS [Organizational Level Code], --
-	'' AS [Exclude from Segment], --
-	'' AS [External ID], --
-	'' AS [Correspondence Type], --
+	Contact.[Pager],
+	'' AS [Organizational Level Code],
+	'' AS [Exclude from Segment],
+	'' AS [External ID],
+	'' AS [Correspondence Type],
 	Contact.[Salutation Code],
 	Contact.[Search E-Mail],
 	Contact.[Last Time Modified],
 	Contact.[E-Mail 2]
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Contact] AS Contact
+INNER JOIN [Bonava-Test].[dbo].[Real Estate$Contact Business Relation$437dbf0e-84ff-417a-965d-ed2bb9650972] CBR
+ON CBR.[Contact No_] = Contact.[No_] collate Cyrillic_General_100_CI_AS;
+
+-- Table Extension
+INSERT INTO [Bonava-Test].[dbo].[Real Estate$Contact$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
+(
+	[No_],
+	[Delivery of passport],
+	[Passport No_],
+	[Passport Series],
+	[Registration]
+)
+SELECT 
+	Contact.[No_],
+	Contact.[Delivery of passport],
+	Contact.[Passport No_],
+	Contact.[Passport Series],
+	Contact.[Registration]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Contact] AS Contact
 INNER JOIN [Bonava-Test].[dbo].[Real Estate$Contact Business Relation$437dbf0e-84ff-417a-965d-ed2bb9650972] CBR
 ON CBR.[Contact No_] = Contact.[No_] collate Cyrillic_General_100_CI_AS;
