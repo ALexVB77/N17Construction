@@ -124,7 +124,11 @@ report 70102 "Fa Release Act FA-1b"
                     end;
                 }
                 trigger OnPreDataItem()
+                var
+                    locLabel001: label 'Выберите код книги амортизации';
                 begin
+                    if ("Posted FA Doc. Line".getfilter("Depreciation Book Code") = '') then error(locLabel001);
+
 
                     IsHeaderPrinted := FALSE;
 
@@ -364,18 +368,21 @@ report 70102 "Fa Release Act FA-1b"
                             caption = 'Depreciation Group';
                             TableRelation = "Depreciation Group";
                             ApplicationArea = FixedAssets;
+                            ShowMandatory = true;
                         }
                         field(DepreciationCode; DepreciationCode)
                         {
                             caption = 'Depreciation Code';
                             tablerelation = "Depreciation Code";
                             ApplicationArea = FixedAssets;
+                            ShowMandatory = true;
                         }
                         field(VendorNo; VendorNo)
                         {
                             Caption = 'Transferor No.';
                             tablerelation = vendor;
                             ApplicationArea = FixedAssets;
+                            ShowMandatory = true;
                         }
                     }
                     group(Organization)

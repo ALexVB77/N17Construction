@@ -7303,6 +7303,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - NamedType Text_001</note>
         </trans-unit>
+        <trans-unit id="Report 3828198507 - ReportDataItem 1311705274 - Method 72583909 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Выберите код книги амортизации</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - ReportDataItem Posted FA Doc. Line - Method OnPreDataItem - NamedType locLabel001</note>
+        </trans-unit>
         <trans-unit id="Report 3828198507 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <note from="Developer" annotates="general" priority="2"></note>
