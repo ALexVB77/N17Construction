@@ -589,8 +589,6 @@ page 70260 "Purchase Order Act"
                     PromotedIsBig = true;
 
                     trigger OnAction()
-                    var
-                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
                         if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Accountant] then
                             FieldError("Status App Act");
@@ -617,7 +615,7 @@ page 70260 "Purchase Order Act"
                     begin
                         if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
                             FieldError("Status App Act");
-                        ApprovalsMgmt.RejectRecordApprovalRequest(RECORDID);
+                        ApprovalsMgmtExt.RejectPurchActApprovalRequest(RECORDID);
                     end;
                 }
                 action(Delegate)
@@ -631,8 +629,6 @@ page 70260 "Purchase Order Act"
                     Visible = false;
 
                     trigger OnAction()
-                    var
-                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
                         //ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
                         Message('Pressed Delegate');
@@ -649,8 +645,6 @@ page 70260 "Purchase Order Act"
                     PromotedCategory = Category4;
 
                     trigger OnAction()
-                    var
-                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
                         ApprovalsMgmt.GetApprovalComment(Rec);
                     end;
@@ -674,8 +668,6 @@ page 70260 "Purchase Order Act"
     end;
 
     trigger OnAfterGetCurrRecord()
-    var
-        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
     begin
 
         ApproveButtonEnabled := FALSE;
@@ -748,6 +740,8 @@ page 70260 "Purchase Order Act"
         UserMgt: Codeunit "User Setup Management";
         PaymentOrderMgt: Codeunit "Payment Order Management";
         PurchCalcDiscByType: Codeunit "Purch - Calc Disc. By Type";
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         ActTypeEditable: Boolean;
         EstimatorEnable: Boolean;
         ProblemType: text;

@@ -118,4 +118,47 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalsMgmt.MakeApprovalEntry(ApprovalEntryArgument, SequenceNo, ApprovalUserID, WorkflowStepArgument);
     end;
 
+    procedure RejectPurchActApprovalRequest(RecordID: RecordID)
+    var
+        ApprovalEntry: Record "Approval Entry";
+        NoReqToRejectErr: Label 'There is no approval request to reject.';
+    begin
+        if not ApprovalsMgmt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, RecordID) then
+            Error(NoReqToRejectErr);
+
+        ApprovalEntry.SetRecFilter;
+        RejectApprovalRequests(ApprovalEntry);
+    end;
+
+    local procedure RejectApprovalRequests(var ApprovalEntry: Record "Approval Entry")
+    var
+        ApprovalEntryToUpdate: Record "Approval Entry";
+    begin
+        if ApprovalEntry.FindSet() then
+            repeat
+                ApprovalEntryToUpdate := ApprovalEntry;
+                RejectSelectedApprovalRequest(ApprovalEntryToUpdate);
+            until ApprovalEntry.Next = 0;
+    end;
+
+    local procedure RejectSelectedApprovalRequest(var ApprovalEntry: Record "Approval Entry")
+    var
+        UserSetup: Record "User Setup";
+        RejectOnlyOpenRequestsErr: Label 'You can only reject open approval entries.';
+    begin
+        if ApprovalEntry.Status <> ApprovalEntry.Status::Open then
+            Error(RejectOnlyOpenRequestsErr);
+
+        if ApprovalEntry."Approver ID" <> UserId then begin
+            UserSetup.Get(UserId);
+            UserSetup.TestField("Approval Administrator");
+        end;
+
+        ApprovalEntry.Get(ApprovalEntry."Entry No.");
+        ApprovalEntry.Validate(Status, ApprovalEntry.Status::Rejected);
+        ApprovalEntry.Modify(true);
+
+        ApprovalsMgmt.OnRejectApprovalRequest(ApprovalEntry);
+    end;
+
 }

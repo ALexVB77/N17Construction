@@ -256,8 +256,6 @@ page 70262 "Purchase List Act"
                 Image = Approve;
 
                 trigger OnAction()
-                var
-                    ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                 begin
                     if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Accountant] then
                         FieldError("Status App Act");
@@ -278,7 +276,7 @@ page 70262 "Purchase List Act"
                 begin
                     if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
                         FieldError("Status App Act");
-                    ApprovalsMgmt.RejectRecordApprovalRequest(RECORDID);
+                    ApprovalsMgmtExt.RejectPurchActApprovalRequest(RECORDID);
                 end;
             }
         }
@@ -357,6 +355,8 @@ page 70262 "Purchase List Act"
         UserSetup: record "User Setup";
         PaymentOrderMgt: Codeunit "Payment Order Management";
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
+
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
