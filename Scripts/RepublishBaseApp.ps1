@@ -1,7 +1,5 @@
-﻿cd "C:\Distr\Scripts"
-
-$ServerInstance = "BonavaDev"
-$ApplicationPath = "C:\Users\alpopov\AL\N17Construction\AL\BaseApp\Microsoft_Base Application_17.4.21491.21535.app"
+﻿$ServerInstance = "BonavaDev"
+$ApplicationPath = "C:\Users\alpopov\AL\N17Construction\AL\BaseApp\Microsoft_Base Application_17.4.21491.21536.app"
 
 $quietExecution = $null
 
