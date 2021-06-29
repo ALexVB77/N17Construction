@@ -2,7 +2,7 @@ page 70260 "Purchase Order Act"
 {
     Caption = 'Purchase Order Act';
     PageType = Document;
-    PromotedActionCategories = 'New,Process,Report,Act,Function,Request Approval,Approve,Navigate';
+    PromotedActionCategories = 'New,Process,Report,Act,Function,Request Approval,Approve,Release,Navigate';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -231,6 +231,12 @@ page 70260 "Purchase Order Act"
                         Caption = 'Fact';
                         Editable = false;
                     }
+                }
+                field(Status; Status)
+                {
+                    ApplicationArea = Suite;
+                    Importance = Promoted;
+                    StyleExpr = StatusStyleTxt;
                 }
                 field("Status App Act"; Rec."Status App Act")
                 {
@@ -478,7 +484,7 @@ page 70260 "Purchase Order Act"
                     Caption = 'Receipts';
                     Image = PostedReceipts;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category9;
                     RunObject = Page "Posted Purchase Receipts";
                     RunPageLink = "Order No." = FIELD("No.");
                     RunPageView = SORTING("Order No.");
@@ -489,7 +495,7 @@ page 70260 "Purchase Order Act"
                     Caption = 'Payment Invoices';
                     Image = Payment;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category9;
                     RunObject = Page "Purch. Order Act PayReq. List";
                     RunPageLink = "Document Type" = CONST(Order),
                                   "IW Documents" = CONST(true),
@@ -627,7 +633,6 @@ page 70260 "Purchase Order Act"
                         Message('Pressed Delegate');
                     end;
                 }
-
                 action(Comment)
                 {
                     ApplicationArea = Suite;
@@ -640,6 +645,43 @@ page 70260 "Purchase Order Act"
                     trigger OnAction()
                     begin
                         ApprovalsMgmt.GetApprovalComment(Rec);
+                    end;
+                }
+            }
+            group(ReleaseReopen)
+            {
+                Caption = 'Release';
+                Image = ReleaseDoc;
+                action(Release)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Re&lease';
+                    Image = ReleaseDoc;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    ShortCutKey = 'Ctrl+F9';
+
+                    trigger OnAction()
+                    var
+                        ReleasePurchDoc: Codeunit "Release Purchase Document";
+                    begin
+                        ReleasePurchDoc.PerformManualRelease(Rec);
+                    end;
+                }
+                action(Reopen)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Re&open';
+                    Enabled = Status <> Status::Open;
+                    Image = ReOpen;
+                    Promoted = true;
+                    PromotedCategory = Category5;
+
+                    trigger OnAction()
+                    var
+                        ReleasePurchDoc: Codeunit "Release Purchase Document";
+                    begin
+                        ReleasePurchDoc.PerformManualReopen(Rec);
                     end;
                 }
             }
@@ -670,6 +712,7 @@ page 70260 "Purchase Order Act"
 
         WhseEmployee.SetRange("User ID", UserId);
         LocationDocEditable := not WhseEmployee.IsEmpty;
+        StatusStyleTxt := GetStatusStyleText();
 
         if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
             ApproveButtonEnabled := true;
@@ -752,6 +795,7 @@ page 70260 "Purchase Order Act"
         ApproveButtonEnabled: Boolean;
         RejectButtonEnabled: Boolean;
         LocationDocEditable: Boolean;
+        StatusStyleTxt: Text;
         CreateAppConfText: Label 'Do you want to create a payment invoice from Act %1?';
 
     local procedure SaveInvoiceDiscountAmount()
