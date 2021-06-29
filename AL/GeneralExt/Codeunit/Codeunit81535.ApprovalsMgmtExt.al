@@ -66,8 +66,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject);
 
         if ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
-            (Reject and (PurchHeader."Act Type" = PurchHeader."Act Type"::"KC-2") and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Estimator)) or
-            (Reject and (PurchHeader."Act Type" <> PurchHeader."Act Type"::"KC-2") and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker))
+            (Reject and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Controller))
         then
             Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject))
         else begin
