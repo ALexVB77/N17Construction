@@ -581,4 +581,17 @@ codeunit 50006 "Base App. Subscribers Mgt."
                 end;
         end;
     end;
+
+    [EventSubscriber(ObjectType::Page, Page::"MyDim Value Combinations", 'OnLoadDimValCombPage', '', false, false)]
+    local procedure OnLoadDimValueCombPage(var Row: Code[20]; var Col: Code[20]; var ShowCaption: Boolean; var DimRecord: Record "Dimension Value")
+    var
+        IsoMgt: Codeunit "Isolated Storage Management GE";
+    begin
+        IsoMgt.init();
+        IsoMgt.setBool('ShowCaptionFromPage', ShowCaption);
+        IsoMgt.init();
+        IsoMgt.setString('RowFromPage', Row);
+        IsoMgt.init();
+        IsoMgt.setString('ColFromPage', Col);
+    end;
 }
