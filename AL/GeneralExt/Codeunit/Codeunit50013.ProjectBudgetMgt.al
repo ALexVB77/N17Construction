@@ -94,10 +94,6 @@ codeunit 50013 "Project Budget Management"
         lTextErr003: Label 'You do not have sufficient rights to perform the action!';
 
     begin
-        lUS.Get(UserId);
-        if not (lUS."CF Allow Long Entries Edit" or lUS."CF Allow Short Entries Edit") then
-            Error(lTextErr003);
-
         if pPrBudEntry.GetFilters = '' then
             exit;
         if pPrBudEntry.FindSet() then
@@ -105,8 +101,8 @@ codeunit 50013 "Project Budget Management"
                 if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
                     Error(lTextErr001);
                 pPrBudEntry.CalcFields("Payment Doc. No.");
-                if pPrBudEntry."Payment Doc. No." <> '' then
-                    Error(lTextErr002);
+                // if pPrBudEntry."Payment Doc. No." <> '' then
+                //     Error(lTextErr002);
                 lPrBudEntry.Get(pPrBudEntry."Parent Entry");
                 lPrBudEntry."Without VAT (LCY)" := lPrBudEntry."Without VAT (LCY)" + pPrBudEntry."Without VAT (LCY)";
                 lPrBudEntry.Modify(false);
