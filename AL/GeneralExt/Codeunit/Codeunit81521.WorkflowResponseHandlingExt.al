@@ -20,6 +20,8 @@ codeunit 81521 "Workflow Response Handling Ext"
                 CreateApprovalRequests(Variant, ResponseWorkflowStepInstance);
             MoveToNextActStatusCode:
                 MoveToNextActStatus(Variant, ResponseWorkflowStepInstance);
+            MoveToPrevActStatusCode:
+                MoveToPrevActStatus(Variant, ResponseWorkflowStepInstance);
             else
                 exit;
         end;
