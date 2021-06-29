@@ -3263,6 +3263,16 @@
           <note from="Developer" annotates="general" priority="2">User ID NAVUser does not exist in the Approval User Setup window.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType UserIdNotInSetupErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - Method 850289269 - NamedType 1235920370" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no approval request to reject.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method RejectPurchActApprovalRequest - NamedType NoReqToRejectErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - Method 2417284452 - NamedType 2033593084" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You can only reject open approval entries.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method RejectSelectedApprovalRequest - NamedType RejectOnlyOpenRequestsErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <note from="Developer" annotates="general" priority="2"></note>

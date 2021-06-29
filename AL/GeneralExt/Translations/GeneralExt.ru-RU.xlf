@@ -3915,6 +3915,20 @@
           <note from="Developer" annotates="general" priority="2">User ID NAVUser does not exist in the Approval User Setup window.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - NamedType UserIdNotInSetupErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - Method 850289269 - NamedType 1235920370" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no approval request to reject.</source>
+          <target>Нет запроса утверждения, подлежащего отклонению.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method RejectPurchActApprovalRequest - NamedType NoReqToRejectErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3129098179 - Method 2417284452 - NamedType 2033593084" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You can only reject open approval entries.</source>
+          <target>Вы можете отклонять только открытые операции утверждения.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method RejectSelectedApprovalRequest - NamedType RejectOnlyOpenRequestsErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 = %2 already exists for %5 (%3 = %4).</source>
           <target>%1 = %2 для %5 (%3 = %4) уже существует.</target>
@@ -4388,21 +4402,18 @@
           <source>Deleting long-term entries denied!</source>
           <target>Нельзя удалять долгосрочные операции!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - Method DeleteSTLine - NamedType lTextErr001</note>
         </trans-unit>
         <trans-unit id="Codeunit 439680645 - Method 877441836 - NamedType 4177230530" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry %1 is linked to payment document %2. Deleting denied!</source>
           <target>Операция %1 привязана к заявке на оплату %2. Удаление операции невозможно!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - Method DeleteSTLine - NamedType lTextErr002</note>
         </trans-unit>
         <trans-unit id="Codeunit 439680645 - Method 877441836 - NamedType 3539533913" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have sufficient rights to perform the action!</source>
           <target>Недостаточно прав для выполнения действия!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - Method DeleteSTLine - NamedType lTextErr003</note>
         </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
