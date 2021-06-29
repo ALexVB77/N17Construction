@@ -2,7 +2,7 @@ page 70260 "Purchase Order Act"
 {
     Caption = 'Purchase Order Act';
     PageType = Document;
-    PromotedActionCategories = 'New,Process,Report,Act,Function,Request Approval,Approve';
+    PromotedActionCategories = 'New,Process,Report,Act,Function,Request Approval,Approve,Navigate';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -449,28 +449,6 @@ page 70260 "Purchase Order Act"
                         DocumentAttachmentDetails.RunModal;
                     end;
                 }
-                /*
-                action(ChangeLog)
-                {
-                    ApplicationArea = All;
-                    Caption = 'Change Log';
-                    Image = ChangeLog;
-                    Promoted = true;
-                    PromotedCategory = Category4;
-                    PromotedIsBig = true;
-
-                    trigger OnAction()
-                    var
-                        lrChangeLE: Record "Change Log Entry";
-                    begin
-                        lrChangeLE.SETCURRENTKEY("Table No.", "Primary Key Field 2 Value", "Date and Time");
-                        lrChangeLE.SETRANGE("Table No.", Database::"Purchase Header");
-                        lrChangeLE.SETRANGE("Primary Key Field 2 Value", Rec."No.");
-                        IF NOT lrChangeLE.IsEmpty THEN
-                            Page.RUNMODAL(Page::"Change Log Entries", lrChangeLE);
-                    end;
-                }
-                */
                 action(Approvals)
                 {
                     AccessByPermission = TableData "Approval Entry" = R;
@@ -489,14 +467,29 @@ page 70260 "Purchase Order Act"
                             RecordId, DATABASE::"Purchase Header", "Document Type".AsInteger(), "No.");
                     end;
                 }
+            }
+            group(Documents)
+            {
+                Caption = 'Documents';
+                Image = Documents;
+                action(Receipts)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Receipts';
+                    Image = PostedReceipts;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    RunObject = Page "Posted Purchase Receipts";
+                    RunPageLink = "Order No." = FIELD("No.");
+                    RunPageView = SORTING("Order No.");
+                }
                 action(PaymentInvoices)
                 {
                     ApplicationArea = All;
                     Caption = 'Payment Invoices';
                     Image = Payment;
                     Promoted = true;
-                    PromotedCategory = Category4;
-                    PromotedIsBig = true;
+                    PromotedCategory = Category8;
                     RunObject = Page "Purch. Order Act PayReq. List";
                     RunPageLink = "Document Type" = CONST(Order),
                                   "IW Documents" = CONST(true),
