@@ -675,7 +675,7 @@ page 70260 "Purchase Order Act"
                     Enabled = Status <> Status::Open;
                     Image = ReOpen;
                     Promoted = true;
-                    PromotedCategory = Category5;
+                    PromotedCategory = Category8;
 
                     trigger OnAction()
                     var
