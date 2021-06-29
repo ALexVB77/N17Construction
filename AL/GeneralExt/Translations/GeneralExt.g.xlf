@@ -5759,7 +5759,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Action NewOrderApp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Act,Function,Request Approval,Approve</source>
+          <source>New,Process,Report,Act,Function,Request Approval,Approve,Navigate</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
         </trans-unit>
@@ -5848,6 +5848,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3324780168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action PaymentInvoices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 966610113 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Receipts - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5872,11 +5887,6 @@
           <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action DocAttach - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Payment Invoices</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action PaymentInvoices - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statistics</source>

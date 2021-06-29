@@ -3919,14 +3919,12 @@
           <source>There is no approval request to reject.</source>
           <target>Нет запроса утверждения, подлежащего отклонению.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method RejectPurchActApprovalRequest - NamedType NoReqToRejectErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3129098179 - Method 2417284452 - NamedType 2033593084" size-unit="char" translate="yes" xml:space="preserve">
           <source>You can only reject open approval entries.</source>
           <target>Вы можете отклонять только открытые операции утверждения.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Approvals Mgmt. (Ext) - Method RejectSelectedApprovalRequest - NamedType RejectOnlyOpenRequestsErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 900939636 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
@@ -6913,9 +6911,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Action NewOrderApp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Act,Function,Request Approval,Approve</source>
-          <target>Новый,Процесс,Отчет,Акт,Функции,Запросить утверждение,Утвердить</target>
+          <source>New,Process,Report,Act,Function,Request Approval,Approve,Navigate</source>
+          <target>Новый,Процесс,Отчет,Акт,Функции,Запросить утверждение,Утвердить,Навигатор</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7020,6 +7019,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Vendor Bank Account Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 3324780168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documents</source>
+          <target>Документы</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Invoices</source>
+          <target>Заявки на оплату</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action PaymentInvoices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 966610113 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipts</source>
+          <target>Прих. накладные</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Receipts - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>O&amp;rder Act</source>
           <target>Акт</target>
@@ -7049,12 +7068,6 @@
           <target>Вложения</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action DocAttach - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3437592965 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Payment Invoices</source>
-          <target>Заявки на оплату</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action PaymentInvoices - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statistics</source>
