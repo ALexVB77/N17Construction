@@ -65,14 +65,19 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
 
         PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject);
 
-        if PurchHeader."Status App Act" <> PurchHeader."Status App Act"::Accountant then begin
+        if ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
+            (Reject and (PurchHeader."Act Type" = PurchHeader."Act Type"::"KC-2") and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Estimator)) or
+            (Reject and (PurchHeader."Act Type" <> PurchHeader."Act Type"::"KC-2") and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker))
+        then
+            Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject))
+        else begin
             PurchHeader.TestField("Process User");
             PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
             ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
+            ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
+            Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject));
         end;
-
-        Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject));
     end;
 
     local procedure PopulateApprovalEntryArgumentPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; var ApprovalEntryArgument: Record "Approval Entry")

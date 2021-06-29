@@ -548,27 +548,41 @@ codeunit 50010 "Payment Order Management"
 
     procedure GetPurchaseOrderActChangeStatusMessage(var PurchHeader: Record "Purchase Header"; Reject: Boolean): Text
     var
-        TEXT70016: Label 'The document has been sent for approval!';
-        TEXT70016Pre: Label 'The document has been sent for prev. approval!';
-        TEXT70040: Label 'The document has been sent for verification to the Estimator!';
-        TEXT70044: Label 'The document has been sent for verification to the Checker!';
-        TEXT70045: Label 'The document is signed by the Approver!';
-        TEXT70046: Label 'The document passed all approvals and a Purchase Invoice for Accounting was created!';
+        ApproveText: Label 'Document %1 has been sent to the %2 for approval.';
+        SigningText: Label 'Document %1 has been sent for signature.';
+        RejectText: Label 'Document %1 has been returned to the %2 for revision.';
+        FinalText: Label 'The document passed all approvals and a Purchase Invoice for Accounting was created!';
+        ResponsText: label 'Controller,Estimator,Checker,Pre. Approver,Approver';
     begin
-        case true of
-            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Checker:
-                exit(TEXT70044);
-            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Estimator:
-                exit(TEXT70040);
-            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Approve:
-                if PurchHeader."Sent to pre. Approval" then
-                    exit(TEXT70016Pre)
+        case PurchHeader."Status App Act" of
+            PurchHeader."Status App Act"::Controller:
+                exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(1, ResponsText)));
+            PurchHeader."Status App Act"::Estimator:
+                if not Reject then
+                    exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(2, ResponsText)))
                 else
-                    exit(TEXT70016);
-            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Signing:
-                exit(TEXT70045);
-            PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant:
-                exit(TEXT70046);
+                    exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(2, ResponsText)));
+            PurchHeader."Status App Act"::Checker:
+                if not Reject then
+                    exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(3, ResponsText)))
+                else
+                    exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(3, ResponsText)));
+            PurchHeader."Status App Act"::Approve:
+                if PurchHeader."Sent to pre. Approval" then begin
+                    if not Reject then
+                        exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(4, ResponsText)))
+                    else
+                        exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(4, ResponsText)));
+                end else begin
+                    if not Reject then
+                        exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(5, ResponsText)))
+                    else
+                        exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(5, ResponsText)));
+                end;
+            PurchHeader."Status App Act"::Signing:
+                exit(StrSubstNo(SigningText, PurchHeader."No."));
+            PurchHeader."Status App Act"::Accountant:
+                exit(FinalText);
         end;
     end;
 
