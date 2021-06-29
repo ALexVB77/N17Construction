@@ -259,7 +259,7 @@ page 70262 "Purchase List Act"
                 var
                     ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                 begin
-                    if "Status App Act" = "Status App Act"::" " then
+                    if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Accountant] then
                         FieldError("Status App Act");
                     if "Status App Act" = "Status App Act"::Controller then begin
                         IF ApprovalsMgmt.CheckPurchaseApprovalPossible(Rec) THEN
@@ -276,7 +276,9 @@ page 70262 "Purchase List Act"
                 Image = Reject;
                 trigger OnAction()
                 begin
-                    Message('Pressed DelayButton');
+                    if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
+                        FieldError("Status App Act");
+                    ApprovalsMgmt.RejectRecordApprovalRequest(RECORDID);
                 end;
             }
         }
@@ -345,8 +347,10 @@ page 70262 "Purchase List Act"
 
         if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
             ApproveButtonEnabled := true;
-        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
             ApproveButtonEnabled := true;
+            RejectButtonEnabled := true;
+        end;
     end;
 
     var

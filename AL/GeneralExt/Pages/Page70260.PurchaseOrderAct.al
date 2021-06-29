@@ -592,7 +592,7 @@ page 70260 "Purchase Order Act"
                     var
                         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
-                        if "Status App Act" = "Status App Act"::" " then
+                        if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Accountant] then
                             FieldError("Status App Act");
                         if "Status App Act" = "Status App Act"::Controller then begin
                             IF ApprovalsMgmt.CheckPurchaseApprovalPossible(Rec) THEN
@@ -615,8 +615,9 @@ page 70260 "Purchase Order Act"
                     var
                         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
-                        // ApprovalsMgmt.RejectRecordApprovalRequest(RecordId);
-                        Message('Pressed Reject');
+                        if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
+                            FieldError("Status App Act");
+                        ApprovalsMgmt.RejectRecordApprovalRequest(RECORDID);
                     end;
                 }
                 action(Delegate)
@@ -682,8 +683,10 @@ page 70260 "Purchase Order Act"
 
         if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
             ApproveButtonEnabled := true;
-        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
             ApproveButtonEnabled := true;
+            RejectButtonEnabled := true;
+        end;
 
         UserSetup.GET(UserId);
 
