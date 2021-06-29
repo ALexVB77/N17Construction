@@ -165,7 +165,7 @@ page 70260 "Purchase Order Act"
                     field("Location Document"; Rec."Location Document")
                     {
                         ApplicationArea = All;
-                        Editable = false;
+                        Editable = LocationDocEditable;
                     }
                 }
 
@@ -668,10 +668,15 @@ page 70260 "Purchase Order Act"
     end;
 
     trigger OnAfterGetCurrRecord()
+    var
+        WhseEmployee: Record "Warehouse Employee";
     begin
 
         ApproveButtonEnabled := FALSE;
         RejectButtonEnabled := FALSE;
+
+        WhseEmployee.SetRange("User ID", UserId);
+        LocationDocEditable := not WhseEmployee.IsEmpty;
 
         if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
             ApproveButtonEnabled := true;
@@ -753,6 +758,7 @@ page 70260 "Purchase Order Act"
         LocationCodeShowMandatory: Boolean;
         ApproveButtonEnabled: Boolean;
         RejectButtonEnabled: Boolean;
+        LocationDocEditable: Boolean;
         CreateAppConfText: Label 'Do you want to create a payment invoice from Act %1?';
 
     local procedure SaveInvoiceDiscountAmount()
