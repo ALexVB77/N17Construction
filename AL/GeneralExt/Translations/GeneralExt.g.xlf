@@ -6909,7 +6909,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0009</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 914830240" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Posting Setup</source>
+          <source>Dimension Mapping</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0010</note>
         </trans-unit>

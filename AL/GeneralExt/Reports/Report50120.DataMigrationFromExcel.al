@@ -33,7 +33,7 @@ report 50120 "Data Migration From Excel"
         Text0007: Label 'VAT Product Posting Group';
         Text0008: Label 'VAT Business Posting Group';
         Text0009: Label 'General Posting Setup';
-        Text0010: Label 'General Posting Setup';
+        Text0010: Label 'Dimension Mapping';
         Text0011: Label 'CC';
         Text0012: Label 'CP';
         Text0013: Label 'НП';

@@ -58,7 +58,7 @@ SELECT
 	[Agreement Posting],
 	[Agreement Nos_]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Customer]
-LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
+LEFT JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
 ON GLAccMapping.[Old No_] = [Customer Posting Group] collate Cyrillic_General_100_CI_AS
 WHERE [Blocked] <> '3'
 

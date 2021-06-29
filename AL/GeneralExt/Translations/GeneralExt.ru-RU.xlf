@@ -4175,7 +4175,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 2172969975 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
-          <target>[NAB: REVIEW]Ошибка пойманная в isolated storage</target>
+          <target>Ошибка пойманная в isolated storage</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
@@ -8240,25 +8240,25 @@
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Posting Group</source>
-          <target>Учетная группа клиента</target>
+          <target>Учетные группы клиента</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0001</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Pposting Group</source>
-          <target>Учетная группа поставщика</target>
+          <target>Учетные группы поставщика</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0002</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Posting Group</source>
-          <target>Учетная группа товаров</target>
+          <target>Учетные группы товаров</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0003</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 4257629171" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Posting Group</source>
-          <target>Учетная группа ОС</target>
+          <target>Учетные группы ОС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0004</note>
         </trans-unit>
@@ -8293,9 +8293,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0009</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 914830240" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Posting Setup</source>
-          <target>[Общая настройка учета</target>
+          <source>Dimension Mapping</source>
+          <target>Соответствие измерений</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0010</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 277133623" size-unit="char" translate="yes" xml:space="preserve">
@@ -9596,7 +9597,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -10023,7 +10024,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
