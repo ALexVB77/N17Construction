@@ -6911,8 +6911,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Action NewOrderApp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Report,Act,Function,Request Approval,Approve,Navigate</source>
-          <target>Новый,Процесс,Отчет,Акт,Функции,Запросить утверждение,Утвердить,Навигатор</target>
+          <source>New,Process,Report,Act,Function,Request Approval,Approve,Release,Navigate</source>
+          <target>Новый,Процесс,Отчет,Акт,Функции,Запросить утверждение,Утвердить,Выпустить,Навигатор</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
@@ -7023,7 +7023,6 @@
           <source>Documents</source>
           <target>Документы</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Documents - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 935354668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7036,7 +7035,6 @@
           <source>Receipts</source>
           <target>Прих. накладные</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Receipts - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 3307590636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7140,6 +7138,27 @@
           <target>Ввести на основании</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action EnterBasedOn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 1332593150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Release</source>
+          <target>Выпустить</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ReleaseReopen - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Re&amp;lease</source>
+          <target>Вы&amp;пустить</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Release - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3437592965 - Action 2071937805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Re&amp;open</source>
+          <target>&amp;Открыть</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Reopen - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lines</source>
