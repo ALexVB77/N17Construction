@@ -57,7 +57,7 @@ page 70262 "Purchase List Act"
                 {
                     ApplicationArea = All;
                     Caption = 'Document Type';
-                    OptionCaption = 'All,Act,KC-2,Act (Production),KC-2 (Production),Advance';
+                    OptionCaption = 'All,Act,KC-2,Advance';
                     trigger OnValidate()
                     begin
                         SetRecFilters;
@@ -226,30 +226,6 @@ page 70262 "Purchase List Act"
                         PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"KC-2");
                     end;
                 }
-
-                /*
-                action(NewActProd)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'Act (Production)';
-                    Enabled = NewActProdEnabled;
-                    trigger OnAction()
-                    begin
-                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"Act (Production)");
-                    end;
-                }
-                action(NewKC2Prod)
-                {
-                    ApplicationArea = Basic, Suite;
-                    Caption = 'KC-2 (Production)';
-                    Enabled = NewKC2ProdEnabled;
-                    trigger OnAction()
-                    begin
-                        PaymentOrderMgt.FuncNewRec(Rec, NewActTypeOption::"Act (Production)");
-                    end;
-                }
-                */
-
                 action(NewAdvance)
                 {
                     ApplicationArea = Basic, Suite;
@@ -381,15 +357,13 @@ page 70262 "Purchase List Act"
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
         SortType: option docno,postdate,vendor,statusapp,userproc;
-        FilterActType: option all,act,"kc-2","act (production)","kc-2 (production)",advance;
+        FilterActType: option all,act,"kc-2",advance;
         NewActTypeOption: Enum "Purchase Act Type";
         ApproveButtonEnabled: boolean;
         RejectButtonEnabled: boolean;
         MyApproved: boolean;
         NewActEnabled: Boolean;
         NewKC2Enabled: Boolean;
-        NewActProdEnabled: Boolean;
-        NewKC2ProdEnabled: Boolean;
         NewAdvanceEnabled: Boolean;
 
     local procedure OpenActCard()
@@ -405,13 +379,9 @@ page 70262 "Purchase List Act"
 
     local procedure SetSortType()
     begin
-        //--
         CASE SortType OF
             SortType::DocNo:
-                // SWC1075 DD 28.07.17 >>
-                //SETCURRENTKEY("No.");
                 SETCURRENTKEY("Document Type", "No.");
-            // SWC1075 DD 28.07.17 <<
             SortType::PostDate:
                 SETCURRENTKEY("Posting Date");
             SortType::Vendor:
@@ -436,10 +406,8 @@ page 70262 "Purchase List Act"
 
         SETRANGE(Paid);
 
-        // SWC1075 DD 28.07.17 >>
         MARKEDONLY(FALSE);
         CLEARMARKS;
-        // SWC1075 DD 28.07.17 <<
 
         CASE Filter2 OF
             Filter2::InProc:
@@ -458,7 +426,6 @@ page 70262 "Purchase List Act"
         CASE Filter1 OF
             Filter1::MyDoc:
                 SETRANGE("Process User", USERID);
-            // SWC1075 DD 28.07.17 >>
             Filter1::Approved:
                 BEGIN
                     PH := Rec;
@@ -473,7 +440,6 @@ page 70262 "Purchase List Act"
                     Rec := PH;
                     MARKEDONLY(TRUE);
                 END;
-        // SWC1075 DD 28.07.17 <<
         END;
 
         CASE FilterActType OF
@@ -481,34 +447,16 @@ page 70262 "Purchase List Act"
                 SETRANGE("Act Type", "Act Type"::Act);
             FilterActType::"KC-2":
                 SETRANGE("Act Type", "Act Type"::"KC-2");
-            FilterActType::All:                                        //SWC004 AKA 080714
-                //SWC672 AKA 061015 >>
-                //SETRANGE("Act Type","Act Type"::Act,"Act Type"::"KC-2");  //SWC004 AKA 080714
-                //NC 44119 > KGT
-                // SETFILTER("Act Type",'%1|%2|%3|%4',"Act Type"::Act,"Act Type"::"KC-2","Act Type"::"Act (Production)",
-                //"Act Type"::"KC-2 (Production)");
-                SETFILTER("Act Type", '%1|%2|%3|%4|%5', "Act Type"::Act, "Act Type"::"KC-2", "Act Type"::"Act (Production)",
-                    "Act Type"::"KC-2 (Production)", "Act Type"::Advance);
-            //NC 44119 < KGT
-            //SWC672 AKA 061015 <<
-            //SWC630 AKA 150915 >>
-            FilterActType::"Act (Production)":
-                SETRANGE("Act Type", "Act Type"::"Act (Production)");
-            FilterActType::"KC-2 (Production)":
-                SETRANGE("Act Type", "Act Type"::"KC-2 (Production)");
-            //SWC630 AKA 150915 <<
-            //NC 44119 > KGT
+            FilterActType::All:
+                SETFILTER("Act Type", '%1|%2|%3', "Act Type"::Act, "Act Type"::"KC-2", "Act Type"::Advance);
             FilterActType::Advance:
                 SETRANGE("Act Type", "Act Type"::Advance);
-        //NC 44119 < KGT
         END;
 
         FILTERGROUP(0);
 
         NewActEnabled := FilterActType in [FilterActType::All, FilterActType::act];
         NewKC2Enabled := FilterActType in [FilterActType::All, FilterActType::"kc-2"];
-        NewActProdEnabled := FilterActType in [FilterActType::All, FilterActType::"act (production)"];
-        NewKC2ProdEnabled := FilterActType in [FilterActType::All, FilterActType::"kc-2 (production)"];
         NewAdvanceEnabled := FilterActType in [FilterActType::All, FilterActType::advance];
     end;
 

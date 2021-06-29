@@ -3363,16 +3363,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckActByVendAgreementDates - NamedType TEXT70009</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3774229605 - NamedType 314869872" size-unit="char" translate="yes" xml:space="preserve">
-          <source>For the line with the dimensions combination %1 and %2, the Agreement card Remaining Amount has been exceeded!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckAgrDetRemain - NamedType Text1000</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 3774229605 - NamedType 3972140551" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The line with the  dimensions combination %1 and %2 does not exist in the Breakdown by Letter of the Agreement card!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckAgrDetRemain - NamedType Text1001</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 1181972351 - NamedType 4210713468" size-unit="char" translate="yes" xml:space="preserve">
           <source>A dimension used in line %1 has caused an error. %2.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3392,11 +3382,6 @@
           <source>You must specify %1 and %2 for %3 line %4.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1 - NamedType LocText001</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1524225914 - Method 1048492819 - NamedType 4133353355" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line %1 specifies COST PLACE %2 that does not match the document type %3.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ERPC Funtions - Method CheckLineShortCutDim1 - NamedType LocText50010</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 2139979417 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify %1 and %2 for %3.</source>
@@ -3532,6 +3517,11 @@
           <source>Vendor does not have to be basic!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType TEXT70004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 1997063884 - NamedType 3754779571" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unused document type.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CheckUnusedPurchActType - NamedType Text50100</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 452131723 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Failed to define user for process %1!</source>
@@ -5609,7 +5599,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2825229705 - Control 2805020018 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All,Act,KC-2,Act (Production),KC-2 (Production),Advance</source>
+          <source>All,Act,KC-2,Advance</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Act - Control FilterActType - Property OptionCaption</note>
         </trans-unit>
@@ -9848,11 +9838,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Act - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 115980535 - EnumValue 3192528168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Act (Production)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue Act (Production) - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Enum 115980535 - EnumValue 2473906886 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Advance</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9862,11 +9847,6 @@
           <source>KC-2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Enum 115980535 - EnumValue 3722448631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>KC-2 (Production)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Act Type - EnumValue KC-2 (Production) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2097997636 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>

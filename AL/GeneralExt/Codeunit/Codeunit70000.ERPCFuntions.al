@@ -260,12 +260,11 @@ codeunit 70000 "ERPC Funtions"
             Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.");
     end;
 
-    procedure CheckLineShortCutDim1(PurchLine: Record "Purchase Line"; CheckCode: Boolean; PurchSetup: Record "Purchases & Payables Setup"; ActType: enum "Purchase Act Type")
+    procedure CheckLineShortCutDim1(PurchLine: Record "Purchase Line"; PurchSetup: Record "Purchases & Payables Setup")
     var
         DimSetEntry: Record "Dimension Set Entry";
         DimValue: Record "Dimension Value";
         LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
-        LocText50010: Label 'Line %1 specifies COST PLACE %2 that does not match the document type %3.';
     begin
         if PurchLine."Dimension Set ID" = 0 then
             Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchLine."Document No.", PurchLine."Line No.");
@@ -274,35 +273,6 @@ codeunit 70000 "ERPC Funtions"
         DimSetEntry.SetFilter("Dimension Code", '%1|%2', PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension");
         if DimSetEntry.Count <> 2 then
             Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchLine."Document No.", PurchLine."Line No.");
-
-        if not CheckCode then
-            exit;
-
-        if DimSetEntry.Get(PurchLine."Dimension Set ID", PurchSetup."Cost Code Dimension") then begin
-            DimValue.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code");
-            if ((ActType in [ActType::Act, ActType::"KC-2"]) and (DimValue."Cost Code Type" = DimValue."Cost Code Type"::Production)) or
-                ((ActType in [ActType::"Act (Production)", ActType::"KC-2 (Production)"]) and (DimValue."Cost Code Type" = DimValue."Cost Code Type"::Development))
-            then
-                ERROR(LocText50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", ActType);
-        end;
-    end;
-
-    local procedure CheckCT(PurchHeader: Record "Purchase Header")
-    var
-        PurchLine: Record "Purchase Line";
-    begin
-        // SWC1001 DD 12.02.17 <<
-        IF (PurchHeader."Act Type" IN [PurchHeader."Act Type"::"Act (Production)", PurchHeader."Act Type"::"KC-2 (Production)"]) AND
-            (PurchHeader."Status App" = PurchHeader."Status App"::Checker)
-        THEN BEGIN
-            PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
-            PurchLine.SETRANGE("Document No.", PurchHeader."No.");
-            IF PurchLine.FINDSET THEN
-                REPEAT
-                    PurchLine.TESTFIELD("Cost Type");
-                UNTIL PurchLine.NEXT = 0;
-        END;
-        // SWC1001 DD 12.02.17 <<
     end;
 
     local procedure CheckDimensionComb(PurchHeader: Record "Purchase Header")
@@ -358,40 +328,6 @@ codeunit 70000 "ERPC Funtions"
             ERROR(ErrText001);
         IF PurchHeader."Invoice VAT Amount" <> TempVATAmountLine.GetTotalVATAmount() THEN
             ERROR(ErrText002);
-    end;
-
-    local procedure CheckAgrDetRemain(PurchHeader: Record "Purchase Header")
-    var
-        VAgreement: Record "Vendor Agreement";
-        VAgrDet: Record "Vendor Agreement Details";
-        PurchSetup: Record "Purchases & Payables Setup";
-        PurchLine: Record "Purchase Line";
-        GLSetup: Record "General Ledger Setup";
-        Text1000: Label 'For the line with the dimensions combination %1 and %2, the Agreement card Remaining Amount has been exceeded!';
-        Text1001: Label 'The line with the  dimensions combination %1 and %2 does not exist in the Breakdown by Letter of the Agreement card!';
-    begin
-        PurchSetup.GET;
-        IF PurchSetup."Frame Agreement Group" = VAgreement."Agreement Group" THEN
-            EXIT;
-
-        IF PurchHeader."Act Type" IN [PurchHeader."Act Type"::"Act (Production)", PurchHeader."Act Type"::"KC-2 (Production)"] THEN
-            IF VAgreement.GET(PurchHeader."Buy-from Vendor No.", PurchHeader."Agreement No.") AND NOT VAgreement.WithOut THEN BEGIN
-                PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
-                PurchLine.SETRANGE("Document No.", PurchHeader."No.");
-                IF PurchLine.FINDSET THEN
-                    REPEAT
-                        VAgrDet.SETRANGE("Vendor No.", PurchLine."Buy-from Vendor No.");
-                        VAgrDet.SETRANGE("Agreement No.", PurchLine."Agreement No.");
-                        VAgrDet.SETRANGE("Global Dimension 1 Code", PurchLine."Shortcut Dimension 1 Code");
-                        VAgrDet.SETRANGE("Global Dimension 2 Code", PurchLine."Shortcut Dimension 2 Code");
-                        IF VAgrDet.FINDSET THEN BEGIN
-                            GLSetup.GET;
-                            IF VAgrDet.GetRemainAmt < -GLSetup."Allow Diff in Check" THEN
-                                ERROR(Text1000, PurchLine."Shortcut Dimension 1 Code", PurchLine."Shortcut Dimension 2 Code");
-                        END ELSE
-                            ERROR(Text1001, PurchLine."Shortcut Dimension 1 Code", PurchLine."Shortcut Dimension 2 Code");
-                    UNTIL PurchLine.NEXT = 0;
-            END;
     end;
 
     local procedure CreatePurchOrder(VAR PurchaseHeader: Record "Purchase Header"; CheckOnly: Boolean)
@@ -494,7 +430,7 @@ codeunit 70000 "ERPC Funtions"
                 //         IF PurchLine."Shortcut Dimension 1 Code"[10] = 'D' THEN
                 //             ERROR(Text50010, PurchLine."Line No.", PurchLine."Shortcut Dimension 1 Code", grPurchHeader."Act Type");
                 // END;
-                CheckLineShortCutDim1(PurchLine, true, PurchSetup, PurchHeader."Act Type");
+                CheckLineShortCutDim1(PurchLine, PurchSetup);
 
                 IF MaxAmount < PurchLine."Line Amount" THEN BEGIN
                     PurchLineMax := PurchLine;

@@ -106,13 +106,6 @@ page 70260 "Purchase Order Act"
 
                     trigger OnValidate()
                     begin
-                        IF xRec."Act Type" IN ["Act Type"::Act, "Act Type"::"Act (Production)"] THEN
-                            IF NOT ("Act Type" IN ["Act Type"::Act, "Act Type"::"Act (Production)"]) THEN
-                                FIELDERROR("Act Type");
-                        IF xRec."Act Type" IN ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"] THEN
-                            IF NOT ("Act Type" IN ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"]) THEN
-                                FIELDERROR("Act Type");
-
                         EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
                     end;
                 }
