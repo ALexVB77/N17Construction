@@ -69,6 +69,35 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
     // t 81 <<
 
+    // t 179 >>
+    [EventSubscriber(ObjectType::Table, Database::"Reversal Entry", 'onAfterSetRegisterReverseFilter', '', false, false)]
+    local procedure onAfterSetRegisterReverseFilter(
+        var GLEntry: Record "G/L Entry";
+        var CustLedgEntry: Record "Cust. Ledger Entry";
+        var VendLedgEntry: Record "Vendor Ledger Entry";
+        var BankAccLedgEntry: Record "Bank Account Ledger Entry";
+        var VATEntry: Record "VAT Entry";
+        var FALedgEntry: Record "FA Ledger Entry";
+        var MaintenanceLedgEntry: Record "Maintenance Ledger Entry";
+        var ValueEntry: Record "Value Entry";
+        var TaxDiffLedgEntry: Record "Tax Diff. Ledger Entry"
+    )
+    begin
+
+        //CSS GS 21.02.2012 >>
+        GLEntry.SETRANGE(Reversed, FALSE);
+        CustLedgEntry.SETRANGE(Reversed, FALSE);
+        VendLedgEntry.SETRANGE(Reversed, FALSE);
+        BankAccLedgEntry.SETRANGE(Reversed, FALSE);
+        FALedgEntry.SETRANGE(Reversed, FALSE);
+        MaintenanceLedgEntry.SETRANGE(Reversed, FALSE);
+        VATEntry.SETRANGE(Reversed, FALSE);
+        ValueEntry.SETRANGE(Reversed, FALSE);
+        TaxDiffLedgEntry.SETRANGE(Reversed, FALSE);
+        //CSS GS 21.02.2012 <<
+    end;
+    // t 179 <<
+
     // t 5740 >>
     [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInsertEvent', '', false, false)]
     local procedure onAfterInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
