@@ -6,21 +6,21 @@ INSERT INTO [Bonava-Test].[dbo].[Bonava$VAT Posting Setup$437dbf0e-84ff-417a-965
     [VAT _],
     [Unrealized VAT Type],
     [Adjust for Payment Discount],
-    [Sales VAT Account], --
-    [Sales VAT Unreal_ Account], --
-    [Purchase VAT Account], --
-    [Purch_ VAT Unreal_ Account], --
+    [Sales VAT Account],
+    [Sales VAT Unreal_ Account],
+    [Purchase VAT Account],
+    [Purch_ VAT Unreal_ Account],
     [VAT Identifier],
 	[Tax Invoice Amount Type],
 	[Not Include into VAT Ledger],
     [Trans_ VAT Type],
-	[Trans_ VAT Account], --
+	[Trans_ VAT Account],
 	[VAT Settlement Template],
     [VAT Settlement Batch],
 	[VAT Exempt],
 	[Manual VAT Settlement],
-	[Write-Off VAT Account], --
-	[VAT Charge No_] --
+	[Write-Off VAT Account],
+	[VAT Charge No_]
 )
 SELECT
 	[VAT Bus_ Posting Group],
@@ -29,21 +29,21 @@ SELECT
     [VAT %],
     [Unrealized VAT Type],
     [Adjust for Payment Discount],
-    ISNULL(GLAccMapping.[New No_], '') AS [Sales VAT Account], --
-    ISNULL(GLAccMapping2.[New No_], '') AS [Sales VAT Unreal_ Account], --
-    ISNULL(GLAccMapping3.[New No_], '') AS [Purchase VAT Account], --
-    ISNULL(GLAccMapping4.[New No_], '') AS [Purch_ VAT Unreal_ Account], --
+    ISNULL(GLAccMapping.[New No_], '') AS [Sales VAT Account],
+    ISNULL(GLAccMapping2.[New No_], '') AS [Sales VAT Unreal_ Account],
+    ISNULL(GLAccMapping3.[New No_], '') AS [Purchase VAT Account],
+    ISNULL(GLAccMapping4.[New No_], '') AS [Purch_ VAT Unreal_ Account],
     [VAT Identifier],
 	[Tax Invoice Amount Type],
 	[Not Include into VAT Ledger],
     [Trans_ VAT Type],
-	ISNULL(GLAccMapping5.[New No_], '') AS [Trans_ VAT Account], --
+	ISNULL(GLAccMapping5.[New No_], '') AS [Trans_ VAT Account],
 	[VAT Settlement Template],
     [VAT Settlement Batch],
 	[VAT Exempt],
 	[Manual VAT Settlement],
-	ISNULL(GLAccMapping6.[New No_], '') AS [Write-Off VAT Account], --
-	ISNULL(GLAccMapping7.[New No_], '') AS [VAT Charge No_] --
+	ISNULL(GLAccMapping6.[New No_], '') AS [Write-Off VAT Account],
+	ISNULL(GLAccMapping7.[New No_], '') AS [VAT Charge No_]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$VAT Posting Setup]
 LEFT JOIN [Bonava-Test].[dbo].[Bonava$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
 ON GLAccMapping.[Old No_] = [Sales VAT Account] collate Cyrillic_General_100_CI_AS

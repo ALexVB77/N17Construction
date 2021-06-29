@@ -1,5 +1,5 @@
 -- Base Table
-INSERT INTO [Bonava-Test].[dbo].[Bonava$Location$437dbf0e-84ff-417a-965d-ed2bb9650972]
+INSERT INTO [Bonava-Test].[dbo].[Real Estate$Location$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Code],
 	[Name],
@@ -107,10 +107,11 @@ SELECT
 	0 AS [Last Goods Report No_],
 	[Last Goods Report Date],
 	'' AS [Responsible Employee No_]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Location];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Location]
+WHERE [Blocked] <> '1';
 
 -- Table Extension
-INSERT INTO [Bonava-Test].[dbo].[Bonava$Location$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
+INSERT INTO [Bonava-Test].[dbo].[Real Estate$Location$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
 (
 	[Code],
 	[Blocked],
@@ -120,4 +121,5 @@ SELECT
 	[Code],
 	[Blocked],
 	[Def_ Gen_ Bus_ Posting Group]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Location];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Location]
+WHERE [Blocked] <> '1';
