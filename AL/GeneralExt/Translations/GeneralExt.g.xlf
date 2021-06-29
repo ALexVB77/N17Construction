@@ -4038,6 +4038,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Instance - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 1375759659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
           <note from="Developer" annotates="general" priority="2"></note>
