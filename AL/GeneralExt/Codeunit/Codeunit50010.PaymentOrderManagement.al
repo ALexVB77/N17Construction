@@ -922,6 +922,7 @@ codeunit 50010 "Payment Order Management"
 
         IF NOT CONFIRM(Text50013, FALSE) THEN
             ERROR('');
+        Codeunit.run(Codeunit::"Release Purchase Document", PurchHeader);
         COMMIT;
         PurchHeader.Receive := true;
         PurchHeader.Invoice := false;
