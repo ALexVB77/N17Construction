@@ -8250,25 +8250,25 @@
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Posting Group</source>
-          <target>Учетная группа клиента</target>
+          <target>Учетные группы клиента</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0001</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Pposting Group</source>
-          <target>Учетная группа поставщика</target>
+          <target>Учетные группы поставщика</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0002</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Posting Group</source>
-          <target>Учетная группа товаров</target>
+          <target>Учетные группы товаров</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0003</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 4257629171" size-unit="char" translate="yes" xml:space="preserve">
           <source>FA Posting Group</source>
-          <target>Учетная группа ОС</target>
+          <target>Учетные группы ОС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0004</note>
         </trans-unit>
