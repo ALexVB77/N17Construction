@@ -529,6 +529,21 @@ page 70143 "Forecast List Analisys"
         GetLineStyle(Rec);
     end;
 
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        CheckAllowChanges();
+    end;
+
+    trigger OnModifyRecord(): Boolean
+    begin
+        CheckAllowChanges();
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        CheckAllowChanges();
+    end;
+
     var
         LineStyletxt: Text;
         CurrTrType: code[20];
@@ -625,6 +640,12 @@ page 70143 "Forecast List Analisys"
         if gDate = 0D then
             gDate := Today;
         setOverdueFlt();
+    end;
+
+    local procedure CheckAllowChanges()
+    begin
+        if not PrjBudMgt.AllowLTEntryChange() then
+            Error(TEXT0015);
     end;
 
     local procedure setOverdueFlt()
