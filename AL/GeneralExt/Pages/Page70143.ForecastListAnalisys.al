@@ -506,7 +506,7 @@ page 70143 "Forecast List Analisys"
                     lPrBudEntry: Record "Projects Budget Entry";
                 begin
                     CurrPage.SetSelectionFilter(lPrBudEntry);
-                    DeleteSTLine(lPrBudEntry);
+                    PrjBudMgt.DeleteSTLine(lPrBudEntry);
                 end;
             }
             action(ShowRelatedEntries)
@@ -616,6 +616,7 @@ page 70143 "Forecast List Analisys"
         TEXT0014: Label 'You are not allowed to copy actual operations.';
         TEXT0015: Label 'You do not have sufficient rights to perform the action!';
         HideZeroAmountLine: boolean;
+        PrjBudMgt: Codeunit "Project Budget Management";
 
     trigger OnOpenPage()
     begin
@@ -691,30 +692,5 @@ page 70143 "Forecast List Analisys"
             LineStyletxt := 'StandardAccent';
     end;
 
-    procedure DeleteSTLine(pPrBudEntry: Record "Projects Budget Entry")
-    var
-        lPrBudEntry: Record "Projects Budget Entry";
-        lTextErr001: Label 'Deleting long-term entries denied!';
-        lTextErr002: Label 'Entry %1 is linked to payment document %2. Deleting denied!';
 
-    begin
-        US.Get(UserId);
-        if not (US."CF Allow Long Entries Edit" or US."CF Allow Short Entries Edit") then
-            Error(TEXT0015);
-
-        if pPrBudEntry.GetFilters = '' then
-            exit;
-        if pPrBudEntry.FindSet() then
-            repeat
-                if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
-                    Error(lTextErr001);
-                pPrBudEntry.CalcFields("Payment Doc. No.");
-                if pPrBudEntry."Payment Doc. No." <> '' then
-                    Error(lTextErr002);
-                lPrBudEntry.Get(pPrBudEntry."Parent Entry");
-                lPrBudEntry."Without VAT (LCY)" := lPrBudEntry."Without VAT (LCY)" + pPrBudEntry."Without VAT (LCY)";
-                lPrBudEntry.Modify(false);
-                pPrBudEntry.Delete(true);
-            until pPrBudEntry.Next() = 0;
-    end;
 }

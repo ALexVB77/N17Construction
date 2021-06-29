@@ -3653,6 +3653,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text003</note>
         </trans-unit>
+        <trans-unit id="Codeunit 439680645 - Method 877441836 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deleting long-term entries denied!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - Method DeleteSTLine - NamedType lTextErr001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 439680645 - Method 877441836 - NamedType 4177230530" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry %1 is linked to payment document %2. Deleting denied!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - Method DeleteSTLine - NamedType lTextErr002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 439680645 - Method 877441836 - NamedType 3539533913" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have sufficient rights to perform the action!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - Method DeleteSTLine - NamedType lTextErr003</note>
+        </trans-unit>
         <trans-unit id="Page 3751671310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Act Stage</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4038,6 +4053,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Event Subscriptions (Ext) - Control Subscriber Instance - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 1375759659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2269272589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4107,16 +4127,6 @@
           <source>You do not have sufficient rights to perform the action!</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - NamedType TEXT0015</note>
-        </trans-unit>
-        <trans-unit id="Page 2269272589 - Method 877441836 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Deleting long-term entries denied!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Method DeleteSTLine - NamedType lTextErr001</note>
-        </trans-unit>
-        <trans-unit id="Page 2269272589 - Method 877441836 - NamedType 4177230530" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Entry %1 is linked to payment document %2. Deleting denied!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Method DeleteSTLine - NamedType lTextErr002</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 1820841161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Filters</source>
