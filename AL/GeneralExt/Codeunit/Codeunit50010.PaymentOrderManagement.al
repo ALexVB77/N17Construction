@@ -907,6 +907,7 @@ codeunit 50010 "Payment Order Management"
     local procedure PurchActPostShipment(var PurchHeader: Record "Purchase Header")
     var
         PurchLine: Record "Purchase Line";
+        ReleasePurchDoc: Codeunit "Release Purchase Document";
         Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
     begin
         if not PurchHeader."Location Document" then
@@ -922,8 +923,11 @@ codeunit 50010 "Payment Order Management"
 
         IF NOT CONFIRM(Text50013, FALSE) THEN
             ERROR('');
-        Codeunit.run(Codeunit::"Release Purchase Document", PurchHeader);
+
+        ReleasePurchDoc.SetSkipCheckReleaseRestrictions();
+        ReleasePurchDoc.Run(PurchHeader);
         COMMIT;
+
         PurchHeader.Receive := true;
         PurchHeader.Invoice := false;
         PurchHeader."Print Posted Documents" := false;
