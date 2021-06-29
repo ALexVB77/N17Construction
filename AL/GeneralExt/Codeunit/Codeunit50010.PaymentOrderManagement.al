@@ -534,18 +534,6 @@ codeunit 50010 "Payment Order Management"
         exit(DimSetEntry.Count = 2);
     end;
 
-    local procedure AllocPurchActReceive(PurchHeader: Record "Purchase Header"): Boolean
-    var
-        PurchLine: Record "Purchase Line";
-    begin
-        PurchLine.SetRange("Document Type", PurchHeader."Document Type");
-        PurchLine.SetRange("Document No.", PurchHeader."No.");
-        PurchLine.SetRange(Type, PurchLine.Type::Item);
-        PurchLine.SetFilter("No.", '<>%1', '');
-        PurchLine.SetFilter("Qty. to Receive", '<>%1', 0);
-        exit(not PurchLine.IsEmpty);
-    end;
-
     procedure GetPurchaseOrderActChangeStatusMessage(var PurchHeader: Record "Purchase Header"; Reject: Boolean): Text
     var
         ApproveText: Label 'Document %1 has been sent to the %2 for approval.';
@@ -918,18 +906,28 @@ codeunit 50010 "Payment Order Management"
 
     local procedure PurchActPostShipment(var PurchHeader: Record "Purchase Header")
     var
+        PurchLine: Record "Purchase Line";
         Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
     begin
-        if PurchHeader."Location Document" and AllocPurchActReceive(PurchHeader) then begin
-            IF NOT CONFIRM(Text50013, FALSE) THEN
-                ERROR('');
-            COMMIT;
-            PurchHeader.Receive := true;
-            PurchHeader.Invoice := false;
-            PurchHeader."Print Posted Documents" := false;
-            CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
-            COMMIT;
-        end;
+        if not PurchHeader."Location Document" then
+            exit;
+
+        PurchLine.SetRange("Document Type", PurchHeader."Document Type");
+        PurchLine.SetRange("Document No.", PurchHeader."No.");
+        PurchLine.SetRange(Type, PurchLine.Type::Item);
+        PurchLine.SetFilter("No.", '<>%1', '');
+        PurchLine.SetFilter("Qty. to Receive", '<>%1', 0);
+        if PurchLine.IsEmpty then
+            exit;
+
+        IF NOT CONFIRM(Text50013, FALSE) THEN
+            ERROR('');
+        COMMIT;
+        PurchHeader.Receive := true;
+        PurchHeader.Invoice := false;
+        PurchHeader."Print Posted Documents" := false;
+        CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
+        COMMIT;
     end;
 
 }
