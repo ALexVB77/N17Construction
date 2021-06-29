@@ -11,6 +11,14 @@ codeunit 50010 "Payment Order Management"
         PurchSetupFound: Boolean;
         InvtSetupFound: Boolean;
 
+    procedure CheckUnusedPurchActType(ActTypeOption: enum "Purchase Act Type")
+    var
+        Text50100: label 'Unused document type.';
+    begin
+        if ActTypeOption.AsInteger() in [3, 4] then
+            error(Text50100);
+    end;
+
     local procedure GetInventorySetup()
     begin
         if not InvtSetupFound then begin
@@ -45,12 +53,16 @@ codeunit 50010 "Payment Order Management"
         IsLocationDocument: Boolean;
         LocationCode: code[20];
     begin
+        CheckUnusedPurchActType(ActTypeOption);
+
         grUS.GET(USERID);
         IF NOT (grUS."Status App Act" IN [grUS."Status App Act"::Сontroller, grUS."Status App Act"::Estimator]) then begin
             MESSAGE(Text50000);
             EXIT;
         end;
-        if (ActTypeOption in [ActTypeOption::Act, ActTypeOption::"Act (Production)"]) and (grUS."Status App Act" = grUS."Status App Act"::Estimator) then
+        // if (ActTypeOption in [ActTypeOption::Act, ActTypeOption::"Act (Production)"]) and (grUS."Status App Act" = grUS."Status App Act"::Estimator) then
+        //    ERROR(LocErrorText1);
+        if (ActTypeOption = ActTypeOption::Act) and (grUS."Status App Act" = grUS."Status App Act"::Estimator) then
             ERROR(LocErrorText1);
 
         GetPurchSetupWithTestDim;
@@ -95,7 +107,8 @@ codeunit 50010 "Payment Order Management"
             "Payment Doc Type" := "Payment Doc Type"::"Payment Request";
             "Date Status App" := TODAY;
             Controller := USERID;
-            if "Act Type" in ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"] then
+            // if "Act Type" in ["Act Type"::"KC-2", "Act Type"::"KC-2 (Production)"] then
+            if "Act Type" = "Act Type"::"KC-2" then
                 if PurchSetup."Default Estimator" <> '' then
                     Estimator := PurchSetup."Default Estimator";
             MODIFY(TRUE);
@@ -564,7 +577,6 @@ codeunit 50010 "Payment Order Management"
         DocumentAttachment: Record "Document Attachment";
         Vendor: Record Vendor;
         PurchLine: Record "Purchase Line";
-        UserSetup: Record "User Setup";
         ERPCFunc: Codeunit "ERPC Funtions";
         PreAppover: Code[50];
 
@@ -576,6 +588,8 @@ codeunit 50010 "Payment Order Management"
         TEXT70001: label 'There is no attachment!';
         TEXT70004: Label 'Vendor does not have to be basic!';
     begin
+        CheckUnusedPurchActType(PurchHeader."Act Type");
+
         GetPurchSetupWithTestDim;
 
         PurchHeader.TestField("Status App Act");
@@ -583,7 +597,7 @@ codeunit 50010 "Payment Order Management"
 
         // проверки и дозаполнение
 
-        if PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Controller.AsInteger() then begin
+        if (PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Controller.AsInteger()) and (not Reject) then begin
             PurchSetup.TestField("Base Vendor No.");
             if PurchHeader."Buy-from Vendor No." = PurchSetup."Base Vendor No." then
                 ERROR(TEXT70004);
@@ -622,7 +636,7 @@ codeunit 50010 "Payment Order Management"
             end;
         end;
 
-        if PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Checker.AsInteger() then begin
+        if (PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Checker.AsInteger()) and (not Reject) then begin
             GetInventorySetup;
             PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
             PurchLine.SETRANGE("Document No.", PurchHeader."No.");
@@ -646,26 +660,21 @@ codeunit 50010 "Payment Order Management"
 
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Controller:
-                if PurchHeader."Act Type" in [PurchHeader."Act Type"::"KC-2", PurchHeader."Act Type"::"KC-2 (Production)"] then begin
+                if PurchHeader."Act Type" = PurchHeader."Act Type"::"KC-2" then begin
                     PurchHeader.TestField(Estimator);
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator);
                 end else begin
                     PurchActPostShipment(PurchHeader);
-                    UserSetup.RESET;
-                    UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
-                    UserSetup.FINDFIRST;
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, UserSetup."User ID");
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
                 end;
             PurchHeader."Status App Act"::Estimator:
-                begin
+                if not Reject then begin
                     PurchActPostShipment(PurchHeader);
-                    UserSetup.RESET;
-                    UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
-                    UserSetup.FINDFIRST;
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, UserSetup."User ID");
-                end;
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
+                end else
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Controller, PurchHeader.Controller);
             PurchHeader."Status App Act"::Checker:
-                begin
+                if not Reject then begin
                     if not PurchHeader."Location Document" then begin
                         GetInventorySetup;
                         InvtSetup.TestField("Default Location Code");
@@ -677,32 +686,45 @@ codeunit 50010 "Payment Order Management"
                             PurchLine.ModifyAll("Location Code", InvtSetup."Default Location Code", true);
                     end;
                     PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
-                    PurchHeader."Sent to pre. Approval" := false;
                     if PreAppover <> '' then begin
                         PurchHeader."Sent to pre. Approval" := true;
                         FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
+                    end else begin
+                        PurchHeader."Sent to pre. Approval" := false;
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
+                    end;
+                end else begin
+                    if PurchHeader."Act Type" = PurchHeader."Act Type"::"KC-2" then begin
+                        PurchHeader.TestField(Estimator);
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator);
                     end else
-                        FillPurchActStatus(
-                            PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Controller, PurchHeader.Controller);
                 end;
             PurchHeader."Status App Act"::Approve:
-                begin
-                    if PurchHeader."Sent to pre. Approval" then begin
-                        PurchHeader."Sent to pre. Approval" := false;
-                        FillPurchActStatus(
-                            PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
-                    end else begin
-                        UserSetup.RESET;
-                        UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
-                        UserSetup.FINDFIRST;
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, UserSetup."User ID");
+                if PurchHeader."Sent to pre. Approval" then begin
+                    PurchHeader."Sent to pre. Approval" := false;
+                    if not Reject then
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader))
+                    else
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
+                end else begin
+                    if not Reject then
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, GetPurchActChecker(PurchHeader))
+                    else begin
+                        PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
+                        if PreAppover <> '' then begin
+                            PurchHeader."Sent to pre. Approval" := true;
+                            FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
+                        end else
+                            FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
                     end;
                 end;
             PurchHeader."Status App Act"::Signing:
-                begin
+                if not Reject then begin
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Accountant, PurchHeader.Controller);
                     Error('Создание счета покупки - не реализовано!')
-                end;
+                end else
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
         end
     end;
 
@@ -720,6 +742,16 @@ codeunit 50010 "Payment Order Management"
                 PurchLineLoc.TESTFIELD("Full Description");
                 PurchLineLoc.TESTFIELD(Quantity);
             UNTIL PurchLineLoc.NEXT = 0;
+    end;
+
+    local procedure GetPurchActChecker(PurchHeader: Record "Purchase Header"): code[50]
+    var
+        UserSetup: Record "User Setup";
+    begin
+        UserSetup.RESET;
+        UserSetup.SETRANGE("Salespers./Purch. Code", PurchHeader."Purchaser Code");
+        UserSetup.FINDFIRST;
+        exit(UserSetup."User ID");
     end;
 
     procedure GetPurchActApproverFromDim(DimSetID: Integer): Code[50]
