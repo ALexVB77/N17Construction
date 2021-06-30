@@ -242,6 +242,7 @@ page 70262 "Purchase List Act"
                 ApplicationArea = All;
                 Caption = 'Edit';
                 Image = Edit;
+                Enabled = EditEnabled;
 
                 trigger OnAction()
                 begin
@@ -343,6 +344,8 @@ page 70262 "Purchase List Act"
         ApproveButtonEnabled := FALSE;
         RejectButtonEnabled := FALSE;
 
+        EditEnabled := Rec."No." <> '';
+
         if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
             ApproveButtonEnabled := true;
         if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
@@ -369,6 +372,7 @@ page 70262 "Purchase List Act"
         NewActEnabled: Boolean;
         NewKC2Enabled: Boolean;
         NewAdvanceEnabled: Boolean;
+        EditEnabled: Boolean;
 
     local procedure OpenActCard()
     begin
