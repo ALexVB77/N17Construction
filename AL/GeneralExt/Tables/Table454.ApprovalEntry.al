@@ -12,5 +12,10 @@ tableextension 80454 "Approval Entry (Ext)" extends "Approval Entry"
             Caption = 'Act Type';
             Description = 'NC 51373 AB';
         }
+        field(50002; "Reject"; Boolean)
+        {
+            Caption = 'Reject';
+            Description = 'NC 51374 AB';
+        }
     }
 }

@@ -120,6 +120,17 @@ page 70260 "Purchase Order Act"
                 {
                     ApplicationArea = All;
                     Editable = false;
+
+                    trigger OnAssistEdit()
+                    var
+                        PurchHeaderInv: Record "Purchase Header";
+                    begin
+                        if "Invoice No." <> '' then begin
+                            PurchHeaderInv.SetRange("Document Type", PurchHeaderInv."Document Type"::Invoice);
+                            PurchHeaderInv.SetRange("No.", "Invoice No.");
+                            Page.RunModal(Page::"Purchase Invoice", PurchHeaderInv);
+                        end;
+                    end;
                 }
                 field("Order Date"; Rec."Order Date")
                 {
@@ -584,7 +595,7 @@ page 70260 "Purchase Order Act"
                     Enabled = ApproveButtonEnabled;
                     Image = Approve;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -605,7 +616,7 @@ page 70260 "Purchase Order Act"
                     Enabled = RejectButtonEnabled;
                     Image = Reject;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -624,7 +635,7 @@ page 70260 "Purchase Order Act"
                     Enabled = false;
                     Image = Delegate;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
                     Visible = false;
 
                     trigger OnAction()
@@ -640,7 +651,7 @@ page 70260 "Purchase Order Act"
                     Enabled = ApproveButtonEnabled or RejectButtonEnabled;
                     Image = ViewComments;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
 
                     trigger OnAction()
                     begin

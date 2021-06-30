@@ -494,6 +494,7 @@ codeunit 50010 "Payment Order Management"
         PurchaseLine: Record "Purchase Line";
         ProjectsBudgetEntry: Record "Projects Budget Entry";
         ForecastListAnalisys: page "Forecast List Analisys";
+        ProjectBudgetMgt: Codeunit "Project Budget Management";
     begin
         // debug see later
         message('Вызов DisconnectFromAgreement');
@@ -511,9 +512,10 @@ codeunit 50010 "Payment Order Management"
                     IF ProjectsBudgetEntry.FINDFIRST THEN BEGIN
                         PurchaseLine."Forecast Entry" := 0;
                         PurchaseLine.MODIFY;
-                        ForecastListAnalisys.SETRECORD(ProjectsBudgetEntry);
-                        message('Вызов ForecastListAnalisys.DisconnectFromAgreement');
-                        exit;
+                        ProjectBudgetMgt.DeleteSTLine(ProjectsBudgetEntry);
+                        // ForecastListAnalisys.SETRECORD(ProjectsBudgetEntry);
+                        // message('Вызов ForecastListAnalisys.DisconnectFromAgreement');
+                        // exit;
                     END;
                 END;
             UNTIL PurchaseLine.NEXT = 0;
@@ -723,8 +725,8 @@ codeunit 50010 "Payment Order Management"
                 end;
             PurchHeader."Status App Act"::Signing:
                 if not Reject then begin
+                    CreatePurchInvForAct(PurchHeader);
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Accountant, PurchHeader.Controller);
-                    Error('Создание счета покупки - не реализовано!')
                 end else
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
         end
@@ -908,6 +910,7 @@ codeunit 50010 "Payment Order Management"
     var
         PurchLine: Record "Purchase Line";
         ReleasePurchDoc: Codeunit "Release Purchase Document";
+        PurchPost: Codeunit "Purch.-Post";
         Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
     begin
         if not PurchHeader."Location Document" then
@@ -926,13 +929,70 @@ codeunit 50010 "Payment Order Management"
 
         ReleasePurchDoc.SetSkipCheckReleaseRestrictions();
         ReleasePurchDoc.Run(PurchHeader);
-        COMMIT;
 
         PurchHeader.Receive := true;
         PurchHeader.Invoice := false;
         PurchHeader."Print Posted Documents" := false;
-        CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
-        COMMIT;
+        PurchPost.SetSuppressCommit(true);
+        PurchPost.Run(PurchHeader);
+    end;
+
+    local procedure CreatePurchInvForAct(var PurchHeader: Record "Purchase Header")
+    var
+        PurchHeaderInv: Record "Purchase Header";
+        PurchLineInv: Record "Purchase Line";
+        PurchLine: Record "Purchase Line";
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        CopyDocMgt: Codeunit "Copy Document Mgt.";
+        GetReceipts: Codeunit "Purch.-Get Receipt";
+        FromDocType: enum "Purchase Document Type From";
+    begin
+        GetPurchSetupWithTestDim();
+
+        PurchHeaderInv.Init();
+        PurchHeaderInv."Document Type" := PurchHeaderInv."Document Type"::Invoice;
+        PurchHeaderInv."No." := '';
+        PurchHeaderInv.Insert(true);
+
+        FromDocType := FromDocType::Order;
+        CopyDocMgt.SetProperties(true, false, false, false, true, PurchSetup."Exact Cost Reversing Mandatory", false);
+        CopyDocMgt.CopyPurchDoc(FromDocType, PurchHeader."No.", PurchHeaderInv);
+
+        PurchHeader."Invoice No." := PurchHeaderInv."No.";
+        PurchHeader.Modify();
+
+        PurchHeaderInv."Linked Purchase Order Act No." := PurchHeader."No.";
+        PurchHeaderInv."Pre-booking Document" := true;
+        PurchHeaderInv."Act Type" := PurchHeaderInv."Act Type"::" ";
+        PurchHeaderInv."Process User" := '';
+        PurchHeaderInv."Status App Act" := PurchHeaderInv."Status App Act"::" ";
+        PurchHeaderInv."Date Status App" := 0D;
+        PurchHeaderInv.Modify();
+
+        PurchLine.SetRange("Document Type", PurchHeader."Document Type");
+        PurchLine.SetRange("Document No.", PurchHeader."No.");
+        PurchLine.SetRange(Type, PurchLine.Type::Item);
+        PurchLine.SetFilter("Qty. Rcd. Not Invoiced", '<>0');
+        if PurchLine.IsEmpty then
+            exit;
+
+        PurchRcptLine.SetRange("Order No.", PurchHeader."No.");
+        PurchRcptLine.FindSet;
+        repeat
+            if PurchLineInv.Get(PurchHeaderInv."Document Type", PurchHeaderInv."No.", PurchRcptLine."Order Line No.") then begin
+                PurchLineInv.TestField(Type, PurchRcptLine.Type);
+                PurchLineInv.TestField("No.", PurchRcptLine."No.");
+                if PurchLineInv.Quantity <= PurchRcptLine.Quantity then
+                    PurchLineInv.Delete(true)
+                else begin
+                    PurchLineInv.Validate(Quantity, PurchLineInv.Quantity - PurchRcptLine.Quantity);
+                    PurchLineInv.Modify(true);
+                end;
+            end;
+        until PurchRcptLine.Next() = 0;
+
+        GetReceipts.SetPurchHeader(PurchHeaderInv);
+        GetReceipts.CreateInvLines(PurchRcptLine);
     end;
 
 }

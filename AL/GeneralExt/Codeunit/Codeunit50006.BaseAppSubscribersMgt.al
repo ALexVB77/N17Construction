@@ -96,6 +96,20 @@ codeunit 50006 "Base App. Subscribers Mgt."
         TaxDiffLedgEntry.SETRANGE(Reversed, FALSE);
         //CSS GS 21.02.2012 <<
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Reversal Entry", 'OnBeforeReverseEntries', '', false, false)]
+    local procedure OnBeforeReverseEntries(Number: Integer; RevType: Integer; var IsHandled: Boolean);
+    var
+        vatEntry: Record "VAT Entry";
+        Text50000: label 'Нельзя сторнировать, так как есть НДС операции с типом распределения НДС Расходы';
+    begin
+        IsHandled := false; // NC GG: false специально, это не ошибка!
+        VATEntry.SetRange("Transaction No.", Number);
+        VATEntry.SetRange("VAT Allocation Type", VATEntry."VAT Allocation Type"::Charge);
+        if not VATEntry.IsEmpty then
+            Error(Text50000);
+    end;
+
     // t 179 <<
 
     // t 5740 >>
@@ -186,6 +200,13 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
 
     // t 12450 <<
+    // t 12477 >>
+    [EventSubscriber(ObjectType::Table, Database::"FA Document Line", 'OnAfterValidateEvent', 'Posting Date', false, false)]
+    local procedure onAfterValidatePostingDate(var Rec: Record "Fa Document Line");
+    begin
+        Rec.CalcQty();
+    end;
+    // t 12477 <<
     // cu 241 >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post", 'OnBeforeCode', '', false, false)]
     local procedure OnBeforeCode(var ItemJournalLine: Record "Item Journal Line"; var HideDialog: Boolean; var SuppressCommit: Boolean; var IsHandled: Boolean);
@@ -376,6 +397,27 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
 
     // cu 5600 <<
+
+    // cu 12411 >>
+    /*
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterInsertVatAllocLine', '', false, false)]
+    local procedure onAfterInsertVatAllocLine(var VATAllocLine: Record "VAT Allocation Line")
+    var
+        vatDocEntryBuf: Record "VAT Document Entry Buffer";
+        dimMgt: Codeunit DimensionManagement;
+        dimSetIdArr: array[10] of integer;
+    begin
+        if (vatDocEntryBuf.get(VATAllocLine."CV Ledger Entry No.")) then begin
+            dimSetIdArr[1] := vatDocEntryBuf."Dimension Set ID";
+            dimSetIdArr[2] := VATAllocLine."Dimension Set ID";
+            dimSetIdArr[3] := 0;
+            VATAllocLine."Dimension Set ID" := dimMgt.GetCombinedDimensionSetID(dimSetIdArr, VATAllocLine."Shortcut Dimension 1 Code", VATAllocLine."Shortcut Dimension 2 Code");
+            VATAllocLine.modify();
+        end;
+
+    end;
+    */
+    // cu 12411 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
     local procedure OnBeforeDrillDownDocAttFackBox(DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
@@ -586,12 +628,18 @@ codeunit 50006 "Base App. Subscribers Mgt."
     local procedure OnLoadDimValueCombPage(var Row: Code[20]; var Col: Code[20]; var ShowCaption: Boolean; var DimRecord: Record "Dimension Value")
     var
         IsoMgt: Codeunit "Isolated Storage Management GE";
+        ColFilter: Text;
     begin
-        IsoMgt.init();
-        IsoMgt.setBool('ShowCaptionFromPage', ShowCaption);
-        IsoMgt.init();
-        IsoMgt.setString('RowFromPage', Row);
-        IsoMgt.init();
-        IsoMgt.setString('ColFromPage', Col);
+        if IsoMgt.getString('DimValColumnFilter', ColFilter, true) then begin
+            DimRecord.SetFilter(Code, ColFilter);
+        end
+        else begin
+            IsoMgt.init();
+            IsoMgt.setBool('ShowCaptionFromPage', ShowCaption);
+            IsoMgt.setString('RowFromPage', Row);
+            IsoMgt.setString('ColFromPage', Col);
+        end;
+
+
     end;
 }

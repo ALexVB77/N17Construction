@@ -15,7 +15,6 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         WorkflowManagement: Codeunit "Workflow Management";
         WorkflowResponceHandling: Codeunit "Workflow Response Handling Ext";
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
-
         NoWorkflowEnabledErr: Label 'No approval workflow for this record type is enabled.';
         NothingToApproveErr: Label 'There is nothing to approve.';
         UserIdNotInSetupErr: Label 'User ID %1 does not exist in the Approval User Setup window.', Comment = 'User ID NAVUser does not exist in the Approval User Setup window.';
@@ -25,6 +24,11 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     begin
         ApprovalEntry."Status App Act" := ApprovalEntryArgument."Status App Act";
         ApprovalEntry."Act Type" := ApprovalEntryArgument."Act Type";
+        if (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") and
+           (ApprovalEntry."Status App Act".AsInteger() > ApprovalEntry."Status App Act"::Controller.AsInteger()) and
+           (ApprovalEntry."Approver ID" = UserId) and ApprovalEntryArgument.Reject
+        then
+            ApprovalEntry.Status := ApprovalEntry.Status::Created;
     end;
 
     procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
@@ -46,7 +50,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
         CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
 
-        Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, false));
+        if UserID = PurchHeader."Process User" then
+            MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, false)
+        else
+            Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, false));
     end;
 
     procedure MoveToNextPurchActStatus(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; Reject: Boolean)
@@ -58,8 +65,14 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PayOrderMgt: Codeunit "Payment Order Management";
         RecRef2: RecordRef;
     begin
-        RecRef.SetTable(ApprovalEntry);
-        PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+        if RecRef.Number = DATABASE::"Approval Entry" then begin
+            RecRef.SetTable(ApprovalEntry);
+            PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+        end else begin
+            RecRef.SetTable(PurchHeader);
+            PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
+        end;
+
         PurchHeader.TestField("Process User", USERID);
         RecRef2.GetTable(PurchHeader);
 
@@ -74,8 +87,12 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
             PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
             ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
             ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+            ApprovalEntryArgument.Reject := Reject;
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
-            Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject));
+            if (UserID = PurchHeader."Process User") and (not Reject) then
+                MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, Reject)
+            else
+                Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject));
         end;
     end;
 

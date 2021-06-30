@@ -30,8 +30,9 @@ codeunit 50013 "Project Budget Management"
         lPBE.SetFilter("Shortcut Dimension 2 Code", '%1|%2', '', vPLine."Shortcut Dimension 2 Code");
         lPBE.SetRange("Contragent Type", lPBE."Contragent Type"::Vendor);
         lPBE.SetFilter("Contragent No.", '%1|%2', '', lPHead."Buy-from Vendor No.");
-        lpbe.SetFilter("Agreement No.", '%1|%2', '', lPHead."Agreement No.");
-        lLineAmt := vPLine.Amount / lExchRate.ExchangeRate(WorkDate(), vPLine."Currency Code");
+        lPBE.SetFilter("Agreement No.", '%1|%2', '', lPHead."Agreement No.");
+        //lLineAmt := vPLine.Amount / lExchRate.ExchangeRate(WorkDate(), vPLine."Currency Code");
+        lLineAmt := vPLine."Outstanding Amount (LCY)";
         lPBE.SetFilter("Without VAT", '>=%1', lLineAmt);
         if lPBE.FindSet() then
             repeat
@@ -46,8 +47,12 @@ codeunit 50013 "Project Budget Management"
                 end;
             until lPBE.next = 0;
         if Page.RunModal(70141, lPBEtmp) = Action::LookupOK then begin
-            vPLine."Forecast Entry" := CreatePrjBudEntry(vPLine, lPBEtmp);
+            if (lPBEtmp."Without VAT (LCY)" = vPLine."Outstanding Amount (LCY)") and (lPBEtmp."Entry No." <> lPBEtmp."Parent Entry") then
+                vPLine."Forecast Entry" := lPBEtmp."Entry No."
+            else
+                vPLine."Forecast Entry" := CreatePrjBudEntry(vPLine, lPBEtmp);
             vPLine.Modify();
+            CheckRestAmountPBE(vPLine, lPBEtmp);
         end;
     end;
 
@@ -85,6 +90,37 @@ codeunit 50013 "Project Budget Management"
         exit(lPBE."Entry No.");
     end;
 
+    procedure CheckRestAmountPBE(pPLine: Record "Purchase Line"; pPBE: Record "Projects Budget Entry")
+    var
+        lPBE: Record "Projects Budget Entry";
+        lParentPBE: Record "Projects Budget Entry";
+        lPLine: Record "Purchase Line";
+        lLineAmt: Decimal;
+    begin
+        lPBE.Get(pPBE."Entry No.");
+        if lPBE."Without VAT (LCY)" = 0 then
+            exit;
+        lLineAmt := lPBE."Without VAT (LCY)";
+        lPLine.Reset();
+        lPLine.SetRange("Document Type", pPLine."Document Type");
+        lPLine.SetRange("Document No.", pPLine."Document No.");
+        lPLine.SetRange("Shortcut Dimension 1 Code", pPLine."Shortcut Dimension 1 Code");
+        lPLine.SetRange("Shortcut Dimension 2 Code", pPLine."Shortcut Dimension 2 Code");
+        lPLine.SetRange("Outstanding Amount (LCY)", 0, lPBE."Without VAT (LCY)");
+        if lPLine.FindSet() then
+            repeat
+                if lPLine."Outstanding Amount (LCY)" <= lLineAmt then begin
+                    if (lPBE."Without VAT (LCY)" = lPLine."Outstanding Amount (LCY)") and (lPBE."Entry No." <> lPBE."Parent Entry") then
+                        lPLine."Forecast Entry" := lPBE."Entry No."
+                    else begin
+                        lPLine."Forecast Entry" := CreatePrjBudEntry(lPLine, lPBE);
+                        lPBE.Get(lPBE."Entry No.");
+                    end;
+                end;
+                lLineAmt := lLineAmt - lPLine."Outstanding Amount (LCY)";
+            until (lPLine.Next() = 0) or (lLineAmt <= 0);
+    end;
+
     procedure DeleteSTLine(pPrBudEntry: Record "Projects Budget Entry")
     var
         lUS: Record "User Setup";
@@ -101,8 +137,8 @@ codeunit 50013 "Project Budget Management"
                 if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
                     Error(lTextErr001);
                 pPrBudEntry.CalcFields("Payment Doc. No.");
-                // if pPrBudEntry."Payment Doc. No." <> '' then
-                //     Error(lTextErr002);
+                if pPrBudEntry."Payment Doc. No." <> '' then
+                    Error(lTextErr002);
                 lPrBudEntry.Get(pPrBudEntry."Parent Entry");
                 lPrBudEntry."Without VAT (LCY)" := lPrBudEntry."Without VAT (LCY)" + pPrBudEntry."Without VAT (LCY)";
                 lPrBudEntry.Modify(false);
