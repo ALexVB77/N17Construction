@@ -96,6 +96,20 @@ codeunit 50006 "Base App. Subscribers Mgt."
         TaxDiffLedgEntry.SETRANGE(Reversed, FALSE);
         //CSS GS 21.02.2012 <<
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Reversal Entry", 'OnBeforeReverseEntries', '', false, false)]
+    local procedure OnBeforeReverseEntries(Number: Integer; RevType: Integer; var IsHandled: Boolean);
+    var
+        vatEntry: Record "VAT Entry";
+        Text50000: label 'Нельзя сторнировать, так как есть НДС операции с типом распределения НДС Расходы';
+    begin
+        IsHandled := false; // NC GG: false специально, это не ошибка!
+        VATEntry.SetRange("Transaction No.", Number);
+        VATEntry.SetRange("VAT Allocation Type", VATEntry."VAT Allocation Type"::Charge);
+        if not VATEntry.IsEmpty then
+            Error(Text50000);
+    end;
+
     // t 179 <<
 
     // t 5740 >>
@@ -385,7 +399,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // cu 5600 <<
 
     // cu 12411 >>
-    /*
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterInsertVatAllocLine', '', false, false)]
     local procedure onAfterInsertVatAllocLine(var VATAllocLine: Record "VAT Allocation Line")
     var
@@ -402,7 +416,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
 
     end;
-    */
+
     // cu 12411 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
