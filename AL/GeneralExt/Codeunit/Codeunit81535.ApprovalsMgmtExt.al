@@ -68,8 +68,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         if RecRef.Number = DATABASE::"Approval Entry" then begin
             RecRef.SetTable(ApprovalEntry);
             PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
-        end else
+        end else begin
             RecRef.SetTable(PurchHeader);
+            PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
+        end;
 
         PurchHeader.TestField("Process User", USERID);
         RecRef2.GetTable(PurchHeader);
