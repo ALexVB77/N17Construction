@@ -584,7 +584,7 @@ page 70260 "Purchase Order Act"
                     Enabled = ApproveButtonEnabled;
                     Image = Approve;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -605,7 +605,7 @@ page 70260 "Purchase Order Act"
                     Enabled = RejectButtonEnabled;
                     Image = Reject;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -624,7 +624,7 @@ page 70260 "Purchase Order Act"
                     Enabled = false;
                     Image = Delegate;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
                     Visible = false;
 
                     trigger OnAction()
@@ -640,7 +640,7 @@ page 70260 "Purchase Order Act"
                     Enabled = ApproveButtonEnabled or RejectButtonEnabled;
                     Image = ViewComments;
                     Promoted = true;
-                    PromotedCategory = Category4;
+                    PromotedCategory = Category7;
 
                     trigger OnAction()
                     begin
