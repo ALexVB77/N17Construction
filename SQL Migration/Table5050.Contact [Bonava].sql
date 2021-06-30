@@ -51,7 +51,7 @@ SELECT
 	Contact.[Name],
 	Contact.[Search Name],
 	Contact.[Name 2],
-	Contact.[Address],
+	SUBSTRING(Contact.[Address], 1, 100),
 	Contact.[Address 2],
 	Contact.[City],
 	Contact.[Phone No_],

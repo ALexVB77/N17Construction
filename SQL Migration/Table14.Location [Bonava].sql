@@ -108,7 +108,8 @@ SELECT
 	[Last Goods Report Date],
 	'' AS [Responsible Employee No_]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Location]
-WHERE [Blocked] <> '1';
+WHERE [Blocked] <> '1'
+AND LEN(Code) <= 10;
 
 -- Table Extension
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Location$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
@@ -122,4 +123,5 @@ SELECT
 	[Blocked],
 	[Def_ Gen_ Bus_ Posting Group]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Location]
-WHERE [Blocked] <> '1';
+WHERE [Blocked] <> '1'
+AND LEN(Code) <= 10; 
