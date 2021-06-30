@@ -494,6 +494,7 @@ codeunit 50010 "Payment Order Management"
         PurchaseLine: Record "Purchase Line";
         ProjectsBudgetEntry: Record "Projects Budget Entry";
         ForecastListAnalisys: page "Forecast List Analisys";
+        ProjectBudgetMgt: Codeunit "Project Budget Management";
     begin
         // debug see later
         message('Вызов DisconnectFromAgreement');
@@ -511,9 +512,10 @@ codeunit 50010 "Payment Order Management"
                     IF ProjectsBudgetEntry.FINDFIRST THEN BEGIN
                         PurchaseLine."Forecast Entry" := 0;
                         PurchaseLine.MODIFY;
-                        ForecastListAnalisys.SETRECORD(ProjectsBudgetEntry);
-                        message('Вызов ForecastListAnalisys.DisconnectFromAgreement');
-                        exit;
+                        ProjectBudgetMgt.DeleteSTLine(ProjectsBudgetEntry);
+                        // ForecastListAnalisys.SETRECORD(ProjectsBudgetEntry);
+                        // message('Вызов ForecastListAnalisys.DisconnectFromAgreement');
+                        // exit;
                     END;
                 END;
             UNTIL PurchaseLine.NEXT = 0;
