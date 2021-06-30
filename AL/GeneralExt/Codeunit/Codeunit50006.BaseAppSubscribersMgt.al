@@ -614,12 +614,18 @@ codeunit 50006 "Base App. Subscribers Mgt."
     local procedure OnLoadDimValueCombPage(var Row: Code[20]; var Col: Code[20]; var ShowCaption: Boolean; var DimRecord: Record "Dimension Value")
     var
         IsoMgt: Codeunit "Isolated Storage Management GE";
+        ColFilter: Text;
     begin
-        IsoMgt.init();
-        IsoMgt.setBool('ShowCaptionFromPage', ShowCaption);
-        IsoMgt.init();
-        IsoMgt.setString('RowFromPage', Row);
-        IsoMgt.init();
-        IsoMgt.setString('ColFromPage', Col);
+        if IsoMgt.getString('DimValColumnFilter', ColFilter, true) then begin
+            DimRecord.SetFilter(Code, ColFilter);
+        end
+        else begin
+            IsoMgt.init();
+            IsoMgt.setBool('ShowCaptionFromPage', ShowCaption);
+            IsoMgt.setString('RowFromPage', Row);
+            IsoMgt.setString('ColFromPage', Col);
+        end;
+
+
     end;
 }
