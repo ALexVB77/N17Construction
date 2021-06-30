@@ -961,6 +961,10 @@ codeunit 50010 "Payment Order Management"
 
         PurchHeaderInv."Linked Purchase Order Act No." := PurchHeader."No.";
         PurchHeaderInv."Pre-booking Document" := true;
+        PurchHeaderInv."Act Type" := PurchHeaderInv."Act Type"::" ";
+        PurchHeaderInv."Process User" := '';
+        PurchHeaderInv."Status App Act" := PurchHeaderInv."Status App Act"::" ";
+        PurchHeaderInv."Date Status App" := 0D;
         PurchHeaderInv.Modify();
 
         PurchLine.SetRange("Document Type", PurchHeader."Document Type");
