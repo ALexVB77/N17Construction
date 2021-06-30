@@ -186,6 +186,13 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
 
     // t 12450 <<
+    // t 12477 >>
+    [EventSubscriber(ObjectType::Table, Database::"FA Document Line", 'OnAfterValidateEvent', 'Posting Date', false, false)]
+    local procedure onAfterValidatePostingDate(var Rec: Record "Fa Document Line");
+    begin
+        Rec.CalcQty();
+    end;
+    // t 12477 <<
     // cu 241 >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post", 'OnBeforeCode', '', false, false)]
     local procedure OnBeforeCode(var ItemJournalLine: Record "Item Journal Line"; var HideDialog: Boolean; var SuppressCommit: Boolean; var IsHandled: Boolean);
@@ -376,6 +383,27 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
 
     // cu 5600 <<
+
+    // cu 12411 >>
+    /*
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterInsertVatAllocLine', '', false, false)]
+    local procedure onAfterInsertVatAllocLine(var VATAllocLine: Record "VAT Allocation Line")
+    var
+        vatDocEntryBuf: Record "VAT Document Entry Buffer";
+        dimMgt: Codeunit DimensionManagement;
+        dimSetIdArr: array[10] of integer;
+    begin
+        if (vatDocEntryBuf.get(VATAllocLine."CV Ledger Entry No.")) then begin
+            dimSetIdArr[1] := vatDocEntryBuf."Dimension Set ID";
+            dimSetIdArr[2] := VATAllocLine."Dimension Set ID";
+            dimSetIdArr[3] := 0;
+            VATAllocLine."Dimension Set ID" := dimMgt.GetCombinedDimensionSetID(dimSetIdArr, VATAllocLine."Shortcut Dimension 1 Code", VATAllocLine."Shortcut Dimension 2 Code");
+            VATAllocLine.modify();
+        end;
+
+    end;
+    */
+    // cu 12411 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
     local procedure OnBeforeDrillDownDocAttFackBox(DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
