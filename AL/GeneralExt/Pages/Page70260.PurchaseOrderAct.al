@@ -121,7 +121,7 @@ page 70260 "Purchase Order Act"
                     ApplicationArea = All;
                     Editable = false;
 
-                    trigger OnLookup(var Text: Text): Boolean
+                    trigger OnAssistEdit()
                     var
                         PurchHeaderInv: Record "Purchase Header";
                     begin
