@@ -908,6 +908,7 @@ codeunit 50010 "Payment Order Management"
     var
         PurchLine: Record "Purchase Line";
         ReleasePurchDoc: Codeunit "Release Purchase Document";
+        PurchPost: Codeunit "Purch.-Post";
         Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
     begin
         if not PurchHeader."Location Document" then
@@ -926,13 +927,12 @@ codeunit 50010 "Payment Order Management"
 
         ReleasePurchDoc.SetSkipCheckReleaseRestrictions();
         ReleasePurchDoc.Run(PurchHeader);
-        COMMIT;
 
         PurchHeader.Receive := true;
         PurchHeader.Invoice := false;
         PurchHeader."Print Posted Documents" := false;
-        CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
-        COMMIT;
+        PurchPost.SetSuppressCommit(true);
+        PurchPost.Run(PurchHeader);
     end;
 
     local procedure CreatePurchInvForAct(var PurchHeader: Record "Purchase Header")
