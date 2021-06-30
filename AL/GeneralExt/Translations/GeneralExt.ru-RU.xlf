@@ -3933,6 +3933,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method CheckFADocNo - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 3995936086 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Нельзя сторнировать, так как есть НДС операции с типом распределения НДС Расходы</source>
+          <target>Нельзя сторнировать, так как есть НДС операции с типом распределения НДС Расходы</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method OnBeforeReverseEntries - NamedType Text50000</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2626234649 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>The amount of purchases exceeds the amount of the limit!</source>
           <target>Сумма покупок превышает сумму лимита!</target>
@@ -9548,7 +9555,6 @@
           <source>Reject</source>
           <target>Отклонить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field Reject - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">

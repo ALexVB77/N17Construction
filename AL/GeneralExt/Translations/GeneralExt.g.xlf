@@ -3278,6 +3278,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method CheckFADocNo - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 3995936086 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Нельзя сторнировать, так как есть НДС операции с типом распределения НДС Расходы</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method OnBeforeReverseEntries - NamedType Text50000</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2626234649 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>The amount of purchases exceeds the amount of the limit!</source>
           <note from="Developer" annotates="general" priority="2"></note>
