@@ -52,6 +52,14 @@ pageextension 94902 "Vendor Agreement Card (Ext)" extends "Vendor Agreement Card
             {
                 ApplicationArea = Basic, Suite;
             }
+            field("COST CODE"; Rec."Global Dimension 1 Code")
+            {
+                ApplicationArea = Basic, Suite;
+            }
+            field("COST PLACE"; Rec."Global Dimension 2 Code")
+            {
+                ApplicationArea = Basic, Suite;
+            }
             field("Project Dimension Code"; Rec."Project Dimension Code")
             {
                 ApplicationArea = Basic, Suite;
