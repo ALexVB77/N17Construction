@@ -494,6 +494,7 @@ codeunit 50010 "Payment Order Management"
         PurchaseLine: Record "Purchase Line";
         ProjectsBudgetEntry: Record "Projects Budget Entry";
         ForecastListAnalisys: page "Forecast List Analisys";
+        ProjectBudgetMgt: Codeunit "Project Budget Management";
     begin
         // debug see later
         message('Вызов DisconnectFromAgreement');
@@ -511,9 +512,10 @@ codeunit 50010 "Payment Order Management"
                     IF ProjectsBudgetEntry.FINDFIRST THEN BEGIN
                         PurchaseLine."Forecast Entry" := 0;
                         PurchaseLine.MODIFY;
-                        ForecastListAnalisys.SETRECORD(ProjectsBudgetEntry);
-                        message('Вызов ForecastListAnalisys.DisconnectFromAgreement');
-                        exit;
+                        ProjectBudgetMgt.DeleteSTLine(ProjectsBudgetEntry);
+                        // ForecastListAnalisys.SETRECORD(ProjectsBudgetEntry);
+                        // message('Вызов ForecastListAnalisys.DisconnectFromAgreement');
+                        // exit;
                     END;
                 END;
             UNTIL PurchaseLine.NEXT = 0;
@@ -908,6 +910,7 @@ codeunit 50010 "Payment Order Management"
     var
         PurchLine: Record "Purchase Line";
         ReleasePurchDoc: Codeunit "Release Purchase Document";
+        PurchPost: Codeunit "Purch.-Post";
         Text50013: label 'The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?';
     begin
         if not PurchHeader."Location Document" then
@@ -926,13 +929,12 @@ codeunit 50010 "Payment Order Management"
 
         ReleasePurchDoc.SetSkipCheckReleaseRestrictions();
         ReleasePurchDoc.Run(PurchHeader);
-        COMMIT;
 
         PurchHeader.Receive := true;
         PurchHeader.Invoice := false;
         PurchHeader."Print Posted Documents" := false;
-        CODEUNIT.Run(CODEUNIT::"Purch.-Post", PurchHeader);
-        COMMIT;
+        PurchPost.SetSuppressCommit(true);
+        PurchPost.Run(PurchHeader);
     end;
 
     local procedure CreatePurchInvForAct(var PurchHeader: Record "Purchase Header")
@@ -961,6 +963,10 @@ codeunit 50010 "Payment Order Management"
 
         PurchHeaderInv."Linked Purchase Order Act No." := PurchHeader."No.";
         PurchHeaderInv."Pre-booking Document" := true;
+        PurchHeaderInv."Act Type" := PurchHeaderInv."Act Type"::" ";
+        PurchHeaderInv."Process User" := '';
+        PurchHeaderInv."Status App Act" := PurchHeaderInv."Status App Act"::" ";
+        PurchHeaderInv."Date Status App" := 0D;
         PurchHeaderInv.Modify();
 
         PurchLine.SetRange("Document Type", PurchHeader."Document Type");

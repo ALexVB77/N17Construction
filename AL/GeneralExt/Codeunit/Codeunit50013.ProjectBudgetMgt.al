@@ -100,7 +100,7 @@ codeunit 50013 "Project Budget Management"
             repeat
                 if (pPrBudEntry."Parent Entry" = 0) or (pPrBudEntry."Parent Entry" = pPrBudEntry."Entry No.") then
                     Error(lTextErr001);
-                pPrBudEntry.CalcFields("Payment Doc. No.");
+                // pPrBudEntry.CalcFields("Payment Doc. No.");
                 // if pPrBudEntry."Payment Doc. No." <> '' then
                 //     Error(lTextErr002);
                 lPrBudEntry.Get(pPrBudEntry."Parent Entry");

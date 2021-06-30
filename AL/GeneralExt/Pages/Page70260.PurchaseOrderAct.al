@@ -703,7 +703,7 @@ page 70260 "Purchase Order Act"
     begin
         if UserMgt.GetPurchasesFilter <> '' then begin
             FilterGroup(2);
-            // SetRange("Responsibility Center", UserMgt.GetPurchasesFilter);
+            SetRange("Responsibility Center", UserMgt.GetPurchasesFilter);
             FilterGroup(0);
         end;
     end;
