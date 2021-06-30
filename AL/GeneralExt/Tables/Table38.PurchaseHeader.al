@@ -310,6 +310,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         {
             Caption = 'Invoice No.';
             Description = 'NC 51373 AB';
+            TableRelation = "Purchase Header"."No." WHERE("Document Type" = CONST(Invoice));
         }
 
         // NC AB: не будем использовать

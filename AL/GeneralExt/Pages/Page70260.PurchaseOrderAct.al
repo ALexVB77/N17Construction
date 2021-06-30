@@ -120,6 +120,17 @@ page 70260 "Purchase Order Act"
                 {
                     ApplicationArea = All;
                     Editable = false;
+
+                    trigger OnAssistEdit()
+                    var
+                        PurchHeaderInv: Record "Purchase Header";
+                    begin
+                        if "Invoice No." <> '' then begin
+                            PurchHeaderInv.SetRange("Document Type", PurchHeaderInv."Document Type"::Invoice);
+                            PurchHeaderInv.SetRange("No.", "Invoice No.");
+                            Page.RunModal(Page::"Purchase Invoice", PurchHeaderInv);
+                        end;
+                    end;
                 }
                 field("Order Date"; Rec."Order Date")
                 {
