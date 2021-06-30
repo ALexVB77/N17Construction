@@ -991,6 +991,9 @@ codeunit 12411 "VAT Settlement Management"
                 if VATEntry."Object Type" = VATEntry."Object Type"::"Fixed Asset" then
                     "VAT Settlement Type" := VATEntry."VAT Settlement Type";
                 Insert;
+                // NC 51138 GG >>
+                onAfterInsertVatAllocLine(VATAllocLine);
+            // NC 51138 GG <<
             until DefaultVATAlloc.Next = 0;
         end;
     end;
@@ -1308,5 +1311,12 @@ codeunit 12411 "VAT Settlement Management"
         end;
         exit(0);
     end;
+
+    // NC 51138 GG >>
+    [IntegrationEvent(false, false)]
+    local procedure onAfterInsertVatAllocLine(var VATAllocLine: Record "VAT Allocation Line")
+    begin
+    end;
+    // NC 51138 GG <<
 }
 
