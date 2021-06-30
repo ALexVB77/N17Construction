@@ -24,11 +24,11 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     begin
         ApprovalEntry."Status App Act" := ApprovalEntryArgument."Status App Act";
         ApprovalEntry."Act Type" := ApprovalEntryArgument."Act Type";
-        // if (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") and
-        //    (ApprovalEntry."Status App Act".AsInteger() > ApprovalEntry."Status App Act"::Controller.AsInteger()) and
-        //    (ApprovalEntry."Approver ID" = UserId)
-        // then
-        //    ApprovalEntry.Status := ApprovalEntry.Status::Created;
+        if (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") and
+           (ApprovalEntry."Status App Act".AsInteger() > ApprovalEntry."Status App Act"::Controller.AsInteger()) and
+           (ApprovalEntry."Approver ID" = UserId) and ApprovalEntryArgument.Reject
+        then
+            ApprovalEntry.Status := ApprovalEntry.Status::Created;
     end;
 
     procedure CreateApprovalRequestsPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
@@ -87,6 +87,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
             PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
             ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
             ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+            ApprovalEntryArgument.Reject := Reject;
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
             if (UserID = PurchHeader."Process User") and (not Reject) then
                 MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, Reject)
