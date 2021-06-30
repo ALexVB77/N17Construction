@@ -6914,7 +6914,6 @@
           <source>New,Process,Report,Act,Function,Request Approval,Approve,Release,Navigate</source>
           <target>Новый,Процесс,Отчет,Акт,Функции,Запросить утверждение,Утвердить,Выпустить,Навигатор</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Property PromotedActionCategories</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7143,21 +7142,18 @@
           <source>Release</source>
           <target>Выпустить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action ReleaseReopen - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 4032263875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Re&amp;lease</source>
           <target>Вы&amp;пустить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Release - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Action 2071937805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Re&amp;open</source>
           <target>&amp;Открыть</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Action Reopen - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 38647611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9397,6 +9393,13 @@
           <target>Получить строки запасов</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item Shipment Subform (Ext) - Action GetItemLedgerEntryLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3322398799 - Control 75153052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3039560919">
+          <source>Column Filter</source>
+          <target>Фильтр по столбцам</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MyDim Value Comb Ext - Control ColFilter - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3985706558 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1734268181">
           <source>Print</source>
