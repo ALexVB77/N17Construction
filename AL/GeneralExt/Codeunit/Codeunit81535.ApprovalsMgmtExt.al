@@ -88,7 +88,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
             ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
             ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
-            if UserID = PurchHeader."Process User" then
+            if (UserID = PurchHeader."Process User") and (not Reject) then
                 MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, Reject)
             else
                 Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject));
