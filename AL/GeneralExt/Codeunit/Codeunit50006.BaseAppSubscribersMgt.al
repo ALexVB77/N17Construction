@@ -399,7 +399,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // cu 5600 <<
 
     // cu 12411 >>
-    /*
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterInsertVatAllocLine', '', false, false)]
     local procedure onAfterInsertVatAllocLine(var VATAllocLine: Record "VAT Allocation Line")
     var
@@ -416,7 +416,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
 
     end;
-    */
+
     // cu 12411 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
