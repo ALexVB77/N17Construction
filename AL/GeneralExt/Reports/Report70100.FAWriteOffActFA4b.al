@@ -223,9 +223,9 @@ report 70100 "FA Write-off Act FA-4b"
     begin
         case SheetNumber of
             1:
-                ExcelReportBuilderManager.SetSheet('1');
+                ExcelReportBuilderManager.SetSheet('Sheet1');
             2:
-                ExcelReportBuilderManager.SetSheet('2');
+                ExcelReportBuilderManager.SetSheet('Sheet2');
         end;
     end;
 
