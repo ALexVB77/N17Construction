@@ -277,7 +277,7 @@ page 70262 "Purchase List Act"
                 begin
                     if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
                         FieldError("Status App Act");
-                    ApprovalsMgmtExt.RejectPurchActApprovalRequest(RECORDID);
+                    ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
                 end;
             }
         }

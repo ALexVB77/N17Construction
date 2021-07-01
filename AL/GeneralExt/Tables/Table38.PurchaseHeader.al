@@ -25,6 +25,11 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51374 AB';
             Caption = 'Sent to pre. approval';
         }
+        field(50013; "Receptionist"; code[50])
+        {
+            Caption = 'Receptionist';
+            Description = 'NC 51380 AB';
+        }
         field(60088; "Original Company"; Code[2])
         {
             Description = 'NC 51432 AP';

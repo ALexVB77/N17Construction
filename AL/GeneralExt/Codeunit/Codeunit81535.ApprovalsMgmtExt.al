@@ -59,7 +59,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PayOrderMgt: Codeunit "Payment Order Management";
     begin
         RecRef.SetTable(PurchHeader);
-        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false, 0);
+        if not PurchHeader."IW Documents" then
+            PayOrderMgt.ChangePurchaseOrderActStatus(PurchHeader, false, 0)
+        else
+            PayOrderMgt.ChangePurchasePaymentInvoiceStatus(PurchHeader, false, 0);
         PurchHeader.TestField("Process User");
 
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
@@ -99,7 +102,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader.TestField("Process User", USERID);
         RecRef2.GetTable(PurchHeader);
 
-        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject, RejectEntryNo);
+        if not PurchHeader."IW Documents" then
+            PayOrderMgt.ChangePurchaseOrderActStatus(PurchHeader, Reject, RejectEntryNo)
+        else
+            PayOrderMgt.ChangePurchasePaymentInvoiceStatus(PurchHeader, Reject, RejectEntryNo);
 
         if ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
             (Reject and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Controller))
@@ -157,7 +163,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalsMgmt.MakeApprovalEntry(ApprovalEntryArgument, SequenceNo, ApprovalUserID, WorkflowStepArgument);
     end;
 
-    procedure RejectPurchActApprovalRequest(RecordID: RecordID)
+    procedure RejectPurchActAndPayInvApprovalRequest(RecordID: RecordID)
     var
         ApprovalEntry: Record "Approval Entry";
         NoReqToRejectErr: Label 'There is no approval request to reject.';
