@@ -3937,7 +3937,6 @@
           <source>Нельзя сторнировать, так как есть НДС операции с типом распределения НДС Расходы</source>
           <target>Нельзя сторнировать, так как есть НДС операции с типом распределения НДС Расходы</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method OnBeforeReverseEntries - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2626234649 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
@@ -9544,6 +9543,13 @@
           <target>Перенести на счет ГУ</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries (Ext) - Action TransferToGD - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3041003694 - Field 1115442615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3698553294">
+          <source>Linked Approval Entry No.</source>
+          <target>Номер связ. операции утвердения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Comment Line (Ext) - Field Linked Approval Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 445905442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
           <source>Act Type</source>

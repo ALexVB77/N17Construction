@@ -19,6 +19,27 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         NothingToApproveErr: Label 'There is nothing to approve.';
         UserIdNotInSetupErr: Label 'User ID %1 does not exist in the Approval User Setup window.', Comment = 'User ID NAVUser does not exist in the Approval User Setup window.';
 
+    [EventSubscriber(ObjectType::Table, 455, 'OnAfterInsertEvent', '', false, false)]
+    local procedure OnApprCommentLineAfterInsert(var Rec: Record "Approval Comment Line"; RunTrigger: Boolean)
+    var
+        ApprovalEntry: Record "Approval Entry";
+    begin
+        if rec.IsTemporary then
+            exit;
+        if (Rec."Table ID" <> Database::"Purchase Header") or (Rec."Document Type" <> Rec."Document Type"::Order) or (Rec."Document No." = '') then
+            exit;
+        ApprovalEntry.SetCurrentKey("Table ID", "Record ID to Approve", Status, "Workflow Step Instance ID", "Sequence No.");
+        ApprovalEntry.SetRange("Table ID", Rec."Table ID");
+        ApprovalEntry.SetRange("Record ID to Approve", Rec."Record ID to Approve");
+        ApprovalEntry.SetRange("Workflow Step Instance ID", Rec."Workflow Step Instance ID");
+        ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Open);
+        if ApprovalEntry.FindFirst() then
+            if ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" " then begin
+                Rec."Linked Approval Entry No." := ApprovalEntry."Entry No.";
+                Rec.Modify(false);
+            end;
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, 1535, 'OnBeforeApprovalEntryInsert', '', false, false)]
     local procedure OnBeforeApprovalEntryInsert(var ApprovalEntry: Record "Approval Entry"; ApprovalEntryArgument: Record "Approval Entry")
     begin
