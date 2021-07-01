@@ -199,6 +199,16 @@ report 50120 "Data Migration From Excel"
                             DimensionMapping.Insert(true);
                         end;
                 end;
+            Text0012:
+                begin
+                    for RowNo := 3 to GetLastRow do begin
+                        DimensionMapping.Init();
+                        DimensionMapping."Dimension Code" := Text0012;
+                        DimensionMapping."Old Dimension Value Code" := GetValueAtCell(RowNo, 1);
+                        DimensionMapping."New Dimension Value Code" := GetValueAtCell(RowNo, 2);
+                        DimensionMapping.Insert(true);
+                    end;
+                end;
         end;
 
         case SheetName of
