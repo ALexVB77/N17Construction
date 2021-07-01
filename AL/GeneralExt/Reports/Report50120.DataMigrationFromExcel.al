@@ -42,7 +42,7 @@ report 50120 "Data Migration From Excel"
         Text0015: Label 'НУ-ОБЪЕКТ';
         Text0016: Label 'НУ-РАЗНИЦА';
         Text0017: Label 'ПРИБ_УБ_ПРОШ_ЛЕТ';
-        Text0018: Label 'Location';
+        Text0018: Label 'Locations';
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
