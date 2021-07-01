@@ -399,24 +399,32 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // cu 5600 <<
 
     // cu 12411 >>
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterInsertVatAllocLine', '', false, false)]
-    local procedure onAfterInsertVatAllocLine(var VATAllocLine: Record "VAT Allocation Line")
+    /*
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterInsertGenJnlLine', '', false, false)]
+    local procedure onAfterInsertGenJnlLine(cvLedgerEntryNo: integer; vatEntryNo: integer; dimDetId: integer)
     var
-        vatDocEntryBuf: Record "VAT Document Entry Buffer";
+        
+        vatAllocLine: Record "VAT Allocation Line";
         dimMgt: Codeunit DimensionManagement;
         dimSetIdArr: array[10] of integer;
     begin
-        if (vatDocEntryBuf.get(VATAllocLine."CV Ledger Entry No.")) then begin
-            dimSetIdArr[1] := vatDocEntryBuf."Dimension Set ID";
-            dimSetIdArr[2] := VATAllocLine."Dimension Set ID";
-            dimSetIdArr[3] := 0;
-            VATAllocLine."Dimension Set ID" := dimMgt.GetCombinedDimensionSetID(dimSetIdArr, VATAllocLine."Shortcut Dimension 1 Code", VATAllocLine."Shortcut Dimension 2 Code");
-            VATAllocLine.modify();
+        vatAllocLine.reset();
+        vatAllocLine.SetRange("CV Ledger Entry No.",cvLedgerEntryNo);
+        vatAllocLine.SetRange("VAT Entry No.",vatEntryNo);
+
+        if (vatAllocLine.findset()) then begin
+            repeat
+                clear(dimSetIdArr);
+                dimSetIdArr[1] := dimDetId;
+                dimSetIdArr[2] := VATAllocLine."Dimension Set ID";
+                dimSetIdArr[3] := 0;
+                VATAllocLine."Dimension Set ID" := dimMgt.GetCombinedDimensionSetID(dimSetIdArr, VATAllocLine."Shortcut Dimension 1 Code", VATAllocLine."Shortcut Dimension 2 Code");
+                VATAllocLine.modify();
+            until (vatAllocLine.next()=0)
         end;
 
     end;
-
+    */
     // cu 12411 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
