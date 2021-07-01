@@ -15,6 +15,14 @@ tableextension 80455 "Approval Comment Line (Ext)" extends "Approval Comment Lin
             Editable = false;
             FieldClass = FlowField;
         }
+        field(50002; "Approval Status"; Enum "Approval Status")
+        {
+            CalcFormula = lookup("Approval Entry"."Status" WHERE("Entry No." = FIELD("Linked Approval Entry No.")));
+            Caption = 'Approval Status';
+            Description = 'NC 51374 AB';
+            Editable = false;
+            FieldClass = FlowField;
+        }
     }
     keys
     {

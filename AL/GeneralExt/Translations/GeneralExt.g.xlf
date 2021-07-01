@@ -7953,6 +7953,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries (Ext) - Action TransferToGD - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3041003694 - Field 1878856189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3698553294">
+          <source>Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Comment Line (Ext) - Field Approval Status - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3041003694 - Field 1115442615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3698553294">
           <source>Linked Approval Entry No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
