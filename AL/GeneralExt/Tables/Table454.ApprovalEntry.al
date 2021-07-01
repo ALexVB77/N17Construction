@@ -17,5 +17,10 @@ tableextension 80454 "Approval Entry (Ext)" extends "Approval Entry"
             Caption = 'Reject';
             Description = 'NC 51374 AB';
         }
+        field(50003; "Status App"; Enum "Purchase Approval Status")
+        {
+            Caption = 'Approval Status';
+            Description = 'NC 51374 AB';
+        }
     }
 }
