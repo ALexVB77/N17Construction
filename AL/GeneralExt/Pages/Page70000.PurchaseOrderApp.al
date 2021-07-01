@@ -496,9 +496,9 @@ page 70000 "Purchase Order App"
 
                     trigger OnAction()
                     begin
-                        if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Accountant] then
-                            FieldError("Status App Act");
-                        if "Status App Act" = "Status App Act"::Controller then begin
+                        if "Status App" in ["Status App"::" ", "Status App"::Payment] then
+                            FieldError("Status App");
+                        if "Status App" = "Status App"::Reception then begin
                             IF ApprovalsMgmt.CheckPurchaseApprovalPossible(Rec) THEN
                                 ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
                         end else
@@ -516,11 +516,9 @@ page 70000 "Purchase Order App"
                     PromotedIsBig = true;
 
                     trigger OnAction()
-                    var
-                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
                     begin
-                        if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
-                            FieldError("Status App Act");
+                        if "Status App" in ["Status App"::" ", "Status App"::Reception, "Status App"::Payment] then
+                            FieldError("Status App");
                         ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
                     end;
                 }
