@@ -1393,6 +1393,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Detail - Field Line No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1935803971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Location Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1935803971 - Field 3516735208 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Location Mapping - Field New Location Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1935803971 - Field 3123395505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Old Location Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Location Mapping - Field Old Location Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 915879548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Objects Act</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5363,6 +5378,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Invoice Detail - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1935803971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Location Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1935803971 - Action 1498755152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Location Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Location Mapping - Action ImportLocationMapping - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3910126908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices Detailed</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6992,6 +7017,11 @@
           <source>ПРИБ_УБ_ПРОШ_ЛЕТ</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0017</note>
+        </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 108224600" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0018</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Subform</source>

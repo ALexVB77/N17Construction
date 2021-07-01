@@ -24,6 +24,7 @@ report 50120 "Data Migration From Excel"
         GeneralPostingSetup: Record "General Posting Setup";
         DimensionValue: Record "Dimension Value";
         DimensionMapping: Record "Dimension Mapping";
+        LocationMapping: Record "Location Mapping";
         Text0001: Label 'Customer Posting Group';
         Text0002: Label 'Vendor Pposting Group';
         Text0003: Label 'Inventory Posting Group';
@@ -41,6 +42,7 @@ report 50120 "Data Migration From Excel"
         Text0015: Label 'НУ-ОБЪЕКТ';
         Text0016: Label 'НУ-РАЗНИЦА';
         Text0017: Label 'ПРИБ_УБ_ПРОШ_ЛЕТ';
+        Text0018: Label 'Location';
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -208,6 +210,16 @@ report 50120 "Data Migration From Excel"
                             DimensionMapping."Old Dimension Value Code" := GetValueAtCell(RowNo, 1);
                             DimensionMapping."New Dimension Value Code" := GetValueAtCell(RowNo, 2);
                             DimensionMapping.Insert(true);
+                        end;
+                end;
+            Text0018:
+                begin
+                    for RowNo := 3 to GetLastRow do
+                        if not LocationMapping.Get(GetValueAtCell(RowNo, 3)) then begin
+                            LocationMapping.Init();
+                            LocationMapping."New Location Code" := GetValueAtCell(RowNo, 3);
+                            LocationMapping."Old Location Code" := GetValueAtCell(RowNo, 1);
+                            LocationMapping.Insert(true);
                         end;
                 end;
         end;
