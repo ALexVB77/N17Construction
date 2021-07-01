@@ -20,7 +20,7 @@ table 50002 "Dimension Mapping"
 
     keys
     {
-        key(Key1; "Dimension Code", "New Dimension Value Code")
+        key(Key1; "Dimension Code", "New Dimension Value Code", "Old Dimension Value Code")
         {
             Clustered = true;
         }
