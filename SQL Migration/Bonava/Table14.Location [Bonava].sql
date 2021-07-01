@@ -55,7 +55,7 @@ INSERT INTO [Bonava-Test].[dbo].[Bonava$Location$437dbf0e-84ff-417a-965d-ed2bb96
 	[Responsible Employee No_]
 )
 SELECT
-	[Code],
+	LocationMapping.[New Location Code] AS [Code],
     [Name],
 	'' AS [Default Bin Code],
 	[Name 2],
@@ -108,8 +108,9 @@ SELECT
 	[Last Goods Report Date],
 	'' AS [Responsible Employee No_]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Location]
-WHERE [Blocked] <> '1'
-AND LEN(Code) <= 10;
+INNER JOIN [Bonava-Test].[dbo].[Bonava$Location Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] LocationMapping
+ON LocationMapping.[Old Location Code] = [Code] collate Cyrillic_General_100_CI_AS
+WHERE [Blocked] <> '1';
 
 -- Table Extension
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Location$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
@@ -119,9 +120,10 @@ INSERT INTO [Bonava-Test].[dbo].[Bonava$Location$2944687f-9cf8-4134-a24c-e21fb70
 	[Def_ Gen_ Bus_ Posting Group]
 )
 SELECT 
-	[Code],
+	LocationMapping.[New Location Code] AS [Code],
 	[Blocked],
 	[Def_ Gen_ Bus_ Posting Group]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Location]
-WHERE [Blocked] <> '1'
-AND LEN(Code) <= 10; 
+INNER JOIN [Bonava-Test].[dbo].[Bonava$Location Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] LocationMapping
+ON LocationMapping.[Old Location Code] = [Code] collate Cyrillic_General_100_CI_AS
+WHERE [Blocked] <> '1'; 
