@@ -109,12 +109,10 @@ page 70260 "Purchase Order Act"
                         EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
                     end;
                 }
-                field("Problem Type"; ProblemType)
+                field("Problem Type"; Rec."Problem Type")
                 {
-                    Caption = 'Problem Type';
                     ApplicationArea = All;
                     Editable = false;
-                    Enabled = ProblemTypeEnabled;
                 }
                 field("Invoice No."; Rec."Invoice No.")
                 {
@@ -738,17 +736,8 @@ page 70260 "Purchase Order Act"
         EstimatorEnable := NOT ("Act Type" = "Act Type"::Act);
         CalcFields("Exists Attachment");
         ShowDocEnabled := "Exists Attachment";
-        ProblemTypeEnabled := Rec."Problem Document";
         LocationCodeShowMandatory := Rec."Location Document";
 
-        case true of
-            "Problem Document" and ("Problem Type" = "Problem Type"::" "):
-                ProblemType := Rec."Problem Type Txt";
-            "Problem Document" and ("Problem Type" <> "Problem Type"::" "):
-                ProblemType := FORMAT(Rec."Problem Type");
-            else
-                ProblemType := '';
-        end;
         AppButtonEnabled :=
             NOT ((UPPERCASE("Process User") <> UPPERCASE(USERID)) AND (UserSetup."Status App Act" <> Rec."Status App Act"));
         IF "Status App Act" = "Status App Act"::Approve THEN BEGIN
@@ -796,12 +785,10 @@ page 70260 "Purchase Order Act"
         ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         ActTypeEditable: Boolean;
         EstimatorEnable: Boolean;
-        ProblemType: text;
         AppButtonEnabled: Boolean;
         AllApproverEditable: Boolean;
         ReceiveAccountEditable: Boolean;
         ShowDocEnabled: Boolean;
-        ProblemTypeEnabled: Boolean;
         LocationCodeShowMandatory: Boolean;
         ApproveButtonEnabled: Boolean;
         RejectButtonEnabled: Boolean;

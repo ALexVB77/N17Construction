@@ -576,23 +576,26 @@ codeunit 50010 "Payment Order Management"
         end;
     end;
 
-    procedure ChangePurchaseOrderAct(var PurchHeader: Record "Purchase Header"; Reject: Boolean)
+    procedure ChangePurchaseOrderAct(var PurchHeader: Record "Purchase Header"; Reject: Boolean; RejectEntryNo: Integer)
     var
         DocumentAttachment: Record "Document Attachment";
         Vendor: Record Vendor;
         PurchLine: Record "Purchase Line";
+        ApprovalCommentLine: Record "Approval Comment Line";
         ERPCFunc: Codeunit "ERPC Funtions";
         PreAppover: Code[50];
-
+        ProblemType: enum "Purchase Problem Type";
         LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
         LocText010: Label 'No Approver specified on line %1.';
-
+        LocText020: Label 'No linked approval entry found.';
+        LocText021: Label 'You did not specify the reason for sending the document back for revision.';
         Text50016: label 'You must select the real item before document posting.';
-
         TEXT70001: label 'There is no attachment!';
         TEXT70004: Label 'Vendor does not have to be basic!';
     begin
         CheckUnusedPurchActType(PurchHeader."Act Type");
+        if Reject and (RejectEntryNo = 0) then
+            Error(LocText020);
 
         GetPurchSetupWithTestDim;
 
@@ -662,21 +665,28 @@ codeunit 50010 "Payment Order Management"
 
         // изменение статусов
 
+        if Reject then begin
+            ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
+            ApprovalCommentLine.SetRange("Linked Approval Entry No.", RejectEntryNo);
+            if ApprovalCommentLine.IsEmpty then
+                Error(LocText021);
+        end;
+
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Controller:
                 if PurchHeader."Act Type" = PurchHeader."Act Type"::"KC-2" then begin
                     PurchHeader.TestField(Estimator);
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator);
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator, ProblemType::" ");
                 end else begin
                     PurchActPostShipment(PurchHeader);
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader), ProblemType::" ");
                 end;
             PurchHeader."Status App Act"::Estimator:
                 if not Reject then begin
                     PurchActPostShipment(PurchHeader);
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader), ProblemType::" ");
                 end else
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Controller, PurchHeader.Controller);
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Controller, PurchHeader.Controller, ProblemType::REstimator);
             PurchHeader."Status App Act"::Checker:
                 if not Reject then begin
                     if not PurchHeader."Location Document" then begin
@@ -692,43 +702,43 @@ codeunit 50010 "Payment Order Management"
                     PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
                     if PreAppover <> '' then begin
                         PurchHeader."Sent to pre. Approval" := true;
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover, ProblemType::" ");
                     end else begin
                         PurchHeader."Sent to pre. Approval" := false;
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader), ProblemType::" ");
                     end;
                 end else begin
                     if PurchHeader."Act Type" = PurchHeader."Act Type"::"KC-2" then begin
                         PurchHeader.TestField(Estimator);
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator);
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Estimator, PurchHeader.Estimator, ProblemType::RChecker);
                     end else
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Controller, PurchHeader.Controller);
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Controller, PurchHeader.Controller, ProblemType::RChecker);
                 end;
             PurchHeader."Status App Act"::Approve:
                 if PurchHeader."Sent to pre. Approval" then begin
                     PurchHeader."Sent to pre. Approval" := false;
                     if not Reject then
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader))
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader), ProblemType::" ")
                     else
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader), ProblemType::RApprover);
                 end else begin
                     if not Reject then
-                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, GetPurchActChecker(PurchHeader))
+                        FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Signing, GetPurchActChecker(PurchHeader), ProblemType::" ")
                     else begin
                         PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
                         if PreAppover <> '' then begin
                             PurchHeader."Sent to pre. Approval" := true;
-                            FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover);
+                            FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, PreAppover, ProblemType::RApprover);
                         end else
-                            FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader));
+                            FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Checker, GetPurchActChecker(PurchHeader), ProblemType::RApprover);
                     end;
                 end;
             PurchHeader."Status App Act"::Signing:
                 if not Reject then begin
                     CreatePurchInvForAct(PurchHeader);
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Accountant, PurchHeader.Controller);
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Accountant, PurchHeader.Controller, ProblemType::" ");
                 end else
-                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader));
+                    FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader), ProblemType::"Act error");
         end
     end;
 
@@ -891,7 +901,7 @@ codeunit 50010 "Payment Order Management"
                 exit(GetPurchActApproverFromDim(PurchHeader."Dimension Set ID"));
     end;
 
-    local procedure FillPurchActStatus(var PurchHeader: Record "Purchase Header"; ActAppStatus: Enum "Purchase Act Approval Status"; ProcessUser: code[50])
+    local procedure FillPurchActStatus(var PurchHeader: Record "Purchase Header"; ActAppStatus: Enum "Purchase Act Approval Status"; ProcessUser: code[50]; ProblemType: enum "Purchase Problem Type")
     var
         UserSetup: Record "User Setup";
         LocText001: Label 'Failed to define user for process %1!';
@@ -903,6 +913,10 @@ codeunit 50010 "Payment Order Management"
         PurchHeader."Status App Act" := ActAppStatus;
         PurchHeader."Process User" := UserSetup."User ID";
         PurchHeader."Date Status App" := TODAY;
+
+        PurchHeader."Problem Type" := ProblemType;
+        PurchHeader."Problem Document" := ProblemType <> ProblemType::" ";
+
         PurchHeader.Modify;
     end;
 

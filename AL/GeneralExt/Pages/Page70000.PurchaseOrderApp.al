@@ -103,14 +103,11 @@ page 70000 "Purchase Order App"
                         CurrPage.Update(true);
                     end;
                 }
-                field("Problem Type"; ProblemType)
+                field("Problem Type"; Rec."Problem Type")
                 {
-                    Caption = 'Problem Type';
                     ApplicationArea = All;
                     Editable = false;
-                    Enabled = ProblemTypeEnabled;
                 }
-
                 field("Payment to Person"; Rec."Payment to Person")
                 {
                     ApplicationArea = All;
@@ -514,17 +511,6 @@ page 70000 "Purchase Order App"
 
         IWPlanRepayDateMandatory := Rec."Payment Type" = Rec."Payment Type"::"pre-pay";
 
-        case true of
-            "Problem Document" and ("Problem Type" = "Problem Type"::" "):
-                ProblemType := Rec."Problem Type Txt";
-            "Problem Document" and ("Problem Type" <> "Problem Type"::" "):
-                ProblemType := FORMAT(Rec."Problem Type");
-            else
-                ProblemType := '';
-        end;
-
-        ProblemTypeEnabled := "Problem Document";
-
         PaymentTypeEditable := "Status App" < "Status App"::Checker;
         AppButtonEnabled :=
             NOT ((UPPERCASE("Process User") <> UPPERCASE(USERID)) AND (UserSetup."Status App Act" <> Rec."Status App Act"));
@@ -563,10 +549,8 @@ page 70000 "Purchase Order App"
         UserMgt: Codeunit "User Setup Management";
         PaymentOrderMgt: Codeunit "Payment Order Management";
         TextDelError: Label 'You cannot delete Purchase Order Act %1';
-        ProblemType: text;
         PaymentTypeEditable: Boolean;
         AppButtonEnabled: Boolean;
-        ProblemTypeEnabled: Boolean;
         IWPlanRepayDateMandatory: Boolean;
 
     local procedure SaveInvoiceDiscountAmount()

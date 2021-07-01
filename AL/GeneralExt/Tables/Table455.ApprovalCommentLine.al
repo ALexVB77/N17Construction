@@ -8,4 +8,10 @@ tableextension 80455 "Approval Comment Line (Ext)" extends "Approval Comment Lin
             Description = 'NC 51374 AB';
         }
     }
+    keys
+    {
+        key(Key50000; "Linked Approval Entry No.")
+        {
+        }
+    }
 }

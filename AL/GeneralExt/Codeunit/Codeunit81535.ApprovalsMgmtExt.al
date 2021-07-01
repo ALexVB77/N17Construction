@@ -58,7 +58,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PayOrderMgt: Codeunit "Payment Order Management";
     begin
         RecRef.SetTable(PurchHeader);
-        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false);
+        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false, 0);
         PurchHeader.TestField("Process User");
 
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
@@ -83,10 +83,13 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader: Record "Purchase Header";
         PayOrderMgt: Codeunit "Payment Order Management";
         RecRef2: RecordRef;
+        RejectEntryNo: Integer;
     begin
         if RecRef.Number = DATABASE::"Approval Entry" then begin
             RecRef.SetTable(ApprovalEntry);
             PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+            if Reject then
+                RejectEntryNo := ApprovalEntry."Entry No.";
         end else begin
             RecRef.SetTable(PurchHeader);
             PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
@@ -95,7 +98,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader.TestField("Process User", USERID);
         RecRef2.GetTable(PurchHeader);
 
-        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject);
+        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject, RejectEntryNo);
 
         if ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
             (Reject and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Controller))

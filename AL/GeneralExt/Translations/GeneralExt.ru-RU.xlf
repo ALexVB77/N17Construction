@@ -4222,6 +4222,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText010</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1294704465" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No linked approval entry found.</source>
+          <target>Не найдена связанная операция утверждения.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText020</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1932401082" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You did not specify the reason for sending the document back for revision.</source>
+          <target>Вы не указали причину отправки документа на доработку.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText021</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 3416294985" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must select the real item before document posting.</source>
           <target>Перед учетом документа необходимо выбрать реальный товар.</target>
@@ -6994,12 +7008,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Pre-Approver - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3437592965 - Control 710925405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Problem Type</source>
-          <target>Характер проблемы</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Problem Type - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3437592965 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Checker</source>
           <target>Проверяющий</target>
@@ -7317,12 +7325,6 @@
           <target>Предв. Утверждающий</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Pre-Approver - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3790301120 - Control 710925405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Problem Type</source>
-          <target>Характер проблемы</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Problem Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Checker</source>
@@ -9548,7 +9550,6 @@
           <source>Linked Approval Entry No.</source>
           <target>Номер связ. операции утвердения</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Comment Line (Ext) - Field Linked Approval Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 445905442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
@@ -10698,12 +10699,6 @@
           <target>Характер проблемы</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Problem Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 239971877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Problem Type</source>
-          <target>Характер проблемы</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Problem Type Txt - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3569568710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Process User</source>

@@ -258,11 +258,13 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 50085 PA';
         }
 
-        field(70035; "Problem Type Txt"; Text[180])
-        {
-            Description = 'NC 51373 AB';
-            Caption = 'Problem Type';
-        }
+        // NC AB: Используем комментарии утверждения вместо этого поля
+        // field(70035; "Problem Type Txt"; Text[180])
+        // {
+        //     Description = 'NC 51373 AB';
+        //     Caption = 'Problem Type';
+        // }
+
         field(70038; "Pre-booking Document"; Boolean)
         {
             Description = 'NC 51373 AB';
