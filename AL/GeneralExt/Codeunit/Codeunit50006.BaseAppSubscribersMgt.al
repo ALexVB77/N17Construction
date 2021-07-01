@@ -399,18 +399,17 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // cu 5600 <<
 
     // cu 12411 >>
-    /*
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterInsertGenJnlLine', '', false, false)]
     local procedure onAfterInsertGenJnlLine(cvLedgerEntryNo: integer; vatEntryNo: integer; dimDetId: integer)
     var
-        
         vatAllocLine: Record "VAT Allocation Line";
         dimMgt: Codeunit DimensionManagement;
         dimSetIdArr: array[10] of integer;
     begin
         vatAllocLine.reset();
-        vatAllocLine.SetRange("CV Ledger Entry No.",cvLedgerEntryNo);
-        vatAllocLine.SetRange("VAT Entry No.",vatEntryNo);
+        vatAllocLine.SetRange("CV Ledger Entry No.", cvLedgerEntryNo);
+        vatAllocLine.SetRange("VAT Entry No.", vatEntryNo);
 
         if (vatAllocLine.findset()) then begin
             repeat
@@ -420,11 +419,10 @@ codeunit 50006 "Base App. Subscribers Mgt."
                 dimSetIdArr[3] := 0;
                 VATAllocLine."Dimension Set ID" := dimMgt.GetCombinedDimensionSetID(dimSetIdArr, VATAllocLine."Shortcut Dimension 1 Code", VATAllocLine."Shortcut Dimension 2 Code");
                 VATAllocLine.modify();
-            until (vatAllocLine.next()=0)
+            until (vatAllocLine.next() = 0)
         end;
 
     end;
-    */
     // cu 12411 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]
