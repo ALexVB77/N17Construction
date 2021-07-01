@@ -17,7 +17,7 @@ codeunit 81521 "Workflow Response Handling Ext"
             exit;
         case WorkflowResponse."Function Name" of
             CreateApprovalRequestsActCode:
-                CreateApprovalRequests(Variant, ResponseWorkflowStepInstance);
+                CreateApprovalRequestsAct(Variant, ResponseWorkflowStepInstance);
             MoveToNextActStatusCode:
                 MoveToNextActStatus(Variant, ResponseWorkflowStepInstance);
             MoveToPrevActStatusCode:
@@ -28,13 +28,13 @@ codeunit 81521 "Workflow Response Handling Ext"
         ResponseExecuted := true;
     end;
 
-    local procedure CreateApprovalRequests(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
+    local procedure CreateApprovalRequestsAct(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
     var
         ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        ApprovalsMgmtExt.CreateApprovalRequestsPurchAct(RecRef, WorkflowStepInstance);
+        ApprovalsMgmtExt.CreateApprovalRequestsPurchActAndPayInv(RecRef, WorkflowStepInstance);
     end;
 
     local procedure MoveToNextActStatus(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
@@ -43,7 +43,7 @@ codeunit 81521 "Workflow Response Handling Ext"
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        ApprovalsMgmtExt.MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, false);
+        ApprovalsMgmtExt.MoveToNextPurchActAndPayInvStatus(RecRef, WorkflowStepInstance, false);
     end;
 
     local procedure MoveToPrevActStatus(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
@@ -52,7 +52,7 @@ codeunit 81521 "Workflow Response Handling Ext"
         RecRef: RecordRef;
     begin
         RecRef.GetTable(Variant);
-        ApprovalsMgmtExt.MoveToNextPurchActStatus(RecRef, WorkflowStepInstance, true);
+        ApprovalsMgmtExt.MoveToNextPurchActAndPayInvStatus(RecRef, WorkflowStepInstance, true);
     end;
 
     procedure CreateApprovalRequestsActCode(): Code[128]
@@ -69,5 +69,4 @@ codeunit 81521 "Workflow Response Handling Ext"
     begin
         exit(UpperCase('MoveToPrevActStatus'));
     end;
-
 }
