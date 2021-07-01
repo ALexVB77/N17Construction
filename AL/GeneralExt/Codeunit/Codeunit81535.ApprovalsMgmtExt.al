@@ -24,9 +24,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     var
         ApprovalEntry: Record "Approval Entry";
     begin
-        if rec.IsTemporary then
-            exit;
-        if (Rec."Table ID" <> Database::"Purchase Header") or (Rec."Document Type" <> Rec."Document Type"::Order) or (Rec."Document No." = '') then
+        if rec.IsTemporary or (Rec."Table ID" <> Database::"Purchase Header") then
             exit;
         ApprovalEntry.SetCurrentKey("Table ID", "Record ID to Approve", Status, "Workflow Step Instance ID", "Sequence No.");
         ApprovalEntry.SetRange("Table ID", Rec."Table ID");
@@ -34,7 +32,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalEntry.SetRange("Workflow Step Instance ID", Rec."Workflow Step Instance ID");
         ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Open);
         if ApprovalEntry.FindFirst() then
-            if ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" " then begin
+            if (ApprovalEntry."Document Type" = ApprovalEntry."Document Type"::Order) and (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") then begin
                 Rec."Linked Approval Entry No." := ApprovalEntry."Entry No.";
                 Rec.Modify(false);
             end;
