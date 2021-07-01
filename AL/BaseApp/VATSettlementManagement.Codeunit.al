@@ -991,9 +991,7 @@ codeunit 12411 "VAT Settlement Management"
                 if VATEntry."Object Type" = VATEntry."Object Type"::"Fixed Asset" then
                     "VAT Settlement Type" := VATEntry."VAT Settlement Type";
                 Insert;
-                // NC 51138 GG >>
-                onAfterInsertVatAllocLine(VATAllocLine);
-            // NC 51138 GG <<
+
             until DefaultVATAlloc.Next = 0;
         end;
     end;
@@ -1174,6 +1172,9 @@ codeunit 12411 "VAT Settlement Management"
                         GenJnlLine.Validate(Amount, -GenJnlLine."Paid Amount");
                     if InsertLine then
                         GenJnlLine.Insert();
+                    // NC 51138 GG >>
+                    onAfterInsertGenJnlLine(EntryToPost."Entry No.", VATEntry."Entry No.", GenJnlLine."Dimension Set ID");
+                // NC 51138 GG <<
                 until VATEntry.Next = 0;
         until EntryToPost.Next = 0;
     end;
@@ -1314,7 +1315,7 @@ codeunit 12411 "VAT Settlement Management"
 
     // NC 51138 GG >>
     [IntegrationEvent(false, false)]
-    local procedure onAfterInsertVatAllocLine(var VATAllocLine: Record "VAT Allocation Line")
+    local procedure onAfterInsertGenJnlLine(cvLedgerEntryNo: integer; vatEntryNo: integer; dimDetId: integer)
     begin
     end;
     // NC 51138 GG <<
