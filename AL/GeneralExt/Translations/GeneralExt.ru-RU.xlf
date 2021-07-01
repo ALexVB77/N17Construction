@@ -4432,6 +4432,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text003</note>
         </trans-unit>
+        <trans-unit id="Codeunit 439680645 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line is already linked with CF entry</source>
+          <target>Строка уже привяза к операции реестра Cash Flow</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - NamedType Text001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 439680645 - Method 877441836 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deleting long-term entries denied!</source>
           <target>Нельзя удалять долгосрочные операции!</target>
@@ -7534,6 +7541,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Control FilteredTypeField - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3187706650 - Control 2296741137 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use action "Link to Cash Flow Entry"</source>
+          <target>Для выбора операции используйте функцию "Связать с реестром Cash Flow"</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Control Forecast Entry - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3187706650 - Control 3904971218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Utilities Dim. Value Code</source>
           <target>ИНЖ. СЕТЬ</target>
@@ -7557,6 +7571,13 @@
           <target>Измерения</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3187706650 - Action 250625571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Link Cash Flow Entry</source>
+          <target>Связать с реестром Cash Flow</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Action LinkCFEntry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 51120936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Details</source>
