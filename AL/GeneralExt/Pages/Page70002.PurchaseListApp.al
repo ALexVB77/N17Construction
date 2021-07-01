@@ -158,9 +158,41 @@ page 70002 "Purchase List App"
             {
                 ApplicationArea = All;
                 Caption = 'Edit';
+                Enabled = EditEnabled;
                 Image = Edit;
                 RunObject = Page "Purchase Order App";
                 RunPageLink = "No." = field("No.");
+            }
+            action(ApproveButton)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Approve';
+                Enabled = ApproveButtonEnabled;
+                Image = Approve;
+
+                trigger OnAction()
+                begin
+                    if "Status App" in ["Status App"::" ", "Status App"::Payment] then
+                        FieldError("Status App");
+                    if "Status App" = "Status App"::Reception then begin
+                        IF ApprovalsMgmt.CheckPurchaseApprovalPossible(Rec) THEN
+                            ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
+                    end else
+                        ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                end;
+            }
+            action(RejectButton)
+            {
+                ApplicationArea = All;
+                Caption = 'Reject';
+                Enabled = RejectButtonEnabled;
+                Image = Reject;
+                trigger OnAction()
+                begin
+                    if "Status App" in ["Status App"::" ", "Status App"::Reception, "Status App"::Payment] then
+                        FieldError("Status App");
+                    ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                end;
             }
         }
         area(Navigation)
@@ -221,14 +253,33 @@ page 70002 "Purchase List App"
             Filter1Enabled := TRUE;
     end;
 
+    trigger OnAfterGetRecord()
+    begin
+        ApproveButtonEnabled := FALSE;
+        RejectButtonEnabled := FALSE;
+
+        EditEnabled := Rec."No." <> '';
+
+        if (UserId = Rec.Receptionist) and (Rec."Status App" = Rec."Status App"::Reception) then
+            ApproveButtonEnabled := true;
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
+            ApproveButtonEnabled := true;
+            RejectButtonEnabled := true;
+        end;
+    end;
 
     var
         grUserSetup: Record "User Setup";
         PaymentOrderMgt: Codeunit "Payment Order Management";
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
         Filter1: option mydoc,all,approved;
         Filter1Enabled: Boolean;
         Filter2: option all,inproc,ready,pay,problem;
         SortType: option docno,postdate,vendor,statusapp,userproc;
+        ApproveButtonEnabled: boolean;
+        RejectButtonEnabled: boolean;
+        EditEnabled: Boolean;
 
 
     local procedure SetRecFilters()

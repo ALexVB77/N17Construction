@@ -145,6 +145,8 @@ codeunit 50010 "Payment Order Management"
             grPurchHeader."Payment Doc Type" := grPurchHeader."Payment Doc Type"::Invoice;
         grPurchHeader."Status App" := grPurchHeader."Status App"::Reception;
         grPurchHeader."Date Status App" := TODAY;
+
+        grPurchHeader.Receptionist := UserId;
         grPurchHeader.MODIFY(TRUE);
 
         COMMIT;

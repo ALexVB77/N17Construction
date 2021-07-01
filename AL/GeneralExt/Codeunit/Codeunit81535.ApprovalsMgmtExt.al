@@ -157,7 +157,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalsMgmt.MakeApprovalEntry(ApprovalEntryArgument, SequenceNo, ApprovalUserID, WorkflowStepArgument);
     end;
 
-    procedure RejectPurchActApprovalRequest(RecordID: RecordID)
+    procedure RejectPurchActAndPayInvApprovalRequest(RecordID: RecordID)
     var
         ApprovalEntry: Record "Approval Entry";
         NoReqToRejectErr: Label 'There is no approval request to reject.';

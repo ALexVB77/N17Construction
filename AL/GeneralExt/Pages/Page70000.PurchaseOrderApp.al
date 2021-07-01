@@ -2,7 +2,7 @@ page 70000 "Purchase Order App"
 {
     Caption = 'Purchase Order App';
     PageType = Document;
-    PromotedActionCategories = 'New,Process,Report,Order,Function,Print';
+    PromotedActionCategories = 'New,Process,Report,Order,Function,Print,Request Approval,Approve,Release,Navigate';
     RefreshOnActivate = true;
     SourceTable = "Purchase Header";
     SourceTableView = WHERE("Document Type" = FILTER(Order));
@@ -401,24 +401,22 @@ page 70000 "Purchase Order App"
                         DocumentAttachmentDetails.RunModal;
                     end;
                 }
-                action(ChangeLog)
+                action(Approvals)
                 {
-                    ApplicationArea = All;
-                    Caption = 'Change Log';
-                    Image = ChangeLog;
+                    AccessByPermission = TableData "Approval Entry" = R;
+                    ApplicationArea = Suite;
+                    Caption = 'Approvals';
+                    Image = Approvals;
                     Promoted = true;
                     PromotedCategory = Category4;
                     PromotedIsBig = true;
 
                     trigger OnAction()
                     var
-                        lrChangeLE: Record "Change Log Entry";
+                        WorkflowsEntriesBuffer: Record "Workflows Entries Buffer";
                     begin
-                        lrChangeLE.SETCURRENTKEY("Table No.", "Primary Key Field 2 Value", "Date and Time");
-                        lrChangeLE.SETRANGE("Table No.", Database::"Purchase Header");
-                        lrChangeLE.SETRANGE("Primary Key Field 2 Value", Rec."No.");
-                        IF NOT lrChangeLE.IsEmpty THEN
-                            Page.RUNMODAL(Page::"Change Log Entries", lrChangeLE);
+                        WorkflowsEntriesBuffer.RunWorkflowEntriesPage(
+                            RecordId, DATABASE::"Purchase Header", "Document Type".AsInteger(), "No.");
                     end;
                 }
             }
@@ -483,8 +481,81 @@ page 70000 "Purchase Order App"
                     end;
                 }
             }
-        }
+            group(Approval)
+            {
+                Caption = 'Approval';
+                action(Approve)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Approve';
+                    Enabled = ApproveButtonEnabled;
+                    Image = Approve;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    PromotedIsBig = true;
 
+                    trigger OnAction()
+                    begin
+                        if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Accountant] then
+                            FieldError("Status App Act");
+                        if "Status App Act" = "Status App Act"::Controller then begin
+                            IF ApprovalsMgmt.CheckPurchaseApprovalPossible(Rec) THEN
+                                ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
+                        end else
+                            ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                    end;
+                }
+                action(Reject)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Reject';
+                    Enabled = RejectButtonEnabled;
+                    Image = Reject;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    PromotedIsBig = true;
+
+                    trigger OnAction()
+                    var
+                        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+                    begin
+                        if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
+                            FieldError("Status App Act");
+                        ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                    end;
+                }
+                action(Delegate)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Delegate';
+                    Enabled = false;
+                    Image = Delegate;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+                    Visible = false;
+
+                    trigger OnAction()
+                    begin
+                        //ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
+                        Message('Pressed Delegate');
+                    end;
+                }
+                action(Comment)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Comments';
+                    Enabled = ApproveButtonEnabled or RejectButtonEnabled;
+                    Image = ViewComments;
+                    Promoted = true;
+                    PromotedCategory = Category8;
+
+                    trigger OnAction()
+                    begin
+                        ApprovalsMgmt.GetApprovalComment(Rec);
+                    end;
+                }
+            }
+        }
     }
 
     trigger OnOpenPage()
@@ -503,6 +574,19 @@ page 70000 "Purchase Order App"
 
     trigger OnAfterGetCurrRecord()
     begin
+
+        ApproveButtonEnabled := FALSE;
+        RejectButtonEnabled := FALSE;
+
+        // StatusStyleTxt := GetStatusStyleText();
+
+        if (UserId = Rec.Receptionist) and (Rec."Status App" = Rec."Status App"::Reception) then
+            ApproveButtonEnabled := true;
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
+            ApproveButtonEnabled := true;
+            RejectButtonEnabled := true;
+        end;
+
         UserSetup.GET(USERID);
 
         CurrPage.EDITABLE("Status App" < "Status App"::Approve);
@@ -548,10 +632,14 @@ page 70000 "Purchase Order App"
         gcERPC: Codeunit "ERPC Funtions";
         UserMgt: Codeunit "User Setup Management";
         PaymentOrderMgt: Codeunit "Payment Order Management";
-        TextDelError: Label 'You cannot delete Purchase Order Act %1';
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         PaymentTypeEditable: Boolean;
         AppButtonEnabled: Boolean;
         IWPlanRepayDateMandatory: Boolean;
+        ApproveButtonEnabled: Boolean;
+        RejectButtonEnabled: Boolean;
+        TextDelError: Label 'You cannot delete Purchase Order Act %1';
 
     local procedure SaveInvoiceDiscountAmount()
     var
