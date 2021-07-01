@@ -19,6 +19,25 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         NothingToApproveErr: Label 'There is nothing to approve.';
         UserIdNotInSetupErr: Label 'User ID %1 does not exist in the Approval User Setup window.', Comment = 'User ID NAVUser does not exist in the Approval User Setup window.';
 
+    [EventSubscriber(ObjectType::Table, 455, 'OnAfterInsertEvent', '', false, false)]
+    local procedure OnApprCommentLineAfterInsert(var Rec: Record "Approval Comment Line"; RunTrigger: Boolean)
+    var
+        ApprovalEntry: Record "Approval Entry";
+    begin
+        if rec.IsTemporary or (Rec."Table ID" <> Database::"Purchase Header") then
+            exit;
+        ApprovalEntry.SetCurrentKey("Table ID", "Record ID to Approve", Status, "Workflow Step Instance ID", "Sequence No.");
+        ApprovalEntry.SetRange("Table ID", Rec."Table ID");
+        ApprovalEntry.SetRange("Record ID to Approve", Rec."Record ID to Approve");
+        ApprovalEntry.SetRange("Workflow Step Instance ID", Rec."Workflow Step Instance ID");
+        ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Open);
+        if ApprovalEntry.FindFirst() then
+            if (ApprovalEntry."Document Type" = ApprovalEntry."Document Type"::Order) and (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") then begin
+                Rec."Linked Approval Entry No." := ApprovalEntry."Entry No.";
+                Rec.Modify(false);
+            end;
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, 1535, 'OnBeforeApprovalEntryInsert', '', false, false)]
     local procedure OnBeforeApprovalEntryInsert(var ApprovalEntry: Record "Approval Entry"; ApprovalEntryArgument: Record "Approval Entry")
     begin
@@ -39,7 +58,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PayOrderMgt: Codeunit "Payment Order Management";
     begin
         RecRef.SetTable(PurchHeader);
-        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false);
+        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, false, 0);
         PurchHeader.TestField("Process User");
 
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
@@ -64,10 +83,13 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader: Record "Purchase Header";
         PayOrderMgt: Codeunit "Payment Order Management";
         RecRef2: RecordRef;
+        RejectEntryNo: Integer;
     begin
         if RecRef.Number = DATABASE::"Approval Entry" then begin
             RecRef.SetTable(ApprovalEntry);
             PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+            if Reject then
+                RejectEntryNo := ApprovalEntry."Entry No.";
         end else begin
             RecRef.SetTable(PurchHeader);
             PurchHeader.Get(PurchHeader."Document Type", PurchHeader."No.");
@@ -76,7 +98,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader.TestField("Process User", USERID);
         RecRef2.GetTable(PurchHeader);
 
-        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject);
+        PayOrderMgt.ChangePurchaseOrderAct(PurchHeader, Reject, RejectEntryNo);
 
         if ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
             (Reject and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Controller))

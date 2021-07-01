@@ -3518,6 +3518,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText010</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1294704465" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No linked approval entry found.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText020</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 1932401082" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You did not specify the reason for sending the document back for revision.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePurchaseOrderAct - NamedType LocText021</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2074588935 - NamedType 3416294985" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must select the real item before document posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -5828,11 +5838,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Pre-Approver - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3437592965 - Control 710925405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Problem Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Problem Type - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3437592965 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Checker</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6097,11 +6102,6 @@
           <source>Pre-Approver</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Pre-Approver - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3790301120 - Control 710925405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Problem Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Problem Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Checker</source>
@@ -7953,6 +7953,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Ledger Entries (Ext) - Action TransferToGD - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3041003694 - Field 1878856189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3698553294">
+          <source>Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Comment Line (Ext) - Field Approval Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3041003694 - Field 1115442615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3698553294">
+          <source>Linked Approval Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Comment Line (Ext) - Field Linked Approval Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3041003694 - Field 3132070813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3698553294">
+          <source>Act Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Comment Line (Ext) - Field Status App Act - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 445905442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
           <source>Act Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8907,11 +8922,6 @@
           <source>Problem Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Problem Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 279653624 - Field 239971877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
-          <source>Problem Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Problem Type Txt - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3569568710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Process User</source>
