@@ -578,7 +578,7 @@ codeunit 50010 "Payment Order Management"
         end;
     end;
 
-    procedure ChangePurchaseOrderAct(var PurchHeader: Record "Purchase Header"; Reject: Boolean; RejectEntryNo: Integer)
+    procedure ChangePurchaseOrderActStatus(var PurchHeader: Record "Purchase Header"; Reject: Boolean; RejectEntryNo: Integer)
     var
         DocumentAttachment: Record "Document Attachment";
         Vendor: Record Vendor;
@@ -742,6 +742,14 @@ codeunit 50010 "Payment Order Management"
                 end else
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Approve, GetApproverFromActLines(PurchHeader), ProblemType::"Act error");
         end
+    end;
+
+    procedure ChangePurchasePaymentInvoiceStatus(var PurchHeader: Record "Purchase Header"; Reject: Boolean; RejectEntryNo: Integer)
+    begin
+
+
+
+        ERROR('Call ChangePurchasePaymentInvoiceStatus()');
     end;
 
     local procedure CheckEmptyLines(PurchaseHeader: Record "Purchase Header")
