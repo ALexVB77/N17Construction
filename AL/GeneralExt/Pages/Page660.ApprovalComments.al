@@ -4,12 +4,13 @@ pageextension 80660 "Approval Comments (Ext)" extends "Approval Comments"
     {
         addlast(Control1)
         {
-            field("Approval Status"; "Approval Status")
+            field("Status App Act"; Rec."Status App Act")
             {
                 ApplicationArea = All;
             }
-            field("Status App Act"; Rec."Status App Act")
+            field("Approval Status"; "Approval Status")
             {
+                HideValue = Rec."Linked Approval Entry No." = 0;
                 ApplicationArea = All;
             }
         }
