@@ -191,7 +191,7 @@ report 50120 "Data Migration From Excel"
             Text0010:
                 begin
                     for RowNo := 3 to GetLastRow do
-                        if not DimensionMapping.Get(Text0011, GetValueAtCell(RowNo, 2)) then begin
+                        if not DimensionMapping.Get(Text0011, GetValueAtCell(RowNo, 2), GetValueAtCell(RowNo, 1)) then begin
                             DimensionMapping.Init();
                             DimensionMapping."Dimension Code" := Text0011;
                             DimensionMapping."Old Dimension Value Code" := GetValueAtCell(RowNo, 1);
@@ -201,13 +201,14 @@ report 50120 "Data Migration From Excel"
                 end;
             Text0012:
                 begin
-                    for RowNo := 3 to GetLastRow do begin
-                        DimensionMapping.Init();
-                        DimensionMapping."Dimension Code" := Text0012;
-                        DimensionMapping."Old Dimension Value Code" := GetValueAtCell(RowNo, 1);
-                        DimensionMapping."New Dimension Value Code" := GetValueAtCell(RowNo, 2);
-                        DimensionMapping.Insert(true);
-                    end;
+                    for RowNo := 3 to GetLastRow do
+                        if not DimensionMapping.Get(Text0012, GetValueAtCell(RowNo, 2), GetValueAtCell(RowNo, 1)) then begin
+                            DimensionMapping.Init();
+                            DimensionMapping."Dimension Code" := Text0012;
+                            DimensionMapping."Old Dimension Value Code" := GetValueAtCell(RowNo, 1);
+                            DimensionMapping."New Dimension Value Code" := GetValueAtCell(RowNo, 2);
+                            DimensionMapping.Insert(true);
+                        end;
                 end;
         end;
 
