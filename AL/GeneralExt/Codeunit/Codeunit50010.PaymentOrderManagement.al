@@ -528,7 +528,7 @@ codeunit 50010 "Payment Order Management"
     local procedure CheckCostDimExists(DimensionSetID: Integer): Boolean
     var
         DimSetEntry: Record "Dimension Set Entry";
-        TempDimSetEntry: Record "Dimension Set Entry";
+        TempDimSetEntry: Record "Dimension Set Entry" temporary;
         DimMgt: Codeunit DimensionManagement;
     begin
         if DimensionSetID = 0 then
