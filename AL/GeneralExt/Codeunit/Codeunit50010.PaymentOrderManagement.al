@@ -632,7 +632,7 @@ codeunit 50010 "Payment Order Management"
 
         // проверки и дозаполнение
 
-        if (PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Controller.AsInteger()) and (not Reject) then begin
+        if (PurchHeader."Status App Act".AsInteger() >= PurchHeader."Status App Act"::Controller.AsInteger()) and (not Reject) then begin
             PurchSetup.TestField("Base Vendor No.");
             if PurchHeader."Buy-from Vendor No." = PurchSetup."Base Vendor No." then
                 ERROR(TEXT70004);
@@ -670,7 +670,7 @@ codeunit 50010 "Payment Order Management"
             end;
         end;
 
-        if (PurchHeader."Status App Act".AsInteger() <= PurchHeader."Status App Act"::Checker.AsInteger()) and (not Reject) then begin
+        if (PurchHeader."Status App Act".AsInteger() >= PurchHeader."Status App Act"::Checker.AsInteger()) and (not Reject) then begin
             GetInventorySetup;
             PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
             PurchLine.SETRANGE("Document No.", PurchHeader."No.");
@@ -787,21 +787,21 @@ codeunit 50010 "Payment Order Management"
 
         // проверки и дозаполнение
 
-        if (PurchHeader."Status App" <= PurchHeader."Status App"::Reception) and (not Reject) then begin
+        if (PurchHeader."Status App" >= PurchHeader."Status App"::Reception) and (not Reject) then begin
             PurchHeader.TestField("Pay-to Vendor No.");
             PurchHeader.TestField("Vendor Bank Account");
             PurchHeader.TestField("Vendor Bank Account No.");
             PurchHeader.TestField(Controller);
         end;
 
-        if (PurchHeader."Status App" <= PurchHeader."Status App"::Controller) and (not Reject) then begin
+        if (PurchHeader."Status App" >= PurchHeader."Status App"::Controller) and (not Reject) then begin
             PurchHeader.TestField("Buy-from Vendor No.");
             PurchHeader.TestField("Agreement No.");
             PurchHeader.TestField("Purchaser Code");
             PurchHeader.TestField("Vendor Invoice No.");
         end;
 
-        if (PurchHeader."Status App" <= PurchHeader."Status App"::Checker) and (not Reject) then begin
+        if (PurchHeader."Status App" >= PurchHeader."Status App"::Checker) and (not Reject) then begin
             CheckCostDimExistsInHeader(PurchHeader);
             VendAreement.Get(PurchHeader."Agreement No.");
 
