@@ -8833,6 +8833,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Line (Ext) - Field Cost Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Method 1323077645 - NamedType 3076946130" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 279653624">
+          <source>Document %1 contains no lines.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Method MessageIfPurchLinesNotExist - NamedType MessageText</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Method 3874675652 - NamedType 1751475910" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 279653624">
           <source>Document %1 has been sent to the archive.</source>
           <note from="Developer" annotates="general" priority="2"></note>

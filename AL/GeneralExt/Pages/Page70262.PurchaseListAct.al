@@ -258,6 +258,7 @@ page 70262 "Purchase List Act"
 
                 trigger OnAction()
                 begin
+                    MessageIfPurchLinesNotExist;
                     if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Accountant] then
                         FieldError("Status App Act");
                     if "Status App Act" = "Status App Act"::Controller then begin

@@ -438,4 +438,13 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         EXIT(NOT PurchLine3.ISEMPTY);
         //NC 29594 HR end
     end;
+
+    procedure MessageIfPurchLinesNotExist()
+    var
+        MessageText: Label 'Document %1 contains no lines.';
+    begin
+        if not PurchLinesExist then
+            Error(MessageText, Rec."No.");
+    end;
+
 }
