@@ -162,4 +162,22 @@ codeunit 50013 "Project Budget Management"
         if US.Get(UserId) then
             ret := US."CF Allow Short Entries Edit";
     end;
+
+    procedure IsMasterCF() ret: Boolean
+    begin
+        if US.Get(UserId) then
+            ret := US."Master CF";
+    end;
+
+    procedure HaveSTEntries(pPBE: Record "Projects Budget Entry") ret: Boolean
+    var
+        lPBE: Record "Projects Budget Entry";
+    begin
+        if pPBE."Entry No." <> pPBE."Parent Entry" then
+            exit(false);
+        lPBE.Reset();
+        lPBE.SetRange("Parent Entry", pPBE."Entry No.");
+        lPBE.SetFilter("Entry No.", '<>%1', pPBE."Entry No.");
+        exit(not lPBE.IsEmpty);
+    end;
 }
