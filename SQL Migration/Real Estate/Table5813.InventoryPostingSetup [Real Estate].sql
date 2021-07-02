@@ -17,9 +17,9 @@ INSERT INTO [Bonava-Test].[dbo].[Real Estate$Inventory Posting Setup$437dbf0e-84
     [Subcontracted Variance Account]
 )
 SELECT
-	[Location Code],
-	GLAccMapping.[New No_] AS [Invt_ Posting Group Code],
-	GLAccMapping.[New No_] AS [Inventory Account],
+	LocationMapping.[New Location Code] AS [Location Code],
+	ISNULL(GLAccMapping.[New No_], '') AS [Invt_ Posting Group Code],
+	ISNULL(GLAccMapping1.[New No_], '') AS [Inventory Account],
 	'' AS [Description],
 	0 AS [View All Accounts on Lookup],
 	'' AS [Inventory Account (Interim)],
@@ -31,9 +31,10 @@ SELECT
 	'' AS [Mfg_ Overhead Variance Account],
 	'' AS [Cap_ Overhead Variance Account],
 	'' AS [Subcontracted Variance Account]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Inventory Posting Setup]
-INNER JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Inventory Posting Setup] 
+INNER JOIN [Bonava-Test].[dbo].[Real Estate$Location Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] LocationMapping
+ON LocationMapping.[Old Location Code] = [Location Code] collate Cyrillic_General_100_CI_AS
+LEFT JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
 ON GLAccMapping.[Old No_] = [Invt_ Posting Group Code] collate Cyrillic_General_100_CI_AS
-INNER JOIN [Bonava-Test].[dbo].[Real Estate$Location$2944687f-9cf8-4134-a24c-e21fb70a8b1a] Location
-ON Location.[Code] = [Location Code] collate Cyrillic_General_100_CI_AS
-WHERE Location.Blocked = 0;
+LEFT JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping1
+ON GLAccMapping1.[Old No_] = [Inventory Account] collate Cyrillic_General_100_CI_AS;

@@ -140,12 +140,14 @@ INSERT INTO [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417
 )
 SELECT
 	DefaultDimension.[Table ID],
-	DefaultDimension.[No_],
+	LocationMapping.[New Location Code] AS [No_],
 	DefaultDimension.[Dimension Code],
 	DefaultDimension.[Dimension Value Code],
 	DefaultDimension.[Value Posting],
 	DefaultDimension.[Multi Selection Action]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Default Dimension] AS DefaultDimension
+INNER JOIN [Bonava-Test].[dbo].[Real Estate$Location Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] LocationMapping
+ON LocationMapping.[Old Location Code] = DefaultDimension.[No_] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Real Estate$Dimension Value$437dbf0e-84ff-417a-965d-ed2bb9650972] DimensionValue
 ON DimensionValue.[Code] = DefaultDimension.[Dimension Value Code] collate Cyrillic_General_100_CI_AS
 WHERE (DefaultDimension.[Dimension Code] = 'CC' OR 
@@ -167,12 +169,14 @@ INSERT INTO [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417
 )
 SELECT
 	DefaultDimension.[Table ID],
-	DefaultDimension.[No_],
+	LocationMapping.[New Location Code] AS [No_],
 	DefaultDimension.[Dimension Code],
 	ISNULL(DimensionMapping.[New Dimension Value Code], '') AS [Dimension Value Code],
 	DefaultDimension.[Value Posting],
 	DefaultDimension.[Multi Selection Action]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Default Dimension] AS DefaultDimension
+INNER JOIN [Bonava-Test].[dbo].[Real Estate$Location Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] LocationMapping
+ON LocationMapping.[Old Location Code] = DefaultDimension.[No_] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Real Estate$Dimension Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] DimensionMapping
 ON DimensionMapping.[Old Dimension Value Code] = DefaultDimension.[Dimension Value Code] collate Cyrillic_General_100_CI_AS
 WHERE DefaultDimension.[Dimension Code] = 'CP' AND DefaultDimension.[Table ID] = '14';
