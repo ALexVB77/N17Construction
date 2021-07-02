@@ -801,7 +801,7 @@ codeunit 50010 "Payment Order Management"
             PurchHeader.TestField("Vendor Invoice No.");
         end;
 
-        if (PurchHeader."Status App" <= PurchHeader."Status App"::Controller) and (not Reject) then begin
+        if (PurchHeader."Status App" <= PurchHeader."Status App"::Checker) and (not Reject) then begin
             CheckCostDimExistsInHeader(PurchHeader);
             VendAreement.Get(PurchHeader."Agreement No.");
 
