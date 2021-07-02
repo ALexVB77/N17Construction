@@ -548,7 +548,7 @@ codeunit 50010 "Payment Order Management"
         DimMgt.CheckDimIDComb(DimMgt.GetDimensionSetID(TempDimSetEntry));
     end;
 
-    local procedure CheckCostDimExistsInLine(PurchLine: Record "Purchase Line")
+    local procedure CheckCostDimExistsInLine(var PurchLine: Record "Purchase Line")
     var
         LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
     begin
@@ -556,7 +556,7 @@ codeunit 50010 "Payment Order Management"
             Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchLine."Document No.", PurchLine."Line No.");
     end;
 
-    local procedure CheckCostDimExistsInHeader(PurchHeader: Record "Purchase Header")
+    local procedure CheckCostDimExistsInHeader(var PurchHeader: Record "Purchase Header")
     var
         LocText001: Label 'You must specify %1 and %2 for %3.';
     begin
