@@ -153,7 +153,6 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Description = 'NC 51373 AB';
             TableRelation = "User Setup"."User ID" WHERE("Status App Act" = CONST(1));
             ValidateTableRelation = false;
-            Editable = false;
         }
         field(70016; Paid; Boolean)
         {
