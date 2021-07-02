@@ -527,9 +527,36 @@ page 70143 "Forecast List Analisys"
             }
         }
     }
-    trigger OnNewRecord(BelowxRec: Boolean)
+    trigger OnOpenPage()
     begin
+        HideZeroAmountLine := true;
+        BuildView();
+        if gDate = 0D then
+            gDate := Today;
+        setOverdueFlt();
+    end;
 
+    trigger OnNewRecord(BelowxRec: Boolean)
+    var
+        lDimVal: Record "Dimension Value";
+    begin
+        GLSetup.Get;
+        if TemplateCode <> '' then
+            Rec."Project Code" := TemplateCode;
+        if CostPlaceFlt <> '' then begin
+            lDimVal.reset;
+            lDimVal.SetRange("Dimension Code", GLSetup."Global Dimension 1 Code");
+            lDimVal.SetFilter(Code, CostPlaceFlt);
+            if lDimVal.FindFirst() then
+                Rec."Shortcut Dimension 1 Code" := lDimVal.Code;
+        end;
+        if CostCodeFlt <> '' then begin
+            lDimVal.reset;
+            lDimVal.SetRange("Dimension Code", GLSetup."Global Dimension 2 Code");
+            lDimVal.SetFilter(Code, CostCodeFlt);
+            if lDimVal.FindFirst() then
+                Rec."Shortcut Dimension 2 Code" := lDimVal.Code;
+        end;
     end;
 
     trigger OnAfterGetRecord()
@@ -650,14 +677,7 @@ page 70143 "Forecast List Analisys"
         [InDataSet]
         CreateUIDEditable: Boolean;
 
-    trigger OnOpenPage()
-    begin
-        HideZeroAmountLine := true;
-        BuildView();
-        if gDate = 0D then
-            gDate := Today;
-        setOverdueFlt();
-    end;
+
 
     local procedure CheckAllowChanges()
     begin
