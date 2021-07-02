@@ -85,6 +85,10 @@ pageextension 80460 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payabl
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("Skip Check CF in Doc. Lines"; "Skip Check CF in Doc. Lines")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
             }
         }
     }

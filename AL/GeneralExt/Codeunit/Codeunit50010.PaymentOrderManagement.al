@@ -525,17 +525,43 @@ codeunit 50010 "Payment Order Management"
         //NC 44684 < KGT
     end;
 
-    local procedure CheckCostDimExists(DimSetID: Integer): Boolean
+    local procedure CheckCostDimExists(DimensionSetID: Integer): Boolean
     var
         DimSetEntry: Record "Dimension Set Entry";
+        TempDimSetEntry: Record "Dimension Set Entry";
+        DimMgt: Codeunit DimensionManagement;
     begin
-        if DimSetID = 0 then
+        if DimensionSetID = 0 then
+            exit(false);
+        GetPurchSetupWithTestDim();
+        DimSetEntry.SetRange("Dimension Set ID", DimensionSetID);
+        DimSetEntry.SetFilter("Dimension Code", '%1|%2', PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension");
+        if DimSetEntry.Count <> 2 then
             exit(false);
 
-        GetPurchSetupWithTestDim();
-        DimSetEntry.SetRange("Dimension Set ID", DimSetID);
-        DimSetEntry.SetFilter("Dimension Code", '%1|%2', PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension");
-        exit(DimSetEntry.Count = 2);
+        DimSetEntry.FindSet();
+        repeat
+            TempDimSetEntry := DimSetEntry;
+            TempDimSetEntry."Dimension Set ID" := 0;
+            TempDimSetEntry.Insert;
+        until DimSetEntry.Next() = 0;
+        DimMgt.CheckDimIDComb(DimMgt.GetDimensionSetID(TempDimSetEntry));
+    end;
+
+    local procedure CheckCostDimExistsInLine(PurchLine: Record "Purchase Line")
+    var
+        LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
+    begin
+        if not CheckCostDimExists(PurchLine."Dimension Set ID") then
+            Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchLine."Document No.", PurchLine."Line No.");
+    end;
+
+    local procedure CheckCostDimExistsInHeader(PurchHeader: Record "Purchase Header")
+    var
+        LocText001: Label 'You must specify %1 and %2 for %3.';
+    begin
+        if not CheckCostDimExists(PurchHeader."Dimension Set ID") then
+            Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.");
     end;
 
     procedure GetPurchaseOrderActChangeStatusMessage(var PurchHeader: Record "Purchase Header"; Reject: Boolean): Text
@@ -583,14 +609,11 @@ codeunit 50010 "Payment Order Management"
         DocumentAttachment: Record "Document Attachment";
         Vendor: Record Vendor;
         PurchLine: Record "Purchase Line";
-        ApprovalCommentLine: Record "Approval Comment Line";
         ERPCFunc: Codeunit "ERPC Funtions";
         PreAppover: Code[50];
         ProblemType: enum "Purchase Problem Type";
-        LocText001: Label 'You must specify %1 and %2 for %3 line %4.';
         LocText010: Label 'No Approver specified on line %1.';
         LocText020: Label 'No linked approval entry found.';
-        LocText021: Label 'You did not specify the reason for sending the document back for revision.';
         Text50016: label 'You must select the real item before document posting.';
         TEXT70001: label 'There is no attachment!';
         TEXT70004: Label 'Vendor does not have to be basic!';
@@ -603,6 +626,9 @@ codeunit 50010 "Payment Order Management"
 
         PurchHeader.TestField("Status App Act");
         PurchHeader.TestField(Controller);
+
+        if Reject then
+            CheckApprovalCommentLineExist(RejectEntryNo);
 
         // проверки и дозаполнение
 
@@ -639,8 +665,7 @@ codeunit 50010 "Payment Order Management"
                     PurchLine.TestField("No.");
                     PurchLine.TestField(Quantity);
                     PurchLine.TestField("Location Code");
-                    if not CheckCostDimExists(PurchLine."Dimension Set ID") then
-                        Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.", PurchLine."Line No.");
+                    CheckCostDimExistsInLine(PurchLine);
                 until PurchLine.Next() = 0;
             end;
         end;
@@ -654,25 +679,27 @@ codeunit 50010 "Payment Order Management"
             repeat
                 PurchLine.TestField("No.");
                 PurchLine.TestField(Quantity);
-                if not CheckCostDimExists(PurchLine."Dimension Set ID") then
-                    Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.", PurchLine."Line No.");
+                CheckCostDimExistsInLine(PurchLine);
                 if GetPurchActApproverFromDim(PurchLine."Dimension Set ID") = '' then
                     Error(LocText010, PurchLine."Line No.");
             until PurchLine.Next() = 0;
 
-            ERPCFunc.SetDefLocation(PurchHeader);
             PurchHeader.TestField("Invoice Amount Incl. VAT");
             ERPCFunc.CheckDocSum(PurchHeader);
+
+            if not PurchHeader."Location Document" then begin
+                GetInventorySetup;
+                InvtSetup.TestField("Default Location Code");
+                PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+                PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+                PurchLine.SETRANGE(Type, PurchLine.Type::Item);
+                PurchLine.SetFilter("Location Code", '%1', '');
+                if not PurchLine.IsEmpty then
+                    PurchLine.ModifyAll("Location Code", InvtSetup."Default Location Code", true);
+            end;
         end;
 
         // изменение статусов
-
-        if Reject then begin
-            ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
-            ApprovalCommentLine.SetRange("Linked Approval Entry No.", RejectEntryNo);
-            if ApprovalCommentLine.IsEmpty then
-                Error(LocText021);
-        end;
 
         case PurchHeader."Status App Act" of
             PurchHeader."Status App Act"::Controller:
@@ -691,16 +718,6 @@ codeunit 50010 "Payment Order Management"
                     FillPurchActStatus(PurchHeader, PurchHeader."Status App Act"::Controller, PurchHeader.Controller, ProblemType::REstimator);
             PurchHeader."Status App Act"::Checker:
                 if not Reject then begin
-                    if not PurchHeader."Location Document" then begin
-                        GetInventorySetup;
-                        InvtSetup.TestField("Default Location Code");
-                        PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
-                        PurchLine.SETRANGE("Document No.", PurchHeader."No.");
-                        PurchLine.SETRANGE(Type, PurchLine.Type::Item);
-                        PurchLine.SetFilter("Location Code", '%1', '');
-                        if not PurchLine.IsEmpty then
-                            PurchLine.ModifyAll("Location Code", InvtSetup."Default Location Code", true);
-                    end;
                     PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
                     if PreAppover <> '' then begin
                         PurchHeader."Sent to pre. Approval" := true;
@@ -745,11 +762,115 @@ codeunit 50010 "Payment Order Management"
     end;
 
     procedure ChangePurchasePaymentInvoiceStatus(var PurchHeader: Record "Purchase Header"; Reject: Boolean; RejectEntryNo: Integer)
+    var
+        PurchLine: Record "Purchase Line";
+        VendAreement: Record "Vendor Agreement";
+        DimSetEntry: Record "Dimension Set Entry";
+        DimValue: Record "Dimension Value";
+        ERPCFunc: Codeunit "ERPC Funtions";
+        AppStatus: Enum "Purchase Approval Status";
+        ProblemType: enum "Purchase Problem Type";
+        PreAppover: Code[50];
+        LocText010: Label 'No Approver specified on line %1.';
+        LocText020: Label 'No linked approval entry found.';
     begin
+        if Reject and (RejectEntryNo = 0) then
+            Error(LocText020);
 
+        GetPurchSetupWithTestDim;
 
+        PurchHeader.TestField("Status App");
+        PurchHeader.TestField(Receptionist);
 
-        ERROR('Call ChangePurchasePaymentInvoiceStatus()');
+        if Reject then
+            CheckApprovalCommentLineExist(RejectEntryNo);
+
+        // проверки и дозаполнение
+
+        if (PurchHeader."Status App" <= PurchHeader."Status App"::Reception) and (not Reject) then begin
+            PurchHeader.TestField("Pay-to Vendor No.");
+            PurchHeader.TestField("Vendor Bank Account");
+            PurchHeader.TestField("Vendor Bank Account No.");
+            PurchHeader.TestField(Controller);
+        end;
+
+        if (PurchHeader."Status App" <= PurchHeader."Status App"::Controller) and (not Reject) then begin
+            PurchHeader.TestField("Buy-from Vendor No.");
+            PurchHeader.TestField("Agreement No.");
+            PurchHeader.TestField("Purchaser Code");
+            PurchHeader.TestField("Vendor Invoice No.");
+        end;
+
+        if (PurchHeader."Status App" <= PurchHeader."Status App"::Controller) and (not Reject) then begin
+            CheckCostDimExistsInHeader(PurchHeader);
+            VendAreement.Get(PurchHeader."Agreement No.");
+
+            PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
+            PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+            PurchLine.SETRANGE(Type, PurchLine.Type::Item);
+            PurchLine.FindSet();
+            repeat
+                if PurchLine.Type <> PurchLine.Type::" " then begin
+                    PurchLine.TestField("No.");
+                    PurchLine.TestField(Quantity);
+                end;
+                CheckCostDimExistsInLine(PurchLine);
+                DimSetEntry.Get(PurchLine."Dimension Set ID", PurchSetup."Cost Place Dimension");
+                DimValue.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code");
+                if (not PurchSetup."Skip Check CF in Doc. Lines") and DimValue."Check CF Forecast" and (not VendAreement."Don't Check CashFlow") then
+                    PurchLine.TestField("Forecast Entry");
+                if GetPurchActApproverFromDim(PurchLine."Dimension Set ID") = '' then
+                    Error(LocText010, PurchLine."Line No.");
+            until PurchLine.Next() = 0;
+
+            PurchHeader.TestField("Invoice Amount Incl. VAT");
+            ERPCFunc.CheckDocSum(PurchHeader);
+            if PurchHeader."Payment Type" = PurchHeader."Payment Type"::"pre-pay" then
+                PurchHeader.Testfield("IW Planned Repayment Date");
+        end;
+
+        // изменение статусов
+
+        case PurchHeader."Status App" of
+            PurchHeader."Status App"::Reception:
+                FillPayInvStatus(PurchHeader, AppStatus::Controller, PurchHeader.Controller, ProblemType::" ");
+            PurchHeader."Status App"::Controller:
+                if not Reject then
+                    FillPayInvStatus(PurchHeader, AppStatus::Checker, GetPurchActChecker(PurchHeader), ProblemType::" ")
+                else
+                    FillPayInvStatus(PurchHeader, AppStatus::Reception, PurchHeader.Receptionist, ProblemType::RController);
+            PurchHeader."Status App"::Checker:
+                if not Reject then begin
+                    PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
+                    if PreAppover <> '' then begin
+                        PurchHeader."Sent to pre. Approval" := true;
+                        FillPurchActStatus(PurchHeader, AppStatus::Approve, PreAppover, ProblemType::" ");
+                    end else begin
+                        PurchHeader."Sent to pre. Approval" := false;
+                        FillPurchActStatus(PurchHeader, AppStatus::Approve, GetApproverFromActLines(PurchHeader), ProblemType::" ");
+                    end;
+                end else
+                    FillPayInvStatus(PurchHeader, AppStatus::Controller, PurchHeader.Controller, ProblemType::RChecker);
+            PurchHeader."Status App"::Approve:
+                if PurchHeader."Sent to pre. Approval" then begin
+                    PurchHeader."Sent to pre. Approval" := false;
+                    if not Reject then
+                        FillPurchActStatus(PurchHeader, AppStatus::Approve, GetApproverFromActLines(PurchHeader), ProblemType::" ")
+                    else
+                        FillPurchActStatus(PurchHeader, AppStatus::Checker, GetPurchActChecker(PurchHeader), ProblemType::RApprover);
+                end else begin
+                    if not Reject then
+                        FillPurchActStatus(PurchHeader, AppStatus::Payment, PurchHeader.Receptionist, ProblemType::" ")
+                    else begin
+                        PreAppover := GetPurchActPreApproverFromDim(PurchHeader."Dimension Set ID");
+                        if PreAppover <> '' then begin
+                            PurchHeader."Sent to pre. Approval" := true;
+                            FillPurchActStatus(PurchHeader, AppStatus::Approve, PreAppover, ProblemType::RApprover);
+                        end else
+                            FillPurchActStatus(PurchHeader, AppStatus::Checker, GetPurchActChecker(PurchHeader), ProblemType::RApprover);
+                    end;
+                end;
+        end;
     end;
 
     local procedure CheckEmptyLines(PurchaseHeader: Record "Purchase Header")
@@ -911,7 +1032,8 @@ codeunit 50010 "Payment Order Management"
                 exit(GetPurchActApproverFromDim(PurchHeader."Dimension Set ID"));
     end;
 
-    local procedure FillPurchActStatus(var PurchHeader: Record "Purchase Header"; ActAppStatus: Enum "Purchase Act Approval Status"; ProcessUser: code[50]; ProblemType: enum "Purchase Problem Type")
+    local procedure FillPurchActStatus(
+        var PurchHeader: Record "Purchase Header"; ActAppStatus: Enum "Purchase Act Approval Status"; ProcessUser: code[50]; ProblemType: enum "Purchase Problem Type")
     var
         UserSetup: Record "User Setup";
         LocText001: Label 'Failed to define user for process %1!';
@@ -923,10 +1045,26 @@ codeunit 50010 "Payment Order Management"
         PurchHeader."Status App Act" := ActAppStatus;
         PurchHeader."Process User" := UserSetup."User ID";
         PurchHeader."Date Status App" := TODAY;
-
         PurchHeader."Problem Type" := ProblemType;
         PurchHeader."Problem Document" := ProblemType <> ProblemType::" ";
+        PurchHeader.Modify;
+    end;
 
+    local procedure FillPayInvStatus(
+        var PurchHeader: Record "Purchase Header"; AppStatus: Enum "Purchase Approval Status"; ProcessUser: code[50]; ProblemType: enum "Purchase Problem Type")
+    var
+        UserSetup: Record "User Setup";
+        LocText001: Label 'Failed to define user for process %1!';
+    begin
+        if ProcessUser = '' then
+            Error(LocText001, AppStatus);
+
+        UserSetup.Get(ProcessUser);
+        PurchHeader."Status App" := AppStatus.AsInteger();
+        PurchHeader."Process User" := UserSetup."User ID";
+        PurchHeader."Date Status App" := TODAY;
+        PurchHeader."Problem Type" := ProblemType;
+        PurchHeader."Problem Document" := ProblemType <> ProblemType::" ";
         PurchHeader.Modify;
     end;
 
@@ -1017,6 +1155,19 @@ codeunit 50010 "Payment Order Management"
 
         GetReceipts.SetPurchHeader(PurchHeaderInv);
         GetReceipts.CreateInvLines(PurchRcptLine);
+    end;
+
+    local procedure CheckApprovalCommentLineExist(RejectEntryNo: Integer);
+    var
+        ApprovalCommentLine: Record "Approval Comment Line";
+        LocText021: Label 'You did not specify the reason for sending the document back for revision.';
+    begin
+        if RejectEntryNo <> 0 then begin
+            ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
+            ApprovalCommentLine.SetRange("Linked Approval Entry No.", RejectEntryNo);
+            if ApprovalCommentLine.IsEmpty then
+                Error(LocText021);
+        end;
     end;
 
 }

@@ -67,6 +67,11 @@ tableextension 80312 "Purchases & Payab. Setup (Ext)" extends "Purchases & Payab
             Caption = 'Master Approver (Department)';
             TableRelation = "User Setup";
         }
+        field(50013; "Skip Check CF in Doc. Lines"; Boolean)
+        {
+            Description = 'NC 51380 AB';
+            Caption = 'Skip Check Cash Flow in Doc. Lines';
+        }
         field(50020; "Frame Agreement Group"; Code[20])
         {
             Caption = 'Frame Agreement Group';

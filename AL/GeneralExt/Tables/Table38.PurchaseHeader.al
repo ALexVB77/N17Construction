@@ -139,6 +139,25 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Vendor Bank Account';
             TableRelation = "Bank Directory".BIC;
             ValidateTableRelation = false;
+
+            trigger OnValidate()
+            var
+                VendorBankAccount: Record "Vendor Bank Account";
+            begin
+                if "Vendor Bank Account" = '' then
+                    exit;
+                if "Vendor Bank Account No." = '' then begin
+                    if Rec."Pay-to Vendor No." <> '' then begin
+                        VendorBankAccount.SetRange("Vendor No.", "Pay-to Vendor No.");
+                        VendorBankAccount.SetRange(BIC, "Vendor Bank Account");
+                        if VendorBankAccount.FindFirst() then
+                            "Vendor Bank Account No." := VendorBankAccount.Code;
+                    end;
+                end else begin
+                    VendorBankAccount.Get(Rec."Pay-to Vendor No.", Rec."Vendor Bank Account No.");
+                    VendorBankAccount.TestField(BIC, "Vendor Bank Account");
+                end;
+            end;
         }
         field(70014; "Vendor Bank Account No."; Text[30])
         {
@@ -146,6 +165,16 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Vendor Bank Account #';
             TableRelation = "Vendor Bank Account".Code WHERE("Vendor No." = field("Pay-to Vendor No."));
             ValidateTableRelation = false;
+
+            trigger OnValidate()
+            var
+                VendorBankAccount: Record "Vendor Bank Account";
+            begin
+                if "Vendor Bank Account No." = '' then
+                    exit;
+                VendorBankAccount.Get(Rec."Pay-to Vendor No.", Rec."Vendor Bank Account No.");
+                Rec."Vendor Bank Account" := VendorBankAccount.BIC;
+            end;
         }
         field(70015; Controller; Code[50])
         {
