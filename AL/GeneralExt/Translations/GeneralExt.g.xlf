@@ -3613,31 +3613,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method FuncNewRec - NamedType LocErrorText1</note>
         </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 2303713566" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document %1 has been sent to the %2 for approval.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType ApproveText</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 1075279242" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document %1 has been sent for signature.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType SigningText</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 1399778526" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document %1 has been returned to the %2 for revision.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType RejectText</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 2426382451" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The document passed all approvals and a Purchase Invoice for Accounting was created!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType FinalText</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 47354825 - Method 3335356824 - NamedType 536801205" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Controller,Estimator,Checker,Pre. Approver,Approver</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method GetPurchaseOrderActChangeStatusMessage - NamedType ResponsText</note>
-        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2918232106 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>There are no payment invoices to be linked to the act %1.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3697,6 +3672,36 @@
           <source>Archive %1 no.: %2?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText007</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 2303713566" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document %1 has been sent to the %2 for approval.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetChangeStatusMessage - NamedType ApproveText</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 1075279242" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document %1 has been sent for signature.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetChangeStatusMessage - NamedType SigningText</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 1399778526" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document %1 has been returned to the %2 for revision.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetChangeStatusMessage - NamedType RejectText</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 4130793036" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document passed all approvals and a Purchase Invoice for Accounting was created!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetChangeStatusMessage - NamedType FinalText1</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 473522357" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The document passed all approvals!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetChangeStatusMessage - NamedType FinalText2</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 536801205" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reception,Controller,Estimator,Checker,Pre. Approver,Approver</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method SetChangeStatusMessage - NamedType ResponsText</note>
         </trans-unit>
         <trans-unit id="Codeunit 2488893537 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>The previous column set could not be found.</source>
@@ -9597,6 +9602,11 @@
           <source>Last Project Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Last Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Field 1981402395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
+          <source>Master CF</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master CF - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Show All Acts KC-2</source>
