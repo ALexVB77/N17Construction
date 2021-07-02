@@ -8489,10 +8489,7 @@
           <source>Locations</source>
           <target>Склады</target>
           <note from="Developer" annotates="general" priority="2"></note>
-<<<<<<< HEAD
-=======
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
->>>>>>> 6b78350055832a519f6213b4c5a335cf25922e70
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0018</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
