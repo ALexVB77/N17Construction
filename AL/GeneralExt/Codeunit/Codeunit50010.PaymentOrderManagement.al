@@ -10,6 +10,7 @@ codeunit 50010 "Payment Order Management"
         PurchSetup: record "Purchases & Payables Setup";
         PurchSetupFound: Boolean;
         InvtSetupFound: Boolean;
+        ChangeStatusMessage: text;
 
     procedure CheckUnusedPurchActType(ActTypeOption: enum "Purchase Act Type")
     var
@@ -564,46 +565,6 @@ codeunit 50010 "Payment Order Management"
             Error(LocText001, PurchSetup."Cost Place Dimension", PurchSetup."Cost Code Dimension", PurchHeader."No.");
     end;
 
-    procedure GetPurchaseOrderActChangeStatusMessage(var PurchHeader: Record "Purchase Header"; Reject: Boolean): Text
-    var
-        ApproveText: Label 'Document %1 has been sent to the %2 for approval.';
-        SigningText: Label 'Document %1 has been sent for signature.';
-        RejectText: Label 'Document %1 has been returned to the %2 for revision.';
-        FinalText: Label 'The document passed all approvals and a Purchase Invoice for Accounting was created!';
-        ResponsText: label 'Controller,Estimator,Checker,Pre. Approver,Approver';
-    begin
-        case PurchHeader."Status App Act" of
-            PurchHeader."Status App Act"::Controller:
-                exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(1, ResponsText)));
-            PurchHeader."Status App Act"::Estimator:
-                if not Reject then
-                    exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(2, ResponsText)))
-                else
-                    exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(2, ResponsText)));
-            PurchHeader."Status App Act"::Checker:
-                if not Reject then
-                    exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(3, ResponsText)))
-                else
-                    exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(3, ResponsText)));
-            PurchHeader."Status App Act"::Approve:
-                if PurchHeader."Sent to pre. Approval" then begin
-                    if not Reject then
-                        exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(4, ResponsText)))
-                    else
-                        exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(4, ResponsText)));
-                end else begin
-                    if not Reject then
-                        exit(StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(5, ResponsText)))
-                    else
-                        exit(StrSubstNo(RejectText, PurchHeader."No.", SelectStr(5, ResponsText)));
-                end;
-            PurchHeader."Status App Act"::Signing:
-                exit(StrSubstNo(SigningText, PurchHeader."No."));
-            PurchHeader."Status App Act"::Accountant:
-                exit(FinalText);
-        end;
-    end;
-
     procedure ChangePurchaseOrderActStatus(var PurchHeader: Record "Purchase Header"; Reject: Boolean; RejectEntryNo: Integer)
     var
         DocumentAttachment: Record "Document Attachment";
@@ -629,6 +590,8 @@ codeunit 50010 "Payment Order Management"
 
         if Reject then
             CheckApprovalCommentLineExist(RejectEntryNo);
+
+        ChangeStatusMessage := '';
 
         // проверки и дозаполнение
 
@@ -784,6 +747,8 @@ codeunit 50010 "Payment Order Management"
 
         if Reject then
             CheckApprovalCommentLineExist(RejectEntryNo);
+
+        ChangeStatusMessage := '';
 
         // проверки и дозаполнение
 
@@ -1036,6 +1001,7 @@ codeunit 50010 "Payment Order Management"
         var PurchHeader: Record "Purchase Header"; ActAppStatus: Enum "Purchase Act Approval Status"; ProcessUser: code[50]; ProblemType: enum "Purchase Problem Type")
     var
         UserSetup: Record "User Setup";
+        MessageResponsNo: Integer;
         LocText001: Label 'Failed to define user for process %1!';
     begin
         if ProcessUser = '' then
@@ -1048,12 +1014,19 @@ codeunit 50010 "Payment Order Management"
         PurchHeader."Problem Type" := ProblemType;
         PurchHeader."Problem Document" := ProblemType <> ProblemType::" ";
         PurchHeader.Modify;
+
+        MessageResponsNo := ActAppStatus.AsInteger + 1;
+        if ((ActAppStatus = ActAppStatus::Approve) and (not PurchHeader."Sent to pre. Approval")) or
+            (ActAppStatus.AsInteger() >= ActAppStatus::Signing.AsInteger())
+        then
+            MessageResponsNo := ActAppStatus.AsInteger + 2;
     end;
 
     local procedure FillPayInvStatus(
         var PurchHeader: Record "Purchase Header"; AppStatus: Enum "Purchase Approval Status"; ProcessUser: code[50]; ProblemType: enum "Purchase Problem Type")
     var
         UserSetup: Record "User Setup";
+        MessageResponsNo: Integer;
         LocText001: Label 'Failed to define user for process %1!';
     begin
         if ProcessUser = '' then
@@ -1066,6 +1039,41 @@ codeunit 50010 "Payment Order Management"
         PurchHeader."Problem Type" := ProblemType;
         PurchHeader."Problem Document" := ProblemType <> ProblemType::" ";
         PurchHeader.Modify;
+
+        MessageResponsNo := AppStatus.AsInteger;
+        if (AppStatus = AppStatus::Approve) and (not PurchHeader."Sent to pre. Approval") then
+            MessageResponsNo := AppStatus.AsInteger + 1;
+        if AppStatus = AppStatus::Payment then
+            MessageResponsNo := 9;
+    end;
+
+    local procedure SetChangeStatusMessage(var PurchHeader: Record "Purchase Header"; ResponsNo: integer; Reject: Boolean)
+    var
+        ApproveText: Label 'Document %1 has been sent to the %2 for approval.';
+        SigningText: Label 'Document %1 has been sent for signature.';
+        RejectText: Label 'Document %1 has been returned to the %2 for revision.';
+        FinalText1: Label 'The document passed all approvals and a Purchase Invoice for Accounting was created!';
+        FinalText2: Label 'The document passed all approvals!';
+        ResponsText: label 'Reception,Controller,Estimator,Checker,Pre. Approver,Approver';
+    begin
+        case ResponsNo of
+            1, 2, 3, 4, 5, 6:
+                if not Reject then
+                    ChangeStatusMessage := StrSubstNo(ApproveText, PurchHeader."No.", SelectStr(ResponsNo, ResponsText))
+                else
+                    ChangeStatusMessage := StrSubstNo(RejectText, PurchHeader."No.", SelectStr(ResponsNo, ResponsText));
+            7:
+                ChangeStatusMessage := StrSubstNo(SigningText, PurchHeader."No.");
+            8:
+                ChangeStatusMessage := FinalText1;
+            9:
+                ChangeStatusMessage := FinalText1
+        end;
+    end;
+
+    procedure GetChangeStatusMessage(): text
+    begin
+        exit(ChangeStatusMessage);
     end;
 
     local procedure PurchActPostShipment(var PurchHeader: Record "Purchase Header")

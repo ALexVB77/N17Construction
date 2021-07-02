@@ -63,20 +63,26 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
             PayOrderMgt.ChangePurchaseOrderActStatus(PurchHeader, false, 0)
         else
             PayOrderMgt.ChangePurchasePaymentInvoiceStatus(PurchHeader, false, 0);
-        PurchHeader.TestField("Process User");
 
         PopulateApprovalEntryArgumentPurchAct(RecRef, WorkflowStepInstance, ApprovalEntryArgument);
-        ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
-        ApprovalEntryArgument."Status App Act" := ApprovalEntryArgument."Status App Act"::Controller;
-        CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
+        if not PurchHeader."IW Documents" then begin
+            ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
+            ApprovalEntryArgument."Status App Act" := ApprovalEntryArgument."Status App Act"::Controller;
+            CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
+            ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+        end else begin
+            ApprovalEntryArgument."Status App" := ApprovalEntryArgument."Status App"::Reception;
+            CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Receptionist);
+            ApprovalEntryArgument."Status App" := Enum::"Purchase Approval Status".FromInteger(PurchHeader."Status App")
+        end;
 
-        ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+        PurchHeader.TestField("Process User");
         CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
 
         if UserID = PurchHeader."Process User" then
             MoveToNextPurchActAndPayInvStatus(RecRef, WorkflowStepInstance, false)
         else
-            Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, false));
+            Message(PayOrderMgt.GetChangeStatusMessage);
     end;
 
     procedure MoveToNextPurchActAndPayInvStatus(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; Reject: Boolean)
@@ -110,18 +116,21 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         if ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
             (Reject and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Controller))
         then
-            Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject))
+            Message(PayOrderMgt.GetChangeStatusMessage)
         else begin
             PurchHeader.TestField("Process User");
             PopulateApprovalEntryArgumentPurchAct(RecRef2, WorkflowStepInstance, ApprovalEntryArgument);
-            ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
-            ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+            if not PurchHeader."IW Documents" then begin
+                ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
+                ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
+            end else
+                ApprovalEntryArgument."Status App" := Enum::"Purchase Approval Status".FromInteger(PurchHeader."Status App");
             ApprovalEntryArgument.Reject := Reject;
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
             if (UserID = PurchHeader."Process User") and (not Reject) then
                 MoveToNextPurchActAndPayInvStatus(RecRef, WorkflowStepInstance, Reject)
             else
-                Message(PayOrderMgt.GetPurchaseOrderActChangeStatusMessage(PurchHeader, Reject));
+                Message(PayOrderMgt.GetChangeStatusMessage);
         end;
     end;
 
