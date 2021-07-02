@@ -1,3 +1,4 @@
+--Contact
 -- Base Table
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Contact$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
