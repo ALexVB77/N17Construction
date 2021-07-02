@@ -277,17 +277,6 @@ page 70000 "Purchase Order App"
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-
-                    trigger OnAssistEdit()
-                    var
-                        VendorBankAccount: Record "Vendor Bank Account";
-                    begin
-                        VendorBankAccount.SETRANGE("Vendor No.", Rec."Pay-to Vendor No.");
-                        IF Page.RUNMODAL(0, VendorBankAccount) = ACTION::LookupOK THEN BEGIN
-                            Rec."Vendor Bank Account" := VendorBankAccount.BIC;
-                            Rec."Vendor Bank Account No." := VendorBankAccount."Bank Account No.";
-                        END;
-                    end;
                 }
                 field("Vendor Bank Account Name"; GetVendorBankAccountName)
                 {
@@ -496,6 +485,7 @@ page 70000 "Purchase Order App"
 
                     trigger OnAction()
                     begin
+                        MessageIfPurchLinesNotExist;
                         if "Status App" in ["Status App"::" ", "Status App"::Payment] then
                             FieldError("Status App");
                         if "Status App" = "Status App"::Reception then begin

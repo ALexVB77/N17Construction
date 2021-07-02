@@ -463,25 +463,6 @@ codeunit 70000 "ERPC Funtions"
         END;
     end;
 
-    procedure SetDefLocation(VAR lrPurchHeader: Record "Purchase Header")
-    var
-        InvSetup: Record "Inventory Setup";
-        lrPurchLine: Record "Purchase Line";
-    begin
-        InvSetup.Get();
-        InvSetup.TestField("Default Location Code");
-        lrPurchLine.SETRANGE("Document Type", lrPurchHeader."Document Type");
-        lrPurchLine.SETRANGE("Document No.", lrPurchHeader."No.");
-        IF lrPurchLine.FINDset(true) THEN BEGIN
-            REPEAT
-                IF lrPurchLine."Location Code" = '' THEN BEGIN
-                    lrPurchLine.validate("Location Code", InvSetup."Default Location Code");
-                    lrPurchLine.MODIFY(true);
-                END;
-            UNTIL lrPurchLine.NEXT = 0;
-        END;
-    end;
-
     local procedure CheckActByVendAgreementDates(PurchHeader: Record "Purchase Header")
     var
         lrVendorAgreem: Record "Vendor Agreement";

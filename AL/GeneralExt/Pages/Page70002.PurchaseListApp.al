@@ -172,6 +172,7 @@ page 70002 "Purchase List App"
 
                 trigger OnAction()
                 begin
+                    MessageIfPurchLinesNotExist;
                     if "Status App" in ["Status App"::" ", "Status App"::Payment] then
                         FieldError("Status App");
                     if "Status App" = "Status App"::Reception then begin
