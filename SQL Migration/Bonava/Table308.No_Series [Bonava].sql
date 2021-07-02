@@ -1,3 +1,4 @@
+-- No Series
 INSERT INTO [Bonava-Test].[dbo].[Bonava$No_ Series$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Code],

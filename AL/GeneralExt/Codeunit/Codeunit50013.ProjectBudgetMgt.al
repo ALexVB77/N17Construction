@@ -8,6 +8,7 @@ codeunit 50013 "Project Budget Management"
     var
         GLSetup: Record "General Ledger Setup";
         US: Record "User Setup";
+        Text001: Label 'Line is already linked with CF entry';
 
     procedure ApplyPrjBudEntrytoPurchLine(var vPLine: Record "Purchase Line")
     var
@@ -17,6 +18,10 @@ codeunit 50013 "Project Budget Management"
         lExchRate: Record "Currency Exchange Rate";
         lLineAmt: Decimal;
     begin
+        if vPLine."Forecast Entry" <> 0 then begin
+            Message(Text001);
+            exit;
+        end;
         vPLine.TestField("Shortcut Dimension 1 Code");
         vPLine.TestField("Shortcut Dimension 2 Code");
         vPLine.TestField(Amount);

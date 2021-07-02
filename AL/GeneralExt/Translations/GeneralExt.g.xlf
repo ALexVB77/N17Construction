@@ -3693,6 +3693,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Period Management Ext - NamedType Text003</note>
         </trans-unit>
+        <trans-unit id="Codeunit 439680645 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line is already linked with CF entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Project Budget Management - NamedType Text001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 439680645 - Method 877441836 - NamedType 2264140679" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deleting long-term entries denied!</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6278,6 +6283,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Control FilteredTypeField - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3187706650 - Control 2296741137 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use action "Link to Cash Flow Entry"</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Control Forecast Entry - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3187706650 - Control 3904971218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Utilities Dim. Value Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6297,6 +6307,11 @@
           <source>Dimensions</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Action Dimensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3187706650 - Action 250625571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Link Cash Flow Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Subform App - Action LinkCFEntry - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 51120936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Details</source>
@@ -7054,7 +7069,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0017</note>
         </trans-unit>
         <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 108224600" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Location</source>
+          <source>Locations</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0018</note>
         </trans-unit>

@@ -1,4 +1,5 @@
-INSERT INTO [Bonava-Test].[dbo].[Real Estate$No_ Series Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
+--No Series Line
+INSERT INTO [Bonava-Test].[dbo].[Bonava$No_ Series Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
 	[Series Code],
 	[Line No_],
@@ -22,4 +23,4 @@ SELECT
 	[Last No_ Used],
 	[Open],
 	[Last Date Used]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$No_ Series Line];
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$No_ Series Line];

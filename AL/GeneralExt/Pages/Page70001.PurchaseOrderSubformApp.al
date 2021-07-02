@@ -168,6 +168,8 @@ page 70001 "Purchase Order Subform App"
                 {
                     ApplicationArea = All;
                     ShowMandatory = (NOT IsCommentLine) AND ("No." <> '');
+                    Editable = false;
+                    ToolTip = 'Use action "Link to Cash Flow Entry"';
                 }
                 field("Utilities Dim. Value Code"; UtilitiesDimValueCode)
                 {
@@ -301,6 +303,20 @@ page 70001 "Purchase Order Subform App"
                     end;
                 }
                 //}
+            }
+            action(LinkCFEntry)
+            {
+                ApplicationArea = All;
+                Caption = 'Link Cash Flow Entry';
+                Image = Link;
+                trigger OnAction()
+                var
+                    PrjBudMgt: Codeunit "Project Budget Management";
+                begin
+                    Clear(PrjBudMgt);
+                    PrjBudMgt.ApplyPrjBudEntrytoPurchLine(Rec);
+                    CurrPage.Update(false);
+                end;
             }
         }
     }
