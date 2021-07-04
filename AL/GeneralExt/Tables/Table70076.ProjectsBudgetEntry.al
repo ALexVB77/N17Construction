@@ -453,15 +453,21 @@ table 70076 "Projects Budget Entry"
 
     keys
     {
-        key(PK; "Entry No.")
+        key(PK; "Project Code", "Analysis Type", "Version Code", "Line No.", "Entry No.", "Project Turn Code", "Temp Line No.")
         {
             Clustered = true;
         }
-        key(Date; Date)
+        key(Key1; "Entry No.")
         {
-            Enabled = true;
-            MaintainSqlIndex = true;
-            MaintainSiftIndex = true;
+
+        }
+        key(Key2; "Project Code", "Analysis Type", "Version Code", "Line No.", Date)
+        {
+
+        }
+        key(Key3; Date)
+        {
+
         }
     }
     trigger OnInsert()
