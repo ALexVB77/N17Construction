@@ -78,7 +78,7 @@ INSERT INTO [Bonava-Test].[dbo].[Bonava$Vendor Agreement$2944687f-9cf8-4134-a24c
 	[Check Limit Amount (LCY)],
 	[Don_t Check CashFlow]
 )
-SELECT
+SELECT DISTINCT
 	[Vendor No_],
 	[No_],
 	ISNULL(GLAccMapping.[New No_], '') AS [Vat Agent Posting Group],

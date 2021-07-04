@@ -16,7 +16,7 @@ INSERT INTO [Bonava-Test].[dbo].[Real Estate$Inventory Posting Setup$437dbf0e-84
     [Cap_ Overhead Variance Account],
     [Subcontracted Variance Account]
 )
-SELECT
+SELECT DISTINCT
 	LocationMapping.[New Location Code] AS [Location Code],
 	ISNULL(GLAccMapping.[New No_], '') AS [Invt_ Posting Group Code],
 	ISNULL(GLAccMapping1.[New No_], '') AS [Inventory Account],
