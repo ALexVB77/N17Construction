@@ -4158,6 +4158,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2285829057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Adjustment Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285829057 - Control 2553548118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Save original entry sign</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3453140756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Adjustment</source>
           <note from="Developer" annotates="general" priority="2"></note>

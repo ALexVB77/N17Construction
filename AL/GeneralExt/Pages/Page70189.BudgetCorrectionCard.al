@@ -1,27 +1,17 @@
-page 70188 "Budget Corrections"
+page 70189 "Budget Correction Card"
 {
-    InsertAllowed = false;
     SourceTable = "Budget Correction";
-    PageType = List;
-    ApplicationArea = All;
-    UsageCategory = Lists;
-    Caption = 'Budget Adjustment';
-    CardPageId = "Budget Correction Card";
+    PageType = Card;
+    Caption = 'Budget Adjustment Card';
+
 
     layout
     {
         area(content)
         {
-            repeater(Repeater12370003)
+            group(General)
             {
-
                 field(Code; Rec.Code)
-                {
-                    ApplicationArea = All;
-                    Editable = FieldsEditable;
-                }
-
-                field("Project Code"; Rec."Project Code")
                 {
                     ApplicationArea = All;
                     Editable = FieldsEditable;
@@ -33,6 +23,102 @@ page 70188 "Budget Corrections"
                     Editable = FieldsEditable;
                 }
 
+                field("Company Name"; Rec."Company Name")
+                {
+                    ApplicationArea = All;
+                    Editable = FieldsEditable;
+                }
+
+                field(Status; Rec.Status)
+                {
+                    ApplicationArea = All;
+                    trigger OnValidate()
+                    begin
+                        StatusOnAfterValidate; //navnav;
+
+                    end;
+
+
+                }
+
+                field("Project Code"; Rec."Project Code")
+                {
+                    ApplicationArea = All;
+                    Editable = FieldsEditable;
+                }
+
+                field("Correction Batch"; Rec."Correction Batch")
+                {
+                    Editable = FieldsEditable;
+                    ApplicationArea = All;
+                    Caption = 'Save original entry sign';
+
+                }
+
+                // field("Virtual Agreement"; Rec."Virtual Agreement")
+                // {
+                //     ApplicationArea = All;
+
+                // }   
+
+                // field(Advances; Rec.Advances)
+                // {
+                //     ShowCaption = false;
+                //     ApplicationArea = All;
+                //     trigger OnValidate()
+                //     begin
+                //         AdvancesOnAfterValidate; //navnav;
+
+                //     end;
+
+
+                // }   
+
+                // field("Agreement From Current Company"; Rec."Agreement From Current Company")
+                // {
+                //     ShowCaption = false;
+                //     ApplicationArea = All;
+
+                // }   
+
+                // field("Agreement Company Name"; Rec."Agreement Company Name")
+                // {
+                //     ApplicationArea = All;
+
+                // }   
+
+                // field("Without VAT"; Rec."Without VAT")
+                // {
+                //     ShowCaption = false;
+                //     ApplicationArea = All;
+
+                // }   
+
+                // field(Allocation; Rec.Allocation)
+                // {
+                //     ShowCaption = false;
+                //     ApplicationArea = All;
+                //     trigger OnValidate()
+                //     begin
+                //         AllocationOnAfterValidate; //navnav;
+
+                //     end;
+
+
+                // }   
+
+                // field("IFRS Costs"; Rec."IFRS Costs")
+                // {
+                //     ShowCaption = false;
+                //     ApplicationArea = All;
+
+                // }   
+
+
+
+            }
+            group(Control12370022)
+            {
                 field("Dimension Totaling 1"; Rec."Dimension Totaling 1")
                 {
                     ApplicationArea = All;
@@ -40,7 +126,6 @@ page 70188 "Budget Corrections"
                     trigger OnLookup(var Text: text): boolean
                     begin
                         IF Rec.Status = Rec.Status::Active THEN EXIT(FALSE);
-
                         EXIT(Rec.LookUpDimFilter(1, Text));
                     end;
 
@@ -54,7 +139,6 @@ page 70188 "Budget Corrections"
                     trigger OnLookup(var Text: text): boolean
                     begin
                         IF Rec.Status = Rec.Status::Active THEN EXIT(FALSE);
-
                         EXIT(Rec.LookUpDimFilter(2, Text));
                     end;
 
@@ -80,9 +164,9 @@ page 70188 "Budget Corrections"
                         IF LocGLAcc.FINDFIRST THEN;
 
                         //GLAccList.SetCompany("Company Name");
-
                         GLAccList.SETRECORD(LocGLAcc);
                         GLAccList.SETTABLEVIEW(LocGLAcc);
+
                         GLAccList.LOOKUPMODE(TRUE);
                         IF NOT (GLAccList.RUNMODAL = ACTION::LookupOK) THEN
                             EXIT(FALSE)
@@ -113,9 +197,9 @@ page 70188 "Budget Corrections"
                         IF LocGLAcc.FINDFIRST THEN;
 
                         //GLAccList.SetCompany("Company Name");
-
                         GLAccList.SETRECORD(LocGLAcc);
                         GLAccList.SETTABLEVIEW(LocGLAcc);
+
                         GLAccList.LOOKUPMODE(TRUE);
                         IF NOT (GLAccList.RUNMODAL = ACTION::LookupOK) THEN
                             EXIT(FALSE)
@@ -146,9 +230,9 @@ page 70188 "Budget Corrections"
                         IF LocGLAcc.FINDFIRST THEN;
 
                         //GLAccList.SetCompany("Company Name");
-
                         GLAccList.SETRECORD(LocGLAcc);
                         GLAccList.SETTABLEVIEW(LocGLAcc);
+
                         GLAccList.LOOKUPMODE(TRUE);
                         IF NOT (GLAccList.RUNMODAL = ACTION::LookupOK) THEN
                             EXIT(FALSE)
@@ -179,9 +263,9 @@ page 70188 "Budget Corrections"
                         IF LocGLAcc.FINDFIRST THEN;
 
                         //GLAccList.SetCompany("Company Name");
-
                         GLAccList.SETRECORD(LocGLAcc);
                         GLAccList.SETTABLEVIEW(LocGLAcc);
+
                         GLAccList.LOOKUPMODE(TRUE);
                         IF NOT (GLAccList.RUNMODAL = ACTION::LookupOK) THEN
                             EXIT(FALSE)
@@ -193,37 +277,23 @@ page 70188 "Budget Corrections"
 
                 }
 
-                field("Company Name"; Rec."Company Name")
+                field("Journal Template Name"; Rec."Journal Template Name")
                 {
                     ApplicationArea = All;
                     Editable = FieldsEditable;
-
                 }
 
-                // field("Agreement Company Name"; Rec."Agreement Company Name")
-                // {
-                //     ApplicationArea = All;
-
-                // }   
-
-                field(Status; Rec.Status)
+                field("Journal Batch Name"; Rec."Journal Batch Name")
                 {
                     ApplicationArea = All;
-                    trigger OnValidate()
-                    begin
-                        StatusOnAfterValidate; //navnav;
-
-                    end;
-
-
+                    Editable = FieldsEditable;
                 }
 
-                // field("IFRS Costs"; Rec."IFRS Costs")
-                // {
-                //     ShowCaption = false;
-                //     ApplicationArea = All;
-
-                // }   
+                field("Source Code"; Rec."Source Code")
+                {
+                    ApplicationArea = All;
+                    Editable = FieldsEditable;
+                }
 
 
 
@@ -232,24 +302,23 @@ page 70188 "Budget Corrections"
     }
 
 
-
     trigger OnAfterGetCurrRecord()
     begin
+        Rec.SETRANGE(Code);
+
         IF Rec.Status = Rec.Status::Active THEN
             SetEditable(FALSE)
         ELSE
             SetEditable(TRUE);
+
+        // IF Advances THEN CurrPage.Allocation.ENABLED:=FALSE ELSE CurrPage.Allocation.ENABLED:=TRUE;
+        // IF Allocation THEN CurrPage.Advances.ENABLED:=FALSE ELSE CurrPage.Advances.ENABLED:=TRUE;
     end;
+
 
 
     var
         FieldsEditable: Boolean;
-
-
-    procedure GetRec(var vRec: record "Budget Correction")
-    begin
-        vRec.COPY(Rec);
-    end;
 
     procedure SetEditable(b: boolean)
     begin
@@ -265,17 +334,20 @@ page 70188 "Budget Corrections"
         // CurrPage."G/L Account Totaling 3".EDITABLE:=b;
         // //CurrForm."Priod Group Type".EDITABLE:=b;
         // //CurrForm.Description.EDITABLE:=b;
-        // //CurrForm."Journal Template Name".EDITABLE:=b;
-        // //CurrForm."Journal Batch Name".EDITABLE:=b;
-        // //CurrForm."Source Code".EDITABLE:=b;
+        // CurrPage."Journal Template Name".EDITABLE:=b;
+        // CurrPage."Journal Batch Name".EDITABLE:=b;
+        // CurrPage."Source Code".EDITABLE:=b;
         // CurrPage."Company Name".EDITABLE:=b;
-        // //CurrForm."Correction Batch".EDITABLE:=b;
+        // CurrPage."Correction Batch".EDITABLE:=b;
+        // CurrPage."Virtual Agreement".EDITABLE:=b;
+        // CurrPage.Advances.EDITABLE:=b;
+        // CurrPage."Without VAT".EDITABLE:=b;
+        // CurrPage.Allocation.EDITABLE:=b;
     end;
 
     local procedure StatusOnAfterValidate()
     begin
         CurrPage.UPDATE;
+
     end;
-
-
 }

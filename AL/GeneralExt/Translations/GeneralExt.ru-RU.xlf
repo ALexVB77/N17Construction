@@ -223,7 +223,6 @@
           <source>Account</source>
           <target>Счет ГК</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field G/L Account Totaling - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3587166653 - Field 617354898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -4994,11 +4993,24 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2285829057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Adjustment Card</source>
+          <target>Бюджет корректировки карточка</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285829057 - Control 2553548118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Save original entry sign</source>
+          <target>Сохранять оригинальный знак операции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3453140756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Adjustment</source>
           <target>Бюджет корректировки</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Corrections - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2147051387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
