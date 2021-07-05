@@ -124,6 +124,25 @@ table 70076 "Projects Budget Entry"
             Caption = 'Contragent No.';
             TableRelation = if ("Contragent Type" = const(Vendor)) Vendor else
             if ("Contragent Type" = const(Customer)) Customer;
+            trigger OnValidate()
+            var
+                lVend: Record Vendor;
+                lCust: Record Customer;
+            begin
+                case Rec."Contragent Type" of
+                    Rec."Contragent Type"::Customer:
+                        begin
+                            if lCust.Get(Rec."Contragent No.") then
+                                "Contragent Name" := lCust.Name;
+                        end;
+                    Rec."Contragent Type"::Vendor:
+                        begin
+                            if lVend.Get(Rec."Contragent No.") then
+                                "Contragent Name" := lVend.Name;
+
+                        end;
+                end;
+            end;
         }
         field(32; "Agreement No."; Code[20])
         {
@@ -434,15 +453,21 @@ table 70076 "Projects Budget Entry"
 
     keys
     {
-        key(PK; "Entry No.")
+        key(PK; "Project Code", "Analysis Type", "Version Code", "Line No.", "Entry No.", "Project Turn Code", "Temp Line No.")
         {
             Clustered = true;
         }
-        key(Date; Date)
+        key(Key1; "Entry No.")
         {
-            Enabled = true;
-            MaintainSqlIndex = true;
-            MaintainSiftIndex = true;
+
+        }
+        key(Key2; "Project Code", "Analysis Type", "Version Code", "Line No.", Date)
+        {
+
+        }
+        key(Key3; Date)
+        {
+
         }
     }
     trigger OnInsert()

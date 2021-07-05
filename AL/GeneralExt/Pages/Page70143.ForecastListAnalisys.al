@@ -196,7 +196,7 @@ page 70143 "Forecast List Analisys"
 
                 field("Date"; Rec.Date)
                 {
-                    Editable = true;
+                    Editable = LineEditable;
                     NotBlank = true;
                     ApplicationArea = All;
                     Caption = 'Date';
@@ -216,23 +216,24 @@ page 70143 "Forecast List Analisys"
 
                 field("Project Code"; Rec."Project Code")
                 {
-                    Editable = false;
+                    Editable = ProjectEditable;
                     ApplicationArea = All;
                     Caption = 'Project Code';
                     StyleExpr = LineStyletxt;
                     ShowMandatory = true;
 
                 }
-                field("Cost Code"; Rec."Cost Code")
-                {
-                    Editable = false;
-                    ApplicationArea = All;
-                    StyleExpr = LineStyletxt;
+                // field("Cost Code"; Rec."Cost Code")
+                // {
+                //     Visible = false;
+                //     Editable = false;
+                //     ApplicationArea = All;
+                //     StyleExpr = LineStyletxt;
 
-                }
+                // }
                 field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
-                    Visible = false;
+                    Visible = CPEditable;
                     Editable = false;
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
@@ -241,14 +242,14 @@ page 70143 "Forecast List Analisys"
                 }
                 field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
-                    Editable = false;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
 
                 }
                 field(Description; Rec.Description)
                 {
-                    Editable = true;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     Caption = 'Description';
                     StyleExpr = LineStyletxt;
@@ -275,22 +276,22 @@ page 70143 "Forecast List Analisys"
                 }
                 field("Description 2"; Rec."Description 2")
                 {
-                    Editable = true;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     Caption = 'Description 2';
                     StyleExpr = LineStyletxt;
 
                 }
-                field("Payment Description"; "Payment Description")
+                field("Payment Description"; Rec."Payment Description")
                 {
-                    Editable = true;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
                 }
                 field("Without VAT (LCY)"; Rec."Without VAT (LCY)")
                 {
                     Visible = true;
-                    Editable = false;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
                     ShowMandatory = true;
@@ -298,7 +299,7 @@ page 70143 "Forecast List Analisys"
                 }
                 field("Contragent No."; Rec."Contragent No.")
                 {
-                    Editable = true;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     Caption = 'Vendor No.';
                     StyleExpr = LineStyletxt;
@@ -315,6 +316,7 @@ page 70143 "Forecast List Analisys"
                         IF grVendor.FINDFIRST THEN BEGIN
                             IF grVendor.GET(Rec."Contragent No.") THEN;
                             IF PAGE.RUNMODAL(PAGE::"Vendor List", grVendor) = ACTION::LookupOK THEN BEGIN
+                                Rec."Contragent Type" := Rec."Contragent Type"::Vendor;
                                 Rec.VALIDATE("Contragent No.", grVendor."No.");
                             END;
                         END;
@@ -330,7 +332,7 @@ page 70143 "Forecast List Analisys"
                 }
                 field("Agreement No."; Rec."Agreement No.")
                 {
-                    Editable = true;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     Caption = 'Agreement No.';
                     StyleExpr = LineStyletxt;
@@ -457,12 +459,14 @@ page 70143 "Forecast List Analisys"
                 {
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
+                    Editable = CreateUIDEditable;
 
                 }
                 field("Parent Entry"; Rec."Parent Entry")
                 {
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
+                    Editable = false;
                 }
                 field("Close Date"; Rec."Close Date")
                 {
@@ -523,10 +527,42 @@ page 70143 "Forecast List Analisys"
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        HideZeroAmountLine := true;
+        BuildView();
+        if gDate = 0D then
+            gDate := Today;
+        setOverdueFlt();
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    var
+        lDimVal: Record "Dimension Value";
+    begin
+        GLSetup.Get;
+        if TemplateCode <> '' then
+            Rec."Project Code" := TemplateCode;
+        if CostPlaceFlt <> '' then begin
+            lDimVal.reset;
+            lDimVal.SetRange("Dimension Code", GLSetup."Global Dimension 1 Code");
+            lDimVal.SetFilter(Code, CostPlaceFlt);
+            if lDimVal.FindFirst() then
+                Rec."Shortcut Dimension 1 Code" := lDimVal.Code;
+        end;
+        if CostCodeFlt <> '' then begin
+            lDimVal.reset;
+            lDimVal.SetRange("Dimension Code", GLSetup."Global Dimension 2 Code");
+            lDimVal.SetFilter(Code, CostCodeFlt);
+            if lDimVal.FindFirst() then
+                Rec."Shortcut Dimension 2 Code" := lDimVal.Code;
+        end;
+    end;
 
     trigger OnAfterGetRecord()
     begin
         GetLineStyle(Rec);
+        GetLineEditable(Rec);
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
@@ -632,15 +668,16 @@ page 70143 "Forecast List Analisys"
         TEXT0015: Label 'You do not have sufficient rights to perform the action!';
         HideZeroAmountLine: boolean;
         PrjBudMgt: Codeunit "Project Budget Management";
+        [InDataSet]
+        LineEditable: Boolean;
+        [InDataSet]
+        ProjectEditable: Boolean;
+        [InDataSet]
+        CPEditable: Boolean;
+        [InDataSet]
+        CreateUIDEditable: Boolean;
 
-    trigger OnOpenPage()
-    begin
-        HideZeroAmountLine := true;
-        BuildView();
-        if gDate = 0D then
-            gDate := Today;
-        setOverdueFlt();
-    end;
+
 
     local procedure CheckAllowChanges()
     begin
@@ -713,5 +750,22 @@ page 70143 "Forecast List Analisys"
             LineStyletxt := 'StandardAccent';
     end;
 
-
+    local procedure GetLineEditable(pPBE: Record "Projects Budget Entry")
+    begin
+        LineEditable := true;
+        CPEditable := true;
+        ProjectEditable := true;
+        CreateUIDEditable := PrjBudMgt.IsMasterCF();
+        pPBE.CalcFields("Payment Doc. No.");
+        if (pPBE."Payment Doc. No." <> '') and (pPBE."Entry No." <> pPBE."Parent Entry") then begin
+            LineEditable := false;
+            CPEditable := false;
+            ProjectEditable := false;
+        end;
+        if (pPBE."Entry No." = pPBE."Parent Entry") then begin
+            LineEditable := true;
+            CPEditable := not PrjBudMgt.HaveSTEntries(pPBE);
+            ProjectEditable := CPEditable;
+        end;
+    end;
 }

@@ -20,6 +20,10 @@ pageextension 80119 "User Setup (Ext)" extends "User Setup"
             {
                 ApplicationArea = Basic, Suite;
             }
+            field("Master CF"; Rec."Master CF")
+            {
+                ApplicationArea = Basic, Suite;
+            }
             field("Change Agreem. Posting Group"; Rec."Change Agreem. Posting Group")
             {
                 ApplicationArea = Basic, Suite;

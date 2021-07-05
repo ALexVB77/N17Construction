@@ -67,6 +67,11 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
             Description = 'NC 51381';
             Caption = 'CF Allow Short Term Entries Edit';
         }
+        field(71015; "Master CF"; Boolean)
+        {
+            Description = 'NC 51383';
+            Caption = 'Master CF';
+        }
         field(71020; "Last Project Code"; Code[20])
         {
             Description = 'NC 51382';
