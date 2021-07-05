@@ -15,13 +15,10 @@ codeunit 99932 "CRM Worker"
         RequestBodyXmlText: Text;
         ParsingResult: Dictionary of [Text, Text];
     begin
-        FetchedObjectBuff.Reset();
-        FetchedObjectBuff.DeleteAll();
         WebRequestQueue.CalcFields("Request Body");
         WebRequestQueue."Request Body".CreateInStream(InStrm);
         InStrm.Read(RequestBodyXmlText);
         FetchObjects(FetchedObjectBuff, RequestBodyXmlText);
-
 
         PickupPrefetchedObjects(FetchedObjectBuff);
 
@@ -40,6 +37,8 @@ codeunit 99932 "CRM Worker"
         ObjXmlNode: XmlNode;
         ObjXmlBase64: text;
     begin
+        FetchedObjectsTemp.Reset();
+        FetchedObjectsTemp.DeleteAll();
         GetRootXmlElement(RequestBodyXmlText, RootXmlElement);
         if not RootXmlElement.SelectNodes('//crm_objects/object', XmlNodes) then
             Error('Wrong soap envelope structure');
@@ -156,7 +155,7 @@ codeunit 99932 "CRM Worker"
         BuyerNo: Integer;
         ExpectedRegDate, ActualDate, ExpectedDate : Text;
         Res: Dictionary of [Text, Text];
-        CMRBuyes: Record "CRM Buyers";
+        CRMBuyers: Record "CRM Buyers";
         CRMCompany: Record "CRM Company";
 
         UnitX: Label 'NCCObjects/NCCObject/Unit/', Locked = true;
@@ -180,10 +179,10 @@ codeunit 99932 "CRM Worker"
     begin
         Clear(ParsingResult);
 
-        CMRBuyes.Reset();
-        CMRBuyes.SetRange("Unit Guid", FetchedObject.Id);
-        CMRBuyes.SetRange("Version Id", FetchedObject."Version Id");
-        if not CMRBuyes.IsEmpty() then
+        CRMBuyers.Reset();
+        CRMBuyers.SetRange("Unit Guid", FetchedObject.Id);
+        CRMBuyers.SetRange("Version Id", FetchedObject."Version Id");
+        if not CRMBuyers.IsEmpty() then
             exit;
 
         GetRootXmlElement(FetchedObject, XmlElem);
@@ -247,7 +246,26 @@ codeunit 99932 "CRM Worker"
 
     [TryFunction]
     local procedure ParseContactXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
+    var
+        CRMBuyers: Record "CRM Buyers";
+        Cust: Record Customer;
     begin
+        Clear(ParsingResult);
+
+        Cust.Reset();
+        Cust.Setrange("CRM GUID", FetchedObject.Id);
+        Cust.SetRange("Version Id", FetchedObject."Version Id");
+        if Not Cust.IsEmpty then
+            exit;
+
+        CRMBuyers.Reset();
+        CRMBuyers.SetRange("Contact Guid", FetchedObject.Id);
+        if CRMBuyers.IsEmpty then begin
+            CRMBuyers.Reset();
+            CRMBuyers.Setrange("Reserving Contact Guid", FetchedObject.Id);
+            if CRMBuyers.IsEmpty then
+                exit;
+        end;
 
     end;
 
@@ -290,10 +308,15 @@ codeunit 99932 "CRM Worker"
                 Apartments.Modify(True);
         end;
 
+        if not ParsingResult.Get('BuyerGuid1', Value) then begin
+            CRMBuyer.Insert(true);
+            exit;
+        end;
+
         BuyerNo := 1;
         repeat
             if not ParsingResult.Get(StrSubstNo('BuyerGuid%1', BuyerNo), Value) then
-                BuyerNo := 999
+                exit
             else begin
                 Evaluate(CRMBuyer."Buyer Guid", Value);
                 if ParsingResult.Get(StrSubstNo('ContactGuid%1', BuyerNo), Value) then
@@ -326,9 +349,6 @@ codeunit 99932 "CRM Worker"
                 BuyerNo += 1;
             end;
         until BuyerNo > 5;
-
-        if BuyerNo = 1 then
-            CRMBuyer.Insert(true);
     end;
 
     local procedure ImportContact(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
