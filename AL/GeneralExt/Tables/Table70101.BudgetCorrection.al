@@ -24,7 +24,7 @@ table 70101 "Budget Correction"
             Caption = 'Dimension 2';
             CaptionClass = GetCaptionClass(2);
         }
-        field(5; "G/A Account Totaling"; Text[250])
+        field(5; "G/L Account Totaling"; Text[250])
         {
             Caption = 'Account';
         }
