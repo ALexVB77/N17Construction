@@ -32,10 +32,11 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalEntry.SetRange("Workflow Step Instance ID", Rec."Workflow Step Instance ID");
         ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Open);
         if ApprovalEntry.FindFirst() then
-            if (ApprovalEntry."Document Type" = ApprovalEntry."Document Type"::Order) and (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") then begin
-                Rec."Linked Approval Entry No." := ApprovalEntry."Entry No.";
-                Rec.Modify(false);
-            end;
+            if ApprovalEntry."Document Type" = ApprovalEntry."Document Type"::Order then
+                if (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") or ApprovalEntry."IW Documents" then begin
+                    Rec."Linked Approval Entry No." := ApprovalEntry."Entry No.";
+                    Rec.Modify(false);
+                end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 1535, 'OnBeforeApprovalEntryInsert', '', false, false)]
@@ -44,6 +45,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         ApprovalEntry."Status App Act" := ApprovalEntryArgument."Status App Act";
         ApprovalEntry."Act Type" := ApprovalEntryArgument."Act Type";
         ApprovalEntry."Status App" := ApprovalEntryArgument."Status App";
+        ApprovalEntry."IW Documents" := ApprovalEntryArgument."IW Documents";
         if (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") and
            (ApprovalEntry."Status App Act".AsInteger() > ApprovalEntry."Status App Act"::Controller.AsInteger()) and
            (ApprovalEntry."Approver ID" = UserId) and ApprovalEntryArgument.Reject
@@ -71,6 +73,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Controller);
             ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
         end else begin
+            ApprovalEntryArgument."IW Documents" := PurchHeader."IW Documents";
             ApprovalEntryArgument."Status App" := ApprovalEntryArgument."Status App"::Reception;
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader.Receptionist);
             ApprovalEntryArgument."Status App" := Enum::"Purchase Approval Status".FromInteger(PurchHeader."Status App")
@@ -123,8 +126,10 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
             if not PurchHeader."IW Documents" then begin
                 ApprovalEntryArgument."Act Type" := PurchHeader."Act Type";
                 ApprovalEntryArgument."Status App Act" := PurchHeader."Status App Act";
-            end else
+            end else begin
+                ApprovalEntryArgument."IW Documents" := PurchHeader."IW Documents";
                 ApprovalEntryArgument."Status App" := Enum::"Purchase Approval Status".FromInteger(PurchHeader."Status App");
+            end;
             ApprovalEntryArgument.Reject := Reject;
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
             if (UserID = PurchHeader."Process User") and (not Reject) then

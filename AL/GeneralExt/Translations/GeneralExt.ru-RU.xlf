@@ -9700,6 +9700,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field Act Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1414959925 - Field 52401814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
+          <source>IW Documents</source>
+          <target>Документы IW</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field IW Documents - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
           <source>Reject</source>
           <target>Отклонить</target>
@@ -11530,7 +11537,6 @@
           <source>Master CF</source>
           <target>CF Администратор</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Master CF - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1966676884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">

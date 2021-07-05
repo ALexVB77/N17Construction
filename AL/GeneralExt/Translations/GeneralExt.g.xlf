@@ -8083,6 +8083,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field Act Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1414959925 - Field 52401814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
+          <source>IW Documents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field IW Documents - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
           <source>Reject</source>
           <note from="Developer" annotates="general" priority="2"></note>
