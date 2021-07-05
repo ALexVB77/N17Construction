@@ -22,7 +22,7 @@ tableextension 80454 "Approval Entry (Ext)" extends "Approval Entry"
             Caption = 'Approval Status';
             Description = 'NC 51374 AB';
         }
-        field(70034; "IW Documents"; Boolean)
+        field(50004; "IW Documents"; Boolean)
         {
             Caption = 'IW Documents';
             Description = 'NC 51380 AB';

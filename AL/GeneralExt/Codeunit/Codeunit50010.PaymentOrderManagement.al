@@ -871,6 +871,7 @@ codeunit 50010 "Payment Order Management"
         DimSetEntry: Record "Dimension Set Entry";
         DimValueCC: Record "Dimension Value";
         DimValueCP: Record "Dimension Value";
+        UserSetup: Record "User Setup";
     begin
         if DimSetID = 0 then
             exit('');
@@ -885,11 +886,11 @@ codeunit 50010 "Payment Order Management"
             exit('');
         case DimValueCC."Cost Code Type" of
             DimValueCC."Cost Code Type"::Development:
-                exit(GetApproverSubstitute(DimValueCP."Development Cost Place Holder"));
+                exit(UserSetup.GetUserSubstitute(DimValueCP."Development Cost Place Holder", 0));
             DimValueCC."Cost Code Type"::Production:
-                exit(GetApproverSubstitute(DimValueCP."Production Cost Place Holder"));
+                exit(UserSetup.GetUserSubstitute(DimValueCP."Production Cost Place Holder", 0));
             DimValueCC."Cost Code Type"::Admin:
-                exit(GetApproverSubstitute(DimValueCP."Admin Cost Place Holder"));
+                exit(UserSetup.GetUserSubstitute(DimValueCP."Admin Cost Place Holder", 0));
         end;
     end;
 
@@ -929,6 +930,7 @@ codeunit 50010 "Payment Order Management"
     var
         DimSetEntry: Record "Dimension Set Entry";
         DimValueCC: Record "Dimension Value";
+        UserSetup: Record "User Setup";
     begin
         if DimSetID = 0 then
             exit('');
@@ -937,21 +939,7 @@ codeunit 50010 "Payment Order Management"
             exit('');
         if not DimValueCC.Get(DimSetEntry."Dimension Code", DimSetEntry."Dimension Value Code") then
             exit('');
-        exit(GetApproverSubstitute(DimValueCC."Cost Holder"));
-    end;
-
-    local procedure GetApproverSubstitute(ApproverCode: Code[50]): Code[50]
-    var
-        UserSetup: Record "User Setup";
-    begin
-        if ApproverCode = '' then
-            exit('');
-        if not UserSetup.GET(ApproverCode) then
-            exit(ApproverCode);
-        IF UserSetup.Absents AND (UserSetup.Substitute <> '') THEN
-            exit(UserSetup.Substitute)
-        ELSE
-            exit(UserSetup."User ID");
+        exit(UserSetup.GetUserSubstitute(DimValueCC."Cost Holder", 0));
     end;
 
     procedure GetApproverFromActLines(PurchHeader: Record "Purchase Header"): Code[50]
@@ -1183,5 +1171,55 @@ codeunit 50010 "Payment Order Management"
                 Error(LocText021);
         end;
     end;
+
+    procedure RegisterUserAbsence(AbsentList: Record "User Setup");
+    var
+        UserSetupToUpdate: record "User Setup";
+        ApprovalEntry: Record "Approval Entry";
+        ApprovalEntryToUpdate: Record "Approval Entry";
+        UserSetup: Record "User Setup";
+        PurchHeader: Record "Purchase Header";
+        SubstituteUserId: Code[50];
+        LocText001: label 'There is no one to register.';
+        LocText002: label 'Unable to find a substitute for %1. Check the substitute chain.';
+        LocText003: label 'Are you sure you want to register the absence of %1 of users and delegate active approve entries by the Substitutes?';
+        NoPermissionToDelegateErr: Label 'You do not have permission to delegate one or more of the selected approval requests.';
+    begin
+        AbsentList.SetRange(Absents, false);
+        if AbsentList.IsEmpty then begin
+            Message(LocText001);
+            exit;
+        end;
+        if not Confirm(LocText003, true, AbsentList.Count) then
+            exit;
+        AbsentList.FindSet();
+        repeat
+            AbsentList.TestField(Substitute);
+            SubstituteUserId := UserSetup.GetUserSubstitute(AbsentList.Substitute, -1);
+            if SubstituteUserId = '' then
+                error(LocText002, AbsentList."User ID");
+            ApprovalEntry.SetRange("Approver ID", AbsentList."User ID");
+            ApprovalEntry.SetFilter(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Open);
+            if ApprovalEntry.FindSet() then
+                repeat
+                    if (ApprovalEntry."Act Type" <> ApprovalEntry."Act Type"::" ") or ApprovalEntry."IW Documents" then begin
+                        if not ApprovalEntry.CanCurrentUserEdit then
+                            Error(NoPermissionToDelegateErr);
+                        ApprovalEntryToUpdate := ApprovalEntry;
+                        // ApprovalEntryToUpdate."Delegated From Approver ID" := ApprovalEntryToUpdate."Approver ID";
+                        ApprovalEntryToUpdate."Approver ID" := SubstituteUserId;
+                        ApprovalEntryToUpdate.Modify(true);
+
+                        PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+                        PurchHeader."Process User" := SubstituteUserId;
+                        PurchHeader.Modify();
+                    end;
+                until ApprovalEntry.Next() = 0;
+            UserSetupToUpdate := AbsentList;
+            UserSetupToUpdate.Absents := true;
+            UserSetupToUpdate.Modify(true);
+        until AbsentList.Next() = 0;
+    end;
+
 
 }

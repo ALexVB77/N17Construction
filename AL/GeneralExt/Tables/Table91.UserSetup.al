@@ -16,6 +16,7 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
         {
             Description = 'NC 51373 AB';
             Caption = 'Absents';
+            Editable = false;
         }
         field(70005; "Administrator IW"; Boolean)
         {
@@ -81,5 +82,43 @@ tableextension 80091 "User Setup (Ext)" extends "User Setup"
 
     var
         UserSetup: Record "User Setup";
+        UserSubstLoop: Record "User Setup" temporary;
         ConfText001: Label 'User %1 has status %2 now. Do you want to change to %3?';
+
+
+    procedure GetUserSubstitute(UserCode: Code[50]; StepNo: integer) Result: Code[50]
+    var
+        UserSetup: Record "User Setup";
+        LoopErrText: Label 'Loop detected while looking for substitute: user %1, step %2.';
+        ShowError: Boolean;
+    begin
+        if StepNo <= 0 then begin
+            ShowError := StepNo < 0;
+            UserSubstLoop.Reset;
+            UserSubstLoop.DeleteAll();
+            StepNo := 0;
+        end else
+            StepNo += 1;
+
+        if UserCode = '' then
+            exit('');
+        if not UserSetup.GET(UserCode) then
+            exit('');
+        if UserSetup.Absents then begin
+            if UserSetup.Substitute = '' then
+                exit('');
+            if UserSubstLoop.Get(UserSetup.Substitute) then begin
+                if ShowError then
+                    Error(LoopErrText, UserSetup.Substitute, StepNo)
+                else
+                    exit('');
+            end;
+            UserSubstLoop.Init;
+            UserSubstLoop."User ID" := UserSetup.Substitute;
+            UserSubstLoop.Insert;
+            exit(GetUserSubstitute(UserSetup.Substitute, StepNo));
+        end else
+            exit(UserSetup."User ID");
+    end;
+
 }

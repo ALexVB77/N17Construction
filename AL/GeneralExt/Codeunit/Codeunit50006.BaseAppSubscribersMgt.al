@@ -645,7 +645,24 @@ codeunit 50006 "Base App. Subscribers Mgt."
             IsoMgt.setString('RowFromPage', Row);
             IsoMgt.setString('ColFromPage', Col);
         end;
+    end;
 
-
+    [EventSubscriber(ObjectType::Table, Database::"User Setup", 'OnAfterValidateEvent', 'Substitute', false, false)]
+    local procedure OnUserSetupAfterValidateSubstitute(var Rec: Record "User Setup"; xRec: Record "User Setup");
+    var
+        ApprovalEntry: Record "Approval Entry";
+        SubstituteUserId: Code[50];
+        LocText001: Label 'You cannot change the value of %1 because there are active approval entries for user %2.';
+        LocText002: label 'Unable to find a substitute for %1. Check the substitute chain.';
+    begin
+        if Rec.Absents then begin
+            SubstituteUserId := Rec.GetUserSubstitute(xRec.Substitute, -1);
+            if SubstituteUserId = '' then
+                error(LocText002, Rec."User ID");
+            ApprovalEntry.SetRange("Approver ID", SubstituteUserId);
+            ApprovalEntry.SetFilter(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Open);
+            if not ApprovalEntry.IsEmpty then
+                Error(LocText001, Rec.FieldCaption(Substitute), SubstituteUserId);
+        end;
     end;
 }
