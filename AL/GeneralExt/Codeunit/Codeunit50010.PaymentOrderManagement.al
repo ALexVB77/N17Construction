@@ -547,6 +547,8 @@ codeunit 50010 "Payment Order Management"
             TempDimSetEntry.Insert;
         until DimSetEntry.Next() = 0;
         DimMgt.CheckDimIDComb(DimMgt.GetDimensionSetID(TempDimSetEntry));
+
+        exit(true);
     end;
 
     local procedure CheckCostDimExistsInLine(var PurchLine: Record "Purchase Line")
