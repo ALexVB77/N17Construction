@@ -26,4 +26,28 @@ pageextension 80663 "Approval User Setup (Ext)" extends "Approval User Setup"
             }
         }
     }
+    actions
+    {
+        addafter("&Approval User Setup Test")
+        {
+            action("Register Absence")
+            {
+                ApplicationArea = All;
+                Caption = 'Register Absence';
+                Image = AbsenceCalendar;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    AbsentList: Record "User Setup";
+                    PayOrderMgt: Codeunit "Payment Order Management";
+                begin
+                    CurrPage.SetSelectionFilter(AbsentList);
+                    PayOrderMgt.RegisterUserAbsence(AbsentList);
+                end;
+            }
+        }
+    }
 }

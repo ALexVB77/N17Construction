@@ -7,6 +7,26 @@ codeunit 99932 "CRM Worker"
         Code(Rec);
     end;
 
+    var
+        //Contact
+        ContactX: Label 'NCCObjects/NCCObject/Contact/', Locked = true;
+        ContactBaseDataX: Label 'NCCObjects/NCCObject/Unit/BaseData/', Locked = true;
+        PersonDataX: Label 'PersonData', Locked = true;
+        LastNameX: Label 'LastName', Locked = true;
+        FirstNameX: Label 'FirstName', Locked = true;
+        MiddleNameX: Label 'MiddleName', Locked = true;
+        PhysicalAddressX: Label 'PhysicalAddresses/PhysicalAddress', Locked = true;
+        PostalCityX: Label 'PostalCity', Locked = true;
+        CountryCodeX: Label 'CountryCode', Locked = true;
+        AddressLineX: Label 'AddressLine', Locked = true;
+        PostalCodeX: Label 'PostalCode', Locked = true;
+        ElectronicAddressesX: Label 'ElectronicAddresses', Locked = true;
+        ElectronicAddressX: Label 'ElectronicAddress', Locked = true;
+        ProtocolX: Label 'Protocol', Locked = true;
+        ContactPhoneX: Label 'Phone', Locked = true;
+        ContactEmailX: Label 'Email', Locked = true;
+        ContactAddressLine1X: Label 'ContactAddressLine1', Locked = true;
+
 
     local procedure Code(var WebRequestQueue: Record "Web Request Queue")
     var
@@ -155,7 +175,6 @@ codeunit 99932 "CRM Worker"
         BuyerNo: Integer;
         ExpectedRegDate, ActualDate, ExpectedDate : Text;
         Res: Dictionary of [Text, Text];
-        CRMBuyers: Record "CRM Buyers";
         CRMCompany: Record "CRM Company";
 
         UnitX: Label 'NCCObjects/NCCObject/Unit/', Locked = true;
@@ -179,10 +198,7 @@ codeunit 99932 "CRM Worker"
     begin
         Clear(ParsingResult);
 
-        CRMBuyers.Reset();
-        CRMBuyers.SetRange("Unit Guid", FetchedObject.Id);
-        CRMBuyers.SetRange("Version Id", FetchedObject."Version Id");
-        if not CRMBuyers.IsEmpty() then
+        if ObjectAlreadyImported(FetchedObject) then
             exit;
 
         GetRootXmlElement(FetchedObject, XmlElem);
@@ -247,26 +263,63 @@ codeunit 99932 "CRM Worker"
     [TryFunction]
     local procedure ParseContactXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
     var
-        CRMBuyers: Record "CRM Buyers";
-        Cust: Record Customer;
+        XmlElem: XmlElement;
+        XmlNode: XmlNode;
+        XmlNodeList: XmlNodeList;
+        OK: Boolean;
+        BaseXPath: Text;
+        ElemText, ElemText2 : Text;
     begin
         Clear(ParsingResult);
-
-        Cust.Reset();
-        Cust.Setrange("CRM GUID", FetchedObject.Id);
-        Cust.SetRange("Version Id", FetchedObject."Version Id");
-        if Not Cust.IsEmpty then
+        if ObjectAlreadyImported(FetchedObject) then
             exit;
-
-        CRMBuyers.Reset();
-        CRMBuyers.SetRange("Contact Guid", FetchedObject.Id);
-        if CRMBuyers.IsEmpty then begin
-            CRMBuyers.Reset();
-            CRMBuyers.Setrange("Reserving Contact Guid", FetchedObject.Id);
-            if CRMBuyers.IsEmpty then
-                exit;
+        GetRootXmlElement(FetchedObject, XmlElem);
+        BaseXPath := JoinX(ContactX, PersonDataX);
+        GetObjectData(XmlElem, JoinX(BaseXPath, LastNameX), ParsingResult, LastNameX);
+        GetObjectData(XmlElem, JoinX(BaseXPath, FirstNameX), ParsingResult, FirstNameX);
+        GetObjectData(XmlElem, JoinX(BaseXPath, MiddleNameX), ParsingResult, MiddleNameX);
+        BaseXPath := JoinX(ContactX, PhysicalAddressX);
+        if XmlNodeExists(XmlElem, BaseXPath) then begin
+            ElemText2 := '';
+            Ok := GetObjectData(XmlElem, JoinX(BaseXPath, PostalCityX), ParsingResult, PostalCityX);
+            Ok := GetObjectData(XmlElem, JoinX(BaseXPath, CountryCodeX), ParsingResult, CountryCodeX);
+            if GetValue(XmlElem, JoinX(BaseXPath, AddressLineX + '1'), ElemText) then
+                ElemText2 := ElemText;
+            if GetValue(XmlElem, JoinX(BaseXPath, AddressLineX + '2'), ElemText) then begin
+                if ElemText2 <> '' then
+                    ElemText2 += ' ';
+                ElemText2 += ElemText;
+            end;
+            if GetValue(XmlElem, JoinX(BaseXPath, AddressLineX + '3'), ElemText) then begin
+                if ElemText2 <> '' then
+                    ElemText2 += ' ';
+                ElemText2 += ElemText;
+            end;
+            if ElemText2 <> '' then
+                ParsingResult.Add(AddressLineX, ElemText2);
+            Ok := GetObjectData(XmlElem, JoinX(BaseXPath, PostalCodeX), ParsingResult, PostalCodeX);
         end;
-
+        BaseXPath := JoinX(ContactX, ElectronicAddressesX);
+        if XmlElem.SelectNodes(JoinX(BaseXPath, ElectronicAddressX), XmlNodeList) then begin
+            foreach XmlNode in XmlNodeList do begin
+                XmlElem := XmlNode.AsXmlElement();
+                if GetValue(XmlElem, ProtocolX, ElemText) and (ElemText <> '') then begin
+                    GetValue(XmlElem, ContactAddressLine1X, ElemText2);
+                    Case ElemText of
+                        ContactPhoneX:
+                            begin
+                                if ElemText2 <> '' then
+                                    ParsingResult.Add(ContactPhoneX, ElemText2);
+                            end;
+                        ContactEmailX:
+                            begin
+                                if ElemText2 <> '' then
+                                    ParsingResult.Add(ContactEmailX, ElemText2);
+                            end;
+                    End
+                end;
+            end;
+        end;
     end;
 
     [TryFunction]
@@ -416,12 +469,75 @@ codeunit 99932 "CRM Worker"
     end;
 
     [TryFunction]
+    local procedure XmlNodeExists(XmlElem: XmlElement; XPath: Text)
+    var
+        TempXmlNode: XmlNode;
+    begin
+        XmlElem.SelectSingleNode(XPath, TempXmlNode);
+    end;
+
+    [TryFunction]
     local procedure GetValue(XmlElem: XmlElement; xpath: Text; var Value: Text)
     var
         XmlNode: XmlNode;
     begin
+        Value := '';
         XmlElem.SelectSingleNode(xpath, XmlNode);
         Value := GetXmlElementText(XmlNode);
+    end;
+
+    [TryFunction]
+    local procedure GetObjectData(XmlElem: XmlElement; Xpath: Text; var ObjDataContainer: Dictionary of [Text, Text]; FieldKey: Text)
+    var
+        TempXmlElemValue: Text;
+        KeyErr: Label 'No field key specified!';
+    begin
+        GetValue(XmlElem, xpath, TempXmlElemValue);
+        if FieldKey = '' then
+            Error(KeyErr);
+        ObjDataContainer.Add(FieldKey, TempXmlElemValue);
+    end;
+
+    local procedure ObjectAlreadyImported(var FetchedObject: record "CRM Prefetched Object") Result: Boolean
+    var
+        Cust: Record Customer;
+        Agr: Record "Customer Agreement";
+        CRMB: Record "CRM Buyers";
+    begin
+        case FetchedObject.Type of
+            FetchedObject.Type::Unit:
+                begin
+                    CRMB.Reset();
+                    CRMB.SetRange("Unit Guid", FetchedObject.Id);
+                    CRMB.SetRange("Version Id", FetchedObject."Version Id");
+                    Result := not CRMB.IsEmpty();
+                end;
+
+            FetchedObject.Type::Contact:
+                begin
+                    Cust.Reset();
+                    Cust.Setrange("CRM GUID", FetchedObject.Id);
+                    Cust.SetRange("Version Id", FetchedObject."Version Id");
+                    Result := Not Cust.IsEmpty;
+                end;
+
+            FetchedObject.Type::Contract:
+                begin
+                    Agr.Reset();
+                    Agr.SetRange("CRM GUID", FetchedObject.Id);
+                    Agr.SetRange("Version Id", FetchedObject."Version Id");
+                    result := not Agr.IsEmpty;
+                end;
+        end
+    end;
+
+    local procedure JoinX(RootXPath: Text; ChildXPath: Text) Result: Text
+    begin
+        if RootXPath <> '' then begin
+            if not RootXPath.EndsWith('/') then
+                RootXPath := RootXPath + '/'
+        end;
+        Result := RootXPath + ChildXPath;
     end;
 
     local procedure LogEvent(var FetchedObject: Record "CRM Prefetched Object"; LogStatus: Enum "CRM Log Status"; MsgText: Text)
