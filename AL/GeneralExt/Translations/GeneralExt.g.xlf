@@ -138,6 +138,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3587166653 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,1,1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,1,2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot register line. Budget Correction with these parameters already exists!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - NamedType Text003</note>
+        </trans-unit>
         <trans-unit id="Table 3587166653 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
