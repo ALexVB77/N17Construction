@@ -3957,6 +3957,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method OnBeforeReverseEntries - NamedType Text50000</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 481265537 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot change the value of %1 because there are active approval entries for user %2.</source>
+          <target>Вы не можете изменить значение %1, т.к. существуют активные операции утверждения для пользователя %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method OnUserSetupAfterValidateSubstitute - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3249848645 - Method 481265537 - NamedType 3106366241" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unable to find a substitute for %1. Check the substitute chain.</source>
+          <target>Невозможно найти заместителя для %1. Проверьте цепочку замещения.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Base App. Subscribers Mgt. - Method OnUserSetupAfterValidateSubstitute - NamedType LocText002</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3249848645 - Method 2626234649 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>The amount of purchases exceeds the amount of the limit!</source>
           <target>Сумма покупок превышает сумму лимита!</target>
@@ -4407,6 +4421,34 @@
           <target>Архивировать %1 с номером: %2?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PurchPaymentInvoiceArchive - NamedType LocText007</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no one to register.</source>
+          <target>Некого регистрировать.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 3106366241" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unable to find a substitute for %1. Check the substitute chain.</source>
+          <target>Невозможно найти заместителя для %1. Проверьте цепочку замещения.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 3744062858" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to register the absence of %1 of users and delegate active approve entries by the Substitutes?</source>
+          <target>Вы действительно хотите зарегистрировать отсутствие %1 пользователей и делегировать активные операции утверждения заместителям?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to delegate one or more of the selected approval requests.</source>
+          <target>У вас нет разрешений на делегирование одного или нескольких из выбранных запросов на утверждение.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType NoPermissionToDelegateErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 2303713566" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document %1 has been sent to the %2 for approval.</source>
@@ -9400,6 +9442,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report TempStarter - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3049249875 - Action 2257859320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4261702675">
+          <source>Register Absence</source>
+          <target>Регистрация отсутствия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Register Absence - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
           <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
           <target>Новый,Процесс,Отчет,Категория4,Касса,Категория6,Категория7,Категория8,Категория9</target>
@@ -9704,7 +9753,6 @@
           <source>IW Documents</source>
           <target>Документы IW</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field IW Documents - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
@@ -11484,6 +11532,12 @@
           <target>Статус %2 сейчас у пользователя %1. Вы хотите изменить на %3?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - NamedType ConfText001</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3550601874 - Method 418336791 - NamedType 3696890096" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3550601874">
+          <source>Loop detected while looking for substitute: user %1, step %2.</source>
+          <target>Обнаружена петля при поиске заместителя: пользователь %1, шаг %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Method GetUserSubstitute - NamedType LoopErrText</note>
         </trans-unit>
         <trans-unit id="TableExtension 3550601874 - Field 1443314568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Absents</source>
