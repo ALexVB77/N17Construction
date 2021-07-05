@@ -14,27 +14,29 @@ page 70188 "Budget Corrections"
         {
             repeater(Repeater12370003)
             {
+
                 field(Code; Rec.Code)
                 {
                     ApplicationArea = All;
-
+                    Editable = FieldsEditable;
                 }
 
                 field("Project Code"; Rec."Project Code")
                 {
                     ApplicationArea = All;
-
+                    Editable = FieldsEditable;
                 }
 
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
-
+                    Editable = FieldsEditable;
                 }
 
                 field("Dimension Totaling 1"; Rec."Dimension Totaling 1")
                 {
                     ApplicationArea = All;
+                    Editable = FieldsEditable;
                     trigger OnLookup(var Text: text): boolean
                     begin
                         IF Rec.Status = Rec.Status::Active THEN EXIT(FALSE);
@@ -48,6 +50,7 @@ page 70188 "Budget Corrections"
                 field("Dimension Totaling 2"; Rec."Dimension Totaling 2")
                 {
                     ApplicationArea = All;
+                    Editable = FieldsEditable;
                     trigger OnLookup(var Text: text): boolean
                     begin
                         IF Rec.Status = Rec.Status::Active THEN EXIT(FALSE);
@@ -61,6 +64,7 @@ page 70188 "Budget Corrections"
                 field("G/L Account Totaling"; Rec."G/L Account Totaling")
                 {
                     ApplicationArea = All;
+                    Editable = FieldsEditable;
                     trigger OnLookup(var Text: text): boolean
                     var
                         GLAccList: page "G/L Account List";
@@ -93,6 +97,7 @@ page 70188 "Budget Corrections"
                 field("G/L Account Totaling 1"; Rec."G/L Account Totaling 1")
                 {
                     ApplicationArea = All;
+                    Editable = FieldsEditable;
                     trigger OnLookup(var Text: text): boolean
                     var
                         GLAccList: page "G/L Account List";
@@ -125,6 +130,7 @@ page 70188 "Budget Corrections"
                 field("G/L Account Totaling 2"; Rec."G/L Account Totaling 2")
                 {
                     ApplicationArea = All;
+                    Editable = FieldsEditable;
                     trigger OnLookup(var Text: text): boolean
                     var
                         GLAccList: page "G/L Account List";
@@ -157,6 +163,7 @@ page 70188 "Budget Corrections"
                 field("G/L Account Totaling 3"; Rec."G/L Account Totaling 3")
                 {
                     ApplicationArea = All;
+                    Editable = FieldsEditable;
                     trigger OnLookup(var Text: text): boolean
                     var
                         GLAccList: page "G/L Account List";
@@ -189,6 +196,7 @@ page 70188 "Budget Corrections"
                 field("Company Name"; Rec."Company Name")
                 {
                     ApplicationArea = All;
+                    Editable = FieldsEditable;
 
                 }
 
