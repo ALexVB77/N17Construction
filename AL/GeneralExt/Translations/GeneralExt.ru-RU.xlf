@@ -159,6 +159,153 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Apartments - Field Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 3587166653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Correction</source>
+          <target>Бюджет корректировки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target>Код</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company Name</source>
+          <target>Фирма</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Company Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 2553548118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch Adjustments</source>
+          <target>Раздел корректировок</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Correction Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Описание</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 655954573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 1</source>
+          <target>Измерение 1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Dimension Totaling 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 18257956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 2</source>
+          <target>Измерение 2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Dimension Totaling 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3290546822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account</source>
+          <target>Счет ГК</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field G/A Account Totaling - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 617354898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account 1</source>
+          <target>Счет ГК 1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field G/L Account Totaling 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 2999232343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account 2</source>
+          <target>Счет ГК 2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field G/L Account Totaling 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3636928960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account 3</source>
+          <target>Счет ГК 3</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field G/L Account Totaling 3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Batch Name</source>
+          <target>Код Раздела Журнала</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Journal Batch Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3684440170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Template Name</source>
+          <target>Имя Шаблона Журнала</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Journal Template Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Company</source>
+          <target>Оригинальная Фирма</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3775870990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Group</source>
+          <target>Группировка</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Period Group Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 3775870990 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No,Day,Week,Month</source>
+          <target>,День,Неделя,Месяц</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Period Group Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <target>Код проекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 2720485332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Code</source>
+          <target>Код источника</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Source Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Статус</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3587166653 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Active</source>
+          <target> ,Активно</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Status - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 286357085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Building project</source>
           <target>Проект строительства</target>
@@ -9704,7 +9851,6 @@
           <source>IW Documents</source>
           <target>Документы IW</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field IW Documents - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
