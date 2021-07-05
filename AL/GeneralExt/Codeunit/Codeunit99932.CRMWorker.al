@@ -320,6 +320,7 @@ codeunit 99932 "CRM Worker"
                 end;
             end;
         end;
+    end;
 
     [TryFunction]
     local procedure ParseContractXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
