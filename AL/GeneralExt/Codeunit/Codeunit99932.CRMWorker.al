@@ -8,9 +8,34 @@ codeunit 99932 "CRM Worker"
     end;
 
     var
+        //All
+        ObjectTypeX: Label 'Publisher/IntegrationInformation', Locked = true;
+
+        //Unit
+        UnitX: Label 'NCCObjects/NCCObject/Unit/', Locked = true;
+        UnitIdX: Label 'NCCObjects/NCCObject/Unit/BaseData/ObjectID', Locked = true;
+        UnitBuyerNodesX: label 'Buyers/Buyer', Locked = true;
+        UnitBaseDataX: Label 'NCCObjects/NCCObject/Unit/BaseData/', Locked = true;
+        ObjectParentIdX: Label 'ObjectParentID', Locked = true;
+        ReservingContactX: Label 'ContactID', Locked = true;
+        InvestmentObjectX: Label 'Name', Locked = true;
+        BlockNumberX: Label 'BlockNumber', Locked = True;
+        ApartmentNumberX: Label 'ApartmentNumber', Locked = true;
+        ApartmentOriginTypeX: Label 'ObjectAttributes/TypeOfBuildings/TypeOfBuilding/KeyName', Locked = true;
+        ApartmentUnitAreaM2X: Label 'Measurements/UnitAreaM2/ActualValue', Locked = true;
+        ExpectedRegDateX: Label 'KeyDates/ExpectedRegistrationPeriod', Locked = true;
+        ActualDateX: Label 'KeyDates/Sales/ActualDate', Locked = true;
+        ExpectedDateX: Label 'KeyDates/HandedOver/ExpectedDate', Locked = true;
+        UnitBuyerX: Label 'BaseData/ObjectID', Locked = true;
+        UnitBuyerContactX: Label 'BaseData/ContactID', Locked = true;
+        UnitBuyerContractX: Label 'BaseData/ContractID', Locked = true;
+        UnitBuyerOwnershipPrcX: Label 'BaseData/OwnershipPercentage', Locked = true;
+        UnitBuyerIsActiveX: Label 'BaseData/IsActive', Locked = true;
+
         //Contact
         ContactX: Label 'NCCObjects/NCCObject/Contact/', Locked = true;
-        ContactBaseDataX: Label 'NCCObjects/NCCObject/Unit/BaseData/', Locked = true;
+        ContactIdX: Label 'NCCObjects/NCCObject/Contact/BaseData/ObjectID', Locked = true;
+        ContactBaseDataX: Label 'NCCObjects/NCCObject/Contact/BaseData/', Locked = true;
         PersonDataX: Label 'PersonData', Locked = true;
         LastNameX: Label 'LastName', Locked = true;
         FirstNameX: Label 'FirstName', Locked = true;
@@ -26,6 +51,22 @@ codeunit 99932 "CRM Worker"
         ContactPhoneX: Label 'Phone', Locked = true;
         ContactEmailX: Label 'Email', Locked = true;
         ContactAddressLine1X: Label 'ContactAddressLine1', Locked = true;
+
+        //Contract
+        ContractX: Label 'NCCObjects/NCCObject/Contract/', Locked = true;
+        ContractIdX: Label 'NCCObjects/NCCObject/Contract/BaseData/ObjectID', Locked = true;
+        ContractUnitIdX: Label 'NCCObjects/NCCObject/Contract/BaseData/ObjectParentID', Locked = true;
+        ContractBaseDataX: Label 'NCCObjects/NCCObject/Contract/BaseData/', Locked = true;
+        ContractNoX: Label 'Name', Locked = true;
+        ContractTypeX: Label 'ObjectType', Locked = true;
+        ContractStatusX: Label 'ObjectStatus/KeyName', Locked = true;
+        ContractCancelStatusX: Label 'CancelStatus/KeyName', Locked = true;
+        ContractIsActiveX: Label 'IsActive', Locked = true;
+        ExtAgreementNoX: Label 'ObjectNumber', Locked = true;
+        ApartmentAmountX: Label 'FinanceData/ContractPrice', Locked = true;
+        FinishingInclX: Label 'FinanceData/FullFinishingPrice', Locked = true;
+        ContractBuyerNodesX: Label 'Buyers/Buyer', Locked = true;
+        ContractBuyerX: Label 'BaseData/ObjectID', Locked = true;
 
 
     local procedure Code(var WebRequestQueue: Record "Web Request Queue")
@@ -97,25 +138,16 @@ codeunit 99932 "CRM Worker"
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
         GetRootXmlElement(ObjectXmlText, RootXmlElement);
-        RootXmlElement.SelectSingleNode('Publisher/IntegrationInformation', XmlNode);
-        ObjectType := GetXmlElementText(XmlNode);
+        GetValue(RootXmlElement, ObjectTypeX, ObjectType);
         case UpperCase(ObjectType) of
             'UNIT':
-                begin
-                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Unit/BaseData/ObjectID', XmlNode);
-                    ObjectIdText := GetXmlElementText(XmlNode);
-                end;
+                GetValue(RootXmlElement, UnitIdX, ObjectIdText);
             'CONTACT':
-                begin
-                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Contact/BaseData/ObjectID', XmlNode);
-                    ObjectIdText := GetXmlElementText(XmlNode);
-                end;
+                GetValue(RootXmlElement, ContactIdX, ObjectIdText);
             'CONTRACT':
                 begin
-                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Contract/BaseData/ObjectID', XmlNode);
-                    ObjectIdText := GetXmlElementText(XmlNode);
-                    RootXmlElement.SelectSingleNode('NCCObjects/NCCObject/Contract/BaseData/ObjectParentID', XmlNode);
-                    ParentObjectIdText := GetXmlElementText(XmlNode);
+                    GetValue(RootXmlElement, ContractIdX, ObjectIdText);
+                    GetValue(RootXmlElement, ContractUnitIdX, ParentObjectIdText);
                 end;
             else
                 Error('Unknown Object Type %1', ObjectType);
@@ -176,87 +208,38 @@ codeunit 99932 "CRM Worker"
         ExpectedRegDate, ActualDate, ExpectedDate : Text;
         Res: Dictionary of [Text, Text];
         CRMCompany: Record "CRM Company";
-
-        UnitX: Label 'NCCObjects/NCCObject/Unit/', Locked = true;
-        BuyerX: label 'Buyers/Buyer', Locked = true;
-        BaseDataX: Label 'NCCObjects/NCCObject/Unit/BaseData/', Locked = true;
-        ObjectParentIdX: Label 'ObjectParentID', Locked = true;
-        ContactIdX: Label 'ContactID', Locked = true;
-        NameX: Label 'Name', Locked = true;
-        BlockNumberX: Label 'BlockNumber', Locked = True;
-        ApartmentNumberX: Label 'ApartmentNumber', Locked = true;
-        ApartmentOriginTypeX: Label 'ObjectAttributes/TypeOfBuildings/TypeOfBuilding/KeyName', Locked = true;
-        ApartmentUnitAreaM2X: Label 'Measurements/UnitAreaM2/ActualValue', Locked = true;
-        ExpectedRegDateX: Label 'KeyDates/ExpectedRegistrationPeriod', Locked = true;
-        ActualDateX: Label 'KeyDates/Sales/ActualDate', Locked = true;
-        ExpectedDateX: Label 'KeyDates/HandedOver/ExpectedDate', Locked = true;
-        BuyerObjectIdX: Label 'BaseData/ObjectID', Locked = true;
-        BuyerContactIdX: Label 'BaseData/ContactID', Locked = true;
-        BuyerContractIdX: Label 'BaseData/ContractID', Locked = true;
-        BuyerOwnPrcX: Label 'BaseData/OwnershipPercentage', Locked = true;
-        BuyerIsActiveX: Label 'BaseData/IsActive', Locked = true;
+        OK: Boolean;
+        No: Text[2];
     begin
         Clear(ParsingResult);
-
         if ObjectAlreadyImported(FetchedObject) then
             exit;
-
         GetRootXmlElement(FetchedObject, XmlElem);
-        GetValue(XmlElem, BaseDataX + ObjectParentIdX, ElemText);
+        GetValue(XmlElem, JoinX(UnitBaseDataX, ObjectParentIdX), ElemText);
         EVALUATE(CRMCompany."Project Guid", ElemText);
         CRMCompany.Find('=');
         if CRMCompany."Company Name" <> CompanyName() then
             exit;
-
-        GetValue(XmlElem, BaseDataX + ContactIdX, ElemText);
-        ParsingResult.Add('ReservingContactGuid', ElemText);
-        GetValue(XmlElem, BaseDataX + NameX, ElemText);
-        ParsingResult.Add('ObjectOfInvesting', ElemText);
-        ElemText := '';
-        ElemText2 := '';
-        GetValue(XmlElem, BaseDataX + BlockNumberX, ElemText);
-        GetValue(XmlElem, BaseDataX + ApartmentNumberX, ElemText2);
-        if (ElemText + ElemText2) <> '' then
-            ParsingResult.Add('ApartmentDescription', ElemText + ' ' + ElemText2);
-        if GetValue(XmlElem, UnitX + ApartmentOriginTypeX, ElemText) then begin
-            if ElemText <> '' then
-                ParsingResult.Add('ApartmentOriginType', ElemText);
-        end;
-        if GetValue(XmlElem, UnitX + ApartmentUnitAreaM2X, ElemText) then begin
-            if ElemText <> '' then
-                ParsingResult.Add('ApartmentUnitAreaM2', ElemText);
-        end;
-        if GetValue(XmlElem, UnitX + ExpectedRegDateX, ElemText) then
-            ExpectedRegDate := ElemText;
-        if GetValue(XmlElem, UnitX + ActualDateX, ElemText) then
-            ActualDate := ElemText;
-        if GetValue(XmlElem, UnitX + ExpectedDateX, ElemText) then
-            ExpectedDate := ElemText;
-
-        if not XmlElem.SelectNodes(UnitX + BuyerX, XmlNodeList) then
+        GetObjectData(XmlElem, JoinX(UnitBaseDataX, ReservingContactX), ParsingResult, ReservingContactX);
+        GetObjectData(XmlElem, JoinX(UnitBaseDataX, InvestmentObjectX), ParsingResult, InvestmentObjectX);
+        OK := GetObjectData(XmlElem, JoinX(UnitBaseDataX, BlockNumberX), ParsingResult, BlockNumberX);
+        OK := GetObjectData(XmlElem, JoinX(UnitBaseDataX, ApartmentNumberX), ParsingResult, ApartmentNumberX);
+        OK := GetObjectData(XmlElem, JoinX(UnitX, ApartmentOriginTypeX), ParsingResult, ApartmentOriginTypeX);
+        OK := GetObjectData(XmlElem, JoinX(UnitX, ApartmentUnitAreaM2X), ParsingResult, ApartmentUnitAreaM2X);
+        OK := GetObjectData(XmlElem, JoinX(UnitX, ExpectedRegDateX), ParsingResult, ExpectedRegDateX);
+        OK := GetObjectData(XmlElem, JoinX(UnitX, ActualDateX), ParsingResult, ActualDateX);
+        OK := GetObjectData(XmlElem, JoinX(UnitX, ExpectedDateX), ParsingResult, ExpectedDateX);
+        if not XmlElem.SelectNodes(JoinX(UnitX, UnitBuyerNodesX), XmlNodeList) then
             exit;
-        if XmlNodeList.Count = 0 then
-            exit;
-        BuyerNo := 1;
+        No := '1';
         foreach XmlNode in XmlNodeList do begin
             XmlElem := XmlNode.AsXmlElement();
-            GetValue(XmlElem, BuyerObjectIdX, ElemText);
-            ParsingResult.Add(StrSubstNo('BuyerGuid%1', BuyerNo), ElemText);
-            GetValue(XmlElem, BuyerContactIdX, ElemText);
-            ParsingResult.Add(StrSubstNo('ContactGuid%1', BuyerNo), ElemText);
-            GetValue(XmlElem, BuyerContractIdX, ElemText);
-            ParsingResult.Add(StrSubstNo('ContractGuid%1', BuyerNo), ElemText);
-            if GetValue(XmlElem, BuyerOwnPrcX, ElemText) then
-                ParsingResult.Add(StrSubstNo('OwnershipPercentage%1', BuyerNo), ElemText);
-            ElemText := '';
-            if GetValue(XmlElem, BuyerIsActiveX, ElemText) then
-                ParsingResult.Add(StrSubstNo('BuyerIsActive%1', BuyerNo), ElemText);
-            if ElemText <> 'false' then begin
-                ParsingResult.Add(StrSubstNo('ExpectedRegDate%1', BuyerNo), ExpectedRegDate);
-                ParsingResult.Add(StrSubstNo('ActualDate%1', BuyerNo), ActualDate);
-                ParsingResult.Add(StrSubstNo('ExpectedDate%1', BuyerNo), ExpectedDate);
-            end;
-            BuyerNo += 1;
+            GetObjectData(XmlElem, UnitBuyerX, ParsingResult, UnitBuyerX + No);
+            GetObjectData(XmlElem, UnitBuyerContactX, ParsingResult, UnitBuyerContactX + No);
+            GetObjectData(XmlElem, UnitBuyerContractX, ParsingResult, UnitBuyerContractX + No);
+            OK := GetObjectData(XmlElem, UnitBuyerOwnershipPrcX, ParsingResult, UnitBuyerOwnershipPrcX + No);
+            OK := GetObjectData(XmlElem, UnitBuyerIsActiveX, ParsingResult, UnitBuyerIsActiveX + No);
+            No := IncStr(No);
         end;
     end;
 
@@ -300,32 +283,57 @@ codeunit 99932 "CRM Worker"
             Ok := GetObjectData(XmlElem, JoinX(BaseXPath, PostalCodeX), ParsingResult, PostalCodeX);
         end;
         BaseXPath := JoinX(ContactX, ElectronicAddressesX);
-        if XmlElem.SelectNodes(JoinX(BaseXPath, ElectronicAddressX), XmlNodeList) then begin
-            foreach XmlNode in XmlNodeList do begin
-                XmlElem := XmlNode.AsXmlElement();
-                if GetValue(XmlElem, ProtocolX, ElemText) and (ElemText <> '') then begin
-                    GetValue(XmlElem, ContactAddressLine1X, ElemText2);
-                    Case ElemText of
-                        ContactPhoneX:
-                            begin
-                                if ElemText2 <> '' then
-                                    ParsingResult.Add(ContactPhoneX, ElemText2);
-                            end;
-                        ContactEmailX:
-                            begin
-                                if ElemText2 <> '' then
-                                    ParsingResult.Add(ContactEmailX, ElemText2);
-                            end;
-                    End
-                end;
+        if not XmlElem.SelectNodes(JoinX(BaseXPath, ElectronicAddressX), XmlNodeList) then
+            exit;
+        foreach XmlNode in XmlNodeList do begin
+            XmlElem := XmlNode.AsXmlElement();
+            if GetValue(XmlElem, ProtocolX, ElemText) and (ElemText <> '') then begin
+                GetValue(XmlElem, ContactAddressLine1X, ElemText2);
+                Case ElemText of
+                    ContactPhoneX:
+                        begin
+                            if ElemText2 <> '' then
+                                ParsingResult.Add(ContactPhoneX, ElemText2);
+                        end;
+                    ContactEmailX:
+                        begin
+                            if ElemText2 <> '' then
+                                ParsingResult.Add(ContactEmailX, ElemText2);
+                        end;
+                End
             end;
         end;
     end;
 
     [TryFunction]
     local procedure ParseContractXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
+    var
+        XmlElem: XmlElement;
+        XmlNode: XmlNode;
+        XmlNodeList: XmlNodeList;
+        OK: Boolean;
+        No: Text[2];
     begin
-
+        Clear(ParsingResult);
+        if ObjectAlreadyImported(FetchedObject) then
+            exit;
+        GetRootXmlElement(FetchedObject, XmlElem);
+        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractNoX), ParsingResult, ContractNoX);
+        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractTypeX), ParsingResult, ContractTypeX);
+        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractStatusX), ParsingResult, ContractStatusX);
+        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractCancelStatusX), ParsingResult, ContractCancelStatusX);
+        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractIsActiveX), ParsingResult, ContractIsActiveX);
+        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ExtAgreementNoX), ParsingResult, ExtAgreementNoX);
+        GetObjectData(XmlElem, JoinX(ContractX, ApartmentAmountX), ParsingResult, ApartmentAmountX);
+        OK := GetObjectData(XmlElem, JoinX(ContractX, FinishingInclX), ParsingResult, FinishingInclX);
+        if not XmlElem.SelectNodes(JoinX(ContractX, ContractBuyerNodesX), XmlNodeList) then
+            exit;
+        No := '1';
+        foreach XmlNode in XmlNodeList do begin
+            XmlElem := XmlNode.AsXmlElement();
+            GetObjectData(XmlElem, ContractBuyerX, ParsingResult, ContractBuyerX + No);
+            No := IncStr(No);
+        end;
     end;
 
     local procedure ImportUnit(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
@@ -333,8 +341,8 @@ codeunit 99932 "CRM Worker"
         CRMBuyer: Record "CRM Buyers";
         Apartments: Record Apartments;
         Value: Text;
-        BuyerNo: Integer;
         TempDT: DateTime;
+        No: Text[2];
     begin
         if ParsingResult.Count = 0 then
             exit;
@@ -345,63 +353,64 @@ codeunit 99932 "CRM Worker"
         CRMBuyer.Init();
         CRMBuyer."Unit Guid" := FetchedObject.Id;
         CRMBuyer."Version Id" := FetchedObject."Version Id";
-        if ParsingResult.Get('ReservingContactGuid', Value) then
+        if ParsingResult.Get(ReservingContactX, Value) then
             Evaluate(CRMBuyer."Reserving Contact Guid", Value);
-
-        if ParsingResult.Get('ObjectOfInvesting', Value) then begin
+        if ParsingResult.Get(InvestmentObjectX, Value) then begin
             CRMBuyer."Object of Investing" := Value;
             Apartments."Object No." := CRMBuyer."Object of Investing";
-            if ParsingResult.Get('ApartmentDescription', Value) then
-                Apartments.Description := Value;
-            if ParsingResult.Get('ApartmentOriginType', Value) then
+            if ParsingResult.Get(BlockNumberX, Value) then
+                Apartments.Description := Value.Trim();
+            if ParsingResult.Get(ApartmentNumberX, Value) then begin
+                if (Apartments.Description <> '') and (not Apartments.Description.EndsWith(' ')) then
+                    Apartments.Description += ' ';
+                Apartments.Description += Value.Trim();
+            end;
+            if ParsingResult.Get(ApartmentOriginTypeX, Value) then
                 Apartments."Origin Type" := CopyStr(Format(Value), 1, MaxStrLen(Apartments."Origin Type"));
-            if ParsingResult.Get('ApartmentUnitAreaM2', Value) then
+            if ParsingResult.Get(ApartmentUnitAreaM2X, Value) then
                 if Evaluate(Apartments."Total Area (Project)", Value, 9) then;
             if not Apartments.Insert(True) then
                 Apartments.Modify(True);
         end;
-
-        if not ParsingResult.Get('BuyerGuid1', Value) then begin
+        No := '1';
+        if not ParsingResult.Get(UnitBuyerX + No, Value) then begin
             CRMBuyer.Insert(true);
             exit;
         end;
-
-        BuyerNo := 1;
         repeat
-            if not ParsingResult.Get(StrSubstNo('BuyerGuid%1', BuyerNo), Value) then
-                exit
-            else begin
-                Evaluate(CRMBuyer."Buyer Guid", Value);
-                if ParsingResult.Get(StrSubstNo('ContactGuid%1', BuyerNo), Value) then
-                    Evaluate(CRMBuyer."Contact Guid", Value);
-                if ParsingResult.Get(StrSubstNo('ContractGuid%1', BuyerNo), Value) then
-                    Evaluate(CRMBuyer."Contract Guid", Value);
-                if ParsingResult.Get(StrSubstNo('OwnershipPercentage%1', BuyerNo), Value) then
-                    Evaluate(CRMBuyer."Ownership Percentage", Value, 9)
-                Else
-                    CRMBuyer."Ownership Percentage" := 100;
-                CRMBuyer."Buyer Is Active" := true;
-                if ParsingResult.Get(StrSubstNo('BuyerIsActive%1', BuyerNo), Value) then begin
-                    if Value = 'false' then
-                        CRMBuyer."Buyer Is Active" := false;
-                end;
-                if CRMBuyer."Buyer Is Active" then begin
-                    CRMBuyer."Expected Registration Period" := 0;
-                    if ParsingResult.Get(StrSubstNo('ExpectedRegDate%1', BuyerNo), Value) then
-                        Evaluate(CRMBuyer."Expected Registration Period", Value, 9);
-                    CRMBuyer."Agreement Start" := 0D;
-                    if ParsingResult.Get(StrSubstNo('ActualDate%1', BuyerNo), Value) then
-                        if Evaluate(TempDT, Value, 9) then
-                            CRMBuyer."Agreement Start" := DT2Date(TempDT) - CRMBuyer."Expected Registration Period";
-                    CRMBuyer."Agreement End" := 0D;
-                    if ParsingResult.Get(StrSubstNo('ExpectedDate%1', BuyerNo), Value) then
-                        if Evaluate(TempDT, Value, 9) then
-                            CRMBuyer."Agreement End" := DT2Date(TempDT);
-                end;
-                CRMBuyer.Insert(true);
-                BuyerNo += 1;
+            Evaluate(CRMBuyer."Buyer Guid", Value);
+            if ParsingResult.Get(UnitBuyerContactX + No, Value) then
+                Evaluate(CRMBuyer."Contact Guid", Value);
+            if ParsingResult.Get(UnitBuyerContractX + No, Value) then
+                Evaluate(CRMBuyer."Contract Guid", Value);
+            if ParsingResult.Get(UnitBuyerOwnershipPrcX + No, Value) then
+                Evaluate(CRMBuyer."Ownership Percentage", Value, 9)
+            Else
+                CRMBuyer."Ownership Percentage" := 100;
+            CRMBuyer."Buyer Is Active" := true;
+            if ParsingResult.Get(UnitBuyerIsActiveX + No, Value) then begin
+                if Value = 'false' then
+                    CRMBuyer."Buyer Is Active" := false;
             end;
-        until BuyerNo > 5;
+            if CRMBuyer."Buyer Is Active" then begin
+                CRMBuyer."Expected Registration Period" := 0;
+                if ParsingResult.Get(ExpectedRegDateX + No, Value) then
+                    Evaluate(CRMBuyer."Expected Registration Period", Value, 9);
+                CRMBuyer."Agreement Start" := 0D;
+                if ParsingResult.Get(ActualDateX + No, Value) then
+                    if Evaluate(TempDT, Value, 9) then
+                        CRMBuyer."Agreement Start" := DT2Date(TempDT) - CRMBuyer."Expected Registration Period";
+                CRMBuyer."Agreement End" := 0D;
+                if ParsingResult.Get(ExpectedDateX + No, Value) then
+                    if Evaluate(TempDT, Value, 9) then
+                        CRMBuyer."Agreement End" := DT2Date(TempDT);
+            end;
+            CRMBuyer."Version Id" := FetchedObject."Version Id";
+            CRMBuyer.Insert(true);
+            No := IncStr(No);
+            if not ParsingResult.Get(UnitBuyerX + No, Value) then
+                exit
+        until No = '99';
     end;
 
     local procedure ImportContact(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
@@ -452,8 +461,7 @@ codeunit 99932 "CRM Worker"
         FetchedObject.CalcFields(Xml);
         FetchedObject.Testfield(xml);
         FetchedObject.Xml.CreateInStream(InStrm);
-        if not TryLoadXml(InStrm, XmlDoc) then
-            Error(GetLastErrorText());
+        TryLoadXml(InStrm, XmlDoc);
         XmlDoc.GetRoot(RootXmlElement);
     end;
 
@@ -463,8 +471,7 @@ codeunit 99932 "CRM Worker"
     var
         XmlDoc: XmlDocument;
     begin
-        if not TryLoadXml(InputXmlText, XmlDoc) then
-            Error(GetLastErrorText());
+        TryLoadXml(InputXmlText, XmlDoc);
         XmlDoc.GetRoot(RootXmlElement);
     end;
 
