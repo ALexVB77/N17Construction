@@ -3423,6 +3423,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - Method 2558096733 - NamedType 3720241846" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No field key specified!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - Method GetObjectData - NamedType KeyErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1454544725" size-unit="char" translate="yes" xml:space="preserve">
           <source>There is no attachment!</source>
           <note from="Developer" annotates="general" priority="2"></note>
