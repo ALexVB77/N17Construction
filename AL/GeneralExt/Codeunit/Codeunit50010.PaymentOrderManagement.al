@@ -1067,7 +1067,7 @@ codeunit 50010 "Payment Order Management"
             8:
                 ChangeStatusMessage := FinalText1;
             9:
-                ChangeStatusMessage := FinalText1
+                ChangeStatusMessage := FinalText2;
         end;
     end;
 
