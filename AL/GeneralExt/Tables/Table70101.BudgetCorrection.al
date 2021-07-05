@@ -1,6 +1,8 @@
 table 70101 "Budget Correction"
 {
     Caption = 'Budget Correction';
+    // LookupPageId = "Budget Corrections";
+    // DrillDownPageId = "Budget Corrections";
 
     fields
     {

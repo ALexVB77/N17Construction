@@ -253,6 +253,261 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Status - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 105916358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Correction Journal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,1,1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1,1,2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2226926547 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Advances</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Advances - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1181343548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allocation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Allocation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3589430442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (New)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Amount 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3677192552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount Including VAT (new)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Amount Including VAT 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2927622491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Budget Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Company Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2553548118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch Correction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Correction Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1895217469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COST TYPE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Cost Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Creation Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2562677227 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Diff Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2585399436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Dimension Error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 655954573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Dimension Totaling 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 18257956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Dimension Totaling 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2670336395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Doc No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 329134311 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Entry No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1003030937 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exist Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Exist Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 925344621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exist Error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Exist Error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field External Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 4096469817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field G/L Account Totaling - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code Batch Journal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Journal Batch Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3684440170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch Jornal Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Journal Template Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1077555671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Original Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 112760607 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Original Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 35450067 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Posted - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3183615905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Priod Group Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3183615905 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Week,Month</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Priod Group Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1007550757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Real Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Real Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3075382076 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Real Contragent Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Real Contragent Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1219073892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Real Contragent no.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Real Contragent No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1505700618 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Real External Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Real External Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2743825047 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recognition of Expenses</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field RecognitionOfExpenses - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Reversed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 534261515 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Reversed ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 2720485332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Source Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1546913952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field User id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1246077090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field VAT % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3418027727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount (new)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field VAT Amount 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 3119688693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Vendor Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 105916358 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Vendor No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 286357085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Building project</source>
           <note from="Developer" annotates="general" priority="2"></note>
