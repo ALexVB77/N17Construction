@@ -8263,6 +8263,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Register Absence - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3049249875 - Action 3262684561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4261702675">
+          <source>Unregister Absence</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Unregister Absence - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
           <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
           <note from="Developer" annotates="general" priority="2"></note>

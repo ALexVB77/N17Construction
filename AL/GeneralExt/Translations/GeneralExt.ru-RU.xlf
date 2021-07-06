@@ -4907,21 +4907,18 @@
           <source>There is no one to unregister.</source>
           <target>Отменить регистрацию некому.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3744062858" size-unit="char" translate="yes" xml:space="preserve">
           <source>Are you sure you want to unregister the absence of %1 of users and return active approve entries to the original Approvers?</source>
           <target>Вы действительно хотите отменить регистрацию отсутствия %1 пользователей и вернуть активные операции утверждения исходным утверждающим?</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText003</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to return one or more of the selected approval requests.</source>
           <target>У вас нет разрешений на возврат одного или нескольких из выбранных запросов на утверждение.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType NoPermissionToDelegateErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 2303713566" size-unit="char" translate="yes" xml:space="preserve">
@@ -9921,6 +9918,13 @@
           <target>Регистрация отсутствия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Register Absence - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3049249875 - Action 3262684561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4261702675">
+          <source>Unregister Absence</source>
+          <target>Отменить регистрацию отсутствия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Unregister Absence - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
           <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
