@@ -6,6 +6,7 @@ report 70009 "Item Shipment M-19"
 
     Caption = 'Item Shipment M-19';
     ProcessingOnly = true;
+    UseRequestPage = true;
 
     dataset
     {
@@ -118,16 +119,19 @@ report 70009 "Item Shipment M-19"
                 {
                     field(Employee2; Employee2)
                     {
+                        ApplicationArea = All;
                         Caption = 'Project Manager';
                         TableRelation = Employee;
                     }
                     field(Employee3; Employee3)
                     {
+                        ApplicationArea = All;
                         Caption = 'Report verified by';
                         TableRelation = Employee;
                     }
                     field(ReportDate; ReportDate)
                     {
+                        ApplicationArea = All;
                         Caption = 'Report Date';
                         // NC 52624 > EP
                         // Ну это мем какой-то, отключил
