@@ -1183,6 +1183,7 @@ codeunit 50010 "Payment Order Management"
         LocText001: label 'There is no one to register.';
         LocText002: label 'Unable to find a substitute for %1. Check the substitute chain.';
         LocText003: label 'Are you sure you want to register the absence of %1 of users and delegate active approve entries by the Substitutes?';
+        LocText004: Label 'The absence is registered.';
         NoPermissionToDelegateErr: Label 'You do not have permission to delegate one or more of the selected approval requests.';
     begin
         AbsentList.SetRange(Absents, false);
@@ -1220,6 +1221,7 @@ codeunit 50010 "Payment Order Management"
             UserSetupToUpdate.Absents := true;
             UserSetupToUpdate.Modify(true);
         until AbsentList.Next() = 0;
+        Message(LocText004);
     end;
 
     procedure RegisterUserPresence(var PresenceList: Record "User Setup");
@@ -1230,6 +1232,7 @@ codeunit 50010 "Payment Order Management"
         PurchHeader: Record "Purchase Header";
         LocText001: label 'There is no one to unregister.';
         LocText003: label 'Are you sure you want to unregister the absence of %1 of users and return active approve entries to the original Approvers?';
+        LocText004: Label 'Absence registration canceled';
         NoPermissionToDelegateErr: Label 'You do not have permission to return one or more of the selected approval requests.';
     begin
         PresenceList.SetRange(Absents, false);
@@ -1261,6 +1264,7 @@ codeunit 50010 "Payment Order Management"
             UserSetupToUpdate.Absents := false;
             UserSetupToUpdate.Modify(true);
         until PresenceList.Next() = 0;
+        Message(LocText004);
     end;
 
 }

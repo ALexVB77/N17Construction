@@ -4684,7 +4684,6 @@
           <source>Error caught in isolated storage: %1</source>
           <target>Ошибка пойманная в isolated storage: %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
@@ -4897,6 +4896,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText003</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 86792179" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The absence is registered.</source>
+          <target>Отсутствие зарегистрировано.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText004</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to delegate one or more of the selected approval requests.</source>
           <target>У вас нет разрешений на делегирование одного или нескольких из выбранных запросов на утверждение.</target>
@@ -4914,6 +4920,13 @@
           <target>Вы действительно хотите отменить регистрацию отсутствия %1 пользователей и вернуть активные операции утверждения исходным утверждающим?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 86792179" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Absence registration canceled.</source>
+          <target>Регистрация отсутствия отменена.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText004</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to return one or more of the selected approval requests.</source>
@@ -9827,14 +9840,12 @@
           <source>Item Shipment M-19</source>
           <target>Материальный отчет М-19</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2721895639 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
           <source>по учету материально-производственные запасов  на строительной площадке %1</source>
           <target>по учету материально-производственные запасов  на строительной площадке %1</target>
           <note from="Developer" annotates="general" priority="2">%1 = Location Name</note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0001</note>
         </trans-unit>
         <trans-unit id="Report 2721895639 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9848,21 +9859,18 @@
           <source>Project Manager</source>
           <target>Руководитель проекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2721895639 - Control 2505206331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Report verified by</source>
           <target>Отчет проверил</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee3 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2721895639 - Control 497847406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Report Date</source>
           <target>Отчет составлен</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control ReportDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2923491568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
