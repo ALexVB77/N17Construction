@@ -1308,6 +1308,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3861211528 - Field 2367459121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pref Forecast Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Pref Forecast Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3861211528 - Field 1301274640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pref Vesion Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1427,6 +1432,61 @@
           <source>Version No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Document Attachment Archive - Field Version No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Create User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 2859300660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field First Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 362031637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Int - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 4200994410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modify Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Last Modify Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Version Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 1215052562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Version Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 729295803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>G/L Account Mapping</source>

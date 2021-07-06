@@ -275,7 +275,7 @@
         </trans-unit>
         <trans-unit id="Table 3587166653 - Field 3775870990 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>No,Day,Week,Month</source>
-          <target>,День,Неделя,Месяц</target>
+          <target>[NAB: REVIEW],День,Неделя,Месяц</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Option no. 0 of source is "No", but the same option in target is "". Empty Options must be empty in both source and target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Period Group Type - Property OptionCaption</note>
@@ -428,7 +428,6 @@
           <source>Dimension 2</source>
           <target>Измерение 2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Dimension Totaling 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 105916358 - Field 2670336395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1571,6 +1570,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3861211528 - Field 2367459121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pref Forecast Code</source>
+          <target>Префикс кодировки версий Прогноза</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Development Setup - Field Pref Forecast Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3861211528 - Field 1301274640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pref Vesion Code</source>
           <target>Префикс кодировки версий</target>
@@ -1714,6 +1719,80 @@
           <target>Номер версии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Document Attachment Archive - Field Version No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast Version</source>
+          <target>Forecast Version</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 496290540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Date</source>
+          <target>Дата создания</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Create Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 2119591935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create User</source>
+          <target>Создал пользователь</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Create User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Описание</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 2859300660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Version</source>
+          <target>Базовая версия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field First Version - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 362031637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int</source>
+          <target>Int</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Int - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 4200994410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Modify Date</source>
+          <target>Дата последнего изменения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Last Modify Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 3162765170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Company</source>
+          <target>Original Company</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Original Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <target>Код проекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Project Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 3414580985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Code</source>
+          <target>Код версии</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Version Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3042841651 - Field 1215052562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Date</source>
+          <target>Дата Версии</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Forecast Version - Field Version Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 729295803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>G/L Account Mapping</source>
@@ -5045,7 +5124,6 @@
           <source>Powered by budget lines: %1</source>
           <target>[Создано строк бюджета: %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Page 105916358 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
@@ -5082,7 +5160,6 @@
           <source>Get</source>
           <target>Получить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action Control12370049 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 105916358 - Action 261610131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9157,7 +9234,6 @@
           <source>ПРОЕКТ</source>
           <target>ПРОЕКТ</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0019</note>
         </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10513,7 +10589,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -10940,7 +11016,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
