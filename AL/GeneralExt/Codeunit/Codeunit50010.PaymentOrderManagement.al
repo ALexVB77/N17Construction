@@ -1198,6 +1198,7 @@ codeunit 50010 "Payment Order Management"
             SubstituteUserId := UserSetup.GetUserSubstitute(AbsentList.Substitute, -1);
             if SubstituteUserId = '' then
                 error(LocText002, AbsentList."User ID");
+            ApprovalEntry.SetCurrentKey("Approver ID", Status);
             ApprovalEntry.SetRange("Approver ID", AbsentList."User ID");
             ApprovalEntry.SetFilter(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Open);
             if ApprovalEntry.FindSet() then
@@ -1206,12 +1207,12 @@ codeunit 50010 "Payment Order Management"
                         if not ApprovalEntry.CanCurrentUserEdit then
                             Error(NoPermissionToDelegateErr);
                         ApprovalEntryToUpdate := ApprovalEntry;
-                        // ApprovalEntryToUpdate."Delegated From Approver ID" := ApprovalEntryToUpdate."Approver ID";
+                        ApprovalEntryToUpdate."Delegated From Approver ID" := ApprovalEntryToUpdate."Approver ID";
                         ApprovalEntryToUpdate."Approver ID" := SubstituteUserId;
                         ApprovalEntryToUpdate.Modify(true);
 
                         PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
-                        PurchHeader."Process User" := SubstituteUserId;
+                        PurchHeader."Process User" := ApprovalEntryToUpdate."Approver ID";
                         PurchHeader.Modify();
                     end;
                 until ApprovalEntry.Next() = 0;
@@ -1221,5 +1222,41 @@ codeunit 50010 "Payment Order Management"
         until AbsentList.Next() = 0;
     end;
 
+    procedure RegisterUserPresence(PresenceList: Record "User Setup");
+    var
+        ApprovalEntry: Record "Approval Entry";
+        ApprovalEntryToUpdate: Record "Approval Entry";
+        PurchHeader: Record "Purchase Header";
+        LocText001: label 'There is no one to unregister.';
+        LocText003: label 'Are you sure you want to unregister the absence of %1 of users and return active approve entries to the original Approvers?';
+        NoPermissionToDelegateErr: Label 'You do not have permission to return one or more of the selected approval requests.';
+    begin
+        PresenceList.SetRange(Absents, false);
+        if PresenceList.IsEmpty then begin
+            Message(LocText001);
+            exit;
+        end;
+        if not Confirm(LocText003, true, PresenceList.Count) then
+            exit;
+        PresenceList.FindSet();
+        repeat
+            ApprovalEntry.SetCurrentKey("Delegated From Approver ID", Status);
+            ApprovalEntry.SetFilter("Delegated From Approver ID", '<>%1', '');
+            ApprovalEntry.SetFilter(Status, '%1|%2', ApprovalEntry.Status::Created, ApprovalEntry.Status::Open);
+            if ApprovalEntry.FindSet() then
+                repeat
+                    if not ApprovalEntry.CanCurrentUserEdit then
+                        Error(NoPermissionToDelegateErr);
+                    ApprovalEntryToUpdate := ApprovalEntry;
+                    ApprovalEntryToUpdate."Approver ID" := ApprovalEntryToUpdate."Delegated From Approver ID";
+                    ApprovalEntryToUpdate."Delegated From Approver ID" := '';
+                    ApprovalEntryToUpdate.Modify(true);
+
+                    PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+                    PurchHeader."Process User" := ApprovalEntryToUpdate."Approver ID";
+                    PurchHeader.Modify();
+                until ApprovalEntry.Next() = 0;
+        until PresenceList.Next() = 0;
+    end;
 
 }

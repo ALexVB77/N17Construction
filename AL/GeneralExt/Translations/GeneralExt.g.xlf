@@ -4083,6 +4083,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType NoPermissionToDelegateErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no one to unregister.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3744062858" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to unregister the absence of %1 of users and return active approve entries to the original Approvers?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to return one or more of the selected approval requests.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType NoPermissionToDelegateErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 2303713566" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document %1 has been sent to the %2 for approval.</source>
           <note from="Developer" annotates="general" priority="2"></note>
