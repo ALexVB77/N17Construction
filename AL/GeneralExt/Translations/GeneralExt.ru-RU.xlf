@@ -5434,7 +5434,6 @@
           <source>Development Settings</source>
           <target>Девелопмент настройка</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Development Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2519642008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7668,6 +7667,13 @@
           <target>Projects CC Entry Constr 2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Projects CC Entry Constr 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3500269424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Projects Version</source>
+          <target>Версии проектов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Projects Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2655527564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Invoices for Act</source>
