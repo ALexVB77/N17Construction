@@ -921,4 +921,22 @@ codeunit 70000 "ERPC Funtions"
 
     end;
 
+    procedure CreateBCPreBookingJ(BudCorrJnl: Record "Budget Correction Journal") ret: Boolean
+    var
+        PCCE: Record "Projects Cost Control Entry";
+        ProjectRec: Record "Dimension Value";
+        GLSetup: Record "General Ledger Setup";
+        VendAgr: Record "Vendor Agreement";
+        VendAgrDetails: Record "Vendor Agreement Details";
+        txtDocNo: Text[20];
+        txtDocNo1: Text[20];
+        // UniT: Record "Universal Temporary Table";
+        PInvLine: Record "Purch. Inv. Line";
+    begin
+        ret := false;
+        Message('cu70000.CreateBCPreBookingJ');
+
+    end;
+
+
 }
