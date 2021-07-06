@@ -8193,16 +8193,6 @@
           <note from="Developer" annotates="general" priority="2">%1 = Location Name</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0001</note>
         </trans-unit>
-        <trans-unit id="Report 2721895639 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Отчет составил</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0002</note>
-        </trans-unit>
-        <trans-unit id="Report 2721895639 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
-          <source>*получаетель материалов</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0003</note>
-        </trans-unit>
         <trans-unit id="Report 2721895639 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Shipment M-15 Posted</source>
           <note from="Developer" annotates="general" priority="2"></note>
