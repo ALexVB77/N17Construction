@@ -4900,7 +4900,6 @@
           <source>The absence is registered.</source>
           <target>Отсутствие зарегистрировано.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText004</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
@@ -4922,10 +4921,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText003</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 86792179" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Absence registration canceled.</source>
-          <target>Регистрация отсутствия отменена.</target>
+          <source>Absence registration canceled</source>
+          <target>[NAB: REVIEW]Регистрация отсутствия отменена.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText004</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
@@ -5035,6 +5034,43 @@
           <target>Сохранять оригинальный знак операции</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted</source>
+          <target>Учтенные</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Command Buttons</source>
+          <target>Функции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Command Buttons - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 3382608726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test</source>
+          <target>Тест</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370031 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 1469518875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fill RealData</source>
+          <target>Fill RealData</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370032 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 2107215492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test RealData</source>
+          <target>Test RealData</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370033 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 194125641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sinch RealData</source>
+          <target>Sinch RealData</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370034 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3453140756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Adjustment</source>

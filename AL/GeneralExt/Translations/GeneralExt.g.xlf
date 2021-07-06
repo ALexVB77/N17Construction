@@ -4193,6 +4193,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 194368442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Command Buttons</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Command Buttons - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 3382608726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370031 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 1469518875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fill RealData</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370032 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 2107215492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test RealData</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370033 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 194125641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sinch RealData</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370034 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3453140756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Adjustment</source>
           <note from="Developer" annotates="general" priority="2"></note>
