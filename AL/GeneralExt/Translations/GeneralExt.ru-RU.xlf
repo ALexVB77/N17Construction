@@ -4445,12 +4445,42 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Code Monkey Translation - NamedType ErrText001</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2463777246 - Method 2558096733 - NamedType 3720241846" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No field key specified!</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+        <trans-unit id="Codeunit 2463777246 - NamedType 2221351987" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bad soap envelope format</source>
+          <target>Неверный формат SOAP пакета</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - Method GetObjectData - NamedType KeyErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType BadSoapEnvFormatErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 3720241846" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No field key is specified!</source>
+          <target>Не указано поле данных Crm объекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType KeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1236386240" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No ObjectID in XML Document</source>
+          <target>Не найден ObjectID в Xml объекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType NoObjectIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1115934796" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No ParentObjectID in XML Document</source>
+          <target>Не найден ParenObjectID в Xml объекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType NoParentObjectIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1376688189" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ProjectId %1 is not found in %2</source>
+          <target>Код проекта %1 не существует в %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ProjectNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1870025204" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown type of Object %1</source>
+          <target>Неизвестный тип объекта CRM %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType UnknownObjectTypeErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1524225914 - Method 935118560 - NamedType 1454544725" size-unit="char" translate="yes" xml:space="preserve">
           <source>There is no attachment!</source>
@@ -5039,7 +5069,6 @@
           <source>Posted</source>
           <target>Учтенные</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 194368442 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
