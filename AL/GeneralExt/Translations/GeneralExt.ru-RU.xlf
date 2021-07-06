@@ -4682,9 +4682,8 @@
         </trans-unit>
         <trans-unit id="Codeunit 2172969975 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
-          <target>Ошибка пойманная в isolated storage</target>
+          <target>Ошибка пойманная в isolated storage: %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
@@ -4897,11 +4896,42 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText003</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 86792179" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The absence is registered.</source>
+          <target>Отсутствие зарегистрировано.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType LocText004</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2860546455 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have permission to delegate one or more of the selected approval requests.</source>
           <target>У вас нет разрешений на делегирование одного или нескольких из выбранных запросов на утверждение.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserAbsence - NamedType NoPermissionToDelegateErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no one to unregister.</source>
+          <target>Отменить регистрацию некому.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3744062858" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to unregister the absence of %1 of users and return active approve entries to the original Approvers?</source>
+          <target>Вы действительно хотите отменить регистрацию отсутствия %1 пользователей и вернуть активные операции утверждения исходным утверждающим?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 86792179" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Absence registration canceled</source>
+          <target>[NAB: REVIEW]Регистрация отсутствия отменена.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to return one or more of the selected approval requests.</source>
+          <target>У вас нет разрешений на возврат одного или нескольких из выбранных запросов на утверждение.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType NoPermissionToDelegateErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2812542981 - NamedType 2303713566" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document %1 has been sent to the %2 for approval.</source>
@@ -5004,6 +5034,43 @@
           <target>Сохранять оригинальный знак операции</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted</source>
+          <target>Учтенные</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 97425078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Command Buttons</source>
+          <target>Функции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Command Buttons - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 3382608726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test</source>
+          <target>Тест</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370031 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 1469518875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fill RealData</source>
+          <target>Fill RealData</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370032 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 2107215492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test RealData</source>
+          <target>Test RealData</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370033 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 194368442 - Action 194125641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sinch RealData</source>
+          <target>Sinch RealData</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal Sub - Action Control12370034 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3453140756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Adjustment</source>
@@ -9812,6 +9879,43 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[3] - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2721895639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Shipment M-19</source>
+          <target>Материальный отчет М-19</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>по учету материально-производственные запасов  на строительной площадке %1</source>
+          <target>по учету материально-производственные запасов  на строительной площадке %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Location Name</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0001</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Shipment M-15 Posted</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - RequestPage RequestOptionsPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 3142902948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Manager</source>
+          <target>Руководитель проекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 2505206331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report verified by</source>
+          <target>Отчет проверил</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 497847406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Date</source>
+          <target>Отчет составлен</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control ReportDate - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2923491568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment report</source>
           <target>Отчет по оплатам</target>
@@ -9925,6 +10029,12 @@
           <target>Регистрация отсутствия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Register Absence - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3049249875 - Action 3262684561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4261702675">
+          <source>Unregister Absence</source>
+          <target>Отменить рег. отсутствия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Unregister Absence - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
           <source>New,Process,Report,Category4,Cash,Category6,Category7,Category8,Category9</source>
