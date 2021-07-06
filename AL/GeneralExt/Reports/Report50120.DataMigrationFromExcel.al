@@ -43,6 +43,7 @@ report 50120 "Data Migration From Excel"
         Text0016: Label 'НУ-РАЗНИЦА';
         Text0017: Label 'ПРИБ_УБ_ПРОШ_ЛЕТ';
         Text0018: Label 'Locations';
+        Text0019: Label 'ПРОЕКТ';
     begin
         ServerFileName := FileManagement.UploadFile(Text001, ExcelExt);
         if ServerFileName = '' then
@@ -220,6 +221,17 @@ report 50120 "Data Migration From Excel"
                             LocationMapping."New Location Code" := GetValueAtCell(RowNo, 3);
                             LocationMapping."Old Location Code" := GetValueAtCell(RowNo, 1);
                             LocationMapping.Insert(true);
+                        end;
+                end;
+            Text0019:
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get(GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := Text0019;
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            DimensionValue.Insert(true);
                         end;
                 end;
         end;

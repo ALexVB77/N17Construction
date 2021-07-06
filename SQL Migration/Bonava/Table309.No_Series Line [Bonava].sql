@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Bonava$No_ Series Line$437dbf0e-84ff-417a-965d-ed2bb9650972];
+
 --No Series Line
 INSERT INTO [Bonava-Test].[dbo].[Bonava$No_ Series Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (

@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Bonava$Gen_ Journal Template$437dbf0e-84ff-417a-965d-ed2bb9650972];
+
 --Gen_ Journal Template
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Gen_ Journal Template$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
@@ -43,4 +45,4 @@ SELECT
 	[Cust_ Receipt Report ID],
 	[Vendor Receipt Report ID],
 	[Archive]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Gen_ Journal Template]
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Gen_ Journal Template];
