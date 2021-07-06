@@ -4,9 +4,7 @@ page 70190 "Budget Correction Journal Sub"
     DeleteAllowed = true;
     SourceTable = "Budget Correction Journal";
     SourceTableView = WHERE(Posted = CONST(true));
-    PageType = List;
-    ApplicationArea = All;
-    UsageCategory = Lists;
+    PageType = ListPart;
     Caption = 'Posted';
 
     layout
@@ -200,7 +198,7 @@ page 70190 "Budget Correction Journal Sub"
 
     actions
     {
-        area(navigation)
+        area(Processing)
         {
             group("Command Buttons")
             {

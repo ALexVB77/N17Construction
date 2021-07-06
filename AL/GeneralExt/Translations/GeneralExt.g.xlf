@@ -4193,6 +4193,51 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 105916358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Adjustment Journal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Powered by budget lines: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do not set no budget line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation canceled by user.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Budget Agjustment Journal?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - Control 986138104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lines Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Control Control12370004 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - Action 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - Action 483403383 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action Control12370049 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 105916358 - Action 261610131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action PostA - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 194368442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted</source>
           <note from="Developer" annotates="general" priority="2"></note>
