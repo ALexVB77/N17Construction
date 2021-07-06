@@ -1235,7 +1235,7 @@ codeunit 50010 "Payment Order Management"
         LocText004: Label 'Absence registration canceled';
         NoPermissionToDelegateErr: Label 'You do not have permission to return one or more of the selected approval requests.';
     begin
-        PresenceList.SetRange(Absents, false);
+        PresenceList.SetRange(Absents, true);
         if PresenceList.IsEmpty then begin
             Message(LocText001);
             exit;
