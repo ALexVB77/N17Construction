@@ -4,9 +4,6 @@ report 70009 "Item Shipment M-19"
     // NC 52624 EP
     //  перенес объект
 
-    ApplicationArea = All;
-    UsageCategory = ReportsAndAnalysis;
-
     Caption = 'Item Shipment M-19';
     ProcessingOnly = true;
 
@@ -318,7 +315,7 @@ report 70009 "Item Shipment M-19"
         ExcelReportBuilderManager.AddDataToSection('ItemNo', IDL."Item No.");
         ExcelReportBuilderManager.AddDataToSection('ItemDescription', IDL.Description);
 
-        ExcelReportBuilderManager.AddDataToSection('ItemUnitCose', ReportFormat(Item."Unit Cost"));
+        ExcelReportBuilderManager.AddDataToSection('ItemUnitCost', ReportFormat(Item."Unit Cost"));
         ExcelReportBuilderManager.AddDataToSection('UnitOfMeasureCode', IDL."Unit of Measure Code");
 
         ExcelReportBuilderManager.AddDataToSection('QuantityBalance', ReportFormat(IDL.Quantity));
