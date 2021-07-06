@@ -1172,7 +1172,7 @@ codeunit 50010 "Payment Order Management"
         end;
     end;
 
-    procedure RegisterUserAbsence(AbsentList: Record "User Setup");
+    procedure RegisterUserAbsence(var AbsentList: Record "User Setup");
     var
         UserSetupToUpdate: record "User Setup";
         ApprovalEntry: Record "Approval Entry";
@@ -1222,7 +1222,7 @@ codeunit 50010 "Payment Order Management"
         until AbsentList.Next() = 0;
     end;
 
-    procedure RegisterUserPresence(PresenceList: Record "User Setup");
+    procedure RegisterUserPresence(var PresenceList: Record "User Setup");
     var
         ApprovalEntry: Record "Approval Entry";
         ApprovalEntryToUpdate: Record "Approval Entry";
