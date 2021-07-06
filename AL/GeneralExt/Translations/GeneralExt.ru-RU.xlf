@@ -4682,9 +4682,9 @@
         </trans-unit>
         <trans-unit id="Codeunit 2172969975 - Method 2028298679 - NamedType 509021276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error caught in isolated storage: %1</source>
-          <target>[NAB: REVIEW]Ошибка пойманная в isolated storage</target>
+          <target>Ошибка пойманная в isolated storage: %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Isolated Storage Management GE - Method getValue - NamedType ErrorInISM</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2598308310 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
@@ -5015,14 +5015,12 @@
           <source>Budget Adjustment Card</source>
           <target>Бюджет корректировки карточка</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2285829057 - Control 2553548118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Save original entry sign</source>
           <target>Сохранять оригинальный знак операции</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3453140756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -9825,6 +9823,62 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[3] - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2721895639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Shipment M-19</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>по учету материально-производственные запасов  на строительной площадке %1</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Location Name</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0001</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Отчет составил</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0002</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*получаетель материалов</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0003</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Shipment M-15 Posted</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - RequestPage RequestOptionsPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 3142902948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Manager</source>
+          <target>[NAB: SUGGESTION]Менеджер проекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 2505206331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report verified by</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 497847406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Date</source>
+          <target>[NAB: SUGGESTION]Дата отчета</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control ReportDate - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2923491568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment report</source>
           <target>Отчет по оплатам</target>
@@ -9943,7 +9997,6 @@
           <source>Unregister Absence</source>
           <target>Отменить регистрацию отсутствия</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Unregister Absence - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1005095784 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4203401672">
