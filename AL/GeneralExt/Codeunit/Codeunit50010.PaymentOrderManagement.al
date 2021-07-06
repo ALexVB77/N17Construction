@@ -1224,6 +1224,7 @@ codeunit 50010 "Payment Order Management"
 
     procedure RegisterUserPresence(var PresenceList: Record "User Setup");
     var
+        UserSetupToUpdate: record "User Setup";
         ApprovalEntry: Record "Approval Entry";
         ApprovalEntryToUpdate: Record "Approval Entry";
         PurchHeader: Record "Purchase Header";
@@ -1256,6 +1257,9 @@ codeunit 50010 "Payment Order Management"
                     PurchHeader."Process User" := ApprovalEntryToUpdate."Approver ID";
                     PurchHeader.Modify();
                 until ApprovalEntry.Next() = 0;
+            UserSetupToUpdate := PresenceList;
+            UserSetupToUpdate.Absents := false;
+            UserSetupToUpdate.Modify(true);
         until PresenceList.Next() = 0;
     end;
 
