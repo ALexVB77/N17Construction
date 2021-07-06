@@ -4908,6 +4908,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys Correct - NamedType TEXT0010</note>
         </trans-unit>
+        <trans-unit id="Page 3956156190 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast Versions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast Versions - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 729295803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>G/L Account Mapping</source>
           <note from="Developer" annotates="general" priority="2"></note>
