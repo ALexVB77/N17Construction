@@ -9995,7 +9995,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 3049249875 - Action 3262684561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4261702675">
           <source>Unregister Absence</source>
-          <target>Отменить регистрацию отсутствия</target>
+          <target>Отменить рег. отсутствия</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Approval User Setup (Ext) - Action Unregister Absence - Property Caption</note>
         </trans-unit>

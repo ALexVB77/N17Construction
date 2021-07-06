@@ -52,7 +52,7 @@ pageextension 80663 "Approval User Setup (Ext)" extends "Approval User Setup"
             {
                 ApplicationArea = All;
                 Caption = 'Unregister Absence';
-                Image = CalendarChanged;
+                Image = CancelAllLines;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
