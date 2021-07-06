@@ -223,6 +223,17 @@ report 50120 "Data Migration From Excel"
                             LocationMapping.Insert(true);
                         end;
                 end;
+            Text0019:
+                begin
+                    for RowNo := 2 to GetLastRow do
+                        if not DimensionValue.Get(GetValueAtCell(RowNo, 1)) then begin
+                            DimensionValue.Init();
+                            DimensionValue."Dimension Code" := Text0019;
+                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
+                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
+                            DimensionValue.Insert(true);
+                        end;
+                end;
         end;
 
         case SheetName of
@@ -306,17 +317,6 @@ report 50120 "Data Migration From Excel"
                             DimensionValue.Init();
                             DimensionValue."Dimension Code" := Text0017;
                             DimensionValue.Code := GetValueAtCell(RowNo, 1);
-                            DimensionValue.Insert(true);
-                        end;
-                end;
-            Text0019:
-                begin
-                    for RowNo := 2 to GetLastRow do
-                        if not DimensionValue.Get(Text0019, GetValueAtCell(RowNo, 1)) then begin
-                            DimensionValue.Init();
-                            DimensionValue."Dimension Code" := Text0019;
-                            DimensionValue.Code := GetValueAtCell(RowNo, 1);
-                            DimensionValue.Name := GetValueAtCell(RowNo, 2);
                             DimensionValue.Insert(true);
                         end;
                 end;
