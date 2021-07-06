@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Vendor Agreement Details$2944687f-9cf8-4134-a24c-e21fb70a8b1a];
+
 --Vendor Agreement Details
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Vendor Agreement Details$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
 (

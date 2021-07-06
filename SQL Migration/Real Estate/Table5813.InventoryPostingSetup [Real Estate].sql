@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Inventory Posting Setup$437dbf0e-84ff-417a-965d-ed2bb9650972];
+
 --Inventory Posting Setup
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Inventory Posting Setup$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (

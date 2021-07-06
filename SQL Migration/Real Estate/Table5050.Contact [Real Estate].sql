@@ -1,3 +1,6 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Contact$437dbf0e-84ff-417a-965d-ed2bb9650972];
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Contact$2944687f-9cf8-4134-a24c-e21fb70a8b1a];
+
 --Contact
 -- Base Table
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Contact$437dbf0e-84ff-417a-965d-ed2bb9650972]

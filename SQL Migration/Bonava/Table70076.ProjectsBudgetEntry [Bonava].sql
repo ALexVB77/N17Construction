@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Bonava$Projects Budget Entry$2944687f-9cf8-4134-a24c-e21fb70a8b1a];
+
 --Projects Budget Entry
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Projects Budget Entry$2944687f-9cf8-4134-a24c-e21fb70a8b1a]
 (

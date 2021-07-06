@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Gen_ Journal Batch$437dbf0e-84ff-417a-965d-ed2bb9650972];
+
 --Gen Journal Batch
 --Base Table
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Gen_ Journal Batch$437dbf0e-84ff-417a-965d-ed2bb9650972]
@@ -24,4 +26,4 @@ SELECT
 	[Posting No_ Series],
 	[Copy VAT Setup to Jnl_ Lines],
 	[Allow VAT Difference]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Gen_ Journal Batch]
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Gen_ Journal Batch];

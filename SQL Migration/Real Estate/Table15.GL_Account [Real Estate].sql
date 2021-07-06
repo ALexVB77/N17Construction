@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$G_L Account$437dbf0e-84ff-417a-965d-ed2bb9650972];
+
 -- G\L Account
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$G_L Account$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
@@ -82,6 +84,10 @@ LEFT JOIN [Bonava-Test].[dbo].[Real Estate$Dimension Mapping$2944687f-9cf8-4134-
 ON DimensionMapping.[Old Dimension Value Code] = GLAccount.[Global Dimension 1 Code] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Real Estate$Dimension Value$437dbf0e-84ff-417a-965d-ed2bb9650972] DimensionValue
 ON DimensionValue.[Code] = GLAccount.[Global Dimension 2 Code] collate Cyrillic_General_100_CI_AS;
+
+
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972] AS DefaultDimension
+WHERE DefaultDimension.[Table ID] = '15';
 
 --Default Dimension
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
