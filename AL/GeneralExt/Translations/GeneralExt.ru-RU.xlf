@@ -4522,12 +4522,46 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType BadSoapEnvFormatErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 3797882964" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Contact or Reserving Contact is not found</source>
+          <target>Не найден Unit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactUnitNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 3024906446" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit %1 of Contract is not found</source>
+          <target>Не найден Unit %1 (ParentObnjectID)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContractUnitNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 2041483183" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment object %1 was created</source>
+          <target>Объект инвестирования %1 создан</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType InvestmentObjectCreatedMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 305442788" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment object %1 was updated</source>
+          <target>Объект инвестирования %1 обновлен</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType InvestmentObjectUpdatedMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 3720241846" size-unit="char" translate="yes" xml:space="preserve">
           <source>No field key is specified!</source>
           <target>Не указано поле данных Crm объекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType KeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 3972260258" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Investment object is not specified</source>
+          <target>Объект инвестирования отсутствует</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType NoInvestObjectMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 1236386240" size-unit="char" translate="yes" xml:space="preserve">
           <source>No ObjectID in XML Document</source>
@@ -4546,6 +4580,27 @@
           <target>Код проекта %1 не существует в %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ProjectNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 2907044041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit was created</source>
+          <target>Unit создан</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType UnitCreatedMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 3511750238" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit was updated</source>
+          <target>Unit (и его Buyer) обновлен </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType UnitUpdatedMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 31502207" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit is up to date</source>
+          <target>Unit уже в актуальном состоянии. </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType UnitUpToDateMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 1870025204" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unknown type of Object %1</source>
@@ -10102,56 +10157,48 @@
           <source>Import Budget CC</source>
           <target>Import Budget CC</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <target>Параметры</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control Options - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 2637560533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Build Turn</source>
           <target>Очередь строительства</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control BuildTurn - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 936718985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Version Description</source>
           <target>Описание версии</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control Description1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 1826064440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Skip first line</source>
           <target>Пропускать первую строку</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control FirstLine - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 652589522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parametr</source>
           <target>Параметр</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control ImportOption - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 3862103336 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Name</source>
           <target>Код бюджета</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control ToItemBudgetName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10877,7 +10924,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -11304,7 +11351,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -13000,6 +13047,13 @@
           <target>Пропущен</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Skipped - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2960129384 - EnumValue 3955473374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warning</source>
+          <target>Предупреждение</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Log Status - EnumValue Warning - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2849517163 - EnumValue 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Contact</source>

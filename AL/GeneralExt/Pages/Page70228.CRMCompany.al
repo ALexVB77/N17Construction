@@ -53,12 +53,8 @@ page 70228 "CRM Company"
                 begin
                     d2.Add('key', 'value');
                     d1.Add('table', d2);
-                    if not TestedDict(d1) then begin
-                        Message(GetLastErrorText());
-                        Message(GetLastErrorCode());
-                    end;
-
-                    TestedDict(d1);
+                    Proc1(d1);
+                    Proc2(d1);
                 end;
             }
 
@@ -70,25 +66,29 @@ page 70228 "CRM Company"
                 var
                     pf: Record "CRM Prefetched Object";
                 begin
-                    pf.Init();
-                    pf.Id := CreateGuid();
-                    pf.Insert();
-
-                    pf.TestField(Xml);
-
+                    Message('Underconstruction');
                 end;
             }
         }
     }
 
     [TryFunction]
-    local procedure TestedDict(var dict1: Dictionary of [Text, Dictionary of [Text, Text]])
+    local procedure Proc1(var dict1: Dictionary of [Text, Dictionary of [Text, Text]])
     var
         dict2: Dictionary of [Text, Text];
-        Str: Text;
     begin
         dict1.Get('table', dict2);
-        dict2.Get('key1', Str);
+        dict2.Add('key1', 'value2');
+    end;
+
+    local procedure Proc2(var dict1: Dictionary of [Text, Dictionary of [Text, Text]])
+    var
+        dict3: Dictionary of [Text, Text];
+        Str: Text;
+    begin
+        dict1.Get('table', dict3);
+        dict3.Get('key1', str);
+        Message('value is %1', Str);
     end;
 
 

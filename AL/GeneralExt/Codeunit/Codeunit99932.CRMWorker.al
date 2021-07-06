@@ -11,6 +11,7 @@ codeunit 99932 "CRM Worker"
         //All
         ObjectTypeX: Label 'Publisher/IntegrationInformation', Locked = true;
         SoapObjectContainerX: Label '//crm_objects/object', Locked = true;
+        TargetCompanyNameX: Label '@Target CRM CompanyName', Locked = true;
 
         //Unit
         UnitX: Label 'NCCObjects/NCCObject/Unit/', Locked = true;
@@ -71,6 +72,8 @@ codeunit 99932 "CRM Worker"
         ContractBuyerX: Label 'BaseData/ObjectID', Locked = true;
 
         //Errors
+        ContactUnitNotFoundErr: Label 'Unit of Contact or Reserving Contact is not found';
+        ContractUnitNotFoundErr: Label 'Unit %1 of Contract is not found';
         BadSoapEnvFormatErr: Label 'Bad soap envelope format';
         KeyErr: Label 'No field key is specified!';
         NoObjectIdErr: Label 'No ObjectID in XML Document';
@@ -78,6 +81,13 @@ codeunit 99932 "CRM Worker"
         ProjectNotFoundErr: Label 'ProjectId %1 is not found in %2';
         UnknownObjectTypeErr: Label 'Unknown type of Object %1';
 
+        //Messages
+        NoInvestObjectMsg: Label 'Investment object is not specified';
+        InvestmentObjectCreatedMsg: label 'Investment object %1 was created';
+        InvestmentObjectUpdatedMsg: label 'Investment object %1 was updated';
+        UnitCreatedMsg: Label 'Unit was created';
+        UnitUpdatedMsg: Label 'Unit was updated';
+        UnitUpToDateMsg: label 'Unit is up to date';
 
 
 
@@ -219,17 +229,24 @@ codeunit 99932 "CRM Worker"
         ParsingResult: Dictionary of [Text, Text];
         CrmCompany: Record "CRM Company";
         LogStatusEnum: Enum "CRM Log Status";
+        CrmInteractCompanies: List of [Text];
+        TargetCompany: Text;
     begin
+        GetCrmInteractCompanyList(CrmInteractCompanies);
         FetchedObject.Reset();
         FetchedObject.SetRange(Type, FetchedObject.Type::Unit);
         FetchedObject.FindSet();
         repeat
-            CrmCompany.Reset();
-            CrmCompany.Setrange("Project Guid", FetchedObject.ParentId);
-            if not CrmCompany.FindFirst() then
-                LogEvent(FetchedObject, LogStatusEnum::Error, StrSubstNo(ProjectNotFoundErr, FetchedObject.ParentId, CrmCompany.TableCaption))
-            else
-                ImportUnit(FetchedObject, ParsingResult);
+            if not GetTargetCrmCompany(FetchedObject, CrmInteractCompanies, TargetCompany) then
+                LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+            else begin
+                ParsedObjects.Get(FetchedObject.Id, ParsingResult);
+                ParsingResult.Add(TargetCompanyNameX, TargetCompany);
+                if not ImportUnit(FetchedObject, ParsingResult) then
+                    LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+                else
+                    Commit();
+            end;
         until FetchedObject.Next() = 0;
 
         case FetchedObject.Type of
@@ -381,18 +398,38 @@ codeunit 99932 "CRM Worker"
         end;
     end;
 
+    [TryFunction]
     local procedure ImportUnit(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
     var
         CRMBuyer: Record "CRM Buyers";
         Apartments: Record Apartments;
-        Value: Text;
+        Value, TargetCompanyName : Text;
         TempDT: DateTime;
         No: Text[2];
+        LogStatusEnum: Enum "CRM Log Status";
+        ImportAction: Option Create,Update;
+
     begin
         if ParsingResult.Count = 0 then
             exit;
 
+        ParsingResult.Get(TargetCompanyNameX, TargetCompanyName);
+        if TargetCompanyName <> CompanyName() then begin
+            CRMBuyer.ChangeCompany(TargetCompanyName);
+            Apartments.ChangeCompany(TargetCompanyName);
+        end;
         CRMBuyer.SetRange("Unit Guid", FetchedObject.Id);
+        if CRMBuyer.IsEmpty() then
+            ImportAction := ImportAction::Create
+        else begin
+            CRMBuyer.SetRange("Version Id", FetchedObject."Version Id");
+            if not CRMBuyer.IsEmpty then begin
+                LogEvent(FetchedObject, LogStatusEnum::Skipped, UnitUpToDateMsg);
+                exit;
+            end;
+            CRMBuyer.SetRange("Version Id");
+            ImportAction := ImportAction::Update;
+        end;
         CRMBuyer.DeleteAll(true);
 
         CRMBuyer.Init();
@@ -400,7 +437,9 @@ codeunit 99932 "CRM Worker"
         CRMBuyer."Version Id" := FetchedObject."Version Id";
         if ParsingResult.Get(ReservingContactX, Value) then
             Evaluate(CRMBuyer."Reserving Contact Guid", Value);
-        if ParsingResult.Get(InvestmentObjectX, Value) then begin
+        if not ParsingResult.Get(InvestmentObjectX, Value) then
+            LogEvent(FetchedObject, LogStatusEnum::Warning, NoInvestObjectMsg)
+        else begin
             CRMBuyer."Object of Investing" := Value;
             Apartments."Object No." := CRMBuyer."Object of Investing";
             if ParsingResult.Get(BlockNumberX, Value) then
@@ -414,12 +453,17 @@ codeunit 99932 "CRM Worker"
                 Apartments."Origin Type" := CopyStr(Format(Value), 1, MaxStrLen(Apartments."Origin Type"));
             if ParsingResult.Get(ApartmentUnitAreaM2X, Value) then
                 if Evaluate(Apartments."Total Area (Project)", Value, 9) then;
-            if not Apartments.Insert(True) then
+            if Apartments.Insert(True) then begin
+                LogEvent(FetchedObject, LogStatusEnum::Done, StrSubstNo(InvestmentObjectCreatedMsg, Apartments."Object No."));
+            end else begin
                 Apartments.Modify(True);
+                LogEvent(FetchedObject, LogStatusEnum::Done, StrSubstNo(InvestmentObjectUpdatedMsg, Apartments."Object No."));
+            end;
         end;
         No := '1';
         if not ParsingResult.Get(UnitBuyerX + No, Value) then begin
             CRMBuyer.Insert(true);
+            LogEvent(FetchedObject, LogStatusEnum::Done, UnitCreatedMsg);
             exit;
         end;
         repeat
@@ -452,6 +496,10 @@ codeunit 99932 "CRM Worker"
             end;
             CRMBuyer."Version Id" := FetchedObject."Version Id";
             CRMBuyer.Insert(true);
+            if ImportAction = ImportAction::Create then
+                LogEvent(FetchedObject, LogStatusEnum::Done, UnitCreatedMsg)
+            else
+                LogEvent(FetchedObject, LogStatusEnum::Done, UnitUpdatedMsg);
             No := IncStr(No);
             if not ParsingResult.Get(UnitBuyerX + No, Value) then
                 exit
@@ -550,9 +598,11 @@ codeunit 99932 "CRM Worker"
     end;
 
     [TryFunction]
-    local procedure GetTargetCrmCompany(var FetchedObject: Record "CRM Prefetched Object"; var TargetCompanyName: Text)
+    local procedure GetTargetCrmCompany(var FetchedObject: Record "CRM Prefetched Object"; SearchInCrmInteractCompanyList: List of [Text]; var TargetCompanyName: Text)
     var
         CrmCompany: Record "CRM Company";
+        CrmB: Record "CRM Buyers";
+        CrmCompanyName: Text;
     begin
         TargetCompanyName := '';
         case FetchedObject.Type of
@@ -566,8 +616,54 @@ codeunit 99932 "CRM Worker"
                         TargetCompanyName := CrmCompany."Company Name";
                     end;
                 end;
-
+            FetchedObject.Type::Contract:
+                begin
+                    foreach CrmCompanyname in SearchInCrmInteractCompanyList do begin
+                        CrmB.ChangeCompany(CrmCompanyName);
+                        CrmB.SetRange("Unit Guid", FetchedObject.ParentId);
+                        if CrmB.FindFirst() then begin
+                            TargetCompanyName := CrmCompanyName;
+                            break;
+                        end;
+                    end;
+                    if TargetCompanyName = '' then
+                        Error(ContractUnitNotFoundErr, FetchedObject.ParentId);
+                end;
+            FetchedObject.Type::Contact:
+                begin
+                    foreach CrmCompanyname in SearchInCrmInteractCompanyList do begin
+                        CrmB.Reset();
+                        CrmB.ChangeCompany(CrmCompanyName);
+                        CrmB.SetRange("Contact Guid", FetchedObject.Id);
+                        if CrmB.FindFirst() then begin
+                            TargetCompanyName := CrmCompanyName;
+                            break;
+                        end;
+                        CrmB.SetRange("Contact Guid");
+                        CrmB.SetRange("Reserving Contact Guid", FetchedObject.Id);
+                        if CrmB.FindFirst() then begin
+                            TargetCompanyName := CrmCompanyName;
+                            break;
+                        end;
+                    end;
+                    if TargetCompanyName = '' then
+                        Error(ContactUnitNotFoundErr);
+                end;
         end
+    end;
+
+    local procedure GetCrmInteractCompanyList(var CrmInteractCompanyList: List of [Text])
+    var
+        CrmCompany: Record "CRM Company";
+        TempDict: Dictionary of [Text, Integer];
+    begin
+        CrmCompany.Reset();
+        CrmCompany.FindSet();
+        repeat
+            if CrmCompany."Company Name" <> '' then
+                TempDict.Add(CrmCompany."Company Name", 1);
+        until CrmCompany.Next() = 0;
+        CrmInteractCompanyList := TempDict.Keys();
     end;
 
     local procedure ObjectAlreadyImported(var FetchedObject: record "CRM Prefetched Object") Result: Boolean
