@@ -189,8 +189,6 @@ report 70009 "Item Shipment M-19"
         TotalLineAmount: Decimal;
         TotalEndAmount: Decimal;
         Text0001: Label 'по учету материально-производственные запасов  на строительной площадке %1', Comment = '%1 = Location Name';
-        Text0002: Label 'Отчет составил';
-        Text0003: Label '*получаетель материалов';
 
 
     procedure FillHeader()
