@@ -1,8 +1,8 @@
 table 70101 "Budget Correction"
 {
     Caption = 'Budget Correction';
-    // LookupPageId = "Budget Corrections";
-    // DrillDownPageId = "Budget Corrections";
+    LookupPageId = "Budget Corrections";
+    DrillDownPageId = "Budget Corrections";
 
     fields
     {
@@ -24,7 +24,7 @@ table 70101 "Budget Correction"
             Caption = 'Dimension 2';
             CaptionClass = GetCaptionClass(2);
         }
-        field(5; "G/A Account Totaling"; Text[250])
+        field(5; "G/L Account Totaling"; Text[250])
         {
             Caption = 'Account';
         }

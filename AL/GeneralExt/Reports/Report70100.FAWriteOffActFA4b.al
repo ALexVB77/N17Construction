@@ -486,7 +486,7 @@ report 70100 "FA Write-off Act FA-4b"
 
     local procedure FillConclusionLine(DocName: Text; DocDate: Text; DocNo: Text; Description: Text; ItemNo: Text; UnitOfMeasure: Text; Qty: Text; UnitAmount: Text; Amount: Decimal; InventoryAccount: Text; InventoryAdjmtAccount: Text; EntryNo: Text)
     begin
-        if not ExcelReportBuilderManager.TryAddSectionWithPlaceForFooter('CONCLUSIONBODY', 'CONCLUSIONPAGEFOOTER') then begin
+        if not ExcelReportBuilderManager.TryAddSectionWithPlaceForFooter('CONCLUSIONBODY', 'CONCLUSIONPAGEHEADER') then begin
             ExcelReportBuilderManager.AddPagebreak;
             ExcelReportBuilderManager.AddSection('CONCLUSIONPAGEHEADER');
             ExcelReportBuilderManager.AddSection('CONCLUSIONBODY');

@@ -183,10 +183,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Dimension Totaling 2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3587166653 - Field 3290546822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3587166653 - Field 4096469817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field G/A Account Totaling - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field G/L Account Totaling - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3587166653 - Field 617354898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account 1</source>
@@ -4172,6 +4172,21 @@
           <source>Apartments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285829057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Adjustment Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2285829057 - Control 2553548118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Save original entry sign</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3453140756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Adjustment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Corrections - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2147051387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calc. Gen. Journal Update</source>
