@@ -275,7 +275,7 @@
         </trans-unit>
         <trans-unit id="Table 3587166653 - Field 3775870990 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>No,Day,Week,Month</source>
-          <target>[NAB: REVIEW],День,Неделя,Месяц</target>
+          <target>,День,Неделя,Месяц</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Option no. 0 of source is "No", but the same option in target is "". Empty Options must be empty in both source and target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Period Group Type - Property OptionCaption</note>
@@ -426,7 +426,7 @@
         </trans-unit>
         <trans-unit id="Table 105916358 - Field 18257956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dimension 2</source>
-          <target>[NAB: SUGGESTION]Измерение 2</target>
+          <target>Измерение 2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction Journal - Field Dimension Totaling 2 - Property Caption</note>
@@ -9153,6 +9153,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0018</note>
         </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3765495279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ПРОЕКТ</source>
+          <target>ПРОЕКТ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0019</note>
+        </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Subform</source>
           <target>Выгрузка в Excel</target>
@@ -10506,7 +10513,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -10933,7 +10940,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>

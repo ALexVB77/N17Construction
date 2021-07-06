@@ -7623,6 +7623,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0018</note>
         </trans-unit>
+        <trans-unit id="Report 1104067303 - Method 1544076788 - NamedType 3765495279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ПРОЕКТ</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Data Migration From Excel - Method OnPreReport - NamedType Text0019</note>
+        </trans-unit>
         <trans-unit id="Report 3333280010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
