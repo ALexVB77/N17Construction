@@ -8183,6 +8183,46 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Inv. for Deferrals INV-11 New - Control MatRespPerson[3] - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2721895639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Shipment M-19</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>по учету материально-производственные запасов  на строительной площадке %1</source>
+          <note from="Developer" annotates="general" priority="2">%1 = Location Name</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0001</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Отчет составил</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0002</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
+          <source>*получаетель материалов</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - NamedType Text0003</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Shipment M-15 Posted</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - RequestPage RequestOptionsPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 3142902948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Manager</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 2505206331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report verified by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control Employee3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2721895639 - Control 497847406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - Control ReportDate - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2923491568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment report</source>
           <note from="Developer" annotates="general" priority="2"></note>
