@@ -531,10 +531,8 @@ page 70187 "Budget Correction Journal"
                 IF NOT TestDate(LocBCJ) THEN BEGIN
                     // NC 36695 >>
                     //ERPC.CreateBCPreBookingJ(LocBCJ);
-                    //LocBCJ.Posted:=TRUE;
-                    Message('Call ERPC.CreateBCPreBookingJ(LocBCJ)');
-                    // todo
-                    //   posted := ERPC.CreateBCPreBookingJ(LocBCJ);
+                    //LocBCJ.Posted:=TRUE;                    
+                    posted := ERPC.CreateBCPreBookingJ(LocBCJ);
                     LocBCJ.Posted := posted;
                     // NC 36695 <<
                     LocBCJ.MODIFY;
