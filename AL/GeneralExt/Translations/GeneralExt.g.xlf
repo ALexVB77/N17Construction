@@ -5848,6 +5848,166 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Invoice Detail - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 717242652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item G/L Turnover GE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 411531942 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the base unit used to measure the item, such as piece, box, or pallet. The base unit of measure also serves as the conversion basis for alternate units of measure.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control Base Unit of Measure - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 898830266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control CreditCost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 3160452235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Cost (Expected)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control CreditCostExpect - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 1354151338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control CreditQuantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 970486127 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies information about the cost of the item and is calculated on the basis of the cost amounts posted in the general ledger entry.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control DebitCost - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 970486127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control DebitCost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 3569789414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Cost (Expected)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control DebitCostExpect - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 1170871551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control DebitQuantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the description associated with this line.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 2544916152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control EndingCost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 1526316077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Cost (Expected)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control EndingCostExpect - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 3855388936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control EndingQuantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the involved entry or record, according to the specified number series.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 1582610405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control StartingCost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 2170199760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Cost (Expected)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control StartingCostExpect - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 1497325493 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control StartingQuantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 43593927 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies by which period amounts are displayed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control PeriodType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 43593927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View by</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control PeriodType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 43593927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Week,Month,Quarter,Year,Accounting Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control PeriodType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 2130434325 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show blocked</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control ShowBlocked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Control 1141289673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Without transfers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Control WithoutTransfer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 4247615141 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action &amp;Item - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 4125097576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Print</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 3126323664 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View the fixed asset turnover information. You can view information such as the fixed asset name, quantity, status, depreciation dates, and amounts. The report can be used as documentation for the correction of quantities and for auditing purposes.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action Turnover Sheet - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 3126323664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Turnover Sheet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action Turnover Sheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 2192233998 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action Next Period - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 2192233998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action Next Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 1080556192 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action Previous Period - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 717242652 - Action 1080556192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Item G/L Turnover GE - Action Previous Period - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1935803971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Mapping</source>
           <note from="Developer" annotates="general" priority="2"></note>
