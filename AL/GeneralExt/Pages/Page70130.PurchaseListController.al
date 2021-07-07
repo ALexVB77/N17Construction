@@ -1,4 +1,3 @@
-/*
 page 70130 "Purchase List Controller"
 {
     ApplicationArea = Basic, Suite;
@@ -158,26 +157,30 @@ page 70130 "Purchase List Controller"
                 {
                     ApplicationArea = All;
                 }
-                field("Journal Batch Name", '')
+                field("Journal Batch Name"; LinkedGenJnlLine."Journal Batch Name")
                 {
                     ApplicationArea = All;
-                    BlankZero = true;
-                    Caption = 'Invoice Amount';
+                    Caption = 'Journal Batch Name';
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                field("Journal Line No."; LinkedGenJnlLine."Line No.")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Journal Line No.';
+                }
+                field("Additional Info"; Rec.GetAddTypeCommentText(CommentAddType::"Additional Info"))
+                {
+                    ApplicationArea = All;
+                    Caption = 'Comment';
+                }
+                field(Reason; Rec.GetAddTypeCommentText(CommentAddType::Reason))
+                {
+                    ApplicationArea = All;
+                    Caption = 'Reason';
+                }
+                field("Spec. Bank Account No."; "Spec. Bank Account No.")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
@@ -186,57 +189,23 @@ page 70130 "Purchase List Controller"
     {
         area(Processing)
         {
-            action(NewOrderApp)
+            action(ViewDoc)
             {
                 ApplicationArea = Basic, Suite;
-                Caption = 'New';
-                Image = NewDocument;
+                Caption = 'View';
+                Image = View;
 
                 trigger OnAction()
+                var
+                    GenJnlLine: Record "Gen. Journal Line";
+                    PaymentRequestCard: Page "Payment Request Card";
                 begin
-                    PaymentOrderMgt.NewOrderApp(Rec);
-                    CurrPage.Update(false);
-                end;
-            }
-            action(DocCard)
-            {
-                ApplicationArea = All;
-                Caption = 'Edit';
-                Enabled = EditEnabled;
-                Image = Edit;
-                RunObject = Page "Purchase Order App";
-                                RunPageLink = "No." = field("No.");
-            }
-            action(ApproveButton)
-            {
-                ApplicationArea = Basic, Suite;
-                Caption = 'Approve';
-                Enabled = ApproveButtonEnabled;
-                Image = Approve;
-
-                trigger OnAction()
-                begin
-                    MessageIfPurchLinesNotExist;
-                    if "Status App" in ["Status App"::" ", "Status App"::Payment] then
-                        FieldError("Status App");
-                    if "Status App" = "Status App"::Reception then begin
-                        IF ApprovalsMgmt.CheckPurchaseApprovalPossible(Rec) THEN
-                            ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
-                    end else
-                        ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
-                end;
-            }
-            action(RejectButton)
-            {
-                ApplicationArea = All;
-                Caption = 'Reject';
-                Enabled = RejectButtonEnabled;
-                Image = Reject;
-                trigger OnAction()
-                begin
-                    if "Status App" in ["Status App"::" ", "Status App"::Reception, "Status App"::Payment] then
-                        FieldError("Status App");
-                    ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                    GenJnlLine.SetRange("Journal Template Name", LinkedGenJnlLine."Journal Template Name");
+                    GenJnlLine.SetRange("Journal Batch Name", LinkedGenJnlLine."Journal Batch Name");
+                    GenJnlLine.SetRange("Line No.", LinkedGenJnlLine."Line No.");
+                    PaymentRequestCard.SetTableView(GenJnlLine);
+                    PaymentRequestCard.SetRecord(GenJnlLine);
+                    PaymentRequestCard.RunModal();
                 end;
             }
         }
@@ -248,7 +217,7 @@ page 70130 "Purchase List Controller"
                 Caption = 'Co&mments';
                 Image = ViewComments;
                 RunObject = Page "Purch. Comment Sheet";
-                                RunPageLink = "Document Type" = FIELD("Document Type"),
+                RunPageLink = "Document Type" = FIELD("Document Type"),
                             "No." = FIELD("No."),
                             "Document Line No." = CONST(0);
             }
@@ -261,7 +230,7 @@ page 70130 "Purchase List Controller"
                 trigger OnAction()
                 var
                     DocumentAttachmentDetails: Page "Document Attachment Details";
-                                                   RecRef: RecordRef;
+                    RecRef: RecordRef;
                 begin
                     RecRef.GetTable(Rec);
                     DocumentAttachmentDetails.OpenForRecRef(RecRef);
@@ -275,61 +244,22 @@ page 70130 "Purchase List Controller"
     begin
         grUserSetup.GET(USERID);
 
-        // SWC968 DD 19.12.16 >>
-        IF grUserSetup."Show All Pay Inv" AND (Filter1 = Filter1::mydoc) THEN
-            Filter1 := Filter1::all;
-        // SWC968 DD 19.12.16 <<
-
-        FILTERGROUP(2);
+        SETFILTER("Status App", '%1', "Status App"::Payment);
         SETRANGE("IW Documents", TRUE);
-        //SWC004 AKA 120514 >>
-        SETFILTER("Act Type", '%1', "Act Type"::" ");
-        //SWC004 AKA 120514 <<
-        FILTERGROUP(0);
 
         SetSortType;
         SetRecFilters;
-
-        //IF grUserSetup."Status App"<>grUserSetup."Status App"::Сontroller THEN //SWC318 AKA 151014
-        IF grUserSetup."Status App" = grUserSetup."Status App"::Checker THEN      //SWC318 AKA 151014
-            Filter1Enabled := FALSE;
-
-        IF grUserSetup."Administrator IW" THEN
-            Filter1Enabled := TRUE;
-    end;
-
-    trigger OnAfterGetRecord()
-    begin
-        ApproveButtonEnabled := FALSE;
-        RejectButtonEnabled := FALSE;
-
-        EditEnabled := Rec."No." <> '';
-
-        if (UserId = Rec.Receptionist) and (Rec."Status App" = Rec."Status App"::Reception) then
-            ApproveButtonEnabled := true;
-        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
-            ApproveButtonEnabled := true;
-            RejectButtonEnabled := true;
-        end;
     end;
 
     var
         grUserSetup: Record "User Setup";
-        PaymentOrderMgt: Codeunit "Payment Order Management";
-        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
-        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        LinkedGenJnlLine: Record "Gen. Journal Line";
         Filter3: option Ready,Paid,Payment,Overdue,All;
         SortType1: option PayDate,PayDateFact,DocNo,Vendor;
-        ApproveButtonEnabled: boolean;
-        RejectButtonEnabled: boolean;
-        EditEnabled: Boolean;
         AmountType: Enum "Amount Type";
-
+        CommentAddType: Enum "Purchase Comment Add. Type";
 
     local procedure SetRecFilters()
-    var
-        AE: record "Approval Entry";
-        PH: record "Purchase Header";
     begin
         FILTERGROUP(2);
 
@@ -337,70 +267,45 @@ page 70130 "Purchase List Controller"
         SETRANGE("Status App");
         SETRANGE("Problem Document");
         SETRANGE(Paid);
-        // SWC1075 DD 28.07.17 >>
-        MARKEDONLY(FALSE);
-        CLEARMARKS;
-        // SWC1075 DD 28.07.17 <<
+        SETRANGE("Status App");
+        SETRANGE("Due Date");
 
-        SETFILTER("Status App", '<>%1&<>%2', "Status App"::Payment, "Status App"::Request);
-
-        CASE Filter2 OF
-            Filter2::InProc:
-                SETFILTER("Status App", '<>%1', "Status App"::Payment);
-            Filter2::Ready:
+        CASE Filter3 OF
+            Filter3::Ready:
                 BEGIN
-                    SETRANGE("Status App", "Status App"::Payment);
                     SETRANGE(Paid, FALSE);
+                    SETRANGE("Status App", "Status App"::Payment);
                 END;
-            Filter2::Pay:
-                SETRANGE(Paid, TRUE);
-            Filter2::Problem:
-                SETRANGE("Problem Document", TRUE);
+            Filter3::Paid:
+                BEGIN
+                    SETRANGE(Paid, TRUE);
+                    SETRANGE("Status App", "Status App"::Payment);
+                END;
+            Filter3::Payment:
+                SETRANGE("Status App", "Status App"::Payment);
+            Filter3::Overdue:
+                BEGIN
+                    SETRANGE(Paid, FALSE);
+                    SETFILTER("Due Date", '<%1', TODAY);
+                END;
         END;
 
-        CASE Filter1 OF
-            Filter1::MyDoc:
-                SETRANGE("Process User", USERID);
-            // SWC1075 DD 28.07.17 >>
-            Filter1::Approved:
-                BEGIN
-                    PH := Rec;
-                    AE.SETCURRENTKEY("Approver ID", Status);
-                    AE.SETRANGE("Approver ID", USERID);
-                    AE.SETRANGE(Status, AE.Status::Approved);
-                    IF AE.FINDSET THEN
-                        REPEAT
-                            IF GET(AE."Document Type", AE."Document No.") THEN
-                                MARK(TRUE);
-                        UNTIL AE.NEXT = 0;
-                    Rec := PH;
-                    MARKEDONLY(TRUE);
-                END;
-        // SWC1075 DD 28.07.17 <<
-        END;
+        // SETRANGE(Archival, FALSE);
 
         FILTERGROUP(0);
     end;
 
     procedure SetSortType()
     begin
-        //--
-        CASE SortType OF
-            SortType::DocNo:
-                // SWC1075 DD 28.07.17 >>
-                //SETCURRENTKEY("No.");
-                SETCURRENTKEY("Document Type", "No.");
-            // SWC1075 DD 28.07.17 <<
-            SortType::PostDate:
-                SETCURRENTKEY("Posting Date");
-            SortType::Vendor:
+        CASE SortType1 OF
+            SortType1::PayDate:
+                SETCURRENTKEY("Due Date");
+            SortType1::PayDateFact:
+                SETCURRENTKEY("Paid Date Fact");
+            SortType1::DocNo:
+                SETCURRENTKEY("No.");
+            SortType1::Vendor:
                 SETCURRENTKEY("Buy-from Vendor Name");
-            SortType::StatusApp:
-                SETCURRENTKEY("Status App");
-            SortType::UserProc:
-                SETCURRENTKEY("Process User");
         END;
     end;
-
 }
-*/

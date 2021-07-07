@@ -30,6 +30,12 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Caption = 'Receptionist';
             Description = 'NC 51380 AB';
         }
+        field(50022; "Spec. Bank Account No."; Code[20])
+        {
+            TableRelation = "Bank Account";
+            Caption = 'Spec. Bank Account No.';
+            Description = 'NC 51379 AB';
+        }
         field(60088; "Original Company"; Code[2])
         {
             Description = 'NC 51432 AP';
@@ -497,5 +503,18 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Result := Round(Result, Currency."Amount Rounding Precision");
         end;
     end;
+
+    procedure GetAddTypeCommentText(AddType: enum "Purchase Comment Add. Type"): text
+    var
+        PurchCommentLine: Record "Purch. Comment Line";
+    begin
+        PurchCommentLine.SetRange("Document Type", "Document Type");
+        PurchCommentLine.SetRange("No.", "No.");
+        PurchCommentLine.SetRange("Line No.", 0);
+        PurchCommentLine.SetRange("Add. Line Type", AddType);
+        if PurchCommentLine.FindFirst() then
+            exit(PurchCommentLine.Comment + PurchCommentLine."Comment 2");
+    end;
+
 
 }
