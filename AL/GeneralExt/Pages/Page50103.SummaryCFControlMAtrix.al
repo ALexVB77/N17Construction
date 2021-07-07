@@ -337,15 +337,15 @@ page 50103 "Summary CF Control Matrix"
         OrigBudRec: Record "Original Budget";
     begin
         PrjBudEntries.Reset;
-        SetFilters(0, 0);
+        SetFilters(1, 0);
         PrjBudEntries.CalcSums("Without VAT (LCY)");
         CFTotal := PrjBudEntries."Without VAT (LCY)";
         PrjBudEntries.Reset;
-        SetFilters(0, 1);
+        SetFilters(1, 1);
         PrjBudEntries.CalcSums("Without VAT (LCY)");
         CFActuals := PrjBudEntries."Without VAT (LCY)";
         PrjBudEntries.Reset;
-        SetFilters(0, 2);
+        SetFilters(1, 2);
         PrjBudEntries.CalcSums("Without VAT (LCY)");
         CFTotalUnpaid := PrjBudEntries."Without VAT (LCY)";
         OrigBudRec.Reset();

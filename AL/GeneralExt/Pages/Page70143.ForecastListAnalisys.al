@@ -14,13 +14,13 @@ page 70143 "Forecast List Analisys"
     {
         area(Content)
         {
-            group(FiltersGr1)
+            group(FilterGr2)
             {
-                Caption = 'Project Filter';
+                Caption = 'Filters';
                 field(TemplateCode; TemplateCode)
                 {
                     ApplicationArea = All;
-                    Caption = 'Code';
+                    Caption = 'Project Code';
                     trigger OnLookup(var Text: text): boolean
                     var
                         lDimVal: Record "Dimension Value";
@@ -48,10 +48,7 @@ page 70143 "Forecast List Analisys"
                     ShowCaption = false;
 
                 }
-            }
-            group(FilterGr2)
-            {
-                Caption = 'Filters';
+
                 field(DateFilter1; DateFilter1)
                 {
                     ApplicationArea = All;
@@ -149,7 +146,6 @@ page 70143 "Forecast List Analisys"
 
                 field(HideZeroAmountLine; HideZeroAmountLine)
                 {
-                    ShowCaption = false;
                     ApplicationArea = All;
                     Caption = 'Don''t show zero amount lines';
                     trigger OnValidate()
@@ -181,7 +177,6 @@ page 70143 "Forecast List Analisys"
                 field(Close; Rec.Close)
                 {
                     Editable = false;
-                    ShowCaption = false;
                     ApplicationArea = All;
                     Caption = 'Actual Flag';
                     StyleExpr = LineStyletxt;

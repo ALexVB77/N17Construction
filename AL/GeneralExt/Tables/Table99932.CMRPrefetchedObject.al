@@ -3,6 +3,7 @@ table 99932 "CRM Prefetched Object"
     Caption = 'CRM Prefetched Object';
     LookupPageId = "CRM Prefetched Objects";
     DrillDownPageId = "CRM Prefetched Objects";
+    DataPerCompany = false;
 
     fields
     {

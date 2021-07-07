@@ -13,7 +13,7 @@ table 70076 "Projects Budget Entry"
         field(2; "Project Code"; Code[20])
         {
             Caption = 'Project Code';
-            TableRelation = "Building project";
+            // TableRelation = "Building project";
         }
         field(3; "Analysis Type"; Option)
         {
@@ -112,7 +112,7 @@ table 70076 "Projects Budget Entry"
         field(24; "Project Turn Code"; Code[20])
         {
             Caption = 'Project Turn Code';
-            TableRelation = "Building Turn";
+            // TableRelation = "Building Turn";
         }
         field(29; Code; Code[20])
         {
@@ -225,7 +225,7 @@ table 70076 "Projects Budget Entry"
         {
             Caption = 'Stage';
             NotBlank = true;
-            TableRelation = "Building Turn";
+            // TableRelation = "Building Turn";
 
             trigger OnLookup()
             begin

@@ -815,7 +815,7 @@ codeunit 99932 "CRM Worker"
         Log."Object Type" := FetchedObject.Type;
         Log."Object Xml" := FetchedObject.Xml;
         Log."Object Version Id" := FetchedObject."Version Id";
-        Log."Web Request Queue Id" := FetchedObject."Web Request Queue Id";
+        Log."WRQ Id" := FetchedObject."Web Request Queue Id";
         Log.Datetime := CurrentDateTime;
         Log.Status := LogStatusEnum;
         Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));
@@ -831,7 +831,7 @@ codeunit 99932 "CRM Worker"
             Log."Entry No." := 1L
         else
             Log."Entry No." += 1;
-        Log."Web Request Queue Id" := WrqId;
+        Log."WRQ Id" := WrqId;
         Log.Datetime := CurrentDateTime;
         Log.Status := LogStatusEnum;
         Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));

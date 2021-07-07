@@ -69,12 +69,19 @@ table 70121 "CRM Log"
 
         }
 
-        field(30; "Web Request Queue Id"; Guid)
+        field(30; "WRQ Id"; Guid)
         {
-            Caption = 'Web Request Queue Id';
+            Caption = 'WRQ Id';
             TableRelation = "Web Request Queue";
 
         }
+
+        field(31; "WRQ Source Company Name"; Text[60])
+        {
+            Caption = 'WRQ Source Company Name';
+
+        }
+
 
 
     }
