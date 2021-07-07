@@ -478,4 +478,24 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             Error(MessageText, Rec."No.");
     end;
 
+    procedure GetInvoiceAmountsLCY(AmountType: enum "Amount Type") Result: Decimal
+    var
+        Currency: Record Currency;
+        CurrExRate: record "Currency Exchange Rate";
+    begin
+        case AmountType of
+            AmountType::"Include VAT":
+                Result := "Invoice Amount Incl. VAT";
+            AmountType::"Exclude VAT":
+                Result := "Invoice Amount Incl. VAT" - "Invoice VAT Amount";
+            AmountType::VAT:
+                Result := "Invoice VAT Amount";
+        end;
+        if Rec."Currency Code" <> '' then begin
+            Currency.InvoiceRoundingDirection();
+            Result := CurrExRate.ExchangeAmtFCYToLCY("Posting Date", "Currency Code", Result, "Currency Factor");
+            Result := Round(Result, Currency."Amount Rounding Precision");
+        end;
+    end;
+
 }

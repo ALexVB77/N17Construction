@@ -43,16 +43,17 @@ codeunit 50010 "Payment Order Management"
         grUS: record "User Setup";
         WhseEmployee: record "Warehouse Employee";
         grPurchHeader: Record "Purchase Header";
+        PurchLine: Record "Purchase Line";
         Location: Record Location;
+        Selected: Integer;
+        IsLocationDocument: Boolean;
+        LocationCode: code[20];
         // Text50000: Label 'У вас нет прав на создание документа. Данные права имеет контролер.';
         Text50000: Label 'You do not have permission to create the document. The controller has these rights.';
         Text50003: Label 'Warehouse document,Act/KS-2 for the service';
         Text50004: Label 'Select the type of document to create.';
         Text50005: Label 'It is required to select the type of document.';
         LocErrorText1: Label 'The estimator cannot create a document with the type Act!';
-        Selected: Integer;
-        IsLocationDocument: Boolean;
-        LocationCode: code[20];
     begin
         CheckUnusedPurchActType(ActTypeOption);
 
@@ -87,6 +88,10 @@ codeunit 50010 "Payment Order Management"
             END;
         END;
 
+        GetInventorySetup();
+        if not IsLocationDocument then
+            InvtSetup.TestField("Temp Item Code");
+
         with grPurchHeader do begin
             RESET;
             INIT;
@@ -113,6 +118,17 @@ codeunit 50010 "Payment Order Management"
                 if PurchSetup."Default Estimator" <> '' then
                     Estimator := PurchSetup."Default Estimator";
             MODIFY(TRUE);
+
+            PurchLine.Init;
+            PurchLine."Document Type" := "Document Type";
+            PurchLine."Document No." := "No.";
+            PurchLine."Line No." := 10000;
+            PurchLine.Validate(Type, PurchLine.Type::Item);
+            if not "Location Document" then
+                PurchLine.Validate("No.", InvtSetup."Temp Item Code")
+            else
+                PurchLine.Validate("Location Code", LocationCode);
+            PurchLine.Insert(true);
 
             COMMIT;
             PAGE.RUNMODAL(PAGE::"Purchase Order Act", grPurchHeader);
