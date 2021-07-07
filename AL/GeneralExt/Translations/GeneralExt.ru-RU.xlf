@@ -1501,14 +1501,12 @@
           <source>WRQ Id</source>
           <target>Id веб-запроса</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field WRQ Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1501946700 - Field 3692058211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>WRQ Source Company Name</source>
           <target>Компания источник веб-запроса</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field WRQ Source Company Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3747,7 +3745,6 @@
           <source>Imported Form File</source>
           <target>Импортировано из файла</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Imported Form File - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2622754722 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -5763,7 +5760,7 @@
         </trans-unit>
         <trans-unit id="Page 2269272589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transaction Register</source>
-          <target>Реестр операций</target>
+          <target>Реестр операций Cash Flow</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Property Caption</note>
         </trans-unit>
@@ -5887,16 +5884,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Overdue - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2269272589 - Control 1749114713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Project Filter</source>
-          <target>Проект</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control FiltersGr1 - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2269272589 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Code</source>
-          <target>Код</target>
+          <source>Project Code</source>
+          <target>Код проекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control TemplateCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 2129730760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10175,21 +10167,18 @@
           <source>Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls</source>
           <target>Файлы Excel (*.xlsx;*.xls)|*.xlsx;*.xls</target>
           <note from="Developer" annotates="general" priority="2">{Split=r'\|'}{Locked=s'1'}</note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType Excel2007FileType</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
           <source>Imported from Excel </source>
           <target>Импортировано из Excel </target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType Text005</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - NamedType 162941379" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select file</source>
           <target>Выберите файл</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType TextUp001</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
