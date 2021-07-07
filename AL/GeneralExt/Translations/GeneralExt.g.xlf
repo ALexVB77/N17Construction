@@ -10433,6 +10433,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Gen. Bus. Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 1819938698 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>Giv. Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Giv. Type - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 2002556613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>New Dimension Set Id</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10773,6 +10778,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Warehouse Employee (Ext) - Method GetDefaultLocation - NamedType Text50002</note>
         </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 2391506199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exclude VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue Exclude VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 1689206417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue Include VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue VAT - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Enum 273371814 - EnumValue 3980010935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actuals</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -11047,6 +11072,16 @@
           <source>Rejected by Estimator</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue REstimator - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3248635358 - EnumValue 990296649 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transfer Header Giv. Type - EnumValue Internal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3248635358 - EnumValue 3678752760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To Contractor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transfer Header Giv. Type - EnumValue To Contractor - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2929795469 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>
