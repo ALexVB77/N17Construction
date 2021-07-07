@@ -1,4 +1,4 @@
-enum 50009 "Purchase Comment Add. Type"
+enum 50010 "Purchase Comment Add. Type"
 {
     Extensible = true;
     AssignmentCompatibility = true;
