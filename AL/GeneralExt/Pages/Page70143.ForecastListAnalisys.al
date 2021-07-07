@@ -146,7 +146,6 @@ page 70143 "Forecast List Analisys"
 
                 field(HideZeroAmountLine; HideZeroAmountLine)
                 {
-                    ShowCaption = false;
                     ApplicationArea = All;
                     Caption = 'Don''t show zero amount lines';
                     trigger OnValidate()
@@ -178,7 +177,6 @@ page 70143 "Forecast List Analisys"
                 field(Close; Rec.Close)
                 {
                     Editable = false;
-                    ShowCaption = false;
                     ApplicationArea = All;
                     Caption = 'Actual Flag';
                     StyleExpr = LineStyletxt;

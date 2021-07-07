@@ -5905,7 +5905,7 @@
         </trans-unit>
         <trans-unit id="Page 2269272589 - Control 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actual Flag</source>
-          <target>Actual Flag</target>
+          <target>Факт</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Forecast List Analisys - Control Close - Property Caption</note>
         </trans-unit>
