@@ -12530,6 +12530,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Gen. Bus. Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2802827400 - Field 1819938698 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
+          <source>Giv. Type</source>
+          <target>Тип выдачи</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Header (Ext) - Field Giv. Type - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2802827400 - Field 2002556613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 151805736">
           <source>New Dimension Set Id</source>
           <target>Новый код набора измерений</target>
@@ -13294,6 +13300,18 @@
           <target>Отклонен сметчиком</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Problem Type - EnumValue REstimator - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3248635358 - EnumValue 990296649 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal</source>
+          <target>Внутренняя</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transfer Header Giv. Type - EnumValue Internal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3248635358 - EnumValue 3678752760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To Contractor</source>
+          <target>Подрядчику</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transfer Header Giv. Type - EnumValue To Contractor - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2929795469 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>

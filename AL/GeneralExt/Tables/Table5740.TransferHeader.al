@@ -109,6 +109,13 @@ tableextension 85740 "Transfer Header (Ext)" extends "Transfer Header"
             TableRelation = "Dimension Set Entry";
             Editable = false;
         }
+        field(50482; "Giv. Type"; Enum "Transfer Header Giv. Type")
+        {
+            Caption = 'Giv. Type';
+            Editable = false;
+            DataClassification = CustomerContent;
+            Description = 'NC 51410 EP';
+        }
     }
 
     var
