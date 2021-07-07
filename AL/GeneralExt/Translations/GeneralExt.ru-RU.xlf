@@ -275,7 +275,7 @@
         </trans-unit>
         <trans-unit id="Table 3587166653 - Field 3775870990 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>No,Day,Week,Month</source>
-          <target>[NAB: REVIEW],День,Неделя,Месяц</target>
+          <target>Нет,День,Неделя,Месяц</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Option no. 0 of source is "No", but the same option in target is "". Empty Options must be empty in both source and target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Period Group Type - Property OptionCaption</note>
@@ -5077,7 +5077,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 86792179" size-unit="char" translate="yes" xml:space="preserve">
           <source>Absence registration canceled</source>
-          <target>[NAB: REVIEW]Регистрация отсутствия отменена.</target>
+          <target>Регистрация отсутствия отменена.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText004</note>
@@ -10358,7 +10358,7 @@
         </trans-unit>
         <trans-unit id="Report 2721895639 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Shipment M-15 Posted</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Item Shipment M-15 Posted</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - RequestPage RequestOptionsPage - Property Caption</note>
