@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Customer Bank Account$437dbf0e-84ff-417a-965d-ed2bb9650972];
+
 --Customer Bank Account
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Customer Bank Account$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
@@ -55,4 +57,4 @@ SELECT
 	[BIC],
 	[Abbr_ City],
 	[Bank Corresp_ Account No_]
-FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Customer Bank Account]
+FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Customer Bank Account];

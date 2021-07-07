@@ -1,3 +1,5 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$VAT Posting Setup$437dbf0e-84ff-417a-965d-ed2bb9650972];
+
 --VAT Posting Setup
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$VAT Posting Setup$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
@@ -59,4 +61,4 @@ ON GLAccMapping5.[Old No_] = [Trans_ VAT Account] collate Cyrillic_General_100_C
 LEFT JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping6
 ON GLAccMapping6.[Old No_] = [Write-Off VAT Account] collate Cyrillic_General_100_CI_AS
 LEFT JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping7
-ON GLAccMapping7.[Old No_] = [VAT Charge No_] collate Cyrillic_General_100_CI_AS
+ON GLAccMapping7.[Old No_] = [VAT Charge No_] collate Cyrillic_General_100_CI_AS;

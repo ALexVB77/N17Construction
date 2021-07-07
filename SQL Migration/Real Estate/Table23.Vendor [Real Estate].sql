@@ -1,3 +1,6 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Vendor$437dbf0e-84ff-417a-965d-ed2bb9650972];
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Vendor$2944687f-9cf8-4134-a24c-e21fb70a8b1a];
+
 --Vendor
 -- Base Table
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Vendor$437dbf0e-84ff-417a-965d-ed2bb9650972]
@@ -94,6 +97,10 @@ FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Vendor]
 LEFT JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] GLAccMapping
 ON GLAccMapping.[Old No_] = [Vat Agent Posting Group] collate Cyrillic_General_100_CI_AS
 WHERE [Blocked] <> '2';
+
+
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972] AS DefaultDimension
+WHERE DefaultDimension.[Table ID] = '23';
 
 --Default Dimension
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]

@@ -10,10 +10,13 @@ codeunit 99932 "CRM Worker"
     var
         //All
         ObjectTypeX: Label 'Publisher/IntegrationInformation', Locked = true;
+        SoapObjectContainerX: Label '//crm_objects/object', Locked = true;
+        TargetCompanyNameX: Label '@Target CRM CompanyName', Locked = true;
 
         //Unit
         UnitX: Label 'NCCObjects/NCCObject/Unit/', Locked = true;
         UnitIdX: Label 'NCCObjects/NCCObject/Unit/BaseData/ObjectID', Locked = true;
+        UnitProjectIdX: Label 'NCCObjects/NCCObject/Unit/BaseData/ObjectParentID', Locked = true;
         UnitBuyerNodesX: label 'Buyers/Buyer', Locked = true;
         UnitBaseDataX: Label 'NCCObjects/NCCObject/Unit/BaseData/', Locked = true;
         ObjectParentIdX: Label 'ObjectParentID', Locked = true;
@@ -51,6 +54,7 @@ codeunit 99932 "CRM Worker"
         ContactPhoneX: Label 'Phone', Locked = true;
         ContactEmailX: Label 'Email', Locked = true;
         ContactAddressLine1X: Label 'ContactAddressLine1', Locked = true;
+        ContactUpdateExistingX: Label '@ContactUpdateExisting', Locked = true;
 
         //Contract
         ContractX: Label 'NCCObjects/NCCObject/Contract/', Locked = true;
@@ -68,47 +72,89 @@ codeunit 99932 "CRM Worker"
         ContractBuyerNodesX: Label 'Buyers/Buyer', Locked = true;
         ContractBuyerX: Label 'BaseData/ObjectID', Locked = true;
 
+        //Errors
+        ContactUnitNotFoundErr: Label 'Unit of Contact or Reserving Contact is not found';
+        ContractUnitNotFoundErr: Label 'Unit %1 of Contract is not found';
+        BadSoapEnvFormatErr: Label 'Bad soap envelope format';
+        KeyErr: Label 'No field key is specified!';
+        NoObjectIdErr: Label 'No ObjectID in XML Document';
+        NoParentObjectIdErr: Label 'No ParentObjectID in XML Document';
+        ProjectNotFoundErr: Label 'ProjectId %1 is not found in %2';
+        UnknownObjectTypeErr: Label 'Unknown type of Object %1';
+
+        //Messages
+        ContactUpToDateMsg: Label 'Customer No. %1 is up to date';
+        NoInvestObjectMsg: Label 'Investment object is not specified';
+        InvestmentObjectCreatedMsg: label 'Investment object %1 was created';
+        InvestmentObjectUpdatedMsg: label 'Investment object %1 was updated';
+        UnitCreatedMsg: Label 'Unit was created';
+        UnitUpdatedMsg: Label 'Unit was updated';
+        UnitUpToDateMsg: label 'Unit is up to date';
+
+
 
     local procedure Code(var WebRequestQueue: Record "Web Request Queue")
     var
         FetchedObjectBuff: Record "CRM Prefetched Object" temporary;
         InStrm: InStream;
         RequestBodyXmlText: Text;
-        ParsingResult: Dictionary of [Text, Text];
+        ParsedObjects: Dictionary of [Guid, Dictionary of [Text, Text]];
+        LogStatusEnum: Enum "CRM Log Status";
     begin
         WebRequestQueue.CalcFields("Request Body");
         WebRequestQueue."Request Body".CreateInStream(InStrm);
         InStrm.Read(RequestBodyXmlText);
-        FetchObjects(FetchedObjectBuff, RequestBodyXmlText);
-
+        if not FetchObjects(WebRequestQueue.Id, RequestBodyXmlText, FetchedObjectBuff) then
+            exit;
         PickupPrefetchedObjects(FetchedObjectBuff);
-
-        FetchedObjectBuff.Reset();
-        FetchedObjectBuff.FindSet();
-        repeat
-            ParseObject(FetchedObjectBuff, ParsingResult);
-            ImportObject(FetchedObjectBuff, ParsingResult);
-        until FetchedObjectBuff.Next() = 0;
+        ParseObjects(FetchedObjectBuff, ParsedObjects);
+        ImportObjects(FetchedObjectBuff, ParsedObjects);
     end;
 
-    local procedure FetchObjects(var FetchedObjectsTemp: Record "CRM Prefetched Object"; RequestBodyXmlText: Text): Text
+
+    local procedure FetchObjects(WebRequestQueueId: Guid; RequestBodyXmlText: Text; var FetchedObjectsTemp: Record "CRM Prefetched Object") Result: Boolean
     var
-        XmlNodes: XmlNodeList;
-        RootXmlElement, XmlElem : XmlElement;
-        ObjXmlNode: XmlNode;
-        ObjXmlBase64: text;
+        XmlCrmObjectList: XmlNodeList;
+        RootXmlElement: XmlElement;
+        XmlCrmObject: XmlNode;
+        ObjXmlBase64, TempValue : text;
+        LogStatusEnum: Enum "CRM Log Status";
+        OutObjectMetadata: Dictionary of [Text, Text];
+        OutStrm: OutStream;
     begin
+        Result := false;
         FetchedObjectsTemp.Reset();
         FetchedObjectsTemp.DeleteAll();
-        GetRootXmlElement(RequestBodyXmlText, RootXmlElement);
-        if not RootXmlElement.SelectNodes('//crm_objects/object', XmlNodes) then
-            Error('Wrong soap envelope structure');
-        if XmlNodes.Count = 0 then
-            Error('There are no CRM objects in request');
-        foreach ObjXmlNode in XmlNodes do begin
-            XmlElem := ObjXmlNode.AsXmlElement();
-            ObjXmlBase64 := XmlElem.InnerText;
-            GetObjectMeta(FetchedObjectsTemp, ObjXmlBase64);
+        if not GetRootXmlElement(RequestBodyXmlText, RootXmlElement) then begin
+            LogEvent(WebRequestQueueId, LogStatusEnum::Error, GetLastErrorText());
+            exit;
+        end;
+        if not RootXmlElement.SelectNodes(SoapObjectContainerX, XmlCrmObjectList) then begin
+            LogEvent(WebRequestQueueId, LogStatusEnum::Error, BadSoapEnvFormatErr);
+            exit;
+        end;
+        foreach XmlCrmObject in XmlCrmObjectList do begin
+            ObjXmlBase64 := GetXmlElementText(XmlCrmObject);
+            if not GetObjectMetadata(ObjXmlBase64, OutObjectMetadata) then
+                LogEvent(WebRequestQueueId, LogStatusEnum::Error, GetLastErrorText())
+            else begin
+                Result := true;
+                FetchedObjectsTemp.Init();
+                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(Id), TempValue);
+                Evaluate(FetchedObjectsTemp.Id, TempValue);
+                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(Type), TempValue);
+                Evaluate(FetchedObjectsTemp.Type, TempValue);
+                if OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(ParentId), TempValue) then
+                    Evaluate(FetchedObjectsTemp.ParentId, TempValue);
+                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(Xml), TempValue);
+                FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
+                OutStrm.Write(TempValue);
+                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName("Version Id"), FetchedObjectsTemp."Version Id");
+                FetchedObjectsTemp."Web Request Queue Id" := WebRequestQueueId;
+                FetchedObjectsTemp."Prefetch Datetime" := CurrentDateTime();
+                if not FetchedObjectsTemp.Insert() then
+                    FetchedObjectsTemp.Modify();
+            end;
         end;
     end;
 
@@ -124,24 +170,25 @@ codeunit 99932 "CRM Worker"
             until PrefetchedObj.Next() = 0;
     end;
 
-    local procedure GetObjectMeta(var FetchedObjectsTemp: Record "CRM Prefetched Object"; Base64EncodedObjectXml: Text)
+    [TryFunction]
+    local procedure GetObjectMetadata(Base64EncodedObjectXml: Text; var ObjectMetadata: Dictionary of [Text, Text])
     var
         Base64Convert: Codeunit "Base64 Convert";
         XmlDoc: XmlDocument;
         RootXmlElement: XmlElement;
-        XmlNode: XmlNode;
-        ObjectXmlText: Text;
-        ObjectType: Text;
-        ObjectIdText: Text;
-        ParentObjectIdText: Text;
+        ObjectXmlText, ObjectType, ObjectIdText, ParentObjectIdText : Text;
         OutStrm: OutStream;
+        T: Record "CRM Prefetched Object" temporary;
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
         GetRootXmlElement(ObjectXmlText, RootXmlElement);
         GetValue(RootXmlElement, ObjectTypeX, ObjectType);
         case UpperCase(ObjectType) of
             'UNIT':
-                GetValue(RootXmlElement, UnitIdX, ObjectIdText);
+                begin
+                    GetValue(RootXmlElement, UnitIdX, ObjectIdText);
+                    GetValue(RootXmlElement, UnitProjectIdX, ParentObjectIdText);
+                end;
             'CONTACT':
                 GetValue(RootXmlElement, ContactIdX, ObjectIdText);
             'CONTRACT':
@@ -150,50 +197,98 @@ codeunit 99932 "CRM Worker"
                     GetValue(RootXmlElement, ContractUnitIdX, ParentObjectIdText);
                 end;
             else
-                Error('Unknown Object Type %1', ObjectType);
+                Error(UnknownObjectTypeErr, ObjectType);
         end;
         if ObjectIdText = '' then
-            Error('No Object Id');
-        if (UpperCase(ObjectType) = 'CONTRACT') and (ParentObjectIdText = '') then
-            Error('No ParentObjectId for contract');
-        FetchedObjectsTemp.Init();
-        Evaluate(FetchedObjectsTemp.Id, ObjectIdText);
-        Evaluate(FetchedObjectsTemp.Type, ObjectType);
+            Error(NoObjectIdErr);
+        if (UpperCase(ObjectType) in ['CONTRACT', 'UNIT']) and (ParentObjectIdText = '') then
+            Error(NoParentObjectIdErr);
+        Clear(ObjectMetadata);
+        ObjectMetadata.Add(T.FieldName(id), ObjectIdText);
+        ObjectMetadata.Add(T.FieldName(Type), ObjectType);
         if ParentObjectIdText <> '' then
-            Evaluate(FetchedObjectsTemp.ParentId, ParentObjectIdText);
-        FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
-        OutStrm.Write(ObjectXmlText);
-        FetchedObjectsTemp."Version Id" := GenerateHash(ObjectXmlText);
-        if not FetchedObjectsTemp.Insert() then
-            FetchedObjectsTemp.Modify();
+            ObjectMetadata.Add(T.FieldName(ParentId), ParentObjectIdText);
+        ObjectMetadata.Add(T.FieldName(Xml), ObjectXmlText);
+        ObjectMetadata.Add(T.FieldName("Version Id"), GenerateHash(ObjectXmlText))
     end;
 
-
-    local procedure ParseObject(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
+    local procedure ParseObjects(var FetchedObject: Record "CRM Prefetched Object"; var ParsedObjects: Dictionary of [Guid, Dictionary of [Text, Text]])
     var
+        ParsingResult: Dictionary of [Text, Text];
         HasError: Boolean;
+        LogStatusEnum: Enum "CRM Log Status";
     begin
-        case FetchedObject.Type of
-            FetchedObject.Type::Unit:
-                hasError := not ParseUnitXml(FetchedObject, ParsingResult);
-            FetchedObject.Type::Contact:
-                hasError := not ParseContactXml(FetchedObject, ParsingResult);
-            FetchedObject.Type::Contract:
-                hasError := not ParseContractXml(FetchedObject, ParsingResult);
-        end;
-        if HasError then;
-
+        FetchedObject.Reset();
+        FetchedObject.FindSet();
+        repeat
+            Clear(ParsingResult);
+            case FetchedObject.Type of
+                FetchedObject.Type::Unit:
+                    hasError := not ParseUnitXml(FetchedObject, ParsingResult);
+                FetchedObject.Type::Contact:
+                    hasError := not ParseContactXml(FetchedObject, ParsingResult);
+                FetchedObject.Type::Contract:
+                    hasError := not ParseContractXml(FetchedObject, ParsingResult);
+            end;
+            if HasError then
+                LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+            else
+                if ParsingResult.Count <> 0 then
+                    ParsedObjects.Add(FetchedObject.Id, ParsingResult);
+        until FetchedObject.Next() = 0;
     end;
 
-    local procedure ImportObject(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
+    local procedure ImportObjects(var FetchedObject: Record "CRM Prefetched Object"; var ParsedObjects: Dictionary of [Guid, Dictionary of [Text, Text]])
+    var
+        Params: Dictionary of [Text, Text];
+        CrmCompany: Record "CRM Company";
+        LogStatusEnum: Enum "CRM Log Status";
+        CrmInteractCompanies: List of [Text];
+        TargetCompany: Text;
     begin
-        case FetchedObject.Type of
-            FetchedObject.Type::Unit:
-                ImportUnit(FetchedObject, ParsingResult);
-            FetchedObject.Type::Contact:
-                ImportContact(FetchedObject, ParsingResult);
-            FetchedObject.Type::Contract:
-                ImportContract(FetchedObject, ParsingResult);
+        GetCrmInteractCompanyList(CrmInteractCompanies);
+
+        //units import
+        FetchedObject.Reset();
+        FetchedObject.SetRange(Type, FetchedObject.Type::Unit);
+        if FetchedObject.FindSet() then begin
+            repeat
+                if not GetTargetCrmCompany(FetchedObject, CrmInteractCompanies, TargetCompany) then
+                    LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+                else begin
+                    ParsedObjects.Get(FetchedObject.Id, Params);
+                    Params.Add(TargetCompanyNameX, TargetCompany);
+                    if not ImportUnit(FetchedObject, Params) then
+                        LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+                end;
+            until FetchedObject.Next() = 0;
+        end;
+
+        //update existing contacts
+        FetchedObject.SetRange(Type, FetchedObject.Type::Contact);
+        FetchedObject.FindSet();
+        repeat
+            ParsedObjects.Get(FetchedObject.Id, Params);
+            Params.Add(ContactUpdateExistingX, ContactUpdateExistingX);
+            if not ImportContact(FetchedObject, Params) then
+                LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+        until FetchedObject.Next() = 0;
+
+        //import contracts with creating necessary contacts
+        FetchedObject.SetRange(Type, FetchedObject.Type::Contract);
+        if FetchedObject.FindSet() then begin
+            repeat
+                if not GetTargetCrmCompany(FetchedObject, CrmInteractCompanies, TargetCompany) then
+                    LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+                else begin
+                    ParsedObjects.Get(FetchedObject.Id, Params);
+                    Params.Add(TargetCompanyNameX, TargetCompany);
+                    if not ImportContract(FetchedObject, Params) then
+                        LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+                    else
+                        Commit();
+                end;
+            until FetchedObject.Next() = 0;
         end;
     end;
 
@@ -220,27 +315,138 @@ codeunit 99932 "CRM Worker"
         CRMCompany.Find('=');
         if CRMCompany."Company Name" <> CompanyName() then
             exit;
-        GetObjectData(XmlElem, JoinX(UnitBaseDataX, ReservingContactX), ParsingResult, ReservingContactX);
-        GetObjectData(XmlElem, JoinX(UnitBaseDataX, InvestmentObjectX), ParsingResult, InvestmentObjectX);
-        OK := GetObjectData(XmlElem, JoinX(UnitBaseDataX, BlockNumberX), ParsingResult, BlockNumberX);
-        OK := GetObjectData(XmlElem, JoinX(UnitBaseDataX, ApartmentNumberX), ParsingResult, ApartmentNumberX);
-        OK := GetObjectData(XmlElem, JoinX(UnitX, ApartmentOriginTypeX), ParsingResult, ApartmentOriginTypeX);
-        OK := GetObjectData(XmlElem, JoinX(UnitX, ApartmentUnitAreaM2X), ParsingResult, ApartmentUnitAreaM2X);
-        OK := GetObjectData(XmlElem, JoinX(UnitX, ExpectedRegDateX), ParsingResult, ExpectedRegDateX);
-        OK := GetObjectData(XmlElem, JoinX(UnitX, ActualDateX), ParsingResult, ActualDateX);
-        OK := GetObjectData(XmlElem, JoinX(UnitX, ExpectedDateX), ParsingResult, ExpectedDateX);
+        GetObjectField(XmlElem, JoinX(UnitBaseDataX, ReservingContactX), ParsingResult, ReservingContactX);
+        GetObjectField(XmlElem, JoinX(UnitBaseDataX, InvestmentObjectX), ParsingResult, InvestmentObjectX);
+        OK := GetObjectField(XmlElem, JoinX(UnitBaseDataX, BlockNumberX), ParsingResult, BlockNumberX);
+        OK := GetObjectField(XmlElem, JoinX(UnitBaseDataX, ApartmentNumberX), ParsingResult, ApartmentNumberX);
+        OK := GetObjectField(XmlElem, JoinX(UnitX, ApartmentOriginTypeX), ParsingResult, ApartmentOriginTypeX);
+        OK := GetObjectField(XmlElem, JoinX(UnitX, ApartmentUnitAreaM2X), ParsingResult, ApartmentUnitAreaM2X);
+        OK := GetObjectField(XmlElem, JoinX(UnitX, ExpectedRegDateX), ParsingResult, ExpectedRegDateX);
+        OK := GetObjectField(XmlElem, JoinX(UnitX, ActualDateX), ParsingResult, ActualDateX);
+        OK := GetObjectField(XmlElem, JoinX(UnitX, ExpectedDateX), ParsingResult, ExpectedDateX);
         if not XmlElem.SelectNodes(JoinX(UnitX, UnitBuyerNodesX), XmlNodeList) then
             exit;
         No := '1';
         foreach XmlNode in XmlNodeList do begin
             XmlElem := XmlNode.AsXmlElement();
-            GetObjectData(XmlElem, UnitBuyerX, ParsingResult, UnitBuyerX + No);
-            GetObjectData(XmlElem, UnitBuyerContactX, ParsingResult, UnitBuyerContactX + No);
-            GetObjectData(XmlElem, UnitBuyerContractX, ParsingResult, UnitBuyerContractX + No);
-            OK := GetObjectData(XmlElem, UnitBuyerOwnershipPrcX, ParsingResult, UnitBuyerOwnershipPrcX + No);
-            OK := GetObjectData(XmlElem, UnitBuyerIsActiveX, ParsingResult, UnitBuyerIsActiveX + No);
+            GetObjectField(XmlElem, UnitBuyerX, ParsingResult, UnitBuyerX + No);
+            GetObjectField(XmlElem, UnitBuyerContactX, ParsingResult, UnitBuyerContactX + No);
+            GetObjectField(XmlElem, UnitBuyerContractX, ParsingResult, UnitBuyerContractX + No);
+            OK := GetObjectField(XmlElem, UnitBuyerOwnershipPrcX, ParsingResult, UnitBuyerOwnershipPrcX + No);
+            OK := GetObjectField(XmlElem, UnitBuyerIsActiveX, ParsingResult, UnitBuyerIsActiveX + No);
             No := IncStr(No);
         end;
+    end;
+
+    [TryFunction]
+    local procedure ImportUnit(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
+    var
+        CRMBuyer: Record "CRM Buyers";
+        Apartments: Record Apartments;
+        Value, TargetCompanyName : Text;
+        TempDT: DateTime;
+        No: Text[2];
+        LogStatusEnum: Enum "CRM Log Status";
+        ImportAction: Option Create,Update;
+
+    begin
+        if ParsingResult.Count = 0 then
+            exit;
+
+        if not ParsingResult.Get(TargetCompanyNameX, TargetCompanyName) then
+            TargetCompanyName := '';
+        if (TargetCompanyName <> CompanyName()) and (TargetCompanyName <> '') then begin
+            CRMBuyer.ChangeCompany(TargetCompanyName);
+            Apartments.ChangeCompany(TargetCompanyName);
+        end;
+        CRMBuyer.SetRange("Unit Guid", FetchedObject.Id);
+        if CRMBuyer.IsEmpty() then
+            ImportAction := ImportAction::Create
+        else begin
+            CRMBuyer.SetRange("Version Id", FetchedObject."Version Id");
+            if not CRMBuyer.IsEmpty then begin
+                LogEvent(FetchedObject, LogStatusEnum::Skipped, UnitUpToDateMsg);
+                exit;
+            end;
+            CRMBuyer.SetRange("Version Id");
+            ImportAction := ImportAction::Update;
+        end;
+        CRMBuyer.DeleteAll(true);
+
+        CRMBuyer.Init();
+        CRMBuyer."Unit Guid" := FetchedObject.Id;
+        CRMBuyer."Version Id" := FetchedObject."Version Id";
+        if ParsingResult.Get(ReservingContactX, Value) then
+            Evaluate(CRMBuyer."Reserving Contact Guid", Value);
+        if not ParsingResult.Get(InvestmentObjectX, Value) then
+            LogEvent(FetchedObject, LogStatusEnum::Warning, NoInvestObjectMsg)
+        else begin
+            CRMBuyer."Object of Investing" := Value;
+            Apartments."Object No." := CRMBuyer."Object of Investing";
+            if ParsingResult.Get(BlockNumberX, Value) then
+                Apartments.Description := Value.Trim();
+            if ParsingResult.Get(ApartmentNumberX, Value) then begin
+                if (Apartments.Description <> '') and (not Apartments.Description.EndsWith(' ')) then
+                    Apartments.Description += ' ';
+                Apartments.Description += Value.Trim();
+            end;
+            if ParsingResult.Get(ApartmentOriginTypeX, Value) then
+                Apartments."Origin Type" := CopyStr(Format(Value), 1, MaxStrLen(Apartments."Origin Type"));
+            if ParsingResult.Get(ApartmentUnitAreaM2X, Value) then
+                if Evaluate(Apartments."Total Area (Project)", Value, 9) then;
+            if Apartments.Insert(True) then begin
+                LogEvent(FetchedObject, LogStatusEnum::Done, StrSubstNo(InvestmentObjectCreatedMsg, Apartments."Object No."));
+            end else begin
+                Apartments.Modify(True);
+                LogEvent(FetchedObject, LogStatusEnum::Done, StrSubstNo(InvestmentObjectUpdatedMsg, Apartments."Object No."));
+            end;
+        end;
+        No := '1';
+        if not ParsingResult.Get(UnitBuyerX + No, Value) then begin
+            CRMBuyer.Insert(true);
+            Commit();
+            LogEvent(FetchedObject, LogStatusEnum::Done, UnitCreatedMsg);
+            exit;
+        end;
+        repeat
+            Evaluate(CRMBuyer."Buyer Guid", Value);
+            if ParsingResult.Get(UnitBuyerContactX + No, Value) then
+                Evaluate(CRMBuyer."Contact Guid", Value);
+            if ParsingResult.Get(UnitBuyerContractX + No, Value) then
+                Evaluate(CRMBuyer."Contract Guid", Value);
+            if ParsingResult.Get(UnitBuyerOwnershipPrcX + No, Value) then
+                Evaluate(CRMBuyer."Ownership Percentage", Value, 9)
+            Else
+                CRMBuyer."Ownership Percentage" := 100;
+            CRMBuyer."Buyer Is Active" := true;
+            if ParsingResult.Get(UnitBuyerIsActiveX + No, Value) then begin
+                if Value = 'false' then
+                    CRMBuyer."Buyer Is Active" := false;
+            end;
+            if CRMBuyer."Buyer Is Active" then begin
+                CRMBuyer."Expected Registration Period" := 0;
+                if ParsingResult.Get(ExpectedRegDateX + No, Value) then
+                    Evaluate(CRMBuyer."Expected Registration Period", Value, 9);
+                CRMBuyer."Agreement Start" := 0D;
+                if ParsingResult.Get(ActualDateX + No, Value) then
+                    if Evaluate(TempDT, Value, 9) then
+                        CRMBuyer."Agreement Start" := DT2Date(TempDT) - CRMBuyer."Expected Registration Period";
+                CRMBuyer."Agreement End" := 0D;
+                if ParsingResult.Get(ExpectedDateX + No, Value) then
+                    if Evaluate(TempDT, Value, 9) then
+                        CRMBuyer."Agreement End" := DT2Date(TempDT);
+            end;
+            CRMBuyer."Version Id" := FetchedObject."Version Id";
+            CRMBuyer.Insert(true);
+            Commit();
+            if ImportAction = ImportAction::Create then
+                LogEvent(FetchedObject, LogStatusEnum::Done, UnitCreatedMsg)
+            else
+                LogEvent(FetchedObject, LogStatusEnum::Done, UnitUpdatedMsg);
+            No := IncStr(No);
+            if not ParsingResult.Get(UnitBuyerX + No, Value) then
+                exit
+        until No = '99';
     end;
 
     [TryFunction]
@@ -258,14 +464,14 @@ codeunit 99932 "CRM Worker"
             exit;
         GetRootXmlElement(FetchedObject, XmlElem);
         BaseXPath := JoinX(ContactX, PersonDataX);
-        GetObjectData(XmlElem, JoinX(BaseXPath, LastNameX), ParsingResult, LastNameX);
-        GetObjectData(XmlElem, JoinX(BaseXPath, FirstNameX), ParsingResult, FirstNameX);
-        GetObjectData(XmlElem, JoinX(BaseXPath, MiddleNameX), ParsingResult, MiddleNameX);
+        GetObjectField(XmlElem, JoinX(BaseXPath, LastNameX), ParsingResult, LastNameX);
+        GetObjectField(XmlElem, JoinX(BaseXPath, FirstNameX), ParsingResult, FirstNameX);
+        GetObjectField(XmlElem, JoinX(BaseXPath, MiddleNameX), ParsingResult, MiddleNameX);
         BaseXPath := JoinX(ContactX, PhysicalAddressX);
         if XmlNodeExists(XmlElem, BaseXPath) then begin
             ElemText2 := '';
-            Ok := GetObjectData(XmlElem, JoinX(BaseXPath, PostalCityX), ParsingResult, PostalCityX);
-            Ok := GetObjectData(XmlElem, JoinX(BaseXPath, CountryCodeX), ParsingResult, CountryCodeX);
+            Ok := GetObjectField(XmlElem, JoinX(BaseXPath, PostalCityX), ParsingResult, PostalCityX);
+            Ok := GetObjectField(XmlElem, JoinX(BaseXPath, CountryCodeX), ParsingResult, CountryCodeX);
             if GetValue(XmlElem, JoinX(BaseXPath, AddressLineX + '1'), ElemText) then
                 ElemText2 := ElemText;
             if GetValue(XmlElem, JoinX(BaseXPath, AddressLineX + '2'), ElemText) then begin
@@ -280,7 +486,7 @@ codeunit 99932 "CRM Worker"
             end;
             if ElemText2 <> '' then
                 ParsingResult.Add(AddressLineX, ElemText2);
-            Ok := GetObjectData(XmlElem, JoinX(BaseXPath, PostalCodeX), ParsingResult, PostalCodeX);
+            Ok := GetObjectField(XmlElem, JoinX(BaseXPath, PostalCodeX), ParsingResult, PostalCodeX);
         end;
         BaseXPath := JoinX(ContactX, ElectronicAddressesX);
         if not XmlElem.SelectNodes(JoinX(BaseXPath, ElectronicAddressX), XmlNodeList) then
@@ -318,106 +524,88 @@ codeunit 99932 "CRM Worker"
         if ObjectAlreadyImported(FetchedObject) then
             exit;
         GetRootXmlElement(FetchedObject, XmlElem);
-        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractNoX), ParsingResult, ContractNoX);
-        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractTypeX), ParsingResult, ContractTypeX);
-        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractStatusX), ParsingResult, ContractStatusX);
-        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractCancelStatusX), ParsingResult, ContractCancelStatusX);
-        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ContractIsActiveX), ParsingResult, ContractIsActiveX);
-        GetObjectData(XmlElem, JoinX(ContractBaseDataX, ExtAgreementNoX), ParsingResult, ExtAgreementNoX);
-        GetObjectData(XmlElem, JoinX(ContractX, ApartmentAmountX), ParsingResult, ApartmentAmountX);
-        OK := GetObjectData(XmlElem, JoinX(ContractX, FinishingInclX), ParsingResult, FinishingInclX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractNoX), ParsingResult, ContractNoX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractTypeX), ParsingResult, ContractTypeX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractStatusX), ParsingResult, ContractStatusX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractCancelStatusX), ParsingResult, ContractCancelStatusX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractIsActiveX), ParsingResult, ContractIsActiveX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ExtAgreementNoX), ParsingResult, ExtAgreementNoX);
+        GetObjectField(XmlElem, JoinX(ContractX, ApartmentAmountX), ParsingResult, ApartmentAmountX);
+        OK := GetObjectField(XmlElem, JoinX(ContractX, FinishingInclX), ParsingResult, FinishingInclX);
         if not XmlElem.SelectNodes(JoinX(ContractX, ContractBuyerNodesX), XmlNodeList) then
             exit;
         No := '1';
         foreach XmlNode in XmlNodeList do begin
             XmlElem := XmlNode.AsXmlElement();
-            GetObjectData(XmlElem, ContractBuyerX, ParsingResult, ContractBuyerX + No);
+            GetObjectField(XmlElem, ContractBuyerX, ParsingResult, ContractBuyerX + No);
             No := IncStr(No);
         end;
     end;
 
-    local procedure ImportUnit(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
+
+
+    [TryFunction]
+    local procedure ImportContact(var FetchedObject: Record "CRM Prefetched Object"; ObjectParams: Dictionary of [Text, Text])
     var
-        CRMBuyer: Record "CRM Buyers";
-        Apartments: Record Apartments;
-        Value: Text;
+        Customer: Record Customer;
+        Value, TargetCompanyName : Text;
+        TempStr: Text;
         TempDT: DateTime;
         No: Text[2];
+        LogStatusEnum: Enum "CRM Log Status";
+        ImportAction: Option Create,Update;
+
     begin
-        if ParsingResult.Count = 0 then
+        if ObjectParams.Count() = 0 then
             exit;
 
-        CRMBuyer.SetRange("Unit Guid", FetchedObject.Id);
-        CRMBuyer.DeleteAll(true);
-
-        CRMBuyer.Init();
-        CRMBuyer."Unit Guid" := FetchedObject.Id;
-        CRMBuyer."Version Id" := FetchedObject."Version Id";
-        if ParsingResult.Get(ReservingContactX, Value) then
-            Evaluate(CRMBuyer."Reserving Contact Guid", Value);
-        if ParsingResult.Get(InvestmentObjectX, Value) then begin
-            CRMBuyer."Object of Investing" := Value;
-            Apartments."Object No." := CRMBuyer."Object of Investing";
-            if ParsingResult.Get(BlockNumberX, Value) then
-                Apartments.Description := Value.Trim();
-            if ParsingResult.Get(ApartmentNumberX, Value) then begin
-                if (Apartments.Description <> '') and (not Apartments.Description.EndsWith(' ')) then
-                    Apartments.Description += ' ';
-                Apartments.Description += Value.Trim();
-            end;
-            if ParsingResult.Get(ApartmentOriginTypeX, Value) then
-                Apartments."Origin Type" := CopyStr(Format(Value), 1, MaxStrLen(Apartments."Origin Type"));
-            if ParsingResult.Get(ApartmentUnitAreaM2X, Value) then
-                if Evaluate(Apartments."Total Area (Project)", Value, 9) then;
-            if not Apartments.Insert(True) then
-                Apartments.Modify(True);
+        if not ObjectParams.Get(TargetCompanyNameX, TargetCompanyName) then
+            TargetCompanyName := '';
+        if (TargetCompanyName <> CompanyName()) and (TargetCompanyName <> '') then begin
+            Customer.ChangeCompany(TargetCompanyName);
         end;
-        No := '1';
-        if not ParsingResult.Get(UnitBuyerX + No, Value) then begin
-            CRMBuyer.Insert(true);
-            exit;
-        end;
-        repeat
-            Evaluate(CRMBuyer."Buyer Guid", Value);
-            if ParsingResult.Get(UnitBuyerContactX + No, Value) then
-                Evaluate(CRMBuyer."Contact Guid", Value);
-            if ParsingResult.Get(UnitBuyerContractX + No, Value) then
-                Evaluate(CRMBuyer."Contract Guid", Value);
-            if ParsingResult.Get(UnitBuyerOwnershipPrcX + No, Value) then
-                Evaluate(CRMBuyer."Ownership Percentage", Value, 9)
-            Else
-                CRMBuyer."Ownership Percentage" := 100;
-            CRMBuyer."Buyer Is Active" := true;
-            if ParsingResult.Get(UnitBuyerIsActiveX + No, Value) then begin
-                if Value = 'false' then
-                    CRMBuyer."Buyer Is Active" := false;
-            end;
-            if CRMBuyer."Buyer Is Active" then begin
-                CRMBuyer."Expected Registration Period" := 0;
-                if ParsingResult.Get(ExpectedRegDateX + No, Value) then
-                    Evaluate(CRMBuyer."Expected Registration Period", Value, 9);
-                CRMBuyer."Agreement Start" := 0D;
-                if ParsingResult.Get(ActualDateX + No, Value) then
-                    if Evaluate(TempDT, Value, 9) then
-                        CRMBuyer."Agreement Start" := DT2Date(TempDT) - CRMBuyer."Expected Registration Period";
-                CRMBuyer."Agreement End" := 0D;
-                if ParsingResult.Get(ExpectedDateX + No, Value) then
-                    if Evaluate(TempDT, Value, 9) then
-                        CRMBuyer."Agreement End" := DT2Date(TempDT);
-            end;
-            CRMBuyer."Version Id" := FetchedObject."Version Id";
-            CRMBuyer.Insert(true);
-            No := IncStr(No);
-            if not ParsingResult.Get(UnitBuyerX + No, Value) then
-                exit
-        until No = '99';
-    end;
 
-    local procedure ImportContact(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
-    begin
+        Customer.SetRange("CRM GUID", FetchedObject.Id);
+        if not Customer.FindFirst() then begin
+            ImportAction := ImportAction::Create;
+            if ObjectParams.Get(ContactUpdateExistingX, Value) then
+                exit;
+        end else begin
+            Customer.SetRange("Version Id", FetchedObject."Version Id");
+            if Customer.FindFirst() then begin
+                LogEvent(FetchedObject, LogStatusEnum::Skipped, StrSubstNo(ContactUpToDateMsg, Customer."No."));
+                exit;
+            end;
+            Customer.SetRange("Version Id");
+            ImportAction := ImportAction::Update;
+        end;
+
+        if ImportAction = ImportAction::Create then begin
+            Customer.Init();
+            Customer."No." := '';
+        end else begin
+            Customer.FindFirst();
+        end;
+
+        ObjectParams.Get(LastNameX, Value);
+        TempStr := Value;
+        ObjectParams.Get(FirstNameX, Value);
+        TempStr += ' ' + Value;
+        ObjectParams.Get(MiddleNameX, Value);
+        TempStr += ' ' + Value;
+        Customer.Name := CopyStr(TempStr, 1, MaxStrLen(Customer.Name));
+        if MaxStrLen(Customer.Name) < StrLen(TempStr) then
+            Customer."Name 2" := CopyStr(TempStr, MaxStrLen(Customer.Name) + 1, MaxStrLen(Customer."Name 2"));
+        TempStr := '';
+        if ObjectParams.Get(PostalCityX, Value) then begin
+            Customer.City := CopyStr(Value, 1, MaxStrLen(Customer.City));
+        end;
+        //if ObjectParams.Get(CountryCodeX, Value) then
+
 
     end;
 
+    [TryFunction]
     local procedure ImportContract(var FetchedObject: Record "CRM Prefetched Object"; ParsingResult: Dictionary of [Text, Text])
     begin
 
@@ -494,15 +682,83 @@ codeunit 99932 "CRM Worker"
     end;
 
     [TryFunction]
-    local procedure GetObjectData(XmlElem: XmlElement; Xpath: Text; var ObjDataContainer: Dictionary of [Text, Text]; FieldKey: Text)
+    local procedure GetObjectField(XmlElem: XmlElement; Xpath: Text; var ObjDataContainer: Dictionary of [Text, Text]; FieldKey: Text)
     var
         TempXmlElemValue: Text;
-        KeyErr: Label 'No field key specified!';
     begin
         GetValue(XmlElem, xpath, TempXmlElemValue);
         if FieldKey = '' then
             Error(KeyErr);
         ObjDataContainer.Add(FieldKey, TempXmlElemValue);
+    end;
+
+    [TryFunction]
+    local procedure GetTargetCrmCompany(var FetchedObject: Record "CRM Prefetched Object"; SearchInCrmInteractCompanyList: List of [Text]; var TargetCompanyName: Text)
+    var
+        CrmCompany: Record "CRM Company";
+        CrmB: Record "CRM Buyers";
+        CrmCompanyName: Text;
+    begin
+        TargetCompanyName := '';
+        case FetchedObject.Type of
+            FetchedObject.Type::Unit:
+                begin
+                    CrmCompany.SetRange("Project Guid", FetchedObject.ParentId);
+                    if not CrmCompany.FindFirst() then
+                        Error(ProjectNotFoundErr, FetchedObject.ParentId, CrmCompany.TableCaption)
+                    else begin
+                        CrmCompany.TestField("Company Name");
+                        TargetCompanyName := CrmCompany."Company Name";
+                    end;
+                end;
+            FetchedObject.Type::Contract:
+                begin
+                    foreach CrmCompanyname in SearchInCrmInteractCompanyList do begin
+                        CrmB.ChangeCompany(CrmCompanyName);
+                        CrmB.SetRange("Unit Guid", FetchedObject.ParentId);
+                        if CrmB.FindFirst() then begin
+                            TargetCompanyName := CrmCompanyName;
+                            break;
+                        end;
+                    end;
+                    if TargetCompanyName = '' then
+                        Error(ContractUnitNotFoundErr, FetchedObject.ParentId);
+                end;
+            FetchedObject.Type::Contact:
+                begin
+                    foreach CrmCompanyname in SearchInCrmInteractCompanyList do begin
+                        CrmB.Reset();
+                        CrmB.ChangeCompany(CrmCompanyName);
+                        CrmB.SetRange("Contact Guid", FetchedObject.Id);
+                        if CrmB.FindFirst() then begin
+                            TargetCompanyName := CrmCompanyName;
+                            break;
+                        end;
+                        CrmB.SetRange("Contact Guid");
+                        CrmB.SetRange("Reserving Contact Guid", FetchedObject.Id);
+                        if CrmB.FindFirst() then begin
+                            TargetCompanyName := CrmCompanyName;
+                            break;
+                        end;
+                    end;
+                    if TargetCompanyName = '' then
+                        Error(ContactUnitNotFoundErr);
+                end;
+        end
+    end;
+
+    local procedure GetCrmInteractCompanyList(var CrmInteractCompanyList: List of [Text])
+    var
+        CrmCompany: Record "CRM Company";
+        TempDict: Dictionary of [Text, Integer];
+    begin
+        CrmCompany.Reset();
+        CrmCompany.FindSet();
+        repeat
+            if CrmCompany."Company Name" <> '' then
+                TempDict.Add(CrmCompany."Company Name", 1);
+        until CrmCompany.Next() = 0;
+        CrmInteractCompanyList := TempDict.Keys();
     end;
 
     local procedure ObjectAlreadyImported(var FetchedObject: record "CRM Prefetched Object") Result: Boolean
@@ -525,7 +781,7 @@ codeunit 99932 "CRM Worker"
                     Cust.Reset();
                     Cust.Setrange("CRM GUID", FetchedObject.Id);
                     Cust.SetRange("Version Id", FetchedObject."Version Id");
-                    Result := Not Cust.IsEmpty;
+                    Result := Not Cust.IsEmpty();
                 end;
 
             FetchedObject.Type::Contract:
@@ -533,7 +789,7 @@ codeunit 99932 "CRM Worker"
                     Agr.Reset();
                     Agr.SetRange("CRM GUID", FetchedObject.Id);
                     Agr.SetRange("Version Id", FetchedObject."Version Id");
-                    result := not Agr.IsEmpty;
+                    result := not Agr.IsEmpty();
                 end;
         end
     end;
@@ -547,7 +803,7 @@ codeunit 99932 "CRM Worker"
         Result := RootXPath + ChildXPath;
     end;
 
-    local procedure LogEvent(var FetchedObject: Record "CRM Prefetched Object"; LogStatus: Enum "CRM Log Status"; MsgText: Text)
+    local procedure LogEvent(var FetchedObject: Record "CRM Prefetched Object"; LogStatusEnum: Enum "CRM Log Status"; MsgText: Text)
     var
         Log: Record "CRM Log";
     begin
@@ -561,11 +817,28 @@ codeunit 99932 "CRM Worker"
         Log."Object Version Id" := FetchedObject."Version Id";
         Log."Web Request Queue Id" := FetchedObject."Web Request Queue Id";
         Log.Datetime := CurrentDateTime;
-        Log.Status := LogStatus;
+        Log.Status := LogStatusEnum;
         Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));
         Log."Details Text 2" := CopyStr(MsgText, MaxStrLen(Log."Details Text 1") + 1, MaxStrLen(Log."Details Text 2"));
         Log.Insert();
     end;
+
+    local procedure LogEvent(WrqId: Guid; LogStatusEnum: Enum "CRM Log Status"; MsgText: Text)
+    var
+        Log: Record "CRM Log";
+    begin
+        if not Log.FindLast() then
+            Log."Entry No." := 1L
+        else
+            Log."Entry No." += 1;
+        Log."Web Request Queue Id" := WrqId;
+        Log.Datetime := CurrentDateTime;
+        Log.Status := LogStatusEnum;
+        Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));
+        Log."Details Text 2" := CopyStr(MsgText, MaxStrLen(Log."Details Text 1") + 1, MaxStrLen(Log."Details Text 2"));
+        Log.Insert();
+    end;
+
 
     local procedure DebugPrint(XmlText: Text; Tag: Text)
     var

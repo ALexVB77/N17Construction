@@ -1,3 +1,6 @@
+DELETE FROM [Bonava-Test].[dbo].[Bonava$Customer$437dbf0e-84ff-417a-965d-ed2bb9650972];
+DELETE FROM [Bonava-Test].[dbo].[Bonava$Customer$2944687f-9cf8-4134-a24c-e21fb70a8b1a];
+
 --Customer
 -- Base Table
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Customer$437dbf0e-84ff-417a-965d-ed2bb9650972]
@@ -74,6 +77,10 @@ SELECT
 	[CRM GUID]
 FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Customer]
 WHERE [Blocked] <> '3';
+
+
+DELETE FROM [Bonava-Test].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972] AS DefaultDimension
+WHERE DefaultDimension.[Table ID] = '18';
 
 --Default Dimension
 INSERT INTO [Bonava-Test].[dbo].[Bonava$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]

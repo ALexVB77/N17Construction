@@ -1,3 +1,7 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Location$437dbf0e-84ff-417a-965d-ed2bb9650972];
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Location$2944687f-9cf8-4134-a24c-e21fb70a8b1a];
+
+-- Location
 -- Base Table
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Location$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
@@ -127,6 +131,10 @@ FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[Bonava$Location]
 INNER JOIN [Bonava-Test].[dbo].[Real Estate$Location Mapping$2944687f-9cf8-4134-a24c-e21fb70a8b1a] LocationMapping
 ON LocationMapping.[Old Location Code] = [Code] collate Cyrillic_General_100_CI_AS
 WHERE [Blocked] <> '1';
+
+
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972] AS DefaultDimension
+WHERE DefaultDimension.[Table ID] = '14';
 
 --Default Dimension
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]

@@ -1,3 +1,6 @@
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Vendor Agreement$437dbf0e-84ff-417a-965d-ed2bb9650972];
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Vendor Agreement$2944687f-9cf8-4134-a24c-e21fb70a8b1a];
+
 -- Vendor Agreement Table
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Vendor Agreement$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
@@ -96,6 +99,10 @@ LEFT JOIN [Bonava-Test].[dbo].[Real Estate$G_L Account Mapping$2944687f-9cf8-413
 ON GLAccMapping.[Old No_] = [Vendor Posting Group] collate Cyrillic_General_100_CI_AS
 WHERE [Blocked] <> '2';
 
+
+DELETE FROM [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972] AS DefaultDimension
+WHERE DefaultDimension.[Table ID] = '14901';
+
 --Default Dimension
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Default Dimension$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
@@ -145,6 +152,8 @@ LEFT JOIN [Bonava-Test].[dbo].[Real Estate$Dimension Mapping$2944687f-9cf8-4134-
 ON DimensionMapping.[Old Dimension Value Code] = DefaultDimension.[Dimension Value Code] collate Cyrillic_General_100_CI_AS
 WHERE DefaultDimension.[Dimension Code] = 'CP' AND DefaultDimension.[Table ID] = '14901';
 
+
+DELETE FROM [VM-PRO-SQL007\NAV].[NAV_for_Developers].[dbo].[NCC Real Estate$Comment Line];
 -- Comment Line
 INSERT INTO [Bonava-Test].[dbo].[Real Estate$Comment Line$437dbf0e-84ff-417a-965d-ed2bb9650972]
 (
