@@ -3773,6 +3773,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactUnitNotFoundErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 2226781293" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No. %1 is up to date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactUpToDateMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 3024906446" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit %1 of Contract is not found</source>
           <note from="Developer" annotates="general" priority="2"></note>
