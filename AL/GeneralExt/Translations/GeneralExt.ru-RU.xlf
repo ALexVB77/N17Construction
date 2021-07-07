@@ -277,7 +277,6 @@
           <source>No,Day,Week,Month</source>
           <target>Нет,День,Неделя,Месяц</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Option no. 0 of source is "No", but the same option in target is "". Empty Options must be empty in both source and target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Budget Correction - Field Period Group Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3587166653 - Field 2965272548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1498,11 +1497,19 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Status - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1501946700 - Field 624367095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Web Request Queue Id</source>
-          <target>Id Очереди веб-запросов</target>
+        <trans-unit id="Table 1501946700 - Field 1918784859 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WRQ Id</source>
+          <target>Id веб-запроса</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field Web Request Queue Id - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field WRQ Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1501946700 - Field 3692058211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WRQ Source Company Name</source>
+          <target>Компания источник веб-запроса</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Log - Field WRQ Source Company Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CRM Prefetched Object</source>
@@ -4532,7 +4539,7 @@
           <source>Customer No. %1 is up to date</source>
           <target>Contact находится уже в актуальном состоянии</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactUpToDateMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 3024906446" size-unit="char" translate="yes" xml:space="preserve">
@@ -5079,7 +5086,6 @@
           <source>Absence registration canceled</source>
           <target>Регистрация отсутствия отменена.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method RegisterUserPresence - NamedType LocText004</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4070886459 - NamedType 3828587597" size-unit="char" translate="yes" xml:space="preserve">
@@ -10360,7 +10366,6 @@
           <source>Item Shipment M-15 Posted</source>
           <target>Item Shipment M-15 Posted</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-19 - RequestPage RequestOptionsPage - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2721895639 - Control 3142902948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10923,7 +10928,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
@@ -11350,7 +11355,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
@@ -12932,6 +12937,33 @@
           <target>Отсутствует настройка Кладовщик склад для текущего пользователя. Обратитесь к администратору.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Warehouse Employee (Ext) - Method GetDefaultLocation - NamedType Text50002</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 2391506199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exclude VAT</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue Exclude VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 1689206417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include VAT</source>
+          <target>[NAB: SUGGESTION]С учетом НДС</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue Include VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <target>[NAB: SUGGESTION]НДС</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 273371814 - EnumValue 3980010935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actuals</source>
