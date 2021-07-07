@@ -2478,6 +2478,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field Repeat Interval - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2960147102 - Field 4154341761 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Succession</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Article - Field Sequence - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2332267737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Projects Budget Entry</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8557,6 +8562,11 @@
           <source>Imported from Excel </source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 61001228 - NamedType 1302975608" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Error: Cell (line %1, column %2) must contain a number.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType Text023</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - NamedType 162941379" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select file</source>
