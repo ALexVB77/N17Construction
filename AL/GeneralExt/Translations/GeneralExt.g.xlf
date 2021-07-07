@@ -3113,6 +3113,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 2145344616 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imported Form File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Imported Form File - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2622754722 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8463,6 +8468,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 61001228 - NamedType 3556479000" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls</source>
+          <note from="Developer" annotates="general" priority="2">{Split=r'\|'}{Locked=s'1'}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType Excel2007FileType</note>
+        </trans-unit>
+        <trans-unit id="Report 61001228 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imported from Excel </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 61001228 - NamedType 162941379" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select file</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType TextUp001</note>
+        </trans-unit>
         <trans-unit id="Report 61001228 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10772,6 +10792,26 @@
           <source>There is no Storekeeper Warehouse setting for the current user. Please contact your administrator.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Warehouse Employee (Ext) - Method GetDefaultLocation - NamedType Text50002</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 2391506199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exclude VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue Exclude VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 1689206417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue Include VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2638546648 - EnumValue 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Amount Type - EnumValue VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 273371814 - EnumValue 3980010935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Actuals</source>

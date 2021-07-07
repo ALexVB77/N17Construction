@@ -443,11 +443,11 @@ table 70095 "Projects Cost Control Entry"
         {
             Caption = 'VAT %';
         }
-        // field(50040; "Imported Form File"; Boolean)
-        // {
-        //     Caption = 'Imported Form File';
-        //     Editable = false;
-        // }
+        field(50040; "Imported Form File"; Boolean)
+        {
+            Caption = 'Imported Form File';
+            Editable = false;
+        }
         field(60090; "Original Company"; Code[2])
         {
             Caption = 'Original Company';
