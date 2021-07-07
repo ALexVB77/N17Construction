@@ -2,7 +2,15 @@ pageextension 85740 "Transfer Order (Ext)" extends "Transfer Order"
 {
     layout
     {
-        // Add changes to page layout here
+        addafter("Transfer-to Code")
+        {
+            field("Giv. Type"; Rec."Giv. Type")
+            {
+                ApplicationArea = All;
+                // Editable = false;
+                Description = 'NC 51410 EP';
+            }
+        }
     }
 
     actions
@@ -22,11 +30,14 @@ pageextension 85740 "Transfer Order (Ext)" extends "Transfer Order"
                     rec.GetInventoryLines;
                     //NC 22512 < DP
                 end;
-
             }
         }
     }
 
-    var
-        myInt: Integer;
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        // NC 51410 > EP
+        Rec."Giv. Type" := Rec."Giv. Type"::Internal;
+        // NC 51410 < EP
+    end;
 }

@@ -41,6 +41,12 @@ page 50092 "Giv. Transfer Order"
                     Importance = Promoted;
                     ToolTip = 'Specifies the code of the location that the items are transferred to.';
                 }
+                field("Giv. Type"; Rec."Giv. Type")
+                {
+                    ApplicationArea = All;
+                    // Editable = false;
+                    Importance = Promoted;
+                }
                 field("Direct Transfer"; Rec."Direct Transfer")
                 {
                     ApplicationArea = Location;
@@ -129,6 +135,11 @@ page 50092 "Giv. Transfer Order"
                     ApplicationArea = Location;
                     Importance = Promoted;
                     ToolTip = 'Specifies whether the transfer order is open or has been released for warehouse handling.';
+                }
+                field("Gen. Bus. Posting Group"; Rec."Gen. Bus. Posting Group")
+                {
+                    ApplicationArea = All;
+                    Description = 'NC22512 DP';
                 }
             }
             part(TransferLines; "Transfer Order Subform")
@@ -800,6 +811,13 @@ page 50092 "Giv. Transfer Order"
         SetDocNoVisible;
         EnableTransferFields := not IsPartiallyShipped;
         ActivateFields;
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        // NC 51410 > EP
+        Rec."Giv. Type" := Rec."Giv. Type"::"To Contractor";
+        // NC 51410 < EP
     end;
 
     var
