@@ -4603,6 +4603,66 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cash Flow Transaction Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2081427051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Control Construction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control GroupName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 2608293804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Code filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control CostCodeFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 1604419066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Place filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control CostPlaceFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 3984559024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hide Zero Amounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control HideNullAmounts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control TemplateCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 744701422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action ForecastNav - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2675951212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FrcNext</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcNext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2659090786 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FrcPrev</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcPrev - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1772688814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVersion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2516169122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrjVerNext</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVerNext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1867225852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrjVerPrev</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVerPrev - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2675196445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create ST Proj Budget Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
