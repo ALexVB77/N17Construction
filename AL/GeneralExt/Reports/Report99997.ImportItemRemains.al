@@ -159,7 +159,7 @@ report 99997 "Import Item Remains"
             end;
 
             if (ExcelBuf.get(r, 5)) then begin
-                ijl.validate("Shortcut Dimension 2 Code", ExcelBuf."Cell Value as Text");
+                ijl.validate("Shortcut Dimension 2 Code", copystr(ExcelBuf."Cell Value as Text", 2));
             end;
 
             if (ExcelBuf.get(r, 6)) then begin
@@ -184,6 +184,7 @@ report 99997 "Import Item Remains"
                     ijl.validate("Unit Cost", d);
                 end;
             end;
+            lineNo += 10000;
             ijl.Modify(true);
         end;
 
