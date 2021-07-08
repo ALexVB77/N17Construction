@@ -84,6 +84,7 @@ codeunit 99932 "CRM Worker"
 
         //Messages
         ContactUpToDateMsg: Label 'Customer No. %1 is up to date';
+        ContactProcessedMsg: Label 'Customer No. %1';
         NoInvestObjectMsg: Label 'Investment object is not specified';
         InvestmentObjectCreatedMsg: label 'Investment object %1 was created';
         InvestmentObjectUpdatedMsg: label 'Investment object %1 was updated';
@@ -556,6 +557,7 @@ codeunit 99932 "CRM Worker"
         Customer: Record Customer;
         CustTemp: Record Customer temporary;
         CrmSetup: Record "CRM Integration Setup";
+        UpdateContFromCust: Codeunit "CustCont-Update";
         ContBusRelation: Record "Contact Business Relation";
         Value, TargetCompanyName : Text;
         TempStr: Text;
@@ -661,15 +663,14 @@ codeunit 99932 "CRM Worker"
         Customer.Modify;
 
         //to-do
-        // ContBusRelation.SETCURRENTKEY("Link to Table", "No.");
-        // ContBusRelation.SETRANGE("Link to Table", ContBusRelation."Link to Table"::Customer);
-        // ContBusRelation.SETRANGE("No.", Customer."No.");
-        // IF NOT ContBusRelation.FINDFIRST THEN BEGIN
-        //     UpdateContFromCust.InsertNewContact(Cust, FALSE);
-        // END;
+        ContBusRelation.SETCURRENTKEY("Link to Table", "No.");
+        ContBusRelation.SetRange("Link to Table", ContBusRelation."Link to Table"::Customer);
+        ContBusRelation.SetRange("No.", Customer."No.");
+        IF NOT ContBusRelation.FindFirst() THEN BEGIN
+            UpdateContFromCust.InsertNewContact(Customer, FALSE);
+        END;
 
-        //to-do
-        //LogEvent(..)
+        LogEvent(FetchedObject, TargetCompanyName, LogStatusEnum::Done, ActionEnum, StrSubstNo(ContactProcessedMsg, Customer."No."), '');
         Commit();
     end;
 

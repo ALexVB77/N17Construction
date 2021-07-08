@@ -4569,6 +4569,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType BadSoapEnvFormatErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1397584261" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No. %1</source>
+          <target>Клиент Но. %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactProcessedMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 3797882964" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit of Contact or Reserving Contact is not found</source>
           <target>Не найден Unit</target>
@@ -4577,9 +4584,8 @@
         </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 2226781293" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer No. %1 is up to date</source>
-          <target>[NAB: REVIEW]Contact находится уже в актуальном состоянии</target>
+          <target>Клиент %1 находится уже в актуальном состоянии</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%1" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactUpToDateMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 3024906446" size-unit="char" translate="yes" xml:space="preserve">
@@ -11094,10 +11100,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1776801010 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement</source>
-          <target>[NAB: REVIEW]Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
+          <source>Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement,Transfer of rights</source>
+          <target>Договор Продажи,Договор Инвестирования,Договор Бронирования,Договор Купли-Продажи,Служебный,Предварительный договор Купли-Продажи,Договор цессии</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Agreement Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 1397166390 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
@@ -11521,10 +11526,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
-          <source>Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled</source>
-          <target>[NAB: REVIEW]В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
+          <source>Procesed,Signed,Change conditions,FRS registration,FRS registered,Registration of annulled,Annulled registered,Annulled,Cancelled</source>
+          <target>В работе,Подписан,Изменение условий,Регистрация ФРС,Зарегистрирован ФРС,Регистрация расторжения,Зарегистрировано расторжение,Расторгнут,Аннулирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement (Ext) - Field Status - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2936356446 - Field 2667379001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
@@ -13245,23 +13249,20 @@
         </trans-unit>
         <trans-unit id="Enum 1593761241 - EnumValue 710972128 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create</source>
-          <target>[NAB: SUGGESTION]Создать</target>
+          <target>Создать</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Create - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1593761241 - EnumValue 3238504282 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Remove</source>
-          <target>[NAB: SUGGESTION]Удалить</target>
+          <target>Удалить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Remove - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1593761241 - EnumValue 642782499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Update</source>
-          <target>[NAB: SUGGESTION]Обновить</target>
+          <target>Обновить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Update - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2960129384 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
