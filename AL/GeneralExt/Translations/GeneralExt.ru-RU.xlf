@@ -4569,6 +4569,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType BadSoapEnvFormatErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1397584261" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No. %1</source>
+          <target>Клиент Но. %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactProcessedMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 3797882964" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit of Contact or Reserving Contact is not found</source>
           <target>Не найден Unit</target>
