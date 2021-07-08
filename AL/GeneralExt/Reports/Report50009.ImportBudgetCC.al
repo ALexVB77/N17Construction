@@ -145,7 +145,7 @@ report 50009 "Import Budget CC"
             END ELSE
                 gVer := VersionCode;
         END;
-
+        Window.OPEN(TextImport);
         IF FirstLine THEN
             Var1 := 2
         ELSE
@@ -535,10 +535,10 @@ report 50009 "Import Budget CC"
             //         ErrorTXT:=ErrorTXT+xlsNomCodePrev+'\';
             //   END;
             //  //SWC274 SM 121114 <<
-            //   Window.UPDATE(1, ROUND(dd / i * 10000, 1));
+            Window.UPDATE(1, ROUND(dd / i * 10000, 1));
 
         END;
-
+        Window.Close();
         //NC 28312, 28312 HR beg
         IF ImportType = ImportType::"Excel Template" THEN BEGIN
             ShowLog;
@@ -565,6 +565,7 @@ report 50009 "Import Budget CC"
         ExcelBuf: Record "Excel Buffer" temporary;
         TextUp001: Label 'Select file';
         Excel2007FileType: Label 'Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls', Comment = '{Split=r''\|''}{Locked=s''1''}';
+        TextImport: Label 'Import Data ...\@1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@';
         // Text000: Label 'You must specify a budget name to import to.';
         // Text001: Label 'Do you want to create %1 %2.';
         // Text002: Label '%1 %2 is blocked. You cannot import entries.';

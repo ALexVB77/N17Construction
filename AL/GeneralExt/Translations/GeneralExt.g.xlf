@@ -8598,6 +8598,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType Text023</note>
         </trans-unit>
+        <trans-unit id="Report 61001228 - NamedType 615931324" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Data ...\@1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType TextImport</note>
+        </trans-unit>
         <trans-unit id="Report 61001228 - NamedType 162941379" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select file</source>
           <note from="Developer" annotates="general" priority="2"></note>
