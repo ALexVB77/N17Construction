@@ -2,6 +2,8 @@ report 99997 "Import Item Remains"
 {
     Caption = 'Import Item Remains';
     ProcessingOnly = true;
+    UsageCategory = Administration;
+    ApplicationArea = Basic, Suite;
 
     dataset
     {
