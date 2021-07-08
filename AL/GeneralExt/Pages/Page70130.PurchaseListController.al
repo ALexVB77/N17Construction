@@ -211,7 +211,7 @@ page 70130 "Purchase List Controller"
             action(ResetProblemDoc)
             {
                 ApplicationArea = Basic, Suite;
-                Caption = 'View';
+                Caption = 'Reset Problem from Doc.';
                 Image = ResetStatus;
 
                 trigger OnAction()

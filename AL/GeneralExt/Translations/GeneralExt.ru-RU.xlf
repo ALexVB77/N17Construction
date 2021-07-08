@@ -4573,7 +4573,6 @@
           <source>Customer No. %1</source>
           <target>Клиент Но. %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContactProcessedMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 3797882964" size-unit="char" translate="yes" xml:space="preserve">
@@ -5025,6 +5024,18 @@
           <target>%1 заявок на оплату было привязано к акту %2.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3537274838 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The selected documents are not the problem.</source>
+          <target>Среди выбранных документов нет проблемных.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PaymentRegisterResetProblemDocument - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3537274838 - NamedType 3106366241" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to reset Problem mark from the selected documents?</source>
+          <target>Вы действительно хотите снять отметку Проблемный с выбранных документов?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PaymentRegisterResetProblemDocument - NamedType LocText002</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2022965182 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
@@ -8146,6 +8157,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Controller - Action DocAttach - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1370391159 - Action 3935216386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reset Problem from Doc.</source>
+          <target>Снять c Проблемный документ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Controller - Action ResetProblemDoc - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1370391159 - Action 540515815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View</source>
           <target>Карточка</target>
@@ -10328,7 +10346,6 @@
           <source>Import Data ...\@1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</source>
           <target>Импорт данных ...\@1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - NamedType TextImport</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - NamedType 162941379" size-unit="char" translate="yes" xml:space="preserve">

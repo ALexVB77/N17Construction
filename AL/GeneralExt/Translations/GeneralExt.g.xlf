@@ -4188,6 +4188,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method LinkActAndPaymentInvoice - NamedType LocText002</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3537274838 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The selected documents are not the problem.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PaymentRegisterResetProblemDocument - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 3537274838 - NamedType 3106366241" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to reset Problem mark from the selected documents?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method PaymentRegisterResetProblemDocument - NamedType LocText002</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 2022965182 - NamedType 2309810774" size-unit="char" translate="yes" xml:space="preserve">
           <source>The document will be posted by quantity and a Posted Purchase Receipt will be created. Proceed?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6787,6 +6797,11 @@
           <source>Attachments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Controller - Action DocAttach - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1370391159 - Action 3935216386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reset Problem from Doc.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Controller - Action ResetProblemDoc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1370391159 - Action 540515815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View</source>
