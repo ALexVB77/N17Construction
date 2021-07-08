@@ -4373,6 +4373,51 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2964659661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Adjustment Journal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Powered by budget lines: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do not set no budget line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation canceled by user.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Budget Agjustment Journal?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Control 986138104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lines Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Control Control12370004 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Action 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Action Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Action 483403383 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Action Control12370049 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Action 261610131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Action PostA - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2285829057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Adjustment Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4382,51 +4427,6 @@
           <source>Save original entry sign</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Adjustment Journal</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Powered by budget lines: %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text001</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do not set no budget line</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text002</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operation canceled by user.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text003</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Post Budget Agjustment Journal?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text004</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Control 986138104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Lines Quantity</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Control Control12370004 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Action 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Functions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action Options - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Action 483403383 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Get</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action Control12370049 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Action 261610131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Post</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action PostA - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 194368442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted</source>
@@ -4608,6 +4608,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2081427051 - NamedType 1014966330" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only Administrator can change Forecast!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - NamedType TEXT003</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - NamedType 1652662947" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast Budget will be changed! Proceed?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - NamedType TEXT004</note>
+        </trans-unit>
         <trans-unit id="Page 2081427051 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4638,6 +4648,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Data - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 501129335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LoadForecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action LoadForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1991800990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LoadTargetBudget</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action LoadTargetBudget - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1696400955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RefreshActualsJournal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action RefreshActualsJournal - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2081427051 - Action 744701422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4657,6 +4682,16 @@
           <source>Functions</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Functions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2472357608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FixForecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FixForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 444552935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RefreshCommited</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action RefreshCommited - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2081427051 - Action 1772688814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget</source>

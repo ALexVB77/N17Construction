@@ -247,11 +247,94 @@ page 70209 "Cost Control Construction"
             }
             group(Functions)
             {
-
+                action(FixForecast)
+                {
+                    ApplicationArea = All;
+                    Image = Forecast;
+                    trigger OnAction()
+                    begin
+                        CLEAR(FixForecast);
+                        FixForecast.SetProject(TemplateCode);
+                        FixForecast.RUNMODAL;
+                        FrcVersionCode := GetDefFrcVersion(TemplateCode);
+                        IF grFrcPrjVesion.GET(TemplateCode, FrcVersionCode) THEN
+                            FrcVersionDescription := grFrcPrjVesion.Description;
+                    end;
+                }
+                action(RefreshCommited)
+                {
+                    ApplicationArea = All;
+                    Image = RefreshPlanningLine;
+                    trigger OnAction()
+                    var
+                        lERPC: Codeunit "ERPC Funtions";
+                    begin
+                        lERPC.FiltersForCommitted(TemplateCode, CostPlaceFlt, CostTypeFlt);
+                        MESSAGE('Done!');
+                    end;
+                }
             }
             group(Data)
             {
+                action(LoadTargetBudget)
+                {
+                    ApplicationArea = All;
+                    Image = ImportExcel;
+                    trigger OnAction()
+                    begin
 
+                        CLEAR(ImportBudgetCC);
+                        ImportBudgetCC.UseNewXLSFormatForTargetBudget(TRUE);
+                        ImportBudgetCC.SetImportType(1);
+                        ImportBudgetCC.SetCode(TemplateCode, VersionCode);
+                        ImportBudgetCC.RUNMODAL;
+                        VersionCode := GetDefVersion(TemplateCode);
+                        grPrjVesion.GET(TemplateCode, VersionCode);
+                        VersionDescription := grPrjVesion.Description;
+                        IF ImportBudgetCC.ExistCreatedCC THEN
+                            FillData;
+                        CurrPage.UPDATE(FALSE);
+                    end;
+                }
+                action(LoadForecast)
+                {
+                    ApplicationArea = All;
+                    Image = ImportExcel;
+                    trigger OnAction()
+                    begin
+                        r70095.SETRANGE("Project Code", TemplateCode);
+                        r70095.SETRANGE("Analysis Type", r70095."Analysis Type"::Forecast);
+                        IF r70095.FINDFIRST THEN BEGIN
+                            UserSetup.GET(USERID);
+                            IF NOT UserSetup."Administrator PRJ" THEN
+                                ERROR(TEXT003)
+                            ELSE BEGIN
+                                IF NOT CONFIRM(TEXT004) THEN ERROR('');
+                            END;
+                        END;
+                        CLEAR(ImportBudgetCC);
+                        ImportBudgetCC.SetImportType(4);
+                        ImportBudgetCC.SetCode(TemplateCode, GetDefVersion(TemplateCode));
+                        ImportBudgetCC.RUNMODAL;
+                    end;
+                }
+                action(RefreshActualsJournal)
+                {
+                    ApplicationArea = All;
+                    Image = RefreshLines;
+                    trigger OnAction()
+                    begin
+
+                        grBudgetCorrectionJournal.SETRANGE("Project Code", TemplateCode);
+                        IF grBudgetCorrectionJournal.FINDFIRST THEN;
+                        //grBudgetCorrectionJournal.FILTERGROUP:=2;
+
+                        CLEAR(BudgetCorrectionJournal);
+                        BudgetCorrectionJournal.SETRECORD(grBudgetCorrectionJournal);
+                        BudgetCorrectionJournal.SETTABLEVIEW(grBudgetCorrectionJournal);
+                        BudgetCorrectionJournal.RUNMODAL;
+                    end;
+                }
             }
         }
     }
@@ -296,7 +379,6 @@ page 70209 "Cost Control Construction"
         ActualExpansionStatus2: integer;
         ImportBudgetCC: report "Import Budget CC";
         OriginalBudget: decimal;
-
         UserSetup: record "User Setup";
         CurrentBudget: decimal;
         r70095: record "Projects Cost Control Entry";
@@ -311,7 +393,7 @@ page 70209 "Cost Control Construction"
         GLS: record "General Ledger Setup";
         DimensionValue: record "Dimension Value";
 
-        // BudgetCorrectionJournal: page "Budget Cor. Journal Constr";
+        BudgetCorrectionJournal: page "Budget Cor. Journal Constr";
         grBudgetCorrectionJournal: record "Budget Correction Journal";
         gYTB: decimal;
         OpenAdvances: decimal;
@@ -352,10 +434,10 @@ page 70209 "Cost Control Construction"
         LnAmt: array[30] of decimal;
         LnAmtEnum: Option " ",origbudgetvat,origbudgetinclvat,currbudgetvat,currbudgetinclvat,actualvat,actualinclvat,forecastvat,forecastinclvat,commitedvat,commitedinclvat,comittedforecastrate,actualforecastrate,orderedvat,orderedinclvat,currbudgetexclvat,"forecast-actuals","currbudget-forecast","currbudget-actuals",pforecastvat,pforecastinclvat,forecastvar,"commited-forecast";
         DBGText: text[30];
-    // TEXT001: Label 'Original Budget может изменить только Администратор!';
-    // TEXT002: Label 'Original Budget будет изменен! Продолжить?';
-    // TEXT003: Label 'Forecast может изменить только Администратор!';
-    // TEXT004: Label 'Forecast Budget будет изменен! Продолжить?';
+        // TEXT001: Label 'Original Budget может изменить только Администратор!';
+        // TEXT002: Label 'Original Budget будет изменен! Продолжить?';
+        TEXT003: Label 'Only Administrator can change Forecast!';
+        TEXT004: Label 'Forecast Budget will be changed! Proceed?';
     // TEXT005: Label 'Cash Flow может изменить только Администратор!';
     // TEXT006: Label 'Cash Flow Budget будет изменен! Продолжить?';
     // Text012: Label '<Precision,';
@@ -363,4 +445,36 @@ page 70209 "Cost Control Construction"
     // CFCheck: decimal;
     // TEXT0014: Label 'Фиксировать прогноз?';
     // TEXT0015: Label 'Недоступно для данного типа компании!';
+    procedure GetDefFrcVersion(pProjectCode: code[20]) Ret: code[20]
+    var
+        lrProjectVersion: record "Forecast Version";
+    begin
+        lrProjectVersion.SETCURRENTKEY(Int);
+        lrProjectVersion.SETRANGE("Project Code", pProjectCode);
+        IF lrProjectVersion.FINDLAST THEN
+            Ret := lrProjectVersion."Version Code";
+    end;
+
+    procedure GetDefVersion(pProjectCode: code[20]) Ret: code[20]
+    var
+        lrProjectVersion: record "Project Version";
+    begin
+        lrProjectVersion.SETCURRENTKEY(Int);
+        lrProjectVersion.SETRANGE("Project Code", pProjectCode);
+        //lrProjectVersion.SETRANGE("Fixed Version",TRUE);
+        IF lrProjectVersion.FINDLAST THEN
+            Ret := lrProjectVersion."Version Code"
+        ELSE BEGIN
+            lrProjectVersion.SETRANGE("Project Code", pProjectCode);
+            lrProjectVersion.SETRANGE("Fixed Version");
+            lrProjectVersion.SETRANGE("First Version", TRUE);
+            IF lrProjectVersion.FIND('-') THEN
+                Ret := lrProjectVersion."Version Code";
+        END;
+    end;
+
+    procedure FillData()
+    begin
+
+    end;
 }

@@ -921,7 +921,7 @@ codeunit 70000 "ERPC Funtions"
 
     end;
 
-    procedure CreateBCPreBookingJ(BudCorrJnl: Record "Budget Correction Journal") ret: Boolean
+    procedure CreateBCPreBookingJConstr(BudCorrJnl: Record "Budget Correction Journal") ret: Boolean
     var
         PCCE: Record "Projects Cost Control Entry";
         ProjectRec: Record "Dimension Value";
@@ -934,11 +934,11 @@ codeunit 70000 "ERPC Funtions"
         PInvLine: Record "Purch. Inv. Line";
     begin
         ret := false;
-        Message('cu70000.CreateBCPreBookingJ');
+        Message('cu70000.CreateBCPreBookingJConstr');
 
     end;
 
-    procedure FiltersForCommitted(pProjectCode: Code[20]; pProjectTurnCode: Code[20]; pCostType: Code[20])
+    procedure FiltersForCommitted(pProjectCode: Code[20]; pCostPlaceflt: Code[1024]; pCostType: Code[20])
     var
         lPCCE: Record "Projects Cost Control Entry";
         lComDet: Record "Commited Detail";
@@ -947,11 +947,11 @@ codeunit 70000 "ERPC Funtions"
         lPCCE.Reset();
 
         IF pProjectCode <> '' THEN
-            lPCCE.SETRANGE(lPCCE."Project Code", pProjectCode);
-        IF pProjectTurnCode <> '' THEN
-            lPCCE.SETRANGE(lPCCE."Project Turn Code", pProjectTurnCode);
+            lPCCE.SETRANGE("Project Code", pProjectCode);
+        IF pCostPlaceflt <> '' THEN
+            lPCCE.SetFilter("Shortcut Dimension 1 Code", pCostPlaceflt);
         IF pCostType <> '' THEN
-            lPCCE.SETRANGE(lPCCE."Cost Type", pCostType);
+            lPCCE.SETRANGE("Cost Type", pCostType);
         //SWC 200 AP 100714 >>
         IF pProjectCode <> '' THEN
             lComDet.SETRANGE("Project Code", pProjectCode);

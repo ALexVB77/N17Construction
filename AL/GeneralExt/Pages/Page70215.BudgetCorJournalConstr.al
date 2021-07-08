@@ -1,4 +1,4 @@
-page 70187 "Budget Correction Journal"
+page 70215 "Budget Cor. Journal Constr"
 {
     Permissions = TableData 17 = rm;
     InsertAllowed = false;
@@ -485,6 +485,7 @@ page 70187 "Budget Correction Journal"
         NavigateForm: page Navigate;
         Text004: Label 'Post Budget Agjustment Journal?';
         gvError: boolean;
+        ProjCodeFilter: Code[1024];
 
 
     procedure Post()
@@ -523,6 +524,7 @@ page 70187 "Budget Correction Journal"
         LocBCJ.COPY(Rec);
         LocBCJ.FILTERGROUP(2);
         LocBCJ.SETRANGE(Posted, FALSE);
+        LocBCJ.SETRANGE("Project Code", ProjCodeFilter);
         IF LocBCJ.FIND('-') THEN BEGIN
             Window.OPEN('Учет данных ...\' +
                                '@1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
@@ -532,7 +534,7 @@ page 70187 "Budget Correction Journal"
                     // NC 36695 >>
                     //ERPC.CreateBCPreBookingJ(LocBCJ);
                     //LocBCJ.Posted:=TRUE;                    
-                    posted := ERPC.CreateBCPreBookingJ(LocBCJ);
+                    posted := ERPC.CreateBCPreBookingJConstr(LocBCJ);
                     LocBCJ.Posted := posted;
                     // NC 36695 <<
                     LocBCJ.MODIFY;

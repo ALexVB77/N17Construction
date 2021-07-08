@@ -736,4 +736,9 @@ report 50009 "Import Budget CC"
         MESSAGE(MsgText);
         //NC 28312 HR end
     end;
+
+    procedure ExistCreatedCC(): boolean
+    begin
+        EXIT(CreateCC); //SWC274 SM 011214
+    end;
 }
