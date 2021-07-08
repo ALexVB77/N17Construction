@@ -157,7 +157,19 @@ page 70209 "Cost Control Construction"
                     Image = PreviousRecord;
                     trigger OnAction()
                     begin
-                        Message('nnn');
+                        grFrcPrjVesion.SETRANGE("Project Code", TemplateCode);
+                        IF grFrcPrjVesion.FIND('-') THEN BEGIN
+                            grFrcPrjVesion.GET(TemplateCode, FrcVersionCode);
+                            IF grFrcPrjVesion.NEXT(-1) <> 0 THEN BEGIN
+                                Rec.FILTERGROUP := 2;
+                                Rec.SETRANGE("Project Code", TemplateCode);
+                                FrcVersionCode := grFrcPrjVesion."Version Code";
+                                grFrcPrjVesion1.GET(TemplateCode, FrcVersionCode);
+                                FrcVersionDescription := grFrcPrjVesion1.Description;
+                                Rec.FILTERGROUP := 0;
+                            END;
+                        END;
+                        CurrPage.UPDATE(FALSE);
                     end;
                 }
                 action(FrcNext)
@@ -168,7 +180,19 @@ page 70209 "Cost Control Construction"
                     Image = NextRecord;
                     trigger OnAction()
                     begin
-                        Message('nnn');
+                        grFrcPrjVesion.SETRANGE("Project Code", TemplateCode);
+                        IF grFrcPrjVesion.FIND('-') THEN BEGIN
+                            grFrcPrjVesion.GET(TemplateCode, FrcVersionCode);
+                            IF grFrcPrjVesion.NEXT(1) <> 0 THEN BEGIN
+                                Rec.FILTERGROUP := 2;
+                                Rec.SETRANGE("Project Code", TemplateCode);
+                                FrcVersionCode := grFrcPrjVesion."Version Code";
+                                grFrcPrjVesion1.GET(TemplateCode, FrcVersionCode);
+                                FrcVersionDescription := grFrcPrjVesion1.Description;
+                                Rec.FILTERGROUP := 0;
+                            END;
+                        END;
+                        CurrPage.UPDATE(FALSE);
                     end;
                 }
             }
@@ -183,7 +207,19 @@ page 70209 "Cost Control Construction"
                     Image = PreviousSet;
                     trigger OnAction()
                     begin
-                        Message('nnn');
+                        grPrjVesionNav.SETRANGE("Project Code", TemplateCode);
+                        IF grPrjVesionNav.FIND('-') THEN BEGIN
+                            grPrjVesionNav.GET(TemplateCode, VersionCode);
+                            IF grPrjVesionNav.NEXT(-1) <> 0 THEN BEGIN
+                                Rec.FILTERGROUP := 2;
+                                Rec.SETRANGE("Project Code", TemplateCode);
+                                VersionCode := grPrjVesionNav."Version Code";
+                                grPrjVesion.GET(TemplateCode, VersionCode);
+                                VersionDescription := grPrjVesion.Description;
+
+                                Rec.FILTERGROUP := 0;
+                            END;
+                        END;
                     end;
                 }
                 action(PrjVerNext)
@@ -194,7 +230,18 @@ page 70209 "Cost Control Construction"
                     Image = NextSet;
                     trigger OnAction()
                     begin
-                        Message('nnn');
+                        grPrjVesionNav.SETRANGE("Project Code", TemplateCode);
+                        IF grPrjVesionNav.FIND('-') THEN BEGIN
+                            grPrjVesionNav.GET(TemplateCode, VersionCode);
+                            IF grPrjVesionNav.NEXT <> 0 THEN BEGIN
+                                Rec.FILTERGROUP := 2;
+                                Rec.SETRANGE("Project Code", TemplateCode);
+                                VersionCode := grPrjVesionNav."Version Code";
+                                grPrjVesion.GET(TemplateCode, VersionCode);
+                                VersionDescription := grPrjVesion.Description;
+                                Rec.FILTERGROUP := 0;
+                            END;
+                        END;
                     end;
                 }
             }
