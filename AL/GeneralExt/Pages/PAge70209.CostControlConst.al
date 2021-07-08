@@ -21,6 +21,20 @@ page 70209 "Cost Control Construction"
                 {
                     ApplicationArea = All;
                     Caption = 'Code';
+                    trigger OnLookup(var Text: text): boolean
+                    var
+                        lDimVal: Record "Dimension Value";
+                    begin
+                        lDimVal.reset;
+                        lDimVal.SetRange("Dimension Code", GLSetup."Project Dimension Code");
+                        // lDimVal.SetRange("Project Code", TemplateCode);
+                        IF lDimVal.FINDFIRST THEN BEGIN
+                            IF PAGE.RUNMODAL(PAGE::"Dimension Values", lDimVal) = ACTION::LookupOK THEN BEGIN
+                                TemplateCode := lDimVal.Code;
+                                TemplateDescription := lDimVal.Name;
+                            END;
+                        END;
+                    end;
                 }
                 field(TemplateDescription; TemplateDescription)
                 {
@@ -32,7 +46,7 @@ page 70209 "Cost Control Construction"
                 {
                     Editable = false;
                     ApplicationArea = All;
-                    trigger OnLookup(var Text: text): boolean
+                    trigger OnAssistEdit()
                     begin
                         grPrjVesion.FILTERGROUP := 2;
                         grPrjVesion.SETRANGE("Project Code", TemplateCode);
@@ -57,7 +71,7 @@ page 70209 "Cost Control Construction"
                 {
                     Editable = false;
                     ApplicationArea = All;
-                    trigger OnLookup(var Text: text): boolean
+                    trigger OnAssistEdit()
                     begin
                         grFrcPrjVesion.FILTERGROUP := 2;
                         grFrcPrjVesion.SETRANGE("Project Code", TemplateCode);
@@ -118,28 +132,43 @@ page 70209 "Cost Control Construction"
                     Caption = 'Hide Zero Amounts';
                 }
             }
+            repeater(repeat1)
+            {
+                field(Code; Rec.Code)
+                {
+                    ApplicationArea = All;
+                }
+            }
         }
     }
 
     actions
     {
-        area(Navigation)
+        area(Processing)
         {
             group(ForecastNav)
             {
                 Caption = 'Forecast';
                 action(FrcPrev)
                 {
+                    ApplicationArea = All;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    Image = PreviousRecord;
                     trigger OnAction()
                     begin
-
+                        Message('nnn');
                     end;
                 }
                 action(FrcNext)
                 {
+                    ApplicationArea = All;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    Image = NextRecord;
                     trigger OnAction()
                     begin
-
+                        Message('nnn');
                     end;
                 }
             }
@@ -148,32 +177,36 @@ page 70209 "Cost Control Construction"
                 Caption = 'Budget';
                 action(PrjVerPrev)
                 {
+                    ApplicationArea = All;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    Image = PreviousSet;
                     trigger OnAction()
                     begin
-
+                        Message('nnn');
                     end;
                 }
                 action(PrjVerNext)
                 {
+                    ApplicationArea = All;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    Image = NextSet;
                     trigger OnAction()
                     begin
-
+                        Message('nnn');
                     end;
                 }
             }
+            group(Functions)
+            {
+
+            }
+            group(Data)
+            {
+
+            }
         }
-        // area(Processing)
-        // {
-        //     action(ActionName)
-        //     {
-        //         ApplicationArea = All;
-
-        //         trigger OnAction()
-        //         begin
-
-        //         end;
-        //     }
-        // }
     }
 
     var

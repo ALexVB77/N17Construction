@@ -5559,6 +5559,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control TemplateCode - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1447994436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <target>Данные</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Data - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2081427051 - Action 744701422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast</source>
           <target>Прогноз</target>
@@ -5576,6 +5583,13 @@
           <target>Пред. прогноз</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcPrev - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1929393835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functions</source>
+          <target>Функции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Functions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2081427051 - Action 1772688814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget</source>

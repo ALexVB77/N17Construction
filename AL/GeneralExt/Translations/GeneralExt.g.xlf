@@ -4633,6 +4633,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control TemplateCode - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1447994436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Data - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2081427051 - Action 744701422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4647,6 +4652,11 @@
           <source>FrcPrev</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcPrev - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1929393835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Functions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2081427051 - Action 1772688814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget</source>
