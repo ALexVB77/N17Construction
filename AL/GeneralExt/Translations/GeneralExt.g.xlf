@@ -3008,6 +3008,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Changed - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2622754722 - Field 426187663 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close Commitment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Close Commitment - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2622754722 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Close Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
