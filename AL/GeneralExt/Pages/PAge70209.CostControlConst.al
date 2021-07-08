@@ -333,6 +333,7 @@ page 70209 "Cost Control Construction"
                         BudgetCorrectionJournal.SETRECORD(grBudgetCorrectionJournal);
                         BudgetCorrectionJournal.SETTABLEVIEW(grBudgetCorrectionJournal);
                         BudgetCorrectionJournal.RUNMODAL;
+
                     end;
                 }
             }
