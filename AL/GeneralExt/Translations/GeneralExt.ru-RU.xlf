@@ -3613,7 +3613,6 @@
           <source>Close Commitment</source>
           <target>Close Commitment</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Cost Control Entry - Field Close Commitment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2622754722 - Field 3455783358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -7766,42 +7765,36 @@
           <source>Problem Document Set</source>
           <target>Проблемный документ</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 756426410 - Method 921024001 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Could not find a comment related to returning a document for revision.</source>
           <target>Не удалось найти комментарий, связанный с возвратом документа на доработку.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Method SetProblemDescription - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Page 756426410 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <target>Общее</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control General - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 756426410 - Control 1860360197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Problem</source>
           <target>Проблема</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control Problem - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 756426410 - Action 227370865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Approval</source>
           <target>Утверждение</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Approval - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 756426410 - Action 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Comments</source>
           <target>Комментарии</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Comment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8222,7 +8215,6 @@
           <source>Problem Document</source>
           <target>Проблемный документ</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Controller - Action ViewProblemDoc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
@@ -10372,6 +10364,48 @@
           <target>Найти ошибку 70095</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix Forecast</source>
+          <target>Fix Forecast</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description is mandatory!</source>
+          <target>Необходимо ввести описание!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - NamedType TEXT0001</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target>Параметры</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control GroupName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Описание</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 1946087940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <target>Код проекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control ProjectCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 3695453617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast version</source>
+          <target>Прогноз версия код</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control VersionCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Budget CC</source>
