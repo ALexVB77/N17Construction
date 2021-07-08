@@ -278,8 +278,8 @@ codeunit 99932 "CRM Worker"
         repeat
             ParsedObjects.Get(FetchedObject.Id, Params);
             Params.Add(ContactUpdateExistingX, ContactUpdateExistingX);
-            if not ImportContact(FetchedObject, Params) then
-                LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
+            ImportContact(FetchedObject, Params);
+        //LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText())
         until FetchedObject.Next() = 0;
 
         //import contracts with creating necessary contacts
@@ -457,6 +457,38 @@ codeunit 99932 "CRM Worker"
         until No = '99';
     end;
 
+
+    [TryFunction]
+    local procedure ParseContractXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
+    var
+        XmlElem: XmlElement;
+        XmlNode: XmlNode;
+        XmlNodeList: XmlNodeList;
+        OK: Boolean;
+        No: Text[2];
+    begin
+        Clear(ParsingResult);
+        if ObjectAlreadyImported(FetchedObject) then
+            exit;
+        GetRootXmlElement(FetchedObject, XmlElem);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractNoX), ParsingResult, ContractNoX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractTypeX), ParsingResult, ContractTypeX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractStatusX), ParsingResult, ContractStatusX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractCancelStatusX), ParsingResult, ContractCancelStatusX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractIsActiveX), ParsingResult, ContractIsActiveX);
+        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ExtAgreementNoX), ParsingResult, ExtAgreementNoX);
+        GetObjectField(XmlElem, JoinX(ContractX, ApartmentAmountX), ParsingResult, ApartmentAmountX);
+        OK := GetObjectField(XmlElem, JoinX(ContractX, FinishingInclX), ParsingResult, FinishingInclX);
+        if not XmlElem.SelectNodes(JoinX(ContractX, ContractBuyerNodesX), XmlNodeList) then
+            exit;
+        No := '1';
+        foreach XmlNode in XmlNodeList do begin
+            XmlElem := XmlNode.AsXmlElement();
+            GetObjectField(XmlElem, ContractBuyerX, ParsingResult, ContractBuyerX + No);
+            No := IncStr(No);
+        end;
+    end;
+
     [TryFunction]
     local procedure ParseContactXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
     var
@@ -519,49 +551,18 @@ codeunit 99932 "CRM Worker"
         end;
     end;
 
-    [TryFunction]
-    local procedure ParseContractXml(var FetchedObject: Record "CRM Prefetched Object"; var ParsingResult: Dictionary of [Text, Text])
-    var
-        XmlElem: XmlElement;
-        XmlNode: XmlNode;
-        XmlNodeList: XmlNodeList;
-        OK: Boolean;
-        No: Text[2];
-    begin
-        Clear(ParsingResult);
-        if ObjectAlreadyImported(FetchedObject) then
-            exit;
-        GetRootXmlElement(FetchedObject, XmlElem);
-        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractNoX), ParsingResult, ContractNoX);
-        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractTypeX), ParsingResult, ContractTypeX);
-        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractStatusX), ParsingResult, ContractStatusX);
-        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractCancelStatusX), ParsingResult, ContractCancelStatusX);
-        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractIsActiveX), ParsingResult, ContractIsActiveX);
-        GetObjectField(XmlElem, JoinX(ContractBaseDataX, ExtAgreementNoX), ParsingResult, ExtAgreementNoX);
-        GetObjectField(XmlElem, JoinX(ContractX, ApartmentAmountX), ParsingResult, ApartmentAmountX);
-        OK := GetObjectField(XmlElem, JoinX(ContractX, FinishingInclX), ParsingResult, FinishingInclX);
-        if not XmlElem.SelectNodes(JoinX(ContractX, ContractBuyerNodesX), XmlNodeList) then
-            exit;
-        No := '1';
-        foreach XmlNode in XmlNodeList do begin
-            XmlElem := XmlNode.AsXmlElement();
-            GetObjectField(XmlElem, ContractBuyerX, ParsingResult, ContractBuyerX + No);
-            No := IncStr(No);
-        end;
-    end;
-
-
-
-    [TryFunction]
     local procedure ImportContact(var FetchedObject: Record "CRM Prefetched Object"; ObjectParams: Dictionary of [Text, Text])
     var
         Customer: Record Customer;
+        CustTemp: Record Customer temporary;
+        CrmSetup: Record "CRM Integration Setup";
+        ContBusRelation: Record "Contact Business Relation";
         Value, TargetCompanyName : Text;
         TempStr: Text;
         TempDT: DateTime;
         No: Text[2];
         LogStatusEnum: Enum "CRM Log Status";
-        ImportAction: Option Create,Update;
+        ActionEnum: Enum "CRM Import Action";
 
     begin
         if ObjectParams.Count() = 0 then
@@ -571,11 +572,14 @@ codeunit 99932 "CRM Worker"
             TargetCompanyName := '';
         if (TargetCompanyName <> CompanyName()) and (TargetCompanyName <> '') then begin
             Customer.ChangeCompany(TargetCompanyName);
+            CrmSetup.ChangeCompany(TargetCompanyName);
+            ContBusRelation.ChangeCompany(TargetCompanyName);
         end;
 
+        Customer.Reset();
         Customer.SetRange("CRM GUID", FetchedObject.Id);
         if not Customer.FindFirst() then begin
-            ImportAction := ImportAction::Create;
+            ActionEnum := ActionEnum::Create;
             if ObjectParams.Get(ContactUpdateExistingX, Value) then
                 exit;
         end else begin
@@ -584,33 +588,89 @@ codeunit 99932 "CRM Worker"
                 LogEvent(FetchedObject, LogStatusEnum::Skipped, StrSubstNo(ContactUpToDateMsg, Customer."No."));
                 exit;
             end;
-            Customer.SetRange("Version Id");
-            ImportAction := ImportAction::Update;
+            ActionEnum := ActionEnum::Update;
         end;
 
-        if ImportAction = ImportAction::Create then begin
-            Customer.Init();
-            Customer."No." := '';
-        end else begin
-            Customer.FindFirst();
-        end;
-
+        CustTemp.Init();
         ObjectParams.Get(LastNameX, Value);
         TempStr := Value;
         ObjectParams.Get(FirstNameX, Value);
         TempStr += ' ' + Value;
         ObjectParams.Get(MiddleNameX, Value);
         TempStr += ' ' + Value;
-        Customer.Name := CopyStr(TempStr, 1, MaxStrLen(Customer.Name));
-        if MaxStrLen(Customer.Name) < StrLen(TempStr) then
-            Customer."Name 2" := CopyStr(TempStr, MaxStrLen(Customer.Name) + 1, MaxStrLen(Customer."Name 2"));
+        CustTemp.Name := CopyStr(TempStr, 1, MaxStrLen(CustTemp.Name));
+        if MaxStrLen(CustTemp.Name) < StrLen(TempStr) then
+            CustTemp."Name 2" := CopyStr(TempStr, MaxStrLen(CustTemp.Name) + 1, MaxStrLen(CustTemp."Name 2"));
         TempStr := '';
-        if ObjectParams.Get(PostalCityX, Value) then begin
-            Customer.City := CopyStr(Value, 1, MaxStrLen(Customer.City));
+        if ObjectParams.Get(PostalCityX, Value) then
+            CustTemp.City := CopyStr(Value, 1, MaxStrLen(CustTemp.City));
+        if ObjectParams.Get(CountryCodeX, Value) then
+            CustTemp."Country/Region Code" := CopyStr(Value, 1, MaxStrLen(CustTemp."Country/Region Code"));
+        if ObjectParams.Get(PostalCodeX, Value) then
+            CustTemp."Post Code" := CopyStr(Value, 1, MaxStrLen(CustTemp."Post Code"));
+        TempStr := '';
+        if ObjectParams.Get(AddressLineX, Value) then
+            TempStr := Value;
+        TempStr := TempStr + StrSubstNo(' ,%1, %2', CustTemp.City, CustTemp."Country/Region Code");
+        CustTemp.Address := CopyStr(TempStr, 1, MaxStrLen(CustTemp.Address));
+        If MaxStrLen(CustTemp.Address) < StrLen(TempStr) then
+            CustTemp."Address 2" := CopyStr(TempStr, MaxStrLen(CustTemp.Address) + 1, MaxStrLen(CustTemp."Address 2"));
+        if ObjectParams.Get(ContactPhoneX, Value) then
+            CustTemp."Phone No." := CopyStr(Value, 1, MaxStrLen(CustTemp."Phone No."));
+        if ObjectParams.Get(ContactEmailX, Value) then
+            CustTemp."E-Mail" := CopyStr(Value, 1, MaxStrLen(CustTemp."E-Mail"));
+
+        Customer.Reset();
+        case ActionEnum of
+            ActionEnum::Create:
+                begin
+                    Customer.Init();
+                    Customer."No." := '';
+                    Customer.Insert(true);
+                end;
+            ActionEnum::Update:
+                begin
+                    Customer.SetRange("CRM GUID", FetchedObject.id);
+                    Customer.SetRange("Version Id");
+                    Customer.FindFirst();
+                end;
+            else
+                exit;
         end;
-        //if ObjectParams.Get(CountryCodeX, Value) then
 
+        Customer.Validate(Name, CustTemp.Name);
+        Customer.Validate("Name 2", CustTemp."Name 2");
+        Customer.Validate(City, CustTemp.City);
+        Customer.Validate("Country/Region Code", CustTemp."Country/Region Code");
+        Customer.Validate("Post Code", CustTemp."Post Code");
+        Customer.Validate(Address, CustTemp.Address);
+        Customer.Validate("Address 2", CustTemp."Address 2");
+        Customer.Validate("Phone No.", CustTemp."Phone No.");
+        Customer.Validate("E-Mail", CustTemp."E-Mail");
+        Customer."Version Id" := FetchedObject."Version Id";
+        if ActionEnum = ActionEnum::Create then begin
+            Customer."CRM GUID" := FetchedObject.Id;
+            CrmSetup.Get;
+            if Customer."Customer Posting Group" = '' then
+                Customer.Validate("Customer Posting Group", CrmSetup."Customer Posting Group");
+            if Customer."Gen. Bus. Posting Group" = '' then
+                Customer.Validate("Gen. Bus. Posting Group", CrmSetup."Gen. Bus. Posting Group");
+            if Customer."VAT Bus. Posting Group" = '' then
+                Customer.Validate("VAT Bus. Posting Group", CrmSetup."VAT Bus. Posting Group");
+        end;
+        Customer.Modify;
 
+        //to-do
+        // ContBusRelation.SETCURRENTKEY("Link to Table", "No.");
+        // ContBusRelation.SETRANGE("Link to Table", ContBusRelation."Link to Table"::Customer);
+        // ContBusRelation.SETRANGE("No.", Customer."No.");
+        // IF NOT ContBusRelation.FINDFIRST THEN BEGIN
+        //     UpdateContFromCust.InsertNewContact(Cust, FALSE);
+        // END;
+
+        //to-do
+        //LogEvent(..)
+        Commit();
     end;
 
     [TryFunction]

@@ -1429,35 +1429,30 @@
           <source>CRM Integration Setup</source>
           <target>Настройка интеграции с CRM</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Integration Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 312790511 - Field 410940989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Posting Group</source>
           <target>Учетная группа клиента</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Integration Setup - Field Customer Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 312790511 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Gen. Bus. Posting Group</source>
           <target>Общая бизнес-группа</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Integration Setup - Field Gen. Bus. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 312790511 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <target>Первичный ключ</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Integration Setup - Field Primary Key - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 312790511 - Field 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Bus. Posting Group</source>
           <target>НДС бизнес-группа</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Integration Setup - Field VAT Bus. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1584,14 +1579,12 @@
           <source>WRQ Id</source>
           <target>Id веб-запроса</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field WRQ Id - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 3692058211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>WRQ Source Company Name</source>
           <target>Компания источник веб-запроса</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Field WRQ Source Company Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3279116693 - Field 429697219 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -5541,7 +5534,6 @@
           <source>CRM Integration Setup</source>
           <target>Настройка интерграции с CRM</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CRM Integration Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1501946700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -13248,21 +13240,18 @@
           <source>Create</source>
           <target>Создать</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Done - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1593761241 - EnumValue 2248886284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Update</source>
           <target>Обновить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Error - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1593761241 - EnumValue 2124445262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Remove</source>
           <target>Удалить</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Prefetched - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2960129384 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

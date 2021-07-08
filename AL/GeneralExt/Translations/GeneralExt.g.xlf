@@ -11028,20 +11028,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue   - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1593761241 - EnumValue 1178809860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1593761241 - EnumValue 710972128 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Done - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Create - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 1593761241 - EnumValue 2248886284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Update</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Error - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Enum 1593761241 - EnumValue 2124445262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Enum 1593761241 - EnumValue 3238504282 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Remove</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Prefetched - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Remove - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1593761241 - EnumValue 642782499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum CRM Import Action - EnumValue Update - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2960129384 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>
