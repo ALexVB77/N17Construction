@@ -5523,6 +5523,78 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cash Flow Transaction Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2081427051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Control Construction</source>
+          <target>Бюджеты проектов (Constraction)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target>Параметры</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control GroupName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 2608293804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Code filter</source>
+          <target>Cost Code фильтр</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control CostCodeFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 1604419066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Place filter</source>
+          <target>Cost Place фильтр</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control CostPlaceFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 3984559024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hide Zero Amounts</source>
+          <target>Скрывать нулевые строки</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control HideNullAmounts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target>Код</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control TemplateCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 744701422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast</source>
+          <target>Прогноз</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action ForecastNav - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2675951212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FrcNext</source>
+          <target>След. прогноз</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcNext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2659090786 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FrcPrev</source>
+          <target>Пред. прогноз</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcPrev - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1772688814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget</source>
+          <target>Версия бюджета</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVersion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2516169122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrjVerNext</source>
+          <target>След. версия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVerNext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1867225852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrjVerPrev</source>
+          <target>Пред. версия</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVerPrev - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2675196445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create ST Proj Budget Entries</source>
           <target>Создание строк краткосрочного планирования</target>
@@ -7767,12 +7839,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 756426410 - Method 921024001 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Could not find a comment related to returning a document for revision.</source>
-          <target>Не удалось найти комментарий, связанный с возвратом документа на доработку.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Method SetProblemDescription - NamedType LocText001</note>
-        </trans-unit>
         <trans-unit id="Page 756426410 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <target>Общее</target>
@@ -7784,18 +7850,6 @@
           <target>Проблема</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control Problem - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 756426410 - Action 227370865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Approval</source>
-          <target>Утверждение</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Approval - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 756426410 - Action 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Comments</source>
-          <target>Комментарии</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Comment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
@@ -10369,42 +10423,36 @@
           <source>Fix Forecast</source>
           <target>Fix Forecast</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description is mandatory!</source>
           <target>Необходимо ввести описание!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - NamedType TEXT0001</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <target>Параметры</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control GroupName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 1946087940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Код проекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control ProjectCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 3695453617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast version</source>
           <target>Прогноз версия код</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control VersionCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10489,43 +10537,36 @@
           <source>Import Item Remains</source>
           <target>Импорт товарных остатков</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2097918721 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <target>Параметры</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Options - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2097918721 - Control 1376957155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
           <target>Документ Но.</target>
-          
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control docNo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2097918721 - Control 2719079417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Batch</source>
           <target>Раздел</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ijBatch - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2097918721 - Control 3337551581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Template</source>
           <target>Шаблон</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ijTemplate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2097918721 - Control 3019141328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting date</source>
           <target>Дата учета</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control postDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10814,7 +10855,6 @@
           <source>Select Latest Version</source>
           <target>Взбодрить кеш сервера</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Select Latest Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1809404285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -13630,6 +13670,13 @@
           <target>Доп. информация</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Comment Add. Type - EnumValue Additional Info - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2341102937 - EnumValue 1860360197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem</source>
+          <target>[NAB: SUGGESTION]Проблема</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Comment Add. Type - EnumValue Problem - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2341102937 - EnumValue 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reason</source>
