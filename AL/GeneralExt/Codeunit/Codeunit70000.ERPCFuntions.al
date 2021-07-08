@@ -938,5 +938,136 @@ codeunit 70000 "ERPC Funtions"
 
     end;
 
+    procedure FiltersForCommitted(pProjectCode: Code[20]; pProjectTurnCode: Code[20]; pCostType: Code[20])
+    var
+        lPCCE: Record "Projects Cost Control Entry";
+        lComDet: Record "Commited Detail";
+        lDelAllComDet: Boolean;
+    begin
+        lPCCE.Reset();
+
+        IF pProjectCode <> '' THEN
+            lPCCE.SETRANGE(lPCCE."Project Code", pProjectCode);
+        IF pProjectTurnCode <> '' THEN
+            lPCCE.SETRANGE(lPCCE."Project Turn Code", pProjectTurnCode);
+        IF pCostType <> '' THEN
+            lPCCE.SETRANGE(lPCCE."Cost Type", pCostType);
+        //SWC 200 AP 100714 >>
+        IF pProjectCode <> '' THEN
+            lComDet.SETRANGE("Project Code", pProjectCode);
+        IF pCostType <> '' THEN
+            lComDet.SETRANGE(CT, pCostType);
+        lDelAllComDet := TRUE;
+        //SWC 200 AP 100714 <<
+        ReFillCommitment(lPCCE, lComDet, lDelAllComDet);
+        //SWC 183 EN 020714 <<
+    end;
+
+    procedure ReFillCommitment(pPCCE: Record "Projects Cost Control Entry"; pComDet: Record "Commited Detail"; pDelAllComDet: Boolean)
+    var
+        lrPCCE: Record "Projects Cost Control Entry";
+        lrVD: Record "Vendor Agreement Details";
+        lrPCCE1: Record "Projects Cost Control Entry";
+        lrVD1: Record "Vendor Agreement Details";
+        lCommitmentDetail: Record "Commited Detail";
+        lrAgreement: Record "Vendor Agreement";
+        lCommitDetTMP: Record "Commited Detail" temporary;
+    begin
+
+        //SWC 200 AP 100714 >>
+        IF pDelAllComDet THEN
+            lCommitmentDetail.COPYFILTERS(pComDet);
+        //SWC 200 AP 100714 <<
+        // SWC996 DD 06.02.17 >>
+        lCommitmentDetail.SETFILTER(Comment, '<>''''');
+        IF lCommitmentDetail.FINDSET THEN
+            REPEAT
+                lCommitDetTMP := lCommitmentDetail;
+                lCommitDetTMP.INSERT;
+            UNTIL lCommitmentDetail.NEXT = 0;
+        lCommitmentDetail.SETRANGE(Comment);
+        // SWC996 DD 06.02.17 <<
+        IF lCommitmentDetail.FINDFIRST THEN lCommitmentDetail.DELETEALL;
+        //SWC 183 EN 020714 >>
+        IF (pPCCE.GETFILTERS <> '') THEN
+            lrPCCE.COPYFILTERS(pPCCE);
+        //SWC 183 EN 020714 <<
+        lrPCCE.SETCURRENTKEY("Analysis Type", "Close Commitment");
+        lrPCCE.SETRANGE("Analysis Type", lrPCCE."Analysis Type"::Actuals);
+        //lrPCCE.SETRANGE("Close Commitment",FALSE);
+        // SWC DD 12.05.17 >>
+        lrPCCE.SETRANGE("Project Storno", FALSE);
+        // SWC DD 12.05.17 <<
+        IF lrPCCE.FINDSET THEN BEGIN
+            REPEAT
+                lCommitmentDetail."Vendor No." := lrPCCE."Contragent No.";
+                lCommitmentDetail."Agreement No." := lrPCCE."Agreement No.";
+                lCommitmentDetail.CP := lrPCCE."Shortcut Dimension 1 Code";
+                lCommitmentDetail.CC := lrPCCE."Shortcut Dimension 2 Code";
+                lCommitmentDetail.CT := lrPCCE."Cost Type";
+                lCommitmentDetail."Turn Code" := lrPCCE."Project Turn Code";
+                lCommitmentDetail."Project Code" := lrPCCE."Project Code";
+                lCommitmentDetail."Line No." := lrPCCE."Line No.";
+                IF lrAgreement.GET(lrPCCE."Contragent No.", lrPCCE."Agreement No.") THEN
+                    lCommitmentDetail.ByOrder := lrAgreement.WithOut;
+
+
+                IF lrPCCE."Line No." <> 0 THEN BEGIN
+                    IF lCommitmentDetail.INSERT THEN;
+
+
+                    lrPCCE1.SETRANGE("Project Code", lrPCCE."Project Code");
+                    lrPCCE1.SETRANGE("Entry No.", lrPCCE."Entry No.");
+                    IF lrPCCE1.FINDFIRST THEN BEGIN
+                        lrPCCE1."Close Commitment" := TRUE;
+                        lrPCCE1.MODIFY;
+                    END;
+                END;
+            UNTIL lrPCCE.NEXT = 0;
+        END;
+
+        lrVD.SETCURRENTKEY("Close Commitment");
+        //lrVD.SETRANGE("Close Commitment",FALSE);
+        IF lrVD.FINDSET THEN BEGIN
+            REPEAT
+                lCommitmentDetail."Vendor No." := lrVD."Vendor No.";
+                lCommitmentDetail."Agreement No." := lrVD."Agreement No.";
+                lCommitmentDetail.CP := lrVD."Global Dimension 1 Code";
+                lCommitmentDetail.CC := lrVD."Global Dimension 2 Code";
+                lCommitmentDetail.CT := lrVD."Cost Type";
+                lCommitmentDetail."Turn Code" := lrVD."Building Turn All";
+                lCommitmentDetail."Line No." := lrVD."Project Line No.";
+                lCommitmentDetail."Project Code" := lrVD."Project Code";
+                IF lrAgreement.GET(lrVD."Vendor No.", lrVD."Agreement No.") THEN
+                    lCommitmentDetail.ByOrder := lrAgreement.WithOut;
+
+                IF lrVD."Project Line No." <> 0 THEN BEGIN
+                    IF lCommitmentDetail.INSERT THEN;
+
+                    lrVD1.SETRANGE("Vendor No.", lrVD."Vendor No.");
+                    lrVD1.SETRANGE("Agreement No.", lrVD."Agreement No.");
+                    lrVD1.SETRANGE("Line No.", lrVD."Line No.");
+                    IF lrVD1.FINDFIRST THEN BEGIN
+                        lrVD1."Close Commitment" := TRUE;
+                        lrVD1.MODIFY;
+                    END;
+                END;
+            UNTIL lrVD.NEXT = 0;
+        END;
+        //SWC 183 EN 020714 >>
+        pPCCE.RESET;
+        //SWC 183 EN 020714 <<
+
+        // SWC996 DD 06.02.17 >>
+        IF lCommitDetTMP.FINDSET THEN
+            REPEAT
+                IF lCommitmentDetail.GET(lCommitDetTMP."Vendor No.", lCommitDetTMP."Agreement No.", lCommitDetTMP.CP,
+                   lCommitDetTMP.CC, lCommitDetTMP.CT, lCommitDetTMP."Project Code", lCommitDetTMP."Line No.") THEN BEGIN
+                    lCommitmentDetail.Comment := lCommitDetTMP.Comment;
+                    lCommitmentDetail.MODIFY;
+                END;
+            UNTIL lCommitDetTMP.NEXT = 0;
+        // SWC996 DD 06.02.17 <<
+    end;
 
 }
