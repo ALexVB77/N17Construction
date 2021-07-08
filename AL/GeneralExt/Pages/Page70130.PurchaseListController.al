@@ -208,6 +208,20 @@ page 70130 "Purchase List Controller"
                     PaymentRequestCard.RunModal();
                 end;
             }
+            action(ResetProblemDoc)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'View';
+                Image = ResetStatus;
+
+                trigger OnAction()
+                var
+                    PurchHeader: Record "Purchase Header";
+                begin
+                    CurrPage.SetSelectionFilter(PurchHeader);
+                    PayOrderMgt.PaymentRegisterResetProblemDocument(PurchHeader);
+                end;
+            }
         }
         area(Navigation)
         {
@@ -254,6 +268,7 @@ page 70130 "Purchase List Controller"
     var
         grUserSetup: Record "User Setup";
         LinkedGenJnlLine: Record "Gen. Journal Line";
+        PayOrderMgt: Codeunit "Payment Order Management";
         Filter3: option Ready,Paid,Payment,Overdue,All;
         SortType1: option PayDate,PayDateFact,DocNo,Vendor;
         AmountType: Enum "Amount Type";

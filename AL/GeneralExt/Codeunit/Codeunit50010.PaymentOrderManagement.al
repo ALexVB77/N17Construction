@@ -1283,4 +1283,23 @@ codeunit 50010 "Payment Order Management"
         Message(LocText004);
     end;
 
+    procedure PaymentRegisterResetProblemDocument(var PurchHeader: Record "Purchase Header");
+    var
+        PurchHeaderToUpdate: Record "Purchase Header";
+        LocText001: Label 'The selected documents are not the problem.';
+        LocText002: Label 'Are you sure you want to reset Problem mark from the selected documents?';
+    begin
+        PurchHeader.SetRange("Problem Document", true);
+        if PurchHeader.IsEmpty then
+            Error(LocText001);
+        if not Confirm(LocText001) then
+            exit;
+        PurchHeader.FindSet();
+        repeat
+            PurchHeaderToUpdate := PurchHeader;
+            PurchHeaderToUpdate.Validate("Problem Document", false);
+            PurchHeaderToUpdate.Modify(true);
+        until PurchHeader.next = 0;
+    end;
+
 }
