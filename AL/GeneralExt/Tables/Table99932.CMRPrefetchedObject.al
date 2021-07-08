@@ -49,12 +49,19 @@ table 99932 "CRM Prefetched Object"
 
         }
 
-        field(40; "Web Request Queue Id"; Guid)
+        field(40; "WRQ Id"; Guid)
         {
-            Caption = 'Web Request Queue Id';
+            Caption = 'WRQ Id';
             TableRelation = "Web Request Queue";
 
         }
+
+        field(41; "WRQ Source Company Name"; Text[60])
+        {
+            Caption = 'WRQ Source Company Name';
+
+        }
+
 
     }
 

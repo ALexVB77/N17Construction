@@ -119,38 +119,45 @@ codeunit 99932 "CRM Worker"
         XmlCrmObject: XmlNode;
         ObjXmlBase64, TempValue : text;
         LogStatusEnum: Enum "CRM Log Status";
-        OutObjectMetadata: Dictionary of [Text, Text];
+        ObjectMetadata: Dictionary of [Text, Text];
         OutStrm: OutStream;
     begin
         Result := false;
+        Clear(ObjectMetadata);
+        ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Id"), WebRequestQueueId);
+        ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Source Company Name"), CompanyName());
         FetchedObjectsTemp.Reset();
         FetchedObjectsTemp.DeleteAll();
         if not GetRootXmlElement(RequestBodyXmlText, RootXmlElement) then begin
-            LogEvent(WebRequestQueueId, LogStatusEnum::Error, GetLastErrorText());
+            LogEvent(ObjectMetadata, GetLastErrorText());
             exit;
         end;
         if not RootXmlElement.SelectNodes(SoapObjectContainerX, XmlCrmObjectList) then begin
-            LogEvent(WebRequestQueueId, LogStatusEnum::Error, BadSoapEnvFormatErr);
+            LogEvent(ObjectMetadata, BadSoapEnvFormatErr);
             exit;
         end;
         foreach XmlCrmObject in XmlCrmObjectList do begin
+            Clear(ObjectMetadata);
+            ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Id"), WebRequestQueueId);
+            ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Source Company Name"), CompanyName());
             ObjXmlBase64 := GetXmlElementText(XmlCrmObject);
-            if not GetObjectMetadata(ObjXmlBase64, OutObjectMetadata) then
-                LogEvent(WebRequestQueueId, LogStatusEnum::Error, GetLastErrorText())
+            if not GetObjectMetadata(ObjXmlBase64, ObjectMetadata) then
+                LogEvent(ObjectMetadata, GetLastErrorText())
             else begin
                 Result := true;
                 FetchedObjectsTemp.Init();
-                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(Id), TempValue);
+                ObjectMetadata.Get(FetchedObjectsTemp.FieldName(Id), TempValue);
                 Evaluate(FetchedObjectsTemp.Id, TempValue);
-                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(Type), TempValue);
+                ObjectMetadata.Get(FetchedObjectsTemp.FieldName(Type), TempValue);
                 Evaluate(FetchedObjectsTemp.Type, TempValue);
-                if OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(ParentId), TempValue) then
+                if ObjectMetadata.Get(FetchedObjectsTemp.FieldName(ParentId), TempValue) then
                     Evaluate(FetchedObjectsTemp.ParentId, TempValue);
-                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName(Xml), TempValue);
+                ObjectMetadata.Get(FetchedObjectsTemp.FieldName(Xml), TempValue);
                 FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
                 OutStrm.Write(TempValue);
-                OutObjectMetadata.Get(FetchedObjectsTemp.FieldName("Version Id"), FetchedObjectsTemp."Version Id");
-                FetchedObjectsTemp."Web Request Queue Id" := WebRequestQueueId;
+                ObjectMetadata.Get(FetchedObjectsTemp.FieldName("Version Id"), FetchedObjectsTemp."Version Id");
+                FetchedObjectsTemp."WRQ Id" := WebRequestQueueId;
+                FetchedObjectsTemp."WRQ Source Company Name" := CompanyName();
                 FetchedObjectsTemp."Prefetch Datetime" := CurrentDateTime();
                 if not FetchedObjectsTemp.Insert() then
                     FetchedObjectsTemp.Modify();
@@ -181,6 +188,8 @@ codeunit 99932 "CRM Worker"
         T: Record "CRM Prefetched Object" temporary;
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
+        ObjectMetadata.Add(T.FieldName(Xml), ObjectXmlText);
+        ObjectMetadata.Add(T.FieldName("Version Id"), GenerateHash(ObjectXmlText));
         GetRootXmlElement(ObjectXmlText, RootXmlElement);
         GetValue(RootXmlElement, ObjectTypeX, ObjectType);
         case UpperCase(ObjectType) of
@@ -199,17 +208,16 @@ codeunit 99932 "CRM Worker"
             else
                 Error(UnknownObjectTypeErr, ObjectType);
         end;
-        if ObjectIdText = '' then
-            Error(NoObjectIdErr);
-        if (UpperCase(ObjectType) in ['CONTRACT', 'UNIT']) and (ParentObjectIdText = '') then
-            Error(NoParentObjectIdErr);
         Clear(ObjectMetadata);
         ObjectMetadata.Add(T.FieldName(id), ObjectIdText);
         ObjectMetadata.Add(T.FieldName(Type), ObjectType);
         if ParentObjectIdText <> '' then
             ObjectMetadata.Add(T.FieldName(ParentId), ParentObjectIdText);
-        ObjectMetadata.Add(T.FieldName(Xml), ObjectXmlText);
-        ObjectMetadata.Add(T.FieldName("Version Id"), GenerateHash(ObjectXmlText))
+        if ObjectIdText = '' then
+            Error(NoObjectIdErr);
+        if (UpperCase(ObjectType) in ['CONTRACT', 'UNIT']) and (ParentObjectIdText = '') then
+            Error(NoParentObjectIdErr);
+
     end;
 
     local procedure ParseObjects(var FetchedObject: Record "CRM Prefetched Object"; var ParsedObjects: Dictionary of [Guid, Dictionary of [Text, Text]])
@@ -803,6 +811,48 @@ codeunit 99932 "CRM Worker"
         Result := RootXPath + ChildXPath;
     end;
 
+    local procedure LogEvent(var FetchedObject: Record "CRM Prefetched Object";
+        LogToCompany: Text[60];
+        LogStatusEnum: Enum "CRM Log Status";
+        LogImportActionEnum: Enum "CRM Import Action";
+        MsgText1: Text;
+        MsgText2: Text)
+    var
+        Log: Record "CRM Log";
+    begin
+        if (LogToCompany <> '') and (LogToCompany <> CompanyName()) then
+            Log.ChangeCompany(LogToCompany);
+        if not Log.FindLast() then
+            Log."Entry No." := 1L
+        else
+            Log."Entry No." += 1;
+        Log."Object Id" := FetchedObject.Id;
+        Log."Object Type" := FetchedObject.Type;
+        Log."Object Xml" := FetchedObject.Xml;
+        Log."Object Version Id" := FetchedObject."Version Id";
+        Log."WRQ Id" := FetchedObject."WRQ Id";
+        Log."WRQ Source Company Name" := FetchedObject."WRQ Source Company Name";
+        Log.Datetime := CurrentDateTime;
+        Log.Status := LogStatusEnum;
+        Log.Action := LogImportActionEnum;
+        MsgText1 := MsgText1.Trim();
+        if MsgText1 <> '' then
+            Log."Details Text 1" := CopyStr(MsgText1, 1, MaxStrLen(Log."Details Text 1"))
+        else begin
+            if LogStatusEnum = LogStatusEnum::Error then
+                Log."Details Text 1" := CopyStr(GetLastErrorText(), 1, MaxStrLen(Log."Details Text 1"));
+        end;
+        MsgText2 := MsgText2.Trim();
+        if MsgText2 <> '' then
+            Log."Details Text 2" := CopyStr(MsgText2, 1, MaxStrLen(Log."Details Text 2"))
+        else begin
+            if LogStatusEnum = LogStatusEnum::Error then
+                Log."Details Text 2" := CopyStr(GetLastErrorCallStack(), 1, MaxStrLen(Log."Details Text 2"));
+        end;
+        Log.Insert();
+    end;
+
+
     local procedure LogEvent(var FetchedObject: Record "CRM Prefetched Object"; LogStatusEnum: Enum "CRM Log Status"; MsgText: Text)
     var
         Log: Record "CRM Log";
@@ -815,7 +865,7 @@ codeunit 99932 "CRM Worker"
         Log."Object Type" := FetchedObject.Type;
         Log."Object Xml" := FetchedObject.Xml;
         Log."Object Version Id" := FetchedObject."Version Id";
-        Log."WRQ Id" := FetchedObject."Web Request Queue Id";
+        Log."WRQ Id" := FetchedObject."WRQ Id";
         Log.Datetime := CurrentDateTime;
         Log.Status := LogStatusEnum;
         Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));
@@ -823,20 +873,35 @@ codeunit 99932 "CRM Worker"
         Log.Insert();
     end;
 
-    local procedure LogEvent(WrqId: Guid; LogStatusEnum: Enum "CRM Log Status"; MsgText: Text)
+    local procedure LogEvent(InputObjectMetadata: Dictionary of [Text, Text]; MsgText: Text)
     var
-        Log: Record "CRM Log";
+        T: Record "CRM Prefetched Object" temporary;
+        StatusEnum: Enum "CRM Log Status";
+        ActionEnum: Enum "CRM Import Action";
+        TempValue: Text;
+        OK: Boolean;
+        OutStrm: OutStream;
     begin
-        if not Log.FindLast() then
-            Log."Entry No." := 1L
-        else
-            Log."Entry No." += 1;
-        Log."WRQ Id" := WrqId;
-        Log.Datetime := CurrentDateTime;
-        Log.Status := LogStatusEnum;
-        Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));
-        Log."Details Text 2" := CopyStr(MsgText, MaxStrLen(Log."Details Text 1") + 1, MaxStrLen(Log."Details Text 2"));
-        Log.Insert();
+        T.Init();
+        if InputObjectMetadata.Count <> 0 then begin
+            if InputObjectMetadata.Get(T.FieldName(Id), TempValue) then
+                OK := Evaluate(T.id, TempValue);
+            if InputObjectMetadata.Get(T.FieldName(Type), TempValue) then
+                OK := Evaluate(T.Type, TempValue);
+            if InputObjectMetadata.Get(T.FieldName(Xml), TempValue) then begin
+                T.Xml.CreateOutStream(OutStrm);
+                OutStrm.Write(TempValue);
+            end;
+            if InputObjectMetadata.Get(T.FieldName("Version Id"), TempValue) then
+                T."Version Id" := TempValue;
+            if InputObjectMetadata.Get(T.FieldName("WRQ Id"), TempValue) then
+                OK := Evaluate(T."WRQ Id", TempValue);
+            if InputObjectMetadata.Get(T.FieldName("WRQ Source Company Name"), TempValue) then
+                T."WRQ Source Company Name" := TempValue;
+        end;
+        StatusEnum := StatusEnum::Error;
+        ActionEnum := ActionEnum::" ";
+        LogEvent(T, CompanyName(), StatusEnum, ActionEnum, MsgText, '');
     end;
 
 
