@@ -10,7 +10,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
         field(70001; "Agreement Type"; Option)
         {
             Caption = 'Agreement type';
-            OptionCaption = 'Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement';
+            OptionCaption = 'Sale Agreement,Iinvestment Agreement, Reservation Agreement,Inv. Sales Agreement,Service,Prev Inv. Sales Agreement,Transfer of rights';
             OptionMembers = "Sale Agreement","Investment Agreement","Reserving Agreement","Inv. Sales Agreement",Service,"Prev Inv. Sales Agreement","Transfer of rights";
         }
 
@@ -175,7 +175,7 @@ tableextension 94902 "Customer Agreement (Ext)" extends "Customer Agreement"
         field(70005; Status; Option)
         {
             Caption = 'Status';
-            OptionCaption = 'Procesed,Signed,Change conditions,Registration FRS,Registration FRS Registred,Registration dissolution,Dissolution Registered,Cancelled';
+            OptionCaption = 'Procesed,Signed,Change conditions,FRS registration,FRS registered,Registration of annulled,Annulled registered,Annulled,Cancelled';
             OptionMembers = Procesed,Signed,"Change conditions","FRS registration","FRS registered","Registration of annulled","Annulled registered",Annulled,Cancelled;
             trigger OnValidate()
             begin

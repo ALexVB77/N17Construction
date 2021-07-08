@@ -43,12 +43,9 @@ table 70121 "CRM Log"
 
         }
 
-
-        field(20; Action; Option)
+        field(20; Action; Enum "CRM Import Action")
         {
             Caption = 'Action';
-            OptionCaption = 'Create,Update,Remove';
-            OptionMembers = Create,Update,Remove;
         }
 
         field(21; Status; Enum "CRM Log Status")
