@@ -512,9 +512,32 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         PurchCommentLine.SetRange("No.", "No.");
         PurchCommentLine.SetRange("Line No.", 0);
         PurchCommentLine.SetRange("Add. Line Type", AddType);
-        if PurchCommentLine.FindFirst() then
+        if PurchCommentLine.FindLast() then
             exit(PurchCommentLine.Comment + PurchCommentLine."Comment 2");
     end;
 
+    procedure SetAddTypeCommentText(AddType: enum "Purchase Comment Add. Type"; NewComment: text)
+    var
+        PurchCommentLine: Record "Purch. Comment Line";
+    begin
+        PurchCommentLine.SetRange("Document Type", "Document Type");
+        PurchCommentLine.SetRange("No.", "No.");
+        PurchCommentLine.SetRange("Line No.", 0);
+        PurchCommentLine.SetRange("Add. Line Type", AddType);
+        if not PurchCommentLine.FindLast() then begin
+            PurchCommentLine.Init();
+            PurchCommentLine."Document Type" := "Document Type";
+            PurchCommentLine."No." := "No.";
+            PurchCommentLine."Line No." := 0;
+            PurchCommentLine."Document Line No." := 0;
+            PurchCommentLine.Date := Today;
+            PurchCommentLine."Add. Line Type" := AddType;
+            PurchCommentLine.Insert(true);
+        end;
+        PurchCommentLine.Comment := CopyStr(NewComment, 1, MaxStrLen(PurchCommentLine.Comment));
+        PurchCommentLine."Comment 2" :=
+          CopyStr(NewComment, MaxStrLen(PurchCommentLine.Comment) + 1, MaxStrLen(PurchCommentLine."Comment 2"));
+        PurchCommentLine.Modify(true);
+    end;
 
 }
