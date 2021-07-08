@@ -8603,6 +8603,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Find Error 70095 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1525678392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix Forecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description is mandatory!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - NamedType TEXT0001</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control GroupName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 1946087940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control ProjectCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1525678392 - Control 3695453617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control VersionCode - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 61001228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Budget CC</source>
           <note from="Developer" annotates="general" priority="2"></note>
