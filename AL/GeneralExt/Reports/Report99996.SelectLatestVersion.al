@@ -4,6 +4,7 @@ report 99996 "Select Latest Version"
     ProcessingOnly = true;
     UsageCategory = Administration;
     ApplicationArea = Basic, Suite;
+    UseRequestPage = false;
 
     trigger OnPreReport()
 

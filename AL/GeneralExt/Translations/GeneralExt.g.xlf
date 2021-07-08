@@ -8703,6 +8703,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control ToItemBudgetName - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2097918721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Item Remains</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 1376957155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control docNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 2719079417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ijBatch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 3337551581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Template</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ijTemplate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 3019141328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control postDate - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory for Deferrals INV-11</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8937,6 +8967,11 @@
           <source>Start Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control StartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1742529627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select Latest Version</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Select Latest Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1809404285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>TempStarter</source>
