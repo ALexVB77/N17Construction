@@ -6468,6 +6468,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Payment Request Card - Action ViewAttachDoc - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 756426410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem Document Set</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 756426410 - Method 921024001 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Could not find a comment related to returning a document for revision.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Method SetProblemDescription - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Page 756426410 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 756426410 - Control 1860360197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control Problem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 756426410 - Action 227370865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Approval - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 756426410 - Action 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Comment - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6812,6 +6842,11 @@
           <source>View</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Controller - Action ViewDoc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1370391159 - Action 3513648506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List Controller - Action ViewProblemDoc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3437592965 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Process,Report,Act,Function,Request Approval,Approve,Release,Navigate</source>
