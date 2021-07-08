@@ -208,6 +208,15 @@ page 70130 "Purchase List Controller"
                     PaymentRequestCard.RunModal();
                 end;
             }
+            action(ViewProblemDoc)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Problem Document';
+                Image = ViewDocumentLine;
+                RunObject = Page "Problem Document Set";
+                RunPageLink = "No." = field("No.");
+            }
+
             action(ResetProblemDoc)
             {
                 ApplicationArea = Basic, Suite;

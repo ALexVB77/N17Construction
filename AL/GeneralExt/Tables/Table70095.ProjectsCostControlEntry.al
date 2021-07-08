@@ -520,10 +520,10 @@ table 70095 "Projects Cost Control Entry"
         //     Caption = 'ByOrder';
         //     FieldClass = FlowField;
         // }
-        // field(70160; "Close Commitment"; Boolean)
-        // {
-        //     Caption = '';
-        // }
+        field(70160; "Close Commitment"; Boolean)
+        {
+            Caption = 'Close Commitment';
+        }
         field(70170; "Estimate Line No."; Integer)
         {
             Caption = 'Estimate Line No.';
@@ -593,7 +593,7 @@ table 70095 "Projects Cost Control Entry"
         //key(Key12; "Reversed Without Entry") { }
         //key(Key13; ID) { }
         //key(Key14; "Create Date") { }
-        //key(Key15; "Analysis Type", "Close Commitment") { }
+        key(Key15; "Analysis Type", "Close Commitment") { }
         key(Key16; "Analysis Type", "Contragent No.", "Agreement No.", "Project Turn Code", "Line No.", "Cost Type")
         {
             SumIndexFields = "Without VAT", "Amount Including VAT 2", "VAT Amount 2";
