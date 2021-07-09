@@ -176,12 +176,12 @@ report 99997 "Import Item Remains"
 
             if (ExcelBuf.get(r, 9)) then begin
                 if (Evaluate(d, ExcelBuf."Cell Value as Text")) then begin
-                    ijl.validate(Quantity, round(d, 0.01));
+                    ijl.validate("Unit Cost", round(d, 0.01));
                 end;
             end;
             if (ExcelBuf.get(r, 10)) then begin
                 if (Evaluate(d, ExcelBuf."Cell Value as Text")) then begin
-                    ijl.validate("Unit Cost", round(d, 0.01));
+                    ijl.validate(Quantity, round(d, 0.01));
                 end;
             end;
             lineNo += 10000;
