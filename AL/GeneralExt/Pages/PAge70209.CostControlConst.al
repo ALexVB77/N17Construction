@@ -291,8 +291,9 @@ page 70209 "Cost Control Construction"
                         VersionCode := GetDefVersion(TemplateCode);
                         grPrjVesion.GET(TemplateCode, VersionCode);
                         VersionDescription := grPrjVesion.Description;
-                        IF ImportBudgetCC.ExistCreatedCC THEN
-                            FillData;
+                        // probably not use
+                        // IF ImportBudgetCC.ExistCreatedCC THEN
+                        //     FillData;
                         CurrPage.UPDATE(FALSE);
                     end;
                 }
@@ -476,6 +477,6 @@ page 70209 "Cost Control Construction"
 
     procedure FillData()
     begin
-
+        Message('p70209.Filldata');
     end;
 }
