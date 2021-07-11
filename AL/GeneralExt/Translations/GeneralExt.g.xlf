@@ -3833,6 +3833,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContractUnitNotFoundErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1295264560" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Http request body is empty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType EmptyHttpRequestBody</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 2041483183" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment object %1 was created</source>
           <note from="Developer" annotates="general" priority="2"></note>
