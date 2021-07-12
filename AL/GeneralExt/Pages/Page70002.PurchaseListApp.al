@@ -22,6 +22,7 @@ page 70002 "Purchase List App"
                     Caption = 'Scope';
                     Enabled = Filter1Enabled;
                     OptionCaption = 'My documents,All documents,My Approved';
+
                     trigger OnValidate()
                     begin
                         SetRecFilters;
@@ -33,6 +34,7 @@ page 70002 "Purchase List App"
                     ApplicationArea = Basic, Suite;
                     Caption = 'Selection';
                     OptionCaption = 'All documents,Documents in processing,Ready-to-pay documents,Paid documents,Problem documents';
+
                     trigger OnValidate()
                     begin
                         SetRecFilters;
@@ -232,25 +234,20 @@ page 70002 "Purchase List App"
     begin
         grUserSetup.GET(USERID);
 
-        // SWC968 DD 19.12.16 >>
         IF grUserSetup."Show All Pay Inv" AND (Filter1 = Filter1::mydoc) THEN
             Filter1 := Filter1::all;
-        // SWC968 DD 19.12.16 <<
 
         FILTERGROUP(2);
         SETRANGE("IW Documents", TRUE);
-        //SWC004 AKA 120514 >>
         SETFILTER("Act Type", '%1', "Act Type"::" ");
-        //SWC004 AKA 120514 <<
         FILTERGROUP(0);
 
         SetSortType;
         SetRecFilters;
 
-        //IF grUserSetup."Status App"<>grUserSetup."Status App"::Сontroller THEN //SWC318 AKA 151014
-        IF grUserSetup."Status App" = grUserSetup."Status App"::Checker THEN      //SWC318 AKA 151014
+        Filter1Enabled := true;
+        IF grUserSetup."Status App" = grUserSetup."Status App"::Checker THEN
             Filter1Enabled := FALSE;
-
         IF grUserSetup."Administrator IW" THEN
             Filter1Enabled := TRUE;
     end;
