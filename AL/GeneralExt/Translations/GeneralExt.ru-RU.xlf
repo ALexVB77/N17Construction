@@ -12275,7 +12275,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Method 4041009753 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 279653624">
           <source>There is no approval request to approve.</source>
-          <target>[NAB: SUGGESTION]Нет запроса утверждения, подлежащего утверждению.</target>
+          <target>Нет запроса утверждения, подлежащего утверждению.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Method GetApprovalCommentText - NamedType NoReqToApproveErr</note>
@@ -12294,7 +12294,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Method 1043318029 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 279653624">
           <source>There is no approval request to approve.</source>
-          <target>[NAB: SUGGESTION]Нет запроса утверждения, подлежащего утверждению.</target>
+          <target>Нет запроса утверждения, подлежащего утверждению.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Method SetApprovalCommentText - NamedType NoReqToApproveErr</note>
