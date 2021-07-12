@@ -548,7 +548,7 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         NoReqToApproveErr: Label 'There is no approval request to approve.';
     begin
         if not ApprovalMgt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, RecordID) then
-            Error(NoReqToApproveErr);
+            exit('');
 
         ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
         ApprovalCommentLine.SetRange("Linked Approval Entry No.", ApprovalEntry."Entry No.");

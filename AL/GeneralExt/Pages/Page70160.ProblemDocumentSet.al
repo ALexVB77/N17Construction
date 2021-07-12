@@ -76,7 +76,9 @@ Page 70160 "Problem Document Set"
                     field("Problem Description"; ProblemDescription)
                     {
                         ApplicationArea = All;
+                        Caption = 'Problem Description';
                         Editable = Rec."Problem Document";
+
 
                         trigger OnValidate()
                         begin
