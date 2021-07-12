@@ -111,6 +111,7 @@ page 70000 "Purchase Order App"
                 field("Problem Description"; ProblemDescription)
                 {
                     ApplicationArea = All;
+                    Caption = 'Problem Description';
                     Editable = ApproveButtonEnabled or RejectButtonEnabled;
                     Enabled = ApproveButtonEnabled or RejectButtonEnabled;
 

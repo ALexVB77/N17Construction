@@ -6593,6 +6593,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control Problem - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 756426410 - Control 2414822351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control Problem Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -7272,6 +7277,11 @@
           <source>Pre-Approver</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Pre-Approver - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3790301120 - Control 2414822351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Problem Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Checker</source>
