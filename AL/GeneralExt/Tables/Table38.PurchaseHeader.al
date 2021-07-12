@@ -556,9 +556,10 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
             exit(ApprovalCommentLine.Comment);
 
         ApprovalEntry.Reset;
-        ApprovalEntry.SetCurrentKey("Table ID", "Document Type", "Document No.", "Sequence No.", "Record ID to Approve");
-        ApprovalEntry.SetRange("Table ID", Database::"Purchase Header");
+        ApprovalEntry.SetCurrentKey("Record ID to Approve", "Workflow Step Instance ID", "Sequence No.");
         ApprovalEntry.SetRange("Record ID to Approve", RecordID);
+        ApprovalEntry.SetRange("Workflow Step Instance ID", ApprovalEntry."Workflow Step Instance ID");
+        ApprovalEntry.SetRange("Table ID", Database::"Purchase Header");
         ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Rejected);
         if ApprovalEntry.FindLast() then begin
             ApprovalCommentLine.SetRange("Linked Approval Entry No.", ApprovalEntry."Entry No.");
