@@ -3833,6 +3833,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType ContractUnitNotFoundErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2463777246 - NamedType 1295264560" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Http request body is empty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CRM Worker - NamedType EmptyHttpRequestBody</note>
+        </trans-unit>
         <trans-unit id="Codeunit 2463777246 - NamedType 2041483183" size-unit="char" translate="yes" xml:space="preserve">
           <source>Investment object %1 was created</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4373,6 +4378,51 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Apartments - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2964659661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Adjustment Journal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Powered by budget lines: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do not set no budget line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation canceled by user.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Budget Agjustment Journal?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Control 986138104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lines Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Control Control12370004 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Action 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Action Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Action 483403383 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Action Control12370049 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2964659661 - Action 261610131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Cor. Journal Constr - Action PostA - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2285829057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Budget Adjustment Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4382,51 +4432,6 @@
           <source>Save original entry sign</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Card - Control Correction Batch - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Adjustment Journal</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Powered by budget lines: %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text001</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do not set no budget line</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text002</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Operation canceled by user.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text003</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Post Budget Agjustment Journal?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - NamedType Text004</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Control 986138104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Lines Quantity</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Control Control12370004 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Action 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Functions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action Options - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Action 483403383 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Get</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action Control12370049 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 105916358 - Action 261610131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Post</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Budget Correction Journal - Action PostA - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 194368442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted</source>
@@ -4602,6 +4607,111 @@
           <source>Cash Flow Transaction Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Cash Flow Transaction Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Control Construction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - NamedType 1014966330" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only Administrator can change Forecast!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - NamedType TEXT003</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - NamedType 1652662947" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast Budget will be changed! Proceed?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - NamedType TEXT004</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control GroupName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 2608293804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Code filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control CostCodeFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 1604419066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Place filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control CostPlaceFlt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 3984559024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hide Zero Amounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control HideNullAmounts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Control 3618478127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Control TemplateCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1447994436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Data - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 501129335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LoadForecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action LoadForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1991800990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LoadTargetBudget</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action LoadTargetBudget - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1696400955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RefreshActualsJournal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action RefreshActualsJournal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 744701422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action ForecastNav - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2675951212 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FrcNext</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcNext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2659090786 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FrcPrev</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FrcPrev - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1929393835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action Functions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2472357608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FixForecast</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action FixForecast - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 444552935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RefreshCommited</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action RefreshCommited - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1772688814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVersion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 2516169122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrjVerNext</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVerNext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2081427051 - Action 1867225852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrjVerPrev</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Cost Control Construction - Action PrjVerPrev - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2675196445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create ST Proj Budget Entries</source>
@@ -7928,6 +8038,66 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Vendor Agreement - Control TestRegim - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2905033719 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy Item Document (new)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 574805549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specify appl. entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control AutoFillAppliesFields - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 2738103555 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control DocNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 2738103555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control DocNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 3819526884 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the type of the related document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control DocType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 3819526884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control DocType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 3819526884 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt,Shipment,Posted Receipt,Posted Shipment,,,Post.Purch.Invoice,Posted Transfer Rcpt.,Purch. Rcpt. Header</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control DocType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 2536364149 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to copy information from the document header you are copying.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control IncludeHeader - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 2536364149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include Header</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control IncludeHeader - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 4188008842 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that lines are recalculate and inserted on the document you are creating. The batch job retains the item numbers and item quantities but recalculates the amounts on the lines based on the customer information on the new document header.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control RecalculateLines - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2905033719 - Control 4188008842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recalculate Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Copy Item Document GE - Control RecalculateLines - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2596185427 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Guarantee Deduction</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8723,185 +8893,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You must specify a budget name to import to.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text000</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do you want to create a %1 with the name %2?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text001</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 %2 is blocked. You cannot import entries.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text002</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Are you sure that you want to %1 for the budget name %2?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text003</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 table has been successfully updated with %2 entries.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text004</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Imported from Excel </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text005</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Excel File</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text006</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analyzing Data...\\</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text007</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You cannot specify more than 8 dimensions in your Excel worksheet.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text008</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
-          <source>G/L Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text010</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The text G/L Account No. can only be specified once in the Excel worksheet.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text011</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 2939533186" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The dimensions specified by worksheet must be placed in the lines before the table.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text012</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 2301836569" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text013</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 4214926420" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text014</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 3577229803" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text015</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 1195352358" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text016</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 557655741" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 3</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text017</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 857534312" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 4</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text018</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 219837695" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 5</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text019</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 1940672225" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 6</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text020</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 2578368842" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 7</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text021</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 665278991" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dimension 8</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text022</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 1302975608" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You cannot import the same information twice.\</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text023</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 196491397" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The combination G/L Account No. - Dimensions - Date must be unique.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text024</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 834188014" size-unit="char" translate="yes" xml:space="preserve">
-          <source>G/L Accounts have not been found in the Excel worksheet.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text025</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 3216065459" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dates have not been recognized in the Excel worksheet.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text026</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 3853762076" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Replace Entries,Add Entries</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text027</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - NamedType 2747277865" size-unit="char" translate="yes" xml:space="preserve">
-          <source>A filter has been used on the %1 when the budget was exported. When a filter on a dimension has been used, a column with the same dimension must be present in the worksheet imported. The column in the worksheet must specify the dimension value codes the program should use when importing the budget.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text028</note>
-        </trans-unit>
         <trans-unit id="Report 2097918721 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Options - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2097918721 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies a description of the imported budget entries, so that the entries can be easily identified among other budget entries.</source>
+        <trans-unit id="Report 2097918721 - Control 1376957155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Description - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control docNo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2097918721 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
+        <trans-unit id="Report 2097918721 - Control 2719079417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Batch</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Description - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ijBatch - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2097918721 - Control 652589522 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if the budget entries are added from Excel to budget entries that are currently in the system or are replaced in Business Central with the budget entries from Excel.</source>
+        <trans-unit id="Report 2097918721 - Control 3337551581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Template</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ImportOption - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ijTemplate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2097918721 - Control 652589522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Option</source>
+        <trans-unit id="Report 2097918721 - Control 3019141328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ImportOption - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - Control 652589522 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Replace entries,Add entries</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ImportOption - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - Control 2150200558 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the name of the budget.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ToGLBudgetName - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 2097918721 - Control 2150200558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Budget Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ToGLBudgetName - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control postDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory for Deferrals INV-11</source>
@@ -9257,6 +9272,11 @@
           <source>Another</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Setup (Ext) - Control Another - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1313060217 - Action 59861814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 214241839">
+          <source>Copy Document...</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Item Shipment GE - Action Copy Document - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3985024665 - Action 4056321329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 858112265">
           <source>Get Item Ledger Lines</source>
@@ -11002,6 +11022,16 @@
           <source>Vend. Agr. Creator Notif.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Vend. Agr. Creator Notif. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>VAT Allocation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field VAT Allocation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3048691394 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4132487568">
+          <source>VAT Allocation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Posting Setup GE - Field VAT Allocation - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1982677864 - Method 279309469 - NamedType 3290652800" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1982677864">
           <source>Bin %1 has been created</source>
