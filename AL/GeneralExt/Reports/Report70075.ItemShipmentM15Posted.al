@@ -140,6 +140,7 @@ report 70075 "Item Shipment M-15 Posted"
                     VAT: Decimal;
                     AmountIncVAT: Decimal;
                     Direction: Enum "Transfer Direction";
+                    Item: Record Item;
                 begin
                     i += 1;
 
@@ -513,12 +514,18 @@ report 70075 "Item Shipment M-15 Posted"
         VATAmount: Decimal;
         VATAmountTxt: Text;
         IncVATAmountTxt: Text;
-        Item: Record Item;
         RowNo: Integer;
-        Employee2: Code[20];
-        Employee3: Code[20];
-        Employee4: Code[20];
 
+    procedure GetCostCodeName(GlobalDimNo: Integer; GlobalDimCode: Code[20]): Text
+    var
+        DimensionValue: Record "Dimension Value";
+    begin
+        DimensionValue.SetRange("Global Dimension No.", 1);
+        DimensionValue.SetRange(Code, GlobalDimCode);
+        if DimensionValue.FindFirst() then
+            exit(DimensionValue.Name);
+        exit('');
+    end;
 
     procedure FillHeader(DocNo: Code[20]; PostingDate: Date)
     begin
@@ -532,17 +539,6 @@ report 70075 "Item Shipment M-15 Posted"
             EnterCell(11, 12, Format(ReasonName3), false, ExcelBufferTmp."Cell Type"::Text, 9, false);
             EnterCell(12, 7, Format(Consignee), false, ExcelBufferTmp."Cell Type"::Text, 9, false);
         end;
-    end;
-
-    procedure GetCostCodeName(GlobalDimNo: Integer; GlobalDimCode: Code[20]): Text
-    var
-        DimensionValue: Record "Dimension Value";
-    begin
-        DimensionValue.SetRange("Global Dimension No.", 1);
-        DimensionValue.SetRange(Code, GlobalDimCode);
-        if DimensionValue.FindFirst() then
-            exit(DimensionValue.Name);
-        exit('');
     end;
 
     procedure FillBody(ShortcutDimension1Code: Code[20]; ShortcutDimension2Code: Code[20]; UnitofMeasureCode: Code[20])
@@ -579,6 +575,10 @@ report 70075 "Item Shipment M-15 Posted"
     end;
 
     procedure FillFooter()
+    var
+        Employee2: Code[20];
+        Employee3: Code[20];
+        Employee4: Code[20];
     begin
         if ExportToExcel then begin
             EnterCell(RowNo, 16, Format(LocalManagement.Integer2Text(i, 2, 'наименование', 'наименования', 'наименований')), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
