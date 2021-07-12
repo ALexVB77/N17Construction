@@ -97,6 +97,7 @@ page 70000 "Purchase Order App"
                 field("Problem Document"; Rec."Problem Document")
                 {
                     ApplicationArea = All;
+                    Editable = false;
 
                     trigger OnValidate()
                     begin
