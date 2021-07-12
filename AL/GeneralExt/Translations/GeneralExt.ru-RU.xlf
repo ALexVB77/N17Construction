@@ -7767,12 +7767,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 756426410 - Method 921024001 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Could not find a comment related to returning a document for revision.</source>
-          <target>Не удалось найти комментарий, связанный с возвратом документа на доработку.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Method SetProblemDescription - NamedType LocText001</note>
-        </trans-unit>
         <trans-unit id="Page 756426410 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
           <target>Общее</target>
@@ -7784,18 +7778,6 @@
           <target>Проблема</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control Problem - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 756426410 - Action 227370865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Approval</source>
-          <target>Утверждение</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Approval - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 756426410 - Action 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Comments</source>
-          <target>Комментарии</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Action Comment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Proj. Cost Control Entry Buf.</source>
@@ -10369,42 +10351,36 @@
           <source>Fix Forecast</source>
           <target>Fix Forecast</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - NamedType 3518910232" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description is mandatory!</source>
           <target>Необходимо ввести описание!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - NamedType TEXT0001</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 4105281732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <target>Параметры</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control GroupName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Описание</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 1946087940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Project Code</source>
           <target>Код проекта</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control ProjectCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1525678392 - Control 3695453617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Forecast version</source>
           <target>Прогноз версия код</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fix Forecast - Control VersionCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 61001228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10484,6 +10460,265 @@
           <target>Код бюджета</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Import Budget CC - Control ToItemBudgetName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Item Remains</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify a budget name to import to.</source>
+          <target>[NAB: SUGGESTION]Необходимо указать название бюджета, в который импортируются данные.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to create a %1 with the name %2?</source>
+          <target>[NAB: SUGGESTION]Создать %1 с именем %2?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2 is blocked. You cannot import entries.</source>
+          <target>[NAB: SUGGESTION]%1 %2 заблокирован. Нельзя импортировать операции.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure that you want to %1 for the budget name %2?</source>
+          <target>[NAB: SUGGESTION]Вы действительно хотите применить %1 в качестве имени бюджета %2?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 table has been successfully updated with %2 entries.</source>
+          <target>[NAB: SUGGESTION]В таблицу %1 успешно добавлено %2 новых операций.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imported from Excel </source>
+          <target>[NAB: SUGGESTION]Импортировано из Excel </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <target>[NAB: SUGGESTION]Импорт файла Excel</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analyzing Data...\\</source>
+          <target>[NAB: SUGGESTION]Анализ данных...\\</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot specify more than 8 dimensions in your Excel worksheet.</source>
+          <target>[NAB: SUGGESTION]Нельзя указывать более 8 измерений на листе Excel.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text008</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account No.</source>
+          <target>[NAB: SUGGESTION]Номер счета ГК</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text010</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The text G/L Account No. can only be specified once in the Excel worksheet.</source>
+          <target>[NAB: SUGGESTION]Текстовый номер счета ГК можно указать на листе Excel только один раз.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text011</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 2939533186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The dimensions specified by worksheet must be placed in the lines before the table.</source>
+          <target>[NAB: SUGGESTION]Указанные в журнале измерения необходимо поместить в строки перед таблицей.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text012</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 2301836569" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension </source>
+          <target>[NAB: SUGGESTION]Измерение </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text013</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 4214926420" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <target>[NAB: SUGGESTION]Дата</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text014</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 3577229803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 1</source>
+          <target>[NAB: SUGGESTION]Измерение 1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text015</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 1195352358" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 2</source>
+          <target>[NAB: SUGGESTION]Измерение 2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text016</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 557655741" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 3</source>
+          <target>[NAB: SUGGESTION]Измерение 3</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text017</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 857534312" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 4</source>
+          <target>[NAB: SUGGESTION]Измерение 4</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text018</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 219837695" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 5</source>
+          <target>[NAB: SUGGESTION]Измерение 5</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text019</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 1940672225" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 6</source>
+          <target>[NAB: SUGGESTION]Измерение 6</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text020</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 2578368842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 7</source>
+          <target>[NAB: SUGGESTION]Измерение 7</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text021</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 665278991" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension 8</source>
+          <target>[NAB: SUGGESTION]Измерение 8</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text022</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 1302975608" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot import the same information twice.\</source>
+          <target>[NAB: SUGGESTION]Импорт одной информации дважды невозможен.\</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text023</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 196491397" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The combination G/L Account No. - Dimensions - Date must be unique.</source>
+          <target>[NAB: SUGGESTION]Комбинация номера счета ГК, измерений и даты должна быть уникальной.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text024</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 834188014" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Accounts have not been found in the Excel worksheet.</source>
+          <target>[NAB: SUGGESTION]Счета ГК не найдены в книге Excel.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text025</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 3216065459" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dates have not been recognized in the Excel worksheet.</source>
+          <target>[NAB: SUGGESTION]Даты не распознаются в книге Excel.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text026</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 3853762076" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replace Entries,Add Entries</source>
+          <target>[NAB: SUGGESTION]Заменить операции,Добавить операции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text027</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - NamedType 2747277865" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A filter has been used on the %1 when the budget was exported. When a filter on a dimension has been used, a column with the same dimension must be present in the worksheet imported. The column in the worksheet must specify the dimension value codes the program should use when importing the budget.</source>
+          <target>[NAB: SUGGESTION]При экспорте бюджета был использован фильтр для %1. В таком случае в импортируемом листе должен быть столбец для этого измерения. Этот столбец листа должен содержать коды значений этого измерения для импорта бюджета.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - NamedType Text028</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target>[NAB: SUGGESTION]Параметры</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a description of the imported budget entries, so that the entries can be easily identified among other budget entries.</source>
+          <target>[NAB: SUGGESTION]Определяет импортируемых операций бюджета, чтобы эти операции можно было легко выделить среди других операций бюджета.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>[NAB: SUGGESTION]Описание</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 652589522 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the budget entries are added from Excel to budget entries that are currently in the system or are replaced in Business Central with the budget entries from Excel.</source>
+          <target>[NAB: SUGGESTION]Указывает, будут ли операции бюджета, имеющиеся в системе, дополняться операциями бюджета из Excel или же они будут заменяться в Business Central операциями бюджета из Excel.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ImportOption - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 652589522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Option</source>
+          <target>[NAB: SUGGESTION]Параметр</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ImportOption - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 652589522 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replace entries,Add entries</source>
+          <target>[NAB: SUGGESTION]Заменить операции,Добавить операции</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ImportOption - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 2150200558 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the budget.</source>
+          <target>[NAB: SUGGESTION]Определяет название бюджета.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ToGLBudgetName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2097918721 - Control 2150200558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Budget Name</source>
+          <target>[NAB: SUGGESTION]Код бюджета</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Import Item Remains - Control ToGLBudgetName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1856612108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory for Deferrals INV-11</source>
@@ -10766,6 +11001,13 @@
           <target>Дата начала</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Payment Report - Control StartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1742529627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select Latest Version</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Select Latest Version - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1809404285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>TempStarter</source>
@@ -12051,6 +12293,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purch. Inv. Line (Ext) - Field Cost Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Method 4041009753 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 279653624">
+          <source>There is no approval request to approve.</source>
+          <target>[NAB: SUGGESTION]Нет запроса утверждения, подлежащего утверждению.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Method GetApprovalCommentText - NamedType NoReqToApproveErr</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Method 1323077645 - NamedType 3076946130" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 279653624">
           <source>Document %1 contains no lines.</source>
           <target>Документ %1 не содержит строк.</target>
@@ -12062,6 +12311,13 @@
           <target>Документ %1 отправлен в архив.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Method PurchOrderArchive - NamedType LocText50013</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Method 1043318029 - NamedType 3135394642" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 279653624">
+          <source>There is no approval request to approve.</source>
+          <target>[NAB: SUGGESTION]Нет запроса утверждения, подлежащего утверждению.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Method SetApprovalCommentText - NamedType NoReqToApproveErr</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 445905442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Act Type</source>
@@ -13580,6 +13836,13 @@
           <target>Доп. информация</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Comment Add. Type - EnumValue Additional Info - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2341102937 - EnumValue 1860360197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem</source>
+          <target>[NAB: SUGGESTION]Проблема</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Purchase Comment Add. Type - EnumValue Problem - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2341102937 - EnumValue 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reason</source>
