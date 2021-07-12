@@ -11,7 +11,7 @@ report 70102 "Fa Release Act FA-1b"
             RequestFilterFields = "No.";
             dataitem("Posted FA Doc. Line"; "Posted FA Doc. Line")
             {
-                //RequestFilterFields = "Depreciation Book Code";
+
                 DataItemTableView = SORTING("Document Type", "Document No.", "Line No.");
                 DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
                 dataitem("FA Depreciation Book"; "FA Depreciation Book")
