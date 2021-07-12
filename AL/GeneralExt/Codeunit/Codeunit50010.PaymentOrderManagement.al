@@ -786,7 +786,7 @@ codeunit 50010 "Payment Order Management"
 
         if (PurchHeader."Status App" >= PurchHeader."Status App"::Checker) and (not Reject) then begin
             CheckCostDimExistsInHeader(PurchHeader);
-            VendAreement.Get(PurchHeader."Agreement No.");
+            VendAreement.Get(PurchHeader."Buy-from Vendor No.", PurchHeader."Agreement No.");
 
             PurchLine.SETRANGE("Document Type", PurchHeader."Document Type");
             PurchLine.SETRANGE("Document No.", PurchHeader."No.");
