@@ -540,4 +540,60 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         PurchCommentLine.Modify(true);
     end;
 
+    procedure GetApprovalCommentText(): text
+    var
+        ApprovalEntry: Record "Approval Entry";
+        ApprovalCommentLine: Record "Approval Comment Line";
+        ApprovalMgt: Codeunit "Approvals Mgmt.";
+        NoReqToApproveErr: Label 'There is no approval request to approve.';
+        StepInstanceID: Guid;
+    begin
+        if ApprovalMgt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, RecordID) then begin
+            ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
+            ApprovalCommentLine.SetRange("Linked Approval Entry No.", ApprovalEntry."Entry No.");
+            if ApprovalCommentLine.FindLast() then
+                exit(ApprovalCommentLine.Comment);
+            StepInstanceID := ApprovalEntry."Workflow Step Instance ID";
+        end;
+
+        ApprovalEntry.Reset;
+        if not IsNullGuid(StepInstanceID) then begin
+            ApprovalEntry.SetCurrentKey("Record ID to Approve", "Workflow Step Instance ID", "Sequence No.");
+            ApprovalEntry.SetRange("Workflow Step Instance ID", StepInstanceID);
+        end else
+            ApprovalEntry.SetCurrentKey("Table ID", "Document Type", "Document No.", "Sequence No.", "Record ID to Approve");
+        ApprovalEntry.SetRange("Record ID to Approve", RecordID);
+        ApprovalEntry.SetRange("Table ID", Database::"Purchase Header");
+        ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Rejected);
+        if ApprovalEntry.FindLast() then begin
+            ApprovalCommentLine.SetRange("Linked Approval Entry No.", ApprovalEntry."Entry No.");
+            if ApprovalCommentLine.FindLast() then
+                exit(ApprovalCommentLine.Comment);
+        end;
+    end;
+
+    procedure SetApprovalCommentText(NewComment: text)
+    var
+        ApprovalEntry: Record "Approval Entry";
+        ApprovalCommentLine: Record "Approval Comment Line";
+        ApprovalMgt: Codeunit "Approvals Mgmt.";
+        NoReqToApproveErr: Label 'There is no approval request to approve.';
+    begin
+        if not ApprovalMgt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, RecordID) then
+            Error(NoReqToApproveErr);
+
+        ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
+        ApprovalCommentLine.SetRange("Linked Approval Entry No.", ApprovalEntry."Entry No.");
+        if not ApprovalCommentLine.FindLast() then begin
+            ApprovalCommentLine.Reset;
+            ApprovalCommentLine.SetRange("Table ID", ApprovalEntry."Table ID");
+            ApprovalCommentLine.SetRange("Record ID to Approve", ApprovalEntry."Record ID to Approve");
+            ApprovalCommentLine.Init;
+            ApprovalCommentLine."Workflow Step Instance ID" := ApprovalEntry."Workflow Step Instance ID";
+            ApprovalCommentLine.Insert(true);
+        end;
+        ApprovalCommentLine.Comment := CopyStr(NewComment, 1, MaxStrLen(ApprovalCommentLine.Comment));
+        ApprovalCommentLine.Modify(true);
+    end;
+
 }

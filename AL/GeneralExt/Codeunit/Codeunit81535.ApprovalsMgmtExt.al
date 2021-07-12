@@ -97,6 +97,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PayOrderMgt: Codeunit "Payment Order Management";
         RecRef2: RecordRef;
         RejectEntryNo: Integer;
+        EndOfWorkflow: Boolean;
     begin
         if RecRef.Number = DATABASE::"Approval Entry" then begin
             RecRef.SetTable(ApprovalEntry);
@@ -111,14 +112,18 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         PurchHeader.TestField("Process User", USERID);
         RecRef2.GetTable(PurchHeader);
 
-        if not PurchHeader."IW Documents" then
-            PayOrderMgt.ChangePurchaseOrderActStatus(PurchHeader, Reject, RejectEntryNo)
-        else
+        if not PurchHeader."IW Documents" then begin
+            PayOrderMgt.ChangePurchaseOrderActStatus(PurchHeader, Reject, RejectEntryNo);
+            EndOfWorkflow :=
+                ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
+                (Reject and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Controller));
+        end else begin
             PayOrderMgt.ChangePurchasePaymentInvoiceStatus(PurchHeader, Reject, RejectEntryNo);
-
-        if ((not Reject) and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Accountant)) or
-            (Reject and (PurchHeader."Status App Act" = PurchHeader."Status App Act"::Controller))
-        then
+            EndOfWorkflow :=
+                ((not Reject) and (PurchHeader."Status App" = PurchHeader."Status App"::Payment)) or
+                (Reject and (PurchHeader."Status App" = PurchHeader."Status App"::Reception));
+        end;
+        if EndOfWorkflow then
             Message(PayOrderMgt.GetChangeStatusMessage)
         else begin
             PurchHeader.TestField("Process User");

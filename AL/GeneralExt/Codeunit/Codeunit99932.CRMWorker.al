@@ -85,6 +85,7 @@ codeunit 99932 "CRM Worker"
         //Messages
         ContactUpToDateMsg: Label 'Customer No. %1 is up to date';
         ContactProcessedMsg: Label 'Customer No. %1';
+        EmptyHttpRequestBody: Label 'Http request body is empty';
         NoInvestObjectMsg: Label 'Investment object is not specified';
         InvestmentObjectCreatedMsg: label 'Investment object %1 was created';
         InvestmentObjectUpdatedMsg: label 'Investment object %1 was updated';
@@ -102,31 +103,43 @@ codeunit 99932 "CRM Worker"
         ParsedObjects: Dictionary of [Guid, Dictionary of [Text, Text]];
         LogStatusEnum: Enum "CRM Log Status";
     begin
-        WebRequestQueue.CalcFields("Request Body");
-        WebRequestQueue."Request Body".CreateInStream(InStrm);
-        InStrm.Read(RequestBodyXmlText);
-        if not FetchObjects(WebRequestQueue.Id, RequestBodyXmlText, FetchedObjectBuff) then
-            exit;
         PickupPrefetchedObjects(FetchedObjectBuff);
+        if not FetchObjects(WebRequestQueue, FetchedObjectBuff) then
+            exit;
+
         ParseObjects(FetchedObjectBuff, ParsedObjects);
         ImportObjects(FetchedObjectBuff, ParsedObjects);
     end;
 
 
-    local procedure FetchObjects(WebRequestQueueId: Guid; RequestBodyXmlText: Text; var FetchedObjectsTemp: Record "CRM Prefetched Object") Result: Boolean
+    local procedure FetchObjects(var WRQ: Record "Web Request Queue"; var FetchedObjectsTemp: Record "CRM Prefetched Object") Result: Boolean
+    //var WebRequestQueue: Record "Web Request Queue"
     var
         XmlCrmObjectList: XmlNodeList;
         RootXmlElement: XmlElement;
         XmlCrmObject: XmlNode;
-        ObjXmlBase64, TempValue : text;
+        RequestBodyXmlText, ObjXmlBase64, TempValue : text;
         LogStatusEnum: Enum "CRM Log Status";
         ObjectMetadata: Dictionary of [Text, Text];
         OutStrm: OutStream;
+        InStrm: InStream;
+        UnitToProjectMap: Dictionary of [Guid, Guid];
+        ContactToUnitsMap: Dictionary of [Guid, List of [Guid]];
+        ContractToUnitMap: Dictionary of [Guid, Guid];
+
     begin
         Result := false;
         Clear(ObjectMetadata);
-        ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Id"), WebRequestQueueId);
+        ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Id"), WRQ.Id);
         ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Source Company Name"), CompanyName());
+        WRQ.CalcFields("Request Body");
+        if not WRQ."Request Body".HasValue() then begin
+            LogEvent(ObjectMetadata, EmptyHttpRequestBody);
+            exit;
+        end;
+        WRQ."Request Body".CreateInStream(InStrm);
+        InStrm.Read(RequestBodyXmlText);
+
         FetchedObjectsTemp.Reset();
         FetchedObjectsTemp.DeleteAll();
         if not GetRootXmlElement(RequestBodyXmlText, RootXmlElement) then begin
@@ -139,7 +152,7 @@ codeunit 99932 "CRM Worker"
         end;
         foreach XmlCrmObject in XmlCrmObjectList do begin
             Clear(ObjectMetadata);
-            ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Id"), WebRequestQueueId);
+            ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Id"), WRQ.Id);
             ObjectMetadata.Add(FetchedObjectsTemp.FieldName("WRQ Source Company Name"), CompanyName());
             ObjXmlBase64 := GetXmlElementText(XmlCrmObject);
             if not GetObjectMetadata(ObjXmlBase64, ObjectMetadata) then
@@ -157,7 +170,7 @@ codeunit 99932 "CRM Worker"
                 FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
                 OutStrm.Write(TempValue);
                 ObjectMetadata.Get(FetchedObjectsTemp.FieldName("Version Id"), FetchedObjectsTemp."Version Id");
-                FetchedObjectsTemp."WRQ Id" := WebRequestQueueId;
+                FetchedObjectsTemp."WRQ Id" := WRQ.id;
                 FetchedObjectsTemp."WRQ Source Company Name" := CompanyName();
                 FetchedObjectsTemp."Prefetch Datetime" := CurrentDateTime();
                 if not FetchedObjectsTemp.Insert() then
@@ -218,7 +231,6 @@ codeunit 99932 "CRM Worker"
             Error(NoObjectIdErr);
         if (UpperCase(ObjectType) in ['CONTRACT', 'UNIT']) and (ParentObjectIdText = '') then
             Error(NoParentObjectIdErr);
-
     end;
 
     local procedure ParseObjects(var FetchedObject: Record "CRM Prefetched Object"; var ParsedObjects: Dictionary of [Guid, Dictionary of [Text, Text]])
@@ -828,6 +840,43 @@ codeunit 99932 "CRM Worker"
                 TempDict.Add(CrmCompany."Company Name", 1);
         until CrmCompany.Next() = 0;
         CrmInteractCompanyList := TempDict.Keys();
+    end;
+
+    local procedure CollectCompanyMarks(var FetchedObject: Record "CRM Prefetched Object";
+        var UnitToProjectMap: Dictionary of [Guid, Guid];
+        var ContactToUnitsMap: Dictionary of [Guid, List of [Guid]];
+        var ContractToUnitMap: Dictionary of [Guid, Guid]
+    )
+    var
+        TempGuid: Guid;
+        UnitToContactsMap: Dictionary of [Guid, List of [Guid]];
+        OK: Boolean;
+    begin
+        case FetchedObject.Type of
+            FetchedObject.Type::Unit:
+                begin
+                    OK := UnitToProjectMap.Remove(FetchedObject.Id);
+                    OK := UnitToContactsMap.Remove(FetchedObject.Id);
+                    UnitToProjectMap.Add(FetchedObject.Id, FetchedObject.ParentId);
+                    //AddToDictOfLists(UnitToContactsMap, );
+                    //UnitToProjectMap.
+
+                end;
+
+        end
+    end;
+
+    local procedure AddToDictOfLists(var Dict: Dictionary of [Guid, List of [Guid]]; KeyGuid: Guid; ValueGuid: Guid)
+    var
+        TempList: List of [Guid];
+    begin
+        if Dict.Get(KeyGuid, TempList) then begin
+            if not TempList.Contains(ValueGuid) then
+                TempList.Add(ValueGuid);
+        end else begin
+            TempList.Add(ValueGuid);
+            Dict.Add(KeyGuid, TempList);
+        end;
     end;
 
     local procedure ObjectAlreadyImported(var FetchedObject: record "CRM Prefetched Object") Result: Boolean

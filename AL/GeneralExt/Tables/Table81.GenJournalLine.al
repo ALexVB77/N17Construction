@@ -2,6 +2,11 @@ tableextension 80081 "Gen. Journal Line (Ext)" extends "Gen. Journal Line"
 {
     fields
     {
+        field(50030; Gift; Boolean)
+        {
+            Caption = 'Gift';
+        }
+
         field(70003; "Status App"; enum "Gen. Journal Approval Status")
         {
             Description = 'NC 51378 AB';

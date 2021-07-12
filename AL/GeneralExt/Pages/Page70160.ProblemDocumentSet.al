@@ -76,7 +76,9 @@ Page 70160 "Problem Document Set"
                     field("Problem Description"; ProblemDescription)
                     {
                         ApplicationArea = All;
+                        Caption = 'Problem Description';
                         Editable = Rec."Problem Document";
+
 
                         trigger OnValidate()
                         begin
@@ -89,10 +91,8 @@ Page 70160 "Problem Document Set"
     }
 
     trigger OnAfterGetCurrRecord()
-    var
-        AddType: enum "Purchase Comment Add. Type";
     begin
-        ProblemDescription := Rec.GetAddTypeCommentText(AddType::Problem);
+        ProblemDescription := Rec.GetAddTypeCommentText(AddCommentType::Problem);
     end;
 
     var

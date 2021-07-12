@@ -11,7 +11,7 @@ report 70102 "Fa Release Act FA-1b"
             RequestFilterFields = "No.";
             dataitem("Posted FA Doc. Line"; "Posted FA Doc. Line")
             {
-                RequestFilterFields = "Depreciation Book Code";
+
                 DataItemTableView = SORTING("Document Type", "Document No.", "Line No.");
                 DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
                 dataitem("FA Depreciation Book"; "FA Depreciation Book")
@@ -125,9 +125,10 @@ report 70102 "Fa Release Act FA-1b"
                 }
                 trigger OnPreDataItem()
                 var
-                    locLabel001: label 'Выберите код книги амортизации';
+                    locLabel001: label 'Выберите код амортизации';
                 begin
-                    if ("Posted FA Doc. Line".getfilter("Depreciation Book Code") = '') then error(locLabel001);
+                    //if ("Posted FA Doc. Line".getfilter("Depreciation Book Code") = '') then error(locLabel001);
+                    if (DepreciationCode = '') then error(locLabel001);
 
 
                     IsHeaderPrinted := FALSE;
