@@ -125,7 +125,7 @@ page 70130 "Purchase List Controller"
                         GenJnlLine.SetRange("Line No.", LinkedGenJnlLine."Line No.");
                         PaymentRequestCard.SetTableView(GenJnlLine);
                         PaymentRequestCard.SetRecord(GenJnlLine);
-                        PaymentRequestCard.RunModal();
+                        PaymentRequestCard.Run();
                     end;
                 }
                 field("Document Date"; Rec."Document Date")
@@ -213,7 +213,7 @@ page 70130 "Purchase List Controller"
                     GenJnlLine.SetRange("Line No.", LinkedGenJnlLine."Line No.");
                     PaymentRequestCard.SetTableView(GenJnlLine);
                     PaymentRequestCard.SetRecord(GenJnlLine);
-                    PaymentRequestCard.RunModal();
+                    PaymentRequestCard.Run();
                 end;
             }
             action(ViewProblemDoc)

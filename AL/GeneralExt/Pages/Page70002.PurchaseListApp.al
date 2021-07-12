@@ -65,7 +65,7 @@ page 70002 "Purchase List App"
 
                     trigger OnAssistEdit()
                     begin
-                        page.Runmodal(Page::"Purchase Order App", Rec);
+                        page.Run(Page::"Purchase Order App", Rec);
                         CurrPage.Update(false);
                     end;
                 }

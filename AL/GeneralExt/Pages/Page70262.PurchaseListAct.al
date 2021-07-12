@@ -381,7 +381,7 @@ page 70262 "Purchase List Act"
             Rec."Act Type"::Advance:
                 ;
             else
-                page.Runmodal(Page::"Purchase Order Act", Rec);
+                page.Run(Page::"Purchase Order Act", Rec);
         end;
         CurrPage.Update(false);
     end;
