@@ -8197,7 +8197,6 @@
           <source> ,Reception,Сontroller,Checker,Approve,Payment</source>
           <target> ,Reception,Контролер,Проверка,Утверждение,Платеж</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase List App - Control Status App - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 758120940 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8762,7 +8761,6 @@
           <source> ,Reception,Сontroller,Checker,Approve,Payment</source>
           <target> ,Reception,Контролер,Проверка,Утверждение,Платеж</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Status App - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 1725717413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10398,9 +10396,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - NamedType Text_001</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - ReportDataItem 1311705274 - Method 72583909 - NamedType 2432085961" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Выберите код книги амортизации</source>
-          <target>Выберите код книги амортизации</target>
+          <source>Выберите код амортизации</source>
+          <target>Выберите код амортизации</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Fa Release Act FA-1b - ReportDataItem Posted FA Doc. Line - Method OnPreDataItem - NamedType locLabel001</note>
         </trans-unit>
         <trans-unit id="Report 3828198507 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
