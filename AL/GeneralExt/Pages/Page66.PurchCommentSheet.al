@@ -11,6 +11,7 @@ pageextension 80066 "Purch. Comment Sheet (Ext)" extends "Purch. Comment Sheet"
             field("Add. Line Type"; Rec."Add. Line Type")
             {
                 ApplicationArea = Comments;
+                Editable = false;
             }
         }
     }
