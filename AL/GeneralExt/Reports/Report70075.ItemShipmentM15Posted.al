@@ -11,6 +11,70 @@ report 70075 "Item Shipment M-15 Posted"
         {
             DataItemTableView = sorting("No.");
 
+            dataitem(TransferReceiptLine; "Transfer Receipt Line")
+            {
+                DataItemTableView = sorting("Document No.", "Line No.");
+                DataItemLink = "Document No." = field("No.");
+
+                trigger OnPreDataItem()
+                begin
+                    i := 0;
+                end;
+
+                trigger OnAfterGetRecord()
+                var
+                    ILE: Record "Item Ledger Entry";
+                begin
+                    i += 1;
+
+                    BalAccount := '';
+                    InvPostingSetup.Reset();
+                    InvPostingSetup.SetRange("Location Code", "Transfer-from Code");
+                    InvPostingSetup.SetRange("Invt. Posting Group Code", "Inventory Posting Group");
+                    if InvPostingSetup.FindSet() then
+                        BalAccount := InvPostingSetup."Inventory Account";
+
+                    if not UnitOfMeasure.Get("Unit of Measure Code") then
+                        Clear(UnitOfMeasure);
+
+                    ItemDescription := Description + "Description 2";
+
+                    if ILE.Get("Item Rcpt. Entry No.") then begin
+                        ILE.CalcFields("Cost Amount (Actual)");
+                        UnitCostTxt := Format(Abs(ILE."Cost Amount (Actual)" / ILE.Quantity), 0, '<Precision,2:2><Standard Format,0>');
+                        AmountTxt := Format(Abs(ILE."Cost Amount (Actual)"), 0, '<Precision,2:2><Standard Format,0>');
+                        TotalAmount += Abs(ILE."Cost Amount (Actual)");
+                    end;
+
+                    if not PrintPrice then begin
+                        UnitCostTxt := '-';
+                        AmountTxt := '-';
+                    end;
+
+                    Qty1Txt := Format(Quantity);
+                    Qty2Txt := Format(Quantity);
+
+                    txtItemNo := "Item No.";
+                    if "Variant Code" <> '' then
+                        txtItemNo := txtItemNo + '(' + "Variant Code" + ')';
+                end;
+            }
+
+            dataitem(Integer; Integer)
+            {
+                DataItemTableView = sorting(Number);
+
+                trigger OnAfterGetRecord()
+                begin
+                    TotalAmountTxt := LocalManagement.Amount2Text('', TotalAmount);
+                    TotalVATAmountTxt := LocalManagement.Amount2Text('', VATAmount);
+                    if not PrintPrice then begin
+                        TotalAmountTxt := '-';
+                        TotalVATAmountTxt := '-';
+                    end;
+                end;
+            }
+
             trigger OnPreDataItem()
             begin
                 if GetFilters() = '' then
@@ -102,6 +166,21 @@ report 70075 "Item Shipment M-15 Posted"
         LocRepMgt: Codeunit "Local Report Management";
         CompanyInfo: Record "Company Information";
         PrintPrice: Boolean;
+        i: Integer;
+        BalAccount: Code[20];
+        InvPostingSetup: Record "Inventory Posting Setup";
+        UnitOfMeasure: Record "Unit of Measure";
+        ItemDescription: Text;
+        UnitCostTxt: Text;
+        AmountTxt: Text;
+        TotalAmount: Decimal;
+        Qty1Txt: Text;
+        Qty2Txt: Text;
+        txtItemNo: Code[20];
+        TotalAmountTxt: Text;
+        TotalVATAmountTxt: Text;
+        LocalManagement: Codeunit "Localisation Management";
+        VATAmount: Decimal;
 
     procedure FillHeader(DocNo: Code[20]; PostingDate: Date)
     begin
