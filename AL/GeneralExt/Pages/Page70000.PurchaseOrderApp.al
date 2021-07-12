@@ -108,6 +108,20 @@ page 70000 "Purchase Order App"
                     ApplicationArea = All;
                     Editable = false;
                 }
+                field("Problem Description"; ProblemDescription)
+                {
+                    ApplicationArea = All;
+                    Editable = ApproveButtonEnabled or RejectButtonEnabled;
+                    Enabled = ApproveButtonEnabled or RejectButtonEnabled;
+
+                    trigger OnValidate()
+                    begin
+                        if "Status App" = "Status App"::Payment then
+                            Rec.SetAddTypeCommentText(AddCommentType::Problem, ProblemDescription)
+                        else
+                            Rec.SetApprovalCommentText(ProblemDescription);
+                    end;
+                }
                 field("Payment to Person"; Rec."Payment to Person")
                 {
                     ApplicationArea = All;
@@ -563,6 +577,11 @@ page 70000 "Purchase Order App"
     trigger OnAfterGetCurrRecord()
     begin
 
+        if "Status App" = "Status App"::Payment then
+            ProblemDescription := Rec.GetAddTypeCommentText(AddCommentType::Problem)
+        else
+            ProblemDescription := Rec.GetApprovalCommentText();
+
         ApproveButtonEnabled := FALSE;
         RejectButtonEnabled := FALSE;
 
@@ -627,6 +646,8 @@ page 70000 "Purchase Order App"
         IWPlanRepayDateMandatory: Boolean;
         ApproveButtonEnabled: Boolean;
         RejectButtonEnabled: Boolean;
+        ProblemDescription: text;
+        AddCommentType: enum "Purchase Comment Add. Type";
         TextDelError: Label 'You cannot delete Purchase Order Act %1';
 
     local procedure SaveInvoiceDiscountAmount()

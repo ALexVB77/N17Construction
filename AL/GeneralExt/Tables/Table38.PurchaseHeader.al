@@ -540,4 +540,44 @@ tableextension 80038 "Purchase Header (Ext)" extends "Purchase Header"
         PurchCommentLine.Modify(true);
     end;
 
+    procedure GetApprovalCommentText(): text
+    var
+        ApprovalEntry: Record "Approval Entry";
+        ApprovalCommentLine: Record "Approval Comment Line";
+        ApprovalMgt: Codeunit "Approvals Mgmt.";
+        NoReqToApproveErr: Label 'There is no approval request to approve.';
+    begin
+        if not ApprovalMgt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, RecordID) then
+            Error(NoReqToApproveErr);
+
+        ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
+        ApprovalCommentLine.SetRange("Linked Approval Entry No.", ApprovalEntry."Entry No.");
+        if ApprovalCommentLine.FindLast() then
+            exit(ApprovalCommentLine.Comment);
+    end;
+
+    procedure SetApprovalCommentText(NewComment: text)
+    var
+        ApprovalEntry: Record "Approval Entry";
+        ApprovalCommentLine: Record "Approval Comment Line";
+        ApprovalMgt: Codeunit "Approvals Mgmt.";
+        NoReqToApproveErr: Label 'There is no approval request to approve.';
+    begin
+        if not ApprovalMgt.FindOpenApprovalEntryForCurrUser(ApprovalEntry, RecordID) then
+            Error(NoReqToApproveErr);
+
+        ApprovalCommentLine.SetCurrentKey("Linked Approval Entry No.");
+        ApprovalCommentLine.SetRange("Linked Approval Entry No.", ApprovalEntry."Entry No.");
+        if not ApprovalCommentLine.FindLast() then begin
+            ApprovalCommentLine.Reset;
+            ApprovalCommentLine.SetRange("Table ID", ApprovalEntry."Table ID");
+            ApprovalCommentLine.SetRange("Record ID to Approve", ApprovalEntry."Record ID to Approve");
+            ApprovalCommentLine.Init;
+            ApprovalCommentLine."Workflow Step Instance ID" := ApprovalEntry."Workflow Step Instance ID";
+            ApprovalCommentLine.Insert(true);
+        end;
+        ApprovalCommentLine.Comment := CopyStr(NewComment, 1, MaxStrLen(ApprovalCommentLine.Comment));
+        ApprovalCommentLine.Modify(true);
+    end;
+
 }

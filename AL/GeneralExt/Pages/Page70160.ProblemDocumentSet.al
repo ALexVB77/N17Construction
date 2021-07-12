@@ -89,10 +89,8 @@ Page 70160 "Problem Document Set"
     }
 
     trigger OnAfterGetCurrRecord()
-    var
-        AddType: enum "Purchase Comment Add. Type";
     begin
-        ProblemDescription := Rec.GetAddTypeCommentText(AddType::Problem);
+        ProblemDescription := Rec.GetAddTypeCommentText(AddCommentType::Problem);
     end;
 
     var
