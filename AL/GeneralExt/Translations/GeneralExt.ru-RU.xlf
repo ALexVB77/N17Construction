@@ -7916,7 +7916,6 @@
           <source>Problem Description</source>
           <target>Описание проблемы</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Problem Document Set - Control Problem Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3568259090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -8739,7 +8738,6 @@
           <source>Problem Description</source>
           <target>Описание проблемы</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order App - Control Problem Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3790301120 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10862,21 +10860,21 @@
         </trans-unit>
         <trans-unit id="Report 4054452980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Shipment M-15 Posted</source>
-          <target>[NAB: SUGGESTION]Item Shipment M-15 Posted</target>
+          <target>Накладная на отпуск материалов на сторону М-15</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - NamedType 1499704549" size-unit="char" translate="yes" xml:space="preserve">
           <source>By agreement %1</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>По договору %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - NamedType Text12401</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActionName</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>ActionName</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Action ActionName - Property Caption</note>
@@ -13163,15 +13161,14 @@
         </trans-unit>
         <trans-unit id="TableExtension 2405895716 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3550754772">
           <source>Agreement No.</source>
-          <target>[NAB: SUGGESTION]Договор Но.</target>
+          <target>Договор Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Receipt Header (Ext) - Field Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2405895716 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3550754772">
           <source>Vendor No.</source>
-          <target>[NAB: SUGGESTION]Поставщик</target>
-          <target>[NAB: SUGGESTION]Поставщик Но.</target>
+          <target>Поставщик Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Transfer Receipt Header (Ext) - Field Vendor No. - Property Caption</note>
