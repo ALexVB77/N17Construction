@@ -4,7 +4,7 @@ select item,uom,loc,cp,cc,np,nuvid,nuobj,UnitCost,sum(qty) qty
 
 from (
 
-select [Item No_] item,[Unit of Measure Code] uom,lm.[New Location Code] loc,lednpm.[New Dimension Value Code] cp, ile.[Global Dimension 2 Code] cc,
+select [Item No_] item,[Unit of Measure Code] uom,lm.[New Location Code] loc,lednpm.[New Dimension Value Code] cp, ''''+ile.[Global Dimension 2 Code] cc,
 isnull(ledNp.[Dimension Value Code],'') NP,
 isnull(ledNuVid.[Dimension Value Code],'') NuVid,
 isnull(ledNuObj.[Dimension Value Code],'') NuObj,
