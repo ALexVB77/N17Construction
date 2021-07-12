@@ -120,8 +120,8 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         end else begin
             PayOrderMgt.ChangePurchasePaymentInvoiceStatus(PurchHeader, Reject, RejectEntryNo);
             EndOfWorkflow :=
-                ((not Reject) and (PurchHeader."Status App" = PurchHeader."Status App"::Reception)) or
-                (Reject and (PurchHeader."Status App" = PurchHeader."Status App"::Payment));
+                ((not Reject) and (PurchHeader."Status App" = PurchHeader."Status App"::Payment)) or
+                (Reject and (PurchHeader."Status App" = PurchHeader."Status App"::Reception));
         end;
         if EndOfWorkflow then
             Message(PayOrderMgt.GetChangeStatusMessage)
