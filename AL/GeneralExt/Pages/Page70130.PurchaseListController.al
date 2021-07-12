@@ -116,9 +116,16 @@ page 70130 "Purchase List Controller"
                     ApplicationArea = All;
 
                     trigger OnAssistEdit()
+                    var
+                        GenJnlLine: Record "Gen. Journal Line";
+                        PaymentRequestCard: Page "Payment Request Card";
                     begin
-                        page.Runmodal(Page::"Purchase Order App", Rec);
-                        CurrPage.Update(false);
+                        GenJnlLine.SetRange("Journal Template Name", LinkedGenJnlLine."Journal Template Name");
+                        GenJnlLine.SetRange("Journal Batch Name", LinkedGenJnlLine."Journal Batch Name");
+                        GenJnlLine.SetRange("Line No.", LinkedGenJnlLine."Line No.");
+                        PaymentRequestCard.SetTableView(GenJnlLine);
+                        PaymentRequestCard.SetRecord(GenJnlLine);
+                        PaymentRequestCard.RunModal();
                     end;
                 }
                 field("Document Date"; Rec."Document Date")
