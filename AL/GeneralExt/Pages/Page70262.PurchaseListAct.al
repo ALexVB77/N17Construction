@@ -64,7 +64,6 @@ page 70262 "Purchase List Act"
                         CurrPage.UPDATE(FALSE);
                     end;
                 }
-
             }
 
             repeater(Repeater1237120003)
@@ -333,9 +332,9 @@ page 70262 "Purchase List Act"
         SetSortType;
         SetRecFilters;
 
+        Filter1Enabled := true;
         IF UserSetup."Status App Act" = UserSetup."Status App Act"::Checker THEN
             Filter1Enabled := FALSE;
-
         IF UserSetup."Administrator IW" THEN
             Filter1Enabled := TRUE;
     end;
@@ -403,20 +402,13 @@ page 70262 "Purchase List Act"
     end;
 
     local procedure SetRecFilters()
-    var
-        AE: record "Approval Entry";
-        PH: record "Purchase Header";
     begin
         FILTERGROUP(2);
 
         SETRANGE("Process User");
         SETRANGE("Status App");
         SETRANGE("Problem Document");
-
         SETRANGE(Paid);
-
-        MARKEDONLY(FALSE);
-        CLEARMARKS;
 
         CASE Filter2 OF
             Filter2::InProc:
@@ -437,17 +429,8 @@ page 70262 "Purchase List Act"
                 SETRANGE("Process User", USERID);
             Filter1::Approved:
                 BEGIN
-                    PH := Rec;
-                    AE.SETCURRENTKEY("Approver ID", Status);
-                    AE.SETRANGE("Approver ID", USERID);
-                    AE.SETRANGE(Status, AE.Status::Approved);
-                    IF AE.FINDSET THEN
-                        REPEAT
-                            IF GET(AE."Document Type", AE."Document No.") THEN
-                                MARK(TRUE);
-                        UNTIL AE.NEXT = 0;
-                    Rec := PH;
-                    MARKEDONLY(TRUE);
+                    SetRange("Approver ID Filter", UserId);
+                    SetRange("My Approved", true);
                 END;
         END;
 

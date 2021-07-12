@@ -280,7 +280,6 @@ page 70002 "Purchase List App"
         RejectButtonEnabled: boolean;
         EditEnabled: Boolean;
 
-
     local procedure SetRecFilters()
     begin
         FILTERGROUP(2);
@@ -324,13 +323,9 @@ page 70002 "Purchase List App"
 
     procedure SetSortType()
     begin
-        //--
         CASE SortType OF
             SortType::DocNo:
-                // SWC1075 DD 28.07.17 >>
-                //SETCURRENTKEY("No.");
                 SETCURRENTKEY("Document Type", "No.");
-            // SWC1075 DD 28.07.17 <<
             SortType::PostDate:
                 SETCURRENTKEY("Posting Date");
             SortType::Vendor:
