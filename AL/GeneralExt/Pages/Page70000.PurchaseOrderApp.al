@@ -264,6 +264,7 @@ page 70000 "Purchase Order App"
                     ApplicationArea = All;
                     Editable = false;
                     Caption = 'Approval Status';
+                    OptionCaption = ' ,Reception,Сontroller,Checker,Approve,Payment';
                 }
                 field("Date Status App"; Rec."Date Status App")
                 {
