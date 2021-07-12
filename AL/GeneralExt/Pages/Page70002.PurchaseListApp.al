@@ -285,9 +285,6 @@ page 70002 "Purchase List App"
 
 
     local procedure SetRecFilters()
-    var
-        AE: record "Approval Entry";
-        PH: record "Purchase Header";
     begin
         FILTERGROUP(2);
 
@@ -295,10 +292,9 @@ page 70002 "Purchase List App"
         SETRANGE("Status App");
         SETRANGE("Problem Document");
         SETRANGE(Paid);
-        // SWC1075 DD 28.07.17 >>
-        MARKEDONLY(FALSE);
-        CLEARMARKS;
-        // SWC1075 DD 28.07.17 <<
+
+        SetRange("My Approved");
+        SetRange("Approver ID Filter");
 
         SETFILTER("Status App", '<>%1&<>%2', "Status App"::Payment, "Status App"::Request);
 
@@ -319,22 +315,11 @@ page 70002 "Purchase List App"
         CASE Filter1 OF
             Filter1::MyDoc:
                 SETRANGE("Process User", USERID);
-            // SWC1075 DD 28.07.17 >>
             Filter1::Approved:
                 BEGIN
-                    PH := Rec;
-                    AE.SETCURRENTKEY("Approver ID", Status);
-                    AE.SETRANGE("Approver ID", USERID);
-                    AE.SETRANGE(Status, AE.Status::Approved);
-                    IF AE.FINDSET THEN
-                        REPEAT
-                            IF GET(AE."Document Type", AE."Document No.") THEN
-                                MARK(TRUE);
-                        UNTIL AE.NEXT = 0;
-                    Rec := PH;
-                    MARKEDONLY(TRUE);
+                    SetRange("Approver ID Filter", UserId);
+                    SetRange("My Approved", true);
                 END;
-        // SWC1075 DD 28.07.17 <<
         END;
 
         FILTERGROUP(0);

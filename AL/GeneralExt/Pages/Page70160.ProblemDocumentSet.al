@@ -71,8 +71,10 @@ Page 70160 "Problem Document Set"
                         trigger OnValidate()
                         begin
                             ProblemDescriptionEditable := Rec."Problem Document";
-                            if not Rec."Problem Document" then
+                            if not Rec."Problem Document" then begin
                                 Rec.SetAddTypeCommentText(AddCommentType::Problem, '');
+                                ProblemDescription := '';
+                            end;
                         end;
                     }
                     field("Problem Type"; "Problem Type")

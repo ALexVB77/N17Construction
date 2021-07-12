@@ -10303,6 +10303,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Act Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 1226008340 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Approver ID Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Approver ID Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 3086258489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>Archiving Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -10377,6 +10382,11 @@
           <source>Location Document</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field Location Document - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 279653624 - Field 3593166169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>My Approved</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Header (Ext) - Field My Approved - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 279653624 - Field 1203376573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>OKATO Code</source>
