@@ -67,6 +67,13 @@ Page 70160 "Problem Document Set"
                     field("Problem Document"; Rec."Problem Document")
                     {
                         ApplicationArea = All;
+
+                        trigger OnValidate()
+                        begin
+                            ProblemDescriptionEditable := Rec."Problem Document";
+                            if not Rec."Problem Document" then
+                                Rec.SetAddTypeCommentText(AddCommentType::Problem, '');
+                        end;
                     }
                     field("Problem Type"; "Problem Type")
                     {
@@ -77,7 +84,7 @@ Page 70160 "Problem Document Set"
                     {
                         ApplicationArea = All;
                         Caption = 'Problem Description';
-                        //Editable = Rec."Problem Document";
+                        Editable = ProblemDescriptionEditable;
 
                         trigger OnValidate()
                         begin
@@ -92,10 +99,12 @@ Page 70160 "Problem Document Set"
     trigger OnAfterGetCurrRecord()
     begin
         ProblemDescription := Rec.GetAddTypeCommentText(AddCommentType::Problem);
+        ProblemDescriptionEditable := Rec."Problem Document";
     end;
 
     var
         ProblemDescription: text;
         AddCommentType: Enum "Purchase Comment Add. Type";
+        ProblemDescriptionEditable: Boolean;
 
 }
