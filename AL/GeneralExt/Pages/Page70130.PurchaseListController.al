@@ -101,6 +101,7 @@ page 70130 "Purchase List Controller"
                 {
                     ApplicationArea = All;
                     Caption = 'Approval Status';
+                    OptionCaption = ' ,Reception,Сontroller,Checker,Approve,Payment';
                 }
                 field("Date Status App"; Rec."Date Status App")
                 {

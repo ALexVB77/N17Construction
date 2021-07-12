@@ -64,7 +64,7 @@ Page 70160 "Problem Document Set"
                 group(Problem)
                 {
                     Caption = 'Problem';
-                    field("Problem Document"; "Problem Document")
+                    field("Problem Document"; Rec."Problem Document")
                     {
                         ApplicationArea = All;
                     }
@@ -77,8 +77,7 @@ Page 70160 "Problem Document Set"
                     {
                         ApplicationArea = All;
                         Caption = 'Problem Description';
-                        Editable = Rec."Problem Document";
-
+                        //Editable = Rec."Problem Document";
 
                         trigger OnValidate()
                         begin
