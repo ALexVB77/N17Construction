@@ -112,8 +112,8 @@ page 70000 "Purchase Order App"
                 {
                     ApplicationArea = All;
                     Caption = 'Problem Description';
-                    Editable = ApproveButtonEnabled or RejectButtonEnabled;
-                    Enabled = ApproveButtonEnabled or RejectButtonEnabled;
+                    Editable = RejectButtonEnabled;
+                    Enabled = RejectButtonEnabled;
 
                     trigger OnValidate()
                     begin
