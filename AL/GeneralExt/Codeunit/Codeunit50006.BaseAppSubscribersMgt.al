@@ -169,6 +169,21 @@ codeunit 50006 "Base App. Subscribers Mgt."
         //NC 22512 < DP
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterGetNoSeriesCode', '', false, false)]
+    local procedure OnAfterGetNoSeriesCodeTransferHeader(var TransferHeader: Record "Transfer Header"; var NoSeriesCode: Code[20]);
+    var
+        InventorySetup: Record "Inventory Setup";
+    begin
+        // NC 51410 > EP
+        // Используем отдельную серию номеров для заказов на передачу материалов в переработку
+        if TransferHeader."Giv. Type" = TransferHeader."Giv. Type"::"To Contractor" then begin
+            InventorySetup.Get();
+            InventorySetup.TestField("Giv. Transfer Order Nos.");
+            NoSeriesCode := InventorySetup."Giv. Transfer Order Nos.";
+        end;
+        // NC 51410 < EP
+    end;
+
     // t 5740 <<
 
     // t 12450 >>
