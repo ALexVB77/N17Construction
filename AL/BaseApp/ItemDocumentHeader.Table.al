@@ -243,6 +243,9 @@ table 12450 "Item Document Header"
             NoSeriesMgt.InitSeries(GetNoSeriesCode, xRec."No. Series", "Posting Date", "No.", "No. Series");
         end;
         InitRecord;
+        // NC 51423 GG >>
+        onAfterInitRecord(Rec);
+        // NC 51423 GG <<
 
         DocSignMgt.SetDefaults(DATABASE::"Item Document Header", "Document Type", "No.");
     end;
@@ -484,6 +487,11 @@ table 12450 "Item Document Header"
     // NC 51413 GG >>
     [IntegrationEvent(false, false)]
     local procedure onLookupLocationCode(var ItemDocumentHeader: Record "Item Document Header")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure onAfterInitRecord(var ItemDocumentHeader: Record "Item Document Header")
     begin
     end;
     // NC 51423 GG <<     

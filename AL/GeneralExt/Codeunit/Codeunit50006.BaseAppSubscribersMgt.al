@@ -113,22 +113,22 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // t 179 <<
 
     // t 5740 >>
-    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInitRecord', '', false, false)]
+    local procedure OnAfterInitRecord(var TransferHeader: Record "Transfer Header");
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
     begin
-        if not RunTrigger then exit;
+        //if not RunTrigger then exit;
 
         //NC 22512 > DP
         DefaultLocation := StorekeeperLocation.GetDefaultLocation('', false);
         IF DefaultLocation <> '' THEN BEGIN
             // xRec."Transfer-from Code" := '';
-            Rec.SetHideValidationDialog(TRUE);
-            Rec.VALIDATE("Transfer-from Code", DefaultLocation);
-            Rec.SetHideValidationDialog(FALSE);
-            REc.modify();
+            TransferHeader.SetHideValidationDialog(TRUE);
+            TransferHeader.VALIDATE("Transfer-from Code", DefaultLocation);
+            TransferHeader.SetHideValidationDialog(FALSE);
+            //TransferHeader.modify();
         END;
         //NC 22512 < DP
     end;
@@ -187,22 +187,24 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // t 5740 <<
 
     // t 12450 >>
-    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertItemDocumentHeader(Rec: Record "Item Document Header"; RunTrigger: Boolean)
+    /*
+    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'onAfterInitRecord', '', false, false)]
+    local procedure onAfterInitRecord(var ItemDocumentHeader: Record "Item Document Header")
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
     begin
-        if not RunTrigger then exit;
+        //if not RunTrigger then exit;
 
         //NC 22512 > DP
         DefaultLocation := StorekeeperLocation.GetDefaultLocation('', false);
         IF DefaultLocation <> '' THEN begin
-            Rec.VALIDATE("Location Code", DefaultLocation);
-            Rec.modify();
+            ItemDocumentHeader.VALIDATE("Location Code", DefaultLocation);
+            ItemDocumentHeader.modify();
         end;
         //NC 22512 < DP
     end;
+    */
 
     [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'onLookupLocationCode', '', false, false)]
     local procedure onLookupLocationCode(var ItemDocumentHeader: Record "Item Document Header");
