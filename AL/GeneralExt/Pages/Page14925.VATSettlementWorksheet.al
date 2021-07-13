@@ -55,7 +55,7 @@ pageextension 94925 "VAT Settlement Worksheet GE" extends "VAT Settlement Worksh
 
                 trigger OnValidate()
                 begin
-                    rec.setfilter("Cost Code Type Filter", costType);
+                    rec.setfilter("Cost Code Type Filter", format(costType));
 
                 end;
             }
