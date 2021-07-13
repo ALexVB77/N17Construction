@@ -5,6 +5,11 @@ pageextension 80043 "Sales Invoice (Ext)" extends "Sales Invoice"
     {
         addlast(General)
         {
+            field("Government Agreement No."; Rec."Government Agreement No.")
+            {
+                ApplicationArea = All;
+            }
+
             field(Gift; Rec.Gift)
             {
                 ApplicationArea = All;
