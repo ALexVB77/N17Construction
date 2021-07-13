@@ -138,6 +138,8 @@ page 70004 "Documents Approval"
                 field("Status App"; Rec."Status App")
                 {
                     ApplicationArea = All;
+                    Caption = 'Approval Status';
+                    OptionCaption = ' ,Reception,Сontroller,Checker,Approve,Payment';
                 }
                 field("Date Status App"; Rec."Date Status App")
                 {

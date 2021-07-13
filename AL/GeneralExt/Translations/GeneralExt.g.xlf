@@ -4828,6 +4828,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Sorting - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Page 656867589 - Control 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Approval Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Status App - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Control 2681784031 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Reception,Сontroller,Checker,Approve,Payment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Status App - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Page 656867589 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <note from="Developer" annotates="general" priority="2"></note>
