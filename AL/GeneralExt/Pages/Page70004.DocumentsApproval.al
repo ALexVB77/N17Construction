@@ -191,6 +191,34 @@ page 70004 "Documents Approval"
                 RunObject = Page "Purchase Order App";
                 RunPageLink = "No." = FIELD("No.");
             }
+            action(ApproveButton)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Approve';
+                Enabled = ApproveButtonEnabled;
+                Image = Approve;
+
+                trigger OnAction()
+                begin
+                    MessageIfPurchLinesNotExist;
+                    if not ("Status App" in ["Status App"::Checker, "Status App"::Approve]) then
+                        FieldError("Status App");
+                    ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                end;
+            }
+            action(RejectButton)
+            {
+                ApplicationArea = All;
+                Caption = 'Reject';
+                Enabled = RejectButtonEnabled;
+                Image = Reject;
+                trigger OnAction()
+                begin
+                    if not ("Status App" in ["Status App"::Approve]) then
+                        FieldError("Status App");
+                    ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                end;
+            }
         }
         area(Navigation)
         {
@@ -273,14 +301,29 @@ page 70004 "Documents Approval"
         grUserSetup.GET(USERID);
     end;
 
+    trigger OnAfterGetRecord()
+    begin
+        ApproveButtonEnabled := FALSE;
+        RejectButtonEnabled := FALSE;
+
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
+            ApproveButtonEnabled := true;
+            RejectButtonEnabled := true;
+        end;
+    end;
+
     var
         PurchSetup: Record "Purchases & Payables Setup";
         grUserSetup: Record "User Setup";
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         Filter1: option MyDoc,Pre,All;
         Filter2: option All,InProc,Ready,Pay,Problem;
         SortType: option DocNo,PostDate,Vendor,StatusApp,UserProc;
         ShowCancel: Boolean;
         AmountType: Enum "Amount Type";
+        ApproveButtonEnabled: Boolean;
+        RejectButtonEnabled: Boolean;
 
     local procedure SetRecFilters()
     var
