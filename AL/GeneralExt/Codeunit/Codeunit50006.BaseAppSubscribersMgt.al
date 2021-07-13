@@ -113,8 +113,8 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // t 179 <<
 
     // t 5740 >>
-    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnBeforeInsertEvent', '', false, false)]
+    local procedure onBeforeInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
@@ -169,11 +169,26 @@ codeunit 50006 "Base App. Subscribers Mgt."
         //NC 22512 < DP
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterGetNoSeriesCode', '', false, false)]
+    local procedure OnAfterGetNoSeriesCodeTransferHeader(var TransferHeader: Record "Transfer Header"; var NoSeriesCode: Code[20]);
+    var
+        InventorySetup: Record "Inventory Setup";
+    begin
+        // NC 51410 > EP
+        // Используем отдельную серию номеров для заказов на передачу материалов в переработку
+        if TransferHeader."Giv. Type" = TransferHeader."Giv. Type"::"To Contractor" then begin
+            InventorySetup.Get();
+            InventorySetup.TestField("Giv. Transfer Order Nos.");
+            NoSeriesCode := InventorySetup."Giv. Transfer Order Nos.";
+        end;
+        // NC 51410 < EP
+    end;
+
     // t 5740 <<
 
     // t 12450 >>
-    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertItemDocumentHeader(Rec: Record "Item Document Header"; RunTrigger: Boolean)
+    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'OnBeforeInsertEvent', '', false, false)]
+    local procedure onBeforeInsertItemDocumentHeader(Rec: Record "Item Document Header"; RunTrigger: Boolean)
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
