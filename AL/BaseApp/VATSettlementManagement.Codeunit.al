@@ -766,6 +766,9 @@ codeunit 12411 "VAT Settlement Management"
             VATEntry.SetRange(Base, 0);
             VATEntry.SetFilter("Remaining Unrealized Amount", '<>%1', 0);
             VATEntry.SetRange("Manual VAT Settlement", true);
+            // NC 50118 GG >>
+            onAfterSetVatEntryFilter(VATEntry, VATDocEntryBuffer);
+            // NC 50118 GG <<
             I := 0;
             VATCount := VATEntry.Count();
             if VATEntry.FindSet then
@@ -1319,5 +1322,12 @@ codeunit 12411 "VAT Settlement Management"
     begin
     end;
     // NC 51138 GG <<
+
+    // NC 50118 GG >>
+    [IntegrationEvent(false, false)]
+    local procedure onAfterSetVatEntryFilter(var VATEntry: record "Vat Entry"; var VATDocEntryBuffer: record "VAT Document Entry Buffer")
+    begin
+    end;
+    // NC 50118 GG <<
 }
 
