@@ -4828,21 +4828,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Sorting - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Page 656867589 - Control 2632124822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Order Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Order Date - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 656867589 - Control 4139459292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Paid Date Fact</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Paid Date Fact - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 656867589 - Control 3961227134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Vendor Invoice No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Control Vendor Invoice No. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 656867589 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4858,10 +4843,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action DocAttach - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 656867589 - Action 1574261460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 656867589 - Action 1936001480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action VendorCard - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action Vendor - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Edit</source>
@@ -10008,40 +9993,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Fixed Asset (Ext) - Field RAS Posting Group - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2325658151 - Field 847484971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
-          <source>Date Status Approval</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Date Status App - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2325658151 - Field 3976972112 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Gift</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Gift - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2325658151 - Field 789473408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
-          <source>Paid</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Paid - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2325658151 - Field 3183912585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
-          <source>Pre-Approver</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Pre-Approver - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2325658151 - Field 4289336288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
-          <source>Problem Document</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Problem Document - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2325658151 - Field 3569568710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
-          <source>Process User</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Process User - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 2325658151 - Field 2681784031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
-          <source>Approval Status</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Gen. Journal Line (Ext) - Field Status App - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 476953720 - Field 3485708687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4050813720">
           <source>Allow Diff in Check</source>

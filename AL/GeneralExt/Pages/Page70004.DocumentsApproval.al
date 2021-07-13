@@ -2,11 +2,12 @@ page 70004 "Documents Approval"
 {
     ApplicationArea = Basic, Suite;
     Caption = 'Payment Invoices (Approval)';
+    DataCaptionFields = "Document Type";
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Worksheet;
     RefreshOnActivate = true;
-    SourceTable = "Gen. Journal Line";
+    SourceTable = "Purchase Header";
     UsageCategory = Lists;
     layout
     {
@@ -19,14 +20,17 @@ page 70004 "Documents Approval"
                 {
                     ApplicationArea = All;
                     Caption = 'Show Rejected';
+
                     trigger OnValidate()
                     begin
-                        FILTERGROUP(2);
-                        IF ShowCancel THEN
-                            SETRANGE("Status App")
-                        ELSE
-                            SETFILTER("Status App", '<>%1', "Status App"::Cancelled);
-                        FILTERGROUP(0);
+                        // NC AB >>
+                        // FILTERGROUP(2);
+                        // IF ShowCancel THEN
+                        //     SETRANGE("Status App")
+                        // ELSE
+                        //     SETFILTER("Status App", '<>%1', "Status App"::Cancelled);
+                        // FILTERGROUP(0);
+                        // NC AB <<
                         SetRecFilters;
                         CurrPage.UPDATE;
                     end;
@@ -36,6 +40,7 @@ page 70004 "Documents Approval"
                     ApplicationArea = All;
                     Caption = 'Scope';
                     OptionCaption = 'My documents,Pre-Approver,All documents';
+
                     trigger OnValidate()
                     var
                         LocText001: Label 'You cannot use "All documents" value if %1 %2 = %3.';
@@ -52,6 +57,7 @@ page 70004 "Documents Approval"
                     ApplicationArea = Basic, Suite;
                     Caption = 'Selection';
                     OptionCaption = 'All documents,Documents in processing,Ready-to-pay documents,Paid documents,Problem documents';
+
                     trigger OnValidate()
                     begin
                         SetRecFilters;
@@ -63,6 +69,7 @@ page 70004 "Documents Approval"
                     ApplicationArea = All;
                     Caption = 'Sorting';
                     OptionCaption = 'Document No.,Postng Date,Buy-from Vendor Name,Status App,Process User';
+
                     trigger OnValidate()
                     begin
                         SetSortType;
@@ -78,7 +85,7 @@ page 70004 "Documents Approval"
                 {
                     ApplicationArea = All;
                 }
-                field("Document No."; Rec."Document No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
 
@@ -88,16 +95,15 @@ page 70004 "Documents Approval"
                         CurrPage.Update(false);
                     end;
                 }
-                field("Vendor Invoice No."; PaymentInvoiceHeader."Vendor Invoice No.")
-                {
-                    Caption = 'Vendor Invoice No.';
-                    ApplicationArea = All;
-                }
-                field("Account No."; Rec."Account No.")
+                field("Vendor Invoice No."; "Vendor Invoice No.")
                 {
                     ApplicationArea = All;
                 }
-                field(Description; Rec.Description)
+                field("Pay-to Vendor No."; Rec."Pay-to Vendor No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Pay-to Name"; Rec."Pay-to Name")
                 {
                     ApplicationArea = All;
                 }
@@ -105,14 +111,12 @@ page 70004 "Documents Approval"
                 {
                     ApplicationArea = All;
                 }
-                field("Order Date"; PaymentInvoiceHeader."Order Date")
+                field("Order Date"; "Order Date")
                 {
-                    Caption = 'Order Date';
                     ApplicationArea = All;
                 }
-                field("Paid Date Fact"; PaymentInvoiceHeader."Paid Date Fact")
+                field("Paid Date Fact"; "Paid Date Fact")
                 {
-                    Caption = 'Paid Date Fact';
                     ApplicationArea = All;
                 }
                 field("Due Date"; Rec."Due Date")
@@ -127,7 +131,7 @@ page 70004 "Documents Approval"
                 {
                     ApplicationArea = All;
                 }
-                field("Amount (LCY)"; Rec."Amount (LCY)")
+                field("Amount (LCY)"; Rec.GetInvoiceAmountsLCY(AmountType::"Include VAT"))
                 {
                     ApplicationArea = All;
                 }
@@ -163,7 +167,6 @@ page 70004 "Documents Approval"
         }
     }
 
-
     actions
     {
         area(Processing)
@@ -174,9 +177,9 @@ page 70004 "Documents Approval"
                 Caption = 'View';
                 Image = View;
                 RunObject = Page "Payment Request Card";
-                RunPageLink = "Journal Template Name" = FIELD("Journal Template Name"),
-                                "Journal Batch Name" = FIELD("Journal Batch Name"),
-                                "Line No." = FIELD("Line No.");
+                //RunPageLink = "Journal Template Name" = FIELD("Journal Template Name"),
+                //                "Journal Batch Name" = FIELD("Journal Batch Name"),
+                //                "Line No." = FIELD("Line No.");
             }
             action(DocCard)
             {
@@ -184,18 +187,20 @@ page 70004 "Documents Approval"
                 Caption = 'Edit';
                 Image = Edit;
                 RunObject = Page "Purchase Order App";
-                RunPageLink = "No." = FIELD("Document No.");
+                RunPageLink = "No." = FIELD("No.");
             }
         }
         area(Navigation)
         {
-            action(VendorCard)
+            action(Vendor)
             {
-                ApplicationArea = Basic, Suite;
+                ApplicationArea = Suite;
                 Caption = 'Vendor';
-                Enabled = VendorCardEnabled;
-                Image = EditLines;
-                RunObject = Codeunit "Gen. Jnl.-Show Card";
+                Enabled = "Buy-from Vendor No." <> '';
+                Image = Vendor;
+                RunObject = Page "Vendor Card";
+                RunPageLink = "No." = FIELD("Buy-from Vendor No."),
+                                  "Date Filter" = FIELD("Date Filter");
                 ShortCutKey = 'Shift+F7';
             }
             action(Dimensions)
@@ -208,7 +213,7 @@ page 70004 "Documents Approval"
 
                 trigger OnAction()
                 begin
-                    ShowDimensions();
+                    ShowDocDim;
                     CurrPage.SaveRecord;
                 end;
             }
@@ -219,7 +224,7 @@ page 70004 "Documents Approval"
                 Image = ViewComments;
                 RunObject = Page "Purch. Comment Sheet";
                 RunPageLink = "Document Type" = const(Order),
-                                "No." = FIELD("Document No."),
+                                "No." = FIELD("No."),
                                 "Document Line No." = CONST(0);
             }
             action(DocAttach)
@@ -230,12 +235,10 @@ page 70004 "Documents Approval"
 
                 trigger OnAction()
                 var
-                    PurchHeader: Record "Purchase Header";
                     DocumentAttachmentDetails: Page "Document Attachment Details";
                     RecRef: RecordRef;
                 begin
-                    PurchHeader.Get(PurchHeader."Document Type"::Order, "Document No.");
-                    RecRef.GetTable(PurchHeader);
+                    RecRef.GetTable(Rec);
                     DocumentAttachmentDetails.OpenForRecRef(RecRef);
                     DocumentAttachmentDetails.RunModal;
                 end;
@@ -246,13 +249,18 @@ page 70004 "Documents Approval"
     trigger OnOpenPage()
     begin
         PurchSetup.Get();
-        PurchSetup.TestField("Payment Calendar Tmpl");
-        PurchSetup.TestField("Payment Calendar Batch");
+        // NC AB >>
+        // PurchSetup.TestField("Payment Calendar Tmpl");
+        // PurchSetup.TestField("Payment Calendar Batch");
+        // NC AB <<
 
         FILTERGROUP(2);
-        SETRANGE("Journal Template Name", PurchSetup."Payment Calendar Tmpl");
-        SETRANGE("Journal Batch Name", PurchSetup."Payment Calendar Batch");
-        SETFILTER("Status App", '<>%1', "Status App"::Cancelled);
+        // NC AB >>
+        // SETRANGE("Journal Template Name", PurchSetup."Payment Calendar Tmpl");
+        // SETRANGE("Journal Batch Name", PurchSetup."Payment Calendar Batch");
+        // SETFILTER("Status App", '<>%1', "Status App"::Cancelled);
+        ShowCancel := false;
+        // NC AB <<
         FILTERGROUP(0);
 
         Filter2 := Filter2::InProc;
@@ -263,47 +271,49 @@ page 70004 "Documents Approval"
         grUserSetup.GET(USERID);
     end;
 
-    trigger OnAfterGetRecord()
-    begin
-        if not PaymentInvoiceHeader.Get(PaymentInvoiceHeader."Document Type"::Order, "Document No.") then
-            PaymentInvoiceHeader.Init();
-        VendorCardEnabled := (Rec."Account Type" = Rec."Account Type"::Vendor) AND (Rec."Account No." <> '')
-    end;
-
     var
-        PaymentInvoiceHeader: Record "Purchase Header";
         PurchSetup: Record "Purchases & Payables Setup";
-        HasPmtFileErr: Boolean;
         grUserSetup: Record "User Setup";
-        PaymentOrderMgt: Codeunit "Payment Order Management";
         Filter1: option MyDoc,Pre,All;
         Filter2: option All,InProc,Ready,Pay,Problem;
         SortType: option DocNo,PostDate,Vendor,StatusApp,UserProc;
         ShowCancel: Boolean;
-        VendorCardEnabled: Boolean;
-
+        AmountType: Enum "Amount Type";
 
     local procedure SetRecFilters()
     var
-        AE: record "Approval Entry";
-        PH: record "Purchase Header";
+        PaymentOrderMgt: Codeunit "Payment Order Management";
     begin
         FILTERGROUP(2);
 
-        SETRANGE("Pre-Approver");
+        // NC AB >>
+        // SETRANGE("Pre-Approver");
+        MarkedOnly(false);
+        ClearMarks();
+        // NC AB <<
         SETRANGE("Process User");
         SETRANGE("Status App");
-        IF NOT ShowCancel THEN
-            SETFILTER("Status App", '<>%1', "Status App"::Cancelled);
+        // NC AB >>
+        // IF NOT ShowCancel THEN
+        //     SETFILTER("Status App", '<>%1', "Status App"::Cancelled);
+        if not ShowCancel then
+            SetFilter("Status App", '>=%1', "Status App"::Approve);
+        // NC AB <<    
         SETRANGE("Problem Document");
         SETRANGE(Paid);
 
         CASE Filter2 OF
             Filter2::InProc:
-                IF NOT ShowCancel THEN
-                    SETFILTER("Status App", '<>%1&<>%2', "Status App"::Payment, "Status App"::Cancelled)
-                ELSE
-                    SETFILTER("Status App", '<>%1', "Status App"::Payment);
+                // NC AB >>
+                // IF NOT ShowCancel THEN
+                //     SETFILTER("Status App", '<>%1&<>%2', "Status App"::Payment, "Status App"::Cancelled)
+                // ELSE
+                //     SETFILTER("Status App", '<>%1', "Status App"::Payment);
+                if not ShowCancel then
+                    SetFilter("Status App", '>=%1', "Status App"::Approve)
+                else
+                    SetFilter("Status App", '>=%1', "Status App"::Checker);
+            // NC AB <<
             Filter2::Ready:
                 BEGIN
                     SETRANGE("Status App", "Status App"::Payment);
@@ -319,7 +329,16 @@ page 70004 "Documents Approval"
             Filter1::MyDoc:
                 SETRANGE("Process User", USERID);
             Filter1::Pre:
-                SETRANGE("Pre-Approver", USERID);
+                // NC AB >>
+                // SETRANGE("Pre-Approver", USERID);
+                if FindSet() then begin
+                    repeat
+                        if PaymentOrderMgt.GetPurchActPreApproverFromDim("Dimension Set ID") = UserId then
+                            Mark(true);
+                    until Next() = 0;
+                    MarkedOnly(true);
+                end;
+        // NC AB <<
         END;
 
         FILTERGROUP(0);
@@ -329,11 +348,11 @@ page 70004 "Documents Approval"
     begin
         CASE SortType OF
             SortType::DocNo:
-                SETCURRENTKEY("Document No.");
+                SETCURRENTKEY("No.");
             SortType::PostDate:
                 SETCURRENTKEY("Posting Date");
             SortType::Vendor:
-                SETCURRENTKEY(Description);
+                SETCURRENTKEY("Buy-from Vendor Name");
             SortType::StatusApp:
                 SETCURRENTKEY("Status App");
             SortType::UserProc:
