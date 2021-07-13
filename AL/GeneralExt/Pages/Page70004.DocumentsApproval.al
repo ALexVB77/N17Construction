@@ -357,7 +357,8 @@ page 70004 "Documents Approval"
                 //     SETFILTER("Status App", '<>%1', "Status App"::Payment);
                 if not ShowCancel then
                     SetFilter("Status App", '>=%1', "Status App"::Approve)
-                else
+                else begin
+                    SetFilter("Status App", '>=%1', "Status App"::Checker);
                     if FindSet() then begin
                         repeat
                             if "Status App" = "Status App"::Checker then
@@ -367,6 +368,7 @@ page 70004 "Documents Approval"
                         until Next() = 0;
                         MarkedOnly(true);
                     end;
+                end;
             // NC AB <<
             Filter2::Ready:
                 BEGIN
