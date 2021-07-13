@@ -12039,6 +12039,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Giv. Production Loc. Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3887120495 - Field 2817632889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
+          <source>Giv. Transfer Order Nos.</source>
+          <target>Серия номеров заказов на передачу материалов в переработку</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Giv. Transfer Order Nos. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 484993259 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Manuf. Adjmt Source Code</source>
           <target>Производство Коррекция Код Причины</target>
