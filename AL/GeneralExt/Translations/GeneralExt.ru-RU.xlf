@@ -11238,7 +11238,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1410088990 - Control 2375014189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4294094988">
           <source>Cost Code Type Filter</source>
-          <target>Тип Cost Code фильтр</target>
+          <target>Тип Cost Code Фильтр</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Settlement Worksheet GE - Control costType - Property Caption</note>
