@@ -134,10 +134,13 @@ page 70004 "Documents Approval"
                 field("Amount (LCY)"; Rec.GetInvoiceAmountsLCY(AmountType::"Include VAT"))
                 {
                     ApplicationArea = All;
+                    Caption = 'Invoice Amount Inv. VAT (LCY)';
                 }
                 field("Status App"; Rec."Status App")
                 {
                     ApplicationArea = All;
+                    Caption = 'Approval Status';
+                    OptionCaption = ' ,Reception,Сontroller,Checker,Approve,Payment';
                 }
                 field("Date Status App"; Rec."Date Status App")
                 {
@@ -188,6 +191,34 @@ page 70004 "Documents Approval"
                 Image = Edit;
                 RunObject = Page "Purchase Order App";
                 RunPageLink = "No." = FIELD("No.");
+            }
+            action(ApproveButton)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Approve';
+                Enabled = ApproveButtonEnabled;
+                Image = Approve;
+
+                trigger OnAction()
+                begin
+                    MessageIfPurchLinesNotExist;
+                    if not ("Status App" in ["Status App"::Checker, "Status App"::Approve]) then
+                        FieldError("Status App");
+                    ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                end;
+            }
+            action(RejectButton)
+            {
+                ApplicationArea = All;
+                Caption = 'Reject';
+                Enabled = RejectButtonEnabled;
+                Image = Reject;
+                trigger OnAction()
+                begin
+                    if not ("Status App" in ["Status App"::Approve]) then
+                        FieldError("Status App");
+                    ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                end;
             }
         }
         area(Navigation)
@@ -271,14 +302,29 @@ page 70004 "Documents Approval"
         grUserSetup.GET(USERID);
     end;
 
+    trigger OnAfterGetRecord()
+    begin
+        ApproveButtonEnabled := FALSE;
+        RejectButtonEnabled := FALSE;
+
+        if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
+            ApproveButtonEnabled := true;
+            RejectButtonEnabled := true;
+        end;
+    end;
+
     var
         PurchSetup: Record "Purchases & Payables Setup";
         grUserSetup: Record "User Setup";
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         Filter1: option MyDoc,Pre,All;
         Filter2: option All,InProc,Ready,Pay,Problem;
         SortType: option DocNo,PostDate,Vendor,StatusApp,UserProc;
         ShowCancel: Boolean;
         AmountType: Enum "Amount Type";
+        ApproveButtonEnabled: Boolean;
+        RejectButtonEnabled: Boolean;
 
     local procedure SetRecFilters()
     var
@@ -311,8 +357,18 @@ page 70004 "Documents Approval"
                 //     SETFILTER("Status App", '<>%1', "Status App"::Payment);
                 if not ShowCancel then
                     SetFilter("Status App", '>=%1', "Status App"::Approve)
-                else
+                else begin
                     SetFilter("Status App", '>=%1', "Status App"::Checker);
+                    if FindSet() then begin
+                        repeat
+                            if "Status App" = "Status App"::Checker then
+                                Mark("Problem Document")
+                            else
+                                Mark(true);
+                        until Next() = 0;
+                        MarkedOnly(true);
+                    end;
+                end;
             // NC AB <<
             Filter2::Ready:
                 BEGIN
@@ -333,8 +389,7 @@ page 70004 "Documents Approval"
                 // SETRANGE("Pre-Approver", USERID);
                 if FindSet() then begin
                     repeat
-                        if PaymentOrderMgt.GetPurchActPreApproverFromDim("Dimension Set ID") = UserId then
-                            Mark(true);
+                        Mark(PaymentOrderMgt.GetPurchActPreApproverFromDim("Dimension Set ID") = UserId);
                     until Next() = 0;
                     MarkedOnly(true);
                 end;
