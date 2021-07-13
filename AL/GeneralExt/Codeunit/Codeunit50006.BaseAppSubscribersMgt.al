@@ -113,8 +113,8 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // t 179 <<
 
     // t 5740 >>
-    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnBeforeInsertEvent', '', false, false)]
+    local procedure onBeforeInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
@@ -172,8 +172,8 @@ codeunit 50006 "Base App. Subscribers Mgt."
     // t 5740 <<
 
     // t 12450 >>
-    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertItemDocumentHeader(Rec: Record "Item Document Header"; RunTrigger: Boolean)
+    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'OnBeforeInsertEvent', '', false, false)]
+    local procedure onBeforeInsertItemDocumentHeader(Rec: Record "Item Document Header"; RunTrigger: Boolean)
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
