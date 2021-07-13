@@ -4,32 +4,32 @@ pageextension 92461 "Posted Item Shipment Sub. GE" extends "Posted Item Shipment
     {
         addLast(Content)
         {
-            group(UserControlTimer)
+            //group(UserControlTimer)
+            //{
+            usercontrol(D365BCPingPong; D365BCPingPong)
             {
-                usercontrol(D365BCPingPong; D365BCPingPong)
-                {
-                    applicationarea = all;
-                    trigger TimerElapsed()
-                    var
-                        docNo: text;
-                    begin
-                        currpage.D365BCPingPong.StopTimer();
-                        ism.getString('p50029_DocNo', docNo, true);
-                        if (docno <> '') then begin
+                applicationarea = all;
+                trigger TimerElapsed()
+                var
+                    docNo: text;
+                begin
+                    currpage.D365BCPingPong.StopTimer();
+                    ism.getString('p50029_DocNo', docNo, true);
+                    if (docno <> '') then begin
 
-                            // SWC816 AK 260416 >>
-                            rec.FILTERGROUP(4);
-                            rec.SETRANGE("Document No.", DocNo);
-                            rec.FILTERGROUP(0);
-                            CurrPage.UPDATE(FALSE);
-                            // SWC816 AK 260416 <<
+                        // SWC816 AK 260416 >>
+                        rec.FILTERGROUP(4);
+                        rec.SETRANGE("Document No.", DocNo);
+                        rec.FILTERGROUP(0);
+                        CurrPage.UPDATE(FALSE);
+                        // SWC816 AK 260416 <<
 
-                        end;
-
-                        CurrPage.D365BCPingPong.StartTimer();
                     end;
-                }
+
+                    CurrPage.D365BCPingPong.StartTimer();
+                end;
             }
+            //}
         }
     }
     trigger OnOpenPage()

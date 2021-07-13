@@ -4,28 +4,28 @@ pageextension 92458 "Posted Item Receipt Sub. GE" extends "Posted Item Receipt S
     {
         addLast(Content)
         {
-            group(UserControlTimer)
+            //group(UserControlTimer)
+            //{
+            usercontrol(D365BCPingPong; D365BCPingPong)
             {
-                usercontrol(D365BCPingPong; D365BCPingPong)
-                {
-                    applicationarea = all;
-                    trigger TimerElapsed()
-                    var
-                        docNo: text;
-                        postedRcpt: Boolean;
-                    begin
-                        currpage.D365BCPingPong.StopTimer();
-                        if ism.getBool('p50030_PostedRcpt', postedRcpt, false) then begin
-                            if postedRcpt then begin
-                                ism.delValue('p50030_PostedRcpt');
-                                ism.getString('p50030_DocNo', docNo, true);
-                                filterRecords(docNo);
-                            end;
+                applicationarea = all;
+                trigger TimerElapsed()
+                var
+                    docNo: text;
+                    postedRcpt: Boolean;
+                begin
+                    currpage.D365BCPingPong.StopTimer();
+                    if ism.getBool('p50030_PostedRcpt', postedRcpt, false) then begin
+                        if postedRcpt then begin
+                            ism.delValue('p50030_PostedRcpt');
+                            ism.getString('p50030_DocNo', docNo, true);
+                            filterRecords(docNo);
                         end;
-                        CurrPage.D365BCPingPong.StartTimer();
                     end;
-                }
+                    CurrPage.D365BCPingPong.StartTimer();
+                end;
             }
+            //}
         }
     }
     trigger OnOpenPage()

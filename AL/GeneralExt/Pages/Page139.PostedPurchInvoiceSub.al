@@ -4,28 +4,28 @@ pageextension 80139 "Posted Purch. Invoice Sub. GE" extends "Posted Purch. Invoi
     {
         addLast(Content)
         {
-            group(UserControlTimer)
+            //group(UserControlTimer)
+            //{
+            usercontrol(D365BCPingPong; D365BCPingPong)
             {
-                usercontrol(D365BCPingPong; D365BCPingPong)
-                {
-                    applicationarea = all;
-                    trigger TimerElapsed()
-                    var
-                        docNo: text;
-                        corr: Boolean;
-                    begin
-                        currpage.D365BCPingPong.StopTimer();
-                        if ism.getBool('p50031_Corr', corr, false) then begin
-                            if not corr then begin
-                                ism.delValue('p50031_Corr');
-                                ism.getString('p50031_DocNo', docNo, true);
-                                filterRecords(docNo);
-                            end;
+                applicationarea = all;
+                trigger TimerElapsed()
+                var
+                    docNo: text;
+                    corr: Boolean;
+                begin
+                    currpage.D365BCPingPong.StopTimer();
+                    if ism.getBool('p50031_Corr', corr, false) then begin
+                        if not corr then begin
+                            ism.delValue('p50031_Corr');
+                            ism.getString('p50031_DocNo', docNo, true);
+                            filterRecords(docNo);
                         end;
-                        CurrPage.D365BCPingPong.StartTimer();
                     end;
-                }
+                    CurrPage.D365BCPingPong.StartTimer();
+                end;
             }
+            //}
         }
     }
     trigger OnOpenPage()
