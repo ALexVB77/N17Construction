@@ -62,6 +62,11 @@ page 70257 "CRM Units and Buyers"
 
                 }
 
+                field("Project Id"; Rec."Project Id")
+                {
+                    ApplicationArea = All;
+                }
+
 
 
             }
