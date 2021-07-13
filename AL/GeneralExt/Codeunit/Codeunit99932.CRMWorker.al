@@ -126,7 +126,6 @@ codeunit 99932 "CRM Worker"
         UnitToProjectMap: Dictionary of [Guid, Guid];
         ContactToUnitsMap: Dictionary of [Guid, List of [Guid]];
         ContractToUnitMap: Dictionary of [Guid, Guid];
-
     begin
         Result := false;
         Clear(ObjectMetadata);
