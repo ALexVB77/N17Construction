@@ -134,6 +134,7 @@ page 70004 "Documents Approval"
                 field("Amount (LCY)"; Rec.GetInvoiceAmountsLCY(AmountType::"Include VAT"))
                 {
                     ApplicationArea = All;
+                    Caption = 'Invoice Amount Inv. VAT (LCY)';
                 }
                 field("Status App"; Rec."Status App")
                 {
@@ -357,7 +358,15 @@ page 70004 "Documents Approval"
                 if not ShowCancel then
                     SetFilter("Status App", '>=%1', "Status App"::Approve)
                 else
-                    SetFilter("Status App", '>=%1', "Status App"::Checker);
+                    if FindSet() then begin
+                        repeat
+                            if "Status App" = "Status App"::Checker then
+                                Mark("Problem Document")
+                            else
+                                Mark(true);
+                        until Next() = 0;
+                        MarkedOnly(true);
+                    end;
             // NC AB <<
             Filter2::Ready:
                 BEGIN
@@ -378,8 +387,7 @@ page 70004 "Documents Approval"
                 // SETRANGE("Pre-Approver", USERID);
                 if FindSet() then begin
                     repeat
-                        if PaymentOrderMgt.GetPurchActPreApproverFromDim("Dimension Set ID") = UserId then
-                            Mark(true);
+                        Mark(PaymentOrderMgt.GetPurchActPreApproverFromDim("Dimension Set ID") = UserId);
                     until Next() = 0;
                     MarkedOnly(true);
                 end;

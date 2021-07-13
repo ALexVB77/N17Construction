@@ -245,7 +245,7 @@ page 70005 "Payment Request Card"
                     Enabled = ApproveButtonEnabled;
                     Image = Approve;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category6;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -263,7 +263,7 @@ page 70005 "Payment Request Card"
                     Enabled = RejectButtonEnabled;
                     Image = Reject;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category6;
                     PromotedIsBig = true;
 
                     trigger OnAction()
@@ -280,7 +280,7 @@ page 70005 "Payment Request Card"
                     Enabled = false;
                     Image = Delegate;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category6;
                     Visible = false;
 
                     trigger OnAction()
@@ -296,7 +296,7 @@ page 70005 "Payment Request Card"
                     Enabled = ApproveButtonEnabled or RejectButtonEnabled;
                     Image = ViewComments;
                     Promoted = true;
-                    PromotedCategory = Category8;
+                    PromotedCategory = Category6;
 
                     trigger OnAction()
                     begin
