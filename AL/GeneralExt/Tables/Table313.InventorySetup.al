@@ -64,5 +64,12 @@ tableextension 80313 "Inventory Setup (Ext)" extends "Inventory Setup"
             Description = 'NC 51373 AB';
             TableRelation = Location;
         }
+        field(50020; "Giv. Transfer Order Nos."; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Giv. Transfer Order Nos.';
+            TableRelation = "No. Series";
+            Description = 'NC 51410 EP';
+        }
     }
 }
