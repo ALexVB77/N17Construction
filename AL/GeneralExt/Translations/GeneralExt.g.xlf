@@ -11053,6 +11053,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension User Setup (Ext) - Field Vend. Agr. Creator Notif. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 3901819418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source>Cost Code Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 3901819418 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source> ,Production,Development,Admin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 3059519578 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source>Cost Code Type Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 3059519578 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source> ,Production,Development,Admin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type Filter - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 1861213814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source>Global Dimension 1 Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 1 Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 588326355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source>Global Dimension 2 Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 2 Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>VAT Allocation</source>
           <note from="Developer" annotates="general" priority="2"></note>
