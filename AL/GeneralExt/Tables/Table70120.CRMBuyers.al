@@ -94,6 +94,10 @@ table 70120 "CRM Buyers"
 
         }
 
+        field(80000; "Project Id"; Guid)
+        {
+            Caption = 'Project Id';
+        }
         field(80010; "Version Id"; Text[40])
         {
             Caption = 'Version Id';
