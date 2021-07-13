@@ -9358,6 +9358,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Transfer Order (Ext) - Action GetItemLedgerEntryLines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1410088990 - Control 2375014189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4294094988">
+          <source>Cost Code Type Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Settlement Worksheet GE - Control costType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1410088990 - Control 2375014189 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4294094988">
+          <source> ,Production,Development,Admin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VAT Settlement Worksheet GE - Control costType - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2153774770 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2153774770">
           <source>Set Agreememt Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>

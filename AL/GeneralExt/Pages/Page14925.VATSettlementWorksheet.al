@@ -4,17 +4,60 @@ pageextension 94925 "VAT Settlement Worksheet GE" extends "VAT Settlement Worksh
     {
         addafter(Type)
         {
-            field("Global Dimension 1 Filter"; Rec."Global Dimension 1 Filter")
+            field(dim1Filter; dim1Filter)
             {
                 ApplicationArea = All;
+                CaptionClass = '1,3,1';
+                trigger OnValidate()
+                begin
+                    rec.setfilter("Global Dimension 1 Filter", dim1Filter);
+                end;
+
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    dimVal: record "Dimension Value";
+                begin
+                    dimVal.reset();
+                    dimVal.setrange("Global Dimension No.", 1);
+                    if (page.runmodal(0, dimval) = action::lookupok) then begin
+                        dim1Filter += dimVal.Code;
+                        rec.setfilter("Global Dimension 1 Filter", dim1Filter);
+                    end;
+                end;
             }
-            field("Global Dimension 2 Filter"; Rec."Global Dimension 2 Filter")
+            field(dim2Filter; dim2Filter)
             {
                 ApplicationArea = All;
+                CaptionClass = '1,3,2';
+                trigger OnValidate()
+                begin
+                    rec.setfilter("Global Dimension 2 Filter", dim2Filter);
+                end;
+
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    dimVal: record "Dimension Value";
+                begin
+                    dimVal.reset();
+                    dimVal.setrange("Global Dimension No.", 2);
+                    if (page.runmodal(0, dimval) = action::lookupok) then begin
+                        dim2Filter += dimVal.Code;
+                        rec.setfilter("Global Dimension 2 Filter", dim2Filter);
+                    end;
+                end;
             }
-            field("Cost Code Type Filter"; Rec."Cost Code Type Filter")
+
+            field(costType; costType)
             {
                 ApplicationArea = All;
+                Caption = 'Cost Code Type Filter';
+                OptionCaption = ' ,Production,Development,Admin';
+
+                trigger OnValidate()
+                begin
+                    rec.setfilter("Cost Code Type Filter", costType);
+
+                end;
             }
 
         }
@@ -37,5 +80,6 @@ pageextension 94925 "VAT Settlement Worksheet GE" extends "VAT Settlement Worksh
 
     }
     var
-
+        dim1Filter, dim2Filter : code[250];
+        costType: option;
 }
