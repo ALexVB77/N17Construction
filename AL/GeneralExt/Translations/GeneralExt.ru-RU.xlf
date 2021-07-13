@@ -1377,6 +1377,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Payment Plan Guid - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2155285002 - Field 2017693284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Id</source>
+          <target>Id Проекта</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Buyers - Field Project Id - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2155285002 - Field 2981630534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reserving Contact Guid</source>
           <target>Reserving Contact Guid</target>
@@ -12039,6 +12046,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Giv. Production Loc. Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3887120495 - Field 2817632889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
+          <source>Giv. Transfer Order Nos.</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Inventory Setup (Ext) - Field Giv. Transfer Order Nos. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3887120495 - Field 484993259 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1180040559">
           <source>Manuf. Adjmt Source Code</source>
           <target>Производство Коррекция Код Причины</target>
@@ -13267,42 +13281,36 @@
           <source>Cost Code Type</source>
           <target>Тип Cost Code</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3062660350 - Field 3901819418 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
           <source> ,Production,Development,Admin</source>
           <target> ,Production,Development,Admin</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3062660350 - Field 3059519578 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
           <source>Cost Code Type Filter</source>
           <target>Тип Cost Code фильтр</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3062660350 - Field 3059519578 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
           <source> ,Production,Development,Admin</source>
           <target> ,Production,Development,Admin</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Cost Code Type Filter - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3062660350 - Field 1861213814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
           <source>Global Dimension 1 Filter</source>
           <target>Глобальное Измерение 1 Фильтр</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 1 Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3062660350 - Field 588326355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
           <source>Global Dimension 2 Filter</source>
           <target>Глобальное Измерение 2 Фильтр</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 2 Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
