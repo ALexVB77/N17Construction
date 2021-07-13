@@ -493,7 +493,6 @@ report 70075 "Item Shipment M-15 Posted"
         ReasonName3: Text;
         Text12401: Label 'By agreement %1';
         ExportToExcel: Boolean;
-        ExcelBufferTmp: Record "Excel Buffer Mod" temporary;
         LocRepMgt: Codeunit "Local Report Management";
         CompanyInfo: Record "Company Information";
         PrintPrice: Boolean;
@@ -514,7 +513,21 @@ report 70075 "Item Shipment M-15 Posted"
         VATAmount: Decimal;
         VATAmountTxt: Text;
         IncVATAmountTxt: Text;
-        RowNo: Integer;
+        ExcelReportBuilderManager: Codeunit "Excel Report Builder Manager";
+        FileName: Text;
+
+    trigger OnPreReport()
+    begin
+        InitReportTemplate();
+    end;
+
+    trigger OnPostReport()
+    begin
+        if FileName = '' then
+            ExcelReportBuilderManager.ExportData
+        else
+            ExcelReportBuilderManager.ExportDataToClientFile(FileName);
+    end;
 
     procedure GetCostCodeName(GlobalDimNo: Integer; GlobalDimCode: Code[20]): Text
     var
@@ -530,47 +543,49 @@ report 70075 "Item Shipment M-15 Posted"
     procedure FillHeader(DocNo: Code[20]; PostingDate: Date)
     begin
         if ExportToExcel then begin
-            EnterCell(2, 70, Format(DocNo), false, ExcelBufferTmp."Cell Type"::Text, 9, false);
-            EnterCell(5, 13, Format(LocRepMgt.GetCompanyName()), false, ExcelBufferTmp."Cell Type"::Text, 9, false);
-            EnterCell(5, 132, Format(CompanyInfo."OKPO Code"), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(9, 4, Format(PostingDate), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(9, 26, Format(GetCostCodeName(1, TransferHeader."Shortcut Dimension 1 Code")), false, ExcelBufferTmp."Cell Type"::Text, 6, false);
-            EnterCell(9, 71, Format(GetCostCodeName(1, TransferHeader."New Shortcut Dimension 1 Code")), false, ExcelBufferTmp."Cell Type"::Text, 6, false);
-            EnterCell(11, 12, Format(ReasonName3), false, ExcelBufferTmp."Cell Type"::Text, 9, false);
-            EnterCell(12, 7, Format(Consignee), false, ExcelBufferTmp."Cell Type"::Text, 9, false);
+            if not ExcelReportBuilderManager.TryAddSection('REPORTHEADER') then begin
+                ExcelReportBuilderManager.AddPagebreak;
+                ExcelReportBuilderManager.AddSection('REPORTHEADER');
+            end;
+            ExcelReportBuilderManager.AddDataToSection('InvoiceID', Format(DocNo));
+            ExcelReportBuilderManager.AddDataToSection('Organisation', Format(LocRepMgt.GetCompanyName()));
+            ExcelReportBuilderManager.AddDataToSection('OKPO', Format(CompanyInfo."OKPO Code"));
+            ExcelReportBuilderManager.AddDataToSection('InvoiceDate', Format(PostingDate));
+            ExcelReportBuilderManager.AddDataToSection('Sender_StructDpt', Format(GetCostCodeName(1, TransferHeader."Shortcut Dimension 1 Code")));
+            ExcelReportBuilderManager.AddDataToSection('Receiver_StructDpt', Format(GetCostCodeName(1, TransferHeader."New Shortcut Dimension 1 Code")));
+            ExcelReportBuilderManager.AddDataToSection('InvoiceBasis', Format(ReasonName3));
+            ExcelReportBuilderManager.AddDataToSection('Header_ToWhom', Format(Consignee));
         end;
     end;
 
     procedure FillBody(ShortcutDimension1Code: Code[20]; ShortcutDimension2Code: Code[20]; UnitofMeasureCode: Code[20])
-    var
-        FontSize: Integer;
     begin
         if ExportToExcel then begin
-            FontSize := 6;
-            RowNo := 14;
-            EnterCell(RowNo, 1, Format(BalAccount), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 11, Format(ItemDescription), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 39, Format(txtItemNo), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 49, Format(ShortcutDimension1Code), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 58, Format(ShortcutDimension2Code), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 64, Format(UnitOfMeasure."OKEI Code"), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 71, Format(UnitofMeasureCode), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 79, Format(Qty1Txt), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 87, Format(Qty2Txt), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 94, Format(UnitCostTxt), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-            EnterCell(RowNo, 102, Format(AmountTxt), false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
+            if not ExcelReportBuilderManager.TryAddSection('BODY') then begin
+                ExcelReportBuilderManager.AddPagebreak;
+                ExcelReportBuilderManager.AddSection('BODY');
+            end;
+            ExcelReportBuilderManager.AddDataToSection('AccountNum', Format(BalAccount));
+            ExcelReportBuilderManager.AddDataToSection('ItemName', Format(ItemDescription));
+            ExcelReportBuilderManager.AddDataToSection('ItemId', Format(txtItemNo));
+            ExcelReportBuilderManager.AddDataToSection('CostPlace', Format(ShortcutDimension1Code));
+            ExcelReportBuilderManager.AddDataToSection('CostCode', Format(ShortcutDimension2Code));
+            ExcelReportBuilderManager.AddDataToSection('CodeOKEI', Format(UnitOfMeasure."OKEI Code"));
+            ExcelReportBuilderManager.AddDataToSection('UnitId', Format(UnitofMeasureCode));
+            ExcelReportBuilderManager.AddDataToSection('Qty', Format(Qty1Txt));
+            ExcelReportBuilderManager.AddDataToSection('QtyIssue', Format(Qty2Txt));
+            ExcelReportBuilderManager.AddDataToSection('Price', Format(UnitCostTxt));
+            ExcelReportBuilderManager.AddDataToSection('LineAmount', Format(AmountTxt));
 
             if VATAmountTxt = '' then
-                EnterCell(RowNo, 111, '-', false, ExcelBufferTmp."Cell Type"::Text, FontSize, false)
+                ExcelReportBuilderManager.AddDataToSection('VATAmount', '-')
             else
-                EnterCell(RowNo, 111, VATAmountTxt, false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
+                ExcelReportBuilderManager.AddDataToSection('VATAmount', VATAmountTxt);
 
             if IncVATAmountTxt = '' then
-                EnterCell(RowNo, 119, '-', false, ExcelBufferTmp."Cell Type"::Text, FontSize, false)
+                ExcelReportBuilderManager.AddDataToSection('LineAmountWithVAT', '-')
             else
-                EnterCell(RowNo, 119, IncVATAmountTxt, false, ExcelBufferTmp."Cell Type"::Text, FontSize, false);
-
-            RowNo += 1;
+                ExcelReportBuilderManager.AddDataToSection('LineAmountWithVAT', IncVATAmountTxt);
         END;
     end;
 
@@ -581,37 +596,25 @@ report 70075 "Item Shipment M-15 Posted"
         Employee4: Code[20];
     begin
         if ExportToExcel then begin
-            EnterCell(RowNo, 16, Format(LocalManagement.Integer2Text(i, 2, 'наименование', 'наименования', 'наименований')), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-
-            RowNo += 2;
-            EnterCell(RowNo, 10, TotalAmountTxt, false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(RowNo, 114, TotalVATAmountTxt, false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-
-            RowNo += 3;
-            EnterCell(RowNo, 17, LocRepMgt.GetEmpPosition(Employee2), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(RowNo, 39, LocRepMgt.GetEmpName(Employee2), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(RowNo, 105, LocRepMgt.GetEmpName(CompanyInfo."Accountant No."), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-
-            RowNo += 3;
-            EnterCell(RowNo, 10, LocRepMgt.GetEmpPosition(Employee3), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(RowNo, 30, LocRepMgt.GetEmpName(Employee3), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(RowNo, 83, LocRepMgt.GetEmpPosition(Employee4), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
-            EnterCell(RowNo, 105, LocRepMgt.GetEmpName(Employee4), false, ExcelBufferTmp."Cell Type"::Text, 7, false);
+            if not ExcelReportBuilderManager.TryAddSection('REPORTFOOTER') then begin
+                ExcelReportBuilderManager.AddPagebreak;
+                ExcelReportBuilderManager.AddSection('REPORTFOOTER');
+            end;
+            ExcelReportBuilderManager.AddDataToSection('F_TotalItemsShipped', Format(LocalManagement.Integer2Text(i, 2, 'наименование', 'наименования', 'наименований')));
+            ExcelReportBuilderManager.AddDataToSection('F_TotalAmtWithVAT_Letters', TotalAmountTxt);
+            ExcelReportBuilderManager.AddDataToSection('F_TotalVAT', TotalVATAmountTxt);
+            ExcelReportBuilderManager.AddDataToSection('Director_Position', LocRepMgt.GetEmpPosition(Employee2));
+            ExcelReportBuilderManager.AddDataToSection('Director_Name', LocRepMgt.GetEmpName(Employee2));
+            ExcelReportBuilderManager.AddDataToSection('Accountant_Name', LocRepMgt.GetEmpName(CompanyInfo."Accountant No."));
+            ExcelReportBuilderManager.AddDataToSection('Supplier_Position', LocRepMgt.GetEmpPosition(Employee3));
+            ExcelReportBuilderManager.AddDataToSection('Supplier_Name', LocRepMgt.GetEmpName(Employee3));
+            ExcelReportBuilderManager.AddDataToSection('Taker_Position', LocRepMgt.GetEmpPosition(Employee4));
+            ExcelReportBuilderManager.AddDataToSection('Taker_Name', LocRepMgt.GetEmpName(Employee4));
         end;
     end;
 
-    local procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text; Bold: Boolean; CellType: Integer; FontSize: Integer; IsBorder: Boolean)
+    local procedure InitReportTemplate()
     begin
-        ExcelBufferTmp.Init();
-        ExcelBufferTmp.Validate("Row No.", RowNo);
-        ExcelBufferTmp.Validate("Column No.", ColumnNo);
-        ExcelBufferTmp."Cell Value as Text" := CellValue;
-        ExcelBufferTmp.Formula := '';
-        ExcelBufferTmp.Bold := Bold;
-        ExcelBufferTmp."Font Size" := FontSize;
-        ExcelBufferTmp."Cell Type" := CellType;
-        if IsBorder then
-            ExcelBufferTmp.SetBorder(true, true, true, true, false, "Border Style"::Thin);
-        ExcelBufferTmp.Insert();
+        ExcelReportBuilderManager.InitTemplate('M-15-Н');
     end;
 }
