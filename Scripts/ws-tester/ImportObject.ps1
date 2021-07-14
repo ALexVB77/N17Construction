@@ -4,6 +4,8 @@ $WS = New-WebServiceProxy $CrmWSUrlTest -UseDefaultCredential
 $WS.Timeout = [System.Int32]::MaxValue
 
 $CrmObjectsFolder = 'C:\Temp\CRM\xml'
+$ScriptFolder = 'C:\Temp\CRM\'
+
 
 $SoapEnv = @"
 <?xml version="1.0" encoding="UTF-8"?>
@@ -32,6 +34,9 @@ if (!$Files){
 }
 
 $SoapEnv = $SoapEnv.Replace("_1_", $XmlAllObjects)
+
+$DebugFile = Join-Path -Path $ScriptFolder -ChildPath "debug_request_body.xml"
+Set-Content -Path $DebugFile  -Value $DebugFile
 
 $ResponseText = $WS.ImportObject($SoapEnv)
 Write-Host $ResponseText
