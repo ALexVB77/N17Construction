@@ -265,6 +265,7 @@ page 70262 "Purchase List Act"
                             ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
                     end else
                         ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                    CurrPage.Update(false);
                 end;
             }
             action(RejectButton)
@@ -278,6 +279,7 @@ page 70262 "Purchase List Act"
                     if "Status App Act" in ["Status App Act"::" ", "Status App Act"::Controller, "Status App Act"::Accountant] then
                         FieldError("Status App Act");
                     ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                    CurrPage.Update(false);
                 end;
             }
         }
