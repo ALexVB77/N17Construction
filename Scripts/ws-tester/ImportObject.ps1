@@ -3,7 +3,7 @@ $CrmWSUrlTest = "https://vm-tst-app035.oneplatform.info:7147/BonavaTest/WS/Bonav
 $WS = New-WebServiceProxy $CrmWSUrlTest -UseDefaultCredential
 $WS.Timeout = [System.Int32]::MaxValue
 
-$CrmObjectsFolder = 'C:\Temp\CRM\xml'
+$XmlObjectsFolder = 'C:\Temp\CRM\xml'
 $ScriptFolder = 'C:\Temp\CRM\'
 
 
@@ -21,12 +21,13 @@ $SoapEnv = @"
 $XmlObject = "<object>_1_</object>"
 $XmlAllObjects = ""
 
-$Files = Get-ChildItem -Path "$CrmObjectsFolder\*" -Include "*.xml"
+$XmlFilesMask = Join-Path -Path $XmlObjectsFolder -ChildPath "\*"
+$Files = Get-ChildItem -Path $XmlFilesMask -Include "*.xml"
 if (!$Files){
    Write-Host "There are no xml files!"
 } else {
    $Files | ForEach-Object {
-      $Filename = Join-Path -Path $CrmObjectsFolder -ChildPath $_.Name
+      $Filename = Join-Path -Path $XmlObjectsFolder -ChildPath $_.Name
       $XmlContent = Get-Content -Path $Filename -Encoding utf8
       $Base64XmlContent = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($XmlContent))
       $XmlAllObjects += $XmlObject.Replace("_1_", $Base64XmlContent)
