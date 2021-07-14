@@ -1057,6 +1057,25 @@ codeunit 50010 "Payment Order Management"
         SetChangeStatusMessage(PurchHeader, MessageResponsNo, Reject);
     end;
 
+    procedure ChangePayInvStatusWhenDelegate(var PurchHeader: Record "Purchase Header"; ProcessUser: code[50])
+    var
+        UserSetup: Record "User Setup";
+        MessageResponsNo: Integer;
+        LocText001: Label 'Failed to define user for delegate!';
+        DelegateText: Label 'The approval of document %1 with status %2 was delegated to %3.';
+    begin
+        if ProcessUser = '' then
+            Error(LocText001);
+
+        UserSetup.Get(ProcessUser);
+        PurchHeader."Process User" := UserSetup."User ID";
+        PurchHeader."Date Status App" := TODAY;
+        PurchHeader.Modify;
+
+        ChangeStatusMessage := StrSubstNo(DelegateText, PurchHeader."No.", PurchHeader."Status App", ProcessUser);
+    end;
+
+
     local procedure SetChangeStatusMessage(var PurchHeader: Record "Purchase Header"; ResponsNo: integer; Reject: Boolean)
     var
         ApproveText: Label 'Document %1 has been sent to the %2 for approval.';

@@ -4103,6 +4103,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CalcActRemaingAmount - NamedType LocText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4037651908 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to define user for delegate!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePayInvStatusWhenDelegate - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4037651908 - NamedType 1619519358" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The approval of document %1 with status %2 was delegated to %3.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePayInvStatusWhenDelegate - NamedType DelegateText</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4257195331 - NamedType 1038960544" size-unit="char" translate="yes" xml:space="preserve">
           <source>No Approver specified on line %1.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4872,6 +4882,11 @@
           <source>Approve</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action ApproveButton - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Action 1013253961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delegate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action Delegate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Edit</source>
@@ -11192,6 +11207,11 @@
           <source>Global Dimension 2 Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 2 Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source>VAT Allocation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field VAT Allocation - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>Cost Code Type</source>
