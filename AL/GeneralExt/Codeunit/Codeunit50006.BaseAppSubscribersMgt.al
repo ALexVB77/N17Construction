@@ -244,7 +244,7 @@ codeunit 50006 "Base App. Subscribers Mgt."
         DefaultLocation := StorekeeperLocation.GetDefaultLocation('', false);
         IF DefaultLocation <> '' THEN begin
             ItemDocumentHeader.VALIDATE("Location Code", DefaultLocation);
-            ItemDocumentHeader.modify();
+            //ItemDocumentHeader.modify();
         end;
         //NC 22512 < DP
     end;
