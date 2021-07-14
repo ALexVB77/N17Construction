@@ -475,25 +475,30 @@ report 70075 "Item Shipment M-15 Posted"
                     field(AllowedEmployee; Employee2)
                     {
                         Caption = 'Allowed Employee';
+                        ApplicationArea = All;
                         TableRelation = Employee;
                     }
                     field(ReleasedEmployee; Employee3)
                     {
                         Caption = 'Released Employee';
+                        ApplicationArea = All;
                         TableRelation = Employee;
                     }
                     field(RecievedEmployee; Employee4)
                     {
                         Caption = 'Recieved Employee';
+                        ApplicationArea = All;
                         TableRelation = Employee;
                     }
                     field(Reason; ReasonName3)
                     {
                         Caption = 'Reason';
+                        ApplicationArea = All;
                     }
                     field(ExportToExcel; ExportToExcel)
                     {
                         Caption = 'Export to Excel';
+                        ApplicationArea = All;
                     }
                 }
             }
