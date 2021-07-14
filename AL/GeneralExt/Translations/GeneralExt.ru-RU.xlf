@@ -4927,14 +4927,12 @@
           <source>Failed to define user for delegate!</source>
           <target>Не определен пользователь для делегирования!</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePayInvStatusWhenDelegate - NamedType LocText001</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4037651908 - NamedType 1619519358" size-unit="char" translate="yes" xml:space="preserve">
           <source>The approval of document %1 with status %2 was delegated to %3.</source>
           <target>Утверждение документа %1 со статусом %2 было делегировано %3.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePayInvStatusWhenDelegate - NamedType DelegateText</note>
         </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4257195331 - NamedType 1038960544" size-unit="char" translate="yes" xml:space="preserve">
@@ -5865,7 +5863,6 @@
           <source>Delegate</source>
           <target>Делегировать</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action Delegate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10966,49 +10963,42 @@
           <source>Print with Price</source>
           <target>Печать с Ценой</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control PrintPrice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 1214298328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Responsible</source>
           <target>Ответственные</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Responsible - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 1456871694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Allowed Employee</source>
           <target>Разрешил (Сотрудник)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control AllowedEmployee - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Export to Excel</source>
           <target>Выгрузка в Excel</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ExportToExcel - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reason</source>
           <target>Основание</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Reason - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 1418306143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Recieved Employee</source>
           <target>Получил</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control RecievedEmployee - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 435501545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Released Employee</source>
           <target>Отпустил</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ReleasedEmployee - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -13459,32 +13449,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 2 Filter - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source>VAT Allocation</source>
+          <target>НДС Распределение</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field VAT Allocation - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>Cost Code Type</source>
           <target>Тип Cost Code</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Cost Code Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source> ,Production,Development,Admin</source>
           <target> ,Production,Development,Admin</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Cost Code Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 1303377601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>Global Dimension 1 Code</source>
           <target>Код глобального измерения 1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Global Dimension 1 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 1337243520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>Global Dimension 2 Code</source>
           <target>Код глобального измерения 2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Global Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
