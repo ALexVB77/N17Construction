@@ -75,6 +75,13 @@ pageextension 94925 "VAT Settlement Worksheet GE" extends "VAT Settlement Worksh
                 ApplicationArea = Dimensions;
             }
         }
+        addlast(Control1470000)
+        {
+            field("VAT Allocation"; Rec."VAT Allocation")
+            {
+                ApplicationArea = All;
+            }
+        }
 
 
     }
