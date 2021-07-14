@@ -93,13 +93,11 @@ codeunit 99932 "CRM Worker"
         UnitUpdatedMsg: Label 'Unit was updated';
         UnitUpToDateMsg: label 'Unit is up to date';
 
-
-
     local procedure Code(var WebRequestQueue: Record "Web Request Queue")
     var
         FetchedObjectBuff: Record "CRM Prefetched Object" temporary;
+        FetchedObject: Record "CRM Prefetched Object";
         AllObjectData: Dictionary of [Guid, List of [Dictionary of [Text, Text]]];
-        LogStatusEnum: Enum "CRM Log Status";
     begin
         PickupPrefetchedObjects(FetchedObjectBuff);
         if not FetchObjects(WebRequestQueue, FetchedObjectBuff) then
@@ -107,7 +105,12 @@ codeunit 99932 "CRM Worker"
 
         ParseObjects(FetchedObjectBuff, AllObjectData);
         SetTargetCompany(FetchedObjectBuff, AllObjectData);
-        //ImportObjects(FetchedObjectBuff, ParsedObjects);
+        FetchedObjectBuff.Reset();
+        repeat
+            FetchedObject := FetchedObjectBuff;
+            if not FetchedObject.Insert(true) then
+                FetchedObject.Modify(true);
+        until FetchedObjectBuff.Next() = 0;
     end;
 
     local procedure SetTargetCompany(var FetchedObject: Record "CRM Prefetched Object"; var AllObjectData: Dictionary of [Guid, List of [Dictionary of [Text, Text]]])
@@ -153,9 +156,8 @@ codeunit 99932 "CRM Worker"
         FetchedObject.SetFilter("Company name", '<>%1', '');
         if FetchedObject.FindSet() then begin
             repeat
-                TextValue := FetchedObject."Company name";
                 FetchedObject."Company name" := SuggestTargetCompany(FetchedObject, AllObjectData, BuyerToContractMap, UnitBuyerToContact);
-                if TextValue <> FetchedObject."Company name" then
+                if FetchedObject."Company name" <> '' then
                     FetchedObject.Modify();
             until FetchedObject.Next() = 0;
         end;
