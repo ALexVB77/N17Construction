@@ -148,9 +148,13 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
     var
         ApprovalEntry: Record "Approval Entry";
         PurchHeader: Record "Purchase Header";
+        UserSetup: Record "User Setup";
         PayOrderMgt: Codeunit "Payment Order Management";
     begin
         RecRef.SetTable(ApprovalEntry);
+        UserSetup.Get(ApprovalEntry."Approver ID");
+        UserSetup.TestField(Absents, false);
+
         PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
         PurchHeader.TestField("IW Documents");
         PayOrderMgt.ChangePayInvStatusWhenDelegate(PurchHeader, ApprovalEntry."Approver ID");
