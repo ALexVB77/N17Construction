@@ -597,6 +597,10 @@ report 70075 "Item Shipment M-15 Posted"
     procedure FillBody(ShortcutDimension1Code: Code[20]; ShortcutDimension2Code: Code[20]; UnitofMeasureCode: Code[20])
     begin
         if ExportToExcel then begin
+            if not ExcelReportBuilderManager.TryAddSection('PAGEHEADER') then begin
+                ExcelReportBuilderManager.AddPagebreak;
+                ExcelReportBuilderManager.AddSection('PAGEHEADER');
+            end;
             if not ExcelReportBuilderManager.TryAddSection('BODY') then begin
                 ExcelReportBuilderManager.AddPagebreak;
                 ExcelReportBuilderManager.AddSection('BODY');
