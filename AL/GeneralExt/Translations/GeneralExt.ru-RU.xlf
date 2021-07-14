@@ -4923,6 +4923,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method CalcActRemaingAmount - NamedType LocText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4037651908 - NamedType 2468669624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to define user for delegate!</source>
+          <target>Не определен пользователь для делегирования!</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePayInvStatusWhenDelegate - NamedType LocText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 47354825 - Method 4037651908 - NamedType 1619519358" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The approval of document %1 with status %2 was delegated to %3.</source>
+          <target>Утверждение документа %1 со статусом %2 было делегировано %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Payment Order Management - Method ChangePayInvStatusWhenDelegate - NamedType DelegateText</note>
+        </trans-unit>
         <trans-unit id="Codeunit 47354825 - Method 4257195331 - NamedType 1038960544" size-unit="char" translate="yes" xml:space="preserve">
           <source>No Approver specified on line %1.</source>
           <target>Не указан Утверждающий в строке %1.</target>
@@ -5846,6 +5860,13 @@
           <target>Утвердить</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action ApproveButton - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 656867589 - Action 1013253961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delegate</source>
+          <target>Делегировать</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Documents Approval - Action Delegate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 656867589 - Action 3358363584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Edit</source>
@@ -10940,6 +10961,55 @@
           <target>По договору %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - NamedType Text12401</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 987782936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print with Price</source>
+          <target>Печать с Ценой</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control PrintPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 1214298328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsible</source>
+          <target>Ответственные</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Responsible - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 1456871694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allowed Employee</source>
+          <target>Разрешил (Сотрудник)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control AllowedEmployee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to Excel</source>
+          <target>Выгрузка в Excel</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ExportToExcel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason</source>
+          <target>Основание</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Reason - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 1418306143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recieved Employee</source>
+          <target>Получил</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control RecievedEmployee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 435501545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Released Employee</source>
+          <target>Отпустил</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ReleasedEmployee - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActionName</source>

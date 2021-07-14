@@ -462,10 +462,43 @@ report 70075 "Item Shipment M-15 Posted"
             {
                 group(GroupName)
                 {
-                    field(Name; PrintPrice)
+                    ShowCaption = false;
+                    field(PrintPrice; PrintPrice)
                     {
                         ApplicationArea = All;
-
+                        Caption = 'Print with Price';
+                    }
+                }
+                group(Responsible)
+                {
+                    Caption = 'Responsible';
+                    field(AllowedEmployee; Employee2)
+                    {
+                        Caption = 'Allowed Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(ReleasedEmployee; Employee3)
+                    {
+                        Caption = 'Released Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(RecievedEmployee; Employee4)
+                    {
+                        Caption = 'Recieved Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(Reason; ReasonName3)
+                    {
+                        Caption = 'Reason';
+                        ApplicationArea = All;
+                    }
+                    field(ExportToExcel; ExportToExcel)
+                    {
+                        Caption = 'Export to Excel';
+                        ApplicationArea = All;
                     }
                 }
             }
@@ -515,6 +548,9 @@ report 70075 "Item Shipment M-15 Posted"
         IncVATAmountTxt: Text;
         ExcelReportBuilderManager: Codeunit "Excel Report Builder Manager";
         FileName: Text;
+        Employee2: Code[20];
+        Employee3: Code[20];
+        Employee4: Code[20];
 
     trigger OnPreReport()
     begin
@@ -561,6 +597,10 @@ report 70075 "Item Shipment M-15 Posted"
     procedure FillBody(ShortcutDimension1Code: Code[20]; ShortcutDimension2Code: Code[20]; UnitofMeasureCode: Code[20])
     begin
         if ExportToExcel then begin
+            if not ExcelReportBuilderManager.TryAddSection('PAGEHEADER') then begin
+                ExcelReportBuilderManager.AddPagebreak;
+                ExcelReportBuilderManager.AddSection('PAGEHEADER');
+            end;
             if not ExcelReportBuilderManager.TryAddSection('BODY') then begin
                 ExcelReportBuilderManager.AddPagebreak;
                 ExcelReportBuilderManager.AddSection('BODY');
@@ -590,10 +630,6 @@ report 70075 "Item Shipment M-15 Posted"
     end;
 
     procedure FillFooter()
-    var
-        Employee2: Code[20];
-        Employee3: Code[20];
-        Employee4: Code[20];
     begin
         if ExportToExcel then begin
             if not ExcelReportBuilderManager.TryAddSection('REPORTFOOTER') then begin
