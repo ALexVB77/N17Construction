@@ -11208,6 +11208,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 2 Filter - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3062660350 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3478897964">
+          <source>VAT Allocation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field VAT Allocation - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>Cost Code Type</source>
           <note from="Developer" annotates="general" priority="2"></note>

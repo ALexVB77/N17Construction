@@ -508,12 +508,20 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
     // NC 50118 GG >>
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterSetVatEntryFilter', '', false, false)]
-    local procedure onAfterSetVatEntryFilter(var VATEntry: Record "VAT Entry"; var VATDocEntryBuffer: Record "VAT Document Entry Buffer");
+    local procedure onAfterSetVatEntryFilter(var VATEntry: Record "VAT Entry"; var VATDocEntryBuffer: Record "VAT Document Entry Buffer")
     begin
         VATEntry.SetFilter("Global Dimension 1 Code", VATDocEntryBuffer.getfilter("Global Dimension 1 Filter"));
         VATEntry.SetFilter("Global Dimension 2 Code", VATDocEntryBuffer.getfilter("Global Dimension 2 Filter"));
         vatentry.SetFilter("Cost Code Type", VATDocEntryBuffer.GetFilter("Cost Code Type Filter"));
     end;
+    /*
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onBeforeInsertTempVATDocBuf', '', false, false)]
+    local procedure onBeforeInsertTempVATDocBuf(var TempVATDocBuf: record "VAT Document Entry Buffer"; var VATEntry: record "Vat Entry")
+    begin
+        TempVATDocBuf.validate("VAT Allocation",VATEntry."VAT Allocation");
+        
+    end;
+    */
     // NC 50118 GG <<
 
 
