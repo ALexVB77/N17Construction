@@ -277,16 +277,17 @@ page 70005 "Payment Request Card"
                 {
                     ApplicationArea = Suite;
                     Caption = 'Delegate';
-                    Enabled = false;
+                    Enabled = DelegateButtonEnabled;
                     Image = Delegate;
                     Promoted = true;
                     PromotedCategory = Category6;
-                    Visible = false;
+                    PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
-                        //ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
-                        Message('Pressed Delegate');
+                        if not ("Status App" in ["Status App"::Approve]) then
+                            FieldError("Status App");
+                        ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
                     end;
                 }
                 action(Comment)
@@ -314,10 +315,12 @@ page 70005 "Payment Request Card"
 
         ApproveButtonEnabled := false;
         RejectButtonEnabled := false;
+        DelegateButtonEnabled := false;
 
         if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
-            ApproveButtonEnabled := true;
-            RejectButtonEnabled := true;
+            ApproveButtonEnabled := "Status App" in ["Status App"::Checker, "Status App"::Approve];
+            RejectButtonEnabled := "Status App" in ["Status App"::Approve];
+            DelegateButtonEnabled := RejectButtonEnabled;
         end;
 
         FillAppoveInfo();
@@ -327,8 +330,7 @@ page 70005 "Payment Request Card"
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
         ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
         ShowDocEnabled: Boolean;
-        ApproveButtonEnabled: Boolean;
-        RejectButtonEnabled: Boolean;
+        ApproveButtonEnabled, RejectButtonEnabled, DelegateButtonEnabled : Boolean;
         CHDate, ApprDate : date;
         CHUser, ApprUser : Code[50];
 
