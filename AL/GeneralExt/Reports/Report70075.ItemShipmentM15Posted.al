@@ -615,6 +615,6 @@ report 70075 "Item Shipment M-15 Posted"
 
     local procedure InitReportTemplate()
     begin
-        ExcelReportBuilderManager.InitTemplate('M-15-Н');
+        ExcelReportBuilderManager.InitTemplate('М-15-Н');
     end;
 }
