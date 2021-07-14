@@ -468,33 +468,32 @@ report 70075 "Item Shipment M-15 Posted"
                         ApplicationArea = All;
                         Caption = 'Print with Price';
                     }
-
-                    group(Responsible)
+                }
+                group(Responsible)
+                {
+                    Caption = 'Responsible';
+                    field(AllowedEmployee; Employee2)
                     {
-                        Caption = 'Responsible';
-                        field(AllowedEmployee; Employee2)
-                        {
-                            Caption = 'Allowed Employee';
-                            TableRelation = Employee;
-                        }
-                        field(ReleasedEmployee; Employee3)
-                        {
-                            Caption = 'Released Employee';
-                            TableRelation = Employee;
-                        }
-                        field(RecievedEmployee; Employee4)
-                        {
-                            Caption = 'Recieved Employee';
-                            TableRelation = Employee;
-                        }
-                        field(Reason; ReasonName3)
-                        {
-                            Caption = 'Reason';
-                        }
-                        field(ExportToExcel; ExportToExcel)
-                        {
-                            Caption = 'Export to Excel';
-                        }
+                        Caption = 'Allowed Employee';
+                        TableRelation = Employee;
+                    }
+                    field(ReleasedEmployee; Employee3)
+                    {
+                        Caption = 'Released Employee';
+                        TableRelation = Employee;
+                    }
+                    field(RecievedEmployee; Employee4)
+                    {
+                        Caption = 'Recieved Employee';
+                        TableRelation = Employee;
+                    }
+                    field(Reason; ReasonName3)
+                    {
+                        Caption = 'Reason';
+                    }
+                    field(ExportToExcel; ExportToExcel)
+                    {
+                        Caption = 'Export to Excel';
                     }
                 }
             }
