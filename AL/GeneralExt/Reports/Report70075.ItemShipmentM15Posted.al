@@ -591,16 +591,17 @@ report 70075 "Item Shipment M-15 Posted"
             ExcelReportBuilderManager.AddDataToSection('Receiver_StructDpt', Format(GetCostCodeName(1, TransferHeader."New Shortcut Dimension 1 Code")));
             ExcelReportBuilderManager.AddDataToSection('InvoiceBasis', Format(ReasonName3));
             ExcelReportBuilderManager.AddDataToSection('Header_ToWhom', Format(Consignee));
+
+            if not ExcelReportBuilderManager.TryAddSection('PAGEHEADER') then begin
+                ExcelReportBuilderManager.AddPagebreak;
+                ExcelReportBuilderManager.AddSection('PAGEHEADER');
+            end;
         end;
     end;
 
     procedure FillBody(ShortcutDimension1Code: Code[20]; ShortcutDimension2Code: Code[20]; UnitofMeasureCode: Code[20])
     begin
         if ExportToExcel then begin
-            if not ExcelReportBuilderManager.TryAddSection('PAGEHEADER') then begin
-                ExcelReportBuilderManager.AddPagebreak;
-                ExcelReportBuilderManager.AddSection('PAGEHEADER');
-            end;
             if not ExcelReportBuilderManager.TryAddSection('BODY') then begin
                 ExcelReportBuilderManager.AddPagebreak;
                 ExcelReportBuilderManager.AddSection('BODY');
