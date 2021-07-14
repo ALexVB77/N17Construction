@@ -13438,6 +13438,34 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 2 Filter - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>Cost Code Type</source>
+          <target>Тип Cost Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Cost Code Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source> ,Production,Development,Admin</source>
+          <target> ,Production,Development,Admin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Cost Code Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 1303377601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>Global Dimension 1 Code</source>
+          <target>Код глобального измерения 1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Global Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 1337243520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>Global Dimension 2 Code</source>
+          <target>Код глобального измерения 2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Global Dimension 2 Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>VAT Allocation</source>
           <target>НДС Распределение</target>

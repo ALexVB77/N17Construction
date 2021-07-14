@@ -9,7 +9,7 @@ tableextension 94927 "VAT Document Entry Buffer GE" extends "VAT Document Entry 
             OptionMembers = " ",Production,Development,Admin;
             editable = false;
             FieldClass = FlowField;
-            CalcFormula = Lookup("Dimension Value"."Cost Code Type" WHERE("Dimension Code" = CONST('CC'), Code = FIELD("Global Dimension 2 Code")));
+            CalcFormula = Lookup("Dimension Value"."Cost Code Type" WHERE("Global Dimension No." = CONST(2), Code = FIELD("Global Dimension 2 Code")));
         }
         field(50021; "Global Dimension 1 Filter"; Code[250])
         {
