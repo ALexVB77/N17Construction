@@ -144,6 +144,19 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
         end;
     end;
 
+    procedure DelegateApprovalRequestsPurchActAndPayInv(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        ApprovalEntry: Record "Approval Entry";
+        PurchHeader: Record "Purchase Header";
+        PayOrderMgt: Codeunit "Payment Order Management";
+    begin
+        RecRef.SetTable(ApprovalEntry);
+        PurchHeader.Get(ApprovalEntry."Document Type", ApprovalEntry."Document No.");
+        PurchHeader.TestField("IW Documents");
+        PayOrderMgt.ChangePayInvStatusWhenDelegate(PurchHeader, ApprovalEntry."Approver ID");
+        Message(PayOrderMgt.GetChangeStatusMessage);
+    end;
+
     local procedure PopulateApprovalEntryArgumentPurchAct(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance"; var ApprovalEntryArgument: Record "Approval Entry")
     var
         PurchaseHeader: Record "Purchase Header";

@@ -2,6 +2,11 @@ tableextension 94927 "VAT Document Entry Buffer GE" extends "VAT Document Entry 
 {
     fields
     {
+        field(50005; "VAT Allocation"; Boolean)
+        {
+            Caption = 'VAT Allocation';
+            DataClassification = CustomerContent;
+        }
         field(50020; "Cost Code Type"; Option)
         {
             Caption = 'Cost Code Type';

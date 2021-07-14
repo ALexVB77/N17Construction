@@ -22,6 +22,8 @@ codeunit 81521 "Workflow Response Handling Ext"
                 MoveToNextActStatus(Variant, ResponseWorkflowStepInstance);
             MoveToPrevActStatusCode:
                 MoveToPrevActStatus(Variant, ResponseWorkflowStepInstance);
+            DelegateApprovalRequestsActCode:
+                DelegateApprovalRequestsAct(Variant, ResponseWorkflowStepInstance);
             else
                 exit;
         end;
@@ -55,6 +57,15 @@ codeunit 81521 "Workflow Response Handling Ext"
         ApprovalsMgmtExt.MoveToNextPurchActAndPayInvStatus(RecRef, WorkflowStepInstance, true);
     end;
 
+    local procedure DelegateApprovalRequestsAct(Variant: Variant; WorkflowStepInstance: Record "Workflow Step Instance")
+    var
+        ApprovalsMgmtExt: Codeunit "Approvals Mgmt. (Ext)";
+        RecRef: RecordRef;
+    begin
+        RecRef.GetTable(Variant);
+        ApprovalsMgmtExt.DelegateApprovalRequestsPurchActAndPayInv(RecRef, WorkflowStepInstance);
+    end;
+
     procedure CreateApprovalRequestsActCode(): Code[128]
     begin
         exit(UpperCase('CreateApprovalRequestsAct'));
@@ -69,4 +80,10 @@ codeunit 81521 "Workflow Response Handling Ext"
     begin
         exit(UpperCase('MoveToPrevActStatus'));
     end;
+
+    procedure DelegateApprovalRequestsActCode(): Code[128]
+    begin
+        exit(UpperCase('DelegateApprovalRequestsAct'));
+    end;
+
 }

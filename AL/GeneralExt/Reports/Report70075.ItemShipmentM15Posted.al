@@ -468,33 +468,37 @@ report 70075 "Item Shipment M-15 Posted"
                         ApplicationArea = All;
                         Caption = 'Print with Price';
                     }
-
-                    group(Responsible)
+                }
+                group(Responsible)
+                {
+                    Caption = 'Responsible';
+                    field(AllowedEmployee; Employee2)
                     {
-                        Caption = 'Responsible';
-                        field(AllowedEmployee; Employee2)
-                        {
-                            Caption = 'Allowed Employee';
-                            TableRelation = Employee;
-                        }
-                        field(ReleasedEmployee; Employee3)
-                        {
-                            Caption = 'Released Employee';
-                            TableRelation = Employee;
-                        }
-                        field(RecievedEmployee; Employee4)
-                        {
-                            Caption = 'Recieved Employee';
-                            TableRelation = Employee;
-                        }
-                        field(Reason; ReasonName3)
-                        {
-                            Caption = 'Reason';
-                        }
-                        field(ExportToExcel; ExportToExcel)
-                        {
-                            Caption = 'Export to Excel';
-                        }
+                        Caption = 'Allowed Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(ReleasedEmployee; Employee3)
+                    {
+                        Caption = 'Released Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(RecievedEmployee; Employee4)
+                    {
+                        Caption = 'Recieved Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(Reason; ReasonName3)
+                    {
+                        Caption = 'Reason';
+                        ApplicationArea = All;
+                    }
+                    field(ExportToExcel; ExportToExcel)
+                    {
+                        Caption = 'Export to Excel';
+                        ApplicationArea = All;
                     }
                 }
             }
@@ -587,6 +591,11 @@ report 70075 "Item Shipment M-15 Posted"
             ExcelReportBuilderManager.AddDataToSection('Receiver_StructDpt', Format(GetCostCodeName(1, TransferHeader."New Shortcut Dimension 1 Code")));
             ExcelReportBuilderManager.AddDataToSection('InvoiceBasis', Format(ReasonName3));
             ExcelReportBuilderManager.AddDataToSection('Header_ToWhom', Format(Consignee));
+
+            if not ExcelReportBuilderManager.TryAddSection('PAGEHEADER') then begin
+                ExcelReportBuilderManager.AddPagebreak;
+                ExcelReportBuilderManager.AddSection('PAGEHEADER');
+            end;
         end;
     end;
 

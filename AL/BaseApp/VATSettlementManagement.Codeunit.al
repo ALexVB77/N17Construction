@@ -815,6 +815,9 @@ codeunit 12411 "VAT Settlement Management"
                                 MergeEntryDimSetIDWithVATAllocationDim(VATEntry."Entry No.", DimSetID);
                                 CalcFields("VAT Amount To Allocate");
                                 "Allocated VAT Amount" := "VAT Amount To Allocate";
+                                // NC 50118 GG >>
+                                onBeforeInsertTempVATDocBuf(TempVATDocBuf, VATEntry);
+                                // NC 50118 GG <<
                                 if Insert then
                                     FillCVEntryNo("Transaction No.", "Entry No.");
                             end;
@@ -1328,6 +1331,12 @@ codeunit 12411 "VAT Settlement Management"
     local procedure onAfterSetVatEntryFilter(var VATEntry: record "Vat Entry"; var VATDocEntryBuffer: record "VAT Document Entry Buffer")
     begin
     end;
+
+    [IntegrationEvent(false, false)]
+    local procedure onBeforeInsertTempVATDocBuf(var TempVATDocBuf: record "VAT Document Entry Buffer"; var VATEntry: record "Vat Entry")
+    begin
+    end;
     // NC 50118 GG <<
+
 }
 

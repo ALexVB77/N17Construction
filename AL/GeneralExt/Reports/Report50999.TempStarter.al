@@ -43,6 +43,11 @@ report 50999 "TempStarter"
             'Вернуться к предыдущему статусу утверждения Акта, КС-2 и Заявки на оплату', 'GROUP 10');
         WRH.AddResponsePredecessor(WRHExt.MoveToPrevActStatusCode(), WEH.RunWorkflowOnRejectApprovalRequestCode());
 
+        WRH.AddResponseToLibrary(
+            WRHExt.DelegateApprovalRequestsActCode(),
+            0,
+            'Делегировать Акт, КС-2 и Заявку на оплату новому утверждающему', 'GROUP 10');
+        WRH.AddResponsePredecessor(WRHExt.DelegateApprovalRequestsActCode(), WEH.RunWorkflowOnDelegateApprovalRequestCode());
     end;
 }
 

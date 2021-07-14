@@ -213,11 +213,26 @@ page 70004 "Documents Approval"
                 Caption = 'Reject';
                 Enabled = RejectButtonEnabled;
                 Image = Reject;
+
                 trigger OnAction()
                 begin
                     if not ("Status App" in ["Status App"::Approve]) then
                         FieldError("Status App");
                     ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                end;
+            }
+            action(Delegate)
+            {
+                ApplicationArea = Suite;
+                Caption = 'Delegate';
+                Enabled = DelegateButtonEnabled;
+                Image = Delegate;
+
+                trigger OnAction()
+                begin
+                    if not ("Status App" in ["Status App"::Approve]) then
+                        FieldError("Status App");
+                    ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
                 end;
             }
         }
@@ -304,12 +319,14 @@ page 70004 "Documents Approval"
 
     trigger OnAfterGetRecord()
     begin
-        ApproveButtonEnabled := FALSE;
-        RejectButtonEnabled := FALSE;
+        ApproveButtonEnabled := false;
+        RejectButtonEnabled := false;
+        DelegateButtonEnabled := false;
 
         if ApprovalsMgmt.HasOpenApprovalEntriesForCurrentUser(RecordId) then begin
-            ApproveButtonEnabled := true;
-            RejectButtonEnabled := true;
+            ApproveButtonEnabled := "Status App" in ["Status App"::Checker, "Status App"::Approve];
+            RejectButtonEnabled := "Status App" in ["Status App"::Approve];
+            DelegateButtonEnabled := RejectButtonEnabled;
         end;
     end;
 
@@ -323,8 +340,7 @@ page 70004 "Documents Approval"
         SortType: option DocNo,PostDate,Vendor,StatusApp,UserProc;
         ShowCancel: Boolean;
         AmountType: Enum "Amount Type";
-        ApproveButtonEnabled: Boolean;
-        RejectButtonEnabled: Boolean;
+        ApproveButtonEnabled, RejectButtonEnabled, DelegateButtonEnabled : Boolean;
 
     local procedure SetRecFilters()
     var
