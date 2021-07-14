@@ -1,5 +1,31 @@
 codeunit 50006 "Base App. Subscribers Mgt."
 {
+    // t 17 >>
+    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterModifyEvent', '', false, false)]
+    local procedure onAfterModifyT17(Rec: record "G/L Entry"; xRec: record "G/L Entry"; RunTrigger: boolean)
+    var
+        gleVeLink: record "G/L Entry - VAT Entry Link";
+        ve: record "Vat Entry";
+    begin
+        if not Rec.IsTemporary() then begin
+            if (Rec."Global Dimension 1 Code" <> xRec."Global Dimension 1 Code") or (Rec."Global Dimension 2 Code" <> xRec."Global Dimension 2 Code") then begin
+                gleVeLink.reset();
+                gleVeLink.setrange("G/L Entry No.", Rec."Entry No.");
+                if (gleVeLink.findset()) then begin
+                    repeat
+                        if (ve.get(gleVeLink."VAT Entry No.")) then begin
+                            ve.validate("Global Dimension 1 Code", Rec."Global Dimension 1 Code");
+                            ve.validate("Global Dimension 2 Code", Rec."Global Dimension 2 Code");
+                            ve.modify(true);
+                        end;
+                    until (gleVeLink.next() = 0);
+                end;
+
+            end;
+        end;
+    end;
+    // t 17 <<
+
     // t 81 >>
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Prepayment', false, false)]
     local procedure onAfterValidatePrepayment(Rec: Record "Gen. Journal Line"; xRec: Record "Gen. Journal Line"; CurrFieldNo: Integer)
@@ -112,23 +138,41 @@ codeunit 50006 "Base App. Subscribers Mgt."
 
     // t 179 <<
 
+    // t 253 >>
+    [EventSubscriber(ObjectType::Table, Database::"G/L Entry - VAT Entry Link", 'OnAfterInsertEvent', '', false, false)]
+    local procedure onAfterInsertT253(Rec: record "G/L Entry - VAT Entry Link"; RunTrigger: boolean)
+    var
+        gle: Record "G/L Entry";
+        ve: Record "Vat Entry";
+    begin
+        if not rec.IsTemporary() then begin
+            if (gle.get(rec."G/L Entry No.")) and (ve.get(rec."VAT Entry No.")) then begin
+                ve.validate("Global Dimension 1 Code", gle."Global Dimension 1 Code");
+                ve.validate("Global Dimension 2 Code", gle."Global Dimension 2 Code");
+                ve.modify(true);
+            end;
+        end;
+
+    end;
+    // t 253 << 
+
     // t 5740 >>
-    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertTransferHeader(Rec: Record "Transfer Header"; RunTrigger: Boolean)
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterInitRecord', '', false, false)]
+    local procedure onAfterInitRecord(var TransferHeader: Record "Transfer Header");
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
     begin
-        if not RunTrigger then exit;
+        //if not RunTrigger then exit;
 
         //NC 22512 > DP
         DefaultLocation := StorekeeperLocation.GetDefaultLocation('', false);
         IF DefaultLocation <> '' THEN BEGIN
             // xRec."Transfer-from Code" := '';
-            Rec.SetHideValidationDialog(TRUE);
-            Rec.VALIDATE("Transfer-from Code", DefaultLocation);
-            Rec.SetHideValidationDialog(FALSE);
-            REc.modify();
+            TransferHeader.SetHideValidationDialog(TRUE);
+            TransferHeader.VALIDATE("Transfer-from Code", DefaultLocation);
+            TransferHeader.SetHideValidationDialog(FALSE);
+            //TransferHeader.modify();
         END;
         //NC 22512 < DP
     end;
@@ -169,25 +213,42 @@ codeunit 50006 "Base App. Subscribers Mgt."
         //NC 22512 < DP
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Header", 'OnAfterGetNoSeriesCode', '', false, false)]
+    local procedure OnAfterGetNoSeriesCodeTransferHeader(var TransferHeader: Record "Transfer Header"; var NoSeriesCode: Code[20]);
+    var
+        InventorySetup: Record "Inventory Setup";
+    begin
+        // NC 51410 > EP
+        // Используем отдельную серию номеров для заказов на передачу материалов в переработку
+        if TransferHeader."Giv. Type" = TransferHeader."Giv. Type"::"To Contractor" then begin
+            InventorySetup.Get();
+            InventorySetup.TestField("Giv. Transfer Order Nos.");
+            NoSeriesCode := InventorySetup."Giv. Transfer Order Nos.";
+        end;
+        // NC 51410 < EP
+    end;
+
     // t 5740 <<
 
     // t 12450 >>
-    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'OnAfterInsertEvent', '', false, false)]
-    local procedure onAfterInsertItemDocumentHeader(Rec: Record "Item Document Header"; RunTrigger: Boolean)
+
+    [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'onAfterInitRecord', '', false, false)]
+    local procedure onAfterInitRecordIDH(var ItemDocumentHeader: Record "Item Document Header")
     var
         StorekeeperLocation: Record "Warehouse Employee";
         DefaultLocation: Code[20];
     begin
-        if not RunTrigger then exit;
+        //if not RunTrigger then exit;
 
         //NC 22512 > DP
         DefaultLocation := StorekeeperLocation.GetDefaultLocation('', false);
         IF DefaultLocation <> '' THEN begin
-            Rec.VALIDATE("Location Code", DefaultLocation);
-            Rec.modify();
+            ItemDocumentHeader.VALIDATE("Location Code", DefaultLocation);
+            ItemDocumentHeader.modify();
         end;
         //NC 22512 < DP
     end;
+
 
     [EventSubscriber(ObjectType::Table, Database::"Item Document Header", 'onLookupLocationCode', '', false, false)]
     local procedure onLookupLocationCode(var ItemDocumentHeader: Record "Item Document Header");
@@ -445,6 +506,17 @@ codeunit 50006 "Base App. Subscribers Mgt."
         end;
 
     end;
+    // NC 50118 GG >>
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"VAT Settlement Management", 'onAfterSetVatEntryFilter', '', false, false)]
+    local procedure onAfterSetVatEntryFilter(var VATEntry: Record "VAT Entry"; var VATDocEntryBuffer: Record "VAT Document Entry Buffer");
+    begin
+        VATEntry.SetFilter("Global Dimension 1 Code", VATDocEntryBuffer.getfilter("Global Dimension 1 Filter"));
+        VATEntry.SetFilter("Global Dimension 2 Code", VATDocEntryBuffer.getfilter("Global Dimension 2 Filter"));
+        vatentry.SetFilter("Cost Code Type", VATDocEntryBuffer.GetFilter("Cost Code Type Filter"));
+    end;
+    // NC 50118 GG <<
+
+
     // cu 12411 <<
 
     [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', true, true)]

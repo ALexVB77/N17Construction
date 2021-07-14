@@ -64,5 +64,13 @@ pageextension 80461 "Inventory Setup (Ext)" extends "Inventory Setup"
                 ApplicationArea = all;
             }
         }
+        addafter("Transfer Order Nos.")
+        {
+            field("Giv. Transfer Order Nos."; Rec."Giv. Transfer Order Nos.")
+            {
+                ApplicationArea = All;
+                Description = 'NC 51410 EP';
+            }
+        }
     }
 }

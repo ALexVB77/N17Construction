@@ -9133,6 +9133,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - NamedType Text12401</note>
         </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 987782936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print with Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control PrintPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 1214298328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsible</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Responsible - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 1456871694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allowed Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control AllowedEmployee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to Excel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ExportToExcel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Reason - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 1418306143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recieved Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control RecievedEmployee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 435501545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Released Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ReleasedEmployee - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 4054452980 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActionName</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -11172,6 +11207,26 @@
           <source>Global Dimension 2 Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VAT Document Entry Buffer GE - Field Global Dimension 2 Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>Cost Code Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Cost Code Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 3901819418 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source> ,Production,Development,Admin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Cost Code Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 1303377601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>Global Dimension 1 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Global Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2523104431 - Field 1337243520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
+          <source>Global Dimension 2 Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vat Entry GE - Field Global Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2523104431 - Field 35677797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2941967353">
           <source>VAT Allocation</source>
