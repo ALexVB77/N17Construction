@@ -260,17 +260,11 @@ report 50002 "Transfer Shipment M-15"
             }
         }
 
-        actions
-        {
-            area(processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-
-                }
-            }
-        }
+        trigger OnOpenPage()
+        begin
+            PrintPrice := true;
+            ExportToExcel := true;
+        end;
     }
 
     var
