@@ -115,8 +115,6 @@ codeunit 99932 "CRM Worker"
             exit;
         repeat
             FetchedObjectBuff.CalcFields(Xml);
-            if Not FetchedObjectBuff.Xml.HasValue() then
-                Error('!! %1= %2', FetchedObjectBuff.Type, FetchedObjectBuff.Id);
             FetchedObject := FetchedObjectBuff;
             if not FetchedObject.Insert(true) then
                 FetchedObject.Modify(true);
@@ -130,6 +128,8 @@ codeunit 99932 "CRM Worker"
         ObjectData: List of [Dictionary of [Text, Text]];
         C, I : Integer;
         TextKey, ContactId, BuyerId, ContractId, UnitId : Text;
+        DbgList: List of [Text];
+        DbgVal, DbgErr : Text;
     begin
         if AllObjectData.Count() = 0 then
             exit;
@@ -174,11 +174,13 @@ codeunit 99932 "CRM Worker"
             until FetchedObject.Next() = 0;
         end;
 
+        GetCrmInteractCompanyList(CrmInteractCompanies);
         FetchedObject.Reset();
         FetchedObject.SetFilter("Company name", '%1', '');
         if FetchedObject.FindSet() then begin
             repeat
-                FetchedObject."Company name" := SuggestTargetCompany(FetchedObject, AllObjectData, BuyerToContractMap, UnitBuyerToContact);
+                FetchedObject."Company name" :=
+                    SuggestTargetCompany(FetchedObject, AllObjectData, BuyerToContractMap, UnitBuyerToContact, CrmInteractCompanies);
                 if FetchedObject."Company name" <> '' then
                     FetchedObject.Modify();
             until FetchedObject.Next() = 0;
@@ -188,10 +190,10 @@ codeunit 99932 "CRM Worker"
     local procedure SuggestTargetCompany(var FetchedObject: Record "CRM Prefetched Object";
         var AllObjectData: Dictionary of [Guid, List of [Dictionary of [Text, Text]]];
         BuyerToContractMap: Dictionary of [Text, Text];
-        UnitBuyerToContact: Dictionary of [Text, Text]) Result: Text[60]
+        UnitBuyerToContact: Dictionary of [Text, Text];
+        CrmInteractCompanyList: List of [Text]) Result: Text[60]
     var
         LogStatusEnum: Enum "CRM Log Status";
-        CrmInteractCompanies: List of [Text];
         CrmCompany: Record "CRM Company";
         TempFetchedObject: Record "CRM Prefetched Object" temporary;
         CrmBuyer: Record "CRM Buyers";
@@ -204,7 +206,7 @@ codeunit 99932 "CRM Worker"
     begin
         Result := '';
         TempFetchedObject := FetchedObject;
-        GetCrmInteractCompanyList(CrmInteractCompanies);
+
         case TempFetchedObject.Type of
             TempFetchedObject.Type::Unit:
                 begin
@@ -219,26 +221,26 @@ codeunit 99932 "CRM Worker"
                         TempKeyList := UnitBuyerToContact.Keys();
                         foreach TempKey in TempKeyList do begin
                             UnitBuyerToContact.Get(TempKey, TempContactIdText);
-                            //Error('Unit-Buyer to Contact Map key error: %1', TempKey);
                             Evaluate(TempGuid, TempContactIdText);
                             if TempGuid = TempFetchedObject.Id then begin
                                 TempContractBuyerIdText := TempKey.Split('@').Get(2);
                                 if BuyerToContractMap.Get(TempContractBuyerIdText, TempValue) then begin
                                     TempUnitIdText := TempKey.Split('@').Get(1);
                                     Evaluate(TempUnitGuid, TempUnitIdText);
-                                    FetchedObject.Get(TempUnitGuid);
-                                    if CrmCompany.Get(FetchedObject.ParentId) then
-                                        LogEvent(FetchedObject, LogStatusEnum::Error, StrSubstNo(ProjectNotFoundErr, FetchedObject.ParentId))
-                                    else begin
-                                        Result := CrmCompany."Company Name";
-                                        break;
+                                    if FetchedObject.Get(TempUnitGuid) then begin
+                                        if CrmCompany.Get(FetchedObject.ParentId) then begin
+                                            Result := CrmCompany."Company Name";
+                                            break;
+                                        end else begin
+                                            LogEvent(FetchedObject, LogStatusEnum::Error, StrSubstNo(ProjectNotFoundErr, FetchedObject.ParentId))
+                                        end;
                                     end;
                                 end;
                             end;
                         end;
                     end;
                     if Result = '' then begin
-                        foreach NewCompanyName in CrmInteractCompanies do begin
+                        foreach NewCompanyName in CrmInteractCompanyList do begin
                             CrmBuyer.Reset();
                             CrmBuyer.ChangeCompany(NewCompanyName);
                             CrmBuyer.SetRange("Contact Guid", TempFetchedObject.id);
@@ -265,7 +267,7 @@ codeunit 99932 "CRM Worker"
                             LogEvent(FetchedObject, LogStatusEnum::Error, StrSubstNo(ProjectNotFoundErr, FetchedObject.ParentId));
                     end;
                     if Result = '' then begin
-                        foreach NewCompanyName in CrmInteractCompanies do begin
+                        foreach NewCompanyName in CrmInteractCompanyList do begin
                             CrmBuyer.Reset();
                             CrmBuyer.ChangeCompany(NewCompanyName);
                             CrmBuyer.SetRange("Contract Guid", TempFetchedObject.id);
@@ -283,7 +285,9 @@ codeunit 99932 "CRM Worker"
                     end;
 
                 end;
-        end
+        end;
+
+        FetchedObject := TempFetchedObject;
     end;
 
     local procedure FetchObjects(var WRQ: Record "Web Request Queue"; var FetchedObjectsTemp: Record "CRM Prefetched Object") Result: Boolean
@@ -1015,52 +1019,16 @@ codeunit 99932 "CRM Worker"
     local procedure GetCrmInteractCompanyList(var CrmInteractCompanyList: List of [Text])
     var
         CrmCompany: Record "CRM Company";
-        TempDict: Dictionary of [Text, Integer];
     begin
+        Clear(CrmInteractCompanyList);
         CrmCompany.Reset();
         CrmCompany.FindSet();
         repeat
-            if CrmCompany."Company Name" <> '' then
-                TempDict.Add(CrmCompany."Company Name", 1);
+            if CrmCompany."Company Name" <> '' then begin
+                if not CrmInteractCompanyList.Contains(CrmCompany."Company Name") then
+                    CrmInteractCompanyList.Add(CrmCompany."Company Name");
+            end;
         until CrmCompany.Next() = 0;
-        CrmInteractCompanyList := TempDict.Keys();
-    end;
-
-    local procedure CollectCompanyMarks(var FetchedObject: Record "CRM Prefetched Object";
-        var UnitToProjectMap: Dictionary of [Guid, Guid];
-        var ContactToUnitsMap: Dictionary of [Guid, List of [Guid]];
-        var ContractToUnitMap: Dictionary of [Guid, Guid]
-    )
-    var
-        TempGuid: Guid;
-        UnitToContactsMap: Dictionary of [Guid, List of [Guid]];
-        OK: Boolean;
-    begin
-        case FetchedObject.Type of
-            FetchedObject.Type::Unit:
-                begin
-                    OK := UnitToProjectMap.Remove(FetchedObject.Id);
-                    OK := UnitToContactsMap.Remove(FetchedObject.Id);
-                    UnitToProjectMap.Add(FetchedObject.Id, FetchedObject.ParentId);
-                    //AddToDictOfLists(UnitToContactsMap, );
-                    //UnitToProjectMap.
-
-                end;
-
-        end
-    end;
-
-    local procedure AddToDictOfLists(var Dict: Dictionary of [Guid, List of [Guid]]; KeyGuid: Guid; ValueGuid: Guid)
-    var
-        TempList: List of [Guid];
-    begin
-        if Dict.Get(KeyGuid, TempList) then begin
-            if not TempList.Contains(ValueGuid) then
-                TempList.Add(ValueGuid);
-        end else begin
-            TempList.Add(ValueGuid);
-            Dict.Add(KeyGuid, TempList);
-        end;
     end;
 
     local procedure ObjectAlreadyImported(var FetchedObject: record "CRM Prefetched Object") Result: Boolean
@@ -1197,26 +1165,6 @@ codeunit 99932 "CRM Worker"
         StatusEnum := StatusEnum::Error;
         ActionEnum := ActionEnum::" ";
         LogEvent(T, CompanyName(), StatusEnum, ActionEnum, MsgText, '');
-    end;
-
-
-
-    local procedure DebugPrint(XmlText: Text; Tag: Text)
-    var
-        Log: Record "CRM Log";
-        OutStrm: OutStream;
-    begin
-        Log.Init();
-        if not Log.FindLast() then
-            Log."Entry No." := 1L
-        else
-            Log."Entry No." += 1;
-        Log.Datetime := CurrentDateTime;
-        Log."Details Text 1" := Tag;
-        Log."Object Xml".CreateOutStream(OutStrm);
-        OutStrm.Write(XmlText);
-        Log.Insert(true);
-        Commit();
     end;
 
     local procedure CreateObjDataElement(var ObjList: List of [Dictionary of [Text, Text]]; var NewElement: Dictionary of [Text, Text])
