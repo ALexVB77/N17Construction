@@ -477,6 +477,7 @@ report 70075 "Item Shipment M-15 Posted"
                     {
                         Caption = 'Export to Excel';
                         ApplicationArea = All;
+                        Visible = false;
                     }
                 }
                 group(Responsible)
@@ -515,6 +516,14 @@ report 70075 "Item Shipment M-15 Posted"
                 }
             }
         }
+
+        trigger OnOpenPage()
+        begin
+            PrintPrice := true;
+            //NC 22512 > DP
+            ExportToExcel := true;
+            //NC 22512 < DP
+        end;
     }
 
     var
