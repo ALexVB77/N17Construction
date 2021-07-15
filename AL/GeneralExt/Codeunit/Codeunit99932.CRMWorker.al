@@ -82,6 +82,7 @@ codeunit 99932 "CRM Worker"
         ProjectNotFoundErr: Label 'ProjectId %1 is not found in %2';
         UnknownObjectTypeErr: Label 'Unknown type of Object %1';
 
+
         //Messages
         ContactUpToDateMsg: Label 'Customer No. %1 is up to date';
         ContactProcessedMsg: Label 'Customer No. %1';
@@ -99,6 +100,10 @@ codeunit 99932 "CRM Worker"
         FetchedObject: Record "CRM Prefetched Object";
         AllObjectData: Dictionary of [Guid, List of [Dictionary of [Text, Text]]];
     begin
+        //DBG
+        FetchedObject.Reset();
+        FetchedObject.DeleteAll();
+
         PickupPrefetchedObjects(FetchedObjectBuff);
         if not FetchObjects(WebRequestQueue, FetchedObjectBuff) then
             exit;
@@ -109,6 +114,9 @@ codeunit 99932 "CRM Worker"
         if not FetchedObjectBuff.FindSet() then
             exit;
         repeat
+            FetchedObjectBuff.CalcFields(Xml);
+            if Not FetchedObjectBuff.Xml.HasValue() then
+                Error('!! %1= %2', FetchedObjectBuff.Type, FetchedObjectBuff.Id);
             FetchedObject := FetchedObjectBuff;
             if not FetchedObject.Insert(true) then
                 FetchedObject.Modify(true);
@@ -121,34 +129,44 @@ codeunit 99932 "CRM Worker"
         BuyerToContractMap, UnitBuyerToContact, ObjectDataElement : Dictionary of [Text, Text];
         ObjectData: List of [Dictionary of [Text, Text]];
         C, I : Integer;
-        TextKey, TextValue : Text;
+        TextKey, ContactId, BuyerId, ContractId, UnitId : Text;
     begin
         if AllObjectData.Count() = 0 then
-            Error('No one object was parsed');
+            exit;
+        //Error('No one object was parsed');
         FetchedObject.Reset();
         //FetchedObject.SetFilter("Company name", '<>%1', '');
         FetchedObject.SetFilter(Type, '%1|%2', FetchedObject.Type::Unit, FetchedObject.Type::Contract);
         if FetchedObject.FindSet() then begin
             repeat
-                AllObjectData.Get(FetchedObject.Id, ObjectData);
+                if not AllObjectData.Get(FetchedObject.Id, ObjectData) then
+                    Error('AllObjectData.Get(FetchedObject.Id.. %1-%2', FetchedObject.Type, FetchedObject.Id);
+
+                //walkthrough of object head(I=1) and buyres (I>1)    
                 C := ObjectData.Count;
                 if C > 1 then begin
-                    for I := 2 to C do begin
+                    for I := 1 to C do begin
                         ObjectDataElement := ObjectData.Get(I);
                         case FetchedObject.Type of
                             FetchedObject.Type::Unit:
                                 begin
-                                    ObjectDataElement.Get(UnitBuyerX, TextValue);
-                                    ObjectDataElement.Get(UnitIdX, textKey);
-                                    TextKey := TextKey + '@' + TextValue;
-                                    ObjectDataElement.Get(UnitBuyerContactX, TextValue);
-                                    UnitBuyerToContact.Add(TextKey, TextValue);
+                                    if I = 1 then begin
+                                        ObjectDataElement.Get(UnitIdX, UnitId)
+                                    end else begin
+                                        if ObjectDataElement.Get(UnitBuyerX, BuyerId) and ObjectDataElement.Get(UnitBuyerContactX, ContactId) then begin
+                                            TextKey := UnitId + '@' + BuyerId;
+                                            UnitBuyerToContact.Add(TextKey, ContactId);
+                                        end;
+                                    end;
                                 end;
                             FetchedObject.Type::Contract:
                                 begin
-                                    ObjectDataElement.Get(ContractBuyerX, TextKey);
-                                    ObjectDataElement.Get(ContractIdX, TextValue);
-                                    BuyerToContractMap.Add(TextKey, TextValue);
+                                    if I = 1 then begin
+                                        ObjectDataElement.Get(ContractIdX, ContractId);
+                                    end else begin
+                                        ObjectDataElement.Get(ContractBuyerX, BuyerId);
+                                        BuyerToContractMap.Add(BuyerId, ContractId);
+                                    end;
                                 end;
                         end
                     end;
@@ -157,7 +175,7 @@ codeunit 99932 "CRM Worker"
         end;
 
         FetchedObject.Reset();
-        FetchedObject.SetFilter("Company name", '<>%1', '');
+        FetchedObject.SetFilter("Company name", '%1', '');
         if FetchedObject.FindSet() then begin
             repeat
                 FetchedObject."Company name" := SuggestTargetCompany(FetchedObject, AllObjectData, BuyerToContractMap, UnitBuyerToContact);
@@ -172,11 +190,12 @@ codeunit 99932 "CRM Worker"
         BuyerToContractMap: Dictionary of [Text, Text];
         UnitBuyerToContact: Dictionary of [Text, Text]) Result: Text[60]
     var
+        LogStatusEnum: Enum "CRM Log Status";
         CrmInteractCompanies: List of [Text];
         CrmCompany: Record "CRM Company";
         TempFetchedObject: Record "CRM Prefetched Object" temporary;
         CrmBuyer: Record "CRM Buyers";
-        TempGuid, TempUnitGuid : Guid;
+        TempGuid, TempUnitGuid, ProjectId : Guid;
         ObjectData: List of [Dictionary of [Text, Text]];
         ObjectDataElement: Dictionary of [Text, Text];
         NewCompanyName, TempContactIdText, TempContractBuyerIdText, TempUnitIdText : Text;
@@ -189,24 +208,32 @@ codeunit 99932 "CRM Worker"
         case TempFetchedObject.Type of
             TempFetchedObject.Type::Unit:
                 begin
-                    CrmCompany.Get(TempFetchedObject.ParentId);
-                    Result := CrmCompany."Company Name";
+                    if CrmCompany.Get(TempFetchedObject.ParentId) then
+                        Result := CrmCompany."Company Name"
+                    else
+                        LogEvent(FetchedObject, LogStatusEnum::Error, StrSubstNo(ProjectNotFoundErr, TempFetchedObject.ParentId))
                 end;
             TempFetchedObject.Type::Contact:
                 begin
-                    TempKeyList := UnitBuyerToContact.Keys();
-                    foreach TempKey in TempKeyList do begin
-                        UnitBuyerToContact.Get(TempKey, TempContactIdText);
-                        Evaluate(TempGuid, TempContactIdText);
-                        if TempGuid = TempFetchedObject.Id then begin
-                            TempContractBuyerIdText := TempKey.Split('@').Get(2);
-                            if BuyerToContractMap.Get(TempContractBuyerIdText, TempValue) then begin
-                                TempUnitIdText := TempKey.Split('@').Get(1);
-                                Evaluate(TempUnitGuid, TempUnitIdText);
-                                FetchedObject.Get(TempUnitGuid);
-                                CrmCompany.Get(FetchedObject.ParentId);
-                                Result := CrmCompany."Company Name";
-                                break;
+                    if UnitBuyerToContact.Count <> 0 then begin
+                        TempKeyList := UnitBuyerToContact.Keys();
+                        foreach TempKey in TempKeyList do begin
+                            UnitBuyerToContact.Get(TempKey, TempContactIdText);
+                            //Error('Unit-Buyer to Contact Map key error: %1', TempKey);
+                            Evaluate(TempGuid, TempContactIdText);
+                            if TempGuid = TempFetchedObject.Id then begin
+                                TempContractBuyerIdText := TempKey.Split('@').Get(2);
+                                if BuyerToContractMap.Get(TempContractBuyerIdText, TempValue) then begin
+                                    TempUnitIdText := TempKey.Split('@').Get(1);
+                                    Evaluate(TempUnitGuid, TempUnitIdText);
+                                    FetchedObject.Get(TempUnitGuid);
+                                    if CrmCompany.Get(FetchedObject.ParentId) then
+                                        LogEvent(FetchedObject, LogStatusEnum::Error, StrSubstNo(ProjectNotFoundErr, FetchedObject.ParentId))
+                                    else begin
+                                        Result := CrmCompany."Company Name";
+                                        break;
+                                    end;
+                                end;
                             end;
                         end;
                     end;
@@ -232,8 +259,10 @@ codeunit 99932 "CRM Worker"
                 begin
                     if AllObjectData.Get(TempFetchedObject.ParentId, ObjectData) then begin
                         FetchedObject.Get(TempFetchedObject.ParentId);
-                        CrmCompany.Get(FetchedObject.ParentId);
-                        Result := CrmCompany."Company Name";
+                        if CrmCompany.Get(FetchedObject.ParentId) then
+                            Result := CrmCompany."Company Name"
+                        else
+                            LogEvent(FetchedObject, LogStatusEnum::Error, StrSubstNo(ProjectNotFoundErr, FetchedObject.ParentId));
                     end;
                     if Result = '' then begin
                         foreach NewCompanyName in CrmInteractCompanies do begin
@@ -280,7 +309,7 @@ codeunit 99932 "CRM Worker"
             LogEvent(ObjectMetadata, EmptyHttpRequestBody);
             exit;
         end;
-        WRQ."Request Body".CreateInStream(InStrm);
+        WRQ."Request Body".CreateInStream(InStrm, TextEncoding::UTF8);
         InStrm.Read(RequestBodyXmlText);
 
         FetchedObjectsTemp.Reset();
@@ -310,8 +339,8 @@ codeunit 99932 "CRM Worker"
                 if ObjectMetadata.Get(FetchedObjectsTemp.FieldName(ParentId), TempValue) then
                     Evaluate(FetchedObjectsTemp.ParentId, TempValue);
                 ObjectMetadata.Get(FetchedObjectsTemp.FieldName(Xml), TempValue);
-                FetchedObjectsTemp.Xml.CreateOutStream(OutStrm);
-                OutStrm.Write(TempValue);
+                FetchedObjectsTemp.Xml.CreateOutStream(OutStrm, TextEncoding::UTF8);
+                OutStrm.WriteText(TempValue);
                 ObjectMetadata.Get(FetchedObjectsTemp.FieldName("Version Id"), FetchedObjectsTemp."Version Id");
                 FetchedObjectsTemp."WRQ Id" := WRQ.id;
                 FetchedObjectsTemp."WRQ Source Company Name" := CompanyName();
@@ -399,8 +428,9 @@ codeunit 99932 "CRM Worker"
                 if ObjectData.Count <> 0 then
                     AllObjectData.Add(FetchedObject.Id, ObjectData);
             end else begin
+
                 LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText());
-                FetchedObject.Delete();
+                //FetchedObject.Delete();
             end;
 
         until FetchedObject.Next() = 0;
@@ -475,8 +505,12 @@ codeunit 99932 "CRM Worker"
     begin
         ObjectData := RetObjectData;
         CreateObjDataElement(ObjectData, ObjDataElement);
+        FetchedObject.CalcFields(Xml);
+        if not FetchedObject.xml.HasValue() then
+            Error('Object %1 has not XML', FetchedObject.Id);
         GetRootXmlElement(FetchedObject, XmlElem);
         GetValue(XmlElem, JoinX(UnitBaseDataX, ObjectParentIdX), ElemText);
+        GetObjectField(XmlElem, UnitIdX, ObjDataElement, UnitIdX);
         GetObjectField(XmlElem, JoinX(UnitBaseDataX, ReservingContactX), ObjDataElement, ReservingContactX);
         GetObjectField(XmlElem, JoinX(UnitBaseDataX, InvestmentObjectX), ObjDataElement, InvestmentObjectX);
         OK := GetObjectField(XmlElem, JoinX(UnitBaseDataX, BlockNumberX), ObjDataElement, BlockNumberX);
@@ -623,7 +657,11 @@ codeunit 99932 "CRM Worker"
     begin
         ObjectData := RetObjectData;
         CreateObjDataElement(ObjectData, ObjDataElement);
+        FetchedObject.CalcFields(Xml);
+        if not FetchedObject.xml.HasValue() then
+            Error('Object %1 has not XML', FetchedObject.Id);
         GetRootXmlElement(FetchedObject, XmlElem);
+        GetObjectField(XmlElem, ContractIdX, ObjDataElement, ContractIdX);
         GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractNoX), ObjDataElement, ContractNoX);
         GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractTypeX), ObjDataElement, ContractTypeX);
         GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractStatusX), ObjDataElement, ContractStatusX);
@@ -632,12 +670,12 @@ codeunit 99932 "CRM Worker"
         GetObjectField(XmlElem, JoinX(ContractBaseDataX, ExtAgreementNoX), ObjDataElement, ExtAgreementNoX);
         GetObjectField(XmlElem, JoinX(ContractX, ApartmentAmountX), ObjDataElement, ApartmentAmountX);
         OK := GetObjectField(XmlElem, JoinX(ContractX, FinishingInclX), ObjDataElement, FinishingInclX);
-        if not XmlElem.SelectNodes(JoinX(ContractX, ContractBuyerNodesX), XmlBuyerList) then
-            exit;
-        foreach XmlBuyer in XmlBuyerList do begin
-            XmlElem := XmlBuyer.AsXmlElement();
-            CreateObjDataElement(ObjectData, ObjDataElement);
-            GetObjectField(XmlElem, ContractBuyerX, ObjDataElement, ContractBuyerX);
+        if XmlElem.SelectNodes(JoinX(ContractX, ContractBuyerNodesX), XmlBuyerList) then begin
+            foreach XmlBuyer in XmlBuyerList do begin
+                XmlElem := XmlBuyer.AsXmlElement();
+                CreateObjDataElement(ObjectData, ObjDataElement);
+                GetObjectField(XmlElem, ContractBuyerX, ObjDataElement, ContractBuyerX);
+            end;
         end;
     end;
 
@@ -655,10 +693,12 @@ codeunit 99932 "CRM Worker"
     begin
         ObjectData := RetObjectData;
         CreateObjDataElement(ObjectData, ObjDataElement);
-        if ObjectAlreadyImported(FetchedObject) then
-            exit;
+        FetchedObject.CalcFields(Xml);
+        if not FetchedObject.xml.HasValue() then
+            Error('Object %1 has not XML', FetchedObject.Id);
         GetRootXmlElement(FetchedObject, XmlElem);
         BaseXPath := JoinX(ContactX, PersonDataX);
+        GetObjectField(XmlElem, ContactIdX, ObjDataElement, ContactIdX);
         GetObjectField(XmlElem, JoinX(BaseXPath, LastNameX), ObjDataElement, LastNameX);
         GetObjectField(XmlElem, JoinX(BaseXPath, FirstNameX), ObjDataElement, FirstNameX);
         GetObjectField(XmlElem, JoinX(BaseXPath, MiddleNameX), ObjDataElement, MiddleNameX);
@@ -689,19 +729,20 @@ codeunit 99932 "CRM Worker"
         foreach XmlNode in XmlNodeList do begin
             XmlElem := XmlNode.AsXmlElement();
             if GetValue(XmlElem, ProtocolX, ElemText) and (ElemText <> '') then begin
-                GetValue(XmlElem, ContactAddressLine1X, ElemText2);
-                Case ElemText of
-                    ContactPhoneX:
-                        begin
-                            if ElemText2 <> '' then
-                                ObjDataElement.Add(ContactPhoneX, ElemText2);
-                        end;
-                    ContactEmailX:
-                        begin
-                            if ElemText2 <> '' then
-                                ObjDataElement.Add(ContactEmailX, ElemText2);
-                        end;
-                End
+                if GetValue(XmlElem, AddressLineX + '1', ElemText2) then begin
+                    Case ElemText of
+                        ContactPhoneX:
+                            begin
+                                if ElemText2 <> '' then
+                                    ObjDataElement.Add(ContactPhoneX, ElemText2);
+                            end;
+                        ContactEmailX:
+                            begin
+                                if ElemText2 <> '' then
+                                    ObjDataElement.Add(ContactEmailX, ElemText2);
+                            end;
+                    End
+                end;
             end;
         end;
 
@@ -872,7 +913,7 @@ codeunit 99932 "CRM Worker"
     begin
         FetchedObject.CalcFields(Xml);
         FetchedObject.Testfield(xml);
-        FetchedObject.Xml.CreateInStream(InStrm);
+        FetchedObject.Xml.CreateInStream(InStrm, TextEncoding::UTF8);
         TryLoadXml(InStrm, XmlDoc);
         XmlDoc.GetRoot(RootXmlElement);
     end;
@@ -1124,6 +1165,7 @@ codeunit 99932 "CRM Worker"
         Log."Details Text 1" := CopyStr(MsgText, 1, MaxStrLen(Log."Details Text 1"));
         Log."Details Text 2" := CopyStr(MsgText, MaxStrLen(Log."Details Text 1") + 1, MaxStrLen(Log."Details Text 2"));
         Log.Insert();
+        Commit();
     end;
 
     local procedure LogEvent(InputObjectMetadata: Dictionary of [Text, Text]; MsgText: Text)

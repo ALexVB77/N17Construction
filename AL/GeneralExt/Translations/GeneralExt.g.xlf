@@ -1288,6 +1288,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3279116693 - Method 2187740748 - NamedType 1951744629" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Xml file is not attached</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CRM Prefetched Object - Method ExportObjectXml - NamedType NotAttachedXmlErr</note>
+        </trans-unit>
         <trans-unit id="Table 3279116693 - Field 999613564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company name</source>
           <note from="Developer" annotates="general" priority="2"></note>
