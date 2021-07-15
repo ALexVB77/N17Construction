@@ -12,7 +12,7 @@ page 50101 "Create ST Proj Budget Entries"
         {
             repeater(GroupName)
             {
-                field("Cost Code"; Rec."Cost Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
                 }

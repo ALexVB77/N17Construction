@@ -3251,7 +3251,7 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3139420653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay Request No.</source>
-          <target>Запрос на выплату Но.</target>
+          <target>Заявка на оплату Но.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Payment Doc. No. - Property Caption</note>
         </trans-unit>

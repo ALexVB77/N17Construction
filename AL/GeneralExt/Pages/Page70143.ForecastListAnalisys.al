@@ -6,6 +6,7 @@ page 70143 "Forecast List Analisys"
     InsertAllowed = true;
     DeleteAllowed = false;
     SourceTable = "Projects Budget Entry";
+    SourceTableView = sorting(Date);
     DelayedInsert = true;
     PopulateAllFields = true;
     Caption = 'Transaction Register';
@@ -529,6 +530,9 @@ page 70143 "Forecast List Analisys"
         BuildView();
         if gDate = 0D then
             gDate := Today;
+        if US.Get(UserId) then
+            TemplateCode := US."Last Project Code";
+        ValidateProject();
         setOverdueFlt();
     end;
 
@@ -536,6 +540,7 @@ page 70143 "Forecast List Analisys"
     var
         lDimVal: Record "Dimension Value";
     begin
+        CheckAllowChanges();
         GLSetup.Get;
         if TemplateCode <> '' then
             Rec."Project Code" := TemplateCode;
@@ -574,6 +579,14 @@ page 70143 "Forecast List Analisys"
     trigger OnDeleteRecord(): Boolean
     begin
         CheckAllowChanges();
+    end;
+
+    trigger OnClosePage()
+    begin
+        if US.Get(UserId) then begin
+            US."Last Project Code" := TemplateCode;
+            if US.Modify() then;
+        end;
     end;
 
     var
