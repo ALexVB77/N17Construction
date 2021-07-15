@@ -100,10 +100,6 @@ codeunit 99932 "CRM Worker"
         FetchedObject: Record "CRM Prefetched Object";
         AllObjectData: Dictionary of [Guid, List of [Dictionary of [Text, Text]]];
     begin
-        //DBG
-        FetchedObject.Reset();
-        FetchedObject.DeleteAll();
-
         PickupPrefetchedObjects(FetchedObjectBuff);
         if not FetchObjects(WebRequestQueue, FetchedObjectBuff) then
             exit;
@@ -133,14 +129,11 @@ codeunit 99932 "CRM Worker"
     begin
         if AllObjectData.Count() = 0 then
             exit;
-        //Error('No one object was parsed');
         FetchedObject.Reset();
-        //FetchedObject.SetFilter("Company name", '<>%1', '');
         FetchedObject.SetFilter(Type, '%1|%2', FetchedObject.Type::Unit, FetchedObject.Type::Contract);
         if FetchedObject.FindSet() then begin
             repeat
-                if not AllObjectData.Get(FetchedObject.Id, ObjectData) then
-                    Error('AllObjectData.Get(FetchedObject.Id.. %1-%2', FetchedObject.Type, FetchedObject.Id);
+                AllObjectData.Get(FetchedObject.Id, ObjectData) then
 
                 //walkthrough of object head(I=1) and buyres (I>1)    
                 C := ObjectData.Count;
@@ -432,9 +425,8 @@ codeunit 99932 "CRM Worker"
                 if ObjectData.Count <> 0 then
                     AllObjectData.Add(FetchedObject.Id, ObjectData);
             end else begin
-
                 LogEvent(FetchedObject, LogStatusEnum::Error, GetLastErrorText());
-                //FetchedObject.Delete();
+                FetchedObject.Delete();
             end;
 
         until FetchedObject.Next() = 0;
@@ -510,8 +502,6 @@ codeunit 99932 "CRM Worker"
         ObjectData := RetObjectData;
         CreateObjDataElement(ObjectData, ObjDataElement);
         FetchedObject.CalcFields(Xml);
-        if not FetchedObject.xml.HasValue() then
-            Error('Object %1 has not XML', FetchedObject.Id);
         GetRootXmlElement(FetchedObject, XmlElem);
         GetValue(XmlElem, JoinX(UnitBaseDataX, ObjectParentIdX), ElemText);
         GetObjectField(XmlElem, UnitIdX, ObjDataElement, UnitIdX);
@@ -662,8 +652,6 @@ codeunit 99932 "CRM Worker"
         ObjectData := RetObjectData;
         CreateObjDataElement(ObjectData, ObjDataElement);
         FetchedObject.CalcFields(Xml);
-        if not FetchedObject.xml.HasValue() then
-            Error('Object %1 has not XML', FetchedObject.Id);
         GetRootXmlElement(FetchedObject, XmlElem);
         GetObjectField(XmlElem, ContractIdX, ObjDataElement, ContractIdX);
         GetObjectField(XmlElem, JoinX(ContractBaseDataX, ContractNoX), ObjDataElement, ContractNoX);
@@ -698,8 +686,6 @@ codeunit 99932 "CRM Worker"
         ObjectData := RetObjectData;
         CreateObjDataElement(ObjectData, ObjDataElement);
         FetchedObject.CalcFields(Xml);
-        if not FetchedObject.xml.HasValue() then
-            Error('Object %1 has not XML', FetchedObject.Id);
         GetRootXmlElement(FetchedObject, XmlElem);
         BaseXPath := JoinX(ContactX, PersonDataX);
         GetObjectField(XmlElem, ContactIdX, ObjDataElement, ContactIdX);
