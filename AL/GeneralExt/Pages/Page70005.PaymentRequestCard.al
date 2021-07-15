@@ -254,6 +254,7 @@ page 70005 "Payment Request Card"
                         if not ("Status App" in ["Status App"::Checker, "Status App"::Approve]) then
                             FieldError("Status App");
                         ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                        CurrPage.Update(false);
                     end;
                 }
                 action(Reject)
@@ -271,6 +272,7 @@ page 70005 "Payment Request Card"
                         if not ("Status App" in ["Status App"::Approve]) then
                             FieldError("Status App");
                         ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                        CurrPage.Update(false);
                     end;
                 }
                 action(Delegate)
@@ -288,6 +290,7 @@ page 70005 "Payment Request Card"
                         if not ("Status App" in ["Status App"::Approve]) then
                             FieldError("Status App");
                         ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
+                        CurrPage.Update(false);
                     end;
                 }
                 action(Comment)

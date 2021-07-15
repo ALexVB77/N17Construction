@@ -27,5 +27,10 @@ tableextension 80454 "Approval Entry (Ext)" extends "Approval Entry"
             Caption = 'IW Documents';
             Description = 'NC 51380 AB';
         }
+        field(50005; "Preliminary Approval"; Boolean)
+        {
+            Caption = 'Preliminary Approval';
+            Description = 'NC 51380 AB';
+        }
     }
 }

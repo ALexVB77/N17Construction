@@ -114,6 +114,18 @@ page 70260 "Purchase Order Act"
                     ApplicationArea = All;
                     Editable = false;
                 }
+                field("Problem Description"; ProblemDescription)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Problem Description';
+                    Editable = RejectButtonEnabled;
+                    Enabled = RejectButtonEnabled;
+
+                    trigger OnValidate()
+                    begin
+                        Rec.SetApprovalCommentText(ProblemDescription);
+                    end;
+                }
                 field("Invoice No."; Rec."Invoice No.")
                 {
                     ApplicationArea = All;
@@ -174,7 +186,7 @@ page 70260 "Purchase Order Act"
                     field("Location Document"; Rec."Location Document")
                     {
                         ApplicationArea = All;
-                        Editable = LocationDocEditable;
+                        Editable = false;
                     }
                 }
 
@@ -722,8 +734,9 @@ page 70260 "Purchase Order Act"
         ApproveButtonEnabled := FALSE;
         RejectButtonEnabled := FALSE;
 
+        ProblemDescription := Rec.GetApprovalCommentText();
+
         WhseEmployee.SetRange("User ID", UserId);
-        LocationDocEditable := not WhseEmployee.IsEmpty;
         StatusStyleTxt := GetStatusStyleText();
 
         if (UserId = Rec.Controller) and (Rec."Status App Act" = Rec."Status App Act"::Controller) then
@@ -793,10 +806,9 @@ page 70260 "Purchase Order Act"
         ReceiveAccountEditable: Boolean;
         ShowDocEnabled: Boolean;
         LocationCodeShowMandatory: Boolean;
-        ApproveButtonEnabled: Boolean;
-        RejectButtonEnabled: Boolean;
-        LocationDocEditable: Boolean;
+        ApproveButtonEnabled, RejectButtonEnabled : boolean;
         StatusStyleTxt: Text;
+        ProblemDescription: text;
         CreateAppConfText: Label 'Do you want to create a payment invoice from Act %1?';
 
     local procedure SaveInvoiceDiscountAmount()

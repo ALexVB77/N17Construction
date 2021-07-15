@@ -205,6 +205,7 @@ page 70004 "Documents Approval"
                     if not ("Status App" in ["Status App"::Checker, "Status App"::Approve]) then
                         FieldError("Status App");
                     ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                    CurrPage.Update(false);
                 end;
             }
             action(RejectButton)
@@ -219,6 +220,7 @@ page 70004 "Documents Approval"
                     if not ("Status App" in ["Status App"::Approve]) then
                         FieldError("Status App");
                     ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                    CurrPage.Update(false);
                 end;
             }
             action(Delegate)
@@ -233,6 +235,7 @@ page 70004 "Documents Approval"
                     if not ("Status App" in ["Status App"::Approve]) then
                         FieldError("Status App");
                     ApprovalsMgmt.DelegateRecordApprovalRequest(RecordId);
+                    CurrPage.Update(false);
                 end;
             }
         }
