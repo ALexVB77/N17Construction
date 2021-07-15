@@ -468,6 +468,16 @@ report 70075 "Item Shipment M-15 Posted"
                         ApplicationArea = All;
                         Caption = 'Print with Price';
                     }
+                    field(Reason; ReasonName3)
+                    {
+                        Caption = 'Reason';
+                        ApplicationArea = All;
+                    }
+                    field(ExportToExcel; ExportToExcel)
+                    {
+                        Caption = 'Export to Excel';
+                        ApplicationArea = All;
+                    }
                 }
                 group(Responsible)
                 {
@@ -489,16 +499,6 @@ report 70075 "Item Shipment M-15 Posted"
                         Caption = 'Recieved Employee';
                         ApplicationArea = All;
                         TableRelation = Employee;
-                    }
-                    field(Reason; ReasonName3)
-                    {
-                        Caption = 'Reason';
-                        ApplicationArea = All;
-                    }
-                    field(ExportToExcel; ExportToExcel)
-                    {
-                        Caption = 'Export to Excel';
-                        ApplicationArea = All;
                     }
                 }
             }
