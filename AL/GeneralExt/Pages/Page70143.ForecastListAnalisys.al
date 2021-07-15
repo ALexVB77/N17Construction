@@ -229,7 +229,7 @@ page 70143 "Forecast List Analisys"
                 field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     Visible = CPEditable;
-                    Editable = false;
+                    Editable = LineEditable;
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
                     ShowMandatory = true;
@@ -280,6 +280,7 @@ page 70143 "Forecast List Analisys"
                 field("Payment Description"; Rec."Payment Description")
                 {
                     Editable = LineEditable;
+                    Visible = false;
                     ApplicationArea = All;
                     StyleExpr = LineStyletxt;
                 }

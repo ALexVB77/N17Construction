@@ -3167,13 +3167,13 @@
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target>Описание</target>
+          <target>Описание СС</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2332267737 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description 2</source>
-          <target>Описание 2</target>
+          <target>Описание оплаты</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Projects Budget Entry - Field Description 2 - Property Caption</note>
         </trans-unit>

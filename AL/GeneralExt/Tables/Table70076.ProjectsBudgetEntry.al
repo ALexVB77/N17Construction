@@ -220,6 +220,16 @@ table 70076 "Projects Budget Entry"
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            trigger OnValidate()
+            var
+                lDimVal: Record "Dimension Value";
+            begin
+                lDimVal.Reset();
+                lDimVal.SetRange("Global Dimension No.", 2);
+                lDimVal.SetRange(Code, Rec."Shortcut Dimension 2 Code");
+                if lDimVal.FindFirst() then
+                    Description := lDimVal.Name;
+            end;
         }
         field(47; "Building Turn"; Code[20])
         {
