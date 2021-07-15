@@ -105,12 +105,13 @@ table 99932 "CRM Prefetched Object"
         OutStrm: OutStream;
         InStrm: InStream;
         FullFileName: Text;
+        NotAttachedXmlErr: Label 'Xml file is not attached';
     begin
         if IsNullGuid(Id) then
             exit;
         CalcFields(Xml);
         if not Xml.HasValue then
-            exit;
+            Error(NotAttachedXmlErr);
         FullFileName := Format(Id) + '.txt';
         TempBlob.CreateOutStream(OutStrm);
         Xml.CreateInStream(InStrm);

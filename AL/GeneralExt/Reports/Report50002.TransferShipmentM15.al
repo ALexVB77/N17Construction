@@ -10,6 +10,107 @@ report 50002 "Transfer Shipment M-15"
             DataItemTableView = sorting("No.");
             RequestFilterFields = "No.";
 
+            dataitem(CopyCycle; Integer)
+            {
+                DataItemTableView = sorting(Number);
+
+                dataitem(LineCycle; Integer)
+                {
+                    DataItemTableView = sorting(Number) where(Number = filter(1 ..));
+
+                    trigger OnPreDataItem()
+                    begin
+                        Currency.InitRoundingPrecision;
+                        VATExemptTotal := true;
+                        i := 0;
+                    end;
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        if Number = 1 then begin
+                            if not SalesLine1.FindSet() then
+                                CurrReport.Break();
+                        end else
+                            if SalesLine1.Next(1) = 0 then
+                                CurrReport.Break();
+
+                        CopyArray(LastTotalAmount, TotalAmount, 1);
+
+                        InvPostingSetup.Reset();
+                        InvPostingSetup.SetRange("Location Code", SalesLine1."Location Code");
+                        InvPostingSetup.SetRange("Invt. Posting Group Code", SalesLine1."Posting Group");
+
+                        if InvPostingSetup.FindSet() then
+                            BalAccNo := InvPostingSetup."Inventory Account"
+                        else
+                            BalAccNo := '';
+
+                        i += 1;
+
+                        if not UnitOfMeasure.Get(SalesLine1."Unit of Measure Code") then
+                            Clear(UnitOfMeasure);
+
+                        ItemDescription := SalesLine1.Description + SalesLine1."Description 2";
+
+                        Clear(UnitCostTxt);
+                        Clear(AmountTxt);
+                        Clear(VATAmountTxt);
+                        Clear(IncVATAmountTxt);
+
+                        Amount := SalesLine1."Amount (LCY)";
+
+                        if Item.Get(SalesLine1."No.") and Vendor.Get(TransferHeader."Vendor No.") then
+                            if VATPostingSetup.Get(Vendor."VAT Bus. Posting Group", Item."VAT Prod. Posting Group") then
+                                VAT := Round(Amount * VATPostingSetup."VAT %" / 100);
+
+                        AmountIncVAT := Amount + VAT;
+                        VATAmount += VAT;
+                        TotalAmount1 += AmountIncVAT;
+                        if SalesLine1."Qty. to Invoice" <> 0 then
+                            UnitCostTxt := Format(Amount / SalesLine1."Qty. to Invoice", 0, '<Precision,2:2><Standard Format,0>');
+                        AmountTxt := Format(Amount, 0, '<Precision,2:2><Standard Format,0>');
+                        VATAmountTxt := Format(VAT, 0, '<Precision,2:2><Standard Format,0>');
+                        IncVATAmountTxt := Format(AmountIncVAT, 0, '<Precision,2:2><Standard Format,0>');
+
+                        if not PrintPrice then begin
+                            UnitCostTxt := '-';
+                            AmountTxt := '-';
+                        end;
+
+                        Qty1Txt := Format(SalesLine1."Qty. to Invoice");
+                        Qty2Txt := Format(SalesLine1."Qty. to Invoice");
+
+                        txtItemNo := SalesLine1."No.";
+                        if SalesLine1."Variant Code" <> '' then
+                            txtItemNo := txtItemNo + '(' + SalesLine1."Variant Code" + ')';
+
+                        FillBody(SalesLine1."Shortcut Dimension 1 Code", SalesLine1."Shortcut Dimension 2 Code", SalesLine1."Unit of Measure Code");
+                    end;
+
+                    trigger OnPostDataItem()
+                    begin
+                        TotalAmountTxt := LocMgt.Amount2Text('', TotalAmount1);
+                        TotalVATAmountTxt := LocMgt.Amount2Text('', VATAmount);
+                        if not PrintPrice then begin
+                            TotalAmountTxt := '-';
+                            TotalVATAmountTxt := '-';
+                        end;
+
+                        FillFooter();
+                    end;
+                }
+
+                trigger OnPreDataItem()
+                begin
+                    SetRange(Number, 1, CopiesNumber);
+                end;
+
+                trigger OnAfterGetRecord()
+                begin
+                    Clear(TotalAmount);
+                end;
+            }
+
             trigger OnAfterGetRecord()
             begin
                 CompanyInfo.Get;
@@ -87,9 +188,73 @@ report 50002 "Transfer Shipment M-15"
             {
                 group(GroupName)
                 {
-                    field(Name; PrintPrice)
+                    ShowCaption = false;
+                    field(PrintWithPrice; PrintPrice)
                     {
                         ApplicationArea = All;
+                        Caption = 'Print With Price';
+                    }
+                }
+                group(Responsible)
+                {
+                    Caption = 'Responsible';
+                    field(AllowedEmployee; Employee2)
+                    {
+                        Caption = 'Allowed Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(ReleasedEmployee; Employee3)
+                    {
+                        Caption = 'Released Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                    field(RecievedEmployee; Employee4)
+                    {
+                        Caption = 'Recieved Employee';
+                        ApplicationArea = All;
+                        TableRelation = Employee;
+                    }
+                }
+                group(GroupName2)
+                {
+                    ShowCaption = false;
+                    field(Reason; ReasonName3)
+                    {
+                        Caption = 'Reason';
+                        ApplicationArea = All;
+                    }
+                    field(ExportToExcel; ExportToExcel)
+                    {
+                        Caption = 'Export to Excel';
+                        ApplicationArea = All;
+                    }
+                    field(SaveInArchive; ArchiveDocument)
+                    {
+                        Caption = 'Save in Archive';
+                        ApplicationArea = All;
+                    }
+                    field(LogInteraction; LogInteraction)
+                    {
+                        Caption = 'Log Interaction';
+                        ApplicationArea = All;
+                    }
+                    field(OperationType; OperationType)
+                    {
+                        Caption = 'Operation Type';
+                        ApplicationArea = All;
+                    }
+                    field(NoOfCopies; CopiesNumber)
+                    {
+                        Caption = 'No. of Copies';
+                        ApplicationArea = All;
+
+                        trigger OnValidate()
+                        begin
+                            if CopiesNumber < 1 then
+                                CopiesNumber := 1;
+                        end;
                     }
                 }
             }
@@ -134,7 +299,7 @@ report 50002 "Transfer Shipment M-15"
         ItemDescription: Text;
         UnitCostTxt: Text;
         AmountTxt: Text;
-        TotalAmount: Decimal;
+        TotalAmount: array[8] of Decimal;
         Qty1Txt: Text;
         Qty2Txt: Text;
         txtItemNo: Code[20];
@@ -149,6 +314,22 @@ report 50002 "Transfer Shipment M-15"
         Employee4: Code[20];
         PrintPrice: Boolean;
         i: Integer;
+        CopiesNumber: Integer;
+        Currency: Record "Currency";
+        VATExemptTotal: Boolean;
+        LastTotalAmount: array[8] of Decimal;
+        InvPostingSetup: Record "Inventory Posting Setup";
+        BalAccNo: Code[20];
+        Amount: Decimal;
+        Item: Record Item;
+        VATPostingSetup: Record "VAT Posting Setup";
+        VAT: Decimal;
+        AmountIncVAT: Decimal;
+        TotalAmount1: Decimal;
+        LocMgt: Codeunit "Localisation Management";
+        ArchiveDocument: Boolean;
+        LogInteraction: Boolean;
+        OperationType: Text;
         Text12401: Label 'By agreement %1';
 
     trigger OnPreReport()
