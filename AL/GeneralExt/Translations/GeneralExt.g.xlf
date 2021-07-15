@@ -9178,11 +9178,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ReleasedEmployee - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 4054452980 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActionName</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Action ActionName - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 2721895639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Shipment M-19</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9372,11 +9367,6 @@
           <source>Released Employee</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control ReleasedEmployee - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 329609777 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ActionName</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Action ActionName - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3049249875 - Action 2257859320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4261702675">
           <source>Register Absence</source>

@@ -505,24 +505,10 @@ report 70075 "Item Shipment M-15 Posted"
             }
         }
 
-        actions
-        {
-            area(processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-
-                }
-            }
-        }
-
         trigger OnOpenPage()
         begin
             PrintPrice := true;
-            //NC 22512 > DP
             ExportToExcel := true;
-            //NC 22512 < DP
         end;
     }
 

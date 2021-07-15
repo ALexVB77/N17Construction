@@ -229,6 +229,7 @@ report 50002 "Transfer Shipment M-15"
                     {
                         Caption = 'Export to Excel';
                         ApplicationArea = All;
+                        Visible = false;
                     }
                     field(SaveInArchive; ArchiveDocument)
                     {
@@ -260,17 +261,11 @@ report 50002 "Transfer Shipment M-15"
             }
         }
 
-        actions
-        {
-            area(processing)
-            {
-                action(ActionName)
-                {
-                    ApplicationArea = All;
-
-                }
-            }
-        }
+        trigger OnOpenPage()
+        begin
+            PrintPrice := true;
+            ExportToExcel := true;
+        end;
     }
 
     var
