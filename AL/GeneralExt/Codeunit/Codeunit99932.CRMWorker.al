@@ -133,7 +133,7 @@ codeunit 99932 "CRM Worker"
         FetchedObject.SetFilter(Type, '%1|%2', FetchedObject.Type::Unit, FetchedObject.Type::Contract);
         if FetchedObject.FindSet() then begin
             repeat
-                AllObjectData.Get(FetchedObject.Id, ObjectData) then
+                AllObjectData.Get(FetchedObject.Id, ObjectData);
 
                 //walkthrough of object head(I=1) and buyres (I>1)    
                 C := ObjectData.Count;
