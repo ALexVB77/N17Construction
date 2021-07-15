@@ -229,6 +229,7 @@ report 50002 "Transfer Shipment M-15"
                     {
                         Caption = 'Export to Excel';
                         ApplicationArea = All;
+                        Visible = false;
                     }
                     field(SaveInArchive; ArchiveDocument)
                     {
