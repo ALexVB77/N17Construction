@@ -51,6 +51,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
            (ApprovalEntry."Approver ID" = UserId) and ApprovalEntryArgument.Reject
         then
             ApprovalEntry.Status := ApprovalEntry.Status::Created;
+        ApprovalEntry."Preliminary Approval" := ApprovalEntryArgument."Preliminary Approval";
     end;
 
     procedure CreateApprovalRequestsPurchActAndPayInv(RecRef: RecordRef; WorkflowStepInstance: Record "Workflow Step Instance")
@@ -136,6 +137,7 @@ codeunit 81535 "Approvals Mgmt. (Ext)"
                 ApprovalEntryArgument."Status App" := Enum::"Purchase Approval Status".FromInteger(PurchHeader."Status App");
             end;
             ApprovalEntryArgument.Reject := Reject;
+            ApprovalEntryArgument."Preliminary Approval" := PurchHeader."Sent to pre. Approval";
             CreateApprovalRequestForSpecificUser(WorkflowStepArgument, ApprovalEntryArgument, PurchHeader."Process User");
             if (UserID = PurchHeader."Process User") and (not Reject) then
                 MoveToNextPurchActAndPayInvStatus(RecRef, WorkflowStepInstance, Reject)

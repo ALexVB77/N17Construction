@@ -7088,6 +7088,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Pre-Approver - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3437592965 - Control 2414822351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Problem Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Purchase Order Act - Control Problem Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3437592965 - Control 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Checker</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9138,10 +9143,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - NamedType Text12401</note>
         </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to Excel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ExportToExcel - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 4054452980 - Control 987782936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Print with Price</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control PrintPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4054452980 - Control 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Reason - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 1214298328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Responsible</source>
@@ -9152,16 +9167,6 @@
           <source>Allowed Employee</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control AllowedEmployee - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 4054452980 - Control 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Export to Excel</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control ExportToExcel - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 4054452980 - Control 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reason</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Item Shipment M-15 Posted - Control Reason - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4054452980 - Control 1418306143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Recieved Employee</source>
@@ -9312,6 +9317,61 @@
           <source>By agreement %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - NamedType Text12401</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 1981553858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print With Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control PrintWithPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 2851454604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to Excel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control ExportToExcel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Log Interaction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control LogInteraction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 2578066365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Copies</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control NoOfCopies - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 1548924671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Operation Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control OperationType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 3369789712 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control Reason - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 342758792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Save in Archive</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control SaveInArchive - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 1214298328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsible</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control Responsible - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 1456871694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allowed Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control AllowedEmployee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 1418306143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recieved Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control RecievedEmployee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 329609777 - Control 435501545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Released Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Transfer Shipment M-15 - Control ReleasedEmployee - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 329609777 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ActionName</source>
@@ -9597,6 +9657,11 @@
           <source>IW Documents</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field IW Documents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1414959925 - Field 3767732103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
+          <source>Preliminary Approval</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Approval Entry (Ext) - Field Preliminary Approval - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1414959925 - Field 113888489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1753259445">
           <source>Reject</source>

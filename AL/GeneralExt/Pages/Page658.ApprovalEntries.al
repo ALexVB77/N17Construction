@@ -12,6 +12,10 @@ pageextension 80658 "Approval Entries (Ext)" extends "Approval Entries"
             {
                 ApplicationArea = All;
             }
+            field("Preliminary Approval"; "Preliminary Approval")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }

@@ -127,7 +127,7 @@ codeunit 50010 "Payment Order Management"
             if not "Location Document" then
                 PurchLine.Validate("No.", InvtSetup."Temp Item Code")
             else
-                PurchLine.Validate("Location Code", LocationCode);
+                PurchLine."Location Code" := LocationCode;
             PurchLine.Insert(true);
 
             COMMIT;

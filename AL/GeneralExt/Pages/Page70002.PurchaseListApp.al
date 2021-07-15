@@ -183,6 +183,7 @@ page 70002 "Purchase List App"
                             ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
                     end else
                         ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                    CurrPage.Update(false);
                 end;
             }
             action(RejectButton)
@@ -196,6 +197,7 @@ page 70002 "Purchase List App"
                     if "Status App" in ["Status App"::" ", "Status App"::Reception, "Status App"::Payment] then
                         FieldError("Status App");
                     ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                    CurrPage.Update(false);
                 end;
             }
         }

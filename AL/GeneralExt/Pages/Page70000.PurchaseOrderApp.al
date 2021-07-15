@@ -510,6 +510,7 @@ page 70000 "Purchase Order App"
                                 ApprovalsMgmt.OnSendPurchaseDocForApproval(Rec);
                         end else
                             ApprovalsMgmt.ApproveRecordApprovalRequest(RECORDID);
+                        CurrPage.Update(false);
                     end;
                 }
                 action(Reject)
@@ -527,6 +528,7 @@ page 70000 "Purchase Order App"
                         if "Status App" in ["Status App"::" ", "Status App"::Reception, "Status App"::Payment] then
                             FieldError("Status App");
                         ApprovalsMgmtExt.RejectPurchActAndPayInvApprovalRequest(RECORDID);
+                        CurrPage.Update(false);
                     end;
                 }
                 action(Delegate)
@@ -649,7 +651,7 @@ page 70000 "Purchase Order App"
         IWPlanRepayDateMandatory: Boolean;
         ApproveButtonEnabled: Boolean;
         RejectButtonEnabled: Boolean;
-        ProblemDescription: text;
+        ProblemDescription: text[80];
         AddCommentType: enum "Purchase Comment Add. Type";
         TextDelError: Label 'You cannot delete Purchase Order Act %1';
 
