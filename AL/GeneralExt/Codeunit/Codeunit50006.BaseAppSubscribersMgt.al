@@ -617,15 +617,12 @@ codeunit 50006 "Base App. Subscribers Mgt."
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Transfer Document", 'OnBeforeCheckTransLines', '', false, false)]
-    local procedure OnBeforeCheckTransLines(var TransferLine: Record "Transfer Line";
-                                            var IsHandled: Boolean;
-                                            TransHeader: Record "Transfer Header");
+    local procedure OnBeforeCheckTransLines(var TransferLine: Record "Transfer Line"; var IsHandled: Boolean; TransHeader: Record "Transfer Header");
     var
         InvtSetup: Record "Inventory Setup";
     begin
         // NC 51411 > EP
         // Перенес модификацию из cu "Release Transfer Document".OnRun()
-
         // SWC816 AK 200416 >>
         InvtSetup.Get();
         if InvtSetup."Use Giv. Production Func." then begin
@@ -637,11 +634,11 @@ codeunit 50006 "Base App. Subscribers Mgt."
             end;
         end;
         // SWC816 AK 200416 <<
-
         // NC 51411 < EP
     end;
 
     // Table 38 Purchase Header
+
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnBeforeTestNoSeries', '', false, false)]
     local procedure OnBeforeTestNoSeries(var PurchaseHeader: Record "Purchase Header"; var IsHandled: Boolean);
     var
@@ -695,6 +692,24 @@ codeunit 50006 "Base App. Subscribers Mgt."
                 NoSeriesCode := PurchSetup."Act Order Nos.";
         end;
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnRecreatePurchLinesOnBeforeInsertPurchLine', '', false, false)]
+    local procedure OnRecreatePurchLinesOnBeforeInsertPurchLine(var PurchaseLine: Record "Purchase Line"; var TempPurchaseLine: Record "Purchase Line" temporary; ChangedFieldName: Text[100])
+    begin
+        PurchaseLine."Full Description" := TempPurchaseLine."Full Description";
+    end;
+
+    // Table 39 Purchase Line
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterAssignItemValues', '', false, false)]
+    local procedure OnAfterAssignItemValues(var PurchLine: Record "Purchase Line"; Item: Record Item; CurrentFieldNo: Integer)
+    begin
+        if CopyStr(Item."Description 2", 1, 1) <> ' ' then
+            PurchLine."Full Description" := Item.Description + ' ' + Item."Description 2"
+        else
+            PurchLine."Full Description" := Item.Description + Item."Description 2";
+    end;
+
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnBeforePostPurchaseDoc', '', false, false)]
     local procedure SendVendorAgreementMail(var PurchaseHeader: Record "Purchase Header")
