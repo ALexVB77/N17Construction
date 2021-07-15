@@ -699,6 +699,13 @@ codeunit 50006 "Base App. Subscribers Mgt."
         PurchaseLine."Full Description" := TempPurchaseLine."Full Description";
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnValidatePurchaseHeaderPayToVendorNo', '', false, false)]
+    procedure OnValidatePurchaseHeaderPayToVendorNo(Vendor: Record Vendor; var PurchaseHeader: Record "Purchase Header")
+    begin
+        if PurchaseHeader."Document Type" <> PurchaseHeader."Document Type"::"Credit Memo" then
+            PurchaseHeader."Payment Details" := Vendor.Name;
+    end;
+
     // Table 39 Purchase Line
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterAssignItemValues', '', false, false)]
