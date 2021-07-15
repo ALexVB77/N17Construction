@@ -127,19 +127,21 @@ page 70000 "Purchase Order App"
                 field("Payment to Person"; Rec."Payment to Person")
                 {
                     ApplicationArea = All;
-                    Editable = false;
 
                     trigger OnValidate()
                     begin
                         PurchSetup.Get();
                         if "Payment to Person" and ("Payment Assignment" = '') then
                             "Payment Assignment" := PurchSetup."Default Payment Assignment";
+                        PaymentAssignmentEnabled := "Payment to Person";
                         CurrPage.Update(true);
                     end;
                 }
                 field("Payment Assignment"; Rec."Payment Assignment")
                 {
                     ApplicationArea = All;
+                    Editable = PaymentAssignmentEnabled;
+                    Enabled = PaymentAssignmentEnabled;
                 }
                 field("Payment Type"; Rec."Payment Type")
                 {
@@ -587,6 +589,8 @@ page 70000 "Purchase Order App"
         else
             ProblemDescription := Rec.GetApprovalCommentText();
 
+        PaymentAssignmentEnabled := "Payment to Person";
+
         ApproveButtonEnabled := FALSE;
         RejectButtonEnabled := FALSE;
 
@@ -653,6 +657,7 @@ page 70000 "Purchase Order App"
         RejectButtonEnabled: Boolean;
         ProblemDescription: text[80];
         AddCommentType: enum "Purchase Comment Add. Type";
+        PaymentAssignmentEnabled: Boolean;
         TextDelError: Label 'You cannot delete Purchase Order Act %1';
 
     local procedure SaveInvoiceDiscountAmount()
@@ -669,7 +674,7 @@ page 70000 "Purchase Order App"
         VendorBankAccount: Record "Vendor Bank Account";
     begin
         if Rec."Vendor Bank Account No." <> '' then
-            if VendorBankAccount.get("Vendor Bank Account No.") then
+            if VendorBankAccount.get("Pay-to Vendor No.", "Vendor Bank Account No.") then
                 exit(VendorBankAccount.Name + VendorBankAccount."Name 2");
     end;
 }

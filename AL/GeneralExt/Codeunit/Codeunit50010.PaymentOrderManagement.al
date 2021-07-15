@@ -138,6 +138,7 @@ codeunit 50010 "Payment Order Management"
     procedure NewOrderApp(PurchHeader: Record "Purchase Header")
     var
         grPurchHeader: Record "Purchase Header";
+        PurchLine: Record "Purchase Line";
         grUS: Record "User Setup";
     begin
 
@@ -165,6 +166,14 @@ codeunit 50010 "Payment Order Management"
 
         grPurchHeader.Receptionist := UserId;
         grPurchHeader.MODIFY(TRUE);
+
+        PurchLine.Init;
+        PurchLine."Document Type" := grPurchHeader."Document Type";
+        PurchLine."Document No." := grPurchHeader."No.";
+        PurchLine."Line No." := 10000;
+        PurchLine.Validate(Type, PurchLine.Type::Item);
+        PurchLine.Validate("No.", InvtSetup."Temp Item Code");
+        PurchLine.Insert(true);
 
         COMMIT;
         Page.RUNMODAL(Page::"Purchase Order App", grPurchHeader);
