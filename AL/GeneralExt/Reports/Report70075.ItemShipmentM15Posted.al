@@ -554,6 +554,7 @@ report 70075 "Item Shipment M-15 Posted"
 
     trigger OnPreReport()
     begin
+        CompanyInfo.Get;
         InitReportTemplate();
     end;
 
@@ -565,7 +566,7 @@ report 70075 "Item Shipment M-15 Posted"
             ExcelReportBuilderManager.ExportDataToClientFile(FileName);
     end;
 
-    procedure GetCostCodeName(GlobalDimNo: Integer; GlobalDimCode: Code[20]): Text
+    local procedure GetCostCodeName(GlobalDimNo: Integer; GlobalDimCode: Code[20]): Text
     var
         DimensionValue: Record "Dimension Value";
     begin
@@ -576,7 +577,7 @@ report 70075 "Item Shipment M-15 Posted"
         exit('');
     end;
 
-    procedure FillHeader(DocNo: Code[20]; PostingDate: Date)
+    local procedure FillHeader(DocNo: Code[20]; PostingDate: Date)
     begin
         if ExportToExcel then begin
             if not ExcelReportBuilderManager.TryAddSection('REPORTHEADER') then begin
@@ -599,7 +600,7 @@ report 70075 "Item Shipment M-15 Posted"
         end;
     end;
 
-    procedure FillBody(ShortcutDimension1Code: Code[20]; ShortcutDimension2Code: Code[20]; UnitofMeasureCode: Code[20])
+    local procedure FillBody(ShortcutDimension1Code: Code[20]; ShortcutDimension2Code: Code[20]; UnitofMeasureCode: Code[20])
     begin
         if ExportToExcel then begin
             if not ExcelReportBuilderManager.TryAddSection('BODY') then begin
@@ -630,7 +631,7 @@ report 70075 "Item Shipment M-15 Posted"
         END;
     end;
 
-    procedure FillFooter()
+    local procedure FillFooter()
     begin
         if ExportToExcel then begin
             if not ExcelReportBuilderManager.TryAddSection('REPORTFOOTER') then begin

@@ -24,14 +24,18 @@ page 99932 "CRM Prefetched Objects"
                     ApplicationArea = All;
 
                 }
-
-                field("Version Id"; Rec."Version Id")
+                field("Company name"; Rec."Company name")
                 {
                     ApplicationArea = All;
 
                 }
 
                 field(ParentId; rec.ParentId)
+                {
+                    ApplicationArea = All;
+
+                }
+                field("Version Id"; Rec."Version Id")
                 {
                     ApplicationArea = All;
 

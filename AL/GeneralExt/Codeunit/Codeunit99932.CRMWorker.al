@@ -106,6 +106,8 @@ codeunit 99932 "CRM Worker"
         ParseObjects(FetchedObjectBuff, AllObjectData);
         SetTargetCompany(FetchedObjectBuff, AllObjectData);
         FetchedObjectBuff.Reset();
+        if not FetchedObjectBuff.FindSet() then
+            exit;
         repeat
             FetchedObject := FetchedObjectBuff;
             if not FetchedObject.Insert(true) then
@@ -121,6 +123,8 @@ codeunit 99932 "CRM Worker"
         C, I : Integer;
         TextKey, TextValue : Text;
     begin
+        if AllObjectData.Count() = 0 then
+            Error('No one object was parsed');
         FetchedObject.Reset();
         //FetchedObject.SetFilter("Company name", '<>%1', '');
         FetchedObject.SetFilter(Type, '%1|%2', FetchedObject.Type::Unit, FetchedObject.Type::Contract);
@@ -254,7 +258,6 @@ codeunit 99932 "CRM Worker"
     end;
 
     local procedure FetchObjects(var WRQ: Record "Web Request Queue"; var FetchedObjectsTemp: Record "CRM Prefetched Object") Result: Boolean
-    //var WebRequestQueue: Record "Web Request Queue"
     var
         XmlCrmObjectList: XmlNodeList;
         RootXmlElement: XmlElement;
@@ -332,7 +335,7 @@ codeunit 99932 "CRM Worker"
     end;
 
     [TryFunction]
-    local procedure GetObjectMetadata(Base64EncodedObjectXml: Text; var ObjectMetadata: Dictionary of [Text, Text])
+    local procedure GetObjectMetadata(Base64EncodedObjectXml: Text; var NewObjectMetadata: Dictionary of [Text, Text])
     var
         Base64Convert: Codeunit "Base64 Convert";
         XmlDoc: XmlDocument;
@@ -342,8 +345,8 @@ codeunit 99932 "CRM Worker"
         T: Record "CRM Prefetched Object" temporary;
     begin
         ObjectXmlText := Base64Convert.FromBase64(Base64EncodedObjectXml);
-        ObjectMetadata.Add(T.FieldName(Xml), ObjectXmlText);
-        ObjectMetadata.Add(T.FieldName("Version Id"), GenerateHash(ObjectXmlText));
+        NewObjectMetadata.Add(T.FieldName(Xml), ObjectXmlText);
+        NewObjectMetadata.Add(T.FieldName("Version Id"), GenerateHash(ObjectXmlText));
         GetRootXmlElement(ObjectXmlText, RootXmlElement);
         GetValue(RootXmlElement, ObjectTypeX, ObjectType);
         case UpperCase(ObjectType) of
@@ -362,15 +365,15 @@ codeunit 99932 "CRM Worker"
             else
                 Error(UnknownObjectTypeErr, ObjectType);
         end;
-        Clear(ObjectMetadata);
-        ObjectMetadata.Add(T.FieldName(id), ObjectIdText);
-        ObjectMetadata.Add(T.FieldName(Type), ObjectType);
+        NewObjectMetadata.Add(T.FieldName(id), ObjectIdText);
+        NewObjectMetadata.Add(T.FieldName(Type), ObjectType);
         if ParentObjectIdText <> '' then
-            ObjectMetadata.Add(T.FieldName(ParentId), ParentObjectIdText);
+            NewObjectMetadata.Add(T.FieldName(ParentId), ParentObjectIdText);
         if ObjectIdText = '' then
             Error(NoObjectIdErr);
         if (UpperCase(ObjectType) in ['CONTRACT', 'UNIT']) and (ParentObjectIdText = '') then
             Error(NoParentObjectIdErr);
+
     end;
 
     local procedure ParseObjects(var FetchedObject: Record "CRM Prefetched Object"; var AllObjectData: Dictionary of [Guid, List of [Dictionary of [Text, Text]]])
